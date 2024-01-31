@@ -1,6 +1,6 @@
 # Infracorp\Extranet\Client\DefaultApi
 
-All URIs are relative to http://sourceforge.priv.ithd.fr:8000, except if the operation defines another base path.
+All URIs are relative to https://dev.prizz-telecom.fr, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |

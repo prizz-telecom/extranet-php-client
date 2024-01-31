@@ -72,7 +72,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *http://sourceforge.priv.ithd.fr:8000*
+All URIs are relative to *https://dev.prizz-telecom.fr*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
