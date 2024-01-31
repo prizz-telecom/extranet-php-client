@@ -1,0 +1,18 @@
+# # ClientLegalEntitySearch
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**index** | **string** |  | [optional]
+**query** | **string** |  | [optional]
+**id** | **int** |  | [optional]
+**legal_entity_ids** | **int[]** |  | [optional]
+**name** | **string** |  | [optional]
+**address** | **string** |  | [optional]
+**siren** | **string** |  | [optional]
+**tel** | **string** |  | [optional]
+**email** | **string** |  | [optional]
+**contacts** | [**\Infracorp\Extranet\Client\Model\ContactSearch[]**](ContactSearch.md) |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
