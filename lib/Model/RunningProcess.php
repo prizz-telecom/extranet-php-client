@@ -57,7 +57,12 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int'
+        'id' => 'int',
+        'lib' => 'string',
+        'state' => 'string',
+        'status_code' => 'int',
+        'create_date' => 'string',
+        'process_class' => 'string'
     ];
 
     /**
@@ -68,7 +73,12 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null
+        'id' => null,
+        'lib' => null,
+        'state' => null,
+        'status_code' => null,
+        'create_date' => null,
+        'process_class' => null
     ];
 
     /**
@@ -77,7 +87,12 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false
+        'id' => false,
+		'lib' => false,
+		'state' => false,
+		'status_code' => false,
+		'create_date' => false,
+		'process_class' => false
     ];
 
     /**
@@ -166,7 +181,12 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id'
+        'id' => 'id',
+        'lib' => 'lib',
+        'state' => 'state',
+        'status_code' => 'status_code',
+        'create_date' => 'create_date',
+        'process_class' => 'process_class'
     ];
 
     /**
@@ -175,7 +195,12 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId'
+        'id' => 'setId',
+        'lib' => 'setLib',
+        'state' => 'setState',
+        'status_code' => 'setStatusCode',
+        'create_date' => 'setCreateDate',
+        'process_class' => 'setProcessClass'
     ];
 
     /**
@@ -184,7 +209,12 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId'
+        'id' => 'getId',
+        'lib' => 'getLib',
+        'state' => 'getState',
+        'status_code' => 'getStatusCode',
+        'create_date' => 'getCreateDate',
+        'process_class' => 'getProcessClass'
     ];
 
     /**
@@ -245,6 +275,11 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('lib', $data ?? [], null);
+        $this->setIfExists('state', $data ?? [], null);
+        $this->setIfExists('status_code', $data ?? [], null);
+        $this->setIfExists('create_date', $data ?? [], null);
+        $this->setIfExists('process_class', $data ?? [], null);
     }
 
     /**
@@ -312,6 +347,141 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets lib
+     *
+     * @return string|null
+     */
+    public function getLib()
+    {
+        return $this->container['lib'];
+    }
+
+    /**
+     * Sets lib
+     *
+     * @param string|null $lib lib
+     *
+     * @return self
+     */
+    public function setLib($lib)
+    {
+        if (is_null($lib)) {
+            throw new \InvalidArgumentException('non-nullable lib cannot be null');
+        }
+        $this->container['lib'] = $lib;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return string|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param string|null $state state
+     *
+     * @return self
+     */
+    public function setState($state)
+    {
+        if (is_null($state)) {
+            throw new \InvalidArgumentException('non-nullable state cannot be null');
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets status_code
+     *
+     * @return int|null
+     */
+    public function getStatusCode()
+    {
+        return $this->container['status_code'];
+    }
+
+    /**
+     * Sets status_code
+     *
+     * @param int|null $status_code status_code
+     *
+     * @return self
+     */
+    public function setStatusCode($status_code)
+    {
+        if (is_null($status_code)) {
+            throw new \InvalidArgumentException('non-nullable status_code cannot be null');
+        }
+        $this->container['status_code'] = $status_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets create_date
+     *
+     * @return string|null
+     */
+    public function getCreateDate()
+    {
+        return $this->container['create_date'];
+    }
+
+    /**
+     * Sets create_date
+     *
+     * @param string|null $create_date create_date
+     *
+     * @return self
+     */
+    public function setCreateDate($create_date)
+    {
+        if (is_null($create_date)) {
+            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
+        }
+        $this->container['create_date'] = $create_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets process_class
+     *
+     * @return string|null
+     */
+    public function getProcessClass()
+    {
+        return $this->container['process_class'];
+    }
+
+    /**
+     * Sets process_class
+     *
+     * @param string|null $process_class process_class
+     *
+     * @return self
+     */
+    public function setProcessClass($process_class)
+    {
+        if (is_null($process_class)) {
+            throw new \InvalidArgumentException('non-nullable process_class cannot be null');
+        }
+        $this->container['process_class'] = $process_class;
 
         return $this;
     }

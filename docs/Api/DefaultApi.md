@@ -65,6 +65,11 @@ Créer un devis
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -97,7 +102,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -124,6 +129,11 @@ Ajouter une section à un devis
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -159,7 +169,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -186,6 +196,11 @@ Eligibility request for your user. One eligibility is made for each company allo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -221,7 +236,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -248,6 +263,11 @@ Créer un opérateur
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -281,7 +301,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -308,6 +328,11 @@ Create workflow
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -341,7 +366,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -368,6 +393,11 @@ View last executed eligibilities
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -403,7 +433,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -567,6 +597,11 @@ Get comment thread
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -599,7 +634,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -626,6 +661,11 @@ Get comment threads
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -661,7 +701,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -688,6 +728,11 @@ Récupérer le détail d'un devis
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -721,7 +766,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -748,6 +793,11 @@ Récupérer le pdf d'un devis
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -781,7 +831,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -808,6 +858,11 @@ Récupérer une liste de devis
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -859,7 +914,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -886,6 +941,11 @@ Get eligibility result
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -919,7 +979,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -946,6 +1006,11 @@ Récupérer le détail d'une facture
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -979,7 +1044,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1006,6 +1071,11 @@ Récupérer le pdf d'une facture
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1039,7 +1109,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1066,6 +1136,11 @@ Récupérer une liste de factures
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1113,7 +1188,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1140,6 +1215,11 @@ Récupérer une liste de sociétés
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1177,7 +1257,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1204,6 +1284,11 @@ Récupérer le détail d'une société
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1237,7 +1322,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1264,6 +1349,11 @@ Récupérer une liste d'offres
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1297,7 +1387,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1324,6 +1414,11 @@ Lister les tickets pour l'opérateur
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1357,7 +1452,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1384,6 +1479,11 @@ Récupérer un catalogue
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1417,7 +1517,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1444,6 +1544,11 @@ Récupérer une liste d'éléments d'un catalogue
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1477,7 +1582,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1504,6 +1609,11 @@ Récupérer la liste des offres associées à un catalogue
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1537,7 +1647,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1564,6 +1674,11 @@ Récupérer une liste de catalogues
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1597,7 +1712,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1624,6 +1739,11 @@ Detail d'un worklow de ticket
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1659,7 +1779,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1686,6 +1806,11 @@ Récupérer le détail d'un service
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1719,7 +1844,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1746,6 +1871,11 @@ Récupérer le détail d'un pack de services
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1779,7 +1909,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1806,6 +1936,11 @@ Récupérer une liste de packs de services
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1845,7 +1980,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1872,6 +2007,11 @@ Récupérer une liste de services
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1911,7 +2051,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1938,6 +2078,11 @@ Récupérer le détail d'un ticket
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -1973,7 +2118,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2000,6 +2145,11 @@ Lister les tickets
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2030,7 +2180,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2057,6 +2207,11 @@ get workflow
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2090,7 +2245,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2117,6 +2272,11 @@ Ouvrir un ticket pour l'opérateur
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2150,7 +2310,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2177,6 +2337,11 @@ Supprimer une section
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2211,7 +2376,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2238,6 +2403,11 @@ Renommer une section
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2275,7 +2445,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2302,6 +2472,11 @@ Executer un process
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2341,7 +2516,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2368,6 +2543,11 @@ run workflow
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2403,7 +2583,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2430,6 +2610,11 @@ Perform search
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2467,7 +2652,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2494,6 +2679,11 @@ Appliquer une offre à une section
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2531,7 +2721,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2558,6 +2748,11 @@ Signer un devis
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2593,7 +2788,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2620,6 +2815,11 @@ Valider un devis
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
 $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
@@ -2653,7 +2853,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
