@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * ClientLegalEntity Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -73,8 +73,8 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'tel' => 'string',
         'email' => 'string',
         'arcep_code' => 'string',
-        'contacts' => '\Infracorp\Extranet\Client\Model\Contact[]',
-        'contracts' => '\Infracorp\Extranet\Client\Model\ClientContract[]'
+        'contacts' => '\InfracorpExtranetClient\Model\Contact[]',
+        'contracts' => '\InfracorpExtranetClient\Model\ClientContract[]'
     ];
 
     /**
@@ -843,7 +843,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets contacts
      *
-     * @return \Infracorp\Extranet\Client\Model\Contact[]|null
+     * @return \InfracorpExtranetClient\Model\Contact[]|null
      */
     public function getContacts()
     {
@@ -853,7 +853,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets contacts
      *
-     * @param \Infracorp\Extranet\Client\Model\Contact[]|null $contacts contacts
+     * @param \InfracorpExtranetClient\Model\Contact[]|null $contacts contacts
      *
      * @return self
      */
@@ -870,7 +870,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets contracts
      *
-     * @return \Infracorp\Extranet\Client\Model\ClientContract[]|null
+     * @return \InfracorpExtranetClient\Model\ClientContract[]|null
      */
     public function getContracts()
     {
@@ -880,7 +880,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets contracts
      *
-     * @param \Infracorp\Extranet\Client\Model\ClientContract[]|null $contracts contracts
+     * @param \InfracorpExtranetClient\Model\ClientContract[]|null $contracts contracts
      *
      * @return self
      */

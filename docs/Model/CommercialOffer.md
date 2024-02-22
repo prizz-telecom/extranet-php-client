@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **nrc_vat_total** | **int** |  | [optional]
 **nrc_vat_total_str** | **string** |  | [optional]
 **status** | **string** |  | [optional]
-**legal_entity** | [**\Infracorp\Extranet\Client\Model\LegalEntity**](LegalEntity.md) |  | [optional]
-**client_legal_entity** | [**\Infracorp\Extranet\Client\Model\ClientLegalEntity**](ClientLegalEntity.md) |  | [optional]
+**legal_entity** | [**\InfracorpExtranetClient\Model\LegalEntity**](LegalEntity.md) |  | [optional]
+**client_legal_entity** | [**\InfracorpExtranetClient\Model\ClientLegalEntity**](ClientLegalEntity.md) |  | [optional]
 **sign_date** | **\DateTime** |  | [optional]
 **submit_date** | **\DateTime** |  | [optional]
 **delivery_delay** | **int** |  | [optional]
@@ -28,8 +28,8 @@ Name | Type | Description | Notes
 **total_str** | **string** |  | [optional]
 **vat_total** | **int** |  | [optional]
 **vat_total_str** | **string** |  | [optional]
-**vat_detail** | [**\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailInner[]**](CommercialOfferVatDetailInner.md) |  | [optional]
-**vat_detail_str** | [**\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]**](CommercialOfferVatDetailStrInner.md) |  | [optional]
-**sections** | [**\Infracorp\Extranet\Client\Model\CommercialOfferSection[]**](CommercialOfferSection.md) |  | [optional]
+**vat_detail** | [**\InfracorpExtranetClient\Model\CommercialOfferVatDetailInner[]**](CommercialOfferVatDetailInner.md) |  | [optional]
+**vat_detail_str** | [**\InfracorpExtranetClient\Model\CommercialOfferVatDetailStrInner[]**](CommercialOfferVatDetailStrInner.md) |  | [optional]
+**sections** | [**\InfracorpExtranetClient\Model\CommercialOfferSection[]**](CommercialOfferSection.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

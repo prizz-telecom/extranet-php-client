@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * EligibilityResult Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -78,7 +78,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'guaranteedd_download_max' => 'int',
         'rc_min' => 'int',
         'rc_max' => 'int',
-        'price_list_items_groups' => '\Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups',
+        'price_list_items_groups' => '\InfracorpExtranetClient\Model\EligibilityResultPriceListItemsGroups',
         'offer_id' => 'int',
         'price_list_id' => 'int'
     ];
@@ -1020,7 +1020,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets price_list_items_groups
      *
-     * @return \Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups|null
+     * @return \InfracorpExtranetClient\Model\EligibilityResultPriceListItemsGroups|null
      */
     public function getPriceListItemsGroups()
     {
@@ -1030,7 +1030,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets price_list_items_groups
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups|null $price_list_items_groups price_list_items_groups
+     * @param \InfracorpExtranetClient\Model\EligibilityResultPriceListItemsGroups|null $price_list_items_groups price_list_items_groups
      *
      * @return self
      */

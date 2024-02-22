@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **siren** | **string** |  | [optional]
 **tel** | **string** |  | [optional]
 **email** | **string** |  | [optional]
-**contacts** | [**\Infracorp\Extranet\Client\Model\ContactSearch[]**](ContactSearch.md) |  | [optional]
+**contacts** | [**\InfracorpExtranetClient\Model\ContactSearch[]**](ContactSearch.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

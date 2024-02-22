@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * PriceList Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'legal_entity' => '\Infracorp\Extranet\Client\Model\LegalEntity',
+        'legal_entity' => '\InfracorpExtranetClient\Model\LegalEntity',
         'commercial_code' => 'string',
         'description' => 'string'
     ];
@@ -374,7 +374,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets legal_entity
      *
-     * @return \Infracorp\Extranet\Client\Model\LegalEntity|null
+     * @return \InfracorpExtranetClient\Model\LegalEntity|null
      */
     public function getLegalEntity()
     {
@@ -384,7 +384,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets legal_entity
      *
-     * @param \Infracorp\Extranet\Client\Model\LegalEntity|null $legal_entity legal_entity
+     * @param \InfracorpExtranetClient\Model\LegalEntity|null $legal_entity legal_entity
      *
      * @return self
      */

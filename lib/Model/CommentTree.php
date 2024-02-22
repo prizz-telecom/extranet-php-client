@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * CommentTree Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class CommentTree implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'comment' => '\Infracorp\Extranet\Client\Model\Comment',
-        'children' => '\Infracorp\Extranet\Client\Model\CommentTree[]'
+        'comment' => '\InfracorpExtranetClient\Model\Comment',
+        'children' => '\InfracorpExtranetClient\Model\CommentTree[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class CommentTree implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets comment
      *
-     * @return \Infracorp\Extranet\Client\Model\Comment|null
+     * @return \InfracorpExtranetClient\Model\Comment|null
      */
     public function getComment()
     {
@@ -309,7 +309,7 @@ class CommentTree implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets comment
      *
-     * @param \Infracorp\Extranet\Client\Model\Comment|null $comment comment
+     * @param \InfracorpExtranetClient\Model\Comment|null $comment comment
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class CommentTree implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets children
      *
-     * @return \Infracorp\Extranet\Client\Model\CommentTree[]|null
+     * @return \InfracorpExtranetClient\Model\CommentTree[]|null
      */
     public function getChildren()
     {
@@ -336,7 +336,7 @@ class CommentTree implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets children
      *
-     * @param \Infracorp\Extranet\Client\Model\CommentTree[]|null $children children
+     * @param \InfracorpExtranetClient\Model\CommentTree[]|null $children children
      *
      * @return self
      */

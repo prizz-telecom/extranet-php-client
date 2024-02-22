@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Api;
+namespace InfracorpExtranetClient\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Infracorp\Extranet\Client\ApiException;
-use Infracorp\Extranet\Client\Configuration;
-use Infracorp\Extranet\Client\HeaderSelector;
-use Infracorp\Extranet\Client\ObjectSerializer;
+use InfracorpExtranetClient\ApiException;
+use InfracorpExtranetClient\Configuration;
+use InfracorpExtranetClient\HeaderSelector;
+use InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -256,12 +256,12 @@ class DefaultApi
      *
      * Commercial Offers
      *
-     * @param  \Infracorp\Extranet\Client\Model\CreateCommercialOffer $create_commercial_offer create_commercial_offer (required)
+     * @param  \InfracorpExtranetClient\Model\CreateCommercialOffer $create_commercial_offer create_commercial_offer (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCommercialOffer'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+     * @return \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
      */
     public function createCommercialOffer($create_commercial_offer, string $contentType = self::contentTypes['createCommercialOffer'][0])
     {
@@ -274,12 +274,12 @@ class DefaultApi
      *
      * Commercial Offers
      *
-     * @param  \Infracorp\Extranet\Client\Model\CreateCommercialOffer $create_commercial_offer (required)
+     * @param  \InfracorpExtranetClient\Model\CreateCommercialOffer $create_commercial_offer (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCommercialOffer'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCommercialOfferWithHttpInfo($create_commercial_offer, string $contentType = self::contentTypes['createCommercialOffer'][0])
     {
@@ -322,11 +322,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CreateCommercialOffer201Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -344,13 +344,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+            $returnType = '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -383,7 +383,7 @@ class DefaultApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response',
+                        '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -398,7 +398,7 @@ class DefaultApi
      *
      * Commercial Offers
      *
-     * @param  \Infracorp\Extranet\Client\Model\CreateCommercialOffer $create_commercial_offer (required)
+     * @param  \InfracorpExtranetClient\Model\CreateCommercialOffer $create_commercial_offer (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCommercialOffer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -419,7 +419,7 @@ class DefaultApi
      *
      * Commercial Offers
      *
-     * @param  \Infracorp\Extranet\Client\Model\CreateCommercialOffer $create_commercial_offer (required)
+     * @param  \InfracorpExtranetClient\Model\CreateCommercialOffer $create_commercial_offer (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCommercialOffer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -427,7 +427,7 @@ class DefaultApi
      */
     public function createCommercialOfferAsyncWithHttpInfo($create_commercial_offer, string $contentType = self::contentTypes['createCommercialOffer'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+        $returnType = '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response';
         $request = $this->createCommercialOfferRequest($create_commercial_offer, $contentType);
 
         return $this->client
@@ -469,7 +469,7 @@ class DefaultApi
     /**
      * Create request for operation 'createCommercialOffer'
      *
-     * @param  \Infracorp\Extranet\Client\Model\CreateCommercialOffer $create_commercial_offer (required)
+     * @param  \InfracorpExtranetClient\Model\CreateCommercialOffer $create_commercial_offer (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCommercialOffer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -572,12 +572,12 @@ class DefaultApi
      * Commercial Offer Sections
      *
      * @param  int $id identifiant du devis (required)
-     * @param  \Infracorp\Extranet\Client\Model\CreateCommercialOfferSection $create_commercial_offer_section create_commercial_offer_section (required)
+     * @param  \InfracorpExtranetClient\Model\CreateCommercialOfferSection $create_commercial_offer_section create_commercial_offer_section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCommercialOfferSection'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+     * @return \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
      */
     public function createCommercialOfferSection($id, $create_commercial_offer_section, string $contentType = self::contentTypes['createCommercialOfferSection'][0])
     {
@@ -591,12 +591,12 @@ class DefaultApi
      * Commercial Offer Sections
      *
      * @param  int $id identifiant du devis (required)
-     * @param  \Infracorp\Extranet\Client\Model\CreateCommercialOfferSection $create_commercial_offer_section (required)
+     * @param  \InfracorpExtranetClient\Model\CreateCommercialOfferSection $create_commercial_offer_section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCommercialOfferSection'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCommercialOfferSectionWithHttpInfo($id, $create_commercial_offer_section, string $contentType = self::contentTypes['createCommercialOfferSection'][0])
     {
@@ -639,11 +639,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CreateCommercialOffer201Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -661,13 +661,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+            $returnType = '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -700,7 +700,7 @@ class DefaultApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response',
+                        '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -716,7 +716,7 @@ class DefaultApi
      * Commercial Offer Sections
      *
      * @param  int $id identifiant du devis (required)
-     * @param  \Infracorp\Extranet\Client\Model\CreateCommercialOfferSection $create_commercial_offer_section (required)
+     * @param  \InfracorpExtranetClient\Model\CreateCommercialOfferSection $create_commercial_offer_section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCommercialOfferSection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -738,7 +738,7 @@ class DefaultApi
      * Commercial Offer Sections
      *
      * @param  int $id identifiant du devis (required)
-     * @param  \Infracorp\Extranet\Client\Model\CreateCommercialOfferSection $create_commercial_offer_section (required)
+     * @param  \InfracorpExtranetClient\Model\CreateCommercialOfferSection $create_commercial_offer_section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCommercialOfferSection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -746,7 +746,7 @@ class DefaultApi
      */
     public function createCommercialOfferSectionAsyncWithHttpInfo($id, $create_commercial_offer_section, string $contentType = self::contentTypes['createCommercialOfferSection'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+        $returnType = '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response';
         $request = $this->createCommercialOfferSectionRequest($id, $create_commercial_offer_section, $contentType);
 
         return $this->client
@@ -789,7 +789,7 @@ class DefaultApi
      * Create request for operation 'createCommercialOfferSection'
      *
      * @param  int $id identifiant du devis (required)
-     * @param  \Infracorp\Extranet\Client\Model\CreateCommercialOfferSection $create_commercial_offer_section (required)
+     * @param  \InfracorpExtranetClient\Model\CreateCommercialOfferSection $create_commercial_offer_section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCommercialOfferSection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -910,9 +910,9 @@ class DefaultApi
      * @param  int $client_id client to test (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEligibility'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CreateEligibility
+     * @return \InfracorpExtranetClient\Model\CreateEligibility
      */
     public function createEligibility($address, $client_id, string $contentType = self::contentTypes['createEligibility'][0])
     {
@@ -929,9 +929,9 @@ class DefaultApi
      * @param  int $client_id client to test (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEligibility'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CreateEligibility, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CreateEligibility, HTTP status code, HTTP response headers (array of strings)
      */
     public function createEligibilityWithHttpInfo($address, $client_id, string $contentType = self::contentTypes['createEligibility'][0])
     {
@@ -974,11 +974,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\CreateEligibility' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CreateEligibility' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CreateEligibility' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CreateEligibility' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -996,13 +996,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CreateEligibility', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CreateEligibility', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CreateEligibility';
+            $returnType = '\InfracorpExtranetClient\Model\CreateEligibility';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1035,7 +1035,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CreateEligibility',
+                        '\InfracorpExtranetClient\Model\CreateEligibility',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1081,7 +1081,7 @@ class DefaultApi
      */
     public function createEligibilityAsyncWithHttpInfo($address, $client_id, string $contentType = self::contentTypes['createEligibility'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CreateEligibility';
+        $returnType = '\InfracorpExtranetClient\Model\CreateEligibility';
         $request = $this->createEligibilityRequest($address, $client_id, $contentType);
 
         return $this->client
@@ -1247,9 +1247,9 @@ class DefaultApi
      * @param  int $id identifiant de l&#39;opérateur (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTicketOperator'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CreateOperator
+     * @return \InfracorpExtranetClient\Model\CreateOperator
      * @deprecated
      */
     public function createTicketOperator($id, string $contentType = self::contentTypes['createTicketOperator'][0])
@@ -1266,9 +1266,9 @@ class DefaultApi
      * @param  int $id identifiant de l&#39;opérateur (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTicketOperator'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CreateOperator, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CreateOperator, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function createTicketOperatorWithHttpInfo($id, string $contentType = self::contentTypes['createTicketOperator'][0])
@@ -1312,11 +1312,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\CreateOperator' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CreateOperator' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CreateOperator' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CreateOperator' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1334,13 +1334,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CreateOperator', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CreateOperator', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CreateOperator';
+            $returnType = '\InfracorpExtranetClient\Model\CreateOperator';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1373,7 +1373,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CreateOperator',
+                        '\InfracorpExtranetClient\Model\CreateOperator',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1419,7 +1419,7 @@ class DefaultApi
      */
     public function createTicketOperatorAsyncWithHttpInfo($id, string $contentType = self::contentTypes['createTicketOperator'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CreateOperator';
+        $returnType = '\InfracorpExtranetClient\Model\CreateOperator';
         $request = $this->createTicketOperatorRequest($id, $contentType);
 
         return $this->client
@@ -1565,12 +1565,12 @@ class DefaultApi
      *
      * Workflows
      *
-     * @param  \Infracorp\Extranet\Client\Model\CreateWorkflow $create_workflow create_workflow (required)
+     * @param  \InfracorpExtranetClient\Model\CreateWorkflow $create_workflow create_workflow (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWorkflow'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\GetWorkflow
+     * @return \InfracorpExtranetClient\Model\GetWorkflow
      */
     public function createWorkflow($create_workflow, string $contentType = self::contentTypes['createWorkflow'][0])
     {
@@ -1583,12 +1583,12 @@ class DefaultApi
      *
      * Workflows
      *
-     * @param  \Infracorp\Extranet\Client\Model\CreateWorkflow $create_workflow (required)
+     * @param  \InfracorpExtranetClient\Model\CreateWorkflow $create_workflow (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWorkflow'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\GetWorkflow, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\GetWorkflow, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWorkflowWithHttpInfo($create_workflow, string $contentType = self::contentTypes['createWorkflow'][0])
     {
@@ -1631,11 +1631,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\GetWorkflow' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\GetWorkflow' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\GetWorkflow' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\GetWorkflow' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1653,13 +1653,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetWorkflow', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\GetWorkflow', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\GetWorkflow';
+            $returnType = '\InfracorpExtranetClient\Model\GetWorkflow';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1692,7 +1692,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\GetWorkflow',
+                        '\InfracorpExtranetClient\Model\GetWorkflow',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1707,7 +1707,7 @@ class DefaultApi
      *
      * Workflows
      *
-     * @param  \Infracorp\Extranet\Client\Model\CreateWorkflow $create_workflow (required)
+     * @param  \InfracorpExtranetClient\Model\CreateWorkflow $create_workflow (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWorkflow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1728,7 +1728,7 @@ class DefaultApi
      *
      * Workflows
      *
-     * @param  \Infracorp\Extranet\Client\Model\CreateWorkflow $create_workflow (required)
+     * @param  \InfracorpExtranetClient\Model\CreateWorkflow $create_workflow (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWorkflow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1736,7 +1736,7 @@ class DefaultApi
      */
     public function createWorkflowAsyncWithHttpInfo($create_workflow, string $contentType = self::contentTypes['createWorkflow'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\GetWorkflow';
+        $returnType = '\InfracorpExtranetClient\Model\GetWorkflow';
         $request = $this->createWorkflowRequest($create_workflow, $contentType);
 
         return $this->client
@@ -1778,7 +1778,7 @@ class DefaultApi
     /**
      * Create request for operation 'createWorkflow'
      *
-     * @param  \Infracorp\Extranet\Client\Model\CreateWorkflow $create_workflow (required)
+     * @param  \InfracorpExtranetClient\Model\CreateWorkflow $create_workflow (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWorkflow'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1884,9 +1884,9 @@ class DefaultApi
      * @param  int $items_per_page items_per_page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['eligibilityHistory'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\EligibilityHistory200Response
+     * @return \InfracorpExtranetClient\Model\EligibilityHistory200Response
      */
     public function eligibilityHistory($page = null, $items_per_page = null, string $contentType = self::contentTypes['eligibilityHistory'][0])
     {
@@ -1903,9 +1903,9 @@ class DefaultApi
      * @param  int $items_per_page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['eligibilityHistory'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\EligibilityHistory200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\EligibilityHistory200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function eligibilityHistoryWithHttpInfo($page = null, $items_per_page = null, string $contentType = self::contentTypes['eligibilityHistory'][0])
     {
@@ -1948,11 +1948,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\EligibilityHistory200Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\EligibilityHistory200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\EligibilityHistory200Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\EligibilityHistory200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1970,13 +1970,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\EligibilityHistory200Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\EligibilityHistory200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\EligibilityHistory200Response';
+            $returnType = '\InfracorpExtranetClient\Model\EligibilityHistory200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2009,7 +2009,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\EligibilityHistory200Response',
+                        '\InfracorpExtranetClient\Model\EligibilityHistory200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2055,7 +2055,7 @@ class DefaultApi
      */
     public function eligibilityHistoryAsyncWithHttpInfo($page = null, $items_per_page = null, string $contentType = self::contentTypes['eligibilityHistory'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\EligibilityHistory200Response';
+        $returnType = '\InfracorpExtranetClient\Model\EligibilityHistory200Response';
         $request = $this->eligibilityHistoryRequest($page, $items_per_page, $contentType);
 
         return $this->client
@@ -2210,9 +2210,9 @@ class DefaultApi
      * @param  int $items_per_page items_per_page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiTokens'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\GetApiTokens200Response
+     * @return \InfracorpExtranetClient\Model\GetApiTokens200Response
      */
     public function getApiTokens($page = null, $items_per_page = null, string $contentType = self::contentTypes['getApiTokens'][0])
     {
@@ -2229,9 +2229,9 @@ class DefaultApi
      * @param  int $items_per_page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiTokens'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\GetApiTokens200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\GetApiTokens200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getApiTokensWithHttpInfo($page = null, $items_per_page = null, string $contentType = self::contentTypes['getApiTokens'][0])
     {
@@ -2274,11 +2274,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\GetApiTokens200Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\GetApiTokens200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\GetApiTokens200Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\GetApiTokens200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2296,13 +2296,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetApiTokens200Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\GetApiTokens200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\GetApiTokens200Response';
+            $returnType = '\InfracorpExtranetClient\Model\GetApiTokens200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2335,7 +2335,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\GetApiTokens200Response',
+                        '\InfracorpExtranetClient\Model\GetApiTokens200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2381,7 +2381,7 @@ class DefaultApi
      */
     public function getApiTokensAsyncWithHttpInfo($page = null, $items_per_page = null, string $contentType = self::contentTypes['getApiTokens'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\GetApiTokens200Response';
+        $returnType = '\InfracorpExtranetClient\Model\GetApiTokens200Response';
         $request = $this->getApiTokensRequest($page, $items_per_page, $contentType);
 
         return $this->client
@@ -2538,9 +2538,9 @@ class DefaultApi
      * @param  int $legal_entity_id legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientLegalEntities'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response
+     * @return \InfracorpExtranetClient\Model\GetClientLegalEntities200Response
      */
     public function getClientLegalEntities($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
     {
@@ -2559,9 +2559,9 @@ class DefaultApi
      * @param  int $legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientLegalEntities'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\GetClientLegalEntities200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientLegalEntitiesWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
     {
@@ -2604,11 +2604,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\GetClientLegalEntities200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\GetClientLegalEntities200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2626,13 +2626,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\GetClientLegalEntities200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response';
+            $returnType = '\InfracorpExtranetClient\Model\GetClientLegalEntities200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2665,7 +2665,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response',
+                        '\InfracorpExtranetClient\Model\GetClientLegalEntities200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2715,7 +2715,7 @@ class DefaultApi
      */
     public function getClientLegalEntitiesAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response';
+        $returnType = '\InfracorpExtranetClient\Model\GetClientLegalEntities200Response';
         $request = $this->getClientLegalEntitiesRequest($page, $items_per_page, $sort_id, $legal_entity_id, $contentType);
 
         return $this->client
@@ -2891,9 +2891,9 @@ class DefaultApi
      * @param  int $id identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientLegalEntity'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntity
+     * @return \InfracorpExtranetClient\Model\ClientLegalEntity
      */
     public function getClientLegalEntity($id, string $contentType = self::contentTypes['getClientLegalEntity'][0])
     {
@@ -2909,9 +2909,9 @@ class DefaultApi
      * @param  int $id identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientLegalEntity'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\ClientLegalEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\ClientLegalEntity, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientLegalEntityWithHttpInfo($id, string $contentType = self::contentTypes['getClientLegalEntity'][0])
     {
@@ -2954,11 +2954,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\ClientLegalEntity' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\ClientLegalEntity' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\ClientLegalEntity' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\ClientLegalEntity' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2976,13 +2976,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\ClientLegalEntity', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\ClientLegalEntity', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\ClientLegalEntity';
+            $returnType = '\InfracorpExtranetClient\Model\ClientLegalEntity';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3015,7 +3015,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\ClientLegalEntity',
+                        '\InfracorpExtranetClient\Model\ClientLegalEntity',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3059,7 +3059,7 @@ class DefaultApi
      */
     public function getClientLegalEntityAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getClientLegalEntity'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\ClientLegalEntity';
+        $returnType = '\InfracorpExtranetClient\Model\ClientLegalEntity';
         $request = $this->getClientLegalEntityRequest($id, $contentType);
 
         return $this->client
@@ -3207,9 +3207,9 @@ class DefaultApi
      * @param  int $id thread id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommentThread'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CommentThread
+     * @return \InfracorpExtranetClient\Model\CommentThread
      */
     public function getCommentThread($id, string $contentType = self::contentTypes['getCommentThread'][0])
     {
@@ -3225,9 +3225,9 @@ class DefaultApi
      * @param  int $id thread id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommentThread'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CommentThread, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CommentThread, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCommentThreadWithHttpInfo($id, string $contentType = self::contentTypes['getCommentThread'][0])
     {
@@ -3270,11 +3270,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\CommentThread' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CommentThread' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CommentThread' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CommentThread' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3292,13 +3292,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CommentThread', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CommentThread', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CommentThread';
+            $returnType = '\InfracorpExtranetClient\Model\CommentThread';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3331,7 +3331,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CommentThread',
+                        '\InfracorpExtranetClient\Model\CommentThread',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3375,7 +3375,7 @@ class DefaultApi
      */
     public function getCommentThreadAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getCommentThread'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CommentThread';
+        $returnType = '\InfracorpExtranetClient\Model\CommentThread';
         $request = $this->getCommentThreadRequest($id, $contentType);
 
         return $this->client
@@ -3524,9 +3524,9 @@ class DefaultApi
      * @param  int $entity_id thread linked entity id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommentThreads'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CommentThread[]
+     * @return \InfracorpExtranetClient\Model\CommentThread[]
      */
     public function getCommentThreads($entity_class, $entity_id, string $contentType = self::contentTypes['getCommentThreads'][0])
     {
@@ -3543,9 +3543,9 @@ class DefaultApi
      * @param  int $entity_id thread linked entity id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommentThreads'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CommentThread[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CommentThread[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCommentThreadsWithHttpInfo($entity_class, $entity_id, string $contentType = self::contentTypes['getCommentThreads'][0])
     {
@@ -3588,11 +3588,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\CommentThread[]' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CommentThread[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CommentThread[]' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CommentThread[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3610,13 +3610,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CommentThread[]', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CommentThread[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CommentThread[]';
+            $returnType = '\InfracorpExtranetClient\Model\CommentThread[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3649,7 +3649,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CommentThread[]',
+                        '\InfracorpExtranetClient\Model\CommentThread[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3695,7 +3695,7 @@ class DefaultApi
      */
     public function getCommentThreadsAsyncWithHttpInfo($entity_class, $entity_id, string $contentType = self::contentTypes['getCommentThreads'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CommentThread[]';
+        $returnType = '\InfracorpExtranetClient\Model\CommentThread[]';
         $request = $this->getCommentThreadsRequest($entity_class, $entity_id, $contentType);
 
         return $this->client
@@ -3861,9 +3861,9 @@ class DefaultApi
      * @param  int $id identifiant du devis (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOffer'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CommercialOffer
+     * @return \InfracorpExtranetClient\Model\CommercialOffer
      */
     public function getCommercialOffer($id, string $contentType = self::contentTypes['getCommercialOffer'][0])
     {
@@ -3879,9 +3879,9 @@ class DefaultApi
      * @param  int $id identifiant du devis (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOffer'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CommercialOffer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CommercialOffer, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCommercialOfferWithHttpInfo($id, string $contentType = self::contentTypes['getCommercialOffer'][0])
     {
@@ -3924,11 +3924,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\CommercialOffer' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CommercialOffer' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CommercialOffer' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CommercialOffer' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3946,13 +3946,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CommercialOffer', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CommercialOffer', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CommercialOffer';
+            $returnType = '\InfracorpExtranetClient\Model\CommercialOffer';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3985,7 +3985,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CommercialOffer',
+                        '\InfracorpExtranetClient\Model\CommercialOffer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4029,7 +4029,7 @@ class DefaultApi
      */
     public function getCommercialOfferAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getCommercialOffer'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CommercialOffer';
+        $returnType = '\InfracorpExtranetClient\Model\CommercialOffer';
         $request = $this->getCommercialOfferRequest($id, $contentType);
 
         return $this->client
@@ -4177,7 +4177,7 @@ class DefaultApi
      * @param  int $id identifiant du devis (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOfferPdf'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
@@ -4195,7 +4195,7 @@ class DefaultApi
      * @param  int $id identifiant du devis (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOfferPdf'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4502,9 +4502,9 @@ class DefaultApi
      * @param  \DateTime $create_date_to create_date_to (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOffers'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\GetCommercialOffers200Response
+     * @return \InfracorpExtranetClient\Model\GetCommercialOffers200Response
      */
     public function getCommercialOffers($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
     {
@@ -4529,9 +4529,9 @@ class DefaultApi
      * @param  \DateTime $create_date_to (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOffers'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\GetCommercialOffers200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\GetCommercialOffers200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCommercialOffersWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
     {
@@ -4574,11 +4574,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\GetCommercialOffers200Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\GetCommercialOffers200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\GetCommercialOffers200Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\GetCommercialOffers200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4596,13 +4596,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetCommercialOffers200Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\GetCommercialOffers200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\GetCommercialOffers200Response';
+            $returnType = '\InfracorpExtranetClient\Model\GetCommercialOffers200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4635,7 +4635,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\GetCommercialOffers200Response',
+                        '\InfracorpExtranetClient\Model\GetCommercialOffers200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4697,7 +4697,7 @@ class DefaultApi
      */
     public function getCommercialOffersAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\GetCommercialOffers200Response';
+        $returnType = '\InfracorpExtranetClient\Model\GetCommercialOffers200Response';
         $request = $this->getCommercialOffersRequest($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $contentType);
 
         return $this->client
@@ -4938,9 +4938,9 @@ class DefaultApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentUser'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\User
+     * @return \InfracorpExtranetClient\Model\User
      */
     public function getCurrentUser(string $contentType = self::contentTypes['getCurrentUser'][0])
     {
@@ -4955,9 +4955,9 @@ class DefaultApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentUser'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCurrentUserWithHttpInfo(string $contentType = self::contentTypes['getCurrentUser'][0])
     {
@@ -5000,11 +5000,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\User' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\User' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\User' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\User' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -5022,13 +5022,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\User', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\User', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\User';
+            $returnType = '\InfracorpExtranetClient\Model\User';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5061,7 +5061,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\User',
+                        '\InfracorpExtranetClient\Model\User',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5103,7 +5103,7 @@ class DefaultApi
      */
     public function getCurrentUserAsyncWithHttpInfo(string $contentType = self::contentTypes['getCurrentUser'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\User';
+        $returnType = '\InfracorpExtranetClient\Model\User';
         $request = $this->getCurrentUserRequest($contentType);
 
         return $this->client
@@ -5235,9 +5235,9 @@ class DefaultApi
      * @param  int $id process identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEligibility'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\GetEligibility
+     * @return \InfracorpExtranetClient\Model\GetEligibility
      */
     public function getEligibility($id, string $contentType = self::contentTypes['getEligibility'][0])
     {
@@ -5253,9 +5253,9 @@ class DefaultApi
      * @param  int $id process identifier (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEligibility'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\GetEligibility, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\GetEligibility, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEligibilityWithHttpInfo($id, string $contentType = self::contentTypes['getEligibility'][0])
     {
@@ -5298,11 +5298,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\GetEligibility' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\GetEligibility' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\GetEligibility' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\GetEligibility' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -5320,13 +5320,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetEligibility', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\GetEligibility', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\GetEligibility';
+            $returnType = '\InfracorpExtranetClient\Model\GetEligibility';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5359,7 +5359,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\GetEligibility',
+                        '\InfracorpExtranetClient\Model\GetEligibility',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5403,7 +5403,7 @@ class DefaultApi
      */
     public function getEligibilityAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getEligibility'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\GetEligibility';
+        $returnType = '\InfracorpExtranetClient\Model\GetEligibility';
         $request = $this->getEligibilityRequest($id, $contentType);
 
         return $this->client
@@ -5551,9 +5551,9 @@ class DefaultApi
      * @param  int $id indentifiant de la facture (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoice'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\Invoice
+     * @return \InfracorpExtranetClient\Model\Invoice
      */
     public function getInvoice($id, string $contentType = self::contentTypes['getInvoice'][0])
     {
@@ -5569,9 +5569,9 @@ class DefaultApi
      * @param  int $id indentifiant de la facture (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoice'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoiceWithHttpInfo($id, string $contentType = self::contentTypes['getInvoice'][0])
     {
@@ -5614,11 +5614,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\Invoice' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\Invoice' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\Invoice' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\Invoice' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -5636,13 +5636,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\Invoice', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\Invoice', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\Invoice';
+            $returnType = '\InfracorpExtranetClient\Model\Invoice';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5675,7 +5675,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\Invoice',
+                        '\InfracorpExtranetClient\Model\Invoice',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5719,7 +5719,7 @@ class DefaultApi
      */
     public function getInvoiceAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getInvoice'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\Invoice';
+        $returnType = '\InfracorpExtranetClient\Model\Invoice';
         $request = $this->getInvoiceRequest($id, $contentType);
 
         return $this->client
@@ -5867,7 +5867,7 @@ class DefaultApi
      * @param  int $id identifiant de la facture (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoicePdf'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
@@ -5885,7 +5885,7 @@ class DefaultApi
      * @param  int $id identifiant de la facture (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoicePdf'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6190,9 +6190,9 @@ class DefaultApi
      * @param  int $year year (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoices'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\GetInvoices200Response
+     * @return \InfracorpExtranetClient\Model\GetInvoices200Response
      */
     public function getInvoices($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
@@ -6215,9 +6215,9 @@ class DefaultApi
      * @param  int $year (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoices'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\GetInvoices200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\GetInvoices200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoicesWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
@@ -6260,11 +6260,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\GetInvoices200Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\GetInvoices200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\GetInvoices200Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\GetInvoices200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -6282,13 +6282,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetInvoices200Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\GetInvoices200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\GetInvoices200Response';
+            $returnType = '\InfracorpExtranetClient\Model\GetInvoices200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6321,7 +6321,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\GetInvoices200Response',
+                        '\InfracorpExtranetClient\Model\GetInvoices200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6379,7 +6379,7 @@ class DefaultApi
      */
     public function getInvoicesAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\GetInvoices200Response';
+        $returnType = '\InfracorpExtranetClient\Model\GetInvoices200Response';
         $request = $this->getInvoicesRequest($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $contentType);
 
         return $this->client
@@ -6601,9 +6601,9 @@ class DefaultApi
      * @param  string $sort_id sort_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLegalEntities'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\GetLegalEntities200Response
+     * @return \InfracorpExtranetClient\Model\GetLegalEntities200Response
      */
     public function getLegalEntities($page = null, $items_per_page = null, $sort_id = null, string $contentType = self::contentTypes['getLegalEntities'][0])
     {
@@ -6621,9 +6621,9 @@ class DefaultApi
      * @param  string $sort_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLegalEntities'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\GetLegalEntities200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\GetLegalEntities200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLegalEntitiesWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, string $contentType = self::contentTypes['getLegalEntities'][0])
     {
@@ -6666,11 +6666,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\GetLegalEntities200Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\GetLegalEntities200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\GetLegalEntities200Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\GetLegalEntities200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -6688,13 +6688,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetLegalEntities200Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\GetLegalEntities200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\GetLegalEntities200Response';
+            $returnType = '\InfracorpExtranetClient\Model\GetLegalEntities200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6727,7 +6727,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\GetLegalEntities200Response',
+                        '\InfracorpExtranetClient\Model\GetLegalEntities200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6775,7 +6775,7 @@ class DefaultApi
      */
     public function getLegalEntitiesAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, string $contentType = self::contentTypes['getLegalEntities'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\GetLegalEntities200Response';
+        $returnType = '\InfracorpExtranetClient\Model\GetLegalEntities200Response';
         $request = $this->getLegalEntitiesRequest($page, $items_per_page, $sort_id, $contentType);
 
         return $this->client
@@ -6940,9 +6940,9 @@ class DefaultApi
      * @param  int $id indentifiant de la société (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLegalEntity'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\LegalEntity
+     * @return \InfracorpExtranetClient\Model\LegalEntity
      */
     public function getLegalEntity($id, string $contentType = self::contentTypes['getLegalEntity'][0])
     {
@@ -6958,9 +6958,9 @@ class DefaultApi
      * @param  int $id indentifiant de la société (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLegalEntity'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\LegalEntity, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\LegalEntity, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLegalEntityWithHttpInfo($id, string $contentType = self::contentTypes['getLegalEntity'][0])
     {
@@ -7003,11 +7003,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\LegalEntity' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\LegalEntity' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\LegalEntity' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\LegalEntity' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -7025,13 +7025,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\LegalEntity', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\LegalEntity', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\LegalEntity';
+            $returnType = '\InfracorpExtranetClient\Model\LegalEntity';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7064,7 +7064,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\LegalEntity',
+                        '\InfracorpExtranetClient\Model\LegalEntity',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7108,7 +7108,7 @@ class DefaultApi
      */
     public function getLegalEntityAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getLegalEntity'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\LegalEntity';
+        $returnType = '\InfracorpExtranetClient\Model\LegalEntity';
         $request = $this->getLegalEntityRequest($id, $contentType);
 
         return $this->client
@@ -7257,9 +7257,9 @@ class DefaultApi
      * @param  string[] $codes nom de l&#39;offre (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOffers'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\Offer[]
+     * @return \InfracorpExtranetClient\Model\Offer[]
      */
     public function getOffers($ids = null, $codes = null, string $contentType = self::contentTypes['getOffers'][0])
     {
@@ -7276,9 +7276,9 @@ class DefaultApi
      * @param  string[] $codes nom de l&#39;offre (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOffers'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\Offer[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\Offer[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getOffersWithHttpInfo($ids = null, $codes = null, string $contentType = self::contentTypes['getOffers'][0])
     {
@@ -7321,11 +7321,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\Offer[]' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\Offer[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\Offer[]' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\Offer[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -7343,13 +7343,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\Offer[]', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\Offer[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\Offer[]';
+            $returnType = '\InfracorpExtranetClient\Model\Offer[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7382,7 +7382,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\Offer[]',
+                        '\InfracorpExtranetClient\Model\Offer[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7428,7 +7428,7 @@ class DefaultApi
      */
     public function getOffersAsyncWithHttpInfo($ids = null, $codes = null, string $contentType = self::contentTypes['getOffers'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\Offer[]';
+        $returnType = '\InfracorpExtranetClient\Model\Offer[]';
         $request = $this->getOffersRequest($ids, $codes, $contentType);
 
         return $this->client
@@ -7582,9 +7582,9 @@ class DefaultApi
      * @param  int $id identifiant de l&#39;opérateur (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorTickets'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\Ticket[]
+     * @return \InfracorpExtranetClient\Model\Ticket[]
      * @deprecated
      */
     public function getOperatorTickets($id, string $contentType = self::contentTypes['getOperatorTickets'][0])
@@ -7601,9 +7601,9 @@ class DefaultApi
      * @param  int $id identifiant de l&#39;opérateur (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperatorTickets'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\Ticket[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\Ticket[], HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function getOperatorTicketsWithHttpInfo($id, string $contentType = self::contentTypes['getOperatorTickets'][0])
@@ -7647,11 +7647,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\Ticket[]' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\Ticket[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\Ticket[]' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\Ticket[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -7669,13 +7669,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\Ticket[]', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\Ticket[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\Ticket[]';
+            $returnType = '\InfracorpExtranetClient\Model\Ticket[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7708,7 +7708,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\Ticket[]',
+                        '\InfracorpExtranetClient\Model\Ticket[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7754,7 +7754,7 @@ class DefaultApi
      */
     public function getOperatorTicketsAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getOperatorTickets'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\Ticket[]';
+        $returnType = '\InfracorpExtranetClient\Model\Ticket[]';
         $request = $this->getOperatorTicketsRequest($id, $contentType);
 
         return $this->client
@@ -7903,9 +7903,9 @@ class DefaultApi
      * @param  int $id identifiant du catalogue (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPriceList'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\PriceList
+     * @return \InfracorpExtranetClient\Model\PriceList
      */
     public function getPriceList($id, string $contentType = self::contentTypes['getPriceList'][0])
     {
@@ -7921,9 +7921,9 @@ class DefaultApi
      * @param  int $id identifiant du catalogue (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPriceList'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\PriceList, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\PriceList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPriceListWithHttpInfo($id, string $contentType = self::contentTypes['getPriceList'][0])
     {
@@ -7966,11 +7966,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\PriceList' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\PriceList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\PriceList' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\PriceList' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -7988,13 +7988,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\PriceList', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\PriceList', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\PriceList';
+            $returnType = '\InfracorpExtranetClient\Model\PriceList';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -8027,7 +8027,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\PriceList',
+                        '\InfracorpExtranetClient\Model\PriceList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8071,7 +8071,7 @@ class DefaultApi
      */
     public function getPriceListAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPriceList'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\PriceList';
+        $returnType = '\InfracorpExtranetClient\Model\PriceList';
         $request = $this->getPriceListRequest($id, $contentType);
 
         return $this->client
@@ -8219,9 +8219,9 @@ class DefaultApi
      * @param  int[] $ids identifiant de l&#39;élément de catalogue (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPriceListItems'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\PriceListItem[]
+     * @return \InfracorpExtranetClient\Model\PriceListItem[]
      */
     public function getPriceListItems($ids, string $contentType = self::contentTypes['getPriceListItems'][0])
     {
@@ -8237,9 +8237,9 @@ class DefaultApi
      * @param  int[] $ids identifiant de l&#39;élément de catalogue (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPriceListItems'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\PriceListItem[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\PriceListItem[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPriceListItemsWithHttpInfo($ids, string $contentType = self::contentTypes['getPriceListItems'][0])
     {
@@ -8282,11 +8282,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\PriceListItem[]' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\PriceListItem[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\PriceListItem[]' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\PriceListItem[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -8304,13 +8304,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\PriceListItem[]', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\PriceListItem[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\PriceListItem[]';
+            $returnType = '\InfracorpExtranetClient\Model\PriceListItem[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -8343,7 +8343,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\PriceListItem[]',
+                        '\InfracorpExtranetClient\Model\PriceListItem[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8387,7 +8387,7 @@ class DefaultApi
      */
     public function getPriceListItemsAsyncWithHttpInfo($ids, string $contentType = self::contentTypes['getPriceListItems'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\PriceListItem[]';
+        $returnType = '\InfracorpExtranetClient\Model\PriceListItem[]';
         $request = $this->getPriceListItemsRequest($ids, $contentType);
 
         return $this->client
@@ -8536,9 +8536,9 @@ class DefaultApi
      * @param  int $id identifiant du catalogue (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPriceListOffers'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\PricesListOffers
+     * @return \InfracorpExtranetClient\Model\PricesListOffers
      */
     public function getPriceListOffers($id, string $contentType = self::contentTypes['getPriceListOffers'][0])
     {
@@ -8554,9 +8554,9 @@ class DefaultApi
      * @param  int $id identifiant du catalogue (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPriceListOffers'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\PricesListOffers, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\PricesListOffers, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPriceListOffersWithHttpInfo($id, string $contentType = self::contentTypes['getPriceListOffers'][0])
     {
@@ -8599,11 +8599,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\PricesListOffers' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\PricesListOffers' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\PricesListOffers' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\PricesListOffers' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -8621,13 +8621,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\PricesListOffers', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\PricesListOffers', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\PricesListOffers';
+            $returnType = '\InfracorpExtranetClient\Model\PricesListOffers';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -8660,7 +8660,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\PricesListOffers',
+                        '\InfracorpExtranetClient\Model\PricesListOffers',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8704,7 +8704,7 @@ class DefaultApi
      */
     public function getPriceListOffersAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPriceListOffers'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\PricesListOffers';
+        $returnType = '\InfracorpExtranetClient\Model\PricesListOffers';
         $request = $this->getPriceListOffersRequest($id, $contentType);
 
         return $this->client
@@ -8852,9 +8852,9 @@ class DefaultApi
      * @param  int[] $ids identifiant de catalogue (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPriceLists'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\PriceList[]
+     * @return \InfracorpExtranetClient\Model\PriceList[]
      */
     public function getPriceLists($ids, string $contentType = self::contentTypes['getPriceLists'][0])
     {
@@ -8870,9 +8870,9 @@ class DefaultApi
      * @param  int[] $ids identifiant de catalogue (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPriceLists'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\PriceList[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\PriceList[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPriceListsWithHttpInfo($ids, string $contentType = self::contentTypes['getPriceLists'][0])
     {
@@ -8915,11 +8915,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\PriceList[]' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\PriceList[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\PriceList[]' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\PriceList[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -8937,13 +8937,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\PriceList[]', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\PriceList[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\PriceList[]';
+            $returnType = '\InfracorpExtranetClient\Model\PriceList[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -8976,7 +8976,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\PriceList[]',
+                        '\InfracorpExtranetClient\Model\PriceList[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9020,7 +9020,7 @@ class DefaultApi
      */
     public function getPriceListsAsyncWithHttpInfo($ids, string $contentType = self::contentTypes['getPriceLists'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\PriceList[]';
+        $returnType = '\InfracorpExtranetClient\Model\PriceList[]';
         $request = $this->getPriceListsRequest($ids, $contentType);
 
         return $this->client
@@ -9170,9 +9170,9 @@ class DefaultApi
      * @param  int $process_id identifiant du process (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProcess'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\Process
+     * @return \InfracorpExtranetClient\Model\Process
      * @deprecated
      */
     public function getProcess($id, $process_id, string $contentType = self::contentTypes['getProcess'][0])
@@ -9190,9 +9190,9 @@ class DefaultApi
      * @param  int $process_id identifiant du process (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProcess'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\Process, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\Process, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function getProcessWithHttpInfo($id, $process_id, string $contentType = self::contentTypes['getProcess'][0])
@@ -9236,11 +9236,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\Process' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\Process' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\Process' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\Process' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -9258,13 +9258,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\Process', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\Process', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\Process';
+            $returnType = '\InfracorpExtranetClient\Model\Process';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -9297,7 +9297,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\Process',
+                        '\InfracorpExtranetClient\Model\Process',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9345,7 +9345,7 @@ class DefaultApi
      */
     public function getProcessAsyncWithHttpInfo($id, $process_id, string $contentType = self::contentTypes['getProcess'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\Process';
+        $returnType = '\InfracorpExtranetClient\Model\Process';
         $request = $this->getProcessRequest($id, $process_id, $contentType);
 
         return $this->client
@@ -9510,9 +9510,9 @@ class DefaultApi
      * @param  int $id indentifiant du service (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getService'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\Service
+     * @return \InfracorpExtranetClient\Model\Service
      */
     public function getService($id, string $contentType = self::contentTypes['getService'][0])
     {
@@ -9528,9 +9528,9 @@ class DefaultApi
      * @param  int $id indentifiant du service (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getService'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\Service, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\Service, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServiceWithHttpInfo($id, string $contentType = self::contentTypes['getService'][0])
     {
@@ -9573,11 +9573,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\Service' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\Service' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\Service' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\Service' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -9595,13 +9595,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\Service', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\Service', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\Service';
+            $returnType = '\InfracorpExtranetClient\Model\Service';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -9634,7 +9634,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\Service',
+                        '\InfracorpExtranetClient\Model\Service',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9678,7 +9678,7 @@ class DefaultApi
      */
     public function getServiceAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getService'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\Service';
+        $returnType = '\InfracorpExtranetClient\Model\Service';
         $request = $this->getServiceRequest($id, $contentType);
 
         return $this->client
@@ -9826,9 +9826,9 @@ class DefaultApi
      * @param  int $id indentifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContract'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\ServiceContract
+     * @return \InfracorpExtranetClient\Model\ServiceContract
      */
     public function getServiceContract($id, string $contentType = self::contentTypes['getServiceContract'][0])
     {
@@ -9844,9 +9844,9 @@ class DefaultApi
      * @param  int $id indentifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContract'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\ServiceContract, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\ServiceContract, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServiceContractWithHttpInfo($id, string $contentType = self::contentTypes['getServiceContract'][0])
     {
@@ -9889,11 +9889,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\ServiceContract' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\ServiceContract' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\ServiceContract' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\ServiceContract' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -9911,13 +9911,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\ServiceContract', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\ServiceContract', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\ServiceContract';
+            $returnType = '\InfracorpExtranetClient\Model\ServiceContract';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -9950,7 +9950,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\ServiceContract',
+                        '\InfracorpExtranetClient\Model\ServiceContract',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9994,7 +9994,7 @@ class DefaultApi
      */
     public function getServiceContractAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getServiceContract'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\ServiceContract';
+        $returnType = '\InfracorpExtranetClient\Model\ServiceContract';
         $request = $this->getServiceContractRequest($id, $contentType);
 
         return $this->client
@@ -10145,9 +10145,9 @@ class DefaultApi
      * @param  int $legal_entity_id legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\GetServiceContracts200Response
+     * @return \InfracorpExtranetClient\Model\GetServiceContracts200Response
      */
     public function getServiceContracts($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
@@ -10166,9 +10166,9 @@ class DefaultApi
      * @param  int $legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\GetServiceContracts200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\GetServiceContracts200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServiceContractsWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
@@ -10211,11 +10211,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\GetServiceContracts200Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\GetServiceContracts200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\GetServiceContracts200Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\GetServiceContracts200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -10233,13 +10233,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetServiceContracts200Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\GetServiceContracts200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\GetServiceContracts200Response';
+            $returnType = '\InfracorpExtranetClient\Model\GetServiceContracts200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -10272,7 +10272,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\GetServiceContracts200Response',
+                        '\InfracorpExtranetClient\Model\GetServiceContracts200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10322,7 +10322,7 @@ class DefaultApi
      */
     public function getServiceContractsAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\GetServiceContracts200Response';
+        $returnType = '\InfracorpExtranetClient\Model\GetServiceContracts200Response';
         $request = $this->getServiceContractsRequest($page, $items_per_page, $sort_id, $legal_entity_id, $contentType);
 
         return $this->client
@@ -10501,9 +10501,9 @@ class DefaultApi
      * @param  int $legal_entity_id legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServices'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\GetServices200Response
+     * @return \InfracorpExtranetClient\Model\GetServices200Response
      */
     public function getServices($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServices'][0])
     {
@@ -10522,9 +10522,9 @@ class DefaultApi
      * @param  int $legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServices'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\GetServices200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\GetServices200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServicesWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServices'][0])
     {
@@ -10567,11 +10567,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\GetServices200Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\GetServices200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\GetServices200Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\GetServices200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -10589,13 +10589,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetServices200Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\GetServices200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\GetServices200Response';
+            $returnType = '\InfracorpExtranetClient\Model\GetServices200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -10628,7 +10628,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\GetServices200Response',
+                        '\InfracorpExtranetClient\Model\GetServices200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10678,7 +10678,7 @@ class DefaultApi
      */
     public function getServicesAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServices'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\GetServices200Response';
+        $returnType = '\InfracorpExtranetClient\Model\GetServices200Response';
         $request = $this->getServicesRequest($page, $items_per_page, $sort_id, $legal_entity_id, $contentType);
 
         return $this->client
@@ -10855,9 +10855,9 @@ class DefaultApi
      * @param  string $ref numero du ticket (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTicket'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\OperatorTicket
+     * @return \InfracorpExtranetClient\Model\OperatorTicket
      * @deprecated
      */
     public function getTicket($id, $ref, string $contentType = self::contentTypes['getTicket'][0])
@@ -10875,9 +10875,9 @@ class DefaultApi
      * @param  string $ref numero du ticket (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTicket'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\OperatorTicket, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\OperatorTicket, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function getTicketWithHttpInfo($id, $ref, string $contentType = self::contentTypes['getTicket'][0])
@@ -10921,11 +10921,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\OperatorTicket' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\OperatorTicket' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\OperatorTicket' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\OperatorTicket' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -10943,13 +10943,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\OperatorTicket', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\OperatorTicket', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\OperatorTicket';
+            $returnType = '\InfracorpExtranetClient\Model\OperatorTicket';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -10982,7 +10982,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\OperatorTicket',
+                        '\InfracorpExtranetClient\Model\OperatorTicket',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11030,7 +11030,7 @@ class DefaultApi
      */
     public function getTicketAsyncWithHttpInfo($id, $ref, string $contentType = self::contentTypes['getTicket'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\OperatorTicket';
+        $returnType = '\InfracorpExtranetClient\Model\OperatorTicket';
         $request = $this->getTicketRequest($id, $ref, $contentType);
 
         return $this->client
@@ -11194,9 +11194,9 @@ class DefaultApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\Ticket[]
+     * @return \InfracorpExtranetClient\Model\Ticket[]
      * @deprecated
      */
     public function getTickets(string $contentType = self::contentTypes['getTickets'][0])
@@ -11212,9 +11212,9 @@ class DefaultApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\Ticket[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\Ticket[], HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function getTicketsWithHttpInfo(string $contentType = self::contentTypes['getTickets'][0])
@@ -11258,11 +11258,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\Ticket[]' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\Ticket[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\Ticket[]' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\Ticket[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -11280,13 +11280,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\Ticket[]', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\Ticket[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\Ticket[]';
+            $returnType = '\InfracorpExtranetClient\Model\Ticket[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -11319,7 +11319,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\Ticket[]',
+                        '\InfracorpExtranetClient\Model\Ticket[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11363,7 +11363,7 @@ class DefaultApi
      */
     public function getTicketsAsyncWithHttpInfo(string $contentType = self::contentTypes['getTickets'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\Ticket[]';
+        $returnType = '\InfracorpExtranetClient\Model\Ticket[]';
         $request = $this->getTicketsRequest($contentType);
 
         return $this->client
@@ -11496,9 +11496,9 @@ class DefaultApi
      * @param  int $id workflow id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWorkflow'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\Workflow
+     * @return \InfracorpExtranetClient\Model\Workflow
      */
     public function getWorkflow($id, string $contentType = self::contentTypes['getWorkflow'][0])
     {
@@ -11514,9 +11514,9 @@ class DefaultApi
      * @param  int $id workflow id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWorkflow'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\Workflow, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\Workflow, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWorkflowWithHttpInfo($id, string $contentType = self::contentTypes['getWorkflow'][0])
     {
@@ -11559,11 +11559,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\Workflow' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\Workflow' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\Workflow' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\Workflow' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -11581,13 +11581,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\Workflow', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\Workflow', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\Workflow';
+            $returnType = '\InfracorpExtranetClient\Model\Workflow';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -11620,7 +11620,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\Workflow',
+                        '\InfracorpExtranetClient\Model\Workflow',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11664,7 +11664,7 @@ class DefaultApi
      */
     public function getWorkflowAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getWorkflow'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\Workflow';
+        $returnType = '\InfracorpExtranetClient\Model\Workflow';
         $request = $this->getWorkflowRequest($id, $contentType);
 
         return $this->client
@@ -11812,9 +11812,9 @@ class DefaultApi
      * @param  int $id identifiant de l&#39;opérateur (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['openTicket'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CreateTicket
+     * @return \InfracorpExtranetClient\Model\CreateTicket
      * @deprecated
      */
     public function openTicket($id, string $contentType = self::contentTypes['openTicket'][0])
@@ -11831,9 +11831,9 @@ class DefaultApi
      * @param  int $id identifiant de l&#39;opérateur (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['openTicket'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CreateTicket, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CreateTicket, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function openTicketWithHttpInfo($id, string $contentType = self::contentTypes['openTicket'][0])
@@ -11877,11 +11877,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\CreateTicket' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CreateTicket' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CreateTicket' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CreateTicket' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -11899,13 +11899,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CreateTicket', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CreateTicket', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CreateTicket';
+            $returnType = '\InfracorpExtranetClient\Model\CreateTicket';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -11938,7 +11938,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CreateTicket',
+                        '\InfracorpExtranetClient\Model\CreateTicket',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11984,7 +11984,7 @@ class DefaultApi
      */
     public function openTicketAsyncWithHttpInfo($id, string $contentType = self::contentTypes['openTicket'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CreateTicket';
+        $returnType = '\InfracorpExtranetClient\Model\CreateTicket';
         $request = $this->openTicketRequest($id, $contentType);
 
         return $this->client
@@ -12134,7 +12134,7 @@ class DefaultApi
      * @param  int $section_id identifiant de la section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeCommercialOfferSection'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -12152,7 +12152,7 @@ class DefaultApi
      * @param  int $section_id identifiant de la section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['removeCommercialOfferSection'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -12390,12 +12390,12 @@ class DefaultApi
      *
      * @param  int $id identifiant du devis (required)
      * @param  int $section_id identifiant de la section (required)
-     * @param  \Infracorp\Extranet\Client\Model\RenameCommercialOfferSection $rename_commercial_offer_section rename_commercial_offer_section (required)
+     * @param  \InfracorpExtranetClient\Model\RenameCommercialOfferSection $rename_commercial_offer_section rename_commercial_offer_section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['renameCommercialOfferSection'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+     * @return \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
      */
     public function renameCommercialOfferSection($id, $section_id, $rename_commercial_offer_section, string $contentType = self::contentTypes['renameCommercialOfferSection'][0])
     {
@@ -12410,12 +12410,12 @@ class DefaultApi
      *
      * @param  int $id identifiant du devis (required)
      * @param  int $section_id identifiant de la section (required)
-     * @param  \Infracorp\Extranet\Client\Model\RenameCommercialOfferSection $rename_commercial_offer_section (required)
+     * @param  \InfracorpExtranetClient\Model\RenameCommercialOfferSection $rename_commercial_offer_section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['renameCommercialOfferSection'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function renameCommercialOfferSectionWithHttpInfo($id, $section_id, $rename_commercial_offer_section, string $contentType = self::contentTypes['renameCommercialOfferSection'][0])
     {
@@ -12458,11 +12458,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CreateCommercialOffer201Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -12480,13 +12480,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+            $returnType = '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -12519,7 +12519,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response',
+                        '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12536,7 +12536,7 @@ class DefaultApi
      *
      * @param  int $id identifiant du devis (required)
      * @param  int $section_id identifiant de la section (required)
-     * @param  \Infracorp\Extranet\Client\Model\RenameCommercialOfferSection $rename_commercial_offer_section (required)
+     * @param  \InfracorpExtranetClient\Model\RenameCommercialOfferSection $rename_commercial_offer_section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['renameCommercialOfferSection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -12559,7 +12559,7 @@ class DefaultApi
      *
      * @param  int $id identifiant du devis (required)
      * @param  int $section_id identifiant de la section (required)
-     * @param  \Infracorp\Extranet\Client\Model\RenameCommercialOfferSection $rename_commercial_offer_section (required)
+     * @param  \InfracorpExtranetClient\Model\RenameCommercialOfferSection $rename_commercial_offer_section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['renameCommercialOfferSection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -12567,7 +12567,7 @@ class DefaultApi
      */
     public function renameCommercialOfferSectionAsyncWithHttpInfo($id, $section_id, $rename_commercial_offer_section, string $contentType = self::contentTypes['renameCommercialOfferSection'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+        $returnType = '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response';
         $request = $this->renameCommercialOfferSectionRequest($id, $section_id, $rename_commercial_offer_section, $contentType);
 
         return $this->client
@@ -12611,7 +12611,7 @@ class DefaultApi
      *
      * @param  int $id identifiant du devis (required)
      * @param  int $section_id identifiant de la section (required)
-     * @param  \Infracorp\Extranet\Client\Model\RenameCommercialOfferSection $rename_commercial_offer_section (required)
+     * @param  \InfracorpExtranetClient\Model\RenameCommercialOfferSection $rename_commercial_offer_section (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['renameCommercialOfferSection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -12749,9 +12749,9 @@ class DefaultApi
      * @param  string $transition_class transition_class (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['runProcess'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\Process
+     * @return \InfracorpExtranetClient\Model\Process
      * @deprecated
      */
     public function runProcess($id, $process_id, $files = null, $transition_class = null, string $contentType = self::contentTypes['runProcess'][0])
@@ -12771,9 +12771,9 @@ class DefaultApi
      * @param  string $transition_class (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['runProcess'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\Process, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\Process, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function runProcessWithHttpInfo($id, $process_id, $files = null, $transition_class = null, string $contentType = self::contentTypes['runProcess'][0])
@@ -12817,11 +12817,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\Process' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\Process' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\Process' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\Process' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -12839,13 +12839,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\Process', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\Process', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\Process';
+            $returnType = '\InfracorpExtranetClient\Model\Process';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -12878,7 +12878,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\Process',
+                        '\InfracorpExtranetClient\Model\Process',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12930,7 +12930,7 @@ class DefaultApi
      */
     public function runProcessAsyncWithHttpInfo($id, $process_id, $files = null, $transition_class = null, string $contentType = self::contentTypes['runProcess'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\Process';
+        $returnType = '\InfracorpExtranetClient\Model\Process';
         $request = $this->runProcessRequest($id, $process_id, $files, $transition_class, $contentType);
 
         return $this->client
@@ -13116,9 +13116,9 @@ class DefaultApi
      * @param  array<string,mixed> $request_body request_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['runWorkflow'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\GetWorkflow
+     * @return \InfracorpExtranetClient\Model\GetWorkflow
      */
     public function runWorkflow($id, $request_body, string $contentType = self::contentTypes['runWorkflow'][0])
     {
@@ -13135,9 +13135,9 @@ class DefaultApi
      * @param  array<string,mixed> $request_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['runWorkflow'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\GetWorkflow, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\GetWorkflow, HTTP status code, HTTP response headers (array of strings)
      */
     public function runWorkflowWithHttpInfo($id, $request_body, string $contentType = self::contentTypes['runWorkflow'][0])
     {
@@ -13180,11 +13180,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\GetWorkflow' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\GetWorkflow' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\GetWorkflow' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\GetWorkflow' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -13202,13 +13202,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetWorkflow', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\GetWorkflow', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\GetWorkflow';
+            $returnType = '\InfracorpExtranetClient\Model\GetWorkflow';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -13241,7 +13241,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\GetWorkflow',
+                        '\InfracorpExtranetClient\Model\GetWorkflow',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13287,7 +13287,7 @@ class DefaultApi
      */
     public function runWorkflowAsyncWithHttpInfo($id, $request_body, string $contentType = self::contentTypes['runWorkflow'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\GetWorkflow';
+        $returnType = '\InfracorpExtranetClient\Model\GetWorkflow';
         $request = $this->runWorkflowRequest($id, $request_body, $contentType);
 
         return $this->client
@@ -13452,9 +13452,9 @@ class DefaultApi
      * @param  int $client_legal_entity_id identifier to filter results (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\Search200ResponseInner[]
+     * @return \InfracorpExtranetClient\Model\Search200ResponseInner[]
      */
     public function search($q, $legal_entity_id = null, $client_legal_entity_id = null, string $contentType = self::contentTypes['search'][0])
     {
@@ -13472,9 +13472,9 @@ class DefaultApi
      * @param  int $client_legal_entity_id identifier to filter results (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\Search200ResponseInner[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\Search200ResponseInner[], HTTP status code, HTTP response headers (array of strings)
      */
     public function searchWithHttpInfo($q, $legal_entity_id = null, $client_legal_entity_id = null, string $contentType = self::contentTypes['search'][0])
     {
@@ -13517,11 +13517,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\Search200ResponseInner[]' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\Search200ResponseInner[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\Search200ResponseInner[]' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\Search200ResponseInner[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -13539,13 +13539,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\Search200ResponseInner[]', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\Search200ResponseInner[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\Search200ResponseInner[]';
+            $returnType = '\InfracorpExtranetClient\Model\Search200ResponseInner[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -13578,7 +13578,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\Search200ResponseInner[]',
+                        '\InfracorpExtranetClient\Model\Search200ResponseInner[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13626,7 +13626,7 @@ class DefaultApi
      */
     public function searchAsyncWithHttpInfo($q, $legal_entity_id = null, $client_legal_entity_id = null, string $contentType = self::contentTypes['search'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\Search200ResponseInner[]';
+        $returnType = '\InfracorpExtranetClient\Model\Search200ResponseInner[]';
         $request = $this->searchRequest($q, $legal_entity_id, $client_legal_entity_id, $contentType);
 
         return $this->client
@@ -13796,12 +13796,12 @@ class DefaultApi
      *
      * @param  int $id identifiant du devis (required)
      * @param  int $section_id identifiant de la section (required)
-     * @param  \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOffer $set_commercial_offer_section_offer set_commercial_offer_section_offer (required)
+     * @param  \InfracorpExtranetClient\Model\SetCommercialOfferSectionOffer $set_commercial_offer_section_offer set_commercial_offer_section_offer (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setCommercialOfferSectionOffer'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+     * @return \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
      */
     public function setCommercialOfferSectionOffer($id, $section_id, $set_commercial_offer_section_offer, string $contentType = self::contentTypes['setCommercialOfferSectionOffer'][0])
     {
@@ -13816,12 +13816,12 @@ class DefaultApi
      *
      * @param  int $id identifiant du devis (required)
      * @param  int $section_id identifiant de la section (required)
-     * @param  \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOffer $set_commercial_offer_section_offer (required)
+     * @param  \InfracorpExtranetClient\Model\SetCommercialOfferSectionOffer $set_commercial_offer_section_offer (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setCommercialOfferSectionOffer'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function setCommercialOfferSectionOfferWithHttpInfo($id, $section_id, $set_commercial_offer_section_offer, string $contentType = self::contentTypes['setCommercialOfferSectionOffer'][0])
     {
@@ -13864,11 +13864,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CreateCommercialOffer201Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -13886,13 +13886,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+            $returnType = '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -13925,7 +13925,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response',
+                        '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -13942,7 +13942,7 @@ class DefaultApi
      *
      * @param  int $id identifiant du devis (required)
      * @param  int $section_id identifiant de la section (required)
-     * @param  \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOffer $set_commercial_offer_section_offer (required)
+     * @param  \InfracorpExtranetClient\Model\SetCommercialOfferSectionOffer $set_commercial_offer_section_offer (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setCommercialOfferSectionOffer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13965,7 +13965,7 @@ class DefaultApi
      *
      * @param  int $id identifiant du devis (required)
      * @param  int $section_id identifiant de la section (required)
-     * @param  \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOffer $set_commercial_offer_section_offer (required)
+     * @param  \InfracorpExtranetClient\Model\SetCommercialOfferSectionOffer $set_commercial_offer_section_offer (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setCommercialOfferSectionOffer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13973,7 +13973,7 @@ class DefaultApi
      */
     public function setCommercialOfferSectionOfferAsyncWithHttpInfo($id, $section_id, $set_commercial_offer_section_offer, string $contentType = self::contentTypes['setCommercialOfferSectionOffer'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+        $returnType = '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response';
         $request = $this->setCommercialOfferSectionOfferRequest($id, $section_id, $set_commercial_offer_section_offer, $contentType);
 
         return $this->client
@@ -14017,7 +14017,7 @@ class DefaultApi
      *
      * @param  int $id identifiant du devis (required)
      * @param  int $section_id identifiant de la section (required)
-     * @param  \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOffer $set_commercial_offer_section_offer (required)
+     * @param  \InfracorpExtranetClient\Model\SetCommercialOfferSectionOffer $set_commercial_offer_section_offer (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setCommercialOfferSectionOffer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14150,12 +14150,12 @@ class DefaultApi
      * Sign Commercial Offer
      *
      * @param  int $id identifiant du devis (required)
-     * @param  \Infracorp\Extranet\Client\Model\SignCommercialOffer $sign_commercial_offer sign_commercial_offer (optional)
+     * @param  \InfracorpExtranetClient\Model\SignCommercialOffer $sign_commercial_offer sign_commercial_offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['signCommercialOffer'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\SignCommercialOffer200Response
+     * @return \InfracorpExtranetClient\Model\SignCommercialOffer200Response
      */
     public function signCommercialOffer($id, $sign_commercial_offer = null, string $contentType = self::contentTypes['signCommercialOffer'][0])
     {
@@ -14169,12 +14169,12 @@ class DefaultApi
      * Sign Commercial Offer
      *
      * @param  int $id identifiant du devis (required)
-     * @param  \Infracorp\Extranet\Client\Model\SignCommercialOffer $sign_commercial_offer (optional)
+     * @param  \InfracorpExtranetClient\Model\SignCommercialOffer $sign_commercial_offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['signCommercialOffer'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\SignCommercialOffer200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\SignCommercialOffer200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function signCommercialOfferWithHttpInfo($id, $sign_commercial_offer = null, string $contentType = self::contentTypes['signCommercialOffer'][0])
     {
@@ -14217,11 +14217,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\SignCommercialOffer200Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\SignCommercialOffer200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\SignCommercialOffer200Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\SignCommercialOffer200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -14239,13 +14239,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\SignCommercialOffer200Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\SignCommercialOffer200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\SignCommercialOffer200Response';
+            $returnType = '\InfracorpExtranetClient\Model\SignCommercialOffer200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -14278,7 +14278,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\SignCommercialOffer200Response',
+                        '\InfracorpExtranetClient\Model\SignCommercialOffer200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14294,7 +14294,7 @@ class DefaultApi
      * Sign Commercial Offer
      *
      * @param  int $id identifiant du devis (required)
-     * @param  \Infracorp\Extranet\Client\Model\SignCommercialOffer $sign_commercial_offer (optional)
+     * @param  \InfracorpExtranetClient\Model\SignCommercialOffer $sign_commercial_offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['signCommercialOffer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14316,7 +14316,7 @@ class DefaultApi
      * Sign Commercial Offer
      *
      * @param  int $id identifiant du devis (required)
-     * @param  \Infracorp\Extranet\Client\Model\SignCommercialOffer $sign_commercial_offer (optional)
+     * @param  \InfracorpExtranetClient\Model\SignCommercialOffer $sign_commercial_offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['signCommercialOffer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14324,7 +14324,7 @@ class DefaultApi
      */
     public function signCommercialOfferAsyncWithHttpInfo($id, $sign_commercial_offer = null, string $contentType = self::contentTypes['signCommercialOffer'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\SignCommercialOffer200Response';
+        $returnType = '\InfracorpExtranetClient\Model\SignCommercialOffer200Response';
         $request = $this->signCommercialOfferRequest($id, $sign_commercial_offer, $contentType);
 
         return $this->client
@@ -14367,7 +14367,7 @@ class DefaultApi
      * Create request for operation 'signCommercialOffer'
      *
      * @param  int $id identifiant du devis (required)
-     * @param  \Infracorp\Extranet\Client\Model\SignCommercialOffer $sign_commercial_offer (optional)
+     * @param  \InfracorpExtranetClient\Model\SignCommercialOffer $sign_commercial_offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['signCommercialOffer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14481,9 +14481,9 @@ class DefaultApi
      * @param  int $id identifiant du devis (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitCommercialOffer'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+     * @return \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
      */
     public function submitCommercialOffer($id, string $contentType = self::contentTypes['submitCommercialOffer'][0])
     {
@@ -14499,9 +14499,9 @@ class DefaultApi
      * @param  int $id identifiant du devis (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['submitCommercialOffer'] to see the possible values for this operation
      *
-     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InfracorpExtranetClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \InfracorpExtranetClient\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function submitCommercialOfferWithHttpInfo($id, string $contentType = self::contentTypes['submitCommercialOffer'][0])
     {
@@ -14544,11 +14544,11 @@ class DefaultApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
+                    if ('\InfracorpExtranetClient\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' !== 'string') {
+                        if ('\InfracorpExtranetClient\Model\CreateCommercialOffer201Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -14566,13 +14566,13 @@ class DefaultApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response', []),
+                        ObjectSerializer::deserialize($content, '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+            $returnType = '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -14605,7 +14605,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response',
+                        '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14649,7 +14649,7 @@ class DefaultApi
      */
     public function submitCommercialOfferAsyncWithHttpInfo($id, string $contentType = self::contentTypes['submitCommercialOffer'][0])
     {
-        $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+        $returnType = '\InfracorpExtranetClient\Model\CreateCommercialOffer201Response';
         $request = $this->submitCommercialOfferRequest($id, $contentType);
 
         return $this->client

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * Workflow Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'state' => 'string',
         'html' => 'string',
-        'transitions' => '\Infracorp\Extranet\Client\Model\Transition[]'
+        'transitions' => '\InfracorpExtranetClient\Model\Transition[]'
     ];
 
     /**
@@ -394,7 +394,7 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transitions
      *
-     * @return \Infracorp\Extranet\Client\Model\Transition[]|null
+     * @return \InfracorpExtranetClient\Model\Transition[]|null
      */
     public function getTransitions()
     {
@@ -404,7 +404,7 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transitions
      *
-     * @param \Infracorp\Extranet\Client\Model\Transition[]|null $transitions transitions
+     * @param \InfracorpExtranetClient\Model\Transition[]|null $transitions transitions
      *
      * @return self
      */

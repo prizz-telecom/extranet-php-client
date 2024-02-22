@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **guaranteedd_download_max** | **int** |  | [optional]
 **rc_min** | **int** |  | [optional]
 **rc_max** | **int** |  | [optional]
-**price_list_items_groups** | [**\Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups**](EligibilityResultPriceListItemsGroups.md) |  | [optional]
+**price_list_items_groups** | [**\InfracorpExtranetClient\Model\EligibilityResultPriceListItemsGroups**](EligibilityResultPriceListItemsGroups.md) |  | [optional]
 **offer_id** | **int** |  | [optional]
 **price_list_id** | **int** |  | [optional]
 

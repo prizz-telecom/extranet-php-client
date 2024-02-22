@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **unit** | **string** |  | [optional]
 **vat** | **string** |  | [optional]
 **recurrence** | **string** |  | [optional]
-**product** | [**\Infracorp\Extranet\Client\Model\Product**](Product.md) |  | [optional]
+**product** | [**\InfracorpExtranetClient\Model\Product**](Product.md) |  | [optional]
 **status** | **string** |  | [optional]
 **subscription_date** | **\DateTime** |  | [optional]
 **activation_date** | **\DateTime** |  | [optional]

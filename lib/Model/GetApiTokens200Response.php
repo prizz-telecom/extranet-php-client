@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * GetApiTokens200Response Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class GetApiTokens200Response implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination',
-        'items' => '\Infracorp\Extranet\Client\Model\UserApiToken[]'
+        'pagination' => '\InfracorpExtranetClient\Model\GetClientLegalEntities200ResponsePagination',
+        'items' => '\InfracorpExtranetClient\Model\UserApiToken[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class GetApiTokens200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets pagination
      *
-     * @return \Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination|null
+     * @return \InfracorpExtranetClient\Model\GetClientLegalEntities200ResponsePagination|null
      */
     public function getPagination()
     {
@@ -309,7 +309,7 @@ class GetApiTokens200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets pagination
      *
-     * @param \Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination|null $pagination pagination
+     * @param \InfracorpExtranetClient\Model\GetClientLegalEntities200ResponsePagination|null $pagination pagination
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class GetApiTokens200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets items
      *
-     * @return \Infracorp\Extranet\Client\Model\UserApiToken[]|null
+     * @return \InfracorpExtranetClient\Model\UserApiToken[]|null
      */
     public function getItems()
     {
@@ -336,7 +336,7 @@ class GetApiTokens200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets items
      *
-     * @param \Infracorp\Extranet\Client\Model\UserApiToken[]|null $items items
+     * @param \InfracorpExtranetClient\Model\UserApiToken[]|null $items items
      *
      * @return self
      */
