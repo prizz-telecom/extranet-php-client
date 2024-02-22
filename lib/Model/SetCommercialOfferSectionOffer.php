@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * SetCommercialOfferSectionOffer Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'offer_id' => 'int',
-        'eligibility' => '\InfracorpExtranetClient\Model\SetCommercialOfferSectionOfferEligibility'
+        'eligibility' => '\Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOfferEligibility'
     ];
 
     /**
@@ -326,7 +326,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets eligibility
      *
-     * @return \InfracorpExtranetClient\Model\SetCommercialOfferSectionOfferEligibility|null
+     * @return \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOfferEligibility|null
      */
     public function getEligibility()
     {
@@ -336,7 +336,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets eligibility
      *
-     * @param \InfracorpExtranetClient\Model\SetCommercialOfferSectionOfferEligibility|null $eligibility eligibility
+     * @param \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOfferEligibility|null $eligibility eligibility
      *
      * @return self
      */

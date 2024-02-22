@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * Offer Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'main_offer_item' => '\InfracorpExtranetClient\Model\OfferItem',
+        'main_offer_item' => '\Infracorp\Extranet\Client\Model\OfferItem',
         'offer_type' => 'string'
     ];
 
@@ -391,7 +391,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets main_offer_item
      *
-     * @return \InfracorpExtranetClient\Model\OfferItem|null
+     * @return \Infracorp\Extranet\Client\Model\OfferItem|null
      */
     public function getMainOfferItem()
     {
@@ -401,7 +401,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets main_offer_item
      *
-     * @param \InfracorpExtranetClient\Model\OfferItem|null $main_offer_item main_offer_item
+     * @param \Infracorp\Extranet\Client\Model\OfferItem|null $main_offer_item main_offer_item
      *
      * @return self
      */

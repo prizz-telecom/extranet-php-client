@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * ProcessAttributesQualification Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class ProcessAttributesQualification implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'values' => '\InfracorpExtranetClient\Model\ProcessAttributesQualificationValues'
+        'values' => '\Infracorp\Extranet\Client\Model\ProcessAttributesQualificationValues'
     ];
 
     /**
@@ -292,7 +292,7 @@ class ProcessAttributesQualification implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets values
      *
-     * @return \InfracorpExtranetClient\Model\ProcessAttributesQualificationValues|null
+     * @return \Infracorp\Extranet\Client\Model\ProcessAttributesQualificationValues|null
      */
     public function getValues()
     {
@@ -302,7 +302,7 @@ class ProcessAttributesQualification implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets values
      *
-     * @param \InfracorpExtranetClient\Model\ProcessAttributesQualificationValues|null $values values
+     * @param \Infracorp\Extranet\Client\Model\ProcessAttributesQualificationValues|null $values values
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * CreateTicket Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class CreateTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'numero' => 'string',
         'ticket_id' => 'int',
-        'running_process' => '\InfracorpExtranetClient\Model\RunningProcess[]'
+        'running_process' => '\Infracorp\Extranet\Client\Model\RunningProcess[]'
     ];
 
     /**
@@ -360,7 +360,7 @@ class CreateTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets running_process
      *
-     * @return \InfracorpExtranetClient\Model\RunningProcess[]|null
+     * @return \Infracorp\Extranet\Client\Model\RunningProcess[]|null
      */
     public function getRunningProcess()
     {
@@ -370,7 +370,7 @@ class CreateTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets running_process
      *
-     * @param \InfracorpExtranetClient\Model\RunningProcess[]|null $running_process running_process
+     * @param \Infracorp\Extranet\Client\Model\RunningProcess[]|null $running_process running_process
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * GetClientLegalEntities200Response Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class GetClientLegalEntities200Response implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\InfracorpExtranetClient\Model\GetClientLegalEntities200ResponsePagination',
-        'items' => '\InfracorpExtranetClient\Model\ClientLegalEntity[]'
+        'pagination' => '\Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination',
+        'items' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class GetClientLegalEntities200Response implements ModelInterface, ArrayAccess, 
     /**
      * Gets pagination
      *
-     * @return \InfracorpExtranetClient\Model\GetClientLegalEntities200ResponsePagination|null
+     * @return \Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination|null
      */
     public function getPagination()
     {
@@ -309,7 +309,7 @@ class GetClientLegalEntities200Response implements ModelInterface, ArrayAccess, 
     /**
      * Sets pagination
      *
-     * @param \InfracorpExtranetClient\Model\GetClientLegalEntities200ResponsePagination|null $pagination pagination
+     * @param \Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination|null $pagination pagination
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class GetClientLegalEntities200Response implements ModelInterface, ArrayAccess, 
     /**
      * Gets items
      *
-     * @return \InfracorpExtranetClient\Model\ClientLegalEntity[]|null
+     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntity[]|null
      */
     public function getItems()
     {
@@ -336,7 +336,7 @@ class GetClientLegalEntities200Response implements ModelInterface, ArrayAccess, 
     /**
      * Sets items
      *
-     * @param \InfracorpExtranetClient\Model\ClientLegalEntity[]|null $items items
+     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntity[]|null $items items
      *
      * @return self
      */

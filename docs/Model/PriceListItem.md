@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **vat** | **string** |  | [optional]
 **recurrence** | **string** |  | [optional]
 **price_list_id** | **int** |  | [optional]
-**product** | [**\InfracorpExtranetClient\Model\Product**](Product.md) |  | [optional]
+**product** | [**\Infracorp\Extranet\Client\Model\Product**](Product.md) |  | [optional]
 **commercial_code** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **inside_offer_only** | **bool** |  | [optional]

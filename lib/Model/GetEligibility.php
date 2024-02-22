@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * GetEligibility Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,8 +61,8 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
         'wfs' => 'string',
         'attrs' => 'object',
         'wftr' => 'object[]',
-        'client' => '\InfracorpExtranetClient\Model\ClientLegalEntity',
-        'response' => '\InfracorpExtranetClient\Model\EligibilityResult[]'
+        'client' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity',
+        'response' => '\Infracorp\Extranet\Client\Model\EligibilityResult[]'
     ];
 
     /**
@@ -435,7 +435,7 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets client
      *
-     * @return \InfracorpExtranetClient\Model\ClientLegalEntity|null
+     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntity|null
      */
     public function getClient()
     {
@@ -445,7 +445,7 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets client
      *
-     * @param \InfracorpExtranetClient\Model\ClientLegalEntity|null $client client
+     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntity|null $client client
      *
      * @return self
      */
@@ -462,7 +462,7 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets response
      *
-     * @return \InfracorpExtranetClient\Model\EligibilityResult[]|null
+     * @return \Infracorp\Extranet\Client\Model\EligibilityResult[]|null
      */
     public function getResponse()
     {
@@ -472,7 +472,7 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets response
      *
-     * @param \InfracorpExtranetClient\Model\EligibilityResult[]|null $response response
+     * @param \Infracorp\Extranet\Client\Model\EligibilityResult[]|null $response response
      *
      * @return self
      */

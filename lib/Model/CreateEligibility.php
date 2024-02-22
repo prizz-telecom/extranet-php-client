@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * CreateEligibility Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class CreateEligibility implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entities' => '\InfracorpExtranetClient\Model\ClientLegalEntity[]',
+        'entities' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity[]',
         'responses' => 'int[]'
     ];
 
@@ -299,7 +299,7 @@ class CreateEligibility implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets entities
      *
-     * @return \InfracorpExtranetClient\Model\ClientLegalEntity[]|null
+     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntity[]|null
      */
     public function getEntities()
     {
@@ -309,7 +309,7 @@ class CreateEligibility implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets entities
      *
-     * @param \InfracorpExtranetClient\Model\ClientLegalEntity[]|null $entities list your clientlegalentities used for eligibility, give an indication of pricelists and contracts used
+     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntity[]|null $entities list your clientlegalentities used for eligibility, give an indication of pricelists and contracts used
      *
      * @return self
      */

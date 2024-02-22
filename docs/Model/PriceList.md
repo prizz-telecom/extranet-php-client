@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional]
 **name** | **string** |  | [optional]
-**legal_entity** | [**\InfracorpExtranetClient\Model\LegalEntity**](LegalEntity.md) |  | [optional]
+**legal_entity** | [**\Infracorp\Extranet\Client\Model\LegalEntity**](LegalEntity.md) |  | [optional]
 **commercial_code** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 

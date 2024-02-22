@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient\Model
+ * @package  Infracorp\Extranet\Client\Model
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,12 +26,12 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package InfracorpExtranetClient\Model
+ * @package Infracorp\Extranet\Client\Model
  * @author  OpenAPI Generator team
  */
 interface ModelInterface

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * Transition Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class Transition implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'name' => 'string',
         'html' => 'string',
-        'form_fields' => '\InfracorpExtranetClient\Model\TransitionFormFieldsInner[]'
+        'form_fields' => '\Infracorp\Extranet\Client\Model\TransitionFormFieldsInner[]'
     ];
 
     /**
@@ -360,7 +360,7 @@ class Transition implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets form_fields
      *
-     * @return \InfracorpExtranetClient\Model\TransitionFormFieldsInner[]|null
+     * @return \Infracorp\Extranet\Client\Model\TransitionFormFieldsInner[]|null
      */
     public function getFormFields()
     {
@@ -370,7 +370,7 @@ class Transition implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets form_fields
      *
-     * @param \InfracorpExtranetClient\Model\TransitionFormFieldsInner[]|null $form_fields form_fields
+     * @param \Infracorp\Extranet\Client\Model\TransitionFormFieldsInner[]|null $form_fields form_fields
      *
      * @return self
      */

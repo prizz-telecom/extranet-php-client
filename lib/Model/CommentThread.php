@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * CommentThread Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -66,7 +66,7 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
         'entity_id' => 'int',
         'public' => 'string',
         'subscribers' => 'string[]',
-        'comments' => '\InfracorpExtranetClient\Model\CommentTree[]'
+        'comments' => '\Infracorp\Extranet\Client\Model\CommentTree[]'
     ];
 
     /**
@@ -598,7 +598,7 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets comments
      *
-     * @return \InfracorpExtranetClient\Model\CommentTree[]|null
+     * @return \Infracorp\Extranet\Client\Model\CommentTree[]|null
      */
     public function getComments()
     {
@@ -608,7 +608,7 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets comments
      *
-     * @param \InfracorpExtranetClient\Model\CommentTree[]|null $comments comments
+     * @param \Infracorp\Extranet\Client\Model\CommentTree[]|null $comments comments
      *
      * @return self
      */

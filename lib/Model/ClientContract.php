@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * ClientContract Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class ClientContract implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'price_list' => '\InfracorpExtranetClient\Model\PriceList',
+        'price_list' => '\Infracorp\Extranet\Client\Model\PriceList',
         'payment_term_days' => 'int',
         'vat_reverse_charge' => 'bool',
         'invoice_consolidation' => 'bool'
@@ -381,7 +381,7 @@ class ClientContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets price_list
      *
-     * @return \InfracorpExtranetClient\Model\PriceList|null
+     * @return \Infracorp\Extranet\Client\Model\PriceList|null
      */
     public function getPriceList()
     {
@@ -391,7 +391,7 @@ class ClientContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_list
      *
-     * @param \InfracorpExtranetClient\Model\PriceList|null $price_list price_list
+     * @param \Infracorp\Extranet\Client\Model\PriceList|null $price_list price_list
      *
      * @return self
      */

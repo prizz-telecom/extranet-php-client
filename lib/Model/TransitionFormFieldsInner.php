@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * TransitionFormFieldsInner Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
         'name' => 'string',
         'required' => 'bool',
         'value' => 'string',
-        'values' => '\InfracorpExtranetClient\Model\TransitionFormFieldsInnerValuesInner[]',
+        'values' => '\Infracorp\Extranet\Client\Model\TransitionFormFieldsInnerValuesInner[]',
         'type' => 'string',
         'help' => 'string',
         'multiple' => 'bool',
@@ -456,7 +456,7 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets values
      *
-     * @return \InfracorpExtranetClient\Model\TransitionFormFieldsInnerValuesInner[]|null
+     * @return \Infracorp\Extranet\Client\Model\TransitionFormFieldsInnerValuesInner[]|null
      */
     public function getValues()
     {
@@ -466,7 +466,7 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets values
      *
-     * @param \InfracorpExtranetClient\Model\TransitionFormFieldsInnerValuesInner[]|null $values values
+     * @param \Infracorp\Extranet\Client\Model\TransitionFormFieldsInnerValuesInner[]|null $values values
      *
      * @return self
      */

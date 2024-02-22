@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * Ticket Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -75,7 +75,7 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_resolution' => 'string',
         'date_cloture' => 'string',
         'last_message' => 'string',
-        'running_process' => '\InfracorpExtranetClient\Model\RunningProcess[]'
+        'running_process' => '\Infracorp\Extranet\Client\Model\RunningProcess[]'
     ];
 
     /**
@@ -904,7 +904,7 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets running_process
      *
-     * @return \InfracorpExtranetClient\Model\RunningProcess[]|null
+     * @return \Infracorp\Extranet\Client\Model\RunningProcess[]|null
      */
     public function getRunningProcess()
     {
@@ -914,7 +914,7 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets running_process
      *
-     * @param \InfracorpExtranetClient\Model\RunningProcess[]|null $running_process running_process
+     * @param \Infracorp\Extranet\Client\Model\RunningProcess[]|null $running_process running_process
      *
      * @return self
      */

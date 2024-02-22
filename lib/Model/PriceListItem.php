@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * PriceListItem Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -67,7 +67,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'vat' => 'string',
         'recurrence' => 'string',
         'price_list_id' => 'int',
-        'product' => '\InfracorpExtranetClient\Model\Product',
+        'product' => '\Infracorp\Extranet\Client\Model\Product',
         'commercial_code' => 'string',
         'description' => 'string',
         'inside_offer_only' => 'bool',
@@ -698,7 +698,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product
      *
-     * @return \InfracorpExtranetClient\Model\Product|null
+     * @return \Infracorp\Extranet\Client\Model\Product|null
      */
     public function getProduct()
     {
@@ -708,7 +708,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product
      *
-     * @param \InfracorpExtranetClient\Model\Product|null $product product
+     * @param \Infracorp\Extranet\Client\Model\Product|null $product product
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * ProcessAttributes Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,9 +59,9 @@ class ProcessAttributes implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPITypes = [
         'verif_cablage_ok' => 'bool',
         'etat_voyants' => 'string',
-        'qualification' => '\InfracorpExtranetClient\Model\ProcessAttributesQualification',
+        'qualification' => '\Infracorp\Extranet\Client\Model\ProcessAttributesQualification',
         'customer_mails' => 'string[]',
-        'messages' => '\InfracorpExtranetClient\Model\ProcessAttributesMessages'
+        'messages' => '\Infracorp\Extranet\Client\Model\ProcessAttributesMessages'
     ];
 
     /**
@@ -374,7 +374,7 @@ class ProcessAttributes implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets qualification
      *
-     * @return \InfracorpExtranetClient\Model\ProcessAttributesQualification|null
+     * @return \Infracorp\Extranet\Client\Model\ProcessAttributesQualification|null
      */
     public function getQualification()
     {
@@ -384,7 +384,7 @@ class ProcessAttributes implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets qualification
      *
-     * @param \InfracorpExtranetClient\Model\ProcessAttributesQualification|null $qualification qualification
+     * @param \Infracorp\Extranet\Client\Model\ProcessAttributesQualification|null $qualification qualification
      *
      * @return self
      */
@@ -428,7 +428,7 @@ class ProcessAttributes implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets messages
      *
-     * @return \InfracorpExtranetClient\Model\ProcessAttributesMessages|null
+     * @return \Infracorp\Extranet\Client\Model\ProcessAttributesMessages|null
      */
     public function getMessages()
     {
@@ -438,7 +438,7 @@ class ProcessAttributes implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets messages
      *
-     * @param \InfracorpExtranetClient\Model\ProcessAttributesMessages|null $messages messages
+     * @param \Infracorp\Extranet\Client\Model\ProcessAttributesMessages|null $messages messages
      *
      * @return self
      */

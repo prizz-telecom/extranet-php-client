@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * CommercialOffer Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -72,8 +72,8 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'nrc_vat_total' => 'int',
         'nrc_vat_total_str' => 'string',
         'status' => 'string',
-        'legal_entity' => '\InfracorpExtranetClient\Model\LegalEntity',
-        'client_legal_entity' => '\InfracorpExtranetClient\Model\ClientLegalEntity',
+        'legal_entity' => '\Infracorp\Extranet\Client\Model\LegalEntity',
+        'client_legal_entity' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity',
         'sign_date' => '\DateTime',
         'submit_date' => '\DateTime',
         'delivery_delay' => 'int',
@@ -81,9 +81,9 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_str' => 'string',
         'vat_total' => 'int',
         'vat_total_str' => 'string',
-        'vat_detail' => '\InfracorpExtranetClient\Model\CommercialOfferVatDetailInner[]',
-        'vat_detail_str' => '\InfracorpExtranetClient\Model\CommercialOfferVatDetailStrInner[]',
-        'sections' => '\InfracorpExtranetClient\Model\CommercialOfferSection[]'
+        'vat_detail' => '\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailInner[]',
+        'vat_detail_str' => '\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]',
+        'sections' => '\Infracorp\Extranet\Client\Model\CommercialOfferSection[]'
     ];
 
     /**
@@ -943,7 +943,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets legal_entity
      *
-     * @return \InfracorpExtranetClient\Model\LegalEntity|null
+     * @return \Infracorp\Extranet\Client\Model\LegalEntity|null
      */
     public function getLegalEntity()
     {
@@ -953,7 +953,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets legal_entity
      *
-     * @param \InfracorpExtranetClient\Model\LegalEntity|null $legal_entity legal_entity
+     * @param \Infracorp\Extranet\Client\Model\LegalEntity|null $legal_entity legal_entity
      *
      * @return self
      */
@@ -970,7 +970,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets client_legal_entity
      *
-     * @return \InfracorpExtranetClient\Model\ClientLegalEntity|null
+     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntity|null
      */
     public function getClientLegalEntity()
     {
@@ -980,7 +980,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets client_legal_entity
      *
-     * @param \InfracorpExtranetClient\Model\ClientLegalEntity|null $client_legal_entity client_legal_entity
+     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntity|null $client_legal_entity client_legal_entity
      *
      * @return self
      */
@@ -1186,7 +1186,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets vat_detail
      *
-     * @return \InfracorpExtranetClient\Model\CommercialOfferVatDetailInner[]|null
+     * @return \Infracorp\Extranet\Client\Model\CommercialOfferVatDetailInner[]|null
      */
     public function getVatDetail()
     {
@@ -1196,7 +1196,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vat_detail
      *
-     * @param \InfracorpExtranetClient\Model\CommercialOfferVatDetailInner[]|null $vat_detail vat_detail
+     * @param \Infracorp\Extranet\Client\Model\CommercialOfferVatDetailInner[]|null $vat_detail vat_detail
      *
      * @return self
      */
@@ -1213,7 +1213,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets vat_detail_str
      *
-     * @return \InfracorpExtranetClient\Model\CommercialOfferVatDetailStrInner[]|null
+     * @return \Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]|null
      */
     public function getVatDetailStr()
     {
@@ -1223,7 +1223,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vat_detail_str
      *
-     * @param \InfracorpExtranetClient\Model\CommercialOfferVatDetailStrInner[]|null $vat_detail_str vat_detail_str
+     * @param \Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]|null $vat_detail_str vat_detail_str
      *
      * @return self
      */
@@ -1240,7 +1240,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sections
      *
-     * @return \InfracorpExtranetClient\Model\CommercialOfferSection[]|null
+     * @return \Infracorp\Extranet\Client\Model\CommercialOfferSection[]|null
      */
     public function getSections()
     {
@@ -1250,7 +1250,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sections
      *
-     * @param \InfracorpExtranetClient\Model\CommercialOfferSection[]|null $sections sections
+     * @param \Infracorp\Extranet\Client\Model\CommercialOfferSection[]|null $sections sections
      *
      * @return self
      */

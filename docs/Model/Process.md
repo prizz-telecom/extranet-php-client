@@ -12,11 +12,11 @@ Name | Type | Description | Notes
 **state** | **string** |  | [optional]
 **state_lib** | **string** |  | [optional]
 **end_date** | **string** |  | [optional]
-**attrs** | [**\InfracorpExtranetClient\Model\ProcessAttributes**](ProcessAttributes.md) |  | [optional]
+**attrs** | [**\Infracorp\Extranet\Client\Model\ProcessAttributes**](ProcessAttributes.md) |  | [optional]
 **lib** | **string** |  | [optional]
 **title** | **string** |  | [optional]
 **states** | **mixed[]** |  | [optional]
-**attachments** | [**\InfracorpExtranetClient\Model\Attachment[]**](Attachment.md) |  | [optional]
-**actions** | [**\InfracorpExtranetClient\Model\ProcessAction[]**](ProcessAction.md) |  | [optional]
+**attachments** | [**\Infracorp\Extranet\Client\Model\Attachment[]**](Attachment.md) |  | [optional]
+**actions** | [**\Infracorp\Extranet\Client\Model\ProcessAction[]**](ProcessAction.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

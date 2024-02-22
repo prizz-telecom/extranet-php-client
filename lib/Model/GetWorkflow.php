@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * GetWorkflow Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'state' => 'string',
         'success' => 'bool',
-        'redirect' => '\InfracorpExtranetClient\Model\GetWorkflowRedirect'
+        'redirect' => '\Infracorp\Extranet\Client\Model\GetWorkflowRedirect'
     ];
 
     /**
@@ -394,7 +394,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets redirect
      *
-     * @return \InfracorpExtranetClient\Model\GetWorkflowRedirect|null
+     * @return \Infracorp\Extranet\Client\Model\GetWorkflowRedirect|null
      */
     public function getRedirect()
     {
@@ -404,7 +404,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets redirect
      *
-     * @param \InfracorpExtranetClient\Model\GetWorkflowRedirect|null $redirect redirect
+     * @param \Infracorp\Extranet\Client\Model\GetWorkflowRedirect|null $redirect redirect
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * EligibilityHistory Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,8 +60,8 @@ class EligibilityHistory implements ModelInterface, ArrayAccess, \JsonSerializab
         'id' => 'int',
         'date' => '\DateTime',
         'address' => 'string',
-        'client' => '\InfracorpExtranetClient\Model\ClientLegalEntity',
-        'result' => '\InfracorpExtranetClient\Model\EligibilityResult[]'
+        'client' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity',
+        'result' => '\Infracorp\Extranet\Client\Model\EligibilityResult[]'
     ];
 
     /**
@@ -401,7 +401,7 @@ class EligibilityHistory implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets client
      *
-     * @return \InfracorpExtranetClient\Model\ClientLegalEntity|null
+     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntity|null
      */
     public function getClient()
     {
@@ -411,7 +411,7 @@ class EligibilityHistory implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets client
      *
-     * @param \InfracorpExtranetClient\Model\ClientLegalEntity|null $client client
+     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntity|null $client client
      *
      * @return self
      */
@@ -428,7 +428,7 @@ class EligibilityHistory implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets result
      *
-     * @return \InfracorpExtranetClient\Model\EligibilityResult[]|null
+     * @return \Infracorp\Extranet\Client\Model\EligibilityResult[]|null
      */
     public function getResult()
     {
@@ -438,7 +438,7 @@ class EligibilityHistory implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets result
      *
-     * @param \InfracorpExtranetClient\Model\EligibilityResult[]|null $result result
+     * @param \Infracorp\Extranet\Client\Model\EligibilityResult[]|null $result result
      *
      * @return self
      */

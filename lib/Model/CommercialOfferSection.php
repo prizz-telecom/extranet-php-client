@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * CommercialOfferSection Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,9 +61,9 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'int',
         'name' => 'string',
         'commercial_offer_id' => 'int',
-        'commercial_offer_items' => '\InfracorpExtranetClient\Model\CommercialOfferItem[]',
-        'offer' => '\InfracorpExtranetClient\Model\Offer',
-        'client_contract' => '\InfracorpExtranetClient\Model\ClientContract'
+        'commercial_offer_items' => '\Infracorp\Extranet\Client\Model\CommercialOfferItem[]',
+        'offer' => '\Infracorp\Extranet\Client\Model\Offer',
+        'client_contract' => '\Infracorp\Extranet\Client\Model\ClientContract'
     ];
 
     /**
@@ -506,7 +506,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets commercial_offer_items
      *
-     * @return \InfracorpExtranetClient\Model\CommercialOfferItem[]|null
+     * @return \Infracorp\Extranet\Client\Model\CommercialOfferItem[]|null
      */
     public function getCommercialOfferItems()
     {
@@ -516,7 +516,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets commercial_offer_items
      *
-     * @param \InfracorpExtranetClient\Model\CommercialOfferItem[]|null $commercial_offer_items commercial_offer_items
+     * @param \Infracorp\Extranet\Client\Model\CommercialOfferItem[]|null $commercial_offer_items commercial_offer_items
      *
      * @return self
      */
@@ -533,7 +533,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets offer
      *
-     * @return \InfracorpExtranetClient\Model\Offer|null
+     * @return \Infracorp\Extranet\Client\Model\Offer|null
      */
     public function getOffer()
     {
@@ -543,7 +543,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets offer
      *
-     * @param \InfracorpExtranetClient\Model\Offer|null $offer offer
+     * @param \Infracorp\Extranet\Client\Model\Offer|null $offer offer
      *
      * @return self
      */
@@ -560,7 +560,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets client_contract
      *
-     * @return \InfracorpExtranetClient\Model\ClientContract|null
+     * @return \Infracorp\Extranet\Client\Model\ClientContract|null
      */
     public function getClientContract()
     {
@@ -570,7 +570,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets client_contract
      *
-     * @param \InfracorpExtranetClient\Model\ClientContract|null $client_contract client_contract
+     * @param \Infracorp\Extranet\Client\Model\ClientContract|null $client_contract client_contract
      *
      * @return self
      */

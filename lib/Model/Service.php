@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * Service Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -76,7 +76,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'unit' => 'string',
         'vat' => 'string',
         'recurrence' => 'string',
-        'product' => '\InfracorpExtranetClient\Model\Product',
+        'product' => '\Infracorp\Extranet\Client\Model\Product',
         'status' => 'string',
         'subscription_date' => '\DateTime',
         'activation_date' => '\DateTime',
@@ -1055,7 +1055,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product
      *
-     * @return \InfracorpExtranetClient\Model\Product|null
+     * @return \Infracorp\Extranet\Client\Model\Product|null
      */
     public function getProduct()
     {
@@ -1065,7 +1065,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product
      *
-     * @param \InfracorpExtranetClient\Model\Product|null $product product
+     * @param \Infracorp\Extranet\Client\Model\Product|null $product product
      *
      * @return self
      */

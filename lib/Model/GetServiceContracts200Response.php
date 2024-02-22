@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * GetServiceContracts200Response Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class GetServiceContracts200Response implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\InfracorpExtranetClient\Model\GetClientLegalEntities200ResponsePagination',
-        'items' => '\InfracorpExtranetClient\Model\ServiceContract[]'
+        'pagination' => '\Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination',
+        'items' => '\Infracorp\Extranet\Client\Model\ServiceContract[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class GetServiceContracts200Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets pagination
      *
-     * @return \InfracorpExtranetClient\Model\GetClientLegalEntities200ResponsePagination|null
+     * @return \Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination|null
      */
     public function getPagination()
     {
@@ -309,7 +309,7 @@ class GetServiceContracts200Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets pagination
      *
-     * @param \InfracorpExtranetClient\Model\GetClientLegalEntities200ResponsePagination|null $pagination pagination
+     * @param \Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination|null $pagination pagination
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class GetServiceContracts200Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets items
      *
-     * @return \InfracorpExtranetClient\Model\ServiceContract[]|null
+     * @return \Infracorp\Extranet\Client\Model\ServiceContract[]|null
      */
     public function getItems()
     {
@@ -336,7 +336,7 @@ class GetServiceContracts200Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets items
      *
-     * @param \InfracorpExtranetClient\Model\ServiceContract[]|null $items items
+     * @param \Infracorp\Extranet\Client\Model\ServiceContract[]|null $items items
      *
      * @return self
      */

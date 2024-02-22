@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * OfferItem Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,7 +63,7 @@ class OfferItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => '\DateTime',
         'min_count' => 'int',
         'max_count' => 'int',
-        'product' => '\InfracorpExtranetClient\Model\OfferItem',
+        'product' => '\Infracorp\Extranet\Client\Model\OfferItem',
         'eligibility_string' => 'string'
     ];
 
@@ -503,7 +503,7 @@ class OfferItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product
      *
-     * @return \InfracorpExtranetClient\Model\OfferItem|null
+     * @return \Infracorp\Extranet\Client\Model\OfferItem|null
      */
     public function getProduct()
     {
@@ -513,7 +513,7 @@ class OfferItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product
      *
-     * @param \InfracorpExtranetClient\Model\OfferItem|null $product product
+     * @param \Infracorp\Extranet\Client\Model\OfferItem|null $product product
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * CommercialOfferItem Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -79,7 +79,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'vat_rate' => 'float',
         'commercial_code' => 'string',
         'description' => 'string',
-        'price_list_item' => '\InfracorpExtranetClient\Model\PriceListItem'
+        'price_list_item' => '\Infracorp\Extranet\Client\Model\PriceListItem'
     ];
 
     /**
@@ -1142,7 +1142,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets price_list_item
      *
-     * @return \InfracorpExtranetClient\Model\PriceListItem|null
+     * @return \Infracorp\Extranet\Client\Model\PriceListItem|null
      */
     public function getPriceListItem()
     {
@@ -1152,7 +1152,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets price_list_item
      *
-     * @param \InfracorpExtranetClient\Model\PriceListItem|null $price_list_item price_list_item
+     * @param \Infracorp\Extranet\Client\Model\PriceListItem|null $price_list_item price_list_item
      *
      * @return self
      */

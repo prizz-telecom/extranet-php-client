@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace InfracorpExtranetClient\Model;
+namespace Infracorp\Extranet\Client\Model;
 
 use \ArrayAccess;
-use \InfracorpExtranetClient\ObjectSerializer;
+use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
  * OperatorTicket Class Doc Comment
  *
  * @category Class
- * @package  InfracorpExtranetClient
+ * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -64,7 +64,7 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_resolution' => 'string',
         'date_gtr' => 'string',
         'etat' => 'string',
-        'running_workflows' => '\InfracorpExtranetClient\Model\RunningProcess[]'
+        'running_workflows' => '\Infracorp\Extranet\Client\Model\RunningProcess[]'
     ];
 
     /**
@@ -530,7 +530,7 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets running_workflows
      *
-     * @return \InfracorpExtranetClient\Model\RunningProcess[]|null
+     * @return \Infracorp\Extranet\Client\Model\RunningProcess[]|null
      */
     public function getRunningWorkflows()
     {
@@ -540,7 +540,7 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets running_workflows
      *
-     * @param \InfracorpExtranetClient\Model\RunningProcess[]|null $running_workflows running_workflows
+     * @param \Infracorp\Extranet\Client\Model\RunningProcess[]|null $running_workflows running_workflows
      *
      * @return self
      */
