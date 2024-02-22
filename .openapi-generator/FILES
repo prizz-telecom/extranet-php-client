@@ -162,9 +162,3 @@ lib/Model/UserApiToken.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/CommercialOfferVatDetailStrInnerTest.php
-test/Model/GetApiTokens200ResponseTest.php
-test/Model/ProductGroupTest.php
-test/Model/SetCommercialOfferSectionOfferEligibilityTest.php
-test/Model/UserApiTokenTest.php
-test/Model/UserTest.php
