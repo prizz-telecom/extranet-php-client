@@ -60,6 +60,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'name' => 'string',
         'unit_price_discount' => 'int',
+        'unit_price_discount_str' => 'string',
         'house_number' => 'int',
         'house_number_complement' => 'string',
         'street_name' => 'string',
@@ -71,6 +72,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'attributes' => 'object',
         'quantity' => 'int',
         'unit_price' => 'int',
+        'unit_price_str' => 'string',
         'unit' => 'string',
         'vat' => 'string',
         'recurrence' => 'string',
@@ -95,6 +97,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'name' => null,
         'unit_price_discount' => null,
+        'unit_price_discount_str' => null,
         'house_number' => null,
         'house_number_complement' => null,
         'street_name' => null,
@@ -106,6 +109,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'attributes' => null,
         'quantity' => null,
         'unit_price' => null,
+        'unit_price_str' => null,
         'unit' => null,
         'vat' => null,
         'recurrence' => null,
@@ -128,6 +132,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => false,
 		'name' => false,
 		'unit_price_discount' => false,
+		'unit_price_discount_str' => false,
 		'house_number' => false,
 		'house_number_complement' => false,
 		'street_name' => false,
@@ -139,6 +144,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
 		'attributes' => false,
 		'quantity' => false,
 		'unit_price' => false,
+		'unit_price_str' => false,
 		'unit' => false,
 		'vat' => false,
 		'recurrence' => false,
@@ -241,6 +247,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'name' => 'name',
         'unit_price_discount' => 'unitPriceDiscount',
+        'unit_price_discount_str' => 'unitPriceDiscountStr',
         'house_number' => 'houseNumber',
         'house_number_complement' => 'houseNumberComplement',
         'street_name' => 'streetName',
@@ -252,6 +259,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'attributes' => 'attributes',
         'quantity' => 'quantity',
         'unit_price' => 'unitPrice',
+        'unit_price_str' => 'unitPriceStr',
         'unit' => 'unit',
         'vat' => 'vat',
         'recurrence' => 'recurrence',
@@ -274,6 +282,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'name' => 'setName',
         'unit_price_discount' => 'setUnitPriceDiscount',
+        'unit_price_discount_str' => 'setUnitPriceDiscountStr',
         'house_number' => 'setHouseNumber',
         'house_number_complement' => 'setHouseNumberComplement',
         'street_name' => 'setStreetName',
@@ -285,6 +294,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'attributes' => 'setAttributes',
         'quantity' => 'setQuantity',
         'unit_price' => 'setUnitPrice',
+        'unit_price_str' => 'setUnitPriceStr',
         'unit' => 'setUnit',
         'vat' => 'setVat',
         'recurrence' => 'setRecurrence',
@@ -307,6 +317,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'name' => 'getName',
         'unit_price_discount' => 'getUnitPriceDiscount',
+        'unit_price_discount_str' => 'getUnitPriceDiscountStr',
         'house_number' => 'getHouseNumber',
         'house_number_complement' => 'getHouseNumberComplement',
         'street_name' => 'getStreetName',
@@ -318,6 +329,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'attributes' => 'getAttributes',
         'quantity' => 'getQuantity',
         'unit_price' => 'getUnitPrice',
+        'unit_price_str' => 'getUnitPriceStr',
         'unit' => 'getUnit',
         'vat' => 'getVat',
         'recurrence' => 'getRecurrence',
@@ -431,6 +443,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('unit_price_discount', $data ?? [], null);
+        $this->setIfExists('unit_price_discount_str', $data ?? [], null);
         $this->setIfExists('house_number', $data ?? [], null);
         $this->setIfExists('house_number_complement', $data ?? [], null);
         $this->setIfExists('street_name', $data ?? [], null);
@@ -442,6 +455,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('attributes', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('unit_price', $data ?? [], null);
+        $this->setIfExists('unit_price_str', $data ?? [], null);
         $this->setIfExists('unit', $data ?? [], null);
         $this->setIfExists('vat', $data ?? [], null);
         $this->setIfExists('recurrence', $data ?? [], null);
@@ -592,6 +606,33 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable unit_price_discount cannot be null');
         }
         $this->container['unit_price_discount'] = $unit_price_discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price_discount_str
+     *
+     * @return string|null
+     */
+    public function getUnitPriceDiscountStr()
+    {
+        return $this->container['unit_price_discount_str'];
+    }
+
+    /**
+     * Sets unit_price_discount_str
+     *
+     * @param string|null $unit_price_discount_str unit_price_discount_str
+     *
+     * @return self
+     */
+    public function setUnitPriceDiscountStr($unit_price_discount_str)
+    {
+        if (is_null($unit_price_discount_str)) {
+            throw new \InvalidArgumentException('non-nullable unit_price_discount_str cannot be null');
+        }
+        $this->container['unit_price_discount_str'] = $unit_price_discount_str;
 
         return $this;
     }
@@ -889,6 +930,33 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
         }
         $this->container['unit_price'] = $unit_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price_str
+     *
+     * @return string|null
+     */
+    public function getUnitPriceStr()
+    {
+        return $this->container['unit_price_str'];
+    }
+
+    /**
+     * Sets unit_price_str
+     *
+     * @param string|null $unit_price_str unit_price_str
+     *
+     * @return self
+     */
+    public function setUnitPriceStr($unit_price_str)
+    {
+        if (is_null($unit_price_str)) {
+            throw new \InvalidArgumentException('non-nullable unit_price_str cannot be null');
+        }
+        $this->container['unit_price_str'] = $unit_price_str;
 
         return $this;
     }

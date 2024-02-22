@@ -10,6 +10,7 @@ All URIs are relative to https://dev.prizz-telecom.fr, except if the operation d
 | [**createTicketOperator()**](DefaultApi.md#createTicketOperator) | **POST** /external-api/v2/exploitation/operator/{id} | Exploitation Operator Tickets |
 | [**createWorkflow()**](DefaultApi.md#createWorkflow) | **POST** /external-api/v2/workflow | Workflows |
 | [**eligibilityHistory()**](DefaultApi.md#eligibilityHistory) | **GET** /external-api/v2/eligibility/history | Eligibility History |
+| [**getApiTokens()**](DefaultApi.md#getApiTokens) | **GET** /external-api/v2/users/api_tokens | User Api Tokens |
 | [**getClientLegalEntities()**](DefaultApi.md#getClientLegalEntities) | **GET** /external-api/v2/client_legal_entities | Client legal entities |
 | [**getClientLegalEntity()**](DefaultApi.md#getClientLegalEntity) | **GET** /external-api/v2/client_legal_entities/{id} | Client legal entity |
 | [**getCommentThread()**](DefaultApi.md#getCommentThread) | **GET** /external-api/v2/comments/threads/{id} | Comment thread |
@@ -17,6 +18,7 @@ All URIs are relative to https://dev.prizz-telecom.fr, except if the operation d
 | [**getCommercialOffer()**](DefaultApi.md#getCommercialOffer) | **GET** /external-api/v2/commercial_offers/{id} | Commercial Offer |
 | [**getCommercialOfferPdf()**](DefaultApi.md#getCommercialOfferPdf) | **GET** /external-api/v2/commercial_offers/{id}/pdf | Commercial Offer Pdf |
 | [**getCommercialOffers()**](DefaultApi.md#getCommercialOffers) | **GET** /external-api/v2/commercial_offers | Commercial Offers |
+| [**getCurrentUser()**](DefaultApi.md#getCurrentUser) | **GET** /external-api/v2/user | User |
 | [**getEligibility()**](DefaultApi.md#getEligibility) | **GET** /external-api/v2/eligibility/{id} | Get Eligibility |
 | [**getInvoice()**](DefaultApi.md#getInvoice) | **GET** /external-api/v2/invoices/{id} | Invoice |
 | [**getInvoicePdf()**](DefaultApi.md#getInvoicePdf) | **GET** /external-api/v2/invoices/{id}/pdf | Invoice Pdf |
@@ -430,6 +432,73 @@ try {
 ### Return type
 
 [**\Infracorp\Extranet\Client\Model\EligibilityHistory200Response**](../Model/EligibilityHistory200Response.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getApiTokens()`
+
+```php
+getApiTokens($page, $items_per_page): \Infracorp\Extranet\Client\Model\GetApiTokens200Response
+```
+
+User Api Tokens
+
+Récupérer une clés d'api pour un utilisateur
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$page = 56; // int
+$items_per_page = 56; // int
+
+try {
+    $result = $apiInstance->getApiTokens($page, $items_per_page);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getApiTokens: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **page** | **int**|  | [optional] |
+| **items_per_page** | **int**|  | [optional] |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\GetApiTokens200Response**](../Model/GetApiTokens200Response.md)
 
 ### Authorization
 
@@ -925,6 +994,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getCurrentUser()`
+
+```php
+getCurrentUser(): \Infracorp\Extranet\Client\Model\User
+```
+
+User
+
+Récupérer le détail de l'utilisateur connecté
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getCurrentUser();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getCurrentUser: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\User**](../Model/User.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getEligibility()`
 
 ```php
@@ -1336,7 +1467,7 @@ try {
 ## `getOffers()`
 
 ```php
-getOffers($codes): \Infracorp\Extranet\Client\Model\Offer[]
+getOffers($ids, $codes): \Infracorp\Extranet\Client\Model\Offer[]
 ```
 
 Offers
@@ -1365,10 +1496,11 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$codes = array('codes_example'); // string[] | identifiant de l'offre
+$ids = array(56); // int[] | identifiant de l'offre
+$codes = array('codes_example'); // string[] | nom de l'offre
 
 try {
-    $result = $apiInstance->getOffers($codes);
+    $result = $apiInstance->getOffers($ids, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getOffers: ', $e->getMessage(), PHP_EOL;
@@ -1379,7 +1511,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **codes** | [**string[]**](../Model/string.md)| identifiant de l&#39;offre | |
+| **ids** | [**int[]**](../Model/int.md)| identifiant de l&#39;offre | [optional] |
+| **codes** | [**string[]**](../Model/string.md)| nom de l&#39;offre | [optional] |
 
 ### Return type
 

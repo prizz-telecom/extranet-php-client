@@ -1,6 +1,6 @@
 <?php
 /**
- * CommercialOfferSection
+ * UserApiToken
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * CommercialOfferSection Class Doc Comment
+ * UserApiToken Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerializable
+class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CommercialOfferSection';
+    protected static $openAPIModelName = 'UserApiToken';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +58,13 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'available_workflows' => 'string[]',
+        'create_date' => '\DateTime',
+        'last_modified_date' => '\DateTime',
         'id' => 'int',
         'name' => 'string',
-        'commercial_offer_id' => 'int',
-        'commercial_offer_items' => '\Infracorp\Extranet\Client\Model\CommercialOfferItem[]',
-        'offer' => '\Infracorp\Extranet\Client\Model\Offer',
-        'client_contract' => '\Infracorp\Extranet\Client\Model\ClientContract'
+        'active' => 'bool',
+        'token' => 'string',
+        'last_usage' => '\DateTime'
     ];
 
     /**
@@ -75,12 +76,13 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'available_workflows' => null,
+        'create_date' => 'date-time',
+        'last_modified_date' => 'date-time',
         'id' => null,
         'name' => null,
-        'commercial_offer_id' => null,
-        'commercial_offer_items' => null,
-        'offer' => null,
-        'client_contract' => null
+        'active' => null,
+        'token' => null,
+        'last_usage' => 'date-time'
     ];
 
     /**
@@ -90,12 +92,13 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static array $openAPINullables = [
         'available_workflows' => false,
+		'create_date' => false,
+		'last_modified_date' => false,
 		'id' => false,
 		'name' => false,
-		'commercial_offer_id' => false,
-		'commercial_offer_items' => false,
-		'offer' => false,
-		'client_contract' => false
+		'active' => false,
+		'token' => false,
+		'last_usage' => false
     ];
 
     /**
@@ -185,12 +188,13 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'available_workflows' => 'availableWorkflows',
+        'create_date' => 'createDate',
+        'last_modified_date' => 'lastModifiedDate',
         'id' => 'id',
         'name' => 'name',
-        'commercial_offer_id' => 'commercialOfferId',
-        'commercial_offer_items' => 'commercialOfferItems',
-        'offer' => 'offer',
-        'client_contract' => 'clientContract'
+        'active' => 'active',
+        'token' => 'token',
+        'last_usage' => 'lastUsage'
     ];
 
     /**
@@ -200,12 +204,13 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'available_workflows' => 'setAvailableWorkflows',
+        'create_date' => 'setCreateDate',
+        'last_modified_date' => 'setLastModifiedDate',
         'id' => 'setId',
         'name' => 'setName',
-        'commercial_offer_id' => 'setCommercialOfferId',
-        'commercial_offer_items' => 'setCommercialOfferItems',
-        'offer' => 'setOffer',
-        'client_contract' => 'setClientContract'
+        'active' => 'setActive',
+        'token' => 'setToken',
+        'last_usage' => 'setLastUsage'
     ];
 
     /**
@@ -215,12 +220,13 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'available_workflows' => 'getAvailableWorkflows',
+        'create_date' => 'getCreateDate',
+        'last_modified_date' => 'getLastModifiedDate',
         'id' => 'getId',
         'name' => 'getName',
-        'commercial_offer_id' => 'getCommercialOfferId',
-        'commercial_offer_items' => 'getCommercialOfferItems',
-        'offer' => 'getOffer',
-        'client_contract' => 'getClientContract'
+        'active' => 'getActive',
+        'token' => 'getToken',
+        'last_usage' => 'getLastUsage'
     ];
 
     /**
@@ -336,12 +342,13 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(array $data = null)
     {
         $this->setIfExists('available_workflows', $data ?? [], null);
+        $this->setIfExists('create_date', $data ?? [], null);
+        $this->setIfExists('last_modified_date', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('commercial_offer_id', $data ?? [], null);
-        $this->setIfExists('commercial_offer_items', $data ?? [], null);
-        $this->setIfExists('offer', $data ?? [], null);
-        $this->setIfExists('client_contract', $data ?? [], null);
+        $this->setIfExists('active', $data ?? [], null);
+        $this->setIfExists('token', $data ?? [], null);
+        $this->setIfExists('last_usage', $data ?? [], null);
     }
 
     /**
@@ -423,6 +430,60 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets create_date
+     *
+     * @return \DateTime|null
+     */
+    public function getCreateDate()
+    {
+        return $this->container['create_date'];
+    }
+
+    /**
+     * Sets create_date
+     *
+     * @param \DateTime|null $create_date create_date
+     *
+     * @return self
+     */
+    public function setCreateDate($create_date)
+    {
+        if (is_null($create_date)) {
+            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
+        }
+        $this->container['create_date'] = $create_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified_date
+     *
+     * @return \DateTime|null
+     */
+    public function getLastModifiedDate()
+    {
+        return $this->container['last_modified_date'];
+    }
+
+    /**
+     * Sets last_modified_date
+     *
+     * @param \DateTime|null $last_modified_date last_modified_date
+     *
+     * @return self
+     */
+    public function setLastModifiedDate($last_modified_date)
+    {
+        if (is_null($last_modified_date)) {
+            throw new \InvalidArgumentException('non-nullable last_modified_date cannot be null');
+        }
+        $this->container['last_modified_date'] = $last_modified_date;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -477,109 +538,82 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets commercial_offer_id
+     * Gets active
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getCommercialOfferId()
+    public function getActive()
     {
-        return $this->container['commercial_offer_id'];
+        return $this->container['active'];
     }
 
     /**
-     * Sets commercial_offer_id
+     * Sets active
      *
-     * @param int|null $commercial_offer_id commercial_offer_id
+     * @param bool|null $active active
      *
      * @return self
      */
-    public function setCommercialOfferId($commercial_offer_id)
+    public function setActive($active)
     {
-        if (is_null($commercial_offer_id)) {
-            throw new \InvalidArgumentException('non-nullable commercial_offer_id cannot be null');
+        if (is_null($active)) {
+            throw new \InvalidArgumentException('non-nullable active cannot be null');
         }
-        $this->container['commercial_offer_id'] = $commercial_offer_id;
+        $this->container['active'] = $active;
 
         return $this;
     }
 
     /**
-     * Gets commercial_offer_items
+     * Gets token
      *
-     * @return \Infracorp\Extranet\Client\Model\CommercialOfferItem[]|null
+     * @return string|null
      */
-    public function getCommercialOfferItems()
+    public function getToken()
     {
-        return $this->container['commercial_offer_items'];
+        return $this->container['token'];
     }
 
     /**
-     * Sets commercial_offer_items
+     * Sets token
      *
-     * @param \Infracorp\Extranet\Client\Model\CommercialOfferItem[]|null $commercial_offer_items commercial_offer_items
+     * @param string|null $token token
      *
      * @return self
      */
-    public function setCommercialOfferItems($commercial_offer_items)
+    public function setToken($token)
     {
-        if (is_null($commercial_offer_items)) {
-            throw new \InvalidArgumentException('non-nullable commercial_offer_items cannot be null');
+        if (is_null($token)) {
+            throw new \InvalidArgumentException('non-nullable token cannot be null');
         }
-        $this->container['commercial_offer_items'] = $commercial_offer_items;
+        $this->container['token'] = $token;
 
         return $this;
     }
 
     /**
-     * Gets offer
+     * Gets last_usage
      *
-     * @return \Infracorp\Extranet\Client\Model\Offer|null
+     * @return \DateTime|null
      */
-    public function getOffer()
+    public function getLastUsage()
     {
-        return $this->container['offer'];
+        return $this->container['last_usage'];
     }
 
     /**
-     * Sets offer
+     * Sets last_usage
      *
-     * @param \Infracorp\Extranet\Client\Model\Offer|null $offer offer
+     * @param \DateTime|null $last_usage last_usage
      *
      * @return self
      */
-    public function setOffer($offer)
+    public function setLastUsage($last_usage)
     {
-        if (is_null($offer)) {
-            throw new \InvalidArgumentException('non-nullable offer cannot be null');
+        if (is_null($last_usage)) {
+            throw new \InvalidArgumentException('non-nullable last_usage cannot be null');
         }
-        $this->container['offer'] = $offer;
-
-        return $this;
-    }
-
-    /**
-     * Gets client_contract
-     *
-     * @return \Infracorp\Extranet\Client\Model\ClientContract|null
-     */
-    public function getClientContract()
-    {
-        return $this->container['client_contract'];
-    }
-
-    /**
-     * Sets client_contract
-     *
-     * @param \Infracorp\Extranet\Client\Model\ClientContract|null $client_contract client_contract
-     *
-     * @return self
-     */
-    public function setClientContract($client_contract)
-    {
-        if (is_null($client_contract)) {
-            throw new \InvalidArgumentException('non-nullable client_contract cannot be null');
-        }
-        $this->container['client_contract'] = $client_contract;
+        $this->container['last_usage'] = $last_usage;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Product
+ * ProductGroup
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * Product Class Doc Comment
+ * ProductGroup Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Product implements ModelInterface, ArrayAccess, \JsonSerializable
+class ProductGroup implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Product';
+    protected static $openAPIModelName = 'ProductGroup';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
         'name' => 'string',
-        'attributes' => 'object',
-        'product_code' => 'string',
-        'group' => '\Infracorp\Extranet\Client\Model\ProductGroup'
+        'type' => 'string'
     ];
 
     /**
@@ -72,11 +69,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
         'name' => null,
-        'attributes' => null,
-        'product_code' => null,
-        'group' => null
+        'type' => null
     ];
 
     /**
@@ -85,11 +79,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-		'name' => false,
-		'attributes' => false,
-		'product_code' => false,
-		'group' => false
+        'name' => false,
+		'type' => false
     ];
 
     /**
@@ -178,11 +169,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'name' => 'name',
-        'attributes' => 'attributes',
-        'product_code' => 'productCode',
-        'group' => 'group'
+        'type' => 'type'
     ];
 
     /**
@@ -191,11 +179,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'name' => 'setName',
-        'attributes' => 'setAttributes',
-        'product_code' => 'setProductCode',
-        'group' => 'setGroup'
+        'type' => 'setType'
     ];
 
     /**
@@ -204,11 +189,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'name' => 'getName',
-        'attributes' => 'getAttributes',
-        'product_code' => 'getProductCode',
-        'group' => 'getGroup'
+        'type' => 'getType'
     ];
 
     /**
@@ -252,6 +234,47 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const TYPE_BANDWIDTH = 'bandwidth';
+    public const TYPE_GRT = 'grt';
+    public const TYPE_NRC = 'nrc';
+    public const TYPE_COMMITMENT = 'commitment';
+    public const TYPE_POP = 'pop';
+    public const TYPE_UPGADE_LAG = 'upgade_lag';
+    public const TYPE_SECURISATION = 'securisation';
+    public const TYPE_EXPRESS = 'express';
+    public const TYPE_DISTANCE = 'distance';
+    public const TYPE_FIBER_COUNT = 'fiber_count';
+    public const TYPE_EXTREMITY_SITE_A = 'extremity_site_a';
+    public const TYPE_EXTREMITY_SITE_B = 'extremity_site_b';
+    public const TYPE_RACCO_EVENT = 'racco_event';
+    public const TYPE_SUBNET = 'subnet';
+    public const TYPE_MAINTENANCE = 'maintenance';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_BANDWIDTH,
+            self::TYPE_GRT,
+            self::TYPE_NRC,
+            self::TYPE_COMMITMENT,
+            self::TYPE_POP,
+            self::TYPE_UPGADE_LAG,
+            self::TYPE_SECURISATION,
+            self::TYPE_EXPRESS,
+            self::TYPE_DISTANCE,
+            self::TYPE_FIBER_COUNT,
+            self::TYPE_EXTREMITY_SITE_A,
+            self::TYPE_EXTREMITY_SITE_B,
+            self::TYPE_RACCO_EVENT,
+            self::TYPE_SUBNET,
+            self::TYPE_MAINTENANCE,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -268,11 +291,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('attributes', $data ?? [], null);
-        $this->setIfExists('product_code', $data ?? [], null);
-        $this->setIfExists('group', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -302,6 +322,15 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -316,33 +345,6 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
 
     /**
      * Gets name
@@ -372,82 +374,38 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets attributes
-     *
-     * @return object|null
-     */
-    public function getAttributes()
-    {
-        return $this->container['attributes'];
-    }
-
-    /**
-     * Sets attributes
-     *
-     * @param object|null $attributes attributes
-     *
-     * @return self
-     */
-    public function setAttributes($attributes)
-    {
-        if (is_null($attributes)) {
-            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
-        }
-        $this->container['attributes'] = $attributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets product_code
+     * Gets type
      *
      * @return string|null
      */
-    public function getProductCode()
+    public function getType()
     {
-        return $this->container['product_code'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets product_code
+     * Sets type
      *
-     * @param string|null $product_code product_code
+     * @param string|null $type type
      *
      * @return self
      */
-    public function setProductCode($product_code)
+    public function setType($type)
     {
-        if (is_null($product_code)) {
-            throw new \InvalidArgumentException('non-nullable product_code cannot be null');
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
-        $this->container['product_code'] = $product_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets group
-     *
-     * @return \Infracorp\Extranet\Client\Model\ProductGroup|null
-     */
-    public function getGroup()
-    {
-        return $this->container['group'];
-    }
-
-    /**
-     * Sets group
-     *
-     * @param \Infracorp\Extranet\Client\Model\ProductGroup|null $group group
-     *
-     * @return self
-     */
-    public function setGroup($group)
-    {
-        if (is_null($group)) {
-            throw new \InvalidArgumentException('non-nullable group cannot be null');
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
-        $this->container['group'] = $group;
+        $this->container['type'] = $type;
 
         return $this;
     }

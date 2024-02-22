@@ -58,7 +58,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'offer_id' => 'int',
-        'address' => 'string'
+        'eligibility' => '\Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOfferEligibility'
     ];
 
     /**
@@ -70,7 +70,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'offer_id' => null,
-        'address' => null
+        'eligibility' => null
     ];
 
     /**
@@ -80,7 +80,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'offer_id' => false,
-		'address' => false
+		'eligibility' => false
     ];
 
     /**
@@ -170,7 +170,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
      */
     protected static $attributeMap = [
         'offer_id' => 'offerId',
-        'address' => 'address'
+        'eligibility' => 'eligibility'
     ];
 
     /**
@@ -180,7 +180,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'offer_id' => 'setOfferId',
-        'address' => 'setAddress'
+        'eligibility' => 'setEligibility'
     ];
 
     /**
@@ -190,7 +190,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'offer_id' => 'getOfferId',
-        'address' => 'getAddress'
+        'eligibility' => 'getEligibility'
     ];
 
     /**
@@ -251,7 +251,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
     public function __construct(array $data = null)
     {
         $this->setIfExists('offer_id', $data ?? [], null);
-        $this->setIfExists('address', $data ?? [], null);
+        $this->setIfExists('eligibility', $data ?? [], null);
     }
 
     /**
@@ -324,28 +324,28 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets address
+     * Gets eligibility
      *
-     * @return string|null
+     * @return \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOfferEligibility|null
      */
-    public function getAddress()
+    public function getEligibility()
     {
-        return $this->container['address'];
+        return $this->container['eligibility'];
     }
 
     /**
-     * Sets address
+     * Sets eligibility
      *
-     * @param string|null $address address
+     * @param \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOfferEligibility|null $eligibility eligibility
      *
      * @return self
      */
-    public function setAddress($address)
+    public function setEligibility($eligibility)
     {
-        if (is_null($address)) {
-            throw new \InvalidArgumentException('non-nullable address cannot be null');
+        if (is_null($eligibility)) {
+            throw new \InvalidArgumentException('non-nullable eligibility cannot be null');
         }
-        $this->container['address'] = $address;
+        $this->container['eligibility'] = $eligibility;
 
         return $this;
     }

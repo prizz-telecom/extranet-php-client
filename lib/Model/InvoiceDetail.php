@@ -57,13 +57,16 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'available_workflows' => 'string[]',
         'id' => 'int',
         'unit_price' => 'int',
+        'unit_price_str' => 'string',
         'unit' => 'string',
         'vat' => 'string',
         'recurrence' => 'string',
         'quantity' => 'int',
         'unit_price_discount' => 'int',
+        'unit_price_discount_str' => 'string',
         'name' => 'string',
         'house_number' => 'int',
         'house_number_complement' => 'string',
@@ -72,6 +75,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'city_name' => 'string',
         'insee_code' => 'string',
         'amount' => 'int',
+        'amount_str' => 'string',
         'va_trate' => 'float',
         'service_id' => 'int',
         'service_contract_id' => 'int',
@@ -88,13 +92,16 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'available_workflows' => null,
         'id' => null,
         'unit_price' => null,
+        'unit_price_str' => null,
         'unit' => null,
         'vat' => null,
         'recurrence' => null,
         'quantity' => null,
         'unit_price_discount' => null,
+        'unit_price_discount_str' => null,
         'name' => null,
         'house_number' => null,
         'house_number_complement' => null,
@@ -103,6 +110,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'city_name' => null,
         'insee_code' => null,
         'amount' => null,
+        'amount_str' => null,
         'va_trate' => 'float',
         'service_id' => null,
         'service_contract_id' => null,
@@ -117,13 +125,16 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
+        'available_workflows' => false,
+		'id' => false,
 		'unit_price' => false,
+		'unit_price_str' => false,
 		'unit' => false,
 		'vat' => false,
 		'recurrence' => false,
 		'quantity' => false,
 		'unit_price_discount' => false,
+		'unit_price_discount_str' => false,
 		'name' => false,
 		'house_number' => false,
 		'house_number_complement' => false,
@@ -132,6 +143,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 		'city_name' => false,
 		'insee_code' => false,
 		'amount' => false,
+		'amount_str' => false,
 		'va_trate' => false,
 		'service_id' => false,
 		'service_contract_id' => false,
@@ -226,13 +238,16 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'available_workflows' => 'availableWorkflows',
         'id' => 'id',
         'unit_price' => 'unitPrice',
+        'unit_price_str' => 'unitPriceStr',
         'unit' => 'unit',
         'vat' => 'vat',
         'recurrence' => 'recurrence',
         'quantity' => 'quantity',
         'unit_price_discount' => 'unitPriceDiscount',
+        'unit_price_discount_str' => 'unitPriceDiscountStr',
         'name' => 'name',
         'house_number' => 'houseNumber',
         'house_number_complement' => 'houseNumberComplement',
@@ -241,6 +256,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'city_name' => 'cityName',
         'insee_code' => 'inseeCode',
         'amount' => 'amount',
+        'amount_str' => 'amountStr',
         'va_trate' => 'VATrate',
         'service_id' => 'serviceId',
         'service_contract_id' => 'serviceContractId',
@@ -255,13 +271,16 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'available_workflows' => 'setAvailableWorkflows',
         'id' => 'setId',
         'unit_price' => 'setUnitPrice',
+        'unit_price_str' => 'setUnitPriceStr',
         'unit' => 'setUnit',
         'vat' => 'setVat',
         'recurrence' => 'setRecurrence',
         'quantity' => 'setQuantity',
         'unit_price_discount' => 'setUnitPriceDiscount',
+        'unit_price_discount_str' => 'setUnitPriceDiscountStr',
         'name' => 'setName',
         'house_number' => 'setHouseNumber',
         'house_number_complement' => 'setHouseNumberComplement',
@@ -270,6 +289,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'city_name' => 'setCityName',
         'insee_code' => 'setInseeCode',
         'amount' => 'setAmount',
+        'amount_str' => 'setAmountStr',
         'va_trate' => 'setVaTrate',
         'service_id' => 'setServiceId',
         'service_contract_id' => 'setServiceContractId',
@@ -284,13 +304,16 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'available_workflows' => 'getAvailableWorkflows',
         'id' => 'getId',
         'unit_price' => 'getUnitPrice',
+        'unit_price_str' => 'getUnitPriceStr',
         'unit' => 'getUnit',
         'vat' => 'getVat',
         'recurrence' => 'getRecurrence',
         'quantity' => 'getQuantity',
         'unit_price_discount' => 'getUnitPriceDiscount',
+        'unit_price_discount_str' => 'getUnitPriceDiscountStr',
         'name' => 'getName',
         'house_number' => 'getHouseNumber',
         'house_number_complement' => 'getHouseNumberComplement',
@@ -299,6 +322,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'city_name' => 'getCityName',
         'insee_code' => 'getInseeCode',
         'amount' => 'getAmount',
+        'amount_str' => 'getAmountStr',
         'va_trate' => 'getVaTrate',
         'service_id' => 'getServiceId',
         'service_contract_id' => 'getServiceContractId',
@@ -348,10 +372,65 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommercialOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Submit\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Sign\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Rename\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RenameSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateOfferItemInOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\SetOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\AddComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\SubscribeThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateThread\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Invoice\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\CreateToken\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\RevokeToken\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSubscribers\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
     public const RECURRENCE_MONTHLY = 'monthly';
     public const RECURRENCE_YEARLY = 'yearly';
     public const RECURRENCE_HALF_YEARLY = 'half-yearly';
     public const RECURRENCE_QUATERLY = 'quaterly';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAvailableWorkflowsAllowableValues()
+    {
+        return [
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
+        ];
+    }
 
     /**
      * Gets allowable values of the enum
@@ -383,13 +462,16 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('available_workflows', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('unit_price', $data ?? [], null);
+        $this->setIfExists('unit_price_str', $data ?? [], null);
         $this->setIfExists('unit', $data ?? [], null);
         $this->setIfExists('vat', $data ?? [], null);
         $this->setIfExists('recurrence', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('unit_price_discount', $data ?? [], null);
+        $this->setIfExists('unit_price_discount_str', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('house_number', $data ?? [], null);
         $this->setIfExists('house_number_complement', $data ?? [], null);
@@ -398,6 +480,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('city_name', $data ?? [], null);
         $this->setIfExists('insee_code', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
+        $this->setIfExists('amount_str', $data ?? [], null);
         $this->setIfExists('va_trate', $data ?? [], null);
         $this->setIfExists('service_id', $data ?? [], null);
         $this->setIfExists('service_contract_id', $data ?? [], null);
@@ -458,6 +541,42 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets available_workflows
+     *
+     * @return string[]|null
+     */
+    public function getAvailableWorkflows()
+    {
+        return $this->container['available_workflows'];
+    }
+
+    /**
+     * Sets available_workflows
+     *
+     * @param string[]|null $available_workflows liste des processus disponible pour l'objet
+     *
+     * @return self
+     */
+    public function setAvailableWorkflows($available_workflows)
+    {
+        if (is_null($available_workflows)) {
+            throw new \InvalidArgumentException('non-nullable available_workflows cannot be null');
+        }
+        $allowedValues = $this->getAvailableWorkflowsAllowableValues();
+        if (array_diff($available_workflows, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'available_workflows', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['available_workflows'] = $available_workflows;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -507,6 +626,33 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
         }
         $this->container['unit_price'] = $unit_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price_str
+     *
+     * @return string|null
+     */
+    public function getUnitPriceStr()
+    {
+        return $this->container['unit_price_str'];
+    }
+
+    /**
+     * Sets unit_price_str
+     *
+     * @param string|null $unit_price_str unit_price_str
+     *
+     * @return self
+     */
+    public function setUnitPriceStr($unit_price_str)
+    {
+        if (is_null($unit_price_str)) {
+            throw new \InvalidArgumentException('non-nullable unit_price_str cannot be null');
+        }
+        $this->container['unit_price_str'] = $unit_price_str;
 
         return $this;
     }
@@ -652,6 +798,33 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable unit_price_discount cannot be null');
         }
         $this->container['unit_price_discount'] = $unit_price_discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price_discount_str
+     *
+     * @return string|null
+     */
+    public function getUnitPriceDiscountStr()
+    {
+        return $this->container['unit_price_discount_str'];
+    }
+
+    /**
+     * Sets unit_price_discount_str
+     *
+     * @param string|null $unit_price_discount_str unit_price_discount_str
+     *
+     * @return self
+     */
+    public function setUnitPriceDiscountStr($unit_price_discount_str)
+    {
+        if (is_null($unit_price_discount_str)) {
+            throw new \InvalidArgumentException('non-nullable unit_price_discount_str cannot be null');
+        }
+        $this->container['unit_price_discount_str'] = $unit_price_discount_str;
 
         return $this;
     }
@@ -868,6 +1041,33 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_str
+     *
+     * @return string|null
+     */
+    public function getAmountStr()
+    {
+        return $this->container['amount_str'];
+    }
+
+    /**
+     * Sets amount_str
+     *
+     * @param string|null $amount_str amount_str
+     *
+     * @return self
+     */
+    public function setAmountStr($amount_str)
+    {
+        if (is_null($amount_str)) {
+            throw new \InvalidArgumentException('non-nullable amount_str cannot be null');
+        }
+        $this->container['amount_str'] = $amount_str;
 
         return $this;
     }

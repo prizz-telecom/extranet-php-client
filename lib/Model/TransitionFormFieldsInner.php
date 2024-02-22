@@ -62,7 +62,10 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
         'required' => 'bool',
         'value' => 'string',
         'values' => '\Infracorp\Extranet\Client\Model\TransitionFormFieldsInnerValuesInner[]',
-        'type' => 'string'
+        'type' => 'string',
+        'help' => 'string',
+        'multiple' => 'bool',
+        'expanded' => 'bool'
     ];
 
     /**
@@ -78,7 +81,10 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
         'required' => null,
         'value' => null,
         'values' => null,
-        'type' => null
+        'type' => null,
+        'help' => null,
+        'multiple' => null,
+        'expanded' => null
     ];
 
     /**
@@ -92,7 +98,10 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
 		'required' => false,
 		'value' => false,
 		'values' => false,
-		'type' => false
+		'type' => false,
+		'help' => false,
+		'multiple' => false,
+		'expanded' => false
     ];
 
     /**
@@ -186,7 +195,10 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
         'required' => 'required',
         'value' => 'value',
         'values' => 'values',
-        'type' => 'type'
+        'type' => 'type',
+        'help' => 'help',
+        'multiple' => 'multiple',
+        'expanded' => 'expanded'
     ];
 
     /**
@@ -200,7 +212,10 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
         'required' => 'setRequired',
         'value' => 'setValue',
         'values' => 'setValues',
-        'type' => 'setType'
+        'type' => 'setType',
+        'help' => 'setHelp',
+        'multiple' => 'setMultiple',
+        'expanded' => 'setExpanded'
     ];
 
     /**
@@ -214,7 +229,10 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
         'required' => 'getRequired',
         'value' => 'getValue',
         'values' => 'getValues',
-        'type' => 'getType'
+        'type' => 'getType',
+        'help' => 'getHelp',
+        'multiple' => 'getMultiple',
+        'expanded' => 'getExpanded'
     ];
 
     /**
@@ -280,6 +298,9 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('value', $data ?? [], null);
         $this->setIfExists('values', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('help', $data ?? [], null);
+        $this->setIfExists('multiple', $data ?? [], null);
+        $this->setIfExists('expanded', $data ?? [], null);
     }
 
     /**
@@ -482,6 +503,87 @@ class TransitionFormFieldsInner implements ModelInterface, ArrayAccess, \JsonSer
             throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets help
+     *
+     * @return string|null
+     */
+    public function getHelp()
+    {
+        return $this->container['help'];
+    }
+
+    /**
+     * Sets help
+     *
+     * @param string|null $help help
+     *
+     * @return self
+     */
+    public function setHelp($help)
+    {
+        if (is_null($help)) {
+            throw new \InvalidArgumentException('non-nullable help cannot be null');
+        }
+        $this->container['help'] = $help;
+
+        return $this;
+    }
+
+    /**
+     * Gets multiple
+     *
+     * @return bool|null
+     */
+    public function getMultiple()
+    {
+        return $this->container['multiple'];
+    }
+
+    /**
+     * Sets multiple
+     *
+     * @param bool|null $multiple multiple
+     *
+     * @return self
+     */
+    public function setMultiple($multiple)
+    {
+        if (is_null($multiple)) {
+            throw new \InvalidArgumentException('non-nullable multiple cannot be null');
+        }
+        $this->container['multiple'] = $multiple;
+
+        return $this;
+    }
+
+    /**
+     * Gets expanded
+     *
+     * @return bool|null
+     */
+    public function getExpanded()
+    {
+        return $this->container['expanded'];
+    }
+
+    /**
+     * Sets expanded
+     *
+     * @param bool|null $expanded expanded
+     *
+     * @return self
+     */
+    public function setExpanded($expanded)
+    {
+        if (is_null($expanded)) {
+            throw new \InvalidArgumentException('non-nullable expanded cannot be null');
+        }
+        $this->container['expanded'] = $expanded;
 
         return $this;
     }

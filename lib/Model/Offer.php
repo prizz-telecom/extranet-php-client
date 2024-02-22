@@ -59,7 +59,8 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'main_offer_item' => '\Infracorp\Extranet\Client\Model\OfferItem'
+        'main_offer_item' => '\Infracorp\Extranet\Client\Model\OfferItem',
+        'offer_type' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'main_offer_item' => null
+        'main_offer_item' => null,
+        'offer_type' => null
     ];
 
     /**
@@ -83,7 +85,8 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
 		'name' => false,
-		'main_offer_item' => false
+		'main_offer_item' => false,
+		'offer_type' => false
     ];
 
     /**
@@ -174,7 +177,8 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'main_offer_item' => 'mainOfferItem'
+        'main_offer_item' => 'mainOfferItem',
+        'offer_type' => 'offerType'
     ];
 
     /**
@@ -185,7 +189,8 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'main_offer_item' => 'setMainOfferItem'
+        'main_offer_item' => 'setMainOfferItem',
+        'offer_type' => 'setOfferType'
     ];
 
     /**
@@ -196,7 +201,8 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'main_offer_item' => 'getMainOfferItem'
+        'main_offer_item' => 'getMainOfferItem',
+        'offer_type' => 'getOfferType'
     ];
 
     /**
@@ -240,6 +246,21 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const OFFER_TYPE_L2 = 'L2';
+    public const OFFER_TYPE_FON = 'FON';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getOfferTypeAllowableValues()
+    {
+        return [
+            self::OFFER_TYPE_L2,
+            self::OFFER_TYPE_FON,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -259,6 +280,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('main_offer_item', $data ?? [], null);
+        $this->setIfExists('offer_type', $data ?? [], null);
     }
 
     /**
@@ -287,6 +309,15 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getOfferTypeAllowableValues();
+        if (!is_null($this->container['offer_type']) && !in_array($this->container['offer_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'offer_type', must be one of '%s'",
+                $this->container['offer_type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -380,6 +411,43 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable main_offer_item cannot be null');
         }
         $this->container['main_offer_item'] = $main_offer_item;
+
+        return $this;
+    }
+
+    /**
+     * Gets offer_type
+     *
+     * @return string|null
+     */
+    public function getOfferType()
+    {
+        return $this->container['offer_type'];
+    }
+
+    /**
+     * Sets offer_type
+     *
+     * @param string|null $offer_type offer_type
+     *
+     * @return self
+     */
+    public function setOfferType($offer_type)
+    {
+        if (is_null($offer_type)) {
+            throw new \InvalidArgumentException('non-nullable offer_type cannot be null');
+        }
+        $allowedValues = $this->getOfferTypeAllowableValues();
+        if (!in_array($offer_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'offer_type', must be one of '%s'",
+                    $offer_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['offer_type'] = $offer_type;
 
         return $this;
     }

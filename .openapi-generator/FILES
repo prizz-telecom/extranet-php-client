@@ -16,6 +16,7 @@ docs/Model/CommercialOfferItem.md
 docs/Model/CommercialOfferSearch.md
 docs/Model/CommercialOfferSection.md
 docs/Model/CommercialOfferVatDetailInner.md
+docs/Model/CommercialOfferVatDetailStrInner.md
 docs/Model/Contact.md
 docs/Model/ContactSearch.md
 docs/Model/CreateCommercialOffer.md
@@ -29,6 +30,7 @@ docs/Model/EligibilityHistory.md
 docs/Model/EligibilityHistory200Response.md
 docs/Model/EligibilityResult.md
 docs/Model/EligibilityResultPriceListItemsGroups.md
+docs/Model/GetApiTokens200Response.md
 docs/Model/GetClientLegalEntities200Response.md
 docs/Model/GetClientLegalEntities200ResponsePagination.md
 docs/Model/GetCommercialOffers200Response.md
@@ -59,6 +61,7 @@ docs/Model/ProcessAttributesQualification.md
 docs/Model/ProcessAttributesQualificationValues.md
 docs/Model/ProcessMessage.md
 docs/Model/Product.md
+docs/Model/ProductGroup.md
 docs/Model/RenameCommercialOfferSection.md
 docs/Model/RunningProcess.md
 docs/Model/Search200ResponseInner.md
@@ -66,12 +69,15 @@ docs/Model/Service.md
 docs/Model/ServiceContract.md
 docs/Model/ServiceContractSearch.md
 docs/Model/SetCommercialOfferSectionOffer.md
+docs/Model/SetCommercialOfferSectionOfferEligibility.md
 docs/Model/SignCommercialOffer.md
 docs/Model/SignCommercialOffer200Response.md
 docs/Model/Ticket.md
 docs/Model/Transition.md
 docs/Model/TransitionFormFieldsInner.md
 docs/Model/TransitionFormFieldsInnerValuesInner.md
+docs/Model/User.md
+docs/Model/UserApiToken.md
 docs/Model/Workflow.md
 git_push.sh
 lib/Api/DefaultApi.php
@@ -90,6 +96,7 @@ lib/Model/CommercialOfferItem.php
 lib/Model/CommercialOfferSearch.php
 lib/Model/CommercialOfferSection.php
 lib/Model/CommercialOfferVatDetailInner.php
+lib/Model/CommercialOfferVatDetailStrInner.php
 lib/Model/Contact.php
 lib/Model/ContactSearch.php
 lib/Model/CreateCommercialOffer.php
@@ -103,6 +110,7 @@ lib/Model/EligibilityHistory.php
 lib/Model/EligibilityHistory200Response.php
 lib/Model/EligibilityResult.php
 lib/Model/EligibilityResultPriceListItemsGroups.php
+lib/Model/GetApiTokens200Response.php
 lib/Model/GetClientLegalEntities200Response.php
 lib/Model/GetClientLegalEntities200ResponsePagination.php
 lib/Model/GetCommercialOffers200Response.php
@@ -134,6 +142,7 @@ lib/Model/ProcessAttributesQualification.php
 lib/Model/ProcessAttributesQualificationValues.php
 lib/Model/ProcessMessage.php
 lib/Model/Product.php
+lib/Model/ProductGroup.php
 lib/Model/RenameCommercialOfferSection.php
 lib/Model/RunningProcess.php
 lib/Model/Search200ResponseInner.php
@@ -141,12 +150,21 @@ lib/Model/Service.php
 lib/Model/ServiceContract.php
 lib/Model/ServiceContractSearch.php
 lib/Model/SetCommercialOfferSectionOffer.php
+lib/Model/SetCommercialOfferSectionOfferEligibility.php
 lib/Model/SignCommercialOffer.php
 lib/Model/SignCommercialOffer200Response.php
 lib/Model/Ticket.php
 lib/Model/Transition.php
 lib/Model/TransitionFormFieldsInner.php
 lib/Model/TransitionFormFieldsInnerValuesInner.php
+lib/Model/User.php
+lib/Model/UserApiToken.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/CommercialOfferVatDetailStrInnerTest.php
+test/Model/GetApiTokens200ResponseTest.php
+test/Model/ProductGroupTest.php
+test/Model/SetCommercialOfferSectionOfferEligibilityTest.php
+test/Model/UserApiTokenTest.php
+test/Model/UserTest.php

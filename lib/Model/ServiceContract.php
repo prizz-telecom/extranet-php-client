@@ -66,10 +66,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'subscription_date' => '\DateTime',
         'activation_date' => '\DateTime',
         'offer' => '\Infracorp\Extranet\Client\Model\Offer',
+        'client' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity',
         'ref_client' => 'string',
+        'ref_service' => 'string',
+        'description' => 'string',
         'services' => '\Infracorp\Extranet\Client\Model\Service[]',
         'planned_activation_date' => '\DateTime',
         'sold_activation_date' => '\DateTime',
+        'commitment_end_date' => '\DateTime',
         'attributes' => 'object',
         'consolidated_attributes' => 'object',
         'consolidated_attributes_staging_or_new' => 'object'
@@ -92,10 +96,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'subscription_date' => 'date-time',
         'activation_date' => 'date-time',
         'offer' => null,
+        'client' => null,
         'ref_client' => null,
+        'ref_service' => null,
+        'description' => null,
         'services' => null,
         'planned_activation_date' => 'date-time',
         'sold_activation_date' => 'date-time',
+        'commitment_end_date' => 'date-time',
         'attributes' => null,
         'consolidated_attributes' => null,
         'consolidated_attributes_staging_or_new' => null
@@ -116,10 +124,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
 		'subscription_date' => false,
 		'activation_date' => false,
 		'offer' => false,
+		'client' => false,
 		'ref_client' => false,
+		'ref_service' => false,
+		'description' => false,
 		'services' => false,
 		'planned_activation_date' => false,
 		'sold_activation_date' => false,
+		'commitment_end_date' => false,
 		'attributes' => false,
 		'consolidated_attributes' => false,
 		'consolidated_attributes_staging_or_new' => false
@@ -220,10 +232,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'subscription_date' => 'subscriptionDate',
         'activation_date' => 'activationDate',
         'offer' => 'offer',
+        'client' => 'client',
         'ref_client' => 'refClient',
+        'ref_service' => 'refService',
+        'description' => 'description',
         'services' => 'services',
         'planned_activation_date' => 'plannedActivationDate',
         'sold_activation_date' => 'soldActivationDate',
+        'commitment_end_date' => 'commitmentEndDate',
         'attributes' => 'attributes',
         'consolidated_attributes' => 'consolidatedAttributes',
         'consolidated_attributes_staging_or_new' => 'consolidatedAttributesStagingOrNew'
@@ -244,10 +260,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'subscription_date' => 'setSubscriptionDate',
         'activation_date' => 'setActivationDate',
         'offer' => 'setOffer',
+        'client' => 'setClient',
         'ref_client' => 'setRefClient',
+        'ref_service' => 'setRefService',
+        'description' => 'setDescription',
         'services' => 'setServices',
         'planned_activation_date' => 'setPlannedActivationDate',
         'sold_activation_date' => 'setSoldActivationDate',
+        'commitment_end_date' => 'setCommitmentEndDate',
         'attributes' => 'setAttributes',
         'consolidated_attributes' => 'setConsolidatedAttributes',
         'consolidated_attributes_staging_or_new' => 'setConsolidatedAttributesStagingOrNew'
@@ -268,10 +288,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'subscription_date' => 'getSubscriptionDate',
         'activation_date' => 'getActivationDate',
         'offer' => 'getOffer',
+        'client' => 'getClient',
         'ref_client' => 'getRefClient',
+        'ref_service' => 'getRefService',
+        'description' => 'getDescription',
         'services' => 'getServices',
         'planned_activation_date' => 'getPlannedActivationDate',
         'sold_activation_date' => 'getSoldActivationDate',
+        'commitment_end_date' => 'getCommitmentEndDate',
         'attributes' => 'getAttributes',
         'consolidated_attributes' => 'getConsolidatedAttributes',
         'consolidated_attributes_staging_or_new' => 'getConsolidatedAttributesStagingOrNew'
@@ -343,10 +367,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('subscription_date', $data ?? [], null);
         $this->setIfExists('activation_date', $data ?? [], null);
         $this->setIfExists('offer', $data ?? [], null);
+        $this->setIfExists('client', $data ?? [], null);
         $this->setIfExists('ref_client', $data ?? [], null);
+        $this->setIfExists('ref_service', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('services', $data ?? [], null);
         $this->setIfExists('planned_activation_date', $data ?? [], null);
         $this->setIfExists('sold_activation_date', $data ?? [], null);
+        $this->setIfExists('commitment_end_date', $data ?? [], null);
         $this->setIfExists('attributes', $data ?? [], null);
         $this->setIfExists('consolidated_attributes', $data ?? [], null);
         $this->setIfExists('consolidated_attributes_staging_or_new', $data ?? [], null);
@@ -638,6 +666,33 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets client
+     *
+     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntity|null
+     */
+    public function getClient()
+    {
+        return $this->container['client'];
+    }
+
+    /**
+     * Sets client
+     *
+     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntity|null $client client
+     *
+     * @return self
+     */
+    public function setClient($client)
+    {
+        if (is_null($client)) {
+            throw new \InvalidArgumentException('non-nullable client cannot be null');
+        }
+        $this->container['client'] = $client;
+
+        return $this;
+    }
+
+    /**
      * Gets ref_client
      *
      * @return string|null
@@ -650,7 +705,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ref_client
      *
-     * @param string|null $ref_client ref_client
+     * @param string|null $ref_client ref set by customer
      *
      * @return self
      */
@@ -660,6 +715,60 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable ref_client cannot be null');
         }
         $this->container['ref_client'] = $ref_client;
+
+        return $this;
+    }
+
+    /**
+     * Gets ref_service
+     *
+     * @return string|null
+     */
+    public function getRefService()
+    {
+        return $this->container['ref_service'];
+    }
+
+    /**
+     * Sets ref_service
+     *
+     * @param string|null $ref_service ref used by Prizz Telecom NOC
+     *
+     * @return self
+     */
+    public function setRefService($ref_service)
+    {
+        if (is_null($ref_service)) {
+            throw new \InvalidArgumentException('non-nullable ref_service cannot be null');
+        }
+        $this->container['ref_service'] = $ref_service;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if (is_null($description)) {
+            throw new \InvalidArgumentException('non-nullable description cannot be null');
+        }
+        $this->container['description'] = $description;
 
         return $this;
     }
@@ -741,6 +850,33 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable sold_activation_date cannot be null');
         }
         $this->container['sold_activation_date'] = $sold_activation_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets commitment_end_date
+     *
+     * @return \DateTime|null
+     */
+    public function getCommitmentEndDate()
+    {
+        return $this->container['commitment_end_date'];
+    }
+
+    /**
+     * Sets commitment_end_date
+     *
+     * @param \DateTime|null $commitment_end_date commitment_end_date
+     *
+     * @return self
+     */
+    public function setCommitmentEndDate($commitment_end_date)
+    {
+        if (is_null($commitment_end_date)) {
+            throw new \InvalidArgumentException('non-nullable commitment_end_date cannot be null');
+        }
+        $this->container['commitment_end_date'] = $commitment_end_date;
 
         return $this;
     }

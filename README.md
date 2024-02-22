@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**createTicketOperator**](docs/Api/DefaultApi.md#createticketoperator) | **POST** /external-api/v2/exploitation/operator/{id} | Exploitation Operator Tickets
 *DefaultApi* | [**createWorkflow**](docs/Api/DefaultApi.md#createworkflow) | **POST** /external-api/v2/workflow | Workflows
 *DefaultApi* | [**eligibilityHistory**](docs/Api/DefaultApi.md#eligibilityhistory) | **GET** /external-api/v2/eligibility/history | Eligibility History
+*DefaultApi* | [**getApiTokens**](docs/Api/DefaultApi.md#getapitokens) | **GET** /external-api/v2/users/api_tokens | User Api Tokens
 *DefaultApi* | [**getClientLegalEntities**](docs/Api/DefaultApi.md#getclientlegalentities) | **GET** /external-api/v2/client_legal_entities | Client legal entities
 *DefaultApi* | [**getClientLegalEntity**](docs/Api/DefaultApi.md#getclientlegalentity) | **GET** /external-api/v2/client_legal_entities/{id} | Client legal entity
 *DefaultApi* | [**getCommentThread**](docs/Api/DefaultApi.md#getcommentthread) | **GET** /external-api/v2/comments/threads/{id} | Comment thread
@@ -94,6 +95,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getCommercialOffer**](docs/Api/DefaultApi.md#getcommercialoffer) | **GET** /external-api/v2/commercial_offers/{id} | Commercial Offer
 *DefaultApi* | [**getCommercialOfferPdf**](docs/Api/DefaultApi.md#getcommercialofferpdf) | **GET** /external-api/v2/commercial_offers/{id}/pdf | Commercial Offer Pdf
 *DefaultApi* | [**getCommercialOffers**](docs/Api/DefaultApi.md#getcommercialoffers) | **GET** /external-api/v2/commercial_offers | Commercial Offers
+*DefaultApi* | [**getCurrentUser**](docs/Api/DefaultApi.md#getcurrentuser) | **GET** /external-api/v2/user | User
 *DefaultApi* | [**getEligibility**](docs/Api/DefaultApi.md#geteligibility) | **GET** /external-api/v2/eligibility/{id} | Get Eligibility
 *DefaultApi* | [**getInvoice**](docs/Api/DefaultApi.md#getinvoice) | **GET** /external-api/v2/invoices/{id} | Invoice
 *DefaultApi* | [**getInvoicePdf**](docs/Api/DefaultApi.md#getinvoicepdf) | **GET** /external-api/v2/invoices/{id}/pdf | Invoice Pdf
@@ -138,6 +140,7 @@ Class | Method | HTTP request | Description
 - [CommercialOfferSearch](docs/Model/CommercialOfferSearch.md)
 - [CommercialOfferSection](docs/Model/CommercialOfferSection.md)
 - [CommercialOfferVatDetailInner](docs/Model/CommercialOfferVatDetailInner.md)
+- [CommercialOfferVatDetailStrInner](docs/Model/CommercialOfferVatDetailStrInner.md)
 - [Contact](docs/Model/Contact.md)
 - [ContactSearch](docs/Model/ContactSearch.md)
 - [CreateCommercialOffer](docs/Model/CreateCommercialOffer.md)
@@ -151,6 +154,7 @@ Class | Method | HTTP request | Description
 - [EligibilityHistory200Response](docs/Model/EligibilityHistory200Response.md)
 - [EligibilityResult](docs/Model/EligibilityResult.md)
 - [EligibilityResultPriceListItemsGroups](docs/Model/EligibilityResultPriceListItemsGroups.md)
+- [GetApiTokens200Response](docs/Model/GetApiTokens200Response.md)
 - [GetClientLegalEntities200Response](docs/Model/GetClientLegalEntities200Response.md)
 - [GetClientLegalEntities200ResponsePagination](docs/Model/GetClientLegalEntities200ResponsePagination.md)
 - [GetCommercialOffers200Response](docs/Model/GetCommercialOffers200Response.md)
@@ -181,6 +185,7 @@ Class | Method | HTTP request | Description
 - [ProcessAttributesQualificationValues](docs/Model/ProcessAttributesQualificationValues.md)
 - [ProcessMessage](docs/Model/ProcessMessage.md)
 - [Product](docs/Model/Product.md)
+- [ProductGroup](docs/Model/ProductGroup.md)
 - [RenameCommercialOfferSection](docs/Model/RenameCommercialOfferSection.md)
 - [RunningProcess](docs/Model/RunningProcess.md)
 - [Search200ResponseInner](docs/Model/Search200ResponseInner.md)
@@ -188,12 +193,15 @@ Class | Method | HTTP request | Description
 - [ServiceContract](docs/Model/ServiceContract.md)
 - [ServiceContractSearch](docs/Model/ServiceContractSearch.md)
 - [SetCommercialOfferSectionOffer](docs/Model/SetCommercialOfferSectionOffer.md)
+- [SetCommercialOfferSectionOfferEligibility](docs/Model/SetCommercialOfferSectionOfferEligibility.md)
 - [SignCommercialOffer](docs/Model/SignCommercialOffer.md)
 - [SignCommercialOffer200Response](docs/Model/SignCommercialOffer200Response.md)
 - [Ticket](docs/Model/Ticket.md)
 - [Transition](docs/Model/Transition.md)
 - [TransitionFormFieldsInner](docs/Model/TransitionFormFieldsInner.md)
 - [TransitionFormFieldsInnerValuesInner](docs/Model/TransitionFormFieldsInnerValuesInner.md)
+- [User](docs/Model/User.md)
+- [UserApiToken](docs/Model/UserApiToken.md)
 - [Workflow](docs/Model/Workflow.md)
 
 ## Authorization

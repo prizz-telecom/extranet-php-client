@@ -1,6 +1,6 @@
 <?php
 /**
- * Product
+ * SetCommercialOfferSectionOfferEligibility
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * Product Class Doc Comment
+ * SetCommercialOfferSectionOfferEligibility Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Product implements ModelInterface, ArrayAccess, \JsonSerializable
+class SetCommercialOfferSectionOfferEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Product';
+    protected static $openAPIModelName = 'SetCommercialOfferSectionOffer_eligibility';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'attributes' => 'object',
-        'product_code' => 'string',
-        'group' => '\Infracorp\Extranet\Client\Model\ProductGroup'
+        'address' => 'string',
+        'address_a' => 'string',
+        'address_b' => 'string'
     ];
 
     /**
@@ -72,11 +70,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'attributes' => null,
-        'product_code' => null,
-        'group' => null
+        'address' => null,
+        'address_a' => null,
+        'address_b' => null
     ];
 
     /**
@@ -85,11 +81,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-		'name' => false,
-		'attributes' => false,
-		'product_code' => false,
-		'group' => false
+        'address' => false,
+		'address_a' => false,
+		'address_b' => false
     ];
 
     /**
@@ -178,11 +172,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'attributes' => 'attributes',
-        'product_code' => 'productCode',
-        'group' => 'group'
+        'address' => 'address',
+        'address_a' => 'addressA',
+        'address_b' => 'addressB'
     ];
 
     /**
@@ -191,11 +183,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'attributes' => 'setAttributes',
-        'product_code' => 'setProductCode',
-        'group' => 'setGroup'
+        'address' => 'setAddress',
+        'address_a' => 'setAddressA',
+        'address_b' => 'setAddressB'
     ];
 
     /**
@@ -204,11 +194,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'attributes' => 'getAttributes',
-        'product_code' => 'getProductCode',
-        'group' => 'getGroup'
+        'address' => 'getAddress',
+        'address_a' => 'getAddressA',
+        'address_b' => 'getAddressB'
     ];
 
     /**
@@ -268,11 +256,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('attributes', $data ?? [], null);
-        $this->setIfExists('product_code', $data ?? [], null);
-        $this->setIfExists('group', $data ?? [], null);
+        $this->setIfExists('address', $data ?? [], null);
+        $this->setIfExists('address_a', $data ?? [], null);
+        $this->setIfExists('address_b', $data ?? [], null);
     }
 
     /**
@@ -318,136 +304,82 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets address
      *
      * @return string|null
      */
-    public function getName()
+    public function getAddress()
     {
-        return $this->container['name'];
+        return $this->container['address'];
     }
 
     /**
-     * Sets name
+     * Sets address
      *
-     * @param string|null $name name
+     * @param string|null $address adresse du site pour l'offre L2
      *
      * @return self
      */
-    public function setName($name)
+    public function setAddress($address)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($address)) {
+            throw new \InvalidArgumentException('non-nullable address cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['address'] = $address;
 
         return $this;
     }
 
     /**
-     * Gets attributes
-     *
-     * @return object|null
-     */
-    public function getAttributes()
-    {
-        return $this->container['attributes'];
-    }
-
-    /**
-     * Sets attributes
-     *
-     * @param object|null $attributes attributes
-     *
-     * @return self
-     */
-    public function setAttributes($attributes)
-    {
-        if (is_null($attributes)) {
-            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
-        }
-        $this->container['attributes'] = $attributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets product_code
+     * Gets address_a
      *
      * @return string|null
      */
-    public function getProductCode()
+    public function getAddressA()
     {
-        return $this->container['product_code'];
+        return $this->container['address_a'];
     }
 
     /**
-     * Sets product_code
+     * Sets address_a
      *
-     * @param string|null $product_code product_code
+     * @param string|null $address_a adresse du site A pour l'offre FON
      *
      * @return self
      */
-    public function setProductCode($product_code)
+    public function setAddressA($address_a)
     {
-        if (is_null($product_code)) {
-            throw new \InvalidArgumentException('non-nullable product_code cannot be null');
+        if (is_null($address_a)) {
+            throw new \InvalidArgumentException('non-nullable address_a cannot be null');
         }
-        $this->container['product_code'] = $product_code;
+        $this->container['address_a'] = $address_a;
 
         return $this;
     }
 
     /**
-     * Gets group
+     * Gets address_b
      *
-     * @return \Infracorp\Extranet\Client\Model\ProductGroup|null
+     * @return string|null
      */
-    public function getGroup()
+    public function getAddressB()
     {
-        return $this->container['group'];
+        return $this->container['address_b'];
     }
 
     /**
-     * Sets group
+     * Sets address_b
      *
-     * @param \Infracorp\Extranet\Client\Model\ProductGroup|null $group group
+     * @param string|null $address_b adresse du site B pour l'offre FON
      *
      * @return self
      */
-    public function setGroup($group)
+    public function setAddressB($address_b)
     {
-        if (is_null($group)) {
-            throw new \InvalidArgumentException('non-nullable group cannot be null');
+        if (is_null($address_b)) {
+            throw new \InvalidArgumentException('non-nullable address_b cannot be null');
         }
-        $this->container['group'] = $group;
+        $this->container['address_b'] = $address_b;
 
         return $this;
     }

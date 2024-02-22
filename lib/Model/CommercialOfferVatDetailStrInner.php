@@ -1,6 +1,6 @@
 <?php
 /**
- * Product
+ * CommercialOfferVatDetailStrInner
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * Product Class Doc Comment
+ * CommercialOfferVatDetailStrInner Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Product implements ModelInterface, ArrayAccess, \JsonSerializable
+class CommercialOfferVatDetailStrInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Product';
+    protected static $openAPIModelName = 'CommercialOffer_vatDetailStr_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'attributes' => 'object',
-        'product_code' => 'string',
-        'group' => '\Infracorp\Extranet\Client\Model\ProductGroup'
+        'vat' => 'float',
+        'total_without_taxes' => 'string',
+        'total' => 'string'
     ];
 
     /**
@@ -72,11 +70,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'attributes' => null,
-        'product_code' => null,
-        'group' => null
+        'vat' => 'float',
+        'total_without_taxes' => null,
+        'total' => null
     ];
 
     /**
@@ -85,11 +81,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-		'name' => false,
-		'attributes' => false,
-		'product_code' => false,
-		'group' => false
+        'vat' => false,
+		'total_without_taxes' => false,
+		'total' => false
     ];
 
     /**
@@ -178,11 +172,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'attributes' => 'attributes',
-        'product_code' => 'productCode',
-        'group' => 'group'
+        'vat' => 'vat',
+        'total_without_taxes' => 'total_without_taxes',
+        'total' => 'total'
     ];
 
     /**
@@ -191,11 +183,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'attributes' => 'setAttributes',
-        'product_code' => 'setProductCode',
-        'group' => 'setGroup'
+        'vat' => 'setVat',
+        'total_without_taxes' => 'setTotalWithoutTaxes',
+        'total' => 'setTotal'
     ];
 
     /**
@@ -204,11 +194,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'attributes' => 'getAttributes',
-        'product_code' => 'getProductCode',
-        'group' => 'getGroup'
+        'vat' => 'getVat',
+        'total_without_taxes' => 'getTotalWithoutTaxes',
+        'total' => 'getTotal'
     ];
 
     /**
@@ -268,11 +256,9 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('attributes', $data ?? [], null);
-        $this->setIfExists('product_code', $data ?? [], null);
-        $this->setIfExists('group', $data ?? [], null);
+        $this->setIfExists('vat', $data ?? [], null);
+        $this->setIfExists('total_without_taxes', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
     }
 
     /**
@@ -318,136 +304,82 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets vat
      *
-     * @return int|null
+     * @return float|null
      */
-    public function getId()
+    public function getVat()
     {
-        return $this->container['id'];
+        return $this->container['vat'];
     }
 
     /**
-     * Sets id
+     * Sets vat
      *
-     * @param int|null $id id
+     * @param float|null $vat taux de tva
      *
      * @return self
      */
-    public function setId($id)
+    public function setVat($vat)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($vat)) {
+            throw new \InvalidArgumentException('non-nullable vat cannot be null');
         }
-        $this->container['id'] = $id;
+        $this->container['vat'] = $vat;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets total_without_taxes
      *
      * @return string|null
      */
-    public function getName()
+    public function getTotalWithoutTaxes()
     {
-        return $this->container['name'];
+        return $this->container['total_without_taxes'];
     }
 
     /**
-     * Sets name
+     * Sets total_without_taxes
      *
-     * @param string|null $name name
+     * @param string|null $total_without_taxes total HT pour cette tva
      *
      * @return self
      */
-    public function setName($name)
+    public function setTotalWithoutTaxes($total_without_taxes)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($total_without_taxes)) {
+            throw new \InvalidArgumentException('non-nullable total_without_taxes cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['total_without_taxes'] = $total_without_taxes;
 
         return $this;
     }
 
     /**
-     * Gets attributes
-     *
-     * @return object|null
-     */
-    public function getAttributes()
-    {
-        return $this->container['attributes'];
-    }
-
-    /**
-     * Sets attributes
-     *
-     * @param object|null $attributes attributes
-     *
-     * @return self
-     */
-    public function setAttributes($attributes)
-    {
-        if (is_null($attributes)) {
-            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
-        }
-        $this->container['attributes'] = $attributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets product_code
+     * Gets total
      *
      * @return string|null
      */
-    public function getProductCode()
+    public function getTotal()
     {
-        return $this->container['product_code'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets product_code
+     * Sets total
      *
-     * @param string|null $product_code product_code
+     * @param string|null $total montant pour cette tva
      *
      * @return self
      */
-    public function setProductCode($product_code)
+    public function setTotal($total)
     {
-        if (is_null($product_code)) {
-            throw new \InvalidArgumentException('non-nullable product_code cannot be null');
+        if (is_null($total)) {
+            throw new \InvalidArgumentException('non-nullable total cannot be null');
         }
-        $this->container['product_code'] = $product_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets group
-     *
-     * @return \Infracorp\Extranet\Client\Model\ProductGroup|null
-     */
-    public function getGroup()
-    {
-        return $this->container['group'];
-    }
-
-    /**
-     * Sets group
-     *
-     * @param \Infracorp\Extranet\Client\Model\ProductGroup|null $group group
-     *
-     * @return self
-     */
-    public function setGroup($group)
-    {
-        if (is_null($group)) {
-            throw new \InvalidArgumentException('non-nullable group cannot be null');
-        }
-        $this->container['group'] = $group;
+        $this->container['total'] = $total;
 
         return $this;
     }

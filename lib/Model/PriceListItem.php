@@ -62,6 +62,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => '\DateTime',
         'name' => 'string',
         'unit_price' => 'int',
+        'unit_price_str' => 'string',
         'unit' => 'string',
         'vat' => 'string',
         'recurrence' => 'string',
@@ -86,6 +87,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => 'date-time',
         'name' => null,
         'unit_price' => null,
+        'unit_price_str' => null,
         'unit' => null,
         'vat' => null,
         'recurrence' => null,
@@ -108,6 +110,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
 		'last_modified_date' => false,
 		'name' => false,
 		'unit_price' => false,
+		'unit_price_str' => false,
 		'unit' => false,
 		'vat' => false,
 		'recurrence' => false,
@@ -210,6 +213,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => 'lastModifiedDate',
         'name' => 'name',
         'unit_price' => 'unitPrice',
+        'unit_price_str' => 'unitPriceStr',
         'unit' => 'unit',
         'vat' => 'vat',
         'recurrence' => 'recurrence',
@@ -232,6 +236,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => 'setLastModifiedDate',
         'name' => 'setName',
         'unit_price' => 'setUnitPrice',
+        'unit_price_str' => 'setUnitPriceStr',
         'unit' => 'setUnit',
         'vat' => 'setVat',
         'recurrence' => 'setRecurrence',
@@ -254,6 +259,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => 'getLastModifiedDate',
         'name' => 'getName',
         'unit_price' => 'getUnitPrice',
+        'unit_price_str' => 'getUnitPriceStr',
         'unit' => 'getUnit',
         'vat' => 'getVat',
         'recurrence' => 'getRecurrence',
@@ -346,6 +352,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('last_modified_date', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('unit_price', $data ?? [], null);
+        $this->setIfExists('unit_price_str', $data ?? [], null);
         $this->setIfExists('unit', $data ?? [], null);
         $this->setIfExists('vat', $data ?? [], null);
         $this->setIfExists('recurrence', $data ?? [], null);
@@ -539,6 +546,33 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
         }
         $this->container['unit_price'] = $unit_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price_str
+     *
+     * @return string|null
+     */
+    public function getUnitPriceStr()
+    {
+        return $this->container['unit_price_str'];
+    }
+
+    /**
+     * Sets unit_price_str
+     *
+     * @param string|null $unit_price_str unit_price_str
+     *
+     * @return self
+     */
+    public function setUnitPriceStr($unit_price_str)
+    {
+        if (is_null($unit_price_str)) {
+            throw new \InvalidArgumentException('non-nullable unit_price_str cannot be null');
+        }
+        $this->container['unit_price_str'] = $unit_price_str;
 
         return $this;
     }

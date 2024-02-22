@@ -57,13 +57,16 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'available_workflows' => 'string[]',
         'id' => 'int',
         'name' => 'string',
         'unit_price' => 'int',
+        'unit_price_str' => 'string',
         'unit' => 'string',
         'vat' => 'string',
         'recurrence' => 'string',
         'unit_price_discount' => 'int',
+        'unit_price_discount_str' => 'string',
         'quantity' => 'int',
         'house_number' => 'int',
         'house_number_complement' => 'string',
@@ -72,6 +75,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'city_name' => 'string',
         'insee_code' => 'string',
         'price' => 'int',
+        'price_str' => 'string',
         'vat_rate' => 'float',
         'commercial_code' => 'string',
         'description' => 'string',
@@ -86,13 +90,16 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'available_workflows' => null,
         'id' => null,
         'name' => null,
         'unit_price' => null,
+        'unit_price_str' => null,
         'unit' => null,
         'vat' => null,
         'recurrence' => null,
         'unit_price_discount' => null,
+        'unit_price_discount_str' => null,
         'quantity' => null,
         'house_number' => null,
         'house_number_complement' => null,
@@ -101,6 +108,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'city_name' => null,
         'insee_code' => null,
         'price' => null,
+        'price_str' => null,
         'vat_rate' => 'float',
         'commercial_code' => null,
         'description' => null,
@@ -113,13 +121,16 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
+        'available_workflows' => false,
+		'id' => false,
 		'name' => false,
 		'unit_price' => false,
+		'unit_price_str' => false,
 		'unit' => false,
 		'vat' => false,
 		'recurrence' => false,
 		'unit_price_discount' => false,
+		'unit_price_discount_str' => false,
 		'quantity' => false,
 		'house_number' => false,
 		'house_number_complement' => false,
@@ -128,6 +139,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
 		'city_name' => false,
 		'insee_code' => false,
 		'price' => false,
+		'price_str' => false,
 		'vat_rate' => false,
 		'commercial_code' => false,
 		'description' => false,
@@ -220,13 +232,16 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
+        'available_workflows' => 'availableWorkflows',
         'id' => 'id',
         'name' => 'name',
         'unit_price' => 'unitPrice',
+        'unit_price_str' => 'unitPriceStr',
         'unit' => 'unit',
         'vat' => 'vat',
         'recurrence' => 'recurrence',
         'unit_price_discount' => 'unitPriceDiscount',
+        'unit_price_discount_str' => 'unitPriceDiscountStr',
         'quantity' => 'quantity',
         'house_number' => 'houseNumber',
         'house_number_complement' => 'houseNumberComplement',
@@ -235,6 +250,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'city_name' => 'cityName',
         'insee_code' => 'inseeCode',
         'price' => 'price',
+        'price_str' => 'priceStr',
         'vat_rate' => 'vatRate',
         'commercial_code' => 'commercialCode',
         'description' => 'description',
@@ -247,13 +263,16 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
+        'available_workflows' => 'setAvailableWorkflows',
         'id' => 'setId',
         'name' => 'setName',
         'unit_price' => 'setUnitPrice',
+        'unit_price_str' => 'setUnitPriceStr',
         'unit' => 'setUnit',
         'vat' => 'setVat',
         'recurrence' => 'setRecurrence',
         'unit_price_discount' => 'setUnitPriceDiscount',
+        'unit_price_discount_str' => 'setUnitPriceDiscountStr',
         'quantity' => 'setQuantity',
         'house_number' => 'setHouseNumber',
         'house_number_complement' => 'setHouseNumberComplement',
@@ -262,6 +281,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'city_name' => 'setCityName',
         'insee_code' => 'setInseeCode',
         'price' => 'setPrice',
+        'price_str' => 'setPriceStr',
         'vat_rate' => 'setVatRate',
         'commercial_code' => 'setCommercialCode',
         'description' => 'setDescription',
@@ -274,13 +294,16 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
+        'available_workflows' => 'getAvailableWorkflows',
         'id' => 'getId',
         'name' => 'getName',
         'unit_price' => 'getUnitPrice',
+        'unit_price_str' => 'getUnitPriceStr',
         'unit' => 'getUnit',
         'vat' => 'getVat',
         'recurrence' => 'getRecurrence',
         'unit_price_discount' => 'getUnitPriceDiscount',
+        'unit_price_discount_str' => 'getUnitPriceDiscountStr',
         'quantity' => 'getQuantity',
         'house_number' => 'getHouseNumber',
         'house_number_complement' => 'getHouseNumberComplement',
@@ -289,6 +312,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'city_name' => 'getCityName',
         'insee_code' => 'getInseeCode',
         'price' => 'getPrice',
+        'price_str' => 'getPriceStr',
         'vat_rate' => 'getVatRate',
         'commercial_code' => 'getCommercialCode',
         'description' => 'getDescription',
@@ -336,10 +360,65 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         return self::$openAPIModelName;
     }
 
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommercialOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Submit\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Sign\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Rename\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RenameSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateOfferItemInOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\SetOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\AddComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\SubscribeThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateThread\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Invoice\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\CreateToken\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\RevokeToken\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSubscribers\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
     public const RECURRENCE_MONTHLY = 'monthly';
     public const RECURRENCE_YEARLY = 'yearly';
     public const RECURRENCE_HALF_YEARLY = 'half-yearly';
     public const RECURRENCE_QUATERLY = 'quaterly';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAvailableWorkflowsAllowableValues()
+    {
+        return [
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
+        ];
+    }
 
     /**
      * Gets allowable values of the enum
@@ -371,13 +450,16 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('available_workflows', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('unit_price', $data ?? [], null);
+        $this->setIfExists('unit_price_str', $data ?? [], null);
         $this->setIfExists('unit', $data ?? [], null);
         $this->setIfExists('vat', $data ?? [], null);
         $this->setIfExists('recurrence', $data ?? [], null);
         $this->setIfExists('unit_price_discount', $data ?? [], null);
+        $this->setIfExists('unit_price_discount_str', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('house_number', $data ?? [], null);
         $this->setIfExists('house_number_complement', $data ?? [], null);
@@ -386,6 +468,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('city_name', $data ?? [], null);
         $this->setIfExists('insee_code', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('price_str', $data ?? [], null);
         $this->setIfExists('vat_rate', $data ?? [], null);
         $this->setIfExists('commercial_code', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -442,6 +525,42 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets available_workflows
+     *
+     * @return string[]|null
+     */
+    public function getAvailableWorkflows()
+    {
+        return $this->container['available_workflows'];
+    }
+
+    /**
+     * Sets available_workflows
+     *
+     * @param string[]|null $available_workflows liste des processus disponible pour l'objet
+     *
+     * @return self
+     */
+    public function setAvailableWorkflows($available_workflows)
+    {
+        if (is_null($available_workflows)) {
+            throw new \InvalidArgumentException('non-nullable available_workflows cannot be null');
+        }
+        $allowedValues = $this->getAvailableWorkflowsAllowableValues();
+        if (array_diff($available_workflows, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'available_workflows', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['available_workflows'] = $available_workflows;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -520,6 +639,33 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
         }
         $this->container['unit_price'] = $unit_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price_str
+     *
+     * @return string|null
+     */
+    public function getUnitPriceStr()
+    {
+        return $this->container['unit_price_str'];
+    }
+
+    /**
+     * Sets unit_price_str
+     *
+     * @param string|null $unit_price_str unit_price_str
+     *
+     * @return self
+     */
+    public function setUnitPriceStr($unit_price_str)
+    {
+        if (is_null($unit_price_str)) {
+            throw new \InvalidArgumentException('non-nullable unit_price_str cannot be null');
+        }
+        $this->container['unit_price_str'] = $unit_price_str;
 
         return $this;
     }
@@ -638,6 +784,33 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable unit_price_discount cannot be null');
         }
         $this->container['unit_price_discount'] = $unit_price_discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price_discount_str
+     *
+     * @return string|null
+     */
+    public function getUnitPriceDiscountStr()
+    {
+        return $this->container['unit_price_discount_str'];
+    }
+
+    /**
+     * Sets unit_price_discount_str
+     *
+     * @param string|null $unit_price_discount_str unit_price_discount_str
+     *
+     * @return self
+     */
+    public function setUnitPriceDiscountStr($unit_price_discount_str)
+    {
+        if (is_null($unit_price_discount_str)) {
+            throw new \InvalidArgumentException('non-nullable unit_price_discount_str cannot be null');
+        }
+        $this->container['unit_price_discount_str'] = $unit_price_discount_str;
 
         return $this;
     }
@@ -854,6 +1027,33 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable price cannot be null');
         }
         $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_str
+     *
+     * @return string|null
+     */
+    public function getPriceStr()
+    {
+        return $this->container['price_str'];
+    }
+
+    /**
+     * Sets price_str
+     *
+     * @param string|null $price_str price_str
+     *
+     * @return self
+     */
+    public function setPriceStr($price_str)
+    {
+        if (is_null($price_str)) {
+            throw new \InvalidArgumentException('non-nullable price_str cannot be null');
+        }
+        $this->container['price_str'] = $price_str;
 
         return $this;
     }

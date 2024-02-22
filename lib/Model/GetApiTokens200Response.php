@@ -1,6 +1,6 @@
 <?php
 /**
- * Product
+ * GetApiTokens200Response
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * Product Class Doc Comment
+ * GetApiTokens200Response Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Product implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetApiTokens200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Product';
+    protected static $openAPIModelName = 'getApiTokens_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'attributes' => 'object',
-        'product_code' => 'string',
-        'group' => '\Infracorp\Extranet\Client\Model\ProductGroup'
+        'pagination' => '\Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination',
+        'items' => '\Infracorp\Extranet\Client\Model\UserApiToken[]'
     ];
 
     /**
@@ -72,11 +69,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'attributes' => null,
-        'product_code' => null,
-        'group' => null
+        'pagination' => null,
+        'items' => null
     ];
 
     /**
@@ -85,11 +79,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-		'name' => false,
-		'attributes' => false,
-		'product_code' => false,
-		'group' => false
+        'pagination' => false,
+		'items' => false
     ];
 
     /**
@@ -178,11 +169,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'attributes' => 'attributes',
-        'product_code' => 'productCode',
-        'group' => 'group'
+        'pagination' => 'pagination',
+        'items' => 'items'
     ];
 
     /**
@@ -191,11 +179,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'attributes' => 'setAttributes',
-        'product_code' => 'setProductCode',
-        'group' => 'setGroup'
+        'pagination' => 'setPagination',
+        'items' => 'setItems'
     ];
 
     /**
@@ -204,11 +189,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'attributes' => 'getAttributes',
-        'product_code' => 'getProductCode',
-        'group' => 'getGroup'
+        'pagination' => 'getPagination',
+        'items' => 'getItems'
     ];
 
     /**
@@ -268,11 +250,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('attributes', $data ?? [], null);
-        $this->setIfExists('product_code', $data ?? [], null);
-        $this->setIfExists('group', $data ?? [], null);
+        $this->setIfExists('pagination', $data ?? [], null);
+        $this->setIfExists('items', $data ?? [], null);
     }
 
     /**
@@ -318,136 +297,55 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets pagination
      *
-     * @return int|null
+     * @return \Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination|null
      */
-    public function getId()
+    public function getPagination()
     {
-        return $this->container['id'];
+        return $this->container['pagination'];
     }
 
     /**
-     * Sets id
+     * Sets pagination
      *
-     * @param int|null $id id
+     * @param \Infracorp\Extranet\Client\Model\GetClientLegalEntities200ResponsePagination|null $pagination pagination
      *
      * @return self
      */
-    public function setId($id)
+    public function setPagination($pagination)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($pagination)) {
+            throw new \InvalidArgumentException('non-nullable pagination cannot be null');
         }
-        $this->container['id'] = $id;
+        $this->container['pagination'] = $pagination;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets items
      *
-     * @return string|null
+     * @return \Infracorp\Extranet\Client\Model\UserApiToken[]|null
      */
-    public function getName()
+    public function getItems()
     {
-        return $this->container['name'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets name
+     * Sets items
      *
-     * @param string|null $name name
+     * @param \Infracorp\Extranet\Client\Model\UserApiToken[]|null $items items
      *
      * @return self
      */
-    public function setName($name)
+    public function setItems($items)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($items)) {
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets attributes
-     *
-     * @return object|null
-     */
-    public function getAttributes()
-    {
-        return $this->container['attributes'];
-    }
-
-    /**
-     * Sets attributes
-     *
-     * @param object|null $attributes attributes
-     *
-     * @return self
-     */
-    public function setAttributes($attributes)
-    {
-        if (is_null($attributes)) {
-            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
-        }
-        $this->container['attributes'] = $attributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets product_code
-     *
-     * @return string|null
-     */
-    public function getProductCode()
-    {
-        return $this->container['product_code'];
-    }
-
-    /**
-     * Sets product_code
-     *
-     * @param string|null $product_code product_code
-     *
-     * @return self
-     */
-    public function setProductCode($product_code)
-    {
-        if (is_null($product_code)) {
-            throw new \InvalidArgumentException('non-nullable product_code cannot be null');
-        }
-        $this->container['product_code'] = $product_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets group
-     *
-     * @return \Infracorp\Extranet\Client\Model\ProductGroup|null
-     */
-    public function getGroup()
-    {
-        return $this->container['group'];
-    }
-
-    /**
-     * Sets group
-     *
-     * @param \Infracorp\Extranet\Client\Model\ProductGroup|null $group group
-     *
-     * @return self
-     */
-    public function setGroup($group)
-    {
-        if (is_null($group)) {
-            throw new \InvalidArgumentException('non-nullable group cannot be null');
-        }
-        $this->container['group'] = $group;
+        $this->container['items'] = $items;
 
         return $this;
     }

@@ -57,15 +57,20 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'available_workflows' => 'string[]',
         'id' => 'int',
         'name' => 'string',
         'create_date' => '\DateTime',
         'last_modified_date' => '\DateTime',
         'notes' => 'string',
         'rc_total' => 'array<string,int>',
+        'rc_total_str' => 'array<string,string>',
         'rc_vat_total' => 'array<string,int>',
+        'rc_vat_total_str' => 'array<string,string>',
         'nrc_total' => 'int',
+        'nrc_total_str' => 'string',
         'nrc_vat_total' => 'int',
+        'nrc_vat_total_str' => 'string',
         'status' => 'string',
         'legal_entity' => '\Infracorp\Extranet\Client\Model\LegalEntity',
         'client_legal_entity' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity',
@@ -73,8 +78,11 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'submit_date' => '\DateTime',
         'delivery_delay' => 'int',
         'total' => 'int',
+        'total_str' => 'string',
         'vat_total' => 'int',
+        'vat_total_str' => 'string',
         'vat_detail' => '\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailInner[]',
+        'vat_detail_str' => '\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]',
         'sections' => '\Infracorp\Extranet\Client\Model\CommercialOfferSection[]'
     ];
 
@@ -86,15 +94,20 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'available_workflows' => null,
         'id' => null,
         'name' => null,
         'create_date' => 'date-time',
         'last_modified_date' => 'date-time',
         'notes' => null,
         'rc_total' => null,
+        'rc_total_str' => null,
         'rc_vat_total' => null,
+        'rc_vat_total_str' => null,
         'nrc_total' => null,
+        'nrc_total_str' => null,
         'nrc_vat_total' => null,
+        'nrc_vat_total_str' => null,
         'status' => null,
         'legal_entity' => null,
         'client_legal_entity' => null,
@@ -102,8 +115,11 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'submit_date' => 'date-time',
         'delivery_delay' => null,
         'total' => null,
+        'total_str' => null,
         'vat_total' => null,
+        'vat_total_str' => null,
         'vat_detail' => null,
+        'vat_detail_str' => null,
         'sections' => null
     ];
 
@@ -113,15 +129,20 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
+        'available_workflows' => false,
+		'id' => false,
 		'name' => false,
 		'create_date' => false,
 		'last_modified_date' => false,
 		'notes' => false,
 		'rc_total' => false,
+		'rc_total_str' => false,
 		'rc_vat_total' => false,
+		'rc_vat_total_str' => false,
 		'nrc_total' => false,
+		'nrc_total_str' => false,
 		'nrc_vat_total' => false,
+		'nrc_vat_total_str' => false,
 		'status' => false,
 		'legal_entity' => false,
 		'client_legal_entity' => false,
@@ -129,8 +150,11 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
 		'submit_date' => false,
 		'delivery_delay' => false,
 		'total' => false,
+		'total_str' => false,
 		'vat_total' => false,
+		'vat_total_str' => false,
 		'vat_detail' => false,
+		'vat_detail_str' => false,
 		'sections' => false
     ];
 
@@ -220,15 +244,20 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'available_workflows' => 'availableWorkflows',
         'id' => 'id',
         'name' => 'name',
         'create_date' => 'createDate',
         'last_modified_date' => 'lastModifiedDate',
         'notes' => 'notes',
         'rc_total' => 'rcTotal',
+        'rc_total_str' => 'rcTotalStr',
         'rc_vat_total' => 'rcVATTotal',
+        'rc_vat_total_str' => 'rcVATTotalStr',
         'nrc_total' => 'nrcTotal',
+        'nrc_total_str' => 'nrcTotalStr',
         'nrc_vat_total' => 'nrcVATTotal',
+        'nrc_vat_total_str' => 'nrcVATTotalStr',
         'status' => 'status',
         'legal_entity' => 'legalEntity',
         'client_legal_entity' => 'clientLegalEntity',
@@ -236,8 +265,11 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'submit_date' => 'submitDate',
         'delivery_delay' => 'deliveryDelay',
         'total' => 'total',
+        'total_str' => 'totalStr',
         'vat_total' => 'vatTotal',
+        'vat_total_str' => 'vatTotalStr',
         'vat_detail' => 'vatDetail',
+        'vat_detail_str' => 'vatDetailStr',
         'sections' => 'sections'
     ];
 
@@ -247,15 +279,20 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'available_workflows' => 'setAvailableWorkflows',
         'id' => 'setId',
         'name' => 'setName',
         'create_date' => 'setCreateDate',
         'last_modified_date' => 'setLastModifiedDate',
         'notes' => 'setNotes',
         'rc_total' => 'setRcTotal',
+        'rc_total_str' => 'setRcTotalStr',
         'rc_vat_total' => 'setRcVatTotal',
+        'rc_vat_total_str' => 'setRcVatTotalStr',
         'nrc_total' => 'setNrcTotal',
+        'nrc_total_str' => 'setNrcTotalStr',
         'nrc_vat_total' => 'setNrcVatTotal',
+        'nrc_vat_total_str' => 'setNrcVatTotalStr',
         'status' => 'setStatus',
         'legal_entity' => 'setLegalEntity',
         'client_legal_entity' => 'setClientLegalEntity',
@@ -263,8 +300,11 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'submit_date' => 'setSubmitDate',
         'delivery_delay' => 'setDeliveryDelay',
         'total' => 'setTotal',
+        'total_str' => 'setTotalStr',
         'vat_total' => 'setVatTotal',
+        'vat_total_str' => 'setVatTotalStr',
         'vat_detail' => 'setVatDetail',
+        'vat_detail_str' => 'setVatDetailStr',
         'sections' => 'setSections'
     ];
 
@@ -274,15 +314,20 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'available_workflows' => 'getAvailableWorkflows',
         'id' => 'getId',
         'name' => 'getName',
         'create_date' => 'getCreateDate',
         'last_modified_date' => 'getLastModifiedDate',
         'notes' => 'getNotes',
         'rc_total' => 'getRcTotal',
+        'rc_total_str' => 'getRcTotalStr',
         'rc_vat_total' => 'getRcVatTotal',
+        'rc_vat_total_str' => 'getRcVatTotalStr',
         'nrc_total' => 'getNrcTotal',
+        'nrc_total_str' => 'getNrcTotalStr',
         'nrc_vat_total' => 'getNrcVatTotal',
+        'nrc_vat_total_str' => 'getNrcVatTotalStr',
         'status' => 'getStatus',
         'legal_entity' => 'getLegalEntity',
         'client_legal_entity' => 'getClientLegalEntity',
@@ -290,8 +335,11 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'submit_date' => 'getSubmitDate',
         'delivery_delay' => 'getDeliveryDelay',
         'total' => 'getTotal',
+        'total_str' => 'getTotalStr',
         'vat_total' => 'getVatTotal',
+        'vat_total_str' => 'getVatTotalStr',
         'vat_detail' => 'getVatDetail',
+        'vat_detail_str' => 'getVatDetailStr',
         'sections' => 'getSections'
     ];
 
@@ -336,6 +384,61 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommercialOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Submit\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Sign\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Rename\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RenameSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateOfferItemInOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\SetOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\AddComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\SubscribeThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateThread\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Invoice\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\CreateToken\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\RevokeToken\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSubscribers\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAvailableWorkflowsAllowableValues()
+    {
+        return [
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -352,15 +455,20 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('available_workflows', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
         $this->setIfExists('last_modified_date', $data ?? [], null);
         $this->setIfExists('notes', $data ?? [], null);
         $this->setIfExists('rc_total', $data ?? [], null);
+        $this->setIfExists('rc_total_str', $data ?? [], null);
         $this->setIfExists('rc_vat_total', $data ?? [], null);
+        $this->setIfExists('rc_vat_total_str', $data ?? [], null);
         $this->setIfExists('nrc_total', $data ?? [], null);
+        $this->setIfExists('nrc_total_str', $data ?? [], null);
         $this->setIfExists('nrc_vat_total', $data ?? [], null);
+        $this->setIfExists('nrc_vat_total_str', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('legal_entity', $data ?? [], null);
         $this->setIfExists('client_legal_entity', $data ?? [], null);
@@ -368,8 +476,11 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('submit_date', $data ?? [], null);
         $this->setIfExists('delivery_delay', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('total_str', $data ?? [], null);
         $this->setIfExists('vat_total', $data ?? [], null);
+        $this->setIfExists('vat_total_str', $data ?? [], null);
         $this->setIfExists('vat_detail', $data ?? [], null);
+        $this->setIfExists('vat_detail_str', $data ?? [], null);
         $this->setIfExists('sections', $data ?? [], null);
     }
 
@@ -414,6 +525,42 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets available_workflows
+     *
+     * @return string[]|null
+     */
+    public function getAvailableWorkflows()
+    {
+        return $this->container['available_workflows'];
+    }
+
+    /**
+     * Sets available_workflows
+     *
+     * @param string[]|null $available_workflows liste des processus disponible pour l'objet
+     *
+     * @return self
+     */
+    public function setAvailableWorkflows($available_workflows)
+    {
+        if (is_null($available_workflows)) {
+            throw new \InvalidArgumentException('non-nullable available_workflows cannot be null');
+        }
+        $allowedValues = $this->getAvailableWorkflowsAllowableValues();
+        if (array_diff($available_workflows, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'available_workflows', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['available_workflows'] = $available_workflows;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -578,6 +725,33 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets rc_total_str
+     *
+     * @return array<string,string>|null
+     */
+    public function getRcTotalStr()
+    {
+        return $this->container['rc_total_str'];
+    }
+
+    /**
+     * Sets rc_total_str
+     *
+     * @param array<string,string>|null $rc_total_str rc_total_str
+     *
+     * @return self
+     */
+    public function setRcTotalStr($rc_total_str)
+    {
+        if (is_null($rc_total_str)) {
+            throw new \InvalidArgumentException('non-nullable rc_total_str cannot be null');
+        }
+        $this->container['rc_total_str'] = $rc_total_str;
+
+        return $this;
+    }
+
+    /**
      * Gets rc_vat_total
      *
      * @return array<string,int>|null
@@ -600,6 +774,33 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable rc_vat_total cannot be null');
         }
         $this->container['rc_vat_total'] = $rc_vat_total;
+
+        return $this;
+    }
+
+    /**
+     * Gets rc_vat_total_str
+     *
+     * @return array<string,string>|null
+     */
+    public function getRcVatTotalStr()
+    {
+        return $this->container['rc_vat_total_str'];
+    }
+
+    /**
+     * Sets rc_vat_total_str
+     *
+     * @param array<string,string>|null $rc_vat_total_str rc_vat_total_str
+     *
+     * @return self
+     */
+    public function setRcVatTotalStr($rc_vat_total_str)
+    {
+        if (is_null($rc_vat_total_str)) {
+            throw new \InvalidArgumentException('non-nullable rc_vat_total_str cannot be null');
+        }
+        $this->container['rc_vat_total_str'] = $rc_vat_total_str;
 
         return $this;
     }
@@ -632,6 +833,33 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets nrc_total_str
+     *
+     * @return string|null
+     */
+    public function getNrcTotalStr()
+    {
+        return $this->container['nrc_total_str'];
+    }
+
+    /**
+     * Sets nrc_total_str
+     *
+     * @param string|null $nrc_total_str nrc_total_str
+     *
+     * @return self
+     */
+    public function setNrcTotalStr($nrc_total_str)
+    {
+        if (is_null($nrc_total_str)) {
+            throw new \InvalidArgumentException('non-nullable nrc_total_str cannot be null');
+        }
+        $this->container['nrc_total_str'] = $nrc_total_str;
+
+        return $this;
+    }
+
+    /**
      * Gets nrc_vat_total
      *
      * @return int|null
@@ -654,6 +882,33 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable nrc_vat_total cannot be null');
         }
         $this->container['nrc_vat_total'] = $nrc_vat_total;
+
+        return $this;
+    }
+
+    /**
+     * Gets nrc_vat_total_str
+     *
+     * @return string|null
+     */
+    public function getNrcVatTotalStr()
+    {
+        return $this->container['nrc_vat_total_str'];
+    }
+
+    /**
+     * Sets nrc_vat_total_str
+     *
+     * @param string|null $nrc_vat_total_str nrc_vat_total_str
+     *
+     * @return self
+     */
+    public function setNrcVatTotalStr($nrc_vat_total_str)
+    {
+        if (is_null($nrc_vat_total_str)) {
+            throw new \InvalidArgumentException('non-nullable nrc_vat_total_str cannot be null');
+        }
+        $this->container['nrc_vat_total_str'] = $nrc_vat_total_str;
 
         return $this;
     }
@@ -848,6 +1103,33 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets total_str
+     *
+     * @return string|null
+     */
+    public function getTotalStr()
+    {
+        return $this->container['total_str'];
+    }
+
+    /**
+     * Sets total_str
+     *
+     * @param string|null $total_str total_str
+     *
+     * @return self
+     */
+    public function setTotalStr($total_str)
+    {
+        if (is_null($total_str)) {
+            throw new \InvalidArgumentException('non-nullable total_str cannot be null');
+        }
+        $this->container['total_str'] = $total_str;
+
+        return $this;
+    }
+
+    /**
      * Gets vat_total
      *
      * @return int|null
@@ -875,6 +1157,33 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets vat_total_str
+     *
+     * @return string|null
+     */
+    public function getVatTotalStr()
+    {
+        return $this->container['vat_total_str'];
+    }
+
+    /**
+     * Sets vat_total_str
+     *
+     * @param string|null $vat_total_str vat_total_str
+     *
+     * @return self
+     */
+    public function setVatTotalStr($vat_total_str)
+    {
+        if (is_null($vat_total_str)) {
+            throw new \InvalidArgumentException('non-nullable vat_total_str cannot be null');
+        }
+        $this->container['vat_total_str'] = $vat_total_str;
+
+        return $this;
+    }
+
+    /**
      * Gets vat_detail
      *
      * @return \Infracorp\Extranet\Client\Model\CommercialOfferVatDetailInner[]|null
@@ -897,6 +1206,33 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable vat_detail cannot be null');
         }
         $this->container['vat_detail'] = $vat_detail;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat_detail_str
+     *
+     * @return \Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]|null
+     */
+    public function getVatDetailStr()
+    {
+        return $this->container['vat_detail_str'];
+    }
+
+    /**
+     * Sets vat_detail_str
+     *
+     * @param \Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]|null $vat_detail_str vat_detail_str
+     *
+     * @return self
+     */
+    public function setVatDetailStr($vat_detail_str)
+    {
+        if (is_null($vat_detail_str)) {
+            throw new \InvalidArgumentException('non-nullable vat_detail_str cannot be null');
+        }
+        $this->container['vat_detail_str'] = $vat_detail_str;
 
         return $this;
     }

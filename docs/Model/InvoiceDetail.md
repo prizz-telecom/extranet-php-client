@@ -4,13 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**available_workflows** | **string[]** | liste des processus disponible pour l&#39;objet | [optional]
 **id** | **int** |  | [optional]
 **unit_price** | **int** |  | [optional]
+**unit_price_str** | **string** |  | [optional]
 **unit** | **string** |  | [optional]
 **vat** | **string** |  | [optional]
 **recurrence** | **string** |  | [optional]
 **quantity** | **int** |  | [optional]
 **unit_price_discount** | **int** |  | [optional]
+**unit_price_discount_str** | **string** |  | [optional]
 **name** | **string** |  | [optional]
 **house_number** | **int** |  | [optional]
 **house_number_complement** | **string** |  | [optional]
@@ -19,6 +22,7 @@ Name | Type | Description | Notes
 **city_name** | **string** |  | [optional]
 **insee_code** | **string** |  | [optional]
 **amount** | **int** |  | [optional]
+**amount_str** | **string** |  | [optional]
 **va_trate** | **float** |  | [optional]
 **service_id** | **int** |  | [optional]
 **service_contract_id** | **int** |  | [optional]

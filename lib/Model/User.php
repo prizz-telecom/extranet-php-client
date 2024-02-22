@@ -1,6 +1,6 @@
 <?php
 /**
- * CommercialOfferSection
+ * User
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * CommercialOfferSection Class Doc Comment
+ * User Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerializable
+class User implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CommercialOfferSection';
+    protected static $openAPIModelName = 'User';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,11 +59,15 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'available_workflows' => 'string[]',
         'id' => 'int',
-        'name' => 'string',
-        'commercial_offer_id' => 'int',
-        'commercial_offer_items' => '\Infracorp\Extranet\Client\Model\CommercialOfferItem[]',
-        'offer' => '\Infracorp\Extranet\Client\Model\Offer',
-        'client_contract' => '\Infracorp\Extranet\Client\Model\ClientContract'
+        'firstname' => 'string',
+        'lastname' => 'string',
+        'company_name' => 'string',
+        'email' => 'string',
+        'phone1' => 'string',
+        'phone2' => 'string',
+        'gender' => 'string',
+        'create_date' => '\DateTime',
+        'last_modified_date' => '\DateTime'
     ];
 
     /**
@@ -76,11 +80,15 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPIFormats = [
         'available_workflows' => null,
         'id' => null,
-        'name' => null,
-        'commercial_offer_id' => null,
-        'commercial_offer_items' => null,
-        'offer' => null,
-        'client_contract' => null
+        'firstname' => null,
+        'lastname' => null,
+        'company_name' => null,
+        'email' => null,
+        'phone1' => null,
+        'phone2' => null,
+        'gender' => null,
+        'create_date' => 'date-time',
+        'last_modified_date' => 'date-time'
     ];
 
     /**
@@ -91,11 +99,15 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     protected static array $openAPINullables = [
         'available_workflows' => false,
 		'id' => false,
-		'name' => false,
-		'commercial_offer_id' => false,
-		'commercial_offer_items' => false,
-		'offer' => false,
-		'client_contract' => false
+		'firstname' => false,
+		'lastname' => false,
+		'company_name' => false,
+		'email' => false,
+		'phone1' => false,
+		'phone2' => false,
+		'gender' => false,
+		'create_date' => false,
+		'last_modified_date' => false
     ];
 
     /**
@@ -186,11 +198,15 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $attributeMap = [
         'available_workflows' => 'availableWorkflows',
         'id' => 'id',
-        'name' => 'name',
-        'commercial_offer_id' => 'commercialOfferId',
-        'commercial_offer_items' => 'commercialOfferItems',
-        'offer' => 'offer',
-        'client_contract' => 'clientContract'
+        'firstname' => 'firstname',
+        'lastname' => 'lastname',
+        'company_name' => 'companyName',
+        'email' => 'email',
+        'phone1' => 'phone1',
+        'phone2' => 'phone2',
+        'gender' => 'gender',
+        'create_date' => 'createDate',
+        'last_modified_date' => 'lastModifiedDate'
     ];
 
     /**
@@ -201,11 +217,15 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $setters = [
         'available_workflows' => 'setAvailableWorkflows',
         'id' => 'setId',
-        'name' => 'setName',
-        'commercial_offer_id' => 'setCommercialOfferId',
-        'commercial_offer_items' => 'setCommercialOfferItems',
-        'offer' => 'setOffer',
-        'client_contract' => 'setClientContract'
+        'firstname' => 'setFirstname',
+        'lastname' => 'setLastname',
+        'company_name' => 'setCompanyName',
+        'email' => 'setEmail',
+        'phone1' => 'setPhone1',
+        'phone2' => 'setPhone2',
+        'gender' => 'setGender',
+        'create_date' => 'setCreateDate',
+        'last_modified_date' => 'setLastModifiedDate'
     ];
 
     /**
@@ -216,11 +236,15 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'available_workflows' => 'getAvailableWorkflows',
         'id' => 'getId',
-        'name' => 'getName',
-        'commercial_offer_id' => 'getCommercialOfferId',
-        'commercial_offer_items' => 'getCommercialOfferItems',
-        'offer' => 'getOffer',
-        'client_contract' => 'getClientContract'
+        'firstname' => 'getFirstname',
+        'lastname' => 'getLastname',
+        'company_name' => 'getCompanyName',
+        'email' => 'getEmail',
+        'phone1' => 'getPhone1',
+        'phone2' => 'getPhone2',
+        'gender' => 'getGender',
+        'create_date' => 'getCreateDate',
+        'last_modified_date' => 'getLastModifiedDate'
     ];
 
     /**
@@ -337,11 +361,15 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $this->setIfExists('available_workflows', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('commercial_offer_id', $data ?? [], null);
-        $this->setIfExists('commercial_offer_items', $data ?? [], null);
-        $this->setIfExists('offer', $data ?? [], null);
-        $this->setIfExists('client_contract', $data ?? [], null);
+        $this->setIfExists('firstname', $data ?? [], null);
+        $this->setIfExists('lastname', $data ?? [], null);
+        $this->setIfExists('company_name', $data ?? [], null);
+        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('phone1', $data ?? [], null);
+        $this->setIfExists('phone2', $data ?? [], null);
+        $this->setIfExists('gender', $data ?? [], null);
+        $this->setIfExists('create_date', $data ?? [], null);
+        $this->setIfExists('last_modified_date', $data ?? [], null);
     }
 
     /**
@@ -450,136 +478,244 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets name
+     * Gets firstname
      *
      * @return string|null
      */
-    public function getName()
+    public function getFirstname()
     {
-        return $this->container['name'];
+        return $this->container['firstname'];
     }
 
     /**
-     * Sets name
+     * Sets firstname
      *
-     * @param string|null $name name
+     * @param string|null $firstname firstname
      *
      * @return self
      */
-    public function setName($name)
+    public function setFirstname($firstname)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($firstname)) {
+            throw new \InvalidArgumentException('non-nullable firstname cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['firstname'] = $firstname;
 
         return $this;
     }
 
     /**
-     * Gets commercial_offer_id
+     * Gets lastname
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getCommercialOfferId()
+    public function getLastname()
     {
-        return $this->container['commercial_offer_id'];
+        return $this->container['lastname'];
     }
 
     /**
-     * Sets commercial_offer_id
+     * Sets lastname
      *
-     * @param int|null $commercial_offer_id commercial_offer_id
+     * @param string|null $lastname lastname
      *
      * @return self
      */
-    public function setCommercialOfferId($commercial_offer_id)
+    public function setLastname($lastname)
     {
-        if (is_null($commercial_offer_id)) {
-            throw new \InvalidArgumentException('non-nullable commercial_offer_id cannot be null');
+        if (is_null($lastname)) {
+            throw new \InvalidArgumentException('non-nullable lastname cannot be null');
         }
-        $this->container['commercial_offer_id'] = $commercial_offer_id;
+        $this->container['lastname'] = $lastname;
 
         return $this;
     }
 
     /**
-     * Gets commercial_offer_items
+     * Gets company_name
      *
-     * @return \Infracorp\Extranet\Client\Model\CommercialOfferItem[]|null
+     * @return string|null
      */
-    public function getCommercialOfferItems()
+    public function getCompanyName()
     {
-        return $this->container['commercial_offer_items'];
+        return $this->container['company_name'];
     }
 
     /**
-     * Sets commercial_offer_items
+     * Sets company_name
      *
-     * @param \Infracorp\Extranet\Client\Model\CommercialOfferItem[]|null $commercial_offer_items commercial_offer_items
+     * @param string|null $company_name company_name
      *
      * @return self
      */
-    public function setCommercialOfferItems($commercial_offer_items)
+    public function setCompanyName($company_name)
     {
-        if (is_null($commercial_offer_items)) {
-            throw new \InvalidArgumentException('non-nullable commercial_offer_items cannot be null');
+        if (is_null($company_name)) {
+            throw new \InvalidArgumentException('non-nullable company_name cannot be null');
         }
-        $this->container['commercial_offer_items'] = $commercial_offer_items;
+        $this->container['company_name'] = $company_name;
 
         return $this;
     }
 
     /**
-     * Gets offer
+     * Gets email
      *
-     * @return \Infracorp\Extranet\Client\Model\Offer|null
+     * @return string|null
      */
-    public function getOffer()
+    public function getEmail()
     {
-        return $this->container['offer'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets offer
+     * Sets email
      *
-     * @param \Infracorp\Extranet\Client\Model\Offer|null $offer offer
+     * @param string|null $email email
      *
      * @return self
      */
-    public function setOffer($offer)
+    public function setEmail($email)
     {
-        if (is_null($offer)) {
-            throw new \InvalidArgumentException('non-nullable offer cannot be null');
+        if (is_null($email)) {
+            throw new \InvalidArgumentException('non-nullable email cannot be null');
         }
-        $this->container['offer'] = $offer;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets client_contract
+     * Gets phone1
      *
-     * @return \Infracorp\Extranet\Client\Model\ClientContract|null
+     * @return string|null
      */
-    public function getClientContract()
+    public function getPhone1()
     {
-        return $this->container['client_contract'];
+        return $this->container['phone1'];
     }
 
     /**
-     * Sets client_contract
+     * Sets phone1
      *
-     * @param \Infracorp\Extranet\Client\Model\ClientContract|null $client_contract client_contract
+     * @param string|null $phone1 phone1
      *
      * @return self
      */
-    public function setClientContract($client_contract)
+    public function setPhone1($phone1)
     {
-        if (is_null($client_contract)) {
-            throw new \InvalidArgumentException('non-nullable client_contract cannot be null');
+        if (is_null($phone1)) {
+            throw new \InvalidArgumentException('non-nullable phone1 cannot be null');
         }
-        $this->container['client_contract'] = $client_contract;
+        $this->container['phone1'] = $phone1;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone2
+     *
+     * @return string|null
+     */
+    public function getPhone2()
+    {
+        return $this->container['phone2'];
+    }
+
+    /**
+     * Sets phone2
+     *
+     * @param string|null $phone2 phone2
+     *
+     * @return self
+     */
+    public function setPhone2($phone2)
+    {
+        if (is_null($phone2)) {
+            throw new \InvalidArgumentException('non-nullable phone2 cannot be null');
+        }
+        $this->container['phone2'] = $phone2;
+
+        return $this;
+    }
+
+    /**
+     * Gets gender
+     *
+     * @return string|null
+     */
+    public function getGender()
+    {
+        return $this->container['gender'];
+    }
+
+    /**
+     * Sets gender
+     *
+     * @param string|null $gender gender
+     *
+     * @return self
+     */
+    public function setGender($gender)
+    {
+        if (is_null($gender)) {
+            throw new \InvalidArgumentException('non-nullable gender cannot be null');
+        }
+        $this->container['gender'] = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Gets create_date
+     *
+     * @return \DateTime|null
+     */
+    public function getCreateDate()
+    {
+        return $this->container['create_date'];
+    }
+
+    /**
+     * Sets create_date
+     *
+     * @param \DateTime|null $create_date create_date
+     *
+     * @return self
+     */
+    public function setCreateDate($create_date)
+    {
+        if (is_null($create_date)) {
+            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
+        }
+        $this->container['create_date'] = $create_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified_date
+     *
+     * @return \DateTime|null
+     */
+    public function getLastModifiedDate()
+    {
+        return $this->container['last_modified_date'];
+    }
+
+    /**
+     * Sets last_modified_date
+     *
+     * @param \DateTime|null $last_modified_date last_modified_date
+     *
+     * @return self
+     */
+    public function setLastModifiedDate($last_modified_date)
+    {
+        if (is_null($last_modified_date)) {
+            throw new \InvalidArgumentException('non-nullable last_modified_date cannot be null');
+        }
+        $this->container['last_modified_date'] = $last_modified_date;
 
         return $this;
     }

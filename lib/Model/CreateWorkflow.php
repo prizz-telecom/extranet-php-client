@@ -251,6 +251,11 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CONTEXT_NAME_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\CreateCommentThread\\Context';
     public const CONTEXT_NAME_INVOICE_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Invoice\\CreateCommentThread\\Context';
     public const CONTEXT_NAME_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\CreateCommentThread\\Context';
+    public const CONTEXT_NAME_USERS_CREATE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\CreateToken\\Context';
+    public const CONTEXT_NAME_USERS_REVOKE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\RevokeToken\\Context';
+    public const CONTEXT_NAME_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSubscribers\\Context';
+    public const CONTEXT_NAME_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
+    public const CONTEXT_NAME_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -277,6 +282,11 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CONTEXT_NAME_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT,
             self::CONTEXT_NAME_INVOICE_CREATE_COMMENT_THREAD_CONTEXT,
             self::CONTEXT_NAME_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT,
+            self::CONTEXT_NAME_USERS_CREATE_TOKEN_CONTEXT,
+            self::CONTEXT_NAME_USERS_REVOKE_TOKEN_CONTEXT,
+            self::CONTEXT_NAME_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT,
+            self::CONTEXT_NAME_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
+            self::CONTEXT_NAME_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
         ];
     }
 
