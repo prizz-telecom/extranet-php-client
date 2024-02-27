@@ -101,10 +101,10 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
 		'legal_entity_id' => false,
 		'client_legal_entity_id' => false,
 		'name' => false,
-		'status' => false,
-		'ref_client' => false,
-		'description' => false,
-		'create_date' => false
+		'status' => true,
+		'ref_client' => true,
+		'description' => true,
+		'create_date' => true
     ];
 
     /**
@@ -534,7 +534,14 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setStatus($status)
     {
         if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['status'] = $status;
 
@@ -561,7 +568,14 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setRefClient($ref_client)
     {
         if (is_null($ref_client)) {
-            throw new \InvalidArgumentException('non-nullable ref_client cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ref_client');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ref_client', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ref_client'] = $ref_client;
 
@@ -588,7 +602,14 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 
@@ -615,7 +636,14 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setCreateDate($create_date)
     {
         if (is_null($create_date)) {
-            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'create_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('create_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['create_date'] = $create_date;
 

@@ -141,7 +141,7 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
 		'insee_code' => false,
 		'create_date' => false,
 		'last_modified_date' => false,
-		'attributes' => false,
+		'attributes' => true,
 		'quantity' => false,
 		'unit_price' => false,
 		'unit_price_str' => false,
@@ -151,11 +151,11 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
 		'product' => false,
 		'status' => false,
 		'subscription_date' => false,
-		'activation_date' => false,
-		'end_date' => false,
-		'termination_date' => false,
+		'activation_date' => true,
+		'end_date' => true,
+		'termination_date' => true,
 		'service_contract_id' => false,
-		'paid_until' => false
+		'paid_until' => true
     ];
 
     /**
@@ -873,7 +873,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAttributes($attributes)
     {
         if (is_null($attributes)) {
-            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'attributes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('attributes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['attributes'] = $attributes;
 
@@ -1163,7 +1170,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setActivationDate($activation_date)
     {
         if (is_null($activation_date)) {
-            throw new \InvalidArgumentException('non-nullable activation_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'activation_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('activation_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['activation_date'] = $activation_date;
 
@@ -1190,7 +1204,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEndDate($end_date)
     {
         if (is_null($end_date)) {
-            throw new \InvalidArgumentException('non-nullable end_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'end_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('end_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['end_date'] = $end_date;
 
@@ -1217,7 +1238,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTerminationDate($termination_date)
     {
         if (is_null($termination_date)) {
-            throw new \InvalidArgumentException('non-nullable termination_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'termination_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('termination_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['termination_date'] = $termination_date;
 
@@ -1271,7 +1299,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPaidUntil($paid_until)
     {
         if (is_null($paid_until)) {
-            throw new \InvalidArgumentException('non-nullable paid_until cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'paid_until');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('paid_until', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['paid_until'] = $paid_until;
 

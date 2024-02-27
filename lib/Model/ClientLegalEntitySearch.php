@@ -101,9 +101,9 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
 		'legal_entity_ids' => false,
 		'name' => false,
 		'address' => false,
-		'siren' => false,
-		'tel' => false,
-		'email' => false,
+		'siren' => true,
+		'tel' => true,
+		'email' => true,
 		'contacts' => false
     ];
 
@@ -534,7 +534,14 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
     public function setSiren($siren)
     {
         if (is_null($siren)) {
-            throw new \InvalidArgumentException('non-nullable siren cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'siren');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('siren', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['siren'] = $siren;
 
@@ -561,7 +568,14 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
     public function setTel($tel)
     {
         if (is_null($tel)) {
-            throw new \InvalidArgumentException('non-nullable tel cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'tel');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tel', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['tel'] = $tel;
 
@@ -588,7 +602,14 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
     public function setEmail($email)
     {
         if (is_null($email)) {
-            throw new \InvalidArgumentException('non-nullable email cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['email'] = $email;
 

@@ -91,13 +91,13 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'numero' => false,
-		'date_creation' => false,
-		'date_cloture' => false,
-		'date_debut_incident' => false,
-		'date_resolution' => false,
-		'date_gtr' => false,
-		'etat' => false,
+        'numero' => true,
+		'date_creation' => true,
+		'date_cloture' => true,
+		'date_debut_incident' => true,
+		'date_resolution' => true,
+		'date_gtr' => true,
+		'etat' => true,
 		'running_workflows' => false
     ];
 
@@ -358,7 +358,14 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNumero($numero)
     {
         if (is_null($numero)) {
-            throw new \InvalidArgumentException('non-nullable numero cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'numero');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('numero', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['numero'] = $numero;
 
@@ -385,7 +392,14 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateCreation($date_creation)
     {
         if (is_null($date_creation)) {
-            throw new \InvalidArgumentException('non-nullable date_creation cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_creation');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_creation', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_creation'] = $date_creation;
 
@@ -412,7 +426,14 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateCloture($date_cloture)
     {
         if (is_null($date_cloture)) {
-            throw new \InvalidArgumentException('non-nullable date_cloture cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_cloture');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_cloture', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_cloture'] = $date_cloture;
 
@@ -439,7 +460,14 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateDebutIncident($date_debut_incident)
     {
         if (is_null($date_debut_incident)) {
-            throw new \InvalidArgumentException('non-nullable date_debut_incident cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_debut_incident');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_debut_incident', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_debut_incident'] = $date_debut_incident;
 
@@ -466,7 +494,14 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateResolution($date_resolution)
     {
         if (is_null($date_resolution)) {
-            throw new \InvalidArgumentException('non-nullable date_resolution cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_resolution');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_resolution', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_resolution'] = $date_resolution;
 
@@ -493,7 +528,14 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateGtr($date_gtr)
     {
         if (is_null($date_gtr)) {
-            throw new \InvalidArgumentException('non-nullable date_gtr cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_gtr');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_gtr', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_gtr'] = $date_gtr;
 
@@ -520,7 +562,14 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEtat($etat)
     {
         if (is_null($etat)) {
-            throw new \InvalidArgumentException('non-nullable etat cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'etat');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('etat', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['etat'] = $etat;
 

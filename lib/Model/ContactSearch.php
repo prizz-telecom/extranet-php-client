@@ -87,9 +87,9 @@ class ContactSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
 		'name' => false,
-		'company_name' => false,
-		'phone1' => false,
-		'phone2' => false
+		'company_name' => true,
+		'phone1' => true,
+		'phone2' => true
     ];
 
     /**
@@ -391,7 +391,14 @@ class ContactSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCompanyName($company_name)
     {
         if (is_null($company_name)) {
-            throw new \InvalidArgumentException('non-nullable company_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'company_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('company_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['company_name'] = $company_name;
 
@@ -418,7 +425,14 @@ class ContactSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPhone1($phone1)
     {
         if (is_null($phone1)) {
-            throw new \InvalidArgumentException('non-nullable phone1 cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'phone1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('phone1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['phone1'] = $phone1;
 
@@ -445,7 +459,14 @@ class ContactSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPhone2($phone2)
     {
         if (is_null($phone2)) {
-            throw new \InvalidArgumentException('non-nullable phone2 cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'phone2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('phone2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['phone2'] = $phone2;
 

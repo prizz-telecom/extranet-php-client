@@ -94,8 +94,8 @@ class InvoiceSearch implements ModelInterface, ArrayAccess, \JsonSerializable
 		'id' => false,
 		'legal_entity_id' => false,
 		'client_legal_entity_id' => false,
-		'ref' => false,
-		'create_date' => false
+		'ref' => true,
+		'create_date' => true
     ];
 
     /**
@@ -486,7 +486,14 @@ class InvoiceSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRef($ref)
     {
         if (is_null($ref)) {
-            throw new \InvalidArgumentException('non-nullable ref cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ref');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ref', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ref'] = $ref;
 
@@ -513,7 +520,14 @@ class InvoiceSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreateDate($create_date)
     {
         if (is_null($create_date)) {
-            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'create_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('create_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['create_date'] = $create_date;
 

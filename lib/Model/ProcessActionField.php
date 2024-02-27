@@ -87,11 +87,11 @@ class ProcessActionField implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'caption' => false,
+        'caption' => true,
 		'type' => false,
-		'value' => false,
+		'value' => true,
 		'name' => false,
-		'values' => false,
+		'values' => true,
 		'required' => false
     ];
 
@@ -344,7 +344,14 @@ class ProcessActionField implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setCaption($caption)
     {
         if (is_null($caption)) {
-            throw new \InvalidArgumentException('non-nullable caption cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'caption');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('caption', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['caption'] = $caption;
 
@@ -398,7 +405,14 @@ class ProcessActionField implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setValue($value)
     {
         if (is_null($value)) {
-            throw new \InvalidArgumentException('non-nullable value cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'value');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('value', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['value'] = $value;
 
@@ -452,7 +466,14 @@ class ProcessActionField implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setValues($values)
     {
         if (is_null($values)) {
-            throw new \InvalidArgumentException('non-nullable values cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'values');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('values', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['values'] = $values;
 

@@ -89,8 +89,8 @@ class Operator implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'code' => false,
-		'lib' => false,
+        'code' => true,
+		'lib' => true,
 		'delivery_doors' => false,
 		'hosting_items' => false,
 		'l2_services' => false,
@@ -351,7 +351,14 @@ class Operator implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCode($code)
     {
         if (is_null($code)) {
-            throw new \InvalidArgumentException('non-nullable code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['code'] = $code;
 
@@ -378,7 +385,14 @@ class Operator implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLib($lib)
     {
         if (is_null($lib)) {
-            throw new \InvalidArgumentException('non-nullable lib cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lib');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lib', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lib'] = $lib;
 

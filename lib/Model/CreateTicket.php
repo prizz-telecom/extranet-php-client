@@ -81,9 +81,9 @@ class CreateTicket implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'numero' => false,
-		'ticket_id' => false,
-		'running_process' => false
+        'numero' => true,
+		'ticket_id' => true,
+		'running_process' => true
     ];
 
     /**
@@ -323,7 +323,14 @@ class CreateTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNumero($numero)
     {
         if (is_null($numero)) {
-            throw new \InvalidArgumentException('non-nullable numero cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'numero');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('numero', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['numero'] = $numero;
 
@@ -350,7 +357,14 @@ class CreateTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTicketId($ticket_id)
     {
         if (is_null($ticket_id)) {
-            throw new \InvalidArgumentException('non-nullable ticket_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ticket_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ticket_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ticket_id'] = $ticket_id;
 
@@ -377,7 +391,14 @@ class CreateTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRunningProcess($running_process)
     {
         if (is_null($running_process)) {
-            throw new \InvalidArgumentException('non-nullable running_process cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'running_process');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('running_process', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['running_process'] = $running_process;
 

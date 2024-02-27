@@ -113,24 +113,24 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-		'operator_id' => false,
-		'operator_name' => false,
-		'numero' => false,
-		'etat' => false,
-		'etat_lib' => false,
-		'titre' => false,
-		'cust_name' => false,
-		'ref_commande' => false,
-		'id_service_sicom' => false,
-		'ref_service' => false,
-		'cust_address' => false,
-		'ref_tiers' => false,
-		'date_creation' => false,
-		'date_ouverture' => false,
-		'date_resolution' => false,
-		'date_cloture' => false,
-		'last_message' => false,
+        'id' => true,
+		'operator_id' => true,
+		'operator_name' => true,
+		'numero' => true,
+		'etat' => true,
+		'etat_lib' => true,
+		'titre' => true,
+		'cust_name' => true,
+		'ref_commande' => true,
+		'id_service_sicom' => true,
+		'ref_service' => true,
+		'cust_address' => true,
+		'ref_tiers' => true,
+		'date_creation' => true,
+		'date_ouverture' => true,
+		'date_resolution' => true,
+		'date_cloture' => true,
+		'last_message' => true,
 		'running_process' => false
     ];
 
@@ -435,7 +435,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setId($id)
     {
         if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['id'] = $id;
 
@@ -462,7 +469,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOperatorId($operator_id)
     {
         if (is_null($operator_id)) {
-            throw new \InvalidArgumentException('non-nullable operator_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'operator_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('operator_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['operator_id'] = $operator_id;
 
@@ -489,7 +503,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOperatorName($operator_name)
     {
         if (is_null($operator_name)) {
-            throw new \InvalidArgumentException('non-nullable operator_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'operator_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('operator_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['operator_name'] = $operator_name;
 
@@ -516,7 +537,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNumero($numero)
     {
         if (is_null($numero)) {
-            throw new \InvalidArgumentException('non-nullable numero cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'numero');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('numero', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['numero'] = $numero;
 
@@ -543,7 +571,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEtat($etat)
     {
         if (is_null($etat)) {
-            throw new \InvalidArgumentException('non-nullable etat cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'etat');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('etat', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['etat'] = $etat;
 
@@ -570,7 +605,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEtatLib($etat_lib)
     {
         if (is_null($etat_lib)) {
-            throw new \InvalidArgumentException('non-nullable etat_lib cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'etat_lib');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('etat_lib', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['etat_lib'] = $etat_lib;
 
@@ -597,7 +639,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTitre($titre)
     {
         if (is_null($titre)) {
-            throw new \InvalidArgumentException('non-nullable titre cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'titre');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('titre', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['titre'] = $titre;
 
@@ -624,7 +673,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustName($cust_name)
     {
         if (is_null($cust_name)) {
-            throw new \InvalidArgumentException('non-nullable cust_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'cust_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cust_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['cust_name'] = $cust_name;
 
@@ -651,7 +707,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRefCommande($ref_commande)
     {
         if (is_null($ref_commande)) {
-            throw new \InvalidArgumentException('non-nullable ref_commande cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ref_commande');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ref_commande', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ref_commande'] = $ref_commande;
 
@@ -678,7 +741,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIdServiceSicom($id_service_sicom)
     {
         if (is_null($id_service_sicom)) {
-            throw new \InvalidArgumentException('non-nullable id_service_sicom cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'id_service_sicom');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id_service_sicom', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['id_service_sicom'] = $id_service_sicom;
 
@@ -705,7 +775,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRefService($ref_service)
     {
         if (is_null($ref_service)) {
-            throw new \InvalidArgumentException('non-nullable ref_service cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ref_service');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ref_service', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ref_service'] = $ref_service;
 
@@ -732,7 +809,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustAddress($cust_address)
     {
         if (is_null($cust_address)) {
-            throw new \InvalidArgumentException('non-nullable cust_address cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'cust_address');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cust_address', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['cust_address'] = $cust_address;
 
@@ -759,7 +843,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRefTiers($ref_tiers)
     {
         if (is_null($ref_tiers)) {
-            throw new \InvalidArgumentException('non-nullable ref_tiers cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ref_tiers');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ref_tiers', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ref_tiers'] = $ref_tiers;
 
@@ -786,7 +877,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateCreation($date_creation)
     {
         if (is_null($date_creation)) {
-            throw new \InvalidArgumentException('non-nullable date_creation cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_creation');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_creation', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_creation'] = $date_creation;
 
@@ -813,7 +911,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateOuverture($date_ouverture)
     {
         if (is_null($date_ouverture)) {
-            throw new \InvalidArgumentException('non-nullable date_ouverture cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_ouverture');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_ouverture', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_ouverture'] = $date_ouverture;
 
@@ -840,7 +945,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateResolution($date_resolution)
     {
         if (is_null($date_resolution)) {
-            throw new \InvalidArgumentException('non-nullable date_resolution cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_resolution');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_resolution', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_resolution'] = $date_resolution;
 
@@ -867,7 +979,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateCloture($date_cloture)
     {
         if (is_null($date_cloture)) {
-            throw new \InvalidArgumentException('non-nullable date_cloture cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_cloture');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_cloture', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_cloture'] = $date_cloture;
 
@@ -894,7 +1013,14 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastMessage($last_message)
     {
         if (is_null($last_message)) {
-            throw new \InvalidArgumentException('non-nullable last_message cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'last_message');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_message', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['last_message'] = $last_message;
 

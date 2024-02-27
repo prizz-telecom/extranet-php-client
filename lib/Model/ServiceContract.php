@@ -122,16 +122,16 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
 		'status' => false,
 		'client_contract_id' => false,
 		'subscription_date' => false,
-		'activation_date' => false,
+		'activation_date' => true,
 		'offer' => false,
 		'client' => false,
-		'ref_client' => false,
-		'ref_service' => false,
-		'description' => false,
+		'ref_client' => true,
+		'ref_service' => true,
+		'description' => true,
 		'services' => false,
-		'planned_activation_date' => false,
-		'sold_activation_date' => false,
-		'commitment_end_date' => false,
+		'planned_activation_date' => true,
+		'sold_activation_date' => true,
+		'commitment_end_date' => true,
 		'attributes' => false,
 		'consolidated_attributes' => false,
 		'consolidated_attributes_staging_or_new' => false
@@ -631,7 +631,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setActivationDate($activation_date)
     {
         if (is_null($activation_date)) {
-            throw new \InvalidArgumentException('non-nullable activation_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'activation_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('activation_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['activation_date'] = $activation_date;
 
@@ -712,7 +719,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRefClient($ref_client)
     {
         if (is_null($ref_client)) {
-            throw new \InvalidArgumentException('non-nullable ref_client cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ref_client');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ref_client', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ref_client'] = $ref_client;
 
@@ -739,7 +753,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRefService($ref_service)
     {
         if (is_null($ref_service)) {
-            throw new \InvalidArgumentException('non-nullable ref_service cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ref_service');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ref_service', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ref_service'] = $ref_service;
 
@@ -766,7 +787,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 
@@ -820,7 +848,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPlannedActivationDate($planned_activation_date)
     {
         if (is_null($planned_activation_date)) {
-            throw new \InvalidArgumentException('non-nullable planned_activation_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'planned_activation_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('planned_activation_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['planned_activation_date'] = $planned_activation_date;
 
@@ -847,7 +882,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSoldActivationDate($sold_activation_date)
     {
         if (is_null($sold_activation_date)) {
-            throw new \InvalidArgumentException('non-nullable sold_activation_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sold_activation_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sold_activation_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sold_activation_date'] = $sold_activation_date;
 
@@ -874,7 +916,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCommitmentEndDate($commitment_end_date)
     {
         if (is_null($commitment_end_date)) {
-            throw new \InvalidArgumentException('non-nullable commitment_end_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'commitment_end_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('commitment_end_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['commitment_end_date'] = $commitment_end_date;
 

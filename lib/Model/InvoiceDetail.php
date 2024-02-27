@@ -142,14 +142,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 		'postal_code' => false,
 		'city_name' => false,
 		'insee_code' => false,
-		'amount' => false,
+		'amount' => true,
 		'amount_str' => false,
 		'va_trate' => false,
-		'service_id' => false,
-		'service_contract_id' => false,
+		'service_id' => true,
+		'service_contract_id' => true,
 		'description' => false,
-		'from_date' => false,
-		'to_date' => false
+		'from_date' => true,
+		'to_date' => true
     ];
 
     /**
@@ -1038,7 +1038,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAmount($amount)
     {
         if (is_null($amount)) {
-            throw new \InvalidArgumentException('non-nullable amount cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'amount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('amount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['amount'] = $amount;
 
@@ -1119,7 +1126,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setServiceId($service_id)
     {
         if (is_null($service_id)) {
-            throw new \InvalidArgumentException('non-nullable service_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'service_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('service_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['service_id'] = $service_id;
 
@@ -1146,7 +1160,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setServiceContractId($service_contract_id)
     {
         if (is_null($service_contract_id)) {
-            throw new \InvalidArgumentException('non-nullable service_contract_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'service_contract_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('service_contract_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['service_contract_id'] = $service_contract_id;
 
@@ -1200,7 +1221,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFromDate($from_date)
     {
         if (is_null($from_date)) {
-            throw new \InvalidArgumentException('non-nullable from_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'from_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('from_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['from_date'] = $from_date;
 
@@ -1227,7 +1255,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setToDate($to_date)
     {
         if (is_null($to_date)) {
-            throw new \InvalidArgumentException('non-nullable to_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'to_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('to_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['to_date'] = $to_date;
 

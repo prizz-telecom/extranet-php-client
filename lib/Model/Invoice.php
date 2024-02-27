@@ -133,23 +133,23 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 		'rc_total_str' => false,
 		'rc_vat_total' => false,
 		'rc_vat_total_str' => false,
-		'nrc_total' => false,
+		'nrc_total' => true,
 		'nrc_total_str' => false,
-		'nrc_vat_total' => false,
+		'nrc_vat_total' => true,
 		'nrc_vat_total_str' => false,
 		'client_legal_entity' => false,
 		'legal_entity' => false,
-		'ref' => false,
+		'ref' => true,
 		'month_period' => false,
 		'year_period' => false,
-		'total' => false,
+		'total' => true,
 		'total_str' => false,
-		'total_vat' => false,
+		'total_vat' => true,
 		'total_vat_str' => false,
 		'details' => false,
 		'use_vat_reverse_charge' => false,
-		'due_date' => false,
-		'submit_date' => false
+		'due_date' => true,
+		'submit_date' => true
     ];
 
     /**
@@ -757,7 +757,14 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNrcTotal($nrc_total)
     {
         if (is_null($nrc_total)) {
-            throw new \InvalidArgumentException('non-nullable nrc_total cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'nrc_total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nrc_total', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['nrc_total'] = $nrc_total;
 
@@ -811,7 +818,14 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNrcVatTotal($nrc_vat_total)
     {
         if (is_null($nrc_vat_total)) {
-            throw new \InvalidArgumentException('non-nullable nrc_vat_total cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'nrc_vat_total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nrc_vat_total', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['nrc_vat_total'] = $nrc_vat_total;
 
@@ -919,7 +933,14 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRef($ref)
     {
         if (is_null($ref)) {
-            throw new \InvalidArgumentException('non-nullable ref cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ref');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ref', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ref'] = $ref;
 
@@ -1000,7 +1021,14 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTotal($total)
     {
         if (is_null($total)) {
-            throw new \InvalidArgumentException('non-nullable total cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('total', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['total'] = $total;
 
@@ -1054,7 +1082,14 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTotalVat($total_vat)
     {
         if (is_null($total_vat)) {
-            throw new \InvalidArgumentException('non-nullable total_vat cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'total_vat');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('total_vat', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['total_vat'] = $total_vat;
 
@@ -1162,7 +1197,14 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDueDate($due_date)
     {
         if (is_null($due_date)) {
-            throw new \InvalidArgumentException('non-nullable due_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'due_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('due_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['due_date'] = $due_date;
 
@@ -1189,7 +1231,14 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSubmitDate($submit_date)
     {
         if (is_null($submit_date)) {
-            throw new \InvalidArgumentException('non-nullable submit_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'submit_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('submit_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['submit_date'] = $submit_date;
 

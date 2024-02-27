@@ -85,7 +85,7 @@ class ProcessAttributes implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'verif_cablage_ok' => false,
+        'verif_cablage_ok' => true,
 		'etat_voyants' => false,
 		'qualification' => false,
 		'customer_mails' => false,
@@ -337,7 +337,14 @@ class ProcessAttributes implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setVerifCablageOk($verif_cablage_ok)
     {
         if (is_null($verif_cablage_ok)) {
-            throw new \InvalidArgumentException('non-nullable verif_cablage_ok cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'verif_cablage_ok');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('verif_cablage_ok', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['verif_cablage_ok'] = $verif_cablage_ok;
 

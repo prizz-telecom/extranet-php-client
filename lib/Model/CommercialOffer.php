@@ -139,9 +139,9 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
 		'rc_total_str' => false,
 		'rc_vat_total' => false,
 		'rc_vat_total_str' => false,
-		'nrc_total' => false,
+		'nrc_total' => true,
 		'nrc_total_str' => false,
-		'nrc_vat_total' => false,
+		'nrc_vat_total' => true,
 		'nrc_vat_total_str' => false,
 		'status' => false,
 		'legal_entity' => false,
@@ -825,7 +825,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNrcTotal($nrc_total)
     {
         if (is_null($nrc_total)) {
-            throw new \InvalidArgumentException('non-nullable nrc_total cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'nrc_total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nrc_total', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['nrc_total'] = $nrc_total;
 
@@ -879,7 +886,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNrcVatTotal($nrc_vat_total)
     {
         if (is_null($nrc_vat_total)) {
-            throw new \InvalidArgumentException('non-nullable nrc_vat_total cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'nrc_vat_total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nrc_vat_total', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['nrc_vat_total'] = $nrc_vat_total;
 

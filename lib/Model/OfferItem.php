@@ -98,7 +98,7 @@ class OfferItem implements ModelInterface, ArrayAccess, \JsonSerializable
 		'min_count' => false,
 		'max_count' => false,
 		'product' => false,
-		'eligibility_string' => false
+		'eligibility_string' => true
     ];
 
     /**
@@ -547,7 +547,14 @@ class OfferItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEligibilityString($eligibility_string)
     {
         if (is_null($eligibility_string)) {
-            throw new \InvalidArgumentException('non-nullable eligibility_string cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'eligibility_string');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('eligibility_string', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['eligibility_string'] = $eligibility_string;
 

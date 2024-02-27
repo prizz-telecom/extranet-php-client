@@ -63,8 +63,6 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'legal_entity_id' => 'int',
         'client_legal_entity_id' => 'int',
         'name' => 'string',
-        'notes' => 'string',
-        'status' => 'string',
         'create_date' => '\DateTime'
     ];
 
@@ -82,8 +80,6 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'legal_entity_id' => null,
         'client_legal_entity_id' => null,
         'name' => null,
-        'notes' => null,
-        'status' => null,
         'create_date' => 'date-time'
     ];
 
@@ -99,9 +95,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
 		'legal_entity_id' => false,
 		'client_legal_entity_id' => false,
 		'name' => false,
-		'notes' => false,
-		'status' => false,
-		'create_date' => false
+		'create_date' => true
     ];
 
     /**
@@ -196,8 +190,6 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'legal_entity_id' => 'legalEntityId',
         'client_legal_entity_id' => 'clientLegalEntityId',
         'name' => 'name',
-        'notes' => 'notes',
-        'status' => 'status',
         'create_date' => 'createDate'
     ];
 
@@ -213,8 +205,6 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'legal_entity_id' => 'setLegalEntityId',
         'client_legal_entity_id' => 'setClientLegalEntityId',
         'name' => 'setName',
-        'notes' => 'setNotes',
-        'status' => 'setStatus',
         'create_date' => 'setCreateDate'
     ];
 
@@ -230,8 +220,6 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'legal_entity_id' => 'getLegalEntityId',
         'client_legal_entity_id' => 'getClientLegalEntityId',
         'name' => 'getName',
-        'notes' => 'getNotes',
-        'status' => 'getStatus',
         'create_date' => 'getCreateDate'
     ];
 
@@ -298,8 +286,6 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('legal_entity_id', $data ?? [], null);
         $this->setIfExists('client_legal_entity_id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('notes', $data ?? [], null);
-        $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
     }
 
@@ -508,60 +494,6 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets notes
-     *
-     * @return string|null
-     */
-    public function getNotes()
-    {
-        return $this->container['notes'];
-    }
-
-    /**
-     * Sets notes
-     *
-     * @param string|null $notes notes
-     *
-     * @return self
-     */
-    public function setNotes($notes)
-    {
-        if (is_null($notes)) {
-            throw new \InvalidArgumentException('non-nullable notes cannot be null');
-        }
-        $this->container['notes'] = $notes;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string|null
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string|null $status status
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
-        }
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
      * Gets create_date
      *
      * @return \DateTime|null
@@ -581,7 +513,14 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setCreateDate($create_date)
     {
         if (is_null($create_date)) {
-            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'create_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('create_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['create_date'] = $create_date;
 

@@ -95,10 +95,10 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
 		'create_date' => false,
 		'last_modified_date' => false,
 		'id' => false,
-		'name' => false,
+		'name' => true,
 		'active' => false,
 		'token' => false,
-		'last_usage' => false
+		'last_usage' => true
     ];
 
     /**
@@ -530,7 +530,14 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -611,7 +618,14 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastUsage($last_usage)
     {
         if (is_null($last_usage)) {
-            throw new \InvalidArgumentException('non-nullable last_usage cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'last_usage');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_usage', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['last_usage'] = $last_usage;
 

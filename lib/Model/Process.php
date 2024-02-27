@@ -103,17 +103,17 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'context_id' => false,
-		'entity_id' => false,
-		'entity_class' => false,
-		'process_class' => false,
-		'start_date' => false,
-		'state' => false,
-		'state_lib' => false,
-		'end_date' => false,
+        'context_id' => true,
+		'entity_id' => true,
+		'entity_class' => true,
+		'process_class' => true,
+		'start_date' => true,
+		'state' => true,
+		'state_lib' => true,
+		'end_date' => true,
 		'attrs' => false,
-		'lib' => false,
-		'title' => false,
+		'lib' => true,
+		'title' => true,
 		'states' => false,
 		'attachments' => false,
 		'actions' => false
@@ -400,7 +400,14 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setContextId($context_id)
     {
         if (is_null($context_id)) {
-            throw new \InvalidArgumentException('non-nullable context_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'context_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('context_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['context_id'] = $context_id;
 
@@ -427,7 +434,14 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEntityId($entity_id)
     {
         if (is_null($entity_id)) {
-            throw new \InvalidArgumentException('non-nullable entity_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'entity_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('entity_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['entity_id'] = $entity_id;
 
@@ -454,7 +468,14 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEntityClass($entity_class)
     {
         if (is_null($entity_class)) {
-            throw new \InvalidArgumentException('non-nullable entity_class cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'entity_class');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('entity_class', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['entity_class'] = $entity_class;
 
@@ -481,7 +502,14 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setProcessClass($process_class)
     {
         if (is_null($process_class)) {
-            throw new \InvalidArgumentException('non-nullable process_class cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'process_class');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('process_class', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['process_class'] = $process_class;
 
@@ -508,7 +536,14 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStartDate($start_date)
     {
         if (is_null($start_date)) {
-            throw new \InvalidArgumentException('non-nullable start_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'start_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('start_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['start_date'] = $start_date;
 
@@ -535,7 +570,14 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setState($state)
     {
         if (is_null($state)) {
-            throw new \InvalidArgumentException('non-nullable state cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'state');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('state', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['state'] = $state;
 
@@ -562,7 +604,14 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStateLib($state_lib)
     {
         if (is_null($state_lib)) {
-            throw new \InvalidArgumentException('non-nullable state_lib cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'state_lib');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('state_lib', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['state_lib'] = $state_lib;
 
@@ -589,7 +638,14 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEndDate($end_date)
     {
         if (is_null($end_date)) {
-            throw new \InvalidArgumentException('non-nullable end_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'end_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('end_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['end_date'] = $end_date;
 
@@ -643,7 +699,14 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLib($lib)
     {
         if (is_null($lib)) {
-            throw new \InvalidArgumentException('non-nullable lib cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lib');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lib', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lib'] = $lib;
 
@@ -670,7 +733,14 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTitle($title)
     {
         if (is_null($title)) {
-            throw new \InvalidArgumentException('non-nullable title cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'title');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('title', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['title'] = $title;
 

@@ -71,7 +71,6 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'client_legal_entity_id' => 'int',
         'ref' => 'string',
         'create_date' => '\DateTime',
-        'notes' => 'string',
         'status' => 'string',
         'ref_client' => 'string',
         'description' => 'string'
@@ -99,7 +98,6 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'client_legal_entity_id' => null,
         'ref' => null,
         'create_date' => 'date-time',
-        'notes' => null,
         'status' => null,
         'ref_client' => null,
         'description' => null
@@ -117,18 +115,17 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
 		'legal_entity_ids' => false,
 		'name' => false,
 		'address' => false,
-		'siren' => false,
-		'tel' => false,
-		'email' => false,
+		'siren' => true,
+		'tel' => true,
+		'email' => true,
 		'contacts' => false,
 		'legal_entity_id' => false,
 		'client_legal_entity_id' => false,
-		'ref' => false,
-		'create_date' => false,
-		'notes' => false,
-		'status' => false,
-		'ref_client' => false,
-		'description' => false
+		'ref' => true,
+		'create_date' => true,
+		'status' => true,
+		'ref_client' => true,
+		'description' => true
     ];
 
     /**
@@ -231,7 +228,6 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'client_legal_entity_id' => 'clientLegalEntityId',
         'ref' => 'ref',
         'create_date' => 'createDate',
-        'notes' => 'notes',
         'status' => 'status',
         'ref_client' => 'refClient',
         'description' => 'description'
@@ -257,7 +253,6 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'client_legal_entity_id' => 'setClientLegalEntityId',
         'ref' => 'setRef',
         'create_date' => 'setCreateDate',
-        'notes' => 'setNotes',
         'status' => 'setStatus',
         'ref_client' => 'setRefClient',
         'description' => 'setDescription'
@@ -283,7 +278,6 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'client_legal_entity_id' => 'getClientLegalEntityId',
         'ref' => 'getRef',
         'create_date' => 'getCreateDate',
-        'notes' => 'getNotes',
         'status' => 'getStatus',
         'ref_client' => 'getRefClient',
         'description' => 'getDescription'
@@ -360,7 +354,6 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('client_legal_entity_id', $data ?? [], null);
         $this->setIfExists('ref', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
-        $this->setIfExists('notes', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('ref_client', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -590,7 +583,14 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     public function setSiren($siren)
     {
         if (is_null($siren)) {
-            throw new \InvalidArgumentException('non-nullable siren cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'siren');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('siren', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['siren'] = $siren;
 
@@ -617,7 +617,14 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     public function setTel($tel)
     {
         if (is_null($tel)) {
-            throw new \InvalidArgumentException('non-nullable tel cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'tel');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tel', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['tel'] = $tel;
 
@@ -644,7 +651,14 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     public function setEmail($email)
     {
         if (is_null($email)) {
-            throw new \InvalidArgumentException('non-nullable email cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['email'] = $email;
 
@@ -752,7 +766,14 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     public function setRef($ref)
     {
         if (is_null($ref)) {
-            throw new \InvalidArgumentException('non-nullable ref cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ref');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ref', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ref'] = $ref;
 
@@ -779,36 +800,16 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     public function setCreateDate($create_date)
     {
         if (is_null($create_date)) {
-            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'create_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('create_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['create_date'] = $create_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets notes
-     *
-     * @return string|null
-     */
-    public function getNotes()
-    {
-        return $this->container['notes'];
-    }
-
-    /**
-     * Sets notes
-     *
-     * @param string|null $notes notes
-     *
-     * @return self
-     */
-    public function setNotes($notes)
-    {
-        if (is_null($notes)) {
-            throw new \InvalidArgumentException('non-nullable notes cannot be null');
-        }
-        $this->container['notes'] = $notes;
 
         return $this;
     }
@@ -833,7 +834,14 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     public function setStatus($status)
     {
         if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['status'] = $status;
 
@@ -860,7 +868,14 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     public function setRefClient($ref_client)
     {
         if (is_null($ref_client)) {
-            throw new \InvalidArgumentException('non-nullable ref_client cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ref_client');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ref_client', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ref_client'] = $ref_client;
 
@@ -887,7 +902,14 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 

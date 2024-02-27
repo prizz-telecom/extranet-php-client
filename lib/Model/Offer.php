@@ -86,7 +86,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => false,
 		'name' => false,
 		'main_offer_item' => false,
-		'offer_type' => false
+		'offer_type' => true
     ];
 
     /**
@@ -435,10 +435,17 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOfferType($offer_type)
     {
         if (is_null($offer_type)) {
-            throw new \InvalidArgumentException('non-nullable offer_type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'offer_type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('offer_type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $allowedValues = $this->getOfferTypeAllowableValues();
-        if (!in_array($offer_type, $allowedValues, true)) {
+        if (!is_null($offer_type) && !in_array($offer_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'offer_type', must be one of '%s'",

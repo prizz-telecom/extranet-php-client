@@ -87,12 +87,12 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-		'lib' => false,
-		'state' => false,
-		'status_code' => false,
+        'id' => true,
+		'lib' => true,
+		'state' => true,
+		'status_code' => true,
 		'create_date' => false,
-		'process_class' => false
+		'process_class' => true
     ];
 
     /**
@@ -344,7 +344,14 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setId($id)
     {
         if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['id'] = $id;
 
@@ -371,7 +378,14 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLib($lib)
     {
         if (is_null($lib)) {
-            throw new \InvalidArgumentException('non-nullable lib cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lib');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lib', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lib'] = $lib;
 
@@ -398,7 +412,14 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setState($state)
     {
         if (is_null($state)) {
-            throw new \InvalidArgumentException('non-nullable state cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'state');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('state', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['state'] = $state;
 
@@ -425,7 +446,14 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStatusCode($status_code)
     {
         if (is_null($status_code)) {
-            throw new \InvalidArgumentException('non-nullable status_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'status_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('status_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['status_code'] = $status_code;
 
@@ -479,7 +507,14 @@ class RunningProcess implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setProcessClass($process_class)
     {
         if (is_null($process_class)) {
-            throw new \InvalidArgumentException('non-nullable process_class cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'process_class');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('process_class', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['process_class'] = $process_class;
 

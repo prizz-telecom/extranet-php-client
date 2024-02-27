@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **client_legal_entity_id** | **int** |  | [optional]
 **ref** | **string** |  | [optional]
 **create_date** | **\DateTime** |  | [optional]
-**notes** | **string** |  | [optional]
 **status** | **string** |  | [optional]
 **ref_client** | **string** |  | [optional]
 **description** | **string** |  | [optional]
