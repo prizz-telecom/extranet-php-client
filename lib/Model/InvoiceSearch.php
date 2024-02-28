@@ -59,9 +59,9 @@ class InvoiceSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'index' => 'string',
         'query' => 'string',
-        'id' => 'int',
-        'legal_entity_id' => 'int',
-        'client_legal_entity_id' => 'int',
+        'id' => 'string',
+        'legal_entity_id' => 'string',
+        'client_legal_entity_id' => 'string',
         'ref' => 'string',
         'create_date' => '\DateTime'
     ];
@@ -388,7 +388,7 @@ class InvoiceSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getId()
     {
@@ -398,7 +398,7 @@ class InvoiceSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int|null $id id
+     * @param string|null $id id
      *
      * @return self
      */
@@ -415,7 +415,7 @@ class InvoiceSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets legal_entity_id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getLegalEntityId()
     {
@@ -425,7 +425,7 @@ class InvoiceSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets legal_entity_id
      *
-     * @param int|null $legal_entity_id legal_entity_id
+     * @param string|null $legal_entity_id legal_entity_id
      *
      * @return self
      */
@@ -442,7 +442,7 @@ class InvoiceSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets client_legal_entity_id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getClientLegalEntityId()
     {
@@ -452,7 +452,7 @@ class InvoiceSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets client_legal_entity_id
      *
-     * @param int|null $client_legal_entity_id client_legal_entity_id
+     * @param string|null $client_legal_entity_id client_legal_entity_id
      *
      * @return self
      */

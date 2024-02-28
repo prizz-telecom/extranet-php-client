@@ -59,10 +59,11 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'index' => 'string',
         'query' => 'string',
-        'id' => 'int',
-        'legal_entity_id' => 'int',
-        'client_legal_entity_id' => 'int',
+        'id' => 'string',
+        'legal_entity_id' => 'string',
+        'client_legal_entity_id' => 'string',
         'name' => 'string',
+        'notes' => 'string',
         'create_date' => '\DateTime'
     ];
 
@@ -80,6 +81,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'legal_entity_id' => null,
         'client_legal_entity_id' => null,
         'name' => null,
+        'notes' => null,
         'create_date' => 'date-time'
     ];
 
@@ -95,6 +97,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
 		'legal_entity_id' => false,
 		'client_legal_entity_id' => false,
 		'name' => false,
+		'notes' => true,
 		'create_date' => true
     ];
 
@@ -190,6 +193,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'legal_entity_id' => 'legalEntityId',
         'client_legal_entity_id' => 'clientLegalEntityId',
         'name' => 'name',
+        'notes' => 'notes',
         'create_date' => 'createDate'
     ];
 
@@ -205,6 +209,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'legal_entity_id' => 'setLegalEntityId',
         'client_legal_entity_id' => 'setClientLegalEntityId',
         'name' => 'setName',
+        'notes' => 'setNotes',
         'create_date' => 'setCreateDate'
     ];
 
@@ -220,6 +225,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'legal_entity_id' => 'getLegalEntityId',
         'client_legal_entity_id' => 'getClientLegalEntityId',
         'name' => 'getName',
+        'notes' => 'getNotes',
         'create_date' => 'getCreateDate'
     ];
 
@@ -286,6 +292,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('legal_entity_id', $data ?? [], null);
         $this->setIfExists('client_legal_entity_id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('notes', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
     }
 
@@ -388,7 +395,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getId()
     {
@@ -398,7 +405,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets id
      *
-     * @param int|null $id id
+     * @param string|null $id id
      *
      * @return self
      */
@@ -415,7 +422,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets legal_entity_id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getLegalEntityId()
     {
@@ -425,7 +432,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets legal_entity_id
      *
-     * @param int|null $legal_entity_id legal_entity_id
+     * @param string|null $legal_entity_id legal_entity_id
      *
      * @return self
      */
@@ -442,7 +449,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets client_legal_entity_id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getClientLegalEntityId()
     {
@@ -452,7 +459,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets client_legal_entity_id
      *
-     * @param int|null $client_legal_entity_id client_legal_entity_id
+     * @param string|null $client_legal_entity_id client_legal_entity_id
      *
      * @return self
      */
@@ -489,6 +496,40 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets notes
+     *
+     * @return string|null
+     */
+    public function getNotes()
+    {
+        return $this->container['notes'];
+    }
+
+    /**
+     * Sets notes
+     *
+     * @param string|null $notes notes
+     *
+     * @return self
+     */
+    public function setNotes($notes)
+    {
+        if (is_null($notes)) {
+            array_push($this->openAPINullablesSetToNull, 'notes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('notes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['notes'] = $notes;
 
         return $this;
     }

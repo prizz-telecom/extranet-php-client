@@ -57,7 +57,7 @@ class ContactSearch implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
+        'id' => 'string',
         'name' => 'string',
         'company_name' => 'string',
         'phone1' => 'string',
@@ -320,7 +320,7 @@ class ContactSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getId()
     {
@@ -330,7 +330,7 @@ class ContactSearch implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int|null $id id
+     * @param string|null $id id
      *
      * @return self
      */

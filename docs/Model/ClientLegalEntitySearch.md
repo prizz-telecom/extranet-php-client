@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **index** | **string** |  | [optional]
 **query** | **string** |  | [optional]
-**id** | **int** |  | [optional]
-**legal_entity_ids** | **int[]** |  | [optional]
+**id** | **string** |  | [optional]
+**legal_entity_ids** | **string[]** |  | [optional]
 **name** | **string** |  | [optional]
 **address** | **string** |  | [optional]
 **siren** | **string** |  | [optional]

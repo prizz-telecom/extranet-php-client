@@ -59,18 +59,19 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'index' => 'string',
         'query' => 'string',
-        'id' => 'int',
-        'legal_entity_ids' => 'int[]',
+        'id' => 'string',
+        'legal_entity_ids' => 'string[]',
         'name' => 'string',
         'address' => 'string',
         'siren' => 'string',
         'tel' => 'string',
         'email' => 'string',
         'contacts' => '\Infracorp\Extranet\Client\Model\ContactSearch[]',
-        'legal_entity_id' => 'int',
-        'client_legal_entity_id' => 'int',
+        'legal_entity_id' => 'string',
+        'client_legal_entity_id' => 'string',
         'ref' => 'string',
         'create_date' => '\DateTime',
+        'notes' => 'string',
         'status' => 'string',
         'ref_client' => 'string',
         'description' => 'string'
@@ -98,6 +99,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'client_legal_entity_id' => null,
         'ref' => null,
         'create_date' => 'date-time',
+        'notes' => null,
         'status' => null,
         'ref_client' => null,
         'description' => null
@@ -123,6 +125,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
 		'client_legal_entity_id' => false,
 		'ref' => true,
 		'create_date' => true,
+		'notes' => true,
 		'status' => true,
 		'ref_client' => true,
 		'description' => true
@@ -228,6 +231,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'client_legal_entity_id' => 'clientLegalEntityId',
         'ref' => 'ref',
         'create_date' => 'createDate',
+        'notes' => 'notes',
         'status' => 'status',
         'ref_client' => 'refClient',
         'description' => 'description'
@@ -253,6 +257,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'client_legal_entity_id' => 'setClientLegalEntityId',
         'ref' => 'setRef',
         'create_date' => 'setCreateDate',
+        'notes' => 'setNotes',
         'status' => 'setStatus',
         'ref_client' => 'setRefClient',
         'description' => 'setDescription'
@@ -278,6 +283,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'client_legal_entity_id' => 'getClientLegalEntityId',
         'ref' => 'getRef',
         'create_date' => 'getCreateDate',
+        'notes' => 'getNotes',
         'status' => 'getStatus',
         'ref_client' => 'getRefClient',
         'description' => 'getDescription'
@@ -354,6 +360,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('client_legal_entity_id', $data ?? [], null);
         $this->setIfExists('ref', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
+        $this->setIfExists('notes', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('ref_client', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -458,7 +465,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getId()
     {
@@ -468,7 +475,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets id
      *
-     * @param int|null $id id
+     * @param string|null $id id
      *
      * @return self
      */
@@ -485,7 +492,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets legal_entity_ids
      *
-     * @return int[]|null
+     * @return string[]|null
      */
     public function getLegalEntityIds()
     {
@@ -495,7 +502,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets legal_entity_ids
      *
-     * @param int[]|null $legal_entity_ids legal_entity_ids
+     * @param string[]|null $legal_entity_ids legal_entity_ids
      *
      * @return self
      */
@@ -695,7 +702,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets legal_entity_id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getLegalEntityId()
     {
@@ -705,7 +712,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets legal_entity_id
      *
-     * @param int|null $legal_entity_id legal_entity_id
+     * @param string|null $legal_entity_id legal_entity_id
      *
      * @return self
      */
@@ -722,7 +729,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets client_legal_entity_id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getClientLegalEntityId()
     {
@@ -732,7 +739,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets client_legal_entity_id
      *
-     * @param int|null $client_legal_entity_id client_legal_entity_id
+     * @param string|null $client_legal_entity_id client_legal_entity_id
      *
      * @return self
      */
@@ -810,6 +817,40 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['create_date'] = $create_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets notes
+     *
+     * @return string|null
+     */
+    public function getNotes()
+    {
+        return $this->container['notes'];
+    }
+
+    /**
+     * Sets notes
+     *
+     * @param string|null $notes notes
+     *
+     * @return self
+     */
+    public function setNotes($notes)
+    {
+        if (is_null($notes)) {
+            array_push($this->openAPINullablesSetToNull, 'notes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('notes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['notes'] = $notes;
 
         return $this;
     }

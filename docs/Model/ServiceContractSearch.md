@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **index** | **string** |  | [optional]
 **query** | **string** |  | [optional]
-**id** | **int** |  | [optional]
-**legal_entity_id** | **int** |  | [optional]
-**client_legal_entity_id** | **int** |  | [optional]
+**id** | **string** |  | [optional]
+**legal_entity_id** | **string** |  | [optional]
+**client_legal_entity_id** | **string** |  | [optional]
 **name** | **string** |  | [optional]
 **status** | **string** |  | [optional]
 **ref_client** | **string** |  | [optional]

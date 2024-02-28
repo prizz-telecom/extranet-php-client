@@ -1,6 +1,6 @@
 # Infracorp\Extranet\Client\DefaultApi
 
-All URIs are relative to https://dev.prizz-telecom.fr, except if the operation defines another base path.
+All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -16,6 +16,7 @@ All URIs are relative to https://dev.prizz-telecom.fr, except if the operation d
 | [**getCommentThread()**](DefaultApi.md#getCommentThread) | **GET** /external-api/v2/comments/threads/{id} | Comment thread |
 | [**getCommentThreads()**](DefaultApi.md#getCommentThreads) | **GET** /external-api/v2/comments/threads | Comment threads |
 | [**getCommercialOffer()**](DefaultApi.md#getCommercialOffer) | **GET** /external-api/v2/commercial_offers/{id} | Commercial Offer |
+| [**getCommercialOfferByName()**](DefaultApi.md#getCommercialOfferByName) | **GET** /external-api/v2/commercial_offers_by_name/{offer_name} | Commercial Offer |
 | [**getCommercialOfferPdf()**](DefaultApi.md#getCommercialOfferPdf) | **GET** /external-api/v2/commercial_offers/{id}/pdf | Commercial Offer Pdf |
 | [**getCommercialOffers()**](DefaultApi.md#getCommercialOffers) | **GET** /external-api/v2/commercial_offers | Commercial Offers |
 | [**getCurrentUser()**](DefaultApi.md#getCurrentUser) | **GET** /external-api/v2/user | User |
@@ -34,6 +35,7 @@ All URIs are relative to https://dev.prizz-telecom.fr, except if the operation d
 | [**getProcess()**](DefaultApi.md#getProcess) | **GET** /external-api/v2/exploitation/operator/{id}/process/{processId} | Exploitation Process |
 | [**getService()**](DefaultApi.md#getService) | **GET** /external-api/v2/services/{id} | Service |
 | [**getServiceContract()**](DefaultApi.md#getServiceContract) | **GET** /external-api/v2/service_contracts/{id} | Service Contract |
+| [**getServiceContractByName()**](DefaultApi.md#getServiceContractByName) | **GET** /external-api/v2/service_contracts_by_name/{service_name} | Service Contract |
 | [**getServiceContracts()**](DefaultApi.md#getServiceContracts) | **GET** /external-api/v2/service_contracts | Service Contracts |
 | [**getServices()**](DefaultApi.md#getServices) | **GET** /external-api/v2/services | Services |
 | [**getTicket()**](DefaultApi.md#getTicket) | **GET** /external-api/v2/exploitation/operator/{id}/tickets/{ref} | Exploitation Ticket |
@@ -846,6 +848,71 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getCommercialOfferByName()`
+
+```php
+getCommercialOfferByName($offer_name): \Infracorp\Extranet\Client\Model\CommercialOffer
+```
+
+Commercial Offer
+
+Get commercial offer by name
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$offer_name = 'offer_name_example'; // string | commercial offer name string
+
+try {
+    $result = $apiInstance->getCommercialOfferByName($offer_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getCommercialOfferByName: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offer_name** | **string**| commercial offer name string | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\CommercialOffer**](../Model/CommercialOffer.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getCommercialOfferPdf()`
 
 ```php
@@ -1153,7 +1220,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | indentifiant de la facture
+$id = 56; // int | identifiant de la facture
 
 try {
     $result = $apiInstance->getInvoice($id);
@@ -1167,7 +1234,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| indentifiant de la facture | |
+| **id** | **int**| identifiant de la facture | |
 
 ### Return type
 
@@ -1431,7 +1498,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | indentifiant de la société
+$id = 56; // int | identifiant de la société
 
 try {
     $result = $apiInstance->getLegalEntity($id);
@@ -1445,7 +1512,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| indentifiant de la société | |
+| **id** | **int**| identifiant de la société | |
 
 ### Return type
 
@@ -1955,7 +2022,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | indentifiant du service
+$id = 56; // int | identifiant du service
 
 try {
     $result = $apiInstance->getService($id);
@@ -1969,7 +2036,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| indentifiant du service | |
+| **id** | **int**| identifiant du service | |
 
 ### Return type
 
@@ -2020,7 +2087,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | indentifiant du pack de services
+$id = 56; // int | identifiant du pack de services
 
 try {
     $result = $apiInstance->getServiceContract($id);
@@ -2034,7 +2101,72 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| indentifiant du pack de services | |
+| **id** | **int**| identifiant du pack de services | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\ServiceContract**](../Model/ServiceContract.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getServiceContractByName()`
+
+```php
+getServiceContractByName($service_name): \Infracorp\Extranet\Client\Model\ServiceContract
+```
+
+Service Contract
+
+Récupérer le détail d'un pack de services
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$service_name = 'service_name_example'; // string | identifiant du pack de services
+
+try {
+    $result = $apiInstance->getServiceContractByName($service_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getServiceContractByName: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **service_name** | **string**| identifiant du pack de services | |
 
 ### Return type
 

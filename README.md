@@ -77,7 +77,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://dev.prizz-telecom.fr*
+All URIs are relative to *https://my.tests.prizz-telecom.fr*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -93,6 +93,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getCommentThread**](docs/Api/DefaultApi.md#getcommentthread) | **GET** /external-api/v2/comments/threads/{id} | Comment thread
 *DefaultApi* | [**getCommentThreads**](docs/Api/DefaultApi.md#getcommentthreads) | **GET** /external-api/v2/comments/threads | Comment threads
 *DefaultApi* | [**getCommercialOffer**](docs/Api/DefaultApi.md#getcommercialoffer) | **GET** /external-api/v2/commercial_offers/{id} | Commercial Offer
+*DefaultApi* | [**getCommercialOfferByName**](docs/Api/DefaultApi.md#getcommercialofferbyname) | **GET** /external-api/v2/commercial_offers_by_name/{offer_name} | Commercial Offer
 *DefaultApi* | [**getCommercialOfferPdf**](docs/Api/DefaultApi.md#getcommercialofferpdf) | **GET** /external-api/v2/commercial_offers/{id}/pdf | Commercial Offer Pdf
 *DefaultApi* | [**getCommercialOffers**](docs/Api/DefaultApi.md#getcommercialoffers) | **GET** /external-api/v2/commercial_offers | Commercial Offers
 *DefaultApi* | [**getCurrentUser**](docs/Api/DefaultApi.md#getcurrentuser) | **GET** /external-api/v2/user | User
@@ -111,6 +112,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getProcess**](docs/Api/DefaultApi.md#getprocess) | **GET** /external-api/v2/exploitation/operator/{id}/process/{processId} | Exploitation Process
 *DefaultApi* | [**getService**](docs/Api/DefaultApi.md#getservice) | **GET** /external-api/v2/services/{id} | Service
 *DefaultApi* | [**getServiceContract**](docs/Api/DefaultApi.md#getservicecontract) | **GET** /external-api/v2/service_contracts/{id} | Service Contract
+*DefaultApi* | [**getServiceContractByName**](docs/Api/DefaultApi.md#getservicecontractbyname) | **GET** /external-api/v2/service_contracts_by_name/{service_name} | Service Contract
 *DefaultApi* | [**getServiceContracts**](docs/Api/DefaultApi.md#getservicecontracts) | **GET** /external-api/v2/service_contracts | Service Contracts
 *DefaultApi* | [**getServices**](docs/Api/DefaultApi.md#getservices) | **GET** /external-api/v2/services | Services
 *DefaultApi* | [**getTicket**](docs/Api/DefaultApi.md#getticket) | **GET** /external-api/v2/exploitation/operator/{id}/tickets/{ref} | Exploitation Ticket
@@ -152,6 +154,7 @@ Class | Method | HTTP request | Description
 - [CreateWorkflow](docs/Model/CreateWorkflow.md)
 - [EligibilityHistory](docs/Model/EligibilityHistory.md)
 - [EligibilityHistory200Response](docs/Model/EligibilityHistory200Response.md)
+- [EligibilityPriceListItem](docs/Model/EligibilityPriceListItem.md)
 - [EligibilityResult](docs/Model/EligibilityResult.md)
 - [EligibilityResultPriceListItemsGroups](docs/Model/EligibilityResultPriceListItemsGroups.md)
 - [GetApiTokens200Response](docs/Model/GetApiTokens200Response.md)

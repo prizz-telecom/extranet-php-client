@@ -1,6 +1,6 @@
 <?php
 /**
- * ClientLegalEntitySearch
+ * EligibilityPriceListItem
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * ClientLegalEntitySearch Class Doc Comment
+ * EligibilityPriceListItem Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSerializable
+class EligibilityPriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ClientLegalEntitySearch';
+    protected static $openAPIModelName = 'EligibilityPriceListItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,16 +57,10 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'index' => 'string',
-        'query' => 'string',
-        'id' => 'string',
-        'legal_entity_ids' => 'string[]',
+        'id' => 'int',
         'name' => 'string',
-        'address' => 'string',
-        'siren' => 'string',
-        'tel' => 'string',
-        'email' => 'string',
-        'contacts' => '\Infracorp\Extranet\Client\Model\ContactSearch[]'
+        'product_name' => 'string',
+        'attributes' => 'array<string,mixed>'
     ];
 
     /**
@@ -77,16 +71,10 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'index' => null,
-        'query' => null,
         'id' => null,
-        'legal_entity_ids' => null,
         'name' => null,
-        'address' => null,
-        'siren' => null,
-        'tel' => null,
-        'email' => null,
-        'contacts' => null
+        'product_name' => null,
+        'attributes' => null
     ];
 
     /**
@@ -95,16 +83,10 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'index' => false,
-		'query' => false,
-		'id' => false,
-		'legal_entity_ids' => false,
+        'id' => false,
 		'name' => false,
-		'address' => false,
-		'siren' => true,
-		'tel' => true,
-		'email' => true,
-		'contacts' => false
+		'product_name' => false,
+		'attributes' => false
     ];
 
     /**
@@ -193,16 +175,10 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'index' => 'index',
-        'query' => 'query',
         'id' => 'id',
-        'legal_entity_ids' => 'legalEntityIds',
         'name' => 'name',
-        'address' => 'address',
-        'siren' => 'siren',
-        'tel' => 'tel',
-        'email' => 'email',
-        'contacts' => 'contacts'
+        'product_name' => 'productName',
+        'attributes' => 'attributes'
     ];
 
     /**
@@ -211,16 +187,10 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'index' => 'setIndex',
-        'query' => 'setQuery',
         'id' => 'setId',
-        'legal_entity_ids' => 'setLegalEntityIds',
         'name' => 'setName',
-        'address' => 'setAddress',
-        'siren' => 'setSiren',
-        'tel' => 'setTel',
-        'email' => 'setEmail',
-        'contacts' => 'setContacts'
+        'product_name' => 'setProductName',
+        'attributes' => 'setAttributes'
     ];
 
     /**
@@ -229,16 +199,10 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'index' => 'getIndex',
-        'query' => 'getQuery',
         'id' => 'getId',
-        'legal_entity_ids' => 'getLegalEntityIds',
         'name' => 'getName',
-        'address' => 'getAddress',
-        'siren' => 'getSiren',
-        'tel' => 'getTel',
-        'email' => 'getEmail',
-        'contacts' => 'getContacts'
+        'product_name' => 'getProductName',
+        'attributes' => 'getAttributes'
     ];
 
     /**
@@ -298,16 +262,10 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('index', $data ?? [], null);
-        $this->setIfExists('query', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('legal_entity_ids', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('address', $data ?? [], null);
-        $this->setIfExists('siren', $data ?? [], null);
-        $this->setIfExists('tel', $data ?? [], null);
-        $this->setIfExists('email', $data ?? [], null);
-        $this->setIfExists('contacts', $data ?? [], null);
+        $this->setIfExists('product_name', $data ?? [], null);
+        $this->setIfExists('attributes', $data ?? [], null);
     }
 
     /**
@@ -353,63 +311,9 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets index
-     *
-     * @return string|null
-     */
-    public function getIndex()
-    {
-        return $this->container['index'];
-    }
-
-    /**
-     * Sets index
-     *
-     * @param string|null $index index
-     *
-     * @return self
-     */
-    public function setIndex($index)
-    {
-        if (is_null($index)) {
-            throw new \InvalidArgumentException('non-nullable index cannot be null');
-        }
-        $this->container['index'] = $index;
-
-        return $this;
-    }
-
-    /**
-     * Gets query
-     *
-     * @return string|null
-     */
-    public function getQuery()
-    {
-        return $this->container['query'];
-    }
-
-    /**
-     * Sets query
-     *
-     * @param string|null $query query
-     *
-     * @return self
-     */
-    public function setQuery($query)
-    {
-        if (is_null($query)) {
-            throw new \InvalidArgumentException('non-nullable query cannot be null');
-        }
-        $this->container['query'] = $query;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
-     * @return string|null
+     * @return int|null
      */
     public function getId()
     {
@@ -419,7 +323,7 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets id
      *
-     * @param string|null $id id
+     * @param int|null $id id
      *
      * @return self
      */
@@ -429,33 +333,6 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets legal_entity_ids
-     *
-     * @return string[]|null
-     */
-    public function getLegalEntityIds()
-    {
-        return $this->container['legal_entity_ids'];
-    }
-
-    /**
-     * Sets legal_entity_ids
-     *
-     * @param string[]|null $legal_entity_ids legal_entity_ids
-     *
-     * @return self
-     */
-    public function setLegalEntityIds($legal_entity_ids)
-    {
-        if (is_null($legal_entity_ids)) {
-            throw new \InvalidArgumentException('non-nullable legal_entity_ids cannot be null');
-        }
-        $this->container['legal_entity_ids'] = $legal_entity_ids;
 
         return $this;
     }
@@ -488,157 +365,55 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets address
+     * Gets product_name
      *
      * @return string|null
      */
-    public function getAddress()
+    public function getProductName()
     {
-        return $this->container['address'];
+        return $this->container['product_name'];
     }
 
     /**
-     * Sets address
+     * Sets product_name
      *
-     * @param string|null $address address
+     * @param string|null $product_name product_name
      *
      * @return self
      */
-    public function setAddress($address)
+    public function setProductName($product_name)
     {
-        if (is_null($address)) {
-            throw new \InvalidArgumentException('non-nullable address cannot be null');
+        if (is_null($product_name)) {
+            throw new \InvalidArgumentException('non-nullable product_name cannot be null');
         }
-        $this->container['address'] = $address;
+        $this->container['product_name'] = $product_name;
 
         return $this;
     }
 
     /**
-     * Gets siren
+     * Gets attributes
      *
-     * @return string|null
+     * @return array<string,mixed>|null
      */
-    public function getSiren()
+    public function getAttributes()
     {
-        return $this->container['siren'];
+        return $this->container['attributes'];
     }
 
     /**
-     * Sets siren
+     * Sets attributes
      *
-     * @param string|null $siren siren
+     * @param array<string,mixed>|null $attributes attributes
      *
      * @return self
      */
-    public function setSiren($siren)
+    public function setAttributes($attributes)
     {
-        if (is_null($siren)) {
-            array_push($this->openAPINullablesSetToNull, 'siren');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('siren', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($attributes)) {
+            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
         }
-        $this->container['siren'] = $siren;
-
-        return $this;
-    }
-
-    /**
-     * Gets tel
-     *
-     * @return string|null
-     */
-    public function getTel()
-    {
-        return $this->container['tel'];
-    }
-
-    /**
-     * Sets tel
-     *
-     * @param string|null $tel tel
-     *
-     * @return self
-     */
-    public function setTel($tel)
-    {
-        if (is_null($tel)) {
-            array_push($this->openAPINullablesSetToNull, 'tel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tel', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['tel'] = $tel;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email email
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        if (is_null($email)) {
-            array_push($this->openAPINullablesSetToNull, 'email');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('email', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets contacts
-     *
-     * @return \Infracorp\Extranet\Client\Model\ContactSearch[]|null
-     */
-    public function getContacts()
-    {
-        return $this->container['contacts'];
-    }
-
-    /**
-     * Sets contacts
-     *
-     * @param \Infracorp\Extranet\Client\Model\ContactSearch[]|null $contacts contacts
-     *
-     * @return self
-     */
-    public function setContacts($contacts)
-    {
-        if (is_null($contacts)) {
-            throw new \InvalidArgumentException('non-nullable contacts cannot be null');
-        }
-        $this->container['contacts'] = $contacts;
+        $this->container['attributes'] = $attributes;
 
         return $this;
     }

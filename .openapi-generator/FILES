@@ -28,6 +28,7 @@ docs/Model/CreateTicket.md
 docs/Model/CreateWorkflow.md
 docs/Model/EligibilityHistory.md
 docs/Model/EligibilityHistory200Response.md
+docs/Model/EligibilityPriceListItem.md
 docs/Model/EligibilityResult.md
 docs/Model/EligibilityResultPriceListItemsGroups.md
 docs/Model/GetApiTokens200Response.md
@@ -108,6 +109,7 @@ lib/Model/CreateTicket.php
 lib/Model/CreateWorkflow.php
 lib/Model/EligibilityHistory.php
 lib/Model/EligibilityHistory200Response.php
+lib/Model/EligibilityPriceListItem.php
 lib/Model/EligibilityResult.php
 lib/Model/EligibilityResultPriceListItemsGroups.php
 lib/Model/GetApiTokens200Response.php
@@ -162,3 +164,4 @@ lib/Model/UserApiToken.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/EligibilityPriceListItemTest.php

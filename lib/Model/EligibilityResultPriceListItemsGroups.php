@@ -57,10 +57,15 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bandwidth' => 'int[]',
-        'commitment' => 'int[]',
-        'grt' => 'int[]',
-        'nrc' => 'int[]'
+        'bandwidth' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
+        'commitment' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
+        'grt' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
+        'nrc' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
+        'distance' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
+        'fiber_count' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
+        'extremity_site_a' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
+        'extremity_site_b' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
+        'maintenance' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]'
     ];
 
     /**
@@ -74,7 +79,12 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
         'bandwidth' => null,
         'commitment' => null,
         'grt' => null,
-        'nrc' => null
+        'nrc' => null,
+        'distance' => null,
+        'fiber_count' => null,
+        'extremity_site_a' => null,
+        'extremity_site_b' => null,
+        'maintenance' => null
     ];
 
     /**
@@ -86,7 +96,12 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
         'bandwidth' => false,
 		'commitment' => false,
 		'grt' => false,
-		'nrc' => false
+		'nrc' => false,
+		'distance' => false,
+		'fiber_count' => false,
+		'extremity_site_a' => false,
+		'extremity_site_b' => false,
+		'maintenance' => false
     ];
 
     /**
@@ -178,7 +193,12 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
         'bandwidth' => 'bandwidth',
         'commitment' => 'commitment',
         'grt' => 'grt',
-        'nrc' => 'nrc'
+        'nrc' => 'nrc',
+        'distance' => 'distance',
+        'fiber_count' => 'fiber_count',
+        'extremity_site_a' => 'extremity_site_a',
+        'extremity_site_b' => 'extremity_site_b',
+        'maintenance' => 'maintenance'
     ];
 
     /**
@@ -190,7 +210,12 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
         'bandwidth' => 'setBandwidth',
         'commitment' => 'setCommitment',
         'grt' => 'setGrt',
-        'nrc' => 'setNrc'
+        'nrc' => 'setNrc',
+        'distance' => 'setDistance',
+        'fiber_count' => 'setFiberCount',
+        'extremity_site_a' => 'setExtremitySiteA',
+        'extremity_site_b' => 'setExtremitySiteB',
+        'maintenance' => 'setMaintenance'
     ];
 
     /**
@@ -202,7 +227,12 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
         'bandwidth' => 'getBandwidth',
         'commitment' => 'getCommitment',
         'grt' => 'getGrt',
-        'nrc' => 'getNrc'
+        'nrc' => 'getNrc',
+        'distance' => 'getDistance',
+        'fiber_count' => 'getFiberCount',
+        'extremity_site_a' => 'getExtremitySiteA',
+        'extremity_site_b' => 'getExtremitySiteB',
+        'maintenance' => 'getMaintenance'
     ];
 
     /**
@@ -266,6 +296,11 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
         $this->setIfExists('commitment', $data ?? [], null);
         $this->setIfExists('grt', $data ?? [], null);
         $this->setIfExists('nrc', $data ?? [], null);
+        $this->setIfExists('distance', $data ?? [], null);
+        $this->setIfExists('fiber_count', $data ?? [], null);
+        $this->setIfExists('extremity_site_a', $data ?? [], null);
+        $this->setIfExists('extremity_site_b', $data ?? [], null);
+        $this->setIfExists('maintenance', $data ?? [], null);
     }
 
     /**
@@ -313,7 +348,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Gets bandwidth
      *
-     * @return int[]|null
+     * @return \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null
      */
     public function getBandwidth()
     {
@@ -323,7 +358,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets bandwidth
      *
-     * @param int[]|null $bandwidth bandwidth
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $bandwidth bandwidth
      *
      * @return self
      */
@@ -340,7 +375,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Gets commitment
      *
-     * @return int[]|null
+     * @return \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null
      */
     public function getCommitment()
     {
@@ -350,7 +385,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets commitment
      *
-     * @param int[]|null $commitment commitment
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $commitment commitment
      *
      * @return self
      */
@@ -367,7 +402,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Gets grt
      *
-     * @return int[]|null
+     * @return \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null
      */
     public function getGrt()
     {
@@ -377,7 +412,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets grt
      *
-     * @param int[]|null $grt grt
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $grt grt
      *
      * @return self
      */
@@ -394,7 +429,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Gets nrc
      *
-     * @return int[]|null
+     * @return \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null
      */
     public function getNrc()
     {
@@ -404,7 +439,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets nrc
      *
-     * @param int[]|null $nrc nrc
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $nrc nrc
      *
      * @return self
      */
@@ -414,6 +449,141 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
             throw new \InvalidArgumentException('non-nullable nrc cannot be null');
         }
         $this->container['nrc'] = $nrc;
+
+        return $this;
+    }
+
+    /**
+     * Gets distance
+     *
+     * @return \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null
+     */
+    public function getDistance()
+    {
+        return $this->container['distance'];
+    }
+
+    /**
+     * Sets distance
+     *
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $distance distance
+     *
+     * @return self
+     */
+    public function setDistance($distance)
+    {
+        if (is_null($distance)) {
+            throw new \InvalidArgumentException('non-nullable distance cannot be null');
+        }
+        $this->container['distance'] = $distance;
+
+        return $this;
+    }
+
+    /**
+     * Gets fiber_count
+     *
+     * @return \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null
+     */
+    public function getFiberCount()
+    {
+        return $this->container['fiber_count'];
+    }
+
+    /**
+     * Sets fiber_count
+     *
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $fiber_count fiber_count
+     *
+     * @return self
+     */
+    public function setFiberCount($fiber_count)
+    {
+        if (is_null($fiber_count)) {
+            throw new \InvalidArgumentException('non-nullable fiber_count cannot be null');
+        }
+        $this->container['fiber_count'] = $fiber_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets extremity_site_a
+     *
+     * @return \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null
+     */
+    public function getExtremitySiteA()
+    {
+        return $this->container['extremity_site_a'];
+    }
+
+    /**
+     * Sets extremity_site_a
+     *
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $extremity_site_a extremity_site_a
+     *
+     * @return self
+     */
+    public function setExtremitySiteA($extremity_site_a)
+    {
+        if (is_null($extremity_site_a)) {
+            throw new \InvalidArgumentException('non-nullable extremity_site_a cannot be null');
+        }
+        $this->container['extremity_site_a'] = $extremity_site_a;
+
+        return $this;
+    }
+
+    /**
+     * Gets extremity_site_b
+     *
+     * @return \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null
+     */
+    public function getExtremitySiteB()
+    {
+        return $this->container['extremity_site_b'];
+    }
+
+    /**
+     * Sets extremity_site_b
+     *
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $extremity_site_b extremity_site_b
+     *
+     * @return self
+     */
+    public function setExtremitySiteB($extremity_site_b)
+    {
+        if (is_null($extremity_site_b)) {
+            throw new \InvalidArgumentException('non-nullable extremity_site_b cannot be null');
+        }
+        $this->container['extremity_site_b'] = $extremity_site_b;
+
+        return $this;
+    }
+
+    /**
+     * Gets maintenance
+     *
+     * @return \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null
+     */
+    public function getMaintenance()
+    {
+        return $this->container['maintenance'];
+    }
+
+    /**
+     * Sets maintenance
+     *
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $maintenance maintenance
+     *
+     * @return self
+     */
+    public function setMaintenance($maintenance)
+    {
+        if (is_null($maintenance)) {
+            throw new \InvalidArgumentException('non-nullable maintenance cannot be null');
+        }
+        $this->container['maintenance'] = $maintenance;
 
         return $this;
     }

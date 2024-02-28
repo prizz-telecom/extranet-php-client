@@ -107,6 +107,9 @@ class DefaultApi
         'getCommercialOffer' => [
             'application/json',
         ],
+        'getCommercialOfferByName' => [
+            'application/json',
+        ],
         'getCommercialOfferPdf' => [
             'application/json',
         ],
@@ -159,6 +162,9 @@ class DefaultApi
             'application/json',
         ],
         'getServiceContract' => [
+            'application/json',
+        ],
+        'getServiceContractByName' => [
             'application/json',
         ],
         'getServiceContracts' => [
@@ -4170,6 +4176,322 @@ class DefaultApi
     }
 
     /**
+     * Operation getCommercialOfferByName
+     *
+     * Commercial Offer
+     *
+     * @param  string $offer_name commercial offer name string (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOfferByName'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Infracorp\Extranet\Client\Model\CommercialOffer
+     */
+    public function getCommercialOfferByName($offer_name, string $contentType = self::contentTypes['getCommercialOfferByName'][0])
+    {
+        list($response) = $this->getCommercialOfferByNameWithHttpInfo($offer_name, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCommercialOfferByNameWithHttpInfo
+     *
+     * Commercial Offer
+     *
+     * @param  string $offer_name commercial offer name string (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOfferByName'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Infracorp\Extranet\Client\Model\CommercialOffer, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCommercialOfferByNameWithHttpInfo($offer_name, string $contentType = self::contentTypes['getCommercialOfferByName'][0])
+    {
+        $request = $this->getCommercialOfferByNameRequest($offer_name, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Infracorp\Extranet\Client\Model\CommercialOffer' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Infracorp\Extranet\Client\Model\CommercialOffer' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                 );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CommercialOffer', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Infracorp\Extranet\Client\Model\CommercialOffer';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infracorp\Extranet\Client\Model\CommercialOffer',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCommercialOfferByNameAsync
+     *
+     * Commercial Offer
+     *
+     * @param  string $offer_name commercial offer name string (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOfferByName'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCommercialOfferByNameAsync($offer_name, string $contentType = self::contentTypes['getCommercialOfferByName'][0])
+    {
+        return $this->getCommercialOfferByNameAsyncWithHttpInfo($offer_name, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCommercialOfferByNameAsyncWithHttpInfo
+     *
+     * Commercial Offer
+     *
+     * @param  string $offer_name commercial offer name string (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOfferByName'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCommercialOfferByNameAsyncWithHttpInfo($offer_name, string $contentType = self::contentTypes['getCommercialOfferByName'][0])
+    {
+        $returnType = '\Infracorp\Extranet\Client\Model\CommercialOffer';
+        $request = $this->getCommercialOfferByNameRequest($offer_name, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCommercialOfferByName'
+     *
+     * @param  string $offer_name commercial offer name string (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOfferByName'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCommercialOfferByNameRequest($offer_name, string $contentType = self::contentTypes['getCommercialOfferByName'][0])
+    {
+
+        // verify the required parameter 'offer_name' is set
+        if ($offer_name === null || (is_array($offer_name) && count($offer_name) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $offer_name when calling getCommercialOfferByName'
+            );
+        }
+
+
+        $resourcePath = '/external-api/v2/commercial_offers_by_name/{offer_name}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($offer_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'offer_name' . '}',
+                ObjectSerializer::toPathValue($offer_name),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getCommercialOfferPdf
      *
      * Commercial Offer Pdf
@@ -5548,7 +5870,7 @@ class DefaultApi
      *
      * Invoice
      *
-     * @param  int $id indentifiant de la facture (required)
+     * @param  int $id identifiant de la facture (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoice'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5566,7 +5888,7 @@ class DefaultApi
      *
      * Invoice
      *
-     * @param  int $id indentifiant de la facture (required)
+     * @param  int $id identifiant de la facture (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoice'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5690,7 +6012,7 @@ class DefaultApi
      *
      * Invoice
      *
-     * @param  int $id indentifiant de la facture (required)
+     * @param  int $id identifiant de la facture (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5711,7 +6033,7 @@ class DefaultApi
      *
      * Invoice
      *
-     * @param  int $id indentifiant de la facture (required)
+     * @param  int $id identifiant de la facture (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5761,7 +6083,7 @@ class DefaultApi
     /**
      * Create request for operation 'getInvoice'
      *
-     * @param  int $id indentifiant de la facture (required)
+     * @param  int $id identifiant de la facture (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6937,7 +7259,7 @@ class DefaultApi
      *
      * Legal entity
      *
-     * @param  int $id indentifiant de la société (required)
+     * @param  int $id identifiant de la société (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLegalEntity'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6955,7 +7277,7 @@ class DefaultApi
      *
      * Legal entity
      *
-     * @param  int $id indentifiant de la société (required)
+     * @param  int $id identifiant de la société (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLegalEntity'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -7079,7 +7401,7 @@ class DefaultApi
      *
      * Legal entity
      *
-     * @param  int $id indentifiant de la société (required)
+     * @param  int $id identifiant de la société (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLegalEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7100,7 +7422,7 @@ class DefaultApi
      *
      * Legal entity
      *
-     * @param  int $id indentifiant de la société (required)
+     * @param  int $id identifiant de la société (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLegalEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7150,7 +7472,7 @@ class DefaultApi
     /**
      * Create request for operation 'getLegalEntity'
      *
-     * @param  int $id indentifiant de la société (required)
+     * @param  int $id identifiant de la société (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLegalEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9507,7 +9829,7 @@ class DefaultApi
      *
      * Service
      *
-     * @param  int $id indentifiant du service (required)
+     * @param  int $id identifiant du service (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getService'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -9525,7 +9847,7 @@ class DefaultApi
      *
      * Service
      *
-     * @param  int $id indentifiant du service (required)
+     * @param  int $id identifiant du service (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getService'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -9649,7 +9971,7 @@ class DefaultApi
      *
      * Service
      *
-     * @param  int $id indentifiant du service (required)
+     * @param  int $id identifiant du service (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getService'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9670,7 +9992,7 @@ class DefaultApi
      *
      * Service
      *
-     * @param  int $id indentifiant du service (required)
+     * @param  int $id identifiant du service (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getService'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9720,7 +10042,7 @@ class DefaultApi
     /**
      * Create request for operation 'getService'
      *
-     * @param  int $id indentifiant du service (required)
+     * @param  int $id identifiant du service (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getService'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9823,7 +10145,7 @@ class DefaultApi
      *
      * Service Contract
      *
-     * @param  int $id indentifiant du pack de services (required)
+     * @param  int $id identifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContract'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -9841,7 +10163,7 @@ class DefaultApi
      *
      * Service Contract
      *
-     * @param  int $id indentifiant du pack de services (required)
+     * @param  int $id identifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContract'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -9965,7 +10287,7 @@ class DefaultApi
      *
      * Service Contract
      *
-     * @param  int $id indentifiant du pack de services (required)
+     * @param  int $id identifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContract'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9986,7 +10308,7 @@ class DefaultApi
      *
      * Service Contract
      *
-     * @param  int $id indentifiant du pack de services (required)
+     * @param  int $id identifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContract'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10036,7 +10358,7 @@ class DefaultApi
     /**
      * Create request for operation 'getServiceContract'
      *
-     * @param  int $id indentifiant du pack de services (required)
+     * @param  int $id identifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContract'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10067,6 +10389,322 @@ class DefaultApi
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getServiceContractByName
+     *
+     * Service Contract
+     *
+     * @param  string $service_name identifiant du pack de services (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContractByName'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Infracorp\Extranet\Client\Model\ServiceContract
+     */
+    public function getServiceContractByName($service_name, string $contentType = self::contentTypes['getServiceContractByName'][0])
+    {
+        list($response) = $this->getServiceContractByNameWithHttpInfo($service_name, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getServiceContractByNameWithHttpInfo
+     *
+     * Service Contract
+     *
+     * @param  string $service_name identifiant du pack de services (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContractByName'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Infracorp\Extranet\Client\Model\ServiceContract, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getServiceContractByNameWithHttpInfo($service_name, string $contentType = self::contentTypes['getServiceContractByName'][0])
+    {
+        $request = $this->getServiceContractByNameRequest($service_name, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Infracorp\Extranet\Client\Model\ServiceContract' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Infracorp\Extranet\Client\Model\ServiceContract' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                 );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\ServiceContract', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Infracorp\Extranet\Client\Model\ServiceContract';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infracorp\Extranet\Client\Model\ServiceContract',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getServiceContractByNameAsync
+     *
+     * Service Contract
+     *
+     * @param  string $service_name identifiant du pack de services (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContractByName'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getServiceContractByNameAsync($service_name, string $contentType = self::contentTypes['getServiceContractByName'][0])
+    {
+        return $this->getServiceContractByNameAsyncWithHttpInfo($service_name, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getServiceContractByNameAsyncWithHttpInfo
+     *
+     * Service Contract
+     *
+     * @param  string $service_name identifiant du pack de services (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContractByName'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getServiceContractByNameAsyncWithHttpInfo($service_name, string $contentType = self::contentTypes['getServiceContractByName'][0])
+    {
+        $returnType = '\Infracorp\Extranet\Client\Model\ServiceContract';
+        $request = $this->getServiceContractByNameRequest($service_name, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getServiceContractByName'
+     *
+     * @param  string $service_name identifiant du pack de services (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContractByName'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getServiceContractByNameRequest($service_name, string $contentType = self::contentTypes['getServiceContractByName'][0])
+    {
+
+        // verify the required parameter 'service_name' is set
+        if ($service_name === null || (is_array($service_name) && count($service_name) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $service_name when calling getServiceContractByName'
+            );
+        }
+
+
+        $resourcePath = '/external-api/v2/service_contracts_by_name/{service_name}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($service_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'service_name' . '}',
+                ObjectSerializer::toPathValue($service_name),
                 $resourcePath
             );
         }

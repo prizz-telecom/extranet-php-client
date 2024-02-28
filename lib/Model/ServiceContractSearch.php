@@ -59,9 +59,9 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'index' => 'string',
         'query' => 'string',
-        'id' => 'int',
-        'legal_entity_id' => 'int',
-        'client_legal_entity_id' => 'int',
+        'id' => 'string',
+        'legal_entity_id' => 'string',
+        'client_legal_entity_id' => 'string',
         'name' => 'string',
         'status' => 'string',
         'ref_client' => 'string',
@@ -409,7 +409,7 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getId()
     {
@@ -419,7 +419,7 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets id
      *
-     * @param int|null $id id
+     * @param string|null $id id
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets legal_entity_id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getLegalEntityId()
     {
@@ -446,7 +446,7 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets legal_entity_id
      *
-     * @param int|null $legal_entity_id legal_entity_id
+     * @param string|null $legal_entity_id legal_entity_id
      *
      * @return self
      */
@@ -463,7 +463,7 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets client_legal_entity_id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getClientLegalEntityId()
     {
@@ -473,7 +473,7 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets client_legal_entity_id
      *
-     * @param int|null $client_legal_entity_id client_legal_entity_id
+     * @param string|null $client_legal_entity_id client_legal_entity_id
      *
      * @return self
      */
