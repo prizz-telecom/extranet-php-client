@@ -256,6 +256,7 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CONTEXT_NAME_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSubscribers\\Context';
     public const CONTEXT_NAME_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
     public const CONTEXT_NAME_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
+    public const CONTEXT_NAME_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSectionItems\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -287,6 +288,7 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CONTEXT_NAME_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT,
             self::CONTEXT_NAME_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
             self::CONTEXT_NAME_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
+            self::CONTEXT_NAME_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT,
         ];
     }
 
