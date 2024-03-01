@@ -1,6 +1,6 @@
 <?php
 /**
- * Offer
+ * UpdateCommercialOfferSectionItems
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * Offer Class Doc Comment
+ * UpdateCommercialOfferSectionItems Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateCommercialOfferSectionItems implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Offer';
+    protected static $openAPIModelName = 'UpdateCommercialOfferSectionItems';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,10 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'main_offer_item' => '\Infracorp\Extranet\Client\Model\OfferItem',
-        'offer_type' => 'string'
+        'bandwidth' => 'string',
+        'grt' => 'string',
+        'commitment' => 'string',
+        'express' => 'string'
     ];
 
     /**
@@ -71,10 +71,10 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'main_offer_item' => null,
-        'offer_type' => null
+        'bandwidth' => null,
+        'grt' => null,
+        'commitment' => null,
+        'express' => null
     ];
 
     /**
@@ -83,10 +83,10 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-		'name' => false,
-		'main_offer_item' => false,
-		'offer_type' => true
+        'bandwidth' => true,
+		'grt' => true,
+		'commitment' => true,
+		'express' => true
     ];
 
     /**
@@ -175,10 +175,10 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'main_offer_item' => 'mainOfferItem',
-        'offer_type' => 'offerType'
+        'bandwidth' => 'bandwidth',
+        'grt' => 'grt',
+        'commitment' => 'commitment',
+        'express' => 'express'
     ];
 
     /**
@@ -187,10 +187,10 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'main_offer_item' => 'setMainOfferItem',
-        'offer_type' => 'setOfferType'
+        'bandwidth' => 'setBandwidth',
+        'grt' => 'setGrt',
+        'commitment' => 'setCommitment',
+        'express' => 'setExpress'
     ];
 
     /**
@@ -199,10 +199,10 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'main_offer_item' => 'getMainOfferItem',
-        'offer_type' => 'getOfferType'
+        'bandwidth' => 'getBandwidth',
+        'grt' => 'getGrt',
+        'commitment' => 'getCommitment',
+        'express' => 'getExpress'
     ];
 
     /**
@@ -246,27 +246,6 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    public const OFFER_TYPE_DELIVERY_DOOR = 'DELIVERY_DOOR';
-    public const OFFER_TYPE_L2 = 'L2';
-    public const OFFER_TYPE_FON = 'FON';
-    public const OFFER_TYPE_TV_ANT = 'TV_ANT';
-    public const OFFER_TYPE_MOBILE = 'MOBILE';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getOfferTypeAllowableValues()
-    {
-        return [
-            self::OFFER_TYPE_DELIVERY_DOOR,
-            self::OFFER_TYPE_L2,
-            self::OFFER_TYPE_FON,
-            self::OFFER_TYPE_TV_ANT,
-            self::OFFER_TYPE_MOBILE,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -283,10 +262,10 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('main_offer_item', $data ?? [], null);
-        $this->setIfExists('offer_type', $data ?? [], null);
+        $this->setIfExists('bandwidth', $data ?? [], null);
+        $this->setIfExists('grt', $data ?? [], null);
+        $this->setIfExists('commitment', $data ?? [], null);
+        $this->setIfExists('express', $data ?? [], null);
     }
 
     /**
@@ -316,15 +295,6 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getOfferTypeAllowableValues();
-        if (!is_null($this->container['offer_type']) && !in_array($this->container['offer_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'offer_type', must be one of '%s'",
-                $this->container['offer_type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -341,126 +311,137 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets bandwidth
      *
      * @return string|null
      */
-    public function getName()
+    public function getBandwidth()
     {
-        return $this->container['name'];
+        return $this->container['bandwidth'];
     }
 
     /**
-     * Sets name
+     * Sets bandwidth
      *
-     * @param string|null $name name
+     * @param string|null $bandwidth bandwith in mb/s
      *
      * @return self
      */
-    public function setName($name)
+    public function setBandwidth($bandwidth)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets main_offer_item
-     *
-     * @return \Infracorp\Extranet\Client\Model\OfferItem|null
-     */
-    public function getMainOfferItem()
-    {
-        return $this->container['main_offer_item'];
-    }
-
-    /**
-     * Sets main_offer_item
-     *
-     * @param \Infracorp\Extranet\Client\Model\OfferItem|null $main_offer_item main_offer_item
-     *
-     * @return self
-     */
-    public function setMainOfferItem($main_offer_item)
-    {
-        if (is_null($main_offer_item)) {
-            throw new \InvalidArgumentException('non-nullable main_offer_item cannot be null');
-        }
-        $this->container['main_offer_item'] = $main_offer_item;
-
-        return $this;
-    }
-
-    /**
-     * Gets offer_type
-     *
-     * @return string|null
-     */
-    public function getOfferType()
-    {
-        return $this->container['offer_type'];
-    }
-
-    /**
-     * Sets offer_type
-     *
-     * @param string|null $offer_type offer_type
-     *
-     * @return self
-     */
-    public function setOfferType($offer_type)
-    {
-        if (is_null($offer_type)) {
-            array_push($this->openAPINullablesSetToNull, 'offer_type');
+        if (is_null($bandwidth)) {
+            array_push($this->openAPINullablesSetToNull, 'bandwidth');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('offer_type', $nullablesSetToNull);
+            $index = array_search('bandwidth', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $allowedValues = $this->getOfferTypeAllowableValues();
-        if (!is_null($offer_type) && !in_array($offer_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'offer_type', must be one of '%s'",
-                    $offer_type,
-                    implode("', '", $allowedValues)
-                )
-            );
+        $this->container['bandwidth'] = $bandwidth;
+
+        return $this;
+    }
+
+    /**
+     * Gets grt
+     *
+     * @return string|null
+     */
+    public function getGrt()
+    {
+        return $this->container['grt'];
+    }
+
+    /**
+     * Sets grt
+     *
+     * @param string|null $grt duration and type
+     *
+     * @return self
+     */
+    public function setGrt($grt)
+    {
+        if (is_null($grt)) {
+            array_push($this->openAPINullablesSetToNull, 'grt');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('grt', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['offer_type'] = $offer_type;
+        $this->container['grt'] = $grt;
+
+        return $this;
+    }
+
+    /**
+     * Gets commitment
+     *
+     * @return string|null
+     */
+    public function getCommitment()
+    {
+        return $this->container['commitment'];
+    }
+
+    /**
+     * Sets commitment
+     *
+     * @param string|null $commitment duration in months
+     *
+     * @return self
+     */
+    public function setCommitment($commitment)
+    {
+        if (is_null($commitment)) {
+            array_push($this->openAPINullablesSetToNull, 'commitment');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('commitment', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['commitment'] = $commitment;
+
+        return $this;
+    }
+
+    /**
+     * Gets express
+     *
+     * @return string|null
+     */
+    public function getExpress()
+    {
+        return $this->container['express'];
+    }
+
+    /**
+     * Sets express
+     *
+     * @param string|null $express Construction time in days
+     *
+     * @return self
+     */
+    public function setExpress($express)
+    {
+        if (is_null($express)) {
+            array_push($this->openAPINullablesSetToNull, 'express');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('express', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['express'] = $express;
 
         return $this;
     }

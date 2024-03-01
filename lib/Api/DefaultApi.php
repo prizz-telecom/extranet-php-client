@@ -209,6 +209,9 @@ class DefaultApi
         'submitCommercialOffer' => [
             'application/json',
         ],
+        'updateCommercialOfferSectionItems' => [
+            'application/json',
+        ],
     ];
 
 /**
@@ -10459,7 +10462,7 @@ class DefaultApi
     /**
      * Operation getServiceContractByName
      *
-     * Service Contract
+     * Service Contract by name
      *
      * @param  string $service_name identifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContractByName'] to see the possible values for this operation
@@ -10477,7 +10480,7 @@ class DefaultApi
     /**
      * Operation getServiceContractByNameWithHttpInfo
      *
-     * Service Contract
+     * Service Contract by name
      *
      * @param  string $service_name identifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContractByName'] to see the possible values for this operation
@@ -10601,7 +10604,7 @@ class DefaultApi
     /**
      * Operation getServiceContractByNameAsync
      *
-     * Service Contract
+     * Service Contract by name
      *
      * @param  string $service_name identifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContractByName'] to see the possible values for this operation
@@ -10622,7 +10625,7 @@ class DefaultApi
     /**
      * Operation getServiceContractByNameAsyncWithHttpInfo
      *
-     * Service Contract
+     * Service Contract by name
      *
      * @param  string $service_name identifiant du pack de services (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContractByName'] to see the possible values for this operation
@@ -15373,6 +15376,361 @@ class DefaultApi
 
         // for model (json/xml)
         if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateCommercialOfferSectionItems
+     *
+     * Update Commercial Offer Section Items
+     *
+     * @param  int $id identifiant du devis (required)
+     * @param  int $section_id identifiant de la section (required)
+     * @param  \Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems $update_commercial_offer_section_items update_commercial_offer_section_items (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCommercialOfferSectionItems'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+     */
+    public function updateCommercialOfferSectionItems($id, $section_id, $update_commercial_offer_section_items, string $contentType = self::contentTypes['updateCommercialOfferSectionItems'][0])
+    {
+        list($response) = $this->updateCommercialOfferSectionItemsWithHttpInfo($id, $section_id, $update_commercial_offer_section_items, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateCommercialOfferSectionItemsWithHttpInfo
+     *
+     * Update Commercial Offer Section Items
+     *
+     * @param  int $id identifiant du devis (required)
+     * @param  int $section_id identifiant de la section (required)
+     * @param  \Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems $update_commercial_offer_section_items (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCommercialOfferSectionItems'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateCommercialOfferSectionItemsWithHttpInfo($id, $section_id, $update_commercial_offer_section_items, string $contentType = self::contentTypes['updateCommercialOfferSectionItems'][0])
+    {
+        $request = $this->updateCommercialOfferSectionItemsRequest($id, $section_id, $update_commercial_offer_section_items, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                 );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateCommercialOfferSectionItemsAsync
+     *
+     * Update Commercial Offer Section Items
+     *
+     * @param  int $id identifiant du devis (required)
+     * @param  int $section_id identifiant de la section (required)
+     * @param  \Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems $update_commercial_offer_section_items (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCommercialOfferSectionItems'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateCommercialOfferSectionItemsAsync($id, $section_id, $update_commercial_offer_section_items, string $contentType = self::contentTypes['updateCommercialOfferSectionItems'][0])
+    {
+        return $this->updateCommercialOfferSectionItemsAsyncWithHttpInfo($id, $section_id, $update_commercial_offer_section_items, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateCommercialOfferSectionItemsAsyncWithHttpInfo
+     *
+     * Update Commercial Offer Section Items
+     *
+     * @param  int $id identifiant du devis (required)
+     * @param  int $section_id identifiant de la section (required)
+     * @param  \Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems $update_commercial_offer_section_items (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCommercialOfferSectionItems'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateCommercialOfferSectionItemsAsyncWithHttpInfo($id, $section_id, $update_commercial_offer_section_items, string $contentType = self::contentTypes['updateCommercialOfferSectionItems'][0])
+    {
+        $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+        $request = $this->updateCommercialOfferSectionItemsRequest($id, $section_id, $update_commercial_offer_section_items, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateCommercialOfferSectionItems'
+     *
+     * @param  int $id identifiant du devis (required)
+     * @param  int $section_id identifiant de la section (required)
+     * @param  \Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems $update_commercial_offer_section_items (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCommercialOfferSectionItems'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateCommercialOfferSectionItemsRequest($id, $section_id, $update_commercial_offer_section_items, string $contentType = self::contentTypes['updateCommercialOfferSectionItems'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling updateCommercialOfferSectionItems'
+            );
+        }
+
+        // verify the required parameter 'section_id' is set
+        if ($section_id === null || (is_array($section_id) && count($section_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $section_id when calling updateCommercialOfferSectionItems'
+            );
+        }
+
+        // verify the required parameter 'update_commercial_offer_section_items' is set
+        if ($update_commercial_offer_section_items === null || (is_array($update_commercial_offer_section_items) && count($update_commercial_offer_section_items) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_commercial_offer_section_items when calling updateCommercialOfferSectionItems'
+            );
+        }
+
+
+        $resourcePath = '/external-api/v2/commercial_offers/{id}/sections/{sectionId}/update_items';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($section_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sectionId' . '}',
+                ObjectSerializer::toPathValue($section_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_commercial_offer_section_items)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_commercial_offer_section_items));
+            } else {
+                $httpBody = $update_commercial_offer_section_items;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

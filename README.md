@@ -112,7 +112,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getProcess**](docs/Api/DefaultApi.md#getprocess) | **GET** /external-api/v2/exploitation/operator/{id}/process/{processId} | Exploitation Process
 *DefaultApi* | [**getService**](docs/Api/DefaultApi.md#getservice) | **GET** /external-api/v2/services/{id} | Service
 *DefaultApi* | [**getServiceContract**](docs/Api/DefaultApi.md#getservicecontract) | **GET** /external-api/v2/service_contracts/{id} | Service Contract
-*DefaultApi* | [**getServiceContractByName**](docs/Api/DefaultApi.md#getservicecontractbyname) | **GET** /external-api/v2/service_contracts_by_name/{service_name} | Service Contract
+*DefaultApi* | [**getServiceContractByName**](docs/Api/DefaultApi.md#getservicecontractbyname) | **GET** /external-api/v2/service_contracts_by_name/{service_name} | Service Contract by name
 *DefaultApi* | [**getServiceContracts**](docs/Api/DefaultApi.md#getservicecontracts) | **GET** /external-api/v2/service_contracts | Service Contracts
 *DefaultApi* | [**getServices**](docs/Api/DefaultApi.md#getservices) | **GET** /external-api/v2/services | Services
 *DefaultApi* | [**getTicket**](docs/Api/DefaultApi.md#getticket) | **GET** /external-api/v2/exploitation/operator/{id}/tickets/{ref} | Exploitation Ticket
@@ -127,6 +127,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**setCommercialOfferSectionOffer**](docs/Api/DefaultApi.md#setcommercialoffersectionoffer) | **POST** /external-api/v2/commercial_offers/{id}/sections/{sectionId}/offer | Set Commercial Offer Section Offer
 *DefaultApi* | [**signCommercialOffer**](docs/Api/DefaultApi.md#signcommercialoffer) | **POST** /external-api/v2/commercial_offers/{id}/sign | Sign Commercial Offer
 *DefaultApi* | [**submitCommercialOffer**](docs/Api/DefaultApi.md#submitcommercialoffer) | **POST** /external-api/v2/commercial_offers/{id}/submit | Submit Commercial Offer
+*DefaultApi* | [**updateCommercialOfferSectionItems**](docs/Api/DefaultApi.md#updatecommercialoffersectionitems) | **POST** /external-api/v2/commercial_offers/{id}/sections/{sectionId}/update_items | Update Commercial Offer Section Items
 
 ## Models
 
@@ -203,6 +204,7 @@ Class | Method | HTTP request | Description
 - [Transition](docs/Model/Transition.md)
 - [TransitionFormFieldsInner](docs/Model/TransitionFormFieldsInner.md)
 - [TransitionFormFieldsInnerValuesInner](docs/Model/TransitionFormFieldsInnerValuesInner.md)
+- [UpdateCommercialOfferSectionItems](docs/Model/UpdateCommercialOfferSectionItems.md)
 - [User](docs/Model/User.md)
 - [UserApiToken](docs/Model/UserApiToken.md)
 - [Workflow](docs/Model/Workflow.md)

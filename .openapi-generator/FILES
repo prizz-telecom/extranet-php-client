@@ -77,6 +77,7 @@ docs/Model/Ticket.md
 docs/Model/Transition.md
 docs/Model/TransitionFormFieldsInner.md
 docs/Model/TransitionFormFieldsInnerValuesInner.md
+docs/Model/UpdateCommercialOfferSectionItems.md
 docs/Model/User.md
 docs/Model/UserApiToken.md
 docs/Model/Workflow.md
@@ -159,8 +160,10 @@ lib/Model/Ticket.php
 lib/Model/Transition.php
 lib/Model/TransitionFormFieldsInner.php
 lib/Model/TransitionFormFieldsInnerValuesInner.php
+lib/Model/UpdateCommercialOfferSectionItems.php
 lib/Model/User.php
 lib/Model/UserApiToken.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/UpdateCommercialOfferSectionItemsTest.php

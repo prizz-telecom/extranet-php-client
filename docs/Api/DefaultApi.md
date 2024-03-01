@@ -35,7 +35,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**getProcess()**](DefaultApi.md#getProcess) | **GET** /external-api/v2/exploitation/operator/{id}/process/{processId} | Exploitation Process |
 | [**getService()**](DefaultApi.md#getService) | **GET** /external-api/v2/services/{id} | Service |
 | [**getServiceContract()**](DefaultApi.md#getServiceContract) | **GET** /external-api/v2/service_contracts/{id} | Service Contract |
-| [**getServiceContractByName()**](DefaultApi.md#getServiceContractByName) | **GET** /external-api/v2/service_contracts_by_name/{service_name} | Service Contract |
+| [**getServiceContractByName()**](DefaultApi.md#getServiceContractByName) | **GET** /external-api/v2/service_contracts_by_name/{service_name} | Service Contract by name |
 | [**getServiceContracts()**](DefaultApi.md#getServiceContracts) | **GET** /external-api/v2/service_contracts | Service Contracts |
 | [**getServices()**](DefaultApi.md#getServices) | **GET** /external-api/v2/services | Services |
 | [**getTicket()**](DefaultApi.md#getTicket) | **GET** /external-api/v2/exploitation/operator/{id}/tickets/{ref} | Exploitation Ticket |
@@ -50,6 +50,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**setCommercialOfferSectionOffer()**](DefaultApi.md#setCommercialOfferSectionOffer) | **POST** /external-api/v2/commercial_offers/{id}/sections/{sectionId}/offer | Set Commercial Offer Section Offer |
 | [**signCommercialOffer()**](DefaultApi.md#signCommercialOffer) | **POST** /external-api/v2/commercial_offers/{id}/sign | Sign Commercial Offer |
 | [**submitCommercialOffer()**](DefaultApi.md#submitCommercialOffer) | **POST** /external-api/v2/commercial_offers/{id}/submit | Submit Commercial Offer |
+| [**updateCommercialOfferSectionItems()**](DefaultApi.md#updateCommercialOfferSectionItems) | **POST** /external-api/v2/commercial_offers/{id}/sections/{sectionId}/update_items | Update Commercial Offer Section Items |
 
 
 ## `createCommercialOffer()`
@@ -2126,7 +2127,7 @@ try {
 getServiceContractByName($service_name): \Infracorp\Extranet\Client\Model\ServiceContract
 ```
 
-Service Contract
+Service Contract by name
 
 Récupérer le détail d'un pack de services
 
@@ -3123,6 +3124,75 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateCommercialOfferSectionItems()`
+
+```php
+updateCommercialOfferSectionItems($id, $section_id, $update_commercial_offer_section_items): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+```
+
+Update Commercial Offer Section Items
+
+Update items in commercial offer section
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | identifiant du devis
+$section_id = 56; // int | identifiant de la section
+$update_commercial_offer_section_items = new \Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems(); // \Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems
+
+try {
+    $result = $apiInstance->updateCommercialOfferSectionItems($id, $section_id, $update_commercial_offer_section_items);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->updateCommercialOfferSectionItems: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| identifiant du devis | |
+| **section_id** | **int**| identifiant de la section | |
+| **update_commercial_offer_section_items** | [**\Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems**](../Model/UpdateCommercialOfferSectionItems.md)|  | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
