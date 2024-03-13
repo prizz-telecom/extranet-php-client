@@ -133,8 +133,8 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
 		'id' => false,
 		'name' => false,
 		'create_date' => false,
-		'last_modified_date' => false,
-		'notes' => false,
+		'last_modified_date' => true,
+		'notes' => true,
 		'rc_total' => false,
 		'rc_total_str' => false,
 		'rc_vat_total' => false,
@@ -143,15 +143,15 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
 		'nrc_total_str' => false,
 		'nrc_vat_total' => true,
 		'nrc_vat_total_str' => false,
-		'status' => false,
+		'status' => true,
 		'legal_entity' => false,
 		'client_legal_entity' => false,
-		'sign_date' => false,
-		'submit_date' => false,
-		'delivery_delay' => false,
-		'total' => false,
+		'sign_date' => true,
+		'submit_date' => true,
+		'delivery_delay' => true,
+		'total' => true,
 		'total_str' => false,
-		'vat_total' => false,
+		'vat_total' => true,
 		'vat_total_str' => false,
 		'vat_detail' => false,
 		'vat_detail_str' => false,
@@ -407,6 +407,10 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSectionItems\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -439,6 +443,10 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT,
         ];
     }
 
@@ -665,7 +673,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastModifiedDate($last_modified_date)
     {
         if (is_null($last_modified_date)) {
-            throw new \InvalidArgumentException('non-nullable last_modified_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'last_modified_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_modified_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['last_modified_date'] = $last_modified_date;
 
@@ -692,7 +707,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNotes($notes)
     {
         if (is_null($notes)) {
-            throw new \InvalidArgumentException('non-nullable notes cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'notes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('notes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['notes'] = $notes;
 
@@ -949,7 +971,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStatus($status)
     {
         if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['status'] = $status;
 
@@ -1030,7 +1059,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSignDate($sign_date)
     {
         if (is_null($sign_date)) {
-            throw new \InvalidArgumentException('non-nullable sign_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sign_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sign_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sign_date'] = $sign_date;
 
@@ -1057,7 +1093,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSubmitDate($submit_date)
     {
         if (is_null($submit_date)) {
-            throw new \InvalidArgumentException('non-nullable submit_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'submit_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('submit_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['submit_date'] = $submit_date;
 
@@ -1084,7 +1127,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDeliveryDelay($delivery_delay)
     {
         if (is_null($delivery_delay)) {
-            throw new \InvalidArgumentException('non-nullable delivery_delay cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'delivery_delay');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('delivery_delay', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['delivery_delay'] = $delivery_delay;
 
@@ -1111,7 +1161,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTotal($total)
     {
         if (is_null($total)) {
-            throw new \InvalidArgumentException('non-nullable total cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('total', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['total'] = $total;
 
@@ -1165,7 +1222,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setVatTotal($vat_total)
     {
         if (is_null($vat_total)) {
-            throw new \InvalidArgumentException('non-nullable vat_total cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'vat_total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('vat_total', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['vat_total'] = $vat_total;
 

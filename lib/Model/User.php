@@ -99,15 +99,15 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'available_workflows' => false,
 		'id' => false,
-		'firstname' => false,
+		'firstname' => true,
 		'lastname' => false,
-		'company_name' => false,
-		'email' => false,
-		'phone1' => false,
-		'phone2' => false,
-		'gender' => false,
+		'company_name' => true,
+		'email' => true,
+		'phone1' => true,
+		'phone2' => true,
+		'gender' => true,
 		'create_date' => false,
-		'last_modified_date' => false
+		'last_modified_date' => true
     ];
 
     /**
@@ -311,6 +311,10 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSectionItems\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -343,6 +347,10 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT,
         ];
     }
 
@@ -499,7 +507,14 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFirstname($firstname)
     {
         if (is_null($firstname)) {
-            throw new \InvalidArgumentException('non-nullable firstname cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'firstname');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('firstname', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['firstname'] = $firstname;
 
@@ -553,7 +568,14 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCompanyName($company_name)
     {
         if (is_null($company_name)) {
-            throw new \InvalidArgumentException('non-nullable company_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'company_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('company_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['company_name'] = $company_name;
 
@@ -580,7 +602,14 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEmail($email)
     {
         if (is_null($email)) {
-            throw new \InvalidArgumentException('non-nullable email cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['email'] = $email;
 
@@ -607,7 +636,14 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPhone1($phone1)
     {
         if (is_null($phone1)) {
-            throw new \InvalidArgumentException('non-nullable phone1 cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'phone1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('phone1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['phone1'] = $phone1;
 
@@ -634,7 +670,14 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPhone2($phone2)
     {
         if (is_null($phone2)) {
-            throw new \InvalidArgumentException('non-nullable phone2 cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'phone2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('phone2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['phone2'] = $phone2;
 
@@ -661,7 +704,14 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGender($gender)
     {
         if (is_null($gender)) {
-            throw new \InvalidArgumentException('non-nullable gender cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'gender');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('gender', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['gender'] = $gender;
 
@@ -715,7 +765,14 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastModifiedDate($last_modified_date)
     {
         if (is_null($last_modified_date)) {
-            throw new \InvalidArgumentException('non-nullable last_modified_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'last_modified_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_modified_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['last_modified_date'] = $last_modified_date;
 

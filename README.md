@@ -88,17 +88,21 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**createWorkflow**](docs/Api/DefaultApi.md#createworkflow) | **POST** /external-api/v2/workflow | Workflows
 *DefaultApi* | [**eligibilityHistory**](docs/Api/DefaultApi.md#eligibilityhistory) | **GET** /external-api/v2/eligibility/history | Eligibility History
 *DefaultApi* | [**getApiTokens**](docs/Api/DefaultApi.md#getapitokens) | **GET** /external-api/v2/users/api_tokens | User Api Tokens
+*DefaultApi* | [**getAttachment**](docs/Api/DefaultApi.md#getattachment) | **GET** /external-api/v2/attachments/{id} | Attachement
 *DefaultApi* | [**getClientLegalEntities**](docs/Api/DefaultApi.md#getclientlegalentities) | **GET** /external-api/v2/client_legal_entities | Client legal entities
 *DefaultApi* | [**getClientLegalEntity**](docs/Api/DefaultApi.md#getclientlegalentity) | **GET** /external-api/v2/client_legal_entities/{id} | Client legal entity
 *DefaultApi* | [**getCommentThread**](docs/Api/DefaultApi.md#getcommentthread) | **GET** /external-api/v2/comments/threads/{id} | Comment thread
 *DefaultApi* | [**getCommentThreads**](docs/Api/DefaultApi.md#getcommentthreads) | **GET** /external-api/v2/comments/threads | Comment threads
 *DefaultApi* | [**getCommercialOffer**](docs/Api/DefaultApi.md#getcommercialoffer) | **GET** /external-api/v2/commercial_offers/{id} | Commercial Offer
 *DefaultApi* | [**getCommercialOfferByName**](docs/Api/DefaultApi.md#getcommercialofferbyname) | **GET** /external-api/v2/commercial_offers_by_name/{offer_name} | Commercial Offer
+*DefaultApi* | [**getCommercialOfferItem**](docs/Api/DefaultApi.md#getcommercialofferitem) | **GET** /external-api/v2/commercial_offer_items/{id} | Commercial Offer Item
 *DefaultApi* | [**getCommercialOfferPdf**](docs/Api/DefaultApi.md#getcommercialofferpdf) | **GET** /external-api/v2/commercial_offers/{id}/pdf | Commercial Offer Pdf
+*DefaultApi* | [**getCommercialOfferSection**](docs/Api/DefaultApi.md#getcommercialoffersection) | **GET** /external-api/v2/commercial_offer_sections/{id} | Commercial Offer Section
 *DefaultApi* | [**getCommercialOffers**](docs/Api/DefaultApi.md#getcommercialoffers) | **GET** /external-api/v2/commercial_offers | Commercial Offers
 *DefaultApi* | [**getCurrentUser**](docs/Api/DefaultApi.md#getcurrentuser) | **GET** /external-api/v2/user | User
 *DefaultApi* | [**getEligibility**](docs/Api/DefaultApi.md#geteligibility) | **GET** /external-api/v2/eligibility/{id} | Get Eligibility
 *DefaultApi* | [**getInvoice**](docs/Api/DefaultApi.md#getinvoice) | **GET** /external-api/v2/invoices/{id} | Invoice
+*DefaultApi* | [**getInvoiceDetail**](docs/Api/DefaultApi.md#getinvoicedetail) | **GET** /external-api/v2/invoice_details/{id} | Invoice Detail
 *DefaultApi* | [**getInvoicePdf**](docs/Api/DefaultApi.md#getinvoicepdf) | **GET** /external-api/v2/invoices/{id}/pdf | Invoice Pdf
 *DefaultApi* | [**getInvoices**](docs/Api/DefaultApi.md#getinvoices) | **GET** /external-api/v2/invoices | Invoices
 *DefaultApi* | [**getLegalEntities**](docs/Api/DefaultApi.md#getlegalentities) | **GET** /external-api/v2/legal_entities | Legal entities
@@ -110,6 +114,8 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getPriceListOffers**](docs/Api/DefaultApi.md#getpricelistoffers) | **GET** /external-api/v2/price_lists/{id}/offers | Price List Offers
 *DefaultApi* | [**getPriceLists**](docs/Api/DefaultApi.md#getpricelists) | **GET** /external-api/v2/price_lists | Price Lists
 *DefaultApi* | [**getProcess**](docs/Api/DefaultApi.md#getprocess) | **GET** /external-api/v2/exploitation/operator/{id}/process/{processId} | Exploitation Process
+*DefaultApi* | [**getPublicAttachments**](docs/Api/DefaultApi.md#getpublicattachments) | **GET** /external-api/v2/attachments/public | Attachements Public
+*DefaultApi* | [**getRunningWorkflows**](docs/Api/DefaultApi.md#getrunningworkflows) | **GET** /external-api/v2/workflows/running | Workflows running
 *DefaultApi* | [**getService**](docs/Api/DefaultApi.md#getservice) | **GET** /external-api/v2/services/{id} | Service
 *DefaultApi* | [**getServiceContract**](docs/Api/DefaultApi.md#getservicecontract) | **GET** /external-api/v2/service_contracts/{id} | Service Contract
 *DefaultApi* | [**getServiceContractByName**](docs/Api/DefaultApi.md#getservicecontractbyname) | **GET** /external-api/v2/service_contracts_by_name/{service_name} | Service Contract by name
@@ -134,6 +140,7 @@ Class | Method | HTTP request | Description
 - [Attachment](docs/Model/Attachment.md)
 - [ClientContract](docs/Model/ClientContract.md)
 - [ClientLegalEntity](docs/Model/ClientLegalEntity.md)
+- [ClientLegalEntityContact](docs/Model/ClientLegalEntityContact.md)
 - [ClientLegalEntitySearch](docs/Model/ClientLegalEntitySearch.md)
 - [Comment](docs/Model/Comment.md)
 - [CommentThread](docs/Model/CommentThread.md)
@@ -165,6 +172,9 @@ Class | Method | HTTP request | Description
 - [GetEligibility](docs/Model/GetEligibility.md)
 - [GetInvoices200Response](docs/Model/GetInvoices200Response.md)
 - [GetLegalEntities200Response](docs/Model/GetLegalEntities200Response.md)
+- [GetPublicAttachments200Response](docs/Model/GetPublicAttachments200Response.md)
+- [GetRunningWorkflows200Response](docs/Model/GetRunningWorkflows200Response.md)
+- [GetRunningWorkflows200ResponseWorkflowsInner](docs/Model/GetRunningWorkflows200ResponseWorkflowsInner.md)
 - [GetServiceContracts200Response](docs/Model/GetServiceContracts200Response.md)
 - [GetServices200Response](docs/Model/GetServices200Response.md)
 - [GetWorkflow](docs/Model/GetWorkflow.md)
@@ -195,12 +205,15 @@ Class | Method | HTTP request | Description
 - [Search200ResponseInner](docs/Model/Search200ResponseInner.md)
 - [Service](docs/Model/Service.md)
 - [ServiceContract](docs/Model/ServiceContract.md)
+- [ServiceContractCommercialOffersInner](docs/Model/ServiceContractCommercialOffersInner.md)
+- [ServiceContractNrc](docs/Model/ServiceContractNrc.md)
 - [ServiceContractSearch](docs/Model/ServiceContractSearch.md)
 - [SetCommercialOfferSectionOffer](docs/Model/SetCommercialOfferSectionOffer.md)
 - [SetCommercialOfferSectionOfferEligibility](docs/Model/SetCommercialOfferSectionOfferEligibility.md)
 - [SignCommercialOffer](docs/Model/SignCommercialOffer.md)
 - [SignCommercialOffer200Response](docs/Model/SignCommercialOffer200Response.md)
 - [Ticket](docs/Model/Ticket.md)
+- [TicketAttachment](docs/Model/TicketAttachment.md)
 - [Transition](docs/Model/Transition.md)
 - [TransitionFormFieldsInner](docs/Model/TransitionFormFieldsInner.md)
 - [TransitionFormFieldsInnerValuesInner](docs/Model/TransitionFormFieldsInnerValuesInner.md)

@@ -57,10 +57,14 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'preview_url' => 'string',
-        'url' => 'string',
+        'id' => 'int',
         'name' => 'string',
-        'key' => 'string'
+        'create_date' => '\DateTime',
+        'last_modified_date' => '\DateTime',
+        'category' => 'string',
+        'mime_type' => 'string',
+        'presigned_url' => 'string',
+        'presigned_url_expires' => '\DateTime'
     ];
 
     /**
@@ -71,10 +75,14 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'preview_url' => null,
-        'url' => null,
+        'id' => null,
         'name' => null,
-        'key' => null
+        'create_date' => 'date-time',
+        'last_modified_date' => 'date-time',
+        'category' => null,
+        'mime_type' => null,
+        'presigned_url' => null,
+        'presigned_url_expires' => 'date-time'
     ];
 
     /**
@@ -83,10 +91,14 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'preview_url' => true,
-		'url' => true,
-		'name' => true,
-		'key' => true
+        'id' => false,
+		'name' => false,
+		'create_date' => false,
+		'last_modified_date' => true,
+		'category' => true,
+		'mime_type' => false,
+		'presigned_url' => true,
+		'presigned_url_expires' => true
     ];
 
     /**
@@ -175,10 +187,14 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'preview_url' => 'preview_url',
-        'url' => 'url',
+        'id' => 'id',
         'name' => 'name',
-        'key' => 'key'
+        'create_date' => 'createDate',
+        'last_modified_date' => 'lastModifiedDate',
+        'category' => 'category',
+        'mime_type' => 'mimeType',
+        'presigned_url' => 'presignedUrl',
+        'presigned_url_expires' => 'presignedUrlExpires'
     ];
 
     /**
@@ -187,10 +203,14 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'preview_url' => 'setPreviewUrl',
-        'url' => 'setUrl',
+        'id' => 'setId',
         'name' => 'setName',
-        'key' => 'setKey'
+        'create_date' => 'setCreateDate',
+        'last_modified_date' => 'setLastModifiedDate',
+        'category' => 'setCategory',
+        'mime_type' => 'setMimeType',
+        'presigned_url' => 'setPresignedUrl',
+        'presigned_url_expires' => 'setPresignedUrlExpires'
     ];
 
     /**
@@ -199,10 +219,14 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'preview_url' => 'getPreviewUrl',
-        'url' => 'getUrl',
+        'id' => 'getId',
         'name' => 'getName',
-        'key' => 'getKey'
+        'create_date' => 'getCreateDate',
+        'last_modified_date' => 'getLastModifiedDate',
+        'category' => 'getCategory',
+        'mime_type' => 'getMimeType',
+        'presigned_url' => 'getPresignedUrl',
+        'presigned_url_expires' => 'getPresignedUrlExpires'
     ];
 
     /**
@@ -262,10 +286,14 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('preview_url', $data ?? [], null);
-        $this->setIfExists('url', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('key', $data ?? [], null);
+        $this->setIfExists('create_date', $data ?? [], null);
+        $this->setIfExists('last_modified_date', $data ?? [], null);
+        $this->setIfExists('category', $data ?? [], null);
+        $this->setIfExists('mime_type', $data ?? [], null);
+        $this->setIfExists('presigned_url', $data ?? [], null);
+        $this->setIfExists('presigned_url_expires', $data ?? [], null);
     }
 
     /**
@@ -311,69 +339,28 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets preview_url
+     * Gets id
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getPreviewUrl()
+    public function getId()
     {
-        return $this->container['preview_url'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets preview_url
+     * Sets id
      *
-     * @param string|null $preview_url preview_url
+     * @param int|null $id id
      *
      * @return self
      */
-    public function setPreviewUrl($preview_url)
+    public function setId($id)
     {
-        if (is_null($preview_url)) {
-            array_push($this->openAPINullablesSetToNull, 'preview_url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('preview_url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-        $this->container['preview_url'] = $preview_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string|null $url url
-     *
-     * @return self
-     */
-    public function setUrl($url)
-    {
-        if (is_null($url)) {
-            array_push($this->openAPINullablesSetToNull, 'url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['url'] = $url;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -398,14 +385,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
 
@@ -413,35 +393,191 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets key
+     * Gets create_date
      *
-     * @return string|null
+     * @return \DateTime|null
      */
-    public function getKey()
+    public function getCreateDate()
     {
-        return $this->container['key'];
+        return $this->container['create_date'];
     }
 
     /**
-     * Sets key
+     * Sets create_date
      *
-     * @param string|null $key key
+     * @param \DateTime|null $create_date create_date
      *
      * @return self
      */
-    public function setKey($key)
+    public function setCreateDate($create_date)
     {
-        if (is_null($key)) {
-            array_push($this->openAPINullablesSetToNull, 'key');
+        if (is_null($create_date)) {
+            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
+        }
+        $this->container['create_date'] = $create_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified_date
+     *
+     * @return \DateTime|null
+     */
+    public function getLastModifiedDate()
+    {
+        return $this->container['last_modified_date'];
+    }
+
+    /**
+     * Sets last_modified_date
+     *
+     * @param \DateTime|null $last_modified_date last_modified_date
+     *
+     * @return self
+     */
+    public function setLastModifiedDate($last_modified_date)
+    {
+        if (is_null($last_modified_date)) {
+            array_push($this->openAPINullablesSetToNull, 'last_modified_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('key', $nullablesSetToNull);
+            $index = array_search('last_modified_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['key'] = $key;
+        $this->container['last_modified_date'] = $last_modified_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets category
+     *
+     * @return string|null
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param string|null $category category
+     *
+     * @return self
+     */
+    public function setCategory($category)
+    {
+        if (is_null($category)) {
+            array_push($this->openAPINullablesSetToNull, 'category');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('category', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets mime_type
+     *
+     * @return string|null
+     */
+    public function getMimeType()
+    {
+        return $this->container['mime_type'];
+    }
+
+    /**
+     * Sets mime_type
+     *
+     * @param string|null $mime_type mime_type
+     *
+     * @return self
+     */
+    public function setMimeType($mime_type)
+    {
+        if (is_null($mime_type)) {
+            throw new \InvalidArgumentException('non-nullable mime_type cannot be null');
+        }
+        $this->container['mime_type'] = $mime_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets presigned_url
+     *
+     * @return string|null
+     */
+    public function getPresignedUrl()
+    {
+        return $this->container['presigned_url'];
+    }
+
+    /**
+     * Sets presigned_url
+     *
+     * @param string|null $presigned_url presigned_url
+     *
+     * @return self
+     */
+    public function setPresignedUrl($presigned_url)
+    {
+        if (is_null($presigned_url)) {
+            array_push($this->openAPINullablesSetToNull, 'presigned_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('presigned_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['presigned_url'] = $presigned_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets presigned_url_expires
+     *
+     * @return \DateTime|null
+     */
+    public function getPresignedUrlExpires()
+    {
+        return $this->container['presigned_url_expires'];
+    }
+
+    /**
+     * Sets presigned_url_expires
+     *
+     * @param \DateTime|null $presigned_url_expires presigned_url_expires
+     *
+     * @return self
+     */
+    public function setPresignedUrlExpires($presigned_url_expires)
+    {
+        if (is_null($presigned_url_expires)) {
+            array_push($this->openAPINullablesSetToNull, 'presigned_url_expires');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('presigned_url_expires', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['presigned_url_expires'] = $presigned_url_expires;
 
         return $this;
     }

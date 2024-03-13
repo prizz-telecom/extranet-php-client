@@ -90,7 +90,7 @@ class ClientContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => false,
 		'name' => false,
 		'price_list' => false,
-		'payment_term_days' => false,
+		'payment_term_days' => true,
 		'vat_reverse_charge' => false,
 		'invoice_consolidation' => false
     ];
@@ -425,7 +425,14 @@ class ClientContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPaymentTermDays($payment_term_days)
     {
         if (is_null($payment_term_days)) {
-            throw new \InvalidArgumentException('non-nullable payment_term_days cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'payment_term_days');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('payment_term_days', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['payment_term_days'] = $payment_term_days;
 

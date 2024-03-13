@@ -57,6 +57,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
+        'available_workflows' => 'string[]',
         'id' => 'int',
         'name' => 'string',
         'house_number' => 'int',
@@ -74,6 +75,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'email' => 'string',
         'arcep_code' => 'string',
         'contacts' => '\Infracorp\Extranet\Client\Model\Contact[]',
+        'configured_contacts' => '\Infracorp\Extranet\Client\Model\ClientLegalEntityContact[]',
         'contracts' => '\Infracorp\Extranet\Client\Model\ClientContract[]'
     ];
 
@@ -85,6 +87,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'available_workflows' => null,
         'id' => null,
         'name' => null,
         'house_number' => null,
@@ -102,6 +105,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'email' => null,
         'arcep_code' => null,
         'contacts' => null,
+        'configured_contacts' => null,
         'contracts' => null
     ];
 
@@ -111,23 +115,25 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
+        'available_workflows' => false,
+		'id' => false,
 		'name' => false,
-		'house_number' => false,
-		'house_number_complement' => false,
-		'street_name' => false,
-		'postal_code' => false,
-		'city_name' => false,
-		'insee_code' => false,
-		'url' => false,
-		'num_vat_intracommunity' => false,
-		'siren' => false,
-		'code_ape' => false,
-		'rcs' => false,
-		'tel' => false,
-		'email' => false,
-		'arcep_code' => false,
+		'house_number' => true,
+		'house_number_complement' => true,
+		'street_name' => true,
+		'postal_code' => true,
+		'city_name' => true,
+		'insee_code' => true,
+		'url' => true,
+		'num_vat_intracommunity' => true,
+		'siren' => true,
+		'code_ape' => true,
+		'rcs' => true,
+		'tel' => true,
+		'email' => true,
+		'arcep_code' => true,
 		'contacts' => false,
+		'configured_contacts' => false,
 		'contracts' => false
     ];
 
@@ -217,6 +223,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
+        'available_workflows' => 'availableWorkflows',
         'id' => 'id',
         'name' => 'name',
         'house_number' => 'houseNumber',
@@ -234,6 +241,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'email' => 'email',
         'arcep_code' => 'arcepCode',
         'contacts' => 'contacts',
+        'configured_contacts' => 'configuredContacts',
         'contracts' => 'contracts'
     ];
 
@@ -243,6 +251,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
+        'available_workflows' => 'setAvailableWorkflows',
         'id' => 'setId',
         'name' => 'setName',
         'house_number' => 'setHouseNumber',
@@ -260,6 +269,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'email' => 'setEmail',
         'arcep_code' => 'setArcepCode',
         'contacts' => 'setContacts',
+        'configured_contacts' => 'setConfiguredContacts',
         'contracts' => 'setContracts'
     ];
 
@@ -269,6 +279,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
+        'available_workflows' => 'getAvailableWorkflows',
         'id' => 'getId',
         'name' => 'getName',
         'house_number' => 'getHouseNumber',
@@ -286,6 +297,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'email' => 'getEmail',
         'arcep_code' => 'getArcepCode',
         'contacts' => 'getContacts',
+        'configured_contacts' => 'getConfiguredContacts',
         'contracts' => 'getContracts'
     ];
 
@@ -330,6 +342,71 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         return self::$openAPIModelName;
     }
 
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommercialOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Submit\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Sign\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Rename\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RenameSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateOfferItemInOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\SetOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\AddComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\SubscribeThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateThread\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Invoice\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\CreateToken\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\RevokeToken\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSubscribers\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSectionItems\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAvailableWorkflowsAllowableValues()
+    {
+        return [
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -346,6 +423,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('available_workflows', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('house_number', $data ?? [], null);
@@ -363,6 +441,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('email', $data ?? [], null);
         $this->setIfExists('arcep_code', $data ?? [], null);
         $this->setIfExists('contacts', $data ?? [], null);
+        $this->setIfExists('configured_contacts', $data ?? [], null);
         $this->setIfExists('contracts', $data ?? [], null);
     }
 
@@ -407,6 +486,42 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets available_workflows
+     *
+     * @return string[]|null
+     */
+    public function getAvailableWorkflows()
+    {
+        return $this->container['available_workflows'];
+    }
+
+    /**
+     * Sets available_workflows
+     *
+     * @param string[]|null $available_workflows liste des processus disponible pour l'objet
+     *
+     * @return self
+     */
+    public function setAvailableWorkflows($available_workflows)
+    {
+        if (is_null($available_workflows)) {
+            throw new \InvalidArgumentException('non-nullable available_workflows cannot be null');
+        }
+        $allowedValues = $this->getAvailableWorkflowsAllowableValues();
+        if (array_diff($available_workflows, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'available_workflows', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['available_workflows'] = $available_workflows;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -482,7 +597,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setHouseNumber($house_number)
     {
         if (is_null($house_number)) {
-            throw new \InvalidArgumentException('non-nullable house_number cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'house_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('house_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['house_number'] = $house_number;
 
@@ -509,7 +631,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setHouseNumberComplement($house_number_complement)
     {
         if (is_null($house_number_complement)) {
-            throw new \InvalidArgumentException('non-nullable house_number_complement cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'house_number_complement');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('house_number_complement', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['house_number_complement'] = $house_number_complement;
 
@@ -536,7 +665,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setStreetName($street_name)
     {
         if (is_null($street_name)) {
-            throw new \InvalidArgumentException('non-nullable street_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'street_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('street_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['street_name'] = $street_name;
 
@@ -563,7 +699,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setPostalCode($postal_code)
     {
         if (is_null($postal_code)) {
-            throw new \InvalidArgumentException('non-nullable postal_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'postal_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('postal_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['postal_code'] = $postal_code;
 
@@ -590,7 +733,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setCityName($city_name)
     {
         if (is_null($city_name)) {
-            throw new \InvalidArgumentException('non-nullable city_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'city_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('city_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['city_name'] = $city_name;
 
@@ -617,7 +767,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setInseeCode($insee_code)
     {
         if (is_null($insee_code)) {
-            throw new \InvalidArgumentException('non-nullable insee_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'insee_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('insee_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['insee_code'] = $insee_code;
 
@@ -644,7 +801,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setUrl($url)
     {
         if (is_null($url)) {
-            throw new \InvalidArgumentException('non-nullable url cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['url'] = $url;
 
@@ -671,7 +835,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setNumVatIntracommunity($num_vat_intracommunity)
     {
         if (is_null($num_vat_intracommunity)) {
-            throw new \InvalidArgumentException('non-nullable num_vat_intracommunity cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'num_vat_intracommunity');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('num_vat_intracommunity', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['num_vat_intracommunity'] = $num_vat_intracommunity;
 
@@ -698,7 +869,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setSiren($siren)
     {
         if (is_null($siren)) {
-            throw new \InvalidArgumentException('non-nullable siren cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'siren');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('siren', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['siren'] = $siren;
 
@@ -725,7 +903,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setCodeApe($code_ape)
     {
         if (is_null($code_ape)) {
-            throw new \InvalidArgumentException('non-nullable code_ape cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'code_ape');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('code_ape', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['code_ape'] = $code_ape;
 
@@ -752,7 +937,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setRcs($rcs)
     {
         if (is_null($rcs)) {
-            throw new \InvalidArgumentException('non-nullable rcs cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'rcs');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('rcs', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['rcs'] = $rcs;
 
@@ -779,7 +971,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setTel($tel)
     {
         if (is_null($tel)) {
-            throw new \InvalidArgumentException('non-nullable tel cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'tel');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tel', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['tel'] = $tel;
 
@@ -806,7 +1005,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setEmail($email)
     {
         if (is_null($email)) {
-            throw new \InvalidArgumentException('non-nullable email cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['email'] = $email;
 
@@ -833,7 +1039,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setArcepCode($arcep_code)
     {
         if (is_null($arcep_code)) {
-            throw new \InvalidArgumentException('non-nullable arcep_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'arcep_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('arcep_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['arcep_code'] = $arcep_code;
 
@@ -863,6 +1076,33 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable contacts cannot be null');
         }
         $this->container['contacts'] = $contacts;
+
+        return $this;
+    }
+
+    /**
+     * Gets configured_contacts
+     *
+     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntityContact[]|null
+     */
+    public function getConfiguredContacts()
+    {
+        return $this->container['configured_contacts'];
+    }
+
+    /**
+     * Sets configured_contacts
+     *
+     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntityContact[]|null $configured_contacts configured_contacts
+     *
+     * @return self
+     */
+    public function setConfiguredContacts($configured_contacts)
+    {
+        if (is_null($configured_contacts)) {
+            throw new \InvalidArgumentException('non-nullable configured_contacts cannot be null');
+        }
+        $this->container['configured_contacts'] = $configured_contacts;
 
         return $this;
     }

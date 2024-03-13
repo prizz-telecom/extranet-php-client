@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**available_workflows** | **string[]** | liste des processus disponible pour l&#39;objet | [optional]
 **id** | **int** |  | [optional]
 **name** | **string** |  | [optional]
 **house_number** | **int** |  | [optional]
@@ -21,6 +22,7 @@ Name | Type | Description | Notes
 **email** | **string** |  | [optional]
 **arcep_code** | **string** |  | [optional]
 **contacts** | [**\Infracorp\Extranet\Client\Model\Contact[]**](Contact.md) |  | [optional]
+**configured_contacts** | [**\Infracorp\Extranet\Client\Model\ClientLegalEntityContact[]**](ClientLegalEntityContact.md) |  | [optional]
 **contracts** | [**\Infracorp\Extranet\Client\Model\ClientContract[]**](ClientContract.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

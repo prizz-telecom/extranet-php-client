@@ -1,6 +1,6 @@
 <?php
 /**
- * CommentThread
+ * GetRunningWorkflows200ResponseWorkflowsInner
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * CommentThread Class Doc Comment
+ * GetRunningWorkflows200ResponseWorkflowsInner Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetRunningWorkflows200ResponseWorkflowsInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CommentThread';
+    protected static $openAPIModelName = 'getRunningWorkflows_200_response_workflows_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,15 +58,16 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'int',
+        'state' => 'string',
+        'context' => 'string',
         'create_date' => '\DateTime',
-        'last_modified_date' => '\DateTime',
-        'owner' => 'string',
-        'title' => 'string',
+        'last_run_date' => '\DateTime',
         'entity_class' => 'string',
         'entity_id' => 'int',
-        'public' => 'string',
-        'subscribers' => 'string[]',
-        'comments' => '\Infracorp\Extranet\Client\Model\CommentTree[]'
+        'entity_description' => 'int',
+        'description' => 'string',
+        'status_code' => 'int',
+        'last_log' => 'string'
     ];
 
     /**
@@ -78,15 +79,16 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
+        'state' => null,
+        'context' => null,
         'create_date' => 'date-time',
-        'last_modified_date' => 'date-time',
-        'owner' => null,
-        'title' => null,
+        'last_run_date' => 'date-time',
         'entity_class' => null,
         'entity_id' => null,
-        'public' => null,
-        'subscribers' => null,
-        'comments' => null
+        'entity_description' => null,
+        'description' => null,
+        'status_code' => null,
+        'last_log' => null
     ];
 
     /**
@@ -96,15 +98,16 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
+		'state' => false,
+		'context' => false,
 		'create_date' => false,
-		'last_modified_date' => true,
-		'owner' => false,
-		'title' => true,
+		'last_run_date' => true,
 		'entity_class' => false,
 		'entity_id' => false,
-		'public' => false,
-		'subscribers' => false,
-		'comments' => false
+		'entity_description' => false,
+		'description' => false,
+		'status_code' => false,
+		'last_log' => false
     ];
 
     /**
@@ -194,15 +197,16 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
+        'state' => 'state',
+        'context' => 'context',
         'create_date' => 'createDate',
-        'last_modified_date' => 'lastModifiedDate',
-        'owner' => 'owner',
-        'title' => 'title',
+        'last_run_date' => 'lastRunDate',
         'entity_class' => 'entityClass',
         'entity_id' => 'entityId',
-        'public' => 'public',
-        'subscribers' => 'subscribers',
-        'comments' => 'comments'
+        'entity_description' => 'entityDescription',
+        'description' => 'description',
+        'status_code' => 'statusCode',
+        'last_log' => 'lastLog'
     ];
 
     /**
@@ -212,15 +216,16 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
+        'state' => 'setState',
+        'context' => 'setContext',
         'create_date' => 'setCreateDate',
-        'last_modified_date' => 'setLastModifiedDate',
-        'owner' => 'setOwner',
-        'title' => 'setTitle',
+        'last_run_date' => 'setLastRunDate',
         'entity_class' => 'setEntityClass',
         'entity_id' => 'setEntityId',
-        'public' => 'setPublic',
-        'subscribers' => 'setSubscribers',
-        'comments' => 'setComments'
+        'entity_description' => 'setEntityDescription',
+        'description' => 'setDescription',
+        'status_code' => 'setStatusCode',
+        'last_log' => 'setLastLog'
     ];
 
     /**
@@ -230,15 +235,16 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
+        'state' => 'getState',
+        'context' => 'getContext',
         'create_date' => 'getCreateDate',
-        'last_modified_date' => 'getLastModifiedDate',
-        'owner' => 'getOwner',
-        'title' => 'getTitle',
+        'last_run_date' => 'getLastRunDate',
         'entity_class' => 'getEntityClass',
         'entity_id' => 'getEntityId',
-        'public' => 'getPublic',
-        'subscribers' => 'getSubscribers',
-        'comments' => 'getComments'
+        'entity_description' => 'getEntityDescription',
+        'description' => 'getDescription',
+        'status_code' => 'getStatusCode',
+        'last_log' => 'getLastLog'
     ];
 
     /**
@@ -299,15 +305,16 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('state', $data ?? [], null);
+        $this->setIfExists('context', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
-        $this->setIfExists('last_modified_date', $data ?? [], null);
-        $this->setIfExists('owner', $data ?? [], null);
-        $this->setIfExists('title', $data ?? [], null);
+        $this->setIfExists('last_run_date', $data ?? [], null);
         $this->setIfExists('entity_class', $data ?? [], null);
         $this->setIfExists('entity_id', $data ?? [], null);
-        $this->setIfExists('public', $data ?? [], null);
-        $this->setIfExists('subscribers', $data ?? [], null);
-        $this->setIfExists('comments', $data ?? [], null);
+        $this->setIfExists('entity_description', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('status_code', $data ?? [], null);
+        $this->setIfExists('last_log', $data ?? [], null);
     }
 
     /**
@@ -380,6 +387,60 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets state
+     *
+     * @return string|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param string|null $state state
+     *
+     * @return self
+     */
+    public function setState($state)
+    {
+        if (is_null($state)) {
+            throw new \InvalidArgumentException('non-nullable state cannot be null');
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets context
+     *
+     * @return string|null
+     */
+    public function getContext()
+    {
+        return $this->container['context'];
+    }
+
+    /**
+     * Sets context
+     *
+     * @param string|null $context context
+     *
+     * @return self
+     */
+    public function setContext($context)
+    {
+        if (is_null($context)) {
+            throw new \InvalidArgumentException('non-nullable context cannot be null');
+        }
+        $this->container['context'] = $context;
+
+        return $this;
+    }
+
+    /**
      * Gets create_date
      *
      * @return \DateTime|null
@@ -407,96 +468,35 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets last_modified_date
+     * Gets last_run_date
      *
      * @return \DateTime|null
      */
-    public function getLastModifiedDate()
+    public function getLastRunDate()
     {
-        return $this->container['last_modified_date'];
+        return $this->container['last_run_date'];
     }
 
     /**
-     * Sets last_modified_date
+     * Sets last_run_date
      *
-     * @param \DateTime|null $last_modified_date last_modified_date
+     * @param \DateTime|null $last_run_date last_run_date
      *
      * @return self
      */
-    public function setLastModifiedDate($last_modified_date)
+    public function setLastRunDate($last_run_date)
     {
-        if (is_null($last_modified_date)) {
-            array_push($this->openAPINullablesSetToNull, 'last_modified_date');
+        if (is_null($last_run_date)) {
+            array_push($this->openAPINullablesSetToNull, 'last_run_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('last_modified_date', $nullablesSetToNull);
+            $index = array_search('last_run_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['last_modified_date'] = $last_modified_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets owner
-     *
-     * @return string|null
-     */
-    public function getOwner()
-    {
-        return $this->container['owner'];
-    }
-
-    /**
-     * Sets owner
-     *
-     * @param string|null $owner owner
-     *
-     * @return self
-     */
-    public function setOwner($owner)
-    {
-        if (is_null($owner)) {
-            throw new \InvalidArgumentException('non-nullable owner cannot be null');
-        }
-        $this->container['owner'] = $owner;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string|null $title title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        if (is_null($title)) {
-            array_push($this->openAPINullablesSetToNull, 'title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('title', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['title'] = $title;
+        $this->container['last_run_date'] = $last_run_date;
 
         return $this;
     }
@@ -556,82 +556,109 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets public
+     * Gets entity_description
+     *
+     * @return int|null
+     */
+    public function getEntityDescription()
+    {
+        return $this->container['entity_description'];
+    }
+
+    /**
+     * Sets entity_description
+     *
+     * @param int|null $entity_description entity_description
+     *
+     * @return self
+     */
+    public function setEntityDescription($entity_description)
+    {
+        if (is_null($entity_description)) {
+            throw new \InvalidArgumentException('non-nullable entity_description cannot be null');
+        }
+        $this->container['entity_description'] = $entity_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
      *
      * @return string|null
      */
-    public function getPublic()
+    public function getDescription()
     {
-        return $this->container['public'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets public
+     * Sets description
      *
-     * @param string|null $public public
+     * @param string|null $description description
      *
      * @return self
      */
-    public function setPublic($public)
+    public function setDescription($description)
     {
-        if (is_null($public)) {
-            throw new \InvalidArgumentException('non-nullable public cannot be null');
+        if (is_null($description)) {
+            throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
-        $this->container['public'] = $public;
+        $this->container['description'] = $description;
 
         return $this;
     }
 
     /**
-     * Gets subscribers
+     * Gets status_code
      *
-     * @return string[]|null
+     * @return int|null
      */
-    public function getSubscribers()
+    public function getStatusCode()
     {
-        return $this->container['subscribers'];
+        return $this->container['status_code'];
     }
 
     /**
-     * Sets subscribers
+     * Sets status_code
      *
-     * @param string[]|null $subscribers subscribers
+     * @param int|null $status_code status_code
      *
      * @return self
      */
-    public function setSubscribers($subscribers)
+    public function setStatusCode($status_code)
     {
-        if (is_null($subscribers)) {
-            throw new \InvalidArgumentException('non-nullable subscribers cannot be null');
+        if (is_null($status_code)) {
+            throw new \InvalidArgumentException('non-nullable status_code cannot be null');
         }
-        $this->container['subscribers'] = $subscribers;
+        $this->container['status_code'] = $status_code;
 
         return $this;
     }
 
     /**
-     * Gets comments
+     * Gets last_log
      *
-     * @return \Infracorp\Extranet\Client\Model\CommentTree[]|null
+     * @return string|null
      */
-    public function getComments()
+    public function getLastLog()
     {
-        return $this->container['comments'];
+        return $this->container['last_log'];
     }
 
     /**
-     * Sets comments
+     * Sets last_log
      *
-     * @param \Infracorp\Extranet\Client\Model\CommentTree[]|null $comments comments
+     * @param string|null $last_log last_log
      *
      * @return self
      */
-    public function setComments($comments)
+    public function setLastLog($last_log)
     {
-        if (is_null($comments)) {
-            throw new \InvalidArgumentException('non-nullable comments cannot be null');
+        if (is_null($last_log)) {
+            throw new \InvalidArgumentException('non-nullable last_log cannot be null');
         }
-        $this->container['comments'] = $comments;
+        $this->container['last_log'] = $last_log;
 
         return $this;
     }

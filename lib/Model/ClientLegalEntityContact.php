@@ -1,6 +1,6 @@
 <?php
 /**
- * CommentThread
+ * ClientLegalEntityContact
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * CommentThread Class Doc Comment
+ * ClientLegalEntityContact Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
+class ClientLegalEntityContact implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CommentThread';
+    protected static $openAPIModelName = 'ClientLegalEntityContact';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,16 +57,13 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'available_workflows' => 'string[]',
         'id' => 'int',
         'create_date' => '\DateTime',
         'last_modified_date' => '\DateTime',
-        'owner' => 'string',
-        'title' => 'string',
-        'entity_class' => 'string',
-        'entity_id' => 'int',
-        'public' => 'string',
-        'subscribers' => 'string[]',
-        'comments' => '\Infracorp\Extranet\Client\Model\CommentTree[]'
+        'client_legal_entity_id' => 'int',
+        'contact' => '\Infracorp\Extranet\Client\Model\Contact',
+        'type' => 'string'
     ];
 
     /**
@@ -77,16 +74,13 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'available_workflows' => null,
         'id' => null,
         'create_date' => 'date-time',
         'last_modified_date' => 'date-time',
-        'owner' => null,
-        'title' => null,
-        'entity_class' => null,
-        'entity_id' => null,
-        'public' => null,
-        'subscribers' => null,
-        'comments' => null
+        'client_legal_entity_id' => null,
+        'contact' => null,
+        'type' => null
     ];
 
     /**
@@ -95,16 +89,13 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
+        'available_workflows' => false,
+		'id' => false,
 		'create_date' => false,
 		'last_modified_date' => true,
-		'owner' => false,
-		'title' => true,
-		'entity_class' => false,
-		'entity_id' => false,
-		'public' => false,
-		'subscribers' => false,
-		'comments' => false
+		'client_legal_entity_id' => false,
+		'contact' => false,
+		'type' => false
     ];
 
     /**
@@ -193,16 +184,13 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'available_workflows' => 'availableWorkflows',
         'id' => 'id',
         'create_date' => 'createDate',
         'last_modified_date' => 'lastModifiedDate',
-        'owner' => 'owner',
-        'title' => 'title',
-        'entity_class' => 'entityClass',
-        'entity_id' => 'entityId',
-        'public' => 'public',
-        'subscribers' => 'subscribers',
-        'comments' => 'comments'
+        'client_legal_entity_id' => 'clientLegalEntityId',
+        'contact' => 'contact',
+        'type' => 'type'
     ];
 
     /**
@@ -211,16 +199,13 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'available_workflows' => 'setAvailableWorkflows',
         'id' => 'setId',
         'create_date' => 'setCreateDate',
         'last_modified_date' => 'setLastModifiedDate',
-        'owner' => 'setOwner',
-        'title' => 'setTitle',
-        'entity_class' => 'setEntityClass',
-        'entity_id' => 'setEntityId',
-        'public' => 'setPublic',
-        'subscribers' => 'setSubscribers',
-        'comments' => 'setComments'
+        'client_legal_entity_id' => 'setClientLegalEntityId',
+        'contact' => 'setContact',
+        'type' => 'setType'
     ];
 
     /**
@@ -229,16 +214,13 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'available_workflows' => 'getAvailableWorkflows',
         'id' => 'getId',
         'create_date' => 'getCreateDate',
         'last_modified_date' => 'getLastModifiedDate',
-        'owner' => 'getOwner',
-        'title' => 'getTitle',
-        'entity_class' => 'getEntityClass',
-        'entity_id' => 'getEntityId',
-        'public' => 'getPublic',
-        'subscribers' => 'getSubscribers',
-        'comments' => 'getComments'
+        'client_legal_entity_id' => 'getClientLegalEntityId',
+        'contact' => 'getContact',
+        'type' => 'getType'
     ];
 
     /**
@@ -282,6 +264,92 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommercialOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Submit\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Sign\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Rename\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RenameSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateOfferItemInOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\SetOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\AddComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\SubscribeThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateThread\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Invoice\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\CreateToken\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\RevokeToken\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSubscribers\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSectionItems\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
+    public const TYPE_DELIVERY = 'DELIVERY';
+    public const TYPE_SCHEDULED_MAINTENANCE = 'SCHEDULED_MAINTENANCE';
+    public const TYPE_INCIDENT = 'INCIDENT';
+    public const TYPE_ADMINISTRATIVE = 'ADMINISTRATIVE';
+    public const TYPE_ACCOUNTING = 'ACCOUNTING';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAvailableWorkflowsAllowableValues()
+    {
+        return [
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_DELIVERY,
+            self::TYPE_SCHEDULED_MAINTENANCE,
+            self::TYPE_INCIDENT,
+            self::TYPE_ADMINISTRATIVE,
+            self::TYPE_ACCOUNTING,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -298,16 +366,13 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('available_workflows', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
         $this->setIfExists('last_modified_date', $data ?? [], null);
-        $this->setIfExists('owner', $data ?? [], null);
-        $this->setIfExists('title', $data ?? [], null);
-        $this->setIfExists('entity_class', $data ?? [], null);
-        $this->setIfExists('entity_id', $data ?? [], null);
-        $this->setIfExists('public', $data ?? [], null);
-        $this->setIfExists('subscribers', $data ?? [], null);
-        $this->setIfExists('comments', $data ?? [], null);
+        $this->setIfExists('client_legal_entity_id', $data ?? [], null);
+        $this->setIfExists('contact', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -337,6 +402,15 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -351,6 +425,42 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets available_workflows
+     *
+     * @return string[]|null
+     */
+    public function getAvailableWorkflows()
+    {
+        return $this->container['available_workflows'];
+    }
+
+    /**
+     * Sets available_workflows
+     *
+     * @param string[]|null $available_workflows liste des processus disponible pour l'objet
+     *
+     * @return self
+     */
+    public function setAvailableWorkflows($available_workflows)
+    {
+        if (is_null($available_workflows)) {
+            throw new \InvalidArgumentException('non-nullable available_workflows cannot be null');
+        }
+        $allowedValues = $this->getAvailableWorkflowsAllowableValues();
+        if (array_diff($available_workflows, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'available_workflows', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['available_workflows'] = $available_workflows;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -441,197 +551,92 @@ class CommentThread implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets owner
-     *
-     * @return string|null
-     */
-    public function getOwner()
-    {
-        return $this->container['owner'];
-    }
-
-    /**
-     * Sets owner
-     *
-     * @param string|null $owner owner
-     *
-     * @return self
-     */
-    public function setOwner($owner)
-    {
-        if (is_null($owner)) {
-            throw new \InvalidArgumentException('non-nullable owner cannot be null');
-        }
-        $this->container['owner'] = $owner;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param string|null $title title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        if (is_null($title)) {
-            array_push($this->openAPINullablesSetToNull, 'title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('title', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets entity_class
-     *
-     * @return string|null
-     */
-    public function getEntityClass()
-    {
-        return $this->container['entity_class'];
-    }
-
-    /**
-     * Sets entity_class
-     *
-     * @param string|null $entity_class entity_class
-     *
-     * @return self
-     */
-    public function setEntityClass($entity_class)
-    {
-        if (is_null($entity_class)) {
-            throw new \InvalidArgumentException('non-nullable entity_class cannot be null');
-        }
-        $this->container['entity_class'] = $entity_class;
-
-        return $this;
-    }
-
-    /**
-     * Gets entity_id
+     * Gets client_legal_entity_id
      *
      * @return int|null
      */
-    public function getEntityId()
+    public function getClientLegalEntityId()
     {
-        return $this->container['entity_id'];
+        return $this->container['client_legal_entity_id'];
     }
 
     /**
-     * Sets entity_id
+     * Sets client_legal_entity_id
      *
-     * @param int|null $entity_id entity_id
+     * @param int|null $client_legal_entity_id client_legal_entity_id
      *
      * @return self
      */
-    public function setEntityId($entity_id)
+    public function setClientLegalEntityId($client_legal_entity_id)
     {
-        if (is_null($entity_id)) {
-            throw new \InvalidArgumentException('non-nullable entity_id cannot be null');
+        if (is_null($client_legal_entity_id)) {
+            throw new \InvalidArgumentException('non-nullable client_legal_entity_id cannot be null');
         }
-        $this->container['entity_id'] = $entity_id;
+        $this->container['client_legal_entity_id'] = $client_legal_entity_id;
 
         return $this;
     }
 
     /**
-     * Gets public
+     * Gets contact
+     *
+     * @return \Infracorp\Extranet\Client\Model\Contact|null
+     */
+    public function getContact()
+    {
+        return $this->container['contact'];
+    }
+
+    /**
+     * Sets contact
+     *
+     * @param \Infracorp\Extranet\Client\Model\Contact|null $contact contact
+     *
+     * @return self
+     */
+    public function setContact($contact)
+    {
+        if (is_null($contact)) {
+            throw new \InvalidArgumentException('non-nullable contact cannot be null');
+        }
+        $this->container['contact'] = $contact;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
      *
      * @return string|null
      */
-    public function getPublic()
+    public function getType()
     {
-        return $this->container['public'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets public
+     * Sets type
      *
-     * @param string|null $public public
+     * @param string|null $type type
      *
      * @return self
      */
-    public function setPublic($public)
+    public function setType($type)
     {
-        if (is_null($public)) {
-            throw new \InvalidArgumentException('non-nullable public cannot be null');
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
-        $this->container['public'] = $public;
-
-        return $this;
-    }
-
-    /**
-     * Gets subscribers
-     *
-     * @return string[]|null
-     */
-    public function getSubscribers()
-    {
-        return $this->container['subscribers'];
-    }
-
-    /**
-     * Sets subscribers
-     *
-     * @param string[]|null $subscribers subscribers
-     *
-     * @return self
-     */
-    public function setSubscribers($subscribers)
-    {
-        if (is_null($subscribers)) {
-            throw new \InvalidArgumentException('non-nullable subscribers cannot be null');
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
-        $this->container['subscribers'] = $subscribers;
-
-        return $this;
-    }
-
-    /**
-     * Gets comments
-     *
-     * @return \Infracorp\Extranet\Client\Model\CommentTree[]|null
-     */
-    public function getComments()
-    {
-        return $this->container['comments'];
-    }
-
-    /**
-     * Sets comments
-     *
-     * @param \Infracorp\Extranet\Client\Model\CommentTree[]|null $comments comments
-     *
-     * @return self
-     */
-    public function setComments($comments)
-    {
-        if (is_null($comments)) {
-            throw new \InvalidArgumentException('non-nullable comments cannot be null');
-        }
-        $this->container['comments'] = $comments;
+        $this->container['type'] = $type;
 
         return $this;
     }

@@ -94,7 +94,7 @@ class OfferItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => false,
 		'name' => false,
 		'create_date' => false,
-		'last_modified_date' => false,
+		'last_modified_date' => true,
 		'min_count' => false,
 		'max_count' => false,
 		'product' => false,
@@ -439,7 +439,14 @@ class OfferItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastModifiedDate($last_modified_date)
     {
         if (is_null($last_modified_date)) {
-            throw new \InvalidArgumentException('non-nullable last_modified_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'last_modified_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_modified_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['last_modified_date'] = $last_modified_date;
 

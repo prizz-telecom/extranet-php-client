@@ -1,6 +1,6 @@
 <?php
 /**
- * PriceList
+ * GetPublicAttachments200Response
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * PriceList Class Doc Comment
+ * GetPublicAttachments200Response Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetPublicAttachments200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PriceList';
+    protected static $openAPIModelName = 'getPublicAttachments_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'legal_entity' => '\Infracorp\Extranet\Client\Model\LegalEntity',
-        'commercial_code' => 'string',
-        'description' => 'string'
+        'attachments' => '\Infracorp\Extranet\Client\Model\Attachment[]'
     ];
 
     /**
@@ -72,11 +68,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'name' => null,
-        'legal_entity' => null,
-        'commercial_code' => null,
-        'description' => null
+        'attachments' => null
     ];
 
     /**
@@ -85,11 +77,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-		'name' => false,
-		'legal_entity' => false,
-		'commercial_code' => false,
-		'description' => true
+        'attachments' => false
     ];
 
     /**
@@ -178,11 +166,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'legal_entity' => 'legalEntity',
-        'commercial_code' => 'commercialCode',
-        'description' => 'description'
+        'attachments' => 'attachments'
     ];
 
     /**
@@ -191,11 +175,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'legal_entity' => 'setLegalEntity',
-        'commercial_code' => 'setCommercialCode',
-        'description' => 'setDescription'
+        'attachments' => 'setAttachments'
     ];
 
     /**
@@ -204,11 +184,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'legal_entity' => 'getLegalEntity',
-        'commercial_code' => 'getCommercialCode',
-        'description' => 'getDescription'
+        'attachments' => 'getAttachments'
     ];
 
     /**
@@ -268,11 +244,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('legal_entity', $data ?? [], null);
-        $this->setIfExists('commercial_code', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('attachments', $data ?? [], null);
     }
 
     /**
@@ -318,143 +290,28 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets attachments
      *
-     * @return int|null
+     * @return \Infracorp\Extranet\Client\Model\Attachment[]|null
      */
-    public function getId()
+    public function getAttachments()
     {
-        return $this->container['id'];
+        return $this->container['attachments'];
     }
 
     /**
-     * Sets id
+     * Sets attachments
      *
-     * @param int|null $id id
+     * @param \Infracorp\Extranet\Client\Model\Attachment[]|null $attachments attachments
      *
      * @return self
      */
-    public function setId($id)
+    public function setAttachments($attachments)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($attachments)) {
+            throw new \InvalidArgumentException('non-nullable attachments cannot be null');
         }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets legal_entity
-     *
-     * @return \Infracorp\Extranet\Client\Model\LegalEntity|null
-     */
-    public function getLegalEntity()
-    {
-        return $this->container['legal_entity'];
-    }
-
-    /**
-     * Sets legal_entity
-     *
-     * @param \Infracorp\Extranet\Client\Model\LegalEntity|null $legal_entity legal_entity
-     *
-     * @return self
-     */
-    public function setLegalEntity($legal_entity)
-    {
-        if (is_null($legal_entity)) {
-            throw new \InvalidArgumentException('non-nullable legal_entity cannot be null');
-        }
-        $this->container['legal_entity'] = $legal_entity;
-
-        return $this;
-    }
-
-    /**
-     * Gets commercial_code
-     *
-     * @return string|null
-     */
-    public function getCommercialCode()
-    {
-        return $this->container['commercial_code'];
-    }
-
-    /**
-     * Sets commercial_code
-     *
-     * @param string|null $commercial_code commercial_code
-     *
-     * @return self
-     */
-    public function setCommercialCode($commercial_code)
-    {
-        if (is_null($commercial_code)) {
-            throw new \InvalidArgumentException('non-nullable commercial_code cannot be null');
-        }
-        $this->container['commercial_code'] = $commercial_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if (is_null($description)) {
-            array_push($this->openAPINullablesSetToNull, 'description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('description', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['description'] = $description;
+        $this->container['attachments'] = $attachments;
 
         return $this;
     }

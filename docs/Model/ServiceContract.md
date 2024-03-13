@@ -18,11 +18,13 @@ Name | Type | Description | Notes
 **ref_service** | **string** | ref used by Prizz Telecom NOC | [optional]
 **description** | **string** |  | [optional]
 **services** | [**\Infracorp\Extranet\Client\Model\Service[]**](Service.md) |  | [optional]
+**nrcs** | [**\Infracorp\Extranet\Client\Model\ServiceContractNrc[]**](ServiceContractNrc.md) |  | [optional]
 **planned_activation_date** | **\DateTime** |  | [optional]
 **sold_activation_date** | **\DateTime** |  | [optional]
 **commitment_end_date** | **\DateTime** |  | [optional]
 **attributes** | **object** |  | [optional]
 **consolidated_attributes** | **object** |  | [optional]
 **consolidated_attributes_staging_or_new** | **object** |  | [optional]
+**commercial_offers** | [**\Infracorp\Extranet\Client\Model\ServiceContractCommercialOffersInner[]**](ServiceContractCommercialOffersInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

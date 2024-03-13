@@ -69,7 +69,7 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
         'lib' => 'string',
         'title' => 'string',
         'states' => 'mixed[]',
-        'attachments' => '\Infracorp\Extranet\Client\Model\Attachment[]',
+        'attachments' => '\Infracorp\Extranet\Client\Model\TicketAttachment[]',
         'actions' => '\Infracorp\Extranet\Client\Model\ProcessAction[]'
     ];
 
@@ -777,7 +777,7 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attachments
      *
-     * @return \Infracorp\Extranet\Client\Model\Attachment[]|null
+     * @return \Infracorp\Extranet\Client\Model\TicketAttachment[]|null
      */
     public function getAttachments()
     {
@@ -787,7 +787,7 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attachments
      *
-     * @param \Infracorp\Extranet\Client\Model\Attachment[]|null $attachments attachments
+     * @param \Infracorp\Extranet\Client\Model\TicketAttachment[]|null $attachments attachments
      *
      * @return self
      */

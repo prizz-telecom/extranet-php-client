@@ -75,6 +75,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'city_name' => 'string',
         'insee_code' => 'string',
         'amount' => 'int',
+        'invoice_id' => 'int',
         'amount_str' => 'string',
         'va_trate' => 'float',
         'service_id' => 'int',
@@ -110,6 +111,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'city_name' => null,
         'insee_code' => null,
         'amount' => null,
+        'invoice_id' => null,
         'amount_str' => null,
         'va_trate' => 'float',
         'service_id' => null,
@@ -127,22 +129,23 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'available_workflows' => false,
 		'id' => false,
-		'unit_price' => false,
+		'unit_price' => true,
 		'unit_price_str' => false,
-		'unit' => false,
-		'vat' => false,
-		'recurrence' => false,
+		'unit' => true,
+		'vat' => true,
+		'recurrence' => true,
 		'quantity' => false,
-		'unit_price_discount' => false,
+		'unit_price_discount' => true,
 		'unit_price_discount_str' => false,
 		'name' => false,
-		'house_number' => false,
-		'house_number_complement' => false,
-		'street_name' => false,
-		'postal_code' => false,
-		'city_name' => false,
-		'insee_code' => false,
+		'house_number' => true,
+		'house_number_complement' => true,
+		'street_name' => true,
+		'postal_code' => true,
+		'city_name' => true,
+		'insee_code' => true,
 		'amount' => true,
+		'invoice_id' => false,
 		'amount_str' => false,
 		'va_trate' => false,
 		'service_id' => true,
@@ -256,6 +259,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'city_name' => 'cityName',
         'insee_code' => 'inseeCode',
         'amount' => 'amount',
+        'invoice_id' => 'invoiceId',
         'amount_str' => 'amountStr',
         'va_trate' => 'VATrate',
         'service_id' => 'serviceId',
@@ -289,6 +293,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'city_name' => 'setCityName',
         'insee_code' => 'setInseeCode',
         'amount' => 'setAmount',
+        'invoice_id' => 'setInvoiceId',
         'amount_str' => 'setAmountStr',
         'va_trate' => 'setVaTrate',
         'service_id' => 'setServiceId',
@@ -322,6 +327,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'city_name' => 'getCityName',
         'insee_code' => 'getInseeCode',
         'amount' => 'getAmount',
+        'invoice_id' => 'getInvoiceId',
         'amount_str' => 'getAmountStr',
         'va_trate' => 'getVaTrate',
         'service_id' => 'getServiceId',
@@ -395,6 +401,10 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSectionItems\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
     public const RECURRENCE_MONTHLY = 'monthly';
     public const RECURRENCE_YEARLY = 'yearly';
     public const RECURRENCE_HALF_YEARLY = 'half-yearly';
@@ -431,6 +441,10 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT,
         ];
     }
 
@@ -482,6 +496,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('city_name', $data ?? [], null);
         $this->setIfExists('insee_code', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
+        $this->setIfExists('invoice_id', $data ?? [], null);
         $this->setIfExists('amount_str', $data ?? [], null);
         $this->setIfExists('va_trate', $data ?? [], null);
         $this->setIfExists('service_id', $data ?? [], null);
@@ -625,7 +640,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUnitPrice($unit_price)
     {
         if (is_null($unit_price)) {
-            throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit_price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit_price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit_price'] = $unit_price;
 
@@ -679,7 +701,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUnit($unit)
     {
         if (is_null($unit)) {
-            throw new \InvalidArgumentException('non-nullable unit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit'] = $unit;
 
@@ -706,7 +735,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setVat($vat)
     {
         if (is_null($vat)) {
-            throw new \InvalidArgumentException('non-nullable vat cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'vat');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('vat', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['vat'] = $vat;
 
@@ -733,10 +769,17 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRecurrence($recurrence)
     {
         if (is_null($recurrence)) {
-            throw new \InvalidArgumentException('non-nullable recurrence cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'recurrence');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('recurrence', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $allowedValues = $this->getRecurrenceAllowableValues();
-        if (!in_array($recurrence, $allowedValues, true)) {
+        if (!is_null($recurrence) && !in_array($recurrence, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'recurrence', must be one of '%s'",
@@ -797,7 +840,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUnitPriceDiscount($unit_price_discount)
     {
         if (is_null($unit_price_discount)) {
-            throw new \InvalidArgumentException('non-nullable unit_price_discount cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit_price_discount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit_price_discount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit_price_discount'] = $unit_price_discount;
 
@@ -878,7 +928,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setHouseNumber($house_number)
     {
         if (is_null($house_number)) {
-            throw new \InvalidArgumentException('non-nullable house_number cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'house_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('house_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['house_number'] = $house_number;
 
@@ -905,7 +962,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setHouseNumberComplement($house_number_complement)
     {
         if (is_null($house_number_complement)) {
-            throw new \InvalidArgumentException('non-nullable house_number_complement cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'house_number_complement');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('house_number_complement', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['house_number_complement'] = $house_number_complement;
 
@@ -932,7 +996,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStreetName($street_name)
     {
         if (is_null($street_name)) {
-            throw new \InvalidArgumentException('non-nullable street_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'street_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('street_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['street_name'] = $street_name;
 
@@ -959,7 +1030,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPostalCode($postal_code)
     {
         if (is_null($postal_code)) {
-            throw new \InvalidArgumentException('non-nullable postal_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'postal_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('postal_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['postal_code'] = $postal_code;
 
@@ -986,7 +1064,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCityName($city_name)
     {
         if (is_null($city_name)) {
-            throw new \InvalidArgumentException('non-nullable city_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'city_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('city_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['city_name'] = $city_name;
 
@@ -1013,7 +1098,14 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setInseeCode($insee_code)
     {
         if (is_null($insee_code)) {
-            throw new \InvalidArgumentException('non-nullable insee_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'insee_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('insee_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['insee_code'] = $insee_code;
 
@@ -1050,6 +1142,33 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_id
+     *
+     * @return int|null
+     */
+    public function getInvoiceId()
+    {
+        return $this->container['invoice_id'];
+    }
+
+    /**
+     * Sets invoice_id
+     *
+     * @param int|null $invoice_id invoice_id
+     *
+     * @return self
+     */
+    public function setInvoiceId($invoice_id)
+    {
+        if (is_null($invoice_id)) {
+            throw new \InvalidArgumentException('non-nullable invoice_id cannot be null');
+        }
+        $this->container['invoice_id'] = $invoice_id;
 
         return $this;
     }

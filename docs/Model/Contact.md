@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**available_workflows** | **string[]** | liste des processus disponible pour l&#39;objet | [optional]
 **id** | **int** |  | [optional]
 **firstname** | **string** |  | [optional]
 **lastname** | **string** |  | [optional]

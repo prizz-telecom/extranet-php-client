@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **lib** | **string** |  | [optional]
 **title** | **string** |  | [optional]
 **states** | **mixed[]** |  | [optional]
-**attachments** | [**\Infracorp\Extranet\Client\Model\Attachment[]**](Attachment.md) |  | [optional]
+**attachments** | [**\Infracorp\Extranet\Client\Model\TicketAttachment[]**](TicketAttachment.md) |  | [optional]
 **actions** | [**\Infracorp\Extranet\Client\Model\ProcessAction[]**](ProcessAction.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

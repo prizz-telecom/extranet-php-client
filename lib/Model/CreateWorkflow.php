@@ -257,6 +257,10 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CONTEXT_NAME_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
     public const CONTEXT_NAME_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
     public const CONTEXT_NAME_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSectionItems\\Context';
+    public const CONTEXT_NAME_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AssignContact\\Context';
+    public const CONTEXT_NAME_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
+    public const CONTEXT_NAME_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
+    public const CONTEXT_NAME_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -289,6 +293,10 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CONTEXT_NAME_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
             self::CONTEXT_NAME_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
             self::CONTEXT_NAME_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT,
+            self::CONTEXT_NAME_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT,
+            self::CONTEXT_NAME_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
+            self::CONTEXT_NAME_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::CONTEXT_NAME_CONTACT_UPDATE_CONTEXT,
         ];
     }
 

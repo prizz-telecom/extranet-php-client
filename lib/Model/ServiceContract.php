@@ -71,12 +71,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'ref_service' => 'string',
         'description' => 'string',
         'services' => '\Infracorp\Extranet\Client\Model\Service[]',
+        'nrcs' => '\Infracorp\Extranet\Client\Model\ServiceContractNrc[]',
         'planned_activation_date' => '\DateTime',
         'sold_activation_date' => '\DateTime',
         'commitment_end_date' => '\DateTime',
         'attributes' => 'object',
         'consolidated_attributes' => 'object',
-        'consolidated_attributes_staging_or_new' => 'object'
+        'consolidated_attributes_staging_or_new' => 'object',
+        'commercial_offers' => '\Infracorp\Extranet\Client\Model\ServiceContractCommercialOffersInner[]'
     ];
 
     /**
@@ -101,12 +103,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'ref_service' => null,
         'description' => null,
         'services' => null,
+        'nrcs' => null,
         'planned_activation_date' => 'date-time',
         'sold_activation_date' => 'date-time',
         'commitment_end_date' => 'date-time',
         'attributes' => null,
         'consolidated_attributes' => null,
-        'consolidated_attributes_staging_or_new' => null
+        'consolidated_attributes_staging_or_new' => null,
+        'commercial_offers' => null
     ];
 
     /**
@@ -118,8 +122,8 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => false,
 		'name' => false,
 		'create_date' => false,
-		'last_modified_date' => false,
-		'status' => false,
+		'last_modified_date' => true,
+		'status' => true,
 		'client_contract_id' => false,
 		'subscription_date' => false,
 		'activation_date' => true,
@@ -129,12 +133,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
 		'ref_service' => true,
 		'description' => true,
 		'services' => false,
+		'nrcs' => false,
 		'planned_activation_date' => true,
 		'sold_activation_date' => true,
 		'commitment_end_date' => true,
 		'attributes' => false,
 		'consolidated_attributes' => false,
-		'consolidated_attributes_staging_or_new' => false
+		'consolidated_attributes_staging_or_new' => false,
+		'commercial_offers' => false
     ];
 
     /**
@@ -237,12 +243,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'ref_service' => 'refService',
         'description' => 'description',
         'services' => 'services',
+        'nrcs' => 'nrcs',
         'planned_activation_date' => 'plannedActivationDate',
         'sold_activation_date' => 'soldActivationDate',
         'commitment_end_date' => 'commitmentEndDate',
         'attributes' => 'attributes',
         'consolidated_attributes' => 'consolidatedAttributes',
-        'consolidated_attributes_staging_or_new' => 'consolidatedAttributesStagingOrNew'
+        'consolidated_attributes_staging_or_new' => 'consolidatedAttributesStagingOrNew',
+        'commercial_offers' => 'commercialOffers'
     ];
 
     /**
@@ -265,12 +273,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'ref_service' => 'setRefService',
         'description' => 'setDescription',
         'services' => 'setServices',
+        'nrcs' => 'setNrcs',
         'planned_activation_date' => 'setPlannedActivationDate',
         'sold_activation_date' => 'setSoldActivationDate',
         'commitment_end_date' => 'setCommitmentEndDate',
         'attributes' => 'setAttributes',
         'consolidated_attributes' => 'setConsolidatedAttributes',
-        'consolidated_attributes_staging_or_new' => 'setConsolidatedAttributesStagingOrNew'
+        'consolidated_attributes_staging_or_new' => 'setConsolidatedAttributesStagingOrNew',
+        'commercial_offers' => 'setCommercialOffers'
     ];
 
     /**
@@ -293,12 +303,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'ref_service' => 'getRefService',
         'description' => 'getDescription',
         'services' => 'getServices',
+        'nrcs' => 'getNrcs',
         'planned_activation_date' => 'getPlannedActivationDate',
         'sold_activation_date' => 'getSoldActivationDate',
         'commitment_end_date' => 'getCommitmentEndDate',
         'attributes' => 'getAttributes',
         'consolidated_attributes' => 'getConsolidatedAttributes',
-        'consolidated_attributes_staging_or_new' => 'getConsolidatedAttributesStagingOrNew'
+        'consolidated_attributes_staging_or_new' => 'getConsolidatedAttributesStagingOrNew',
+        'commercial_offers' => 'getCommercialOffers'
     ];
 
     /**
@@ -372,12 +384,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ref_service', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('services', $data ?? [], null);
+        $this->setIfExists('nrcs', $data ?? [], null);
         $this->setIfExists('planned_activation_date', $data ?? [], null);
         $this->setIfExists('sold_activation_date', $data ?? [], null);
         $this->setIfExists('commitment_end_date', $data ?? [], null);
         $this->setIfExists('attributes', $data ?? [], null);
         $this->setIfExists('consolidated_attributes', $data ?? [], null);
         $this->setIfExists('consolidated_attributes_staging_or_new', $data ?? [], null);
+        $this->setIfExists('commercial_offers', $data ?? [], null);
     }
 
     /**
@@ -523,7 +537,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastModifiedDate($last_modified_date)
     {
         if (is_null($last_modified_date)) {
-            throw new \InvalidArgumentException('non-nullable last_modified_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'last_modified_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_modified_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['last_modified_date'] = $last_modified_date;
 
@@ -550,7 +571,14 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStatus($status)
     {
         if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['status'] = $status;
 
@@ -829,6 +857,33 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets nrcs
+     *
+     * @return \Infracorp\Extranet\Client\Model\ServiceContractNrc[]|null
+     */
+    public function getNrcs()
+    {
+        return $this->container['nrcs'];
+    }
+
+    /**
+     * Sets nrcs
+     *
+     * @param \Infracorp\Extranet\Client\Model\ServiceContractNrc[]|null $nrcs nrcs
+     *
+     * @return self
+     */
+    public function setNrcs($nrcs)
+    {
+        if (is_null($nrcs)) {
+            throw new \InvalidArgumentException('non-nullable nrcs cannot be null');
+        }
+        $this->container['nrcs'] = $nrcs;
+
+        return $this;
+    }
+
+    /**
      * Gets planned_activation_date
      *
      * @return \DateTime|null
@@ -1007,6 +1062,33 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable consolidated_attributes_staging_or_new cannot be null');
         }
         $this->container['consolidated_attributes_staging_or_new'] = $consolidated_attributes_staging_or_new;
+
+        return $this;
+    }
+
+    /**
+     * Gets commercial_offers
+     *
+     * @return \Infracorp\Extranet\Client\Model\ServiceContractCommercialOffersInner[]|null
+     */
+    public function getCommercialOffers()
+    {
+        return $this->container['commercial_offers'];
+    }
+
+    /**
+     * Sets commercial_offers
+     *
+     * @param \Infracorp\Extranet\Client\Model\ServiceContractCommercialOffersInner[]|null $commercial_offers commercial_offers
+     *
+     * @return self
+     */
+    public function setCommercialOffers($commercial_offers)
+    {
+        if (is_null($commercial_offers)) {
+            throw new \InvalidArgumentException('non-nullable commercial_offers cannot be null');
+        }
+        $this->container['commercial_offers'] = $commercial_offers;
 
         return $this;
     }

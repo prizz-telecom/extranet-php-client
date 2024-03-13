@@ -107,13 +107,13 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
 		'create_date' => false,
-		'last_modified_date' => false,
+		'last_modified_date' => true,
 		'name' => false,
-		'unit_price' => false,
+		'unit_price' => true,
 		'unit_price_str' => false,
-		'unit' => false,
-		'vat' => false,
-		'recurrence' => false,
+		'unit' => true,
+		'vat' => true,
+		'recurrence' => true,
 		'price_list_id' => false,
 		'product' => false,
 		'commercial_code' => false,
@@ -489,7 +489,14 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastModifiedDate($last_modified_date)
     {
         if (is_null($last_modified_date)) {
-            throw new \InvalidArgumentException('non-nullable last_modified_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'last_modified_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_modified_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['last_modified_date'] = $last_modified_date;
 
@@ -543,7 +550,14 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUnitPrice($unit_price)
     {
         if (is_null($unit_price)) {
-            throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit_price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit_price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit_price'] = $unit_price;
 
@@ -597,7 +611,14 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUnit($unit)
     {
         if (is_null($unit)) {
-            throw new \InvalidArgumentException('non-nullable unit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit'] = $unit;
 
@@ -624,7 +645,14 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setVat($vat)
     {
         if (is_null($vat)) {
-            throw new \InvalidArgumentException('non-nullable vat cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'vat');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('vat', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['vat'] = $vat;
 
@@ -651,10 +679,17 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRecurrence($recurrence)
     {
         if (is_null($recurrence)) {
-            throw new \InvalidArgumentException('non-nullable recurrence cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'recurrence');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('recurrence', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $allowedValues = $this->getRecurrenceAllowableValues();
-        if (!in_array($recurrence, $allowedValues, true)) {
+        if (!is_null($recurrence) && !in_array($recurrence, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'recurrence', must be one of '%s'",

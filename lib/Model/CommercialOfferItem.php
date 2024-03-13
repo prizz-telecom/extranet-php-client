@@ -75,6 +75,8 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'city_name' => 'string',
         'insee_code' => 'string',
         'price' => 'int',
+        'section_id' => 'int',
+        'commercial_offer_id' => 'int',
         'price_str' => 'string',
         'vat_rate' => 'float',
         'commercial_code' => 'string',
@@ -108,6 +110,8 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'city_name' => null,
         'insee_code' => null,
         'price' => null,
+        'section_id' => null,
+        'commercial_offer_id' => null,
         'price_str' => null,
         'vat_rate' => 'float',
         'commercial_code' => null,
@@ -124,25 +128,27 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'available_workflows' => false,
 		'id' => false,
 		'name' => false,
-		'unit_price' => false,
+		'unit_price' => true,
 		'unit_price_str' => false,
-		'unit' => false,
-		'vat' => false,
-		'recurrence' => false,
-		'unit_price_discount' => false,
+		'unit' => true,
+		'vat' => true,
+		'recurrence' => true,
+		'unit_price_discount' => true,
 		'unit_price_discount_str' => false,
 		'quantity' => false,
-		'house_number' => false,
-		'house_number_complement' => false,
-		'street_name' => false,
-		'postal_code' => false,
-		'city_name' => false,
-		'insee_code' => false,
-		'price' => false,
+		'house_number' => true,
+		'house_number_complement' => true,
+		'street_name' => true,
+		'postal_code' => true,
+		'city_name' => true,
+		'insee_code' => true,
+		'price' => true,
+		'section_id' => false,
+		'commercial_offer_id' => false,
 		'price_str' => false,
-		'vat_rate' => false,
+		'vat_rate' => true,
 		'commercial_code' => false,
-		'description' => false,
+		'description' => true,
 		'price_list_item' => false
     ];
 
@@ -250,6 +256,8 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'city_name' => 'cityName',
         'insee_code' => 'inseeCode',
         'price' => 'price',
+        'section_id' => 'sectionId',
+        'commercial_offer_id' => 'commercialOfferId',
         'price_str' => 'priceStr',
         'vat_rate' => 'vatRate',
         'commercial_code' => 'commercialCode',
@@ -281,6 +289,8 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'city_name' => 'setCityName',
         'insee_code' => 'setInseeCode',
         'price' => 'setPrice',
+        'section_id' => 'setSectionId',
+        'commercial_offer_id' => 'setCommercialOfferId',
         'price_str' => 'setPriceStr',
         'vat_rate' => 'setVatRate',
         'commercial_code' => 'setCommercialCode',
@@ -312,6 +322,8 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'city_name' => 'getCityName',
         'insee_code' => 'getInseeCode',
         'price' => 'getPrice',
+        'section_id' => 'getSectionId',
+        'commercial_offer_id' => 'getCommercialOfferId',
         'price_str' => 'getPriceStr',
         'vat_rate' => 'getVatRate',
         'commercial_code' => 'getCommercialCode',
@@ -383,6 +395,10 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSectionItems\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
     public const RECURRENCE_MONTHLY = 'monthly';
     public const RECURRENCE_YEARLY = 'yearly';
     public const RECURRENCE_HALF_YEARLY = 'half-yearly';
@@ -419,6 +435,10 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT,
         ];
     }
 
@@ -470,6 +490,8 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('city_name', $data ?? [], null);
         $this->setIfExists('insee_code', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('section_id', $data ?? [], null);
+        $this->setIfExists('commercial_offer_id', $data ?? [], null);
         $this->setIfExists('price_str', $data ?? [], null);
         $this->setIfExists('vat_rate', $data ?? [], null);
         $this->setIfExists('commercial_code', $data ?? [], null);
@@ -638,7 +660,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setUnitPrice($unit_price)
     {
         if (is_null($unit_price)) {
-            throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit_price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit_price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit_price'] = $unit_price;
 
@@ -692,7 +721,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setUnit($unit)
     {
         if (is_null($unit)) {
-            throw new \InvalidArgumentException('non-nullable unit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit'] = $unit;
 
@@ -719,7 +755,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setVat($vat)
     {
         if (is_null($vat)) {
-            throw new \InvalidArgumentException('non-nullable vat cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'vat');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('vat', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['vat'] = $vat;
 
@@ -746,10 +789,17 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setRecurrence($recurrence)
     {
         if (is_null($recurrence)) {
-            throw new \InvalidArgumentException('non-nullable recurrence cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'recurrence');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('recurrence', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $allowedValues = $this->getRecurrenceAllowableValues();
-        if (!in_array($recurrence, $allowedValues, true)) {
+        if (!is_null($recurrence) && !in_array($recurrence, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'recurrence', must be one of '%s'",
@@ -783,7 +833,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setUnitPriceDiscount($unit_price_discount)
     {
         if (is_null($unit_price_discount)) {
-            throw new \InvalidArgumentException('non-nullable unit_price_discount cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit_price_discount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit_price_discount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit_price_discount'] = $unit_price_discount;
 
@@ -864,7 +921,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setHouseNumber($house_number)
     {
         if (is_null($house_number)) {
-            throw new \InvalidArgumentException('non-nullable house_number cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'house_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('house_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['house_number'] = $house_number;
 
@@ -891,7 +955,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setHouseNumberComplement($house_number_complement)
     {
         if (is_null($house_number_complement)) {
-            throw new \InvalidArgumentException('non-nullable house_number_complement cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'house_number_complement');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('house_number_complement', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['house_number_complement'] = $house_number_complement;
 
@@ -918,7 +989,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setStreetName($street_name)
     {
         if (is_null($street_name)) {
-            throw new \InvalidArgumentException('non-nullable street_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'street_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('street_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['street_name'] = $street_name;
 
@@ -945,7 +1023,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setPostalCode($postal_code)
     {
         if (is_null($postal_code)) {
-            throw new \InvalidArgumentException('non-nullable postal_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'postal_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('postal_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['postal_code'] = $postal_code;
 
@@ -972,7 +1057,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setCityName($city_name)
     {
         if (is_null($city_name)) {
-            throw new \InvalidArgumentException('non-nullable city_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'city_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('city_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['city_name'] = $city_name;
 
@@ -999,7 +1091,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setInseeCode($insee_code)
     {
         if (is_null($insee_code)) {
-            throw new \InvalidArgumentException('non-nullable insee_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'insee_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('insee_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['insee_code'] = $insee_code;
 
@@ -1026,9 +1125,70 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setPrice($price)
     {
         if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets section_id
+     *
+     * @return int|null
+     */
+    public function getSectionId()
+    {
+        return $this->container['section_id'];
+    }
+
+    /**
+     * Sets section_id
+     *
+     * @param int|null $section_id section_id
+     *
+     * @return self
+     */
+    public function setSectionId($section_id)
+    {
+        if (is_null($section_id)) {
+            throw new \InvalidArgumentException('non-nullable section_id cannot be null');
+        }
+        $this->container['section_id'] = $section_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets commercial_offer_id
+     *
+     * @return int|null
+     */
+    public function getCommercialOfferId()
+    {
+        return $this->container['commercial_offer_id'];
+    }
+
+    /**
+     * Sets commercial_offer_id
+     *
+     * @param int|null $commercial_offer_id commercial_offer_id
+     *
+     * @return self
+     */
+    public function setCommercialOfferId($commercial_offer_id)
+    {
+        if (is_null($commercial_offer_id)) {
+            throw new \InvalidArgumentException('non-nullable commercial_offer_id cannot be null');
+        }
+        $this->container['commercial_offer_id'] = $commercial_offer_id;
 
         return $this;
     }
@@ -1080,7 +1240,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setVatRate($vat_rate)
     {
         if (is_null($vat_rate)) {
-            throw new \InvalidArgumentException('non-nullable vat_rate cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'vat_rate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('vat_rate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['vat_rate'] = $vat_rate;
 
@@ -1134,7 +1301,14 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 

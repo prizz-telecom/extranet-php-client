@@ -131,23 +131,23 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
 		'name' => false,
-		'unit_price_discount' => false,
+		'unit_price_discount' => true,
 		'unit_price_discount_str' => false,
-		'house_number' => false,
-		'house_number_complement' => false,
-		'street_name' => false,
-		'postal_code' => false,
-		'city_name' => false,
-		'insee_code' => false,
+		'house_number' => true,
+		'house_number_complement' => true,
+		'street_name' => true,
+		'postal_code' => true,
+		'city_name' => true,
+		'insee_code' => true,
 		'create_date' => false,
-		'last_modified_date' => false,
+		'last_modified_date' => true,
 		'attributes' => true,
 		'quantity' => false,
-		'unit_price' => false,
+		'unit_price' => true,
 		'unit_price_str' => false,
-		'unit' => false,
-		'vat' => false,
-		'recurrence' => false,
+		'unit' => true,
+		'vat' => true,
+		'recurrence' => true,
 		'product' => false,
 		'status' => false,
 		'subscription_date' => false,
@@ -603,7 +603,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUnitPriceDiscount($unit_price_discount)
     {
         if (is_null($unit_price_discount)) {
-            throw new \InvalidArgumentException('non-nullable unit_price_discount cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit_price_discount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit_price_discount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit_price_discount'] = $unit_price_discount;
 
@@ -657,7 +664,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setHouseNumber($house_number)
     {
         if (is_null($house_number)) {
-            throw new \InvalidArgumentException('non-nullable house_number cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'house_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('house_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['house_number'] = $house_number;
 
@@ -684,7 +698,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setHouseNumberComplement($house_number_complement)
     {
         if (is_null($house_number_complement)) {
-            throw new \InvalidArgumentException('non-nullable house_number_complement cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'house_number_complement');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('house_number_complement', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['house_number_complement'] = $house_number_complement;
 
@@ -711,7 +732,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStreetName($street_name)
     {
         if (is_null($street_name)) {
-            throw new \InvalidArgumentException('non-nullable street_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'street_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('street_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['street_name'] = $street_name;
 
@@ -738,7 +766,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPostalCode($postal_code)
     {
         if (is_null($postal_code)) {
-            throw new \InvalidArgumentException('non-nullable postal_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'postal_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('postal_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['postal_code'] = $postal_code;
 
@@ -765,7 +800,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCityName($city_name)
     {
         if (is_null($city_name)) {
-            throw new \InvalidArgumentException('non-nullable city_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'city_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('city_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['city_name'] = $city_name;
 
@@ -792,7 +834,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setInseeCode($insee_code)
     {
         if (is_null($insee_code)) {
-            throw new \InvalidArgumentException('non-nullable insee_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'insee_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('insee_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['insee_code'] = $insee_code;
 
@@ -846,7 +895,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastModifiedDate($last_modified_date)
     {
         if (is_null($last_modified_date)) {
-            throw new \InvalidArgumentException('non-nullable last_modified_date cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'last_modified_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_modified_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['last_modified_date'] = $last_modified_date;
 
@@ -934,7 +990,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUnitPrice($unit_price)
     {
         if (is_null($unit_price)) {
-            throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit_price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit_price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit_price'] = $unit_price;
 
@@ -988,7 +1051,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUnit($unit)
     {
         if (is_null($unit)) {
-            throw new \InvalidArgumentException('non-nullable unit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'unit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['unit'] = $unit;
 
@@ -1015,7 +1085,14 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setVat($vat)
     {
         if (is_null($vat)) {
-            throw new \InvalidArgumentException('non-nullable vat cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'vat');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('vat', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['vat'] = $vat;
 
@@ -1042,10 +1119,17 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRecurrence($recurrence)
     {
         if (is_null($recurrence)) {
-            throw new \InvalidArgumentException('non-nullable recurrence cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'recurrence');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('recurrence', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $allowedValues = $this->getRecurrenceAllowableValues();
-        if (!in_array($recurrence, $allowedValues, true)) {
+        if (!is_null($recurrence) && !in_array($recurrence, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'recurrence', must be one of '%s'",

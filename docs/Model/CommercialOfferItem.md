@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **city_name** | **string** |  | [optional]
 **insee_code** | **string** |  | [optional]
 **price** | **int** |  | [optional]
+**section_id** | **int** |  | [optional]
+**commercial_offer_id** | **int** |  | [optional]
 **price_str** | **string** |  | [optional]
 **vat_rate** | **float** |  | [optional]
 **commercial_code** | **string** |  | [optional]
