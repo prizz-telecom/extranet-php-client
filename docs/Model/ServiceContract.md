@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **create_date** | **\DateTime** |  | [optional]
 **last_modified_date** | **\DateTime** |  | [optional]
 **status** | **string** |  | [optional]
+**legal_entity_id** | **int** |  | [optional]
 **client_contract_id** | **int** |  | [optional]
 **subscription_date** | **\DateTime** |  | [optional]
 **activation_date** | **\DateTime** |  | [optional]

@@ -54,6 +54,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**runWorkflow()**](DefaultApi.md#runWorkflow) | **POST** /external-api/v2/workflow/{id} | Workflow |
 | [**search()**](DefaultApi.md#search) | **GET** /external-api/v2/search | Search |
 | [**setCommercialOfferSectionOffer()**](DefaultApi.md#setCommercialOfferSectionOffer) | **POST** /external-api/v2/commercial_offers/{id}/sections/{sectionId}/offer | Set Commercial Offer Section Offer |
+| [**setServiceContractVlan()**](DefaultApi.md#setServiceContractVlan) | **POST** /external-api/v2/service_contracts/{id}/vlan | Service Contract set vlan |
 | [**signCommercialOffer()**](DefaultApi.md#signCommercialOffer) | **POST** /external-api/v2/commercial_offers/{id}/sign | Sign Commercial Offer |
 | [**submitCommercialOffer()**](DefaultApi.md#submitCommercialOffer) | **POST** /external-api/v2/commercial_offers/{id}/submit | Submit Commercial Offer |
 | [**updateCommercialOfferSectionItems()**](DefaultApi.md#updateCommercialOfferSectionItems) | **POST** /external-api/v2/commercial_offers/{id}/sections/{sectionId}/update_items | Update Commercial Offer Section Items |
@@ -194,7 +195,7 @@ try {
 ## `createEligibility()`
 
 ```php
-createEligibility($address, $client_id): \Infracorp\Extranet\Client\Model\CreateEligibility
+createEligibility($client_id, $address, $latlon): \Infracorp\Extranet\Client\Model\CreateEligibility
 ```
 
 Create Eligibility
@@ -223,11 +224,12 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$address = 'address_example'; // string | address to test
 $client_id = 56; // int | client to test
+$address = 'address_example'; // string | address to test
+$latlon = new \Infracorp\Extranet\Client\Model\CreateEligibilityLatlonParameter(); // CreateEligibilityLatlonParameter | test by latitude longitude
 
 try {
-    $result = $apiInstance->createEligibility($address, $client_id);
+    $result = $apiInstance->createEligibility($client_id, $address, $latlon);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createEligibility: ', $e->getMessage(), PHP_EOL;
@@ -238,8 +240,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **address** | **string**| address to test | |
 | **client_id** | **int**| client to test | |
+| **address** | **string**| address to test | [optional] |
+| **latlon** | [**CreateEligibilityLatlonParameter**](../Model/.md)| test by latitude longitude | [optional] |
 
 ### Return type
 
@@ -3375,6 +3378,73 @@ try {
 | **id** | **int**| identifiant du devis | |
 | **section_id** | **int**| identifiant de la section | |
 | **set_commercial_offer_section_offer** | [**\Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOffer**](../Model/SetCommercialOfferSectionOffer.md)|  | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `setServiceContractVlan()`
+
+```php
+setServiceContractVlan($id, $set_service_contract_vlan_request): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+```
+
+Service Contract set vlan
+
+Set service contract vlan
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | service pack identifier
+$set_service_contract_vlan_request = new \Infracorp\Extranet\Client\Model\SetServiceContractVlanRequest(); // \Infracorp\Extranet\Client\Model\SetServiceContractVlanRequest
+
+try {
+    $result = $apiInstance->setServiceContractVlan($id, $set_service_contract_vlan_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->setServiceContractVlan: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| service pack identifier | |
+| **set_service_contract_vlan_request** | [**\Infracorp\Extranet\Client\Model\SetServiceContractVlanRequest**](../Model/SetServiceContractVlanRequest.md)|  | |
 
 ### Return type
 

@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**runWorkflow**](docs/Api/DefaultApi.md#runworkflow) | **POST** /external-api/v2/workflow/{id} | Workflow
 *DefaultApi* | [**search**](docs/Api/DefaultApi.md#search) | **GET** /external-api/v2/search | Search
 *DefaultApi* | [**setCommercialOfferSectionOffer**](docs/Api/DefaultApi.md#setcommercialoffersectionoffer) | **POST** /external-api/v2/commercial_offers/{id}/sections/{sectionId}/offer | Set Commercial Offer Section Offer
+*DefaultApi* | [**setServiceContractVlan**](docs/Api/DefaultApi.md#setservicecontractvlan) | **POST** /external-api/v2/service_contracts/{id}/vlan | Service Contract set vlan
 *DefaultApi* | [**signCommercialOffer**](docs/Api/DefaultApi.md#signcommercialoffer) | **POST** /external-api/v2/commercial_offers/{id}/sign | Sign Commercial Offer
 *DefaultApi* | [**submitCommercialOffer**](docs/Api/DefaultApi.md#submitcommercialoffer) | **POST** /external-api/v2/commercial_offers/{id}/submit | Submit Commercial Offer
 *DefaultApi* | [**updateCommercialOfferSectionItems**](docs/Api/DefaultApi.md#updatecommercialoffersectionitems) | **POST** /external-api/v2/commercial_offers/{id}/sections/{sectionId}/update_items | Update Commercial Offer Section Items
@@ -157,6 +158,7 @@ Class | Method | HTTP request | Description
 - [CreateCommercialOffer201Response](docs/Model/CreateCommercialOffer201Response.md)
 - [CreateCommercialOfferSection](docs/Model/CreateCommercialOfferSection.md)
 - [CreateEligibility](docs/Model/CreateEligibility.md)
+- [CreateEligibilityLatlonParameter](docs/Model/CreateEligibilityLatlonParameter.md)
 - [CreateOperator](docs/Model/CreateOperator.md)
 - [CreateTicket](docs/Model/CreateTicket.md)
 - [CreateWorkflow](docs/Model/CreateWorkflow.md)
@@ -210,6 +212,7 @@ Class | Method | HTTP request | Description
 - [ServiceContractSearch](docs/Model/ServiceContractSearch.md)
 - [SetCommercialOfferSectionOffer](docs/Model/SetCommercialOfferSectionOffer.md)
 - [SetCommercialOfferSectionOfferEligibility](docs/Model/SetCommercialOfferSectionOfferEligibility.md)
+- [SetServiceContractVlanRequest](docs/Model/SetServiceContractVlanRequest.md)
 - [SignCommercialOffer](docs/Model/SignCommercialOffer.md)
 - [SignCommercialOffer200Response](docs/Model/SignCommercialOffer200Response.md)
 - [Ticket](docs/Model/Ticket.md)

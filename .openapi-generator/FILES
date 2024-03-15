@@ -24,6 +24,7 @@ docs/Model/CreateCommercialOffer.md
 docs/Model/CreateCommercialOffer201Response.md
 docs/Model/CreateCommercialOfferSection.md
 docs/Model/CreateEligibility.md
+docs/Model/CreateEligibilityLatlonParameter.md
 docs/Model/CreateOperator.md
 docs/Model/CreateTicket.md
 docs/Model/CreateWorkflow.md
@@ -77,6 +78,7 @@ docs/Model/ServiceContractNrc.md
 docs/Model/ServiceContractSearch.md
 docs/Model/SetCommercialOfferSectionOffer.md
 docs/Model/SetCommercialOfferSectionOfferEligibility.md
+docs/Model/SetServiceContractVlanRequest.md
 docs/Model/SignCommercialOffer.md
 docs/Model/SignCommercialOffer200Response.md
 docs/Model/Ticket.md
@@ -113,6 +115,7 @@ lib/Model/CreateCommercialOffer.php
 lib/Model/CreateCommercialOffer201Response.php
 lib/Model/CreateCommercialOfferSection.php
 lib/Model/CreateEligibility.php
+lib/Model/CreateEligibilityLatlonParameter.php
 lib/Model/CreateOperator.php
 lib/Model/CreateTicket.php
 lib/Model/CreateWorkflow.php
@@ -167,6 +170,7 @@ lib/Model/ServiceContractNrc.php
 lib/Model/ServiceContractSearch.php
 lib/Model/SetCommercialOfferSectionOffer.php
 lib/Model/SetCommercialOfferSectionOfferEligibility.php
+lib/Model/SetServiceContractVlanRequest.php
 lib/Model/SignCommercialOffer.php
 lib/Model/SignCommercialOffer200Response.php
 lib/Model/Ticket.php
@@ -180,10 +184,5 @@ lib/Model/UserApiToken.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/ClientLegalEntityContactTest.php
-test/Model/GetPublicAttachments200ResponseTest.php
-test/Model/GetRunningWorkflows200ResponseTest.php
-test/Model/GetRunningWorkflows200ResponseWorkflowsInnerTest.php
-test/Model/ServiceContractCommercialOffersInnerTest.php
-test/Model/ServiceContractNrcTest.php
-test/Model/TicketAttachmentTest.php
+test/Model/CreateEligibilityLatlonParameterTest.php
+test/Model/SetServiceContractVlanRequestTest.php

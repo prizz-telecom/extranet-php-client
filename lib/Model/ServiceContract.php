@@ -62,6 +62,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'create_date' => '\DateTime',
         'last_modified_date' => '\DateTime',
         'status' => 'string',
+        'legal_entity_id' => 'int',
         'client_contract_id' => 'int',
         'subscription_date' => '\DateTime',
         'activation_date' => '\DateTime',
@@ -94,6 +95,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'create_date' => 'date-time',
         'last_modified_date' => 'date-time',
         'status' => null,
+        'legal_entity_id' => null,
         'client_contract_id' => null,
         'subscription_date' => 'date-time',
         'activation_date' => 'date-time',
@@ -124,6 +126,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
 		'create_date' => false,
 		'last_modified_date' => true,
 		'status' => true,
+		'legal_entity_id' => false,
 		'client_contract_id' => false,
 		'subscription_date' => false,
 		'activation_date' => true,
@@ -234,6 +237,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'create_date' => 'createDate',
         'last_modified_date' => 'lastModifiedDate',
         'status' => 'status',
+        'legal_entity_id' => 'legalEntityId',
         'client_contract_id' => 'clientContractId',
         'subscription_date' => 'subscriptionDate',
         'activation_date' => 'activationDate',
@@ -264,6 +268,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'create_date' => 'setCreateDate',
         'last_modified_date' => 'setLastModifiedDate',
         'status' => 'setStatus',
+        'legal_entity_id' => 'setLegalEntityId',
         'client_contract_id' => 'setClientContractId',
         'subscription_date' => 'setSubscriptionDate',
         'activation_date' => 'setActivationDate',
@@ -294,6 +299,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'create_date' => 'getCreateDate',
         'last_modified_date' => 'getLastModifiedDate',
         'status' => 'getStatus',
+        'legal_entity_id' => 'getLegalEntityId',
         'client_contract_id' => 'getClientContractId',
         'subscription_date' => 'getSubscriptionDate',
         'activation_date' => 'getActivationDate',
@@ -375,6 +381,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('create_date', $data ?? [], null);
         $this->setIfExists('last_modified_date', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('legal_entity_id', $data ?? [], null);
         $this->setIfExists('client_contract_id', $data ?? [], null);
         $this->setIfExists('subscription_date', $data ?? [], null);
         $this->setIfExists('activation_date', $data ?? [], null);
@@ -581,6 +588,33 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets legal_entity_id
+     *
+     * @return int|null
+     */
+    public function getLegalEntityId()
+    {
+        return $this->container['legal_entity_id'];
+    }
+
+    /**
+     * Sets legal_entity_id
+     *
+     * @param int|null $legal_entity_id legal_entity_id
+     *
+     * @return self
+     */
+    public function setLegalEntityId($legal_entity_id)
+    {
+        if (is_null($legal_entity_id)) {
+            throw new \InvalidArgumentException('non-nullable legal_entity_id cannot be null');
+        }
+        $this->container['legal_entity_id'] = $legal_entity_id;
 
         return $this;
     }
