@@ -24,7 +24,6 @@ docs/Model/CreateCommercialOffer.md
 docs/Model/CreateCommercialOffer201Response.md
 docs/Model/CreateCommercialOfferSection.md
 docs/Model/CreateEligibility.md
-docs/Model/CreateEligibilityLatlonParameter.md
 docs/Model/CreateOperator.md
 docs/Model/CreateTicket.md
 docs/Model/CreateWorkflow.md
@@ -115,7 +114,6 @@ lib/Model/CreateCommercialOffer.php
 lib/Model/CreateCommercialOffer201Response.php
 lib/Model/CreateCommercialOfferSection.php
 lib/Model/CreateEligibility.php
-lib/Model/CreateEligibilityLatlonParameter.php
 lib/Model/CreateOperator.php
 lib/Model/CreateTicket.php
 lib/Model/CreateWorkflow.php
@@ -184,5 +182,3 @@ lib/Model/UserApiToken.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/CreateEligibilityLatlonParameterTest.php
-test/Model/SetServiceContractVlanRequestTest.php

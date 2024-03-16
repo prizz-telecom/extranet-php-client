@@ -938,16 +938,17 @@ class DefaultApi
      *
      * @param  int $client_id client to test (required)
      * @param  string $address address to test (optional)
-     * @param  CreateEligibilityLatlonParameter $latlon test by latitude longitude (optional)
+     * @param  float $lat latitude for tests by lon,lat (optional)
+     * @param  float $lon longitude for tests by lon,lat (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEligibility'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Infracorp\Extranet\Client\Model\CreateEligibility
      */
-    public function createEligibility($client_id, $address = null, $latlon = null, string $contentType = self::contentTypes['createEligibility'][0])
+    public function createEligibility($client_id, $address = null, $lat = null, $lon = null, string $contentType = self::contentTypes['createEligibility'][0])
     {
-        list($response) = $this->createEligibilityWithHttpInfo($client_id, $address, $latlon, $contentType);
+        list($response) = $this->createEligibilityWithHttpInfo($client_id, $address, $lat, $lon, $contentType);
         return $response;
     }
 
@@ -958,16 +959,17 @@ class DefaultApi
      *
      * @param  int $client_id client to test (required)
      * @param  string $address address to test (optional)
-     * @param  CreateEligibilityLatlonParameter $latlon test by latitude longitude (optional)
+     * @param  float $lat latitude for tests by lon,lat (optional)
+     * @param  float $lon longitude for tests by lon,lat (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEligibility'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Infracorp\Extranet\Client\Model\CreateEligibility, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createEligibilityWithHttpInfo($client_id, $address = null, $latlon = null, string $contentType = self::contentTypes['createEligibility'][0])
+    public function createEligibilityWithHttpInfo($client_id, $address = null, $lat = null, $lon = null, string $contentType = self::contentTypes['createEligibility'][0])
     {
-        $request = $this->createEligibilityRequest($client_id, $address, $latlon, $contentType);
+        $request = $this->createEligibilityRequest($client_id, $address, $lat, $lon, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1084,15 +1086,16 @@ class DefaultApi
      *
      * @param  int $client_id client to test (required)
      * @param  string $address address to test (optional)
-     * @param  CreateEligibilityLatlonParameter $latlon test by latitude longitude (optional)
+     * @param  float $lat latitude for tests by lon,lat (optional)
+     * @param  float $lon longitude for tests by lon,lat (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEligibility'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEligibilityAsync($client_id, $address = null, $latlon = null, string $contentType = self::contentTypes['createEligibility'][0])
+    public function createEligibilityAsync($client_id, $address = null, $lat = null, $lon = null, string $contentType = self::contentTypes['createEligibility'][0])
     {
-        return $this->createEligibilityAsyncWithHttpInfo($client_id, $address, $latlon, $contentType)
+        return $this->createEligibilityAsyncWithHttpInfo($client_id, $address, $lat, $lon, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1107,16 +1110,17 @@ class DefaultApi
      *
      * @param  int $client_id client to test (required)
      * @param  string $address address to test (optional)
-     * @param  CreateEligibilityLatlonParameter $latlon test by latitude longitude (optional)
+     * @param  float $lat latitude for tests by lon,lat (optional)
+     * @param  float $lon longitude for tests by lon,lat (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEligibility'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEligibilityAsyncWithHttpInfo($client_id, $address = null, $latlon = null, string $contentType = self::contentTypes['createEligibility'][0])
+    public function createEligibilityAsyncWithHttpInfo($client_id, $address = null, $lat = null, $lon = null, string $contentType = self::contentTypes['createEligibility'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\CreateEligibility';
-        $request = $this->createEligibilityRequest($client_id, $address, $latlon, $contentType);
+        $request = $this->createEligibilityRequest($client_id, $address, $lat, $lon, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1159,13 +1163,14 @@ class DefaultApi
      *
      * @param  int $client_id client to test (required)
      * @param  string $address address to test (optional)
-     * @param  CreateEligibilityLatlonParameter $latlon test by latitude longitude (optional)
+     * @param  float $lat latitude for tests by lon,lat (optional)
+     * @param  float $lon longitude for tests by lon,lat (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEligibility'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createEligibilityRequest($client_id, $address = null, $latlon = null, string $contentType = self::contentTypes['createEligibility'][0])
+    public function createEligibilityRequest($client_id, $address = null, $lat = null, $lon = null, string $contentType = self::contentTypes['createEligibility'][0])
     {
 
         // verify the required parameter 'client_id' is set
@@ -1174,6 +1179,7 @@ class DefaultApi
                 'Missing the required parameter $client_id when calling createEligibility'
             );
         }
+
 
 
 
@@ -1196,9 +1202,18 @@ class DefaultApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $latlon,
-            'latlon', // param base name
-            'object', // openApiType
+            $lat,
+            'lat', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $lon,
+            'lon', // param base name
+            'number', // openApiType
             'form', // style
             true, // explode
             false // required

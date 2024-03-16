@@ -195,7 +195,7 @@ try {
 ## `createEligibility()`
 
 ```php
-createEligibility($client_id, $address, $latlon): \Infracorp\Extranet\Client\Model\CreateEligibility
+createEligibility($client_id, $address, $lat, $lon): \Infracorp\Extranet\Client\Model\CreateEligibility
 ```
 
 Create Eligibility
@@ -226,10 +226,11 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
 );
 $client_id = 56; // int | client to test
 $address = 'address_example'; // string | address to test
-$latlon = new \Infracorp\Extranet\Client\Model\CreateEligibilityLatlonParameter(); // CreateEligibilityLatlonParameter | test by latitude longitude
+$lat = 3.4; // float | latitude for tests by lon,lat
+$lon = 3.4; // float | longitude for tests by lon,lat
 
 try {
-    $result = $apiInstance->createEligibility($client_id, $address, $latlon);
+    $result = $apiInstance->createEligibility($client_id, $address, $lat, $lon);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createEligibility: ', $e->getMessage(), PHP_EOL;
@@ -242,7 +243,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **client_id** | **int**| client to test | |
 | **address** | **string**| address to test | [optional] |
-| **latlon** | [**CreateEligibilityLatlonParameter**](../Model/.md)| test by latitude longitude | [optional] |
+| **lat** | **float**| latitude for tests by lon,lat | [optional] |
+| **lon** | **float**| longitude for tests by lon,lat | [optional] |
 
 ### Return type
 

@@ -158,7 +158,6 @@ Class | Method | HTTP request | Description
 - [CreateCommercialOffer201Response](docs/Model/CreateCommercialOffer201Response.md)
 - [CreateCommercialOfferSection](docs/Model/CreateCommercialOfferSection.md)
 - [CreateEligibility](docs/Model/CreateEligibility.md)
-- [CreateEligibilityLatlonParameter](docs/Model/CreateEligibilityLatlonParameter.md)
 - [CreateOperator](docs/Model/CreateOperator.md)
 - [CreateTicket](docs/Model/CreateTicket.md)
 - [CreateWorkflow](docs/Model/CreateWorkflow.md)
