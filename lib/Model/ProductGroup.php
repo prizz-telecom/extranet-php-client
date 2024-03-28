@@ -244,11 +244,15 @@ class ProductGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     public const TYPE_EXPRESS = 'express';
     public const TYPE_DISTANCE = 'distance';
     public const TYPE_FIBER_COUNT = 'fiber_count';
+    public const TYPE_EXTREMITIES = 'extremities';
     public const TYPE_EXTREMITY_SITE_A = 'extremity_site_a';
     public const TYPE_EXTREMITY_SITE_B = 'extremity_site_b';
     public const TYPE_RACCO_EVENT = 'racco_event';
     public const TYPE_SUBNET = 'subnet';
     public const TYPE_MAINTENANCE = 'maintenance';
+    public const TYPE_DESSERTE = 'desserte';
+    public const TYPE_VOLUME = 'volume';
+    public const TYPE_NATIONAL = 'national';
 
     /**
      * Gets allowable values of the enum
@@ -268,11 +272,15 @@ class ProductGroup implements ModelInterface, ArrayAccess, \JsonSerializable
             self::TYPE_EXPRESS,
             self::TYPE_DISTANCE,
             self::TYPE_FIBER_COUNT,
+            self::TYPE_EXTREMITIES,
             self::TYPE_EXTREMITY_SITE_A,
             self::TYPE_EXTREMITY_SITE_B,
             self::TYPE_RACCO_EVENT,
             self::TYPE_SUBNET,
             self::TYPE_MAINTENANCE,
+            self::TYPE_DESSERTE,
+            self::TYPE_VOLUME,
+            self::TYPE_NATIONAL,
         ];
     }
 

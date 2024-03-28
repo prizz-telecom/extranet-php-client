@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [ArchivedProcess](docs/Model/ArchivedProcess.md)
 - [Attachment](docs/Model/Attachment.md)
 - [ClientContract](docs/Model/ClientContract.md)
 - [ClientLegalEntity](docs/Model/ClientLegalEntity.md)

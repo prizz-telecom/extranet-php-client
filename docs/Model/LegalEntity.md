@@ -19,6 +19,11 @@ Name | Type | Description | Notes
 **rcs** | **string** |  | [optional]
 **tel** | **string** |  | [optional]
 **email** | **string** |  | [optional]
+**latitude** | **float** |  | [optional]
+**longitude** | **float** |  | [optional]
+**x** | **float** |  | [optional]
+**y** | **float** |  | [optional]
+**projection** | **string** |  | [optional]
 **logo** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

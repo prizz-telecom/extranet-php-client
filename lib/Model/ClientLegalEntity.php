@@ -73,6 +73,11 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rcs' => 'string',
         'tel' => 'string',
         'email' => 'string',
+        'latitude' => 'float',
+        'longitude' => 'float',
+        'x' => 'float',
+        'y' => 'float',
+        'projection' => 'string',
         'arcep_code' => 'string',
         'contacts' => '\Infracorp\Extranet\Client\Model\Contact[]',
         'configured_contacts' => '\Infracorp\Extranet\Client\Model\ClientLegalEntityContact[]',
@@ -103,6 +108,11 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rcs' => null,
         'tel' => null,
         'email' => null,
+        'latitude' => 'float',
+        'longitude' => 'float',
+        'x' => 'float',
+        'y' => 'float',
+        'projection' => null,
         'arcep_code' => null,
         'contacts' => null,
         'configured_contacts' => null,
@@ -131,6 +141,11 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
 		'rcs' => true,
 		'tel' => true,
 		'email' => true,
+		'latitude' => true,
+		'longitude' => true,
+		'x' => true,
+		'y' => true,
+		'projection' => true,
 		'arcep_code' => true,
 		'contacts' => false,
 		'configured_contacts' => false,
@@ -239,6 +254,11 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rcs' => 'rcs',
         'tel' => 'tel',
         'email' => 'email',
+        'latitude' => 'latitude',
+        'longitude' => 'longitude',
+        'x' => 'x',
+        'y' => 'y',
+        'projection' => 'projection',
         'arcep_code' => 'arcepCode',
         'contacts' => 'contacts',
         'configured_contacts' => 'configuredContacts',
@@ -267,6 +287,11 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rcs' => 'setRcs',
         'tel' => 'setTel',
         'email' => 'setEmail',
+        'latitude' => 'setLatitude',
+        'longitude' => 'setLongitude',
+        'x' => 'setX',
+        'y' => 'setY',
+        'projection' => 'setProjection',
         'arcep_code' => 'setArcepCode',
         'contacts' => 'setContacts',
         'configured_contacts' => 'setConfiguredContacts',
@@ -295,6 +320,11 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rcs' => 'getRcs',
         'tel' => 'getTel',
         'email' => 'getEmail',
+        'latitude' => 'getLatitude',
+        'longitude' => 'getLongitude',
+        'x' => 'getX',
+        'y' => 'getY',
+        'projection' => 'getProjection',
         'arcep_code' => 'getArcepCode',
         'contacts' => 'getContacts',
         'configured_contacts' => 'getConfiguredContacts',
@@ -439,6 +469,11 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('rcs', $data ?? [], null);
         $this->setIfExists('tel', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('latitude', $data ?? [], null);
+        $this->setIfExists('longitude', $data ?? [], null);
+        $this->setIfExists('x', $data ?? [], null);
+        $this->setIfExists('y', $data ?? [], null);
+        $this->setIfExists('projection', $data ?? [], null);
         $this->setIfExists('arcep_code', $data ?? [], null);
         $this->setIfExists('contacts', $data ?? [], null);
         $this->setIfExists('configured_contacts', $data ?? [], null);
@@ -1015,6 +1050,176 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
             }
         }
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets latitude
+     *
+     * @return float|null
+     */
+    public function getLatitude()
+    {
+        return $this->container['latitude'];
+    }
+
+    /**
+     * Sets latitude
+     *
+     * @param float|null $latitude latitude
+     *
+     * @return self
+     */
+    public function setLatitude($latitude)
+    {
+        if (is_null($latitude)) {
+            array_push($this->openAPINullablesSetToNull, 'latitude');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('latitude', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['latitude'] = $latitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets longitude
+     *
+     * @return float|null
+     */
+    public function getLongitude()
+    {
+        return $this->container['longitude'];
+    }
+
+    /**
+     * Sets longitude
+     *
+     * @param float|null $longitude longitude
+     *
+     * @return self
+     */
+    public function setLongitude($longitude)
+    {
+        if (is_null($longitude)) {
+            array_push($this->openAPINullablesSetToNull, 'longitude');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('longitude', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['longitude'] = $longitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets x
+     *
+     * @return float|null
+     */
+    public function getX()
+    {
+        return $this->container['x'];
+    }
+
+    /**
+     * Sets x
+     *
+     * @param float|null $x x
+     *
+     * @return self
+     */
+    public function setX($x)
+    {
+        if (is_null($x)) {
+            array_push($this->openAPINullablesSetToNull, 'x');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('x', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['x'] = $x;
+
+        return $this;
+    }
+
+    /**
+     * Gets y
+     *
+     * @return float|null
+     */
+    public function getY()
+    {
+        return $this->container['y'];
+    }
+
+    /**
+     * Sets y
+     *
+     * @param float|null $y y
+     *
+     * @return self
+     */
+    public function setY($y)
+    {
+        if (is_null($y)) {
+            array_push($this->openAPINullablesSetToNull, 'y');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('y', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['y'] = $y;
+
+        return $this;
+    }
+
+    /**
+     * Gets projection
+     *
+     * @return string|null
+     */
+    public function getProjection()
+    {
+        return $this->container['projection'];
+    }
+
+    /**
+     * Sets projection
+     *
+     * @param string|null $projection projection
+     *
+     * @return self
+     */
+    public function setProjection($projection)
+    {
+        if (is_null($projection)) {
+            array_push($this->openAPINullablesSetToNull, 'projection');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('projection', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['projection'] = $projection;
 
         return $this;
     }

@@ -63,6 +63,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'commercial_offer_id' => 'int',
         'commercial_offer_items' => '\Infracorp\Extranet\Client\Model\CommercialOfferItem[]',
         'offer' => '\Infracorp\Extranet\Client\Model\Offer',
+        'service_contract' => '\Infracorp\Extranet\Client\Model\ServiceContract',
         'client_contract' => '\Infracorp\Extranet\Client\Model\ClientContract'
     ];
 
@@ -80,6 +81,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'commercial_offer_id' => null,
         'commercial_offer_items' => null,
         'offer' => null,
+        'service_contract' => null,
         'client_contract' => null
     ];
 
@@ -95,6 +97,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
 		'commercial_offer_id' => false,
 		'commercial_offer_items' => false,
 		'offer' => false,
+		'service_contract' => false,
 		'client_contract' => false
     ];
 
@@ -190,6 +193,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'commercial_offer_id' => 'commercialOfferId',
         'commercial_offer_items' => 'commercialOfferItems',
         'offer' => 'offer',
+        'service_contract' => 'serviceContract',
         'client_contract' => 'clientContract'
     ];
 
@@ -205,6 +209,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'commercial_offer_id' => 'setCommercialOfferId',
         'commercial_offer_items' => 'setCommercialOfferItems',
         'offer' => 'setOffer',
+        'service_contract' => 'setServiceContract',
         'client_contract' => 'setClientContract'
     ];
 
@@ -220,6 +225,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'commercial_offer_id' => 'getCommercialOfferId',
         'commercial_offer_items' => 'getCommercialOfferItems',
         'offer' => 'getOffer',
+        'service_contract' => 'getServiceContract',
         'client_contract' => 'getClientContract'
     ];
 
@@ -351,6 +357,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('commercial_offer_id', $data ?? [], null);
         $this->setIfExists('commercial_offer_items', $data ?? [], null);
         $this->setIfExists('offer', $data ?? [], null);
+        $this->setIfExists('service_contract', $data ?? [], null);
         $this->setIfExists('client_contract', $data ?? [], null);
     }
 
@@ -563,6 +570,33 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable offer cannot be null');
         }
         $this->container['offer'] = $offer;
+
+        return $this;
+    }
+
+    /**
+     * Gets service_contract
+     *
+     * @return \Infracorp\Extranet\Client\Model\ServiceContract|null
+     */
+    public function getServiceContract()
+    {
+        return $this->container['service_contract'];
+    }
+
+    /**
+     * Sets service_contract
+     *
+     * @param \Infracorp\Extranet\Client\Model\ServiceContract|null $service_contract service_contract
+     *
+     * @return self
+     */
+    public function setServiceContract($service_contract)
+    {
+        if (is_null($service_contract)) {
+            throw new \InvalidArgumentException('non-nullable service_contract cannot be null');
+        }
+        $this->container['service_contract'] = $service_contract;
 
         return $this;
     }

@@ -81,6 +81,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_str' => 'string',
         'vat_total' => 'int',
         'vat_total_str' => 'string',
+        'section_names' => 'string',
         'vat_detail' => '\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailInner[]',
         'vat_detail_str' => '\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]',
         'sections' => '\Infracorp\Extranet\Client\Model\CommercialOfferSection[]'
@@ -118,6 +119,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_str' => null,
         'vat_total' => null,
         'vat_total_str' => null,
+        'section_names' => null,
         'vat_detail' => null,
         'vat_detail_str' => null,
         'sections' => null
@@ -153,6 +155,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
 		'total_str' => false,
 		'vat_total' => true,
 		'vat_total_str' => false,
+		'section_names' => false,
 		'vat_detail' => false,
 		'vat_detail_str' => false,
 		'sections' => false
@@ -268,6 +271,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_str' => 'totalStr',
         'vat_total' => 'vatTotal',
         'vat_total_str' => 'vatTotalStr',
+        'section_names' => 'sectionNames',
         'vat_detail' => 'vatDetail',
         'vat_detail_str' => 'vatDetailStr',
         'sections' => 'sections'
@@ -303,6 +307,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_str' => 'setTotalStr',
         'vat_total' => 'setVatTotal',
         'vat_total_str' => 'setVatTotalStr',
+        'section_names' => 'setSectionNames',
         'vat_detail' => 'setVatDetail',
         'vat_detail_str' => 'setVatDetailStr',
         'sections' => 'setSections'
@@ -338,6 +343,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_str' => 'getTotalStr',
         'vat_total' => 'getVatTotal',
         'vat_total_str' => 'getVatTotalStr',
+        'section_names' => 'getSectionNames',
         'vat_detail' => 'getVatDetail',
         'vat_detail_str' => 'getVatDetailStr',
         'sections' => 'getSections'
@@ -489,6 +495,7 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('total_str', $data ?? [], null);
         $this->setIfExists('vat_total', $data ?? [], null);
         $this->setIfExists('vat_total_str', $data ?? [], null);
+        $this->setIfExists('section_names', $data ?? [], null);
         $this->setIfExists('vat_detail', $data ?? [], null);
         $this->setIfExists('vat_detail_str', $data ?? [], null);
         $this->setIfExists('sections', $data ?? [], null);
@@ -1259,6 +1266,33 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable vat_total_str cannot be null');
         }
         $this->container['vat_total_str'] = $vat_total_str;
+
+        return $this;
+    }
+
+    /**
+     * Gets section_names
+     *
+     * @return string|null
+     */
+    public function getSectionNames()
+    {
+        return $this->container['section_names'];
+    }
+
+    /**
+     * Sets section_names
+     *
+     * @param string|null $section_names section_names
+     *
+     * @return self
+     */
+    public function setSectionNames($section_names)
+    {
+        if (is_null($section_names)) {
+            throw new \InvalidArgumentException('non-nullable section_names cannot be null');
+        }
+        $this->container['section_names'] = $section_names;
 
         return $this;
     }

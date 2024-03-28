@@ -5,6 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional]
+**title** | **string** |  | [optional]
+**context** | **string** |  | [optional]
+**entity_id** | **int** |  | [optional]
+**entity_class** | **string** |  | [optional]
 **state** | **string** |  | [optional]
 **html** | **string** |  | [optional]
 **transitions** | [**\Infracorp\Extranet\Client\Model\Transition[]**](Transition.md) |  | [optional]

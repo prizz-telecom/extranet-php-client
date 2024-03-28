@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **total_str** | **string** |  | [optional]
 **vat_total** | **int** |  | [optional]
 **vat_total_str** | **string** |  | [optional]
+**section_names** | **string** |  | [optional]
 **vat_detail** | [**\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailInner[]**](CommercialOfferVatDetailInner.md) |  | [optional]
 **vat_detail_str** | [**\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]**](CommercialOfferVatDetailStrInner.md) |  | [optional]
 **sections** | [**\Infracorp\Extranet\Client\Model\CommercialOfferSection[]**](CommercialOfferSection.md) |  | [optional]

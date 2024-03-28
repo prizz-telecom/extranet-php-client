@@ -476,8 +476,12 @@ class Configuration
                 "description" => "Preview server",
             ],
             [
-                "url" => "http://sourceforge.priv.ithd.fr:8000",
+                "url" => "http://localhost:8000",
                 "description" => "Dev's server",
+            ],
+            [
+                "url" => "https://my.prizz-telecom.fr",
+                "description" => "Production",
             ]
         ];
     }

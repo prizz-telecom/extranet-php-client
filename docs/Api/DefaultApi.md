@@ -2798,7 +2798,7 @@ try {
 ## `getTickets()`
 
 ```php
-getTickets(): \Infracorp\Extranet\Client\Model\Ticket[]
+getTickets($sort_date_creation, $etat, $operator): \Infracorp\Extranet\Client\Model\Ticket[]
 ```
 
 Exploitation Tickets
@@ -2827,9 +2827,12 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$sort_date_creation = 'sort_date_creation_example'; // string
+$etat = 'etat_example'; // string
+$operator = 56; // int
 
 try {
-    $result = $apiInstance->getTickets();
+    $result = $apiInstance->getTickets($sort_date_creation, $etat, $operator);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTickets: ', $e->getMessage(), PHP_EOL;
@@ -2838,7 +2841,11 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sort_date_creation** | **string**|  | [optional] |
+| **etat** | **string**|  | [optional] |
+| **operator** | **int**|  | [optional] |
 
 ### Return type
 
@@ -2925,7 +2932,7 @@ try {
 ## `openTicket()`
 
 ```php
-openTicket($id): \Infracorp\Extranet\Client\Model\CreateTicket
+openTicket($id, $service_id): \Infracorp\Extranet\Client\Model\CreateTicket
 ```
 
 Exploitation Tickets
@@ -2955,9 +2962,10 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     $config
 );
 $id = 56; // int | identifiant de l'opérateur
+$service_id = 56; // int | identifiant du service
 
 try {
-    $result = $apiInstance->openTicket($id);
+    $result = $apiInstance->openTicket($id, $service_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->openTicket: ', $e->getMessage(), PHP_EOL;
@@ -2969,6 +2977,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| identifiant de l&#39;opérateur | |
+| **service_id** | **int**| identifiant du service | [optional] |
 
 ### Return type
 

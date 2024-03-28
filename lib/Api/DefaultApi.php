@@ -13764,6 +13764,9 @@ class DefaultApi
      *
      * Exploitation Tickets
      *
+     * @param  string $sort_date_creation sort_date_creation (optional)
+     * @param  string $etat etat (optional)
+     * @param  int $operator operator (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -13771,9 +13774,9 @@ class DefaultApi
      * @return \Infracorp\Extranet\Client\Model\Ticket[]
      * @deprecated
      */
-    public function getTickets(string $contentType = self::contentTypes['getTickets'][0])
+    public function getTickets($sort_date_creation = null, $etat = null, $operator = null, string $contentType = self::contentTypes['getTickets'][0])
     {
-        list($response) = $this->getTicketsWithHttpInfo($contentType);
+        list($response) = $this->getTicketsWithHttpInfo($sort_date_creation, $etat, $operator, $contentType);
         return $response;
     }
 
@@ -13782,6 +13785,9 @@ class DefaultApi
      *
      * Exploitation Tickets
      *
+     * @param  string $sort_date_creation (optional)
+     * @param  string $etat (optional)
+     * @param  int $operator (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -13789,9 +13795,9 @@ class DefaultApi
      * @return array of \Infracorp\Extranet\Client\Model\Ticket[], HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function getTicketsWithHttpInfo(string $contentType = self::contentTypes['getTickets'][0])
+    public function getTicketsWithHttpInfo($sort_date_creation = null, $etat = null, $operator = null, string $contentType = self::contentTypes['getTickets'][0])
     {
-        $request = $this->getTicketsRequest($contentType);
+        $request = $this->getTicketsRequest($sort_date_creation, $etat, $operator, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13906,15 +13912,18 @@ class DefaultApi
      *
      * Exploitation Tickets
      *
+     * @param  string $sort_date_creation (optional)
+     * @param  string $etat (optional)
+     * @param  int $operator (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function getTicketsAsync(string $contentType = self::contentTypes['getTickets'][0])
+    public function getTicketsAsync($sort_date_creation = null, $etat = null, $operator = null, string $contentType = self::contentTypes['getTickets'][0])
     {
-        return $this->getTicketsAsyncWithHttpInfo($contentType)
+        return $this->getTicketsAsyncWithHttpInfo($sort_date_creation, $etat, $operator, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13927,16 +13936,19 @@ class DefaultApi
      *
      * Exploitation Tickets
      *
+     * @param  string $sort_date_creation (optional)
+     * @param  string $etat (optional)
+     * @param  int $operator (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function getTicketsAsyncWithHttpInfo(string $contentType = self::contentTypes['getTickets'][0])
+    public function getTicketsAsyncWithHttpInfo($sort_date_creation = null, $etat = null, $operator = null, string $contentType = self::contentTypes['getTickets'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\Ticket[]';
-        $request = $this->getTicketsRequest($contentType);
+        $request = $this->getTicketsRequest($sort_date_creation, $etat, $operator, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13977,14 +13989,20 @@ class DefaultApi
     /**
      * Create request for operation 'getTickets'
      *
+     * @param  string $sort_date_creation (optional)
+     * @param  string $etat (optional)
+     * @param  int $operator (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function getTicketsRequest(string $contentType = self::contentTypes['getTickets'][0])
+    public function getTicketsRequest($sort_date_creation = null, $etat = null, $operator = null, string $contentType = self::contentTypes['getTickets'][0])
     {
+
+
+
 
 
         $resourcePath = '/external-api/v2/exploitation/tickets';
@@ -13994,6 +14012,33 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sort_date_creation,
+            'sort[date_creation]', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $etat,
+            'etat', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $operator,
+            'operator', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
 
@@ -14382,6 +14427,7 @@ class DefaultApi
      * Exploitation Tickets
      *
      * @param  int $id identifiant de l&#39;opérateur (required)
+     * @param  int $service_id identifiant du service (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['openTicket'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -14389,9 +14435,9 @@ class DefaultApi
      * @return \Infracorp\Extranet\Client\Model\CreateTicket
      * @deprecated
      */
-    public function openTicket($id, string $contentType = self::contentTypes['openTicket'][0])
+    public function openTicket($id, $service_id = null, string $contentType = self::contentTypes['openTicket'][0])
     {
-        list($response) = $this->openTicketWithHttpInfo($id, $contentType);
+        list($response) = $this->openTicketWithHttpInfo($id, $service_id, $contentType);
         return $response;
     }
 
@@ -14401,6 +14447,7 @@ class DefaultApi
      * Exploitation Tickets
      *
      * @param  int $id identifiant de l&#39;opérateur (required)
+     * @param  int $service_id identifiant du service (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['openTicket'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -14408,9 +14455,9 @@ class DefaultApi
      * @return array of \Infracorp\Extranet\Client\Model\CreateTicket, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function openTicketWithHttpInfo($id, string $contentType = self::contentTypes['openTicket'][0])
+    public function openTicketWithHttpInfo($id, $service_id = null, string $contentType = self::contentTypes['openTicket'][0])
     {
-        $request = $this->openTicketRequest($id, $contentType);
+        $request = $this->openTicketRequest($id, $service_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14526,15 +14573,16 @@ class DefaultApi
      * Exploitation Tickets
      *
      * @param  int $id identifiant de l&#39;opérateur (required)
+     * @param  int $service_id identifiant du service (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['openTicket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function openTicketAsync($id, string $contentType = self::contentTypes['openTicket'][0])
+    public function openTicketAsync($id, $service_id = null, string $contentType = self::contentTypes['openTicket'][0])
     {
-        return $this->openTicketAsyncWithHttpInfo($id, $contentType)
+        return $this->openTicketAsyncWithHttpInfo($id, $service_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14548,16 +14596,17 @@ class DefaultApi
      * Exploitation Tickets
      *
      * @param  int $id identifiant de l&#39;opérateur (required)
+     * @param  int $service_id identifiant du service (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['openTicket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function openTicketAsyncWithHttpInfo($id, string $contentType = self::contentTypes['openTicket'][0])
+    public function openTicketAsyncWithHttpInfo($id, $service_id = null, string $contentType = self::contentTypes['openTicket'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\CreateTicket';
-        $request = $this->openTicketRequest($id, $contentType);
+        $request = $this->openTicketRequest($id, $service_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14599,13 +14648,14 @@ class DefaultApi
      * Create request for operation 'openTicket'
      *
      * @param  int $id identifiant de l&#39;opérateur (required)
+     * @param  int $service_id identifiant du service (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['openTicket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function openTicketRequest($id, string $contentType = self::contentTypes['openTicket'][0])
+    public function openTicketRequest($id, $service_id = null, string $contentType = self::contentTypes['openTicket'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -14616,6 +14666,7 @@ class DefaultApi
         }
 
 
+
         $resourcePath = '/external-api/v2/exploitation/operator/{id}/tickets';
         $formParams = [];
         $queryParams = [];
@@ -14623,6 +14674,15 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $service_id,
+            'serviceId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
         // path params

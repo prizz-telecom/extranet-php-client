@@ -23,6 +23,11 @@ Name | Type | Description | Notes
 **postal_code** | **string** |  | [optional]
 **city_name** | **string** |  | [optional]
 **insee_code** | **string** |  | [optional]
+**latitude** | **float** |  | [optional]
+**longitude** | **float** |  | [optional]
+**x** | **float** |  | [optional]
+**y** | **float** |  | [optional]
+**projection** | **string** |  | [optional]
 **service_contract_id** | **int** |  | [optional]
 **base_item_id** | **int** |  | [optional]
 **billed** | **bool** |  | [optional]
@@ -31,5 +36,6 @@ Name | Type | Description | Notes
 **va_trate** | **float** |  | [optional]
 **commercial_code** | **string** |  | [optional]
 **description** | **string** |  | [optional]
+**type** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

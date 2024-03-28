@@ -58,6 +58,10 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'int',
+        'title' => 'string',
+        'context' => 'string',
+        'entity_id' => 'int',
+        'entity_class' => 'string',
         'state' => 'string',
         'html' => 'string',
         'transitions' => '\Infracorp\Extranet\Client\Model\Transition[]'
@@ -72,6 +76,10 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
+        'title' => null,
+        'context' => null,
+        'entity_id' => null,
+        'entity_class' => null,
         'state' => null,
         'html' => null,
         'transitions' => null
@@ -84,6 +92,10 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
+		'title' => false,
+		'context' => false,
+		'entity_id' => false,
+		'entity_class' => false,
 		'state' => false,
 		'html' => false,
 		'transitions' => false
@@ -176,6 +188,10 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
+        'title' => 'title',
+        'context' => 'context',
+        'entity_id' => 'entityId',
+        'entity_class' => 'entityClass',
         'state' => 'state',
         'html' => 'html',
         'transitions' => 'transitions'
@@ -188,6 +204,10 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
+        'title' => 'setTitle',
+        'context' => 'setContext',
+        'entity_id' => 'setEntityId',
+        'entity_class' => 'setEntityClass',
         'state' => 'setState',
         'html' => 'setHtml',
         'transitions' => 'setTransitions'
@@ -200,6 +220,10 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
+        'title' => 'getTitle',
+        'context' => 'getContext',
+        'entity_id' => 'getEntityId',
+        'entity_class' => 'getEntityClass',
         'state' => 'getState',
         'html' => 'getHtml',
         'transitions' => 'getTransitions'
@@ -263,6 +287,10 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('title', $data ?? [], null);
+        $this->setIfExists('context', $data ?? [], null);
+        $this->setIfExists('entity_id', $data ?? [], null);
+        $this->setIfExists('entity_class', $data ?? [], null);
         $this->setIfExists('state', $data ?? [], null);
         $this->setIfExists('html', $data ?? [], null);
         $this->setIfExists('transitions', $data ?? [], null);
@@ -333,6 +361,114 @@ class Workflow implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string|null $title title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        if (is_null($title)) {
+            throw new \InvalidArgumentException('non-nullable title cannot be null');
+        }
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets context
+     *
+     * @return string|null
+     */
+    public function getContext()
+    {
+        return $this->container['context'];
+    }
+
+    /**
+     * Sets context
+     *
+     * @param string|null $context context
+     *
+     * @return self
+     */
+    public function setContext($context)
+    {
+        if (is_null($context)) {
+            throw new \InvalidArgumentException('non-nullable context cannot be null');
+        }
+        $this->container['context'] = $context;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_id
+     *
+     * @return int|null
+     */
+    public function getEntityId()
+    {
+        return $this->container['entity_id'];
+    }
+
+    /**
+     * Sets entity_id
+     *
+     * @param int|null $entity_id entity_id
+     *
+     * @return self
+     */
+    public function setEntityId($entity_id)
+    {
+        if (is_null($entity_id)) {
+            throw new \InvalidArgumentException('non-nullable entity_id cannot be null');
+        }
+        $this->container['entity_id'] = $entity_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_class
+     *
+     * @return string|null
+     */
+    public function getEntityClass()
+    {
+        return $this->container['entity_class'];
+    }
+
+    /**
+     * Sets entity_class
+     *
+     * @param string|null $entity_class entity_class
+     *
+     * @return self
+     */
+    public function setEntityClass($entity_class)
+    {
+        if (is_null($entity_class)) {
+            throw new \InvalidArgumentException('non-nullable entity_class cannot be null');
+        }
+        $this->container['entity_class'] = $entity_class;
 
         return $this;
     }

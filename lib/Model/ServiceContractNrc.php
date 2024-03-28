@@ -76,6 +76,11 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         'postal_code' => 'string',
         'city_name' => 'string',
         'insee_code' => 'string',
+        'latitude' => 'float',
+        'longitude' => 'float',
+        'x' => 'float',
+        'y' => 'float',
+        'projection' => 'string',
         'service_contract_id' => 'int',
         'base_item_id' => 'int',
         'billed' => 'bool',
@@ -83,7 +88,8 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         'price_str' => 'string',
         'va_trate' => 'float',
         'commercial_code' => 'string',
-        'description' => 'string'
+        'description' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -113,6 +119,11 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         'postal_code' => null,
         'city_name' => null,
         'insee_code' => null,
+        'latitude' => 'float',
+        'longitude' => 'float',
+        'x' => 'float',
+        'y' => 'float',
+        'projection' => null,
         'service_contract_id' => null,
         'base_item_id' => null,
         'billed' => null,
@@ -120,7 +131,8 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         'price_str' => null,
         'va_trate' => 'float',
         'commercial_code' => null,
-        'description' => null
+        'description' => null,
+        'type' => null
     ];
 
     /**
@@ -148,14 +160,20 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
 		'postal_code' => true,
 		'city_name' => true,
 		'insee_code' => true,
+		'latitude' => true,
+		'longitude' => true,
+		'x' => true,
+		'y' => true,
+		'projection' => true,
 		'service_contract_id' => false,
-		'base_item_id' => false,
+		'base_item_id' => true,
 		'billed' => false,
 		'price' => true,
 		'price_str' => true,
 		'va_trate' => true,
 		'commercial_code' => false,
-		'description' => true
+		'description' => true,
+		'type' => true
     ];
 
     /**
@@ -263,6 +281,11 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         'postal_code' => 'postalCode',
         'city_name' => 'cityName',
         'insee_code' => 'inseeCode',
+        'latitude' => 'latitude',
+        'longitude' => 'longitude',
+        'x' => 'x',
+        'y' => 'y',
+        'projection' => 'projection',
         'service_contract_id' => 'serviceContractId',
         'base_item_id' => 'baseItemId',
         'billed' => 'billed',
@@ -270,7 +293,8 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         'price_str' => 'priceStr',
         'va_trate' => 'VATrate',
         'commercial_code' => 'commercialCode',
-        'description' => 'description'
+        'description' => 'description',
+        'type' => 'type'
     ];
 
     /**
@@ -298,6 +322,11 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         'postal_code' => 'setPostalCode',
         'city_name' => 'setCityName',
         'insee_code' => 'setInseeCode',
+        'latitude' => 'setLatitude',
+        'longitude' => 'setLongitude',
+        'x' => 'setX',
+        'y' => 'setY',
+        'projection' => 'setProjection',
         'service_contract_id' => 'setServiceContractId',
         'base_item_id' => 'setBaseItemId',
         'billed' => 'setBilled',
@@ -305,7 +334,8 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         'price_str' => 'setPriceStr',
         'va_trate' => 'setVaTrate',
         'commercial_code' => 'setCommercialCode',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
+        'type' => 'setType'
     ];
 
     /**
@@ -333,6 +363,11 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         'postal_code' => 'getPostalCode',
         'city_name' => 'getCityName',
         'insee_code' => 'getInseeCode',
+        'latitude' => 'getLatitude',
+        'longitude' => 'getLongitude',
+        'x' => 'getX',
+        'y' => 'getY',
+        'projection' => 'getProjection',
         'service_contract_id' => 'getServiceContractId',
         'base_item_id' => 'getBaseItemId',
         'billed' => 'getBilled',
@@ -340,7 +375,8 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         'price_str' => 'getPriceStr',
         'va_trate' => 'getVaTrate',
         'commercial_code' => 'getCommercialCode',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
+        'type' => 'getType'
     ];
 
     /**
@@ -438,6 +474,11 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('postal_code', $data ?? [], null);
         $this->setIfExists('city_name', $data ?? [], null);
         $this->setIfExists('insee_code', $data ?? [], null);
+        $this->setIfExists('latitude', $data ?? [], null);
+        $this->setIfExists('longitude', $data ?? [], null);
+        $this->setIfExists('x', $data ?? [], null);
+        $this->setIfExists('y', $data ?? [], null);
+        $this->setIfExists('projection', $data ?? [], null);
         $this->setIfExists('service_contract_id', $data ?? [], null);
         $this->setIfExists('base_item_id', $data ?? [], null);
         $this->setIfExists('billed', $data ?? [], null);
@@ -446,6 +487,7 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('va_trate', $data ?? [], null);
         $this->setIfExists('commercial_code', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -1114,6 +1156,176 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
+     * Gets latitude
+     *
+     * @return float|null
+     */
+    public function getLatitude()
+    {
+        return $this->container['latitude'];
+    }
+
+    /**
+     * Sets latitude
+     *
+     * @param float|null $latitude latitude
+     *
+     * @return self
+     */
+    public function setLatitude($latitude)
+    {
+        if (is_null($latitude)) {
+            array_push($this->openAPINullablesSetToNull, 'latitude');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('latitude', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['latitude'] = $latitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets longitude
+     *
+     * @return float|null
+     */
+    public function getLongitude()
+    {
+        return $this->container['longitude'];
+    }
+
+    /**
+     * Sets longitude
+     *
+     * @param float|null $longitude longitude
+     *
+     * @return self
+     */
+    public function setLongitude($longitude)
+    {
+        if (is_null($longitude)) {
+            array_push($this->openAPINullablesSetToNull, 'longitude');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('longitude', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['longitude'] = $longitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets x
+     *
+     * @return float|null
+     */
+    public function getX()
+    {
+        return $this->container['x'];
+    }
+
+    /**
+     * Sets x
+     *
+     * @param float|null $x x
+     *
+     * @return self
+     */
+    public function setX($x)
+    {
+        if (is_null($x)) {
+            array_push($this->openAPINullablesSetToNull, 'x');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('x', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['x'] = $x;
+
+        return $this;
+    }
+
+    /**
+     * Gets y
+     *
+     * @return float|null
+     */
+    public function getY()
+    {
+        return $this->container['y'];
+    }
+
+    /**
+     * Sets y
+     *
+     * @param float|null $y y
+     *
+     * @return self
+     */
+    public function setY($y)
+    {
+        if (is_null($y)) {
+            array_push($this->openAPINullablesSetToNull, 'y');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('y', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['y'] = $y;
+
+        return $this;
+    }
+
+    /**
+     * Gets projection
+     *
+     * @return string|null
+     */
+    public function getProjection()
+    {
+        return $this->container['projection'];
+    }
+
+    /**
+     * Sets projection
+     *
+     * @param string|null $projection projection
+     *
+     * @return self
+     */
+    public function setProjection($projection)
+    {
+        if (is_null($projection)) {
+            array_push($this->openAPINullablesSetToNull, 'projection');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('projection', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['projection'] = $projection;
+
+        return $this;
+    }
+
+    /**
      * Gets service_contract_id
      *
      * @return int|null
@@ -1160,7 +1372,14 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setBaseItemId($base_item_id)
     {
         if (is_null($base_item_id)) {
-            throw new \InvalidArgumentException('non-nullable base_item_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'base_item_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('base_item_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['base_item_id'] = $base_item_id;
 
@@ -1353,6 +1572,40 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

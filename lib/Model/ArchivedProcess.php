@@ -1,6 +1,6 @@
 <?php
 /**
- * CommercialOfferSearch
+ * ArchivedProcess
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * CommercialOfferSearch Class Doc Comment
+ * ArchivedProcess Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSerializable
+class ArchivedProcess implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CommercialOfferSearch';
+    protected static $openAPIModelName = 'ArchivedProcess';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,15 +57,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'index' => 'string',
-        'query' => 'string',
-        'id' => 'string',
-        'legal_entity_id' => 'string',
-        'client_legal_entity_id' => 'string',
-        'name' => 'string',
-        'notes' => 'string',
-        'create_date' => '\DateTime',
-        'section_names' => 'string'
+        'id' => 'int',
+        'lib' => 'string',
+        'state' => 'string',
+        'status_code' => 'int',
+        'create_date' => 'string',
+        'process_class' => 'string'
     ];
 
     /**
@@ -76,15 +73,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'index' => null,
-        'query' => null,
         'id' => null,
-        'legal_entity_id' => null,
-        'client_legal_entity_id' => null,
-        'name' => null,
-        'notes' => null,
-        'create_date' => 'date-time',
-        'section_names' => null
+        'lib' => null,
+        'state' => null,
+        'status_code' => null,
+        'create_date' => null,
+        'process_class' => null
     ];
 
     /**
@@ -93,15 +87,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'index' => false,
-		'query' => false,
-		'id' => false,
-		'legal_entity_id' => false,
-		'client_legal_entity_id' => false,
-		'name' => false,
-		'notes' => true,
-		'create_date' => true,
-		'section_names' => true
+        'id' => true,
+		'lib' => true,
+		'state' => true,
+		'status_code' => true,
+		'create_date' => false,
+		'process_class' => true
     ];
 
     /**
@@ -190,15 +181,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'index' => 'index',
-        'query' => 'query',
         'id' => 'id',
-        'legal_entity_id' => 'legalEntityId',
-        'client_legal_entity_id' => 'clientLegalEntityId',
-        'name' => 'name',
-        'notes' => 'notes',
-        'create_date' => 'createDate',
-        'section_names' => 'sectionNames'
+        'lib' => 'lib',
+        'state' => 'state',
+        'status_code' => 'status_code',
+        'create_date' => 'create_date',
+        'process_class' => 'process_class'
     ];
 
     /**
@@ -207,15 +195,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'index' => 'setIndex',
-        'query' => 'setQuery',
         'id' => 'setId',
-        'legal_entity_id' => 'setLegalEntityId',
-        'client_legal_entity_id' => 'setClientLegalEntityId',
-        'name' => 'setName',
-        'notes' => 'setNotes',
+        'lib' => 'setLib',
+        'state' => 'setState',
+        'status_code' => 'setStatusCode',
         'create_date' => 'setCreateDate',
-        'section_names' => 'setSectionNames'
+        'process_class' => 'setProcessClass'
     ];
 
     /**
@@ -224,15 +209,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'index' => 'getIndex',
-        'query' => 'getQuery',
         'id' => 'getId',
-        'legal_entity_id' => 'getLegalEntityId',
-        'client_legal_entity_id' => 'getClientLegalEntityId',
-        'name' => 'getName',
-        'notes' => 'getNotes',
+        'lib' => 'getLib',
+        'state' => 'getState',
+        'status_code' => 'getStatusCode',
         'create_date' => 'getCreateDate',
-        'section_names' => 'getSectionNames'
+        'process_class' => 'getProcessClass'
     ];
 
     /**
@@ -292,15 +274,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('index', $data ?? [], null);
-        $this->setIfExists('query', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('legal_entity_id', $data ?? [], null);
-        $this->setIfExists('client_legal_entity_id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('notes', $data ?? [], null);
+        $this->setIfExists('lib', $data ?? [], null);
+        $this->setIfExists('state', $data ?? [], null);
+        $this->setIfExists('status_code', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
-        $this->setIfExists('section_names', $data ?? [], null);
+        $this->setIfExists('process_class', $data ?? [], null);
     }
 
     /**
@@ -346,63 +325,9 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets index
-     *
-     * @return string|null
-     */
-    public function getIndex()
-    {
-        return $this->container['index'];
-    }
-
-    /**
-     * Sets index
-     *
-     * @param string|null $index index
-     *
-     * @return self
-     */
-    public function setIndex($index)
-    {
-        if (is_null($index)) {
-            throw new \InvalidArgumentException('non-nullable index cannot be null');
-        }
-        $this->container['index'] = $index;
-
-        return $this;
-    }
-
-    /**
-     * Gets query
-     *
-     * @return string|null
-     */
-    public function getQuery()
-    {
-        return $this->container['query'];
-    }
-
-    /**
-     * Sets query
-     *
-     * @param string|null $query query
-     *
-     * @return self
-     */
-    public function setQuery($query)
-    {
-        if (is_null($query)) {
-            throw new \InvalidArgumentException('non-nullable query cannot be null');
-        }
-        $this->container['query'] = $query;
-
-        return $this;
-    }
-
-    /**
      * Gets id
      *
-     * @return string|null
+     * @return int|null
      */
     public function getId()
     {
@@ -412,14 +337,21 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets id
      *
-     * @param string|null $id id
+     * @param int|null $id id
      *
      * @return self
      */
     public function setId($id)
     {
         if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['id'] = $id;
 
@@ -427,116 +359,103 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets legal_entity_id
+     * Gets lib
      *
      * @return string|null
      */
-    public function getLegalEntityId()
+    public function getLib()
     {
-        return $this->container['legal_entity_id'];
+        return $this->container['lib'];
     }
 
     /**
-     * Sets legal_entity_id
+     * Sets lib
      *
-     * @param string|null $legal_entity_id legal_entity_id
+     * @param string|null $lib lib
      *
      * @return self
      */
-    public function setLegalEntityId($legal_entity_id)
+    public function setLib($lib)
     {
-        if (is_null($legal_entity_id)) {
-            throw new \InvalidArgumentException('non-nullable legal_entity_id cannot be null');
-        }
-        $this->container['legal_entity_id'] = $legal_entity_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets client_legal_entity_id
-     *
-     * @return string|null
-     */
-    public function getClientLegalEntityId()
-    {
-        return $this->container['client_legal_entity_id'];
-    }
-
-    /**
-     * Sets client_legal_entity_id
-     *
-     * @param string|null $client_legal_entity_id client_legal_entity_id
-     *
-     * @return self
-     */
-    public function setClientLegalEntityId($client_legal_entity_id)
-    {
-        if (is_null($client_legal_entity_id)) {
-            throw new \InvalidArgumentException('non-nullable client_legal_entity_id cannot be null');
-        }
-        $this->container['client_legal_entity_id'] = $client_legal_entity_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets notes
-     *
-     * @return string|null
-     */
-    public function getNotes()
-    {
-        return $this->container['notes'];
-    }
-
-    /**
-     * Sets notes
-     *
-     * @param string|null $notes notes
-     *
-     * @return self
-     */
-    public function setNotes($notes)
-    {
-        if (is_null($notes)) {
-            array_push($this->openAPINullablesSetToNull, 'notes');
+        if (is_null($lib)) {
+            array_push($this->openAPINullablesSetToNull, 'lib');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('notes', $nullablesSetToNull);
+            $index = array_search('lib', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['notes'] = $notes;
+        $this->container['lib'] = $lib;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return string|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param string|null $state state
+     *
+     * @return self
+     */
+    public function setState($state)
+    {
+        if (is_null($state)) {
+            array_push($this->openAPINullablesSetToNull, 'state');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('state', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets status_code
+     *
+     * @return int|null
+     */
+    public function getStatusCode()
+    {
+        return $this->container['status_code'];
+    }
+
+    /**
+     * Sets status_code
+     *
+     * @param int|null $status_code status_code
+     *
+     * @return self
+     */
+    public function setStatusCode($status_code)
+    {
+        if (is_null($status_code)) {
+            array_push($this->openAPINullablesSetToNull, 'status_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('status_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['status_code'] = $status_code;
 
         return $this;
     }
@@ -544,7 +463,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets create_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreateDate()
     {
@@ -554,21 +473,14 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets create_date
      *
-     * @param \DateTime|null $create_date create_date
+     * @param string|null $create_date create_date
      *
      * @return self
      */
     public function setCreateDate($create_date)
     {
         if (is_null($create_date)) {
-            array_push($this->openAPINullablesSetToNull, 'create_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('create_date', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
         }
         $this->container['create_date'] = $create_date;
 
@@ -576,35 +488,35 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets section_names
+     * Gets process_class
      *
      * @return string|null
      */
-    public function getSectionNames()
+    public function getProcessClass()
     {
-        return $this->container['section_names'];
+        return $this->container['process_class'];
     }
 
     /**
-     * Sets section_names
+     * Sets process_class
      *
-     * @param string|null $section_names section_names
+     * @param string|null $process_class process_class
      *
      * @return self
      */
-    public function setSectionNames($section_names)
+    public function setProcessClass($process_class)
     {
-        if (is_null($section_names)) {
-            array_push($this->openAPINullablesSetToNull, 'section_names');
+        if (is_null($process_class)) {
+            array_push($this->openAPINullablesSetToNull, 'process_class');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('section_names', $nullablesSetToNull);
+            $index = array_search('process_class', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['section_names'] = $section_names;
+        $this->container['process_class'] = $process_class;
 
         return $this;
     }

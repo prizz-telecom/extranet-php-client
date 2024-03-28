@@ -64,7 +64,8 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_resolution' => 'string',
         'date_gtr' => 'string',
         'etat' => 'string',
-        'running_workflows' => '\Infracorp\Extranet\Client\Model\RunningProcess[]'
+        'running_workflows' => '\Infracorp\Extranet\Client\Model\RunningProcess[]',
+        'archived_workflows' => '\Infracorp\Extranet\Client\Model\RunningProcess[]'
     ];
 
     /**
@@ -82,7 +83,8 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_resolution' => null,
         'date_gtr' => null,
         'etat' => null,
-        'running_workflows' => null
+        'running_workflows' => null,
+        'archived_workflows' => null
     ];
 
     /**
@@ -98,7 +100,8 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
 		'date_resolution' => true,
 		'date_gtr' => true,
 		'etat' => true,
-		'running_workflows' => false
+		'running_workflows' => false,
+		'archived_workflows' => false
     ];
 
     /**
@@ -194,7 +197,8 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_resolution' => 'date_resolution',
         'date_gtr' => 'date_gtr',
         'etat' => 'etat',
-        'running_workflows' => 'running_workflows'
+        'running_workflows' => 'running_workflows',
+        'archived_workflows' => 'archived_workflows'
     ];
 
     /**
@@ -210,7 +214,8 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_resolution' => 'setDateResolution',
         'date_gtr' => 'setDateGtr',
         'etat' => 'setEtat',
-        'running_workflows' => 'setRunningWorkflows'
+        'running_workflows' => 'setRunningWorkflows',
+        'archived_workflows' => 'setArchivedWorkflows'
     ];
 
     /**
@@ -226,7 +231,8 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_resolution' => 'getDateResolution',
         'date_gtr' => 'getDateGtr',
         'etat' => 'getEtat',
-        'running_workflows' => 'getRunningWorkflows'
+        'running_workflows' => 'getRunningWorkflows',
+        'archived_workflows' => 'getArchivedWorkflows'
     ];
 
     /**
@@ -294,6 +300,7 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('date_gtr', $data ?? [], null);
         $this->setIfExists('etat', $data ?? [], null);
         $this->setIfExists('running_workflows', $data ?? [], null);
+        $this->setIfExists('archived_workflows', $data ?? [], null);
     }
 
     /**
@@ -599,6 +606,33 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable running_workflows cannot be null');
         }
         $this->container['running_workflows'] = $running_workflows;
+
+        return $this;
+    }
+
+    /**
+     * Gets archived_workflows
+     *
+     * @return \Infracorp\Extranet\Client\Model\RunningProcess[]|null
+     */
+    public function getArchivedWorkflows()
+    {
+        return $this->container['archived_workflows'];
+    }
+
+    /**
+     * Sets archived_workflows
+     *
+     * @param \Infracorp\Extranet\Client\Model\RunningProcess[]|null $archived_workflows archived_workflows
+     *
+     * @return self
+     */
+    public function setArchivedWorkflows($archived_workflows)
+    {
+        if (is_null($archived_workflows)) {
+            throw new \InvalidArgumentException('non-nullable archived_workflows cannot be null');
+        }
+        $this->container['archived_workflows'] = $archived_workflows;
 
         return $this;
     }

@@ -4,6 +4,7 @@
 README.md
 composer.json
 docs/Api/DefaultApi.md
+docs/Model/ArchivedProcess.md
 docs/Model/Attachment.md
 docs/Model/ClientContract.md
 docs/Model/ClientLegalEntity.md
@@ -94,6 +95,7 @@ lib/Api/DefaultApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
+lib/Model/ArchivedProcess.php
 lib/Model/Attachment.php
 lib/Model/ClientContract.php
 lib/Model/ClientLegalEntity.php
@@ -182,3 +184,4 @@ lib/Model/UserApiToken.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/ArchivedProcessTest.php

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **ref** | **string** |  | [optional]
 **create_date** | **\DateTime** |  | [optional]
 **notes** | **string** |  | [optional]
+**section_names** | **string** |  | [optional]
 **status** | **string** |  | [optional]
 **ref_client** | **string** |  | [optional]
 **description** | **string** |  | [optional]
