@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional]
 **name** | **string** |  | [optional]
 **commercial_offer_id** | **int** |  | [optional]
+**client_reference** | **string** |  | [optional]
 **commercial_offer_items** | [**\Infracorp\Extranet\Client\Model\CommercialOfferItem[]**](CommercialOfferItem.md) |  | [optional]
 **offer** | [**\Infracorp\Extranet\Client\Model\Offer**](Offer.md) |  | [optional]
 **service_contract** | [**\Infracorp\Extranet\Client\Model\ServiceContract**](ServiceContract.md) |  | [optional]

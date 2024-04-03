@@ -58,6 +58,7 @@ class CreateCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'name' => 'string',
+        'client_reference' => 'string',
         'client_contract_id' => 'int'
     ];
 
@@ -70,6 +71,7 @@ class CreateCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'name' => null,
+        'client_reference' => null,
         'client_contract_id' => null
     ];
 
@@ -80,6 +82,7 @@ class CreateCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
       */
     protected static array $openAPINullables = [
         'name' => false,
+		'client_reference' => false,
 		'client_contract_id' => false
     ];
 
@@ -170,6 +173,7 @@ class CreateCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'client_reference' => 'clientReference',
         'client_contract_id' => 'clientContractId'
     ];
 
@@ -180,6 +184,7 @@ class CreateCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'name' => 'setName',
+        'client_reference' => 'setClientReference',
         'client_contract_id' => 'setClientContractId'
     ];
 
@@ -190,6 +195,7 @@ class CreateCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'name' => 'getName',
+        'client_reference' => 'getClientReference',
         'client_contract_id' => 'getClientContractId'
     ];
 
@@ -251,6 +257,7 @@ class CreateCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
     public function __construct(array $data = null)
     {
         $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('client_reference', $data ?? [], null);
         $this->setIfExists('client_contract_id', $data ?? [], null);
     }
 
@@ -319,6 +326,33 @@ class CreateCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
             throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_reference
+     *
+     * @return string|null
+     */
+    public function getClientReference()
+    {
+        return $this->container['client_reference'];
+    }
+
+    /**
+     * Sets client_reference
+     *
+     * @param string|null $client_reference client_reference
+     *
+     * @return self
+     */
+    public function setClientReference($client_reference)
+    {
+        if (is_null($client_reference)) {
+            throw new \InvalidArgumentException('non-nullable client_reference cannot be null');
+        }
+        $this->container['client_reference'] = $client_reference;
 
         return $this;
     }

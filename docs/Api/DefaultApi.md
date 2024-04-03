@@ -2589,7 +2589,7 @@ try {
 ## `getServiceContracts()`
 
 ```php
-getServiceContracts($page, $items_per_page, $sort_id, $legal_entity_id): \Infracorp\Extranet\Client\Model\GetServiceContracts200Response
+getServiceContracts($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id): \Infracorp\Extranet\Client\Model\GetServiceContracts200Response
 ```
 
 Service Contracts
@@ -2621,10 +2621,12 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
 $page = 56; // int
 $items_per_page = 56; // int
 $sort_id = 'sort_id_example'; // string
+$sort_status = 'sort_status_example'; // string
+$status = 'status_example'; // string
 $legal_entity_id = 56; // int
 
 try {
-    $result = $apiInstance->getServiceContracts($page, $items_per_page, $sort_id, $legal_entity_id);
+    $result = $apiInstance->getServiceContracts($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getServiceContracts: ', $e->getMessage(), PHP_EOL;
@@ -2638,6 +2640,8 @@ try {
 | **page** | **int**|  | [optional] |
 | **items_per_page** | **int**|  | [optional] |
 | **sort_id** | **string**|  | [optional] |
+| **sort_status** | **string**|  | [optional] |
+| **status** | **string**|  | [optional] |
 | **legal_entity_id** | **int**|  | [optional] |
 
 ### Return type
@@ -2798,7 +2802,7 @@ try {
 ## `getTickets()`
 
 ```php
-getTickets($sort_date_creation, $etat, $operator): \Infracorp\Extranet\Client\Model\Ticket[]
+getTickets($sort_date_creation, $etat, $operator, $show_archived): \Infracorp\Extranet\Client\Model\Ticket[]
 ```
 
 Exploitation Tickets
@@ -2830,9 +2834,10 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
 $sort_date_creation = 'sort_date_creation_example'; // string
 $etat = 'etat_example'; // string
 $operator = 56; // int
+$show_archived = false; // bool
 
 try {
-    $result = $apiInstance->getTickets($sort_date_creation, $etat, $operator);
+    $result = $apiInstance->getTickets($sort_date_creation, $etat, $operator, $show_archived);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTickets: ', $e->getMessage(), PHP_EOL;
@@ -2846,6 +2851,7 @@ try {
 | **sort_date_creation** | **string**|  | [optional] |
 | **etat** | **string**|  | [optional] |
 | **operator** | **int**|  | [optional] |
+| **show_archived** | **bool**|  | [optional] [default to false] |
 
 ### Return type
 

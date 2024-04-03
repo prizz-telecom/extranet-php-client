@@ -61,6 +61,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'int',
         'name' => 'string',
         'commercial_offer_id' => 'int',
+        'client_reference' => 'string',
         'commercial_offer_items' => '\Infracorp\Extranet\Client\Model\CommercialOfferItem[]',
         'offer' => '\Infracorp\Extranet\Client\Model\Offer',
         'service_contract' => '\Infracorp\Extranet\Client\Model\ServiceContract',
@@ -79,6 +80,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => null,
         'name' => null,
         'commercial_offer_id' => null,
+        'client_reference' => null,
         'commercial_offer_items' => null,
         'offer' => null,
         'service_contract' => null,
@@ -95,6 +97,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
 		'id' => false,
 		'name' => false,
 		'commercial_offer_id' => false,
+		'client_reference' => true,
 		'commercial_offer_items' => false,
 		'offer' => false,
 		'service_contract' => false,
@@ -191,6 +194,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'id',
         'name' => 'name',
         'commercial_offer_id' => 'commercialOfferId',
+        'client_reference' => 'clientReference',
         'commercial_offer_items' => 'commercialOfferItems',
         'offer' => 'offer',
         'service_contract' => 'serviceContract',
@@ -207,6 +211,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'setId',
         'name' => 'setName',
         'commercial_offer_id' => 'setCommercialOfferId',
+        'client_reference' => 'setClientReference',
         'commercial_offer_items' => 'setCommercialOfferItems',
         'offer' => 'setOffer',
         'service_contract' => 'setServiceContract',
@@ -223,6 +228,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'getId',
         'name' => 'getName',
         'commercial_offer_id' => 'getCommercialOfferId',
+        'client_reference' => 'getClientReference',
         'commercial_offer_items' => 'getCommercialOfferItems',
         'offer' => 'getOffer',
         'service_contract' => 'getServiceContract',
@@ -355,6 +361,7 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('commercial_offer_id', $data ?? [], null);
+        $this->setIfExists('client_reference', $data ?? [], null);
         $this->setIfExists('commercial_offer_items', $data ?? [], null);
         $this->setIfExists('offer', $data ?? [], null);
         $this->setIfExists('service_contract', $data ?? [], null);
@@ -516,6 +523,40 @@ class CommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable commercial_offer_id cannot be null');
         }
         $this->container['commercial_offer_id'] = $commercial_offer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_reference
+     *
+     * @return string|null
+     */
+    public function getClientReference()
+    {
+        return $this->container['client_reference'];
+    }
+
+    /**
+     * Sets client_reference
+     *
+     * @param string|null $client_reference client_reference
+     *
+     * @return self
+     */
+    public function setClientReference($client_reference)
+    {
+        if (is_null($client_reference)) {
+            array_push($this->openAPINullablesSetToNull, 'client_reference');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('client_reference', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['client_reference'] = $client_reference;
 
         return $this;
     }

@@ -12714,6 +12714,8 @@ class DefaultApi
      * @param  int $page page (optional)
      * @param  int $items_per_page items_per_page (optional)
      * @param  string $sort_id sort_id (optional)
+     * @param  string $sort_status sort_status (optional)
+     * @param  string $status status (optional)
      * @param  int $legal_entity_id legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
@@ -12721,9 +12723,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Infracorp\Extranet\Client\Model\GetServiceContracts200Response
      */
-    public function getServiceContracts($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
+    public function getServiceContracts($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
-        list($response) = $this->getServiceContractsWithHttpInfo($page, $items_per_page, $sort_id, $legal_entity_id, $contentType);
+        list($response) = $this->getServiceContractsWithHttpInfo($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $contentType);
         return $response;
     }
 
@@ -12735,6 +12737,8 @@ class DefaultApi
      * @param  int $page (optional)
      * @param  int $items_per_page (optional)
      * @param  string $sort_id (optional)
+     * @param  string $sort_status (optional)
+     * @param  string $status (optional)
      * @param  int $legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
@@ -12742,9 +12746,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Infracorp\Extranet\Client\Model\GetServiceContracts200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getServiceContractsWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
+    public function getServiceContractsWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
-        $request = $this->getServiceContractsRequest($page, $items_per_page, $sort_id, $legal_entity_id, $contentType);
+        $request = $this->getServiceContractsRequest($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12862,15 +12866,17 @@ class DefaultApi
      * @param  int $page (optional)
      * @param  int $items_per_page (optional)
      * @param  string $sort_id (optional)
+     * @param  string $sort_status (optional)
+     * @param  string $status (optional)
      * @param  int $legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceContractsAsync($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
+    public function getServiceContractsAsync($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
-        return $this->getServiceContractsAsyncWithHttpInfo($page, $items_per_page, $sort_id, $legal_entity_id, $contentType)
+        return $this->getServiceContractsAsyncWithHttpInfo($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12886,16 +12892,18 @@ class DefaultApi
      * @param  int $page (optional)
      * @param  int $items_per_page (optional)
      * @param  string $sort_id (optional)
+     * @param  string $sort_status (optional)
+     * @param  string $status (optional)
      * @param  int $legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceContractsAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
+    public function getServiceContractsAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\GetServiceContracts200Response';
-        $request = $this->getServiceContractsRequest($page, $items_per_page, $sort_id, $legal_entity_id, $contentType);
+        $request = $this->getServiceContractsRequest($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12939,14 +12947,18 @@ class DefaultApi
      * @param  int $page (optional)
      * @param  int $items_per_page (optional)
      * @param  string $sort_id (optional)
+     * @param  string $sort_status (optional)
+     * @param  string $status (optional)
      * @param  int $legal_entity_id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getServiceContractsRequest($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
+    public function getServiceContractsRequest($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
+
+
 
 
 
@@ -12982,6 +12994,24 @@ class DefaultApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $sort_id,
             'sort[id]', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sort_status,
+            'sort[status]', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $status,
+            'status', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -13767,6 +13797,7 @@ class DefaultApi
      * @param  string $sort_date_creation sort_date_creation (optional)
      * @param  string $etat etat (optional)
      * @param  int $operator operator (optional)
+     * @param  bool $show_archived show_archived (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -13774,9 +13805,9 @@ class DefaultApi
      * @return \Infracorp\Extranet\Client\Model\Ticket[]
      * @deprecated
      */
-    public function getTickets($sort_date_creation = null, $etat = null, $operator = null, string $contentType = self::contentTypes['getTickets'][0])
+    public function getTickets($sort_date_creation = null, $etat = null, $operator = null, $show_archived = false, string $contentType = self::contentTypes['getTickets'][0])
     {
-        list($response) = $this->getTicketsWithHttpInfo($sort_date_creation, $etat, $operator, $contentType);
+        list($response) = $this->getTicketsWithHttpInfo($sort_date_creation, $etat, $operator, $show_archived, $contentType);
         return $response;
     }
 
@@ -13788,6 +13819,7 @@ class DefaultApi
      * @param  string $sort_date_creation (optional)
      * @param  string $etat (optional)
      * @param  int $operator (optional)
+     * @param  bool $show_archived (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -13795,9 +13827,9 @@ class DefaultApi
      * @return array of \Infracorp\Extranet\Client\Model\Ticket[], HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function getTicketsWithHttpInfo($sort_date_creation = null, $etat = null, $operator = null, string $contentType = self::contentTypes['getTickets'][0])
+    public function getTicketsWithHttpInfo($sort_date_creation = null, $etat = null, $operator = null, $show_archived = false, string $contentType = self::contentTypes['getTickets'][0])
     {
-        $request = $this->getTicketsRequest($sort_date_creation, $etat, $operator, $contentType);
+        $request = $this->getTicketsRequest($sort_date_creation, $etat, $operator, $show_archived, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13915,15 +13947,16 @@ class DefaultApi
      * @param  string $sort_date_creation (optional)
      * @param  string $etat (optional)
      * @param  int $operator (optional)
+     * @param  bool $show_archived (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function getTicketsAsync($sort_date_creation = null, $etat = null, $operator = null, string $contentType = self::contentTypes['getTickets'][0])
+    public function getTicketsAsync($sort_date_creation = null, $etat = null, $operator = null, $show_archived = false, string $contentType = self::contentTypes['getTickets'][0])
     {
-        return $this->getTicketsAsyncWithHttpInfo($sort_date_creation, $etat, $operator, $contentType)
+        return $this->getTicketsAsyncWithHttpInfo($sort_date_creation, $etat, $operator, $show_archived, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13939,16 +13972,17 @@ class DefaultApi
      * @param  string $sort_date_creation (optional)
      * @param  string $etat (optional)
      * @param  int $operator (optional)
+     * @param  bool $show_archived (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function getTicketsAsyncWithHttpInfo($sort_date_creation = null, $etat = null, $operator = null, string $contentType = self::contentTypes['getTickets'][0])
+    public function getTicketsAsyncWithHttpInfo($sort_date_creation = null, $etat = null, $operator = null, $show_archived = false, string $contentType = self::contentTypes['getTickets'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\Ticket[]';
-        $request = $this->getTicketsRequest($sort_date_creation, $etat, $operator, $contentType);
+        $request = $this->getTicketsRequest($sort_date_creation, $etat, $operator, $show_archived, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13992,14 +14026,16 @@ class DefaultApi
      * @param  string $sort_date_creation (optional)
      * @param  string $etat (optional)
      * @param  int $operator (optional)
+     * @param  bool $show_archived (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTickets'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function getTicketsRequest($sort_date_creation = null, $etat = null, $operator = null, string $contentType = self::contentTypes['getTickets'][0])
+    public function getTicketsRequest($sort_date_creation = null, $etat = null, $operator = null, $show_archived = false, string $contentType = self::contentTypes['getTickets'][0])
     {
+
 
 
 
@@ -14035,6 +14071,15 @@ class DefaultApi
             $operator,
             'operator', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $show_archived,
+            'showArchived', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
