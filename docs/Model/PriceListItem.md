@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **description** | **string** |  | [optional]
 **inside_offer_only** | **bool** |  | [optional]
 **to_estimate** | **bool** |  | [optional]
+**active** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

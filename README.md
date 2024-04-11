@@ -64,13 +64,14 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_commercial_offer = new \Infracorp\Extranet\Client\Model\CreateCommercialOffer(); // \Infracorp\Extranet\Client\Model\CreateCommercialOffer
+$id = 56; // int | service pack identifier
+$add_service_contract_comment = new \Infracorp\Extranet\Client\Model\AddServiceContractComment(); // \Infracorp\Extranet\Client\Model\AddServiceContractComment
 
 try {
-    $result = $apiInstance->createCommercialOffer($create_commercial_offer);
+    $result = $apiInstance->addServiceContractComment($id, $add_service_contract_comment);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->createCommercialOffer: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->addServiceContractComment: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -81,6 +82,7 @@ All URIs are relative to *https://my.tests.prizz-telecom.fr*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**addServiceContractComment**](docs/Api/DefaultApi.md#addservicecontractcomment) | **POST** /external-api/v2/service_contracts/{id}/comments | Service Contract add comment
 *DefaultApi* | [**createCommercialOffer**](docs/Api/DefaultApi.md#createcommercialoffer) | **POST** /external-api/v2/commercial_offers | Commercial Offers
 *DefaultApi* | [**createCommercialOfferSection**](docs/Api/DefaultApi.md#createcommercialoffersection) | **POST** /external-api/v2/commercial_offers/{id}/sections | Commercial Offer Sections
 *DefaultApi* | [**createEligibility**](docs/Api/DefaultApi.md#createeligibility) | **POST** /external-api/v2/eligibility | Create Eligibility
@@ -101,6 +103,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getCommercialOffers**](docs/Api/DefaultApi.md#getcommercialoffers) | **GET** /external-api/v2/commercial_offers | Commercial Offers
 *DefaultApi* | [**getCurrentUser**](docs/Api/DefaultApi.md#getcurrentuser) | **GET** /external-api/v2/user | User
 *DefaultApi* | [**getEligibility**](docs/Api/DefaultApi.md#geteligibility) | **GET** /external-api/v2/eligibility/{id} | Get Eligibility
+*DefaultApi* | [**getEntityAttachments**](docs/Api/DefaultApi.md#getentityattachments) | **GET** /external-api/v2/attachments | Attachements entity
 *DefaultApi* | [**getInvoice**](docs/Api/DefaultApi.md#getinvoice) | **GET** /external-api/v2/invoices/{id} | Invoice
 *DefaultApi* | [**getInvoiceDetail**](docs/Api/DefaultApi.md#getinvoicedetail) | **GET** /external-api/v2/invoice_details/{id} | Invoice Detail
 *DefaultApi* | [**getInvoicePdf**](docs/Api/DefaultApi.md#getinvoicepdf) | **GET** /external-api/v2/invoices/{id}/pdf | Invoice Pdf
@@ -138,6 +141,7 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [AddServiceContractComment](docs/Model/AddServiceContractComment.md)
 - [ArchivedProcess](docs/Model/ArchivedProcess.md)
 - [Attachment](docs/Model/Attachment.md)
 - [ClientContract](docs/Model/ClientContract.md)

@@ -4,6 +4,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**addServiceContractComment()**](DefaultApi.md#addServiceContractComment) | **POST** /external-api/v2/service_contracts/{id}/comments | Service Contract add comment |
 | [**createCommercialOffer()**](DefaultApi.md#createCommercialOffer) | **POST** /external-api/v2/commercial_offers | Commercial Offers |
 | [**createCommercialOfferSection()**](DefaultApi.md#createCommercialOfferSection) | **POST** /external-api/v2/commercial_offers/{id}/sections | Commercial Offer Sections |
 | [**createEligibility()**](DefaultApi.md#createEligibility) | **POST** /external-api/v2/eligibility | Create Eligibility |
@@ -24,6 +25,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**getCommercialOffers()**](DefaultApi.md#getCommercialOffers) | **GET** /external-api/v2/commercial_offers | Commercial Offers |
 | [**getCurrentUser()**](DefaultApi.md#getCurrentUser) | **GET** /external-api/v2/user | User |
 | [**getEligibility()**](DefaultApi.md#getEligibility) | **GET** /external-api/v2/eligibility/{id} | Get Eligibility |
+| [**getEntityAttachments()**](DefaultApi.md#getEntityAttachments) | **GET** /external-api/v2/attachments | Attachements entity |
 | [**getInvoice()**](DefaultApi.md#getInvoice) | **GET** /external-api/v2/invoices/{id} | Invoice |
 | [**getInvoiceDetail()**](DefaultApi.md#getInvoiceDetail) | **GET** /external-api/v2/invoice_details/{id} | Invoice Detail |
 | [**getInvoicePdf()**](DefaultApi.md#getInvoicePdf) | **GET** /external-api/v2/invoices/{id}/pdf | Invoice Pdf |
@@ -59,6 +61,73 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**submitCommercialOffer()**](DefaultApi.md#submitCommercialOffer) | **POST** /external-api/v2/commercial_offers/{id}/submit | Submit Commercial Offer |
 | [**updateCommercialOfferSectionItems()**](DefaultApi.md#updateCommercialOfferSectionItems) | **POST** /external-api/v2/commercial_offers/{id}/sections/{sectionId}/update_items | Update Commercial Offer Section Items |
 
+
+## `addServiceContractComment()`
+
+```php
+addServiceContractComment($id, $add_service_contract_comment): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+```
+
+Service Contract add comment
+
+Add service contract comment
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | service pack identifier
+$add_service_contract_comment = new \Infracorp\Extranet\Client\Model\AddServiceContractComment(); // \Infracorp\Extranet\Client\Model\AddServiceContractComment
+
+try {
+    $result = $apiInstance->addServiceContractComment($id, $add_service_contract_comment);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->addServiceContractComment: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| service pack identifier | |
+| **add_service_contract_comment** | [**\Infracorp\Extranet\Client\Model\AddServiceContractComment**](../Model/AddServiceContractComment.md)|  | [optional] |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `createCommercialOffer()`
 
@@ -1381,6 +1450,73 @@ try {
 ### Return type
 
 [**\Infracorp\Extranet\Client\Model\GetEligibility**](../Model/GetEligibility.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getEntityAttachments()`
+
+```php
+getEntityAttachments($entity_id, $entity_type): \Infracorp\Extranet\Client\Model\GetPublicAttachments200Response
+```
+
+Attachements entity
+
+Get entity linked attachments
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$entity_id = 56; // int | attached entity id
+$entity_type = 'entity_type_example'; // string | attached entity type
+
+try {
+    $result = $apiInstance->getEntityAttachments($entity_id, $entity_type);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getEntityAttachments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **entity_id** | **int**| attached entity id | |
+| **entity_type** | **string**| attached entity type | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\GetPublicAttachments200Response**](../Model/GetPublicAttachments200Response.md)
 
 ### Authorization
 

@@ -86,6 +86,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'vat_rate' => 'float',
         'commercial_code' => 'string',
         'description' => 'string',
+        'to_estimate' => 'bool',
         'price_list_item' => '\Infracorp\Extranet\Client\Model\PriceListItem'
     ];
 
@@ -126,6 +127,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'vat_rate' => 'float',
         'commercial_code' => null,
         'description' => null,
+        'to_estimate' => null,
         'price_list_item' => null
     ];
 
@@ -164,6 +166,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
 		'vat_rate' => true,
 		'commercial_code' => false,
 		'description' => true,
+		'to_estimate' => false,
 		'price_list_item' => false
     ];
 
@@ -282,6 +285,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'vat_rate' => 'vatRate',
         'commercial_code' => 'commercialCode',
         'description' => 'description',
+        'to_estimate' => 'toEstimate',
         'price_list_item' => 'priceListItem'
     ];
 
@@ -320,6 +324,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'vat_rate' => 'setVatRate',
         'commercial_code' => 'setCommercialCode',
         'description' => 'setDescription',
+        'to_estimate' => 'setToEstimate',
         'price_list_item' => 'setPriceListItem'
     ];
 
@@ -358,6 +363,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'vat_rate' => 'getVatRate',
         'commercial_code' => 'getCommercialCode',
         'description' => 'getDescription',
+        'to_estimate' => 'getToEstimate',
         'price_list_item' => 'getPriceListItem'
     ];
 
@@ -531,6 +537,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('vat_rate', $data ?? [], null);
         $this->setIfExists('commercial_code', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('to_estimate', $data ?? [], null);
         $this->setIfExists('price_list_item', $data ?? [], null);
     }
 
@@ -1516,6 +1523,33 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets to_estimate
+     *
+     * @return bool|null
+     */
+    public function getToEstimate()
+    {
+        return $this->container['to_estimate'];
+    }
+
+    /**
+     * Sets to_estimate
+     *
+     * @param bool|null $to_estimate to_estimate
+     *
+     * @return self
+     */
+    public function setToEstimate($to_estimate)
+    {
+        if (is_null($to_estimate)) {
+            throw new \InvalidArgumentException('non-nullable to_estimate cannot be null');
+        }
+        $this->container['to_estimate'] = $to_estimate;
 
         return $this;
     }

@@ -71,7 +71,8 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'commercial_code' => 'string',
         'description' => 'string',
         'inside_offer_only' => 'bool',
-        'to_estimate' => 'bool'
+        'to_estimate' => 'bool',
+        'active' => 'bool'
     ];
 
     /**
@@ -96,7 +97,8 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'commercial_code' => null,
         'description' => null,
         'inside_offer_only' => null,
-        'to_estimate' => null
+        'to_estimate' => null,
+        'active' => null
     ];
 
     /**
@@ -119,7 +121,8 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
 		'commercial_code' => false,
 		'description' => true,
 		'inside_offer_only' => false,
-		'to_estimate' => false
+		'to_estimate' => false,
+		'active' => false
     ];
 
     /**
@@ -222,7 +225,8 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'commercial_code' => 'commercialCode',
         'description' => 'description',
         'inside_offer_only' => 'insideOfferOnly',
-        'to_estimate' => 'toEstimate'
+        'to_estimate' => 'toEstimate',
+        'active' => 'active'
     ];
 
     /**
@@ -245,7 +249,8 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'commercial_code' => 'setCommercialCode',
         'description' => 'setDescription',
         'inside_offer_only' => 'setInsideOfferOnly',
-        'to_estimate' => 'setToEstimate'
+        'to_estimate' => 'setToEstimate',
+        'active' => 'setActive'
     ];
 
     /**
@@ -268,7 +273,8 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'commercial_code' => 'getCommercialCode',
         'description' => 'getDescription',
         'inside_offer_only' => 'getInsideOfferOnly',
-        'to_estimate' => 'getToEstimate'
+        'to_estimate' => 'getToEstimate',
+        'active' => 'getActive'
     ];
 
     /**
@@ -362,6 +368,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('inside_offer_only', $data ?? [], null);
         $this->setIfExists('to_estimate', $data ?? [], null);
+        $this->setIfExists('active', $data ?? [], null);
     }
 
     /**
@@ -868,6 +875,33 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable to_estimate cannot be null');
         }
         $this->container['to_estimate'] = $to_estimate;
+
+        return $this;
+    }
+
+    /**
+     * Gets active
+     *
+     * @return bool|null
+     */
+    public function getActive()
+    {
+        return $this->container['active'];
+    }
+
+    /**
+     * Sets active
+     *
+     * @param bool|null $active active
+     *
+     * @return self
+     */
+    public function setActive($active)
+    {
+        if (is_null($active)) {
+            throw new \InvalidArgumentException('non-nullable active cannot be null');
+        }
+        $this->container['active'] = $active;
 
         return $this;
     }

@@ -4,6 +4,7 @@
 README.md
 composer.json
 docs/Api/DefaultApi.md
+docs/Model/AddServiceContractComment.md
 docs/Model/ArchivedProcess.md
 docs/Model/Attachment.md
 docs/Model/ClientContract.md
@@ -95,6 +96,7 @@ lib/Api/DefaultApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
+lib/Model/AddServiceContractComment.php
 lib/Model/ArchivedProcess.php
 lib/Model/Attachment.php
 lib/Model/ClientContract.php
@@ -184,3 +186,4 @@ lib/Model/UserApiToken.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/AddServiceContractCommentTest.php
