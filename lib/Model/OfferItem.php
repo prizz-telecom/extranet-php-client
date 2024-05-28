@@ -63,7 +63,7 @@ class OfferItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => '\DateTime',
         'min_count' => 'int',
         'max_count' => 'int',
-        'product' => '\Infracorp\Extranet\Client\Model\OfferItem',
+        'product' => '\Infracorp\Extranet\Client\Model\Product',
         'eligibility_string' => 'string'
     ];
 
@@ -510,7 +510,7 @@ class OfferItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product
      *
-     * @return \Infracorp\Extranet\Client\Model\OfferItem|null
+     * @return \Infracorp\Extranet\Client\Model\Product|null
      */
     public function getProduct()
     {
@@ -520,7 +520,7 @@ class OfferItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product
      *
-     * @param \Infracorp\Extranet\Client\Model\OfferItem|null $product product
+     * @param \Infracorp\Extranet\Client\Model\Product|null $product product
      *
      * @return self
      */

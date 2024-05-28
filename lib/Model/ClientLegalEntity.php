@@ -80,7 +80,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'projection' => 'string',
         'arcep_code' => 'string',
         'contacts' => '\Infracorp\Extranet\Client\Model\Contact[]',
-        'configured_contacts' => '\Infracorp\Extranet\Client\Model\ClientLegalEntityContact[]',
+        'configured_contacts' => '\Infracorp\Extranet\Client\Model\TypedContact[]',
         'contracts' => '\Infracorp\Extranet\Client\Model\ClientContract[]'
     ];
 
@@ -399,6 +399,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
     public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
     public const AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_DESCRIPTION_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UpdateDescription\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_CLIENT_REF_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UpdateClientRef\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ACTIVATION_SETUP_L2_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Activation\\SetupL2\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_CLIENT_REF_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateClientRefSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Contact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -435,6 +443,14 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
             self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
             self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
             self::AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_DESCRIPTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_CLIENT_REF_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ACTIVATION_SETUP_L2_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_CLIENT_REF_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT,
         ];
     }
 
@@ -1288,7 +1304,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets configured_contacts
      *
-     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntityContact[]|null
+     * @return \Infracorp\Extranet\Client\Model\TypedContact[]|null
      */
     public function getConfiguredContacts()
     {
@@ -1298,7 +1314,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets configured_contacts
      *
-     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntityContact[]|null $configured_contacts configured_contacts
+     * @param \Infracorp\Extranet\Client\Model\TypedContact[]|null $configured_contacts configured_contacts
      *
      * @return self
      */

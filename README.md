@@ -90,7 +90,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**createWorkflow**](docs/Api/DefaultApi.md#createworkflow) | **POST** /external-api/v2/workflow | Workflows
 *DefaultApi* | [**eligibilityHistory**](docs/Api/DefaultApi.md#eligibilityhistory) | **GET** /external-api/v2/eligibility/history | Eligibility History
 *DefaultApi* | [**getApiTokens**](docs/Api/DefaultApi.md#getapitokens) | **GET** /external-api/v2/users/api_tokens | User Api Tokens
-*DefaultApi* | [**getAttachment**](docs/Api/DefaultApi.md#getattachment) | **GET** /external-api/v2/attachments/{id} | Attachement
+*DefaultApi* | [**getAttachment**](docs/Api/DefaultApi.md#getattachment) | **GET** /external-api/v2/attachments/{id} | Attachment
 *DefaultApi* | [**getClientLegalEntities**](docs/Api/DefaultApi.md#getclientlegalentities) | **GET** /external-api/v2/client_legal_entities | Client legal entities
 *DefaultApi* | [**getClientLegalEntity**](docs/Api/DefaultApi.md#getclientlegalentity) | **GET** /external-api/v2/client_legal_entities/{id} | Client legal entity
 *DefaultApi* | [**getCommentThread**](docs/Api/DefaultApi.md#getcommentthread) | **GET** /external-api/v2/comments/threads/{id} | Comment thread
@@ -110,6 +110,9 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getInvoices**](docs/Api/DefaultApi.md#getinvoices) | **GET** /external-api/v2/invoices | Invoices
 *DefaultApi* | [**getLegalEntities**](docs/Api/DefaultApi.md#getlegalentities) | **GET** /external-api/v2/legal_entities | Legal entities
 *DefaultApi* | [**getLegalEntity**](docs/Api/DefaultApi.md#getlegalentity) | **GET** /external-api/v2/legal_entities/{id} | Legal entity
+*DefaultApi* | [**getOfferContext**](docs/Api/DefaultApi.md#getoffercontext) | **GET** /external-api/v2/offers/{id}/context | Offers Context
+*DefaultApi* | [**getOfferContexts**](docs/Api/DefaultApi.md#getoffercontexts) | **GET** /external-api/v2/offers/{id}/contexts | Offers Contexts
+*DefaultApi* | [**getOfferContextsShortened**](docs/Api/DefaultApi.md#getoffercontextsshortened) | **GET** /external-api/v2/offers/{id}/contexts/shortened | Offers Contexts
 *DefaultApi* | [**getOffers**](docs/Api/DefaultApi.md#getoffers) | **GET** /external-api/v2/offers | Offers
 *DefaultApi* | [**getOperatorTickets**](docs/Api/DefaultApi.md#getoperatortickets) | **GET** /external-api/v2/exploitation/operator/{id}/tickets | Exploitation Operator Tickets
 *DefaultApi* | [**getPriceList**](docs/Api/DefaultApi.md#getpricelist) | **GET** /external-api/v2/price_lists/{id} | Price List
@@ -117,7 +120,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getPriceListOffers**](docs/Api/DefaultApi.md#getpricelistoffers) | **GET** /external-api/v2/price_lists/{id}/offers | Price List Offers
 *DefaultApi* | [**getPriceLists**](docs/Api/DefaultApi.md#getpricelists) | **GET** /external-api/v2/price_lists | Price Lists
 *DefaultApi* | [**getProcess**](docs/Api/DefaultApi.md#getprocess) | **GET** /external-api/v2/exploitation/operator/{id}/process/{processId} | Exploitation Process
-*DefaultApi* | [**getPublicAttachments**](docs/Api/DefaultApi.md#getpublicattachments) | **GET** /external-api/v2/attachments/public | Attachements Public
+*DefaultApi* | [**getPublicAttachments**](docs/Api/DefaultApi.md#getpublicattachments) | **GET** /external-api/v2/attachments/public | Attachments Public
 *DefaultApi* | [**getRunningWorkflows**](docs/Api/DefaultApi.md#getrunningworkflows) | **GET** /external-api/v2/workflows/running | Workflows running
 *DefaultApi* | [**getService**](docs/Api/DefaultApi.md#getservice) | **GET** /external-api/v2/services/{id} | Service
 *DefaultApi* | [**getServiceContract**](docs/Api/DefaultApi.md#getservicecontract) | **GET** /external-api/v2/service_contracts/{id} | Service Contract
@@ -146,7 +149,6 @@ Class | Method | HTTP request | Description
 - [Attachment](docs/Model/Attachment.md)
 - [ClientContract](docs/Model/ClientContract.md)
 - [ClientLegalEntity](docs/Model/ClientLegalEntity.md)
-- [ClientLegalEntityContact](docs/Model/ClientLegalEntityContact.md)
 - [ClientLegalEntitySearch](docs/Model/ClientLegalEntitySearch.md)
 - [Comment](docs/Model/Comment.md)
 - [CommentThread](docs/Model/CommentThread.md)
@@ -190,6 +192,8 @@ Class | Method | HTTP request | Description
 - [InvoiceSearch](docs/Model/InvoiceSearch.md)
 - [LegalEntity](docs/Model/LegalEntity.md)
 - [Offer](docs/Model/Offer.md)
+- [OfferContext](docs/Model/OfferContext.md)
+- [OfferContextShortened](docs/Model/OfferContextShortened.md)
 - [OfferItem](docs/Model/OfferItem.md)
 - [Operator](docs/Model/Operator.md)
 - [OperatorTicket](docs/Model/OperatorTicket.md)
@@ -224,6 +228,7 @@ Class | Method | HTTP request | Description
 - [Transition](docs/Model/Transition.md)
 - [TransitionFormFieldsInner](docs/Model/TransitionFormFieldsInner.md)
 - [TransitionFormFieldsInnerValuesInner](docs/Model/TransitionFormFieldsInnerValuesInner.md)
+- [TypedContact](docs/Model/TypedContact.md)
 - [UpdateCommercialOfferSectionItems](docs/Model/UpdateCommercialOfferSectionItems.md)
 - [User](docs/Model/User.md)
 - [UserApiToken](docs/Model/UserApiToken.md)

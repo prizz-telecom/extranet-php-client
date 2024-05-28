@@ -32,5 +32,7 @@ Name | Type | Description | Notes
 **vat_detail** | [**\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailInner[]**](CommercialOfferVatDetailInner.md) |  | [optional]
 **vat_detail_str** | [**\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]**](CommercialOfferVatDetailStrInner.md) |  | [optional]
 **sections** | [**\Infracorp\Extranet\Client\Model\CommercialOfferSection[]**](CommercialOfferSection.md) |  | [optional]
+**contacts** | [**\Infracorp\Extranet\Client\Model\Contact[]**](Contact.md) |  | [optional]
+**configured_contacts** | [**\Infracorp\Extranet\Client\Model\TypedContact[]**](TypedContact.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

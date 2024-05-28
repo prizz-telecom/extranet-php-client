@@ -261,6 +261,14 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CONTEXT_NAME_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
     public const CONTEXT_NAME_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
     public const CONTEXT_NAME_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
+    public const CONTEXT_NAME_SERVICE_CONTRACT_UPDATE_DESCRIPTION_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UpdateDescription\\Context';
+    public const CONTEXT_NAME_SERVICE_CONTRACT_UPDATE_CLIENT_REF_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UpdateClientRef\\Context';
+    public const CONTEXT_NAME_SERVICE_CONTRACT_ACTIVATION_SETUP_L2_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Activation\\SetupL2\\Context';
+    public const CONTEXT_NAME_COMMERCIAL_OFFER_UPDATE_CLIENT_REF_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateClientRefSection\\Context';
+    public const CONTEXT_NAME_COMMERCIAL_OFFER_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AssignContact\\Context';
+    public const CONTEXT_NAME_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\AssignContact\\Context';
+    public const CONTEXT_NAME_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Contact\\SwitchActive\\Context';
+    public const CONTEXT_NAME_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -297,6 +305,14 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CONTEXT_NAME_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
             self::CONTEXT_NAME_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
             self::CONTEXT_NAME_CONTACT_UPDATE_CONTEXT,
+            self::CONTEXT_NAME_SERVICE_CONTRACT_UPDATE_DESCRIPTION_CONTEXT,
+            self::CONTEXT_NAME_SERVICE_CONTRACT_UPDATE_CLIENT_REF_CONTEXT,
+            self::CONTEXT_NAME_SERVICE_CONTRACT_ACTIVATION_SETUP_L2_CONTEXT,
+            self::CONTEXT_NAME_COMMERCIAL_OFFER_UPDATE_CLIENT_REF_SECTION_CONTEXT,
+            self::CONTEXT_NAME_COMMERCIAL_OFFER_ASSIGN_CONTACT_CONTEXT,
+            self::CONTEXT_NAME_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT,
+            self::CONTEXT_NAME_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::CONTEXT_NAME_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT,
         ];
     }
 

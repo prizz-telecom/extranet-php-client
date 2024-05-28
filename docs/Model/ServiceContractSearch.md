@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **ref_client** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **create_date** | **\DateTime** |  | [optional]
+**addresses** | **string[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

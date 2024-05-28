@@ -84,7 +84,9 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'section_names' => 'string',
         'vat_detail' => '\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailInner[]',
         'vat_detail_str' => '\Infracorp\Extranet\Client\Model\CommercialOfferVatDetailStrInner[]',
-        'sections' => '\Infracorp\Extranet\Client\Model\CommercialOfferSection[]'
+        'sections' => '\Infracorp\Extranet\Client\Model\CommercialOfferSection[]',
+        'contacts' => '\Infracorp\Extranet\Client\Model\Contact[]',
+        'configured_contacts' => '\Infracorp\Extranet\Client\Model\TypedContact[]'
     ];
 
     /**
@@ -122,7 +124,9 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'section_names' => null,
         'vat_detail' => null,
         'vat_detail_str' => null,
-        'sections' => null
+        'sections' => null,
+        'contacts' => null,
+        'configured_contacts' => null
     ];
 
     /**
@@ -158,7 +162,9 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
 		'section_names' => false,
 		'vat_detail' => false,
 		'vat_detail_str' => false,
-		'sections' => false
+		'sections' => false,
+		'contacts' => false,
+		'configured_contacts' => false
     ];
 
     /**
@@ -274,7 +280,9 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'section_names' => 'sectionNames',
         'vat_detail' => 'vatDetail',
         'vat_detail_str' => 'vatDetailStr',
-        'sections' => 'sections'
+        'sections' => 'sections',
+        'contacts' => 'contacts',
+        'configured_contacts' => 'configuredContacts'
     ];
 
     /**
@@ -310,7 +318,9 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'section_names' => 'setSectionNames',
         'vat_detail' => 'setVatDetail',
         'vat_detail_str' => 'setVatDetailStr',
-        'sections' => 'setSections'
+        'sections' => 'setSections',
+        'contacts' => 'setContacts',
+        'configured_contacts' => 'setConfiguredContacts'
     ];
 
     /**
@@ -346,7 +356,9 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         'section_names' => 'getSectionNames',
         'vat_detail' => 'getVatDetail',
         'vat_detail_str' => 'getVatDetailStr',
-        'sections' => 'getSections'
+        'sections' => 'getSections',
+        'contacts' => 'getContacts',
+        'configured_contacts' => 'getConfiguredContacts'
     ];
 
     /**
@@ -417,6 +429,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
     public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
     public const AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_DESCRIPTION_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UpdateDescription\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_CLIENT_REF_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UpdateClientRef\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ACTIVATION_SETUP_L2_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Activation\\SetupL2\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_CLIENT_REF_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateClientRefSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Contact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -453,6 +473,14 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
             self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
             self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
             self::AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_DESCRIPTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_CLIENT_REF_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ACTIVATION_SETUP_L2_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_CLIENT_REF_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT,
         ];
     }
 
@@ -499,6 +527,8 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('vat_detail', $data ?? [], null);
         $this->setIfExists('vat_detail_str', $data ?? [], null);
         $this->setIfExists('sections', $data ?? [], null);
+        $this->setIfExists('contacts', $data ?? [], null);
+        $this->setIfExists('configured_contacts', $data ?? [], null);
     }
 
     /**
@@ -1374,6 +1404,60 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable sections cannot be null');
         }
         $this->container['sections'] = $sections;
+
+        return $this;
+    }
+
+    /**
+     * Gets contacts
+     *
+     * @return \Infracorp\Extranet\Client\Model\Contact[]|null
+     */
+    public function getContacts()
+    {
+        return $this->container['contacts'];
+    }
+
+    /**
+     * Sets contacts
+     *
+     * @param \Infracorp\Extranet\Client\Model\Contact[]|null $contacts contacts
+     *
+     * @return self
+     */
+    public function setContacts($contacts)
+    {
+        if (is_null($contacts)) {
+            throw new \InvalidArgumentException('non-nullable contacts cannot be null');
+        }
+        $this->container['contacts'] = $contacts;
+
+        return $this;
+    }
+
+    /**
+     * Gets configured_contacts
+     *
+     * @return \Infracorp\Extranet\Client\Model\TypedContact[]|null
+     */
+    public function getConfiguredContacts()
+    {
+        return $this->container['configured_contacts'];
+    }
+
+    /**
+     * Sets configured_contacts
+     *
+     * @param \Infracorp\Extranet\Client\Model\TypedContact[]|null $configured_contacts configured_contacts
+     *
+     * @return self
+     */
+    public function setConfiguredContacts($configured_contacts)
+    {
+        if (is_null($configured_contacts)) {
+            throw new \InvalidArgumentException('non-nullable configured_contacts cannot be null');
+        }
+        $this->container['configured_contacts'] = $configured_contacts;
 
         return $this;
     }

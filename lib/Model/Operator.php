@@ -57,7 +57,7 @@ class Operator implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'int',
+        'code' => 'string',
         'lib' => 'string',
         'delivery_doors' => 'mixed[]',
         'hosting_items' => 'mixed[]',
@@ -334,7 +334,7 @@ class Operator implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets code
      *
-     * @return int|null
+     * @return string|null
      */
     public function getCode()
     {
@@ -344,7 +344,7 @@ class Operator implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets code
      *
-     * @param int|null $code code
+     * @param string|null $code code
      *
      * @return self
      */

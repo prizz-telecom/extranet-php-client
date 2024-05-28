@@ -61,7 +61,8 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'legal_entity' => '\Infracorp\Extranet\Client\Model\LegalEntity',
         'commercial_code' => 'string',
-        'description' => 'string'
+        'description' => 'string',
+        'items' => '\Infracorp\Extranet\Client\Model\PriceListItem[]'
     ];
 
     /**
@@ -76,7 +77,8 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'legal_entity' => null,
         'commercial_code' => null,
-        'description' => null
+        'description' => null,
+        'items' => null
     ];
 
     /**
@@ -89,7 +91,8 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
 		'name' => false,
 		'legal_entity' => false,
 		'commercial_code' => false,
-		'description' => true
+		'description' => true,
+		'items' => false
     ];
 
     /**
@@ -182,7 +185,8 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'name',
         'legal_entity' => 'legalEntity',
         'commercial_code' => 'commercialCode',
-        'description' => 'description'
+        'description' => 'description',
+        'items' => 'items'
     ];
 
     /**
@@ -195,7 +199,8 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'setName',
         'legal_entity' => 'setLegalEntity',
         'commercial_code' => 'setCommercialCode',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
+        'items' => 'setItems'
     ];
 
     /**
@@ -208,7 +213,8 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'getName',
         'legal_entity' => 'getLegalEntity',
         'commercial_code' => 'getCommercialCode',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
+        'items' => 'getItems'
     ];
 
     /**
@@ -273,6 +279,7 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('legal_entity', $data ?? [], null);
         $this->setIfExists('commercial_code', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('items', $data ?? [], null);
     }
 
     /**
@@ -455,6 +462,33 @@ class PriceList implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \Infracorp\Extranet\Client\Model\PriceListItem[]|null
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \Infracorp\Extranet\Client\Model\PriceListItem[]|null $items items
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        if (is_null($items)) {
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
+        }
+        $this->container['items'] = $items;
 
         return $this;
     }

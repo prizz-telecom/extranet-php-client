@@ -171,7 +171,7 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
 		'price' => true,
 		'price_str' => true,
 		'va_trate' => true,
-		'commercial_code' => false,
+		'commercial_code' => true,
 		'description' => true,
 		'type' => true
     ];
@@ -1535,7 +1535,14 @@ class ServiceContractNrc implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setCommercialCode($commercial_code)
     {
         if (is_null($commercial_code)) {
-            throw new \InvalidArgumentException('non-nullable commercial_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'commercial_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('commercial_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['commercial_code'] = $commercial_code;
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * CommercialOfferSearch
+ * OfferContextShortened
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * CommercialOfferSearch Class Doc Comment
+ * OfferContextShortened Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSerializable
+class OfferContextShortened implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CommercialOfferSearch';
+    protected static $openAPIModelName = 'OfferContextShortened';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,16 +57,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'index' => 'string',
-        'query' => 'string',
-        'id' => 'string',
-        'legal_entity_id' => 'string',
-        'client_legal_entity_id' => 'string',
-        'name' => 'string',
-        'notes' => 'string',
-        'create_date' => '\DateTime',
-        'section_names' => 'string',
-        'addresses' => 'string[]'
+        'offer_id' => 'int',
+        'total' => 'int',
+        'total_without_nrc' => 'int',
+        'has_to_estimate_products' => 'bool',
+        'items_ids' => 'int[]',
+        'attributes' => 'int[]'
     ];
 
     /**
@@ -77,16 +73,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'index' => null,
-        'query' => null,
-        'id' => null,
-        'legal_entity_id' => null,
-        'client_legal_entity_id' => null,
-        'name' => null,
-        'notes' => null,
-        'create_date' => 'date-time',
-        'section_names' => null,
-        'addresses' => null
+        'offer_id' => null,
+        'total' => null,
+        'total_without_nrc' => null,
+        'has_to_estimate_products' => null,
+        'items_ids' => null,
+        'attributes' => null
     ];
 
     /**
@@ -95,16 +87,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'index' => false,
-		'query' => false,
-		'id' => false,
-		'legal_entity_id' => false,
-		'client_legal_entity_id' => false,
-		'name' => false,
-		'notes' => true,
-		'create_date' => true,
-		'section_names' => true,
-		'addresses' => false
+        'offer_id' => false,
+		'total' => false,
+		'total_without_nrc' => false,
+		'has_to_estimate_products' => false,
+		'items_ids' => false,
+		'attributes' => false
     ];
 
     /**
@@ -193,16 +181,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'index' => 'index',
-        'query' => 'query',
-        'id' => 'id',
-        'legal_entity_id' => 'legalEntityId',
-        'client_legal_entity_id' => 'clientLegalEntityId',
-        'name' => 'name',
-        'notes' => 'notes',
-        'create_date' => 'createDate',
-        'section_names' => 'sectionNames',
-        'addresses' => 'addresses'
+        'offer_id' => 'offerId',
+        'total' => 'total',
+        'total_without_nrc' => 'totalWithoutNrc',
+        'has_to_estimate_products' => 'hasToEstimateProducts',
+        'items_ids' => 'itemsIds',
+        'attributes' => 'attributes'
     ];
 
     /**
@@ -211,16 +195,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'index' => 'setIndex',
-        'query' => 'setQuery',
-        'id' => 'setId',
-        'legal_entity_id' => 'setLegalEntityId',
-        'client_legal_entity_id' => 'setClientLegalEntityId',
-        'name' => 'setName',
-        'notes' => 'setNotes',
-        'create_date' => 'setCreateDate',
-        'section_names' => 'setSectionNames',
-        'addresses' => 'setAddresses'
+        'offer_id' => 'setOfferId',
+        'total' => 'setTotal',
+        'total_without_nrc' => 'setTotalWithoutNrc',
+        'has_to_estimate_products' => 'setHasToEstimateProducts',
+        'items_ids' => 'setItemsIds',
+        'attributes' => 'setAttributes'
     ];
 
     /**
@@ -229,16 +209,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'index' => 'getIndex',
-        'query' => 'getQuery',
-        'id' => 'getId',
-        'legal_entity_id' => 'getLegalEntityId',
-        'client_legal_entity_id' => 'getClientLegalEntityId',
-        'name' => 'getName',
-        'notes' => 'getNotes',
-        'create_date' => 'getCreateDate',
-        'section_names' => 'getSectionNames',
-        'addresses' => 'getAddresses'
+        'offer_id' => 'getOfferId',
+        'total' => 'getTotal',
+        'total_without_nrc' => 'getTotalWithoutNrc',
+        'has_to_estimate_products' => 'getHasToEstimateProducts',
+        'items_ids' => 'getItemsIds',
+        'attributes' => 'getAttributes'
     ];
 
     /**
@@ -298,16 +274,12 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('index', $data ?? [], null);
-        $this->setIfExists('query', $data ?? [], null);
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('legal_entity_id', $data ?? [], null);
-        $this->setIfExists('client_legal_entity_id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('notes', $data ?? [], null);
-        $this->setIfExists('create_date', $data ?? [], null);
-        $this->setIfExists('section_names', $data ?? [], null);
-        $this->setIfExists('addresses', $data ?? [], null);
+        $this->setIfExists('offer_id', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('total_without_nrc', $data ?? [], null);
+        $this->setIfExists('has_to_estimate_products', $data ?? [], null);
+        $this->setIfExists('items_ids', $data ?? [], null);
+        $this->setIfExists('attributes', $data ?? [], null);
     }
 
     /**
@@ -353,292 +325,163 @@ class CommercialOfferSearch implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets index
+     * Gets offer_id
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getIndex()
+    public function getOfferId()
     {
-        return $this->container['index'];
+        return $this->container['offer_id'];
     }
 
     /**
-     * Sets index
+     * Sets offer_id
      *
-     * @param string|null $index index
+     * @param int|null $offer_id offer_id
      *
      * @return self
      */
-    public function setIndex($index)
+    public function setOfferId($offer_id)
     {
-        if (is_null($index)) {
-            throw new \InvalidArgumentException('non-nullable index cannot be null');
+        if (is_null($offer_id)) {
+            throw new \InvalidArgumentException('non-nullable offer_id cannot be null');
         }
-        $this->container['index'] = $index;
+        $this->container['offer_id'] = $offer_id;
 
         return $this;
     }
 
     /**
-     * Gets query
+     * Gets total
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getQuery()
+    public function getTotal()
     {
-        return $this->container['query'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets query
+     * Sets total
      *
-     * @param string|null $query query
+     * @param int|null $total total
      *
      * @return self
      */
-    public function setQuery($query)
+    public function setTotal($total)
     {
-        if (is_null($query)) {
-            throw new \InvalidArgumentException('non-nullable query cannot be null');
+        if (is_null($total)) {
+            throw new \InvalidArgumentException('non-nullable total cannot be null');
         }
-        $this->container['query'] = $query;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets total_without_nrc
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getId()
+    public function getTotalWithoutNrc()
     {
-        return $this->container['id'];
+        return $this->container['total_without_nrc'];
     }
 
     /**
-     * Sets id
+     * Sets total_without_nrc
      *
-     * @param string|null $id id
+     * @param int|null $total_without_nrc total_without_nrc
      *
      * @return self
      */
-    public function setId($id)
+    public function setTotalWithoutNrc($total_without_nrc)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($total_without_nrc)) {
+            throw new \InvalidArgumentException('non-nullable total_without_nrc cannot be null');
         }
-        $this->container['id'] = $id;
+        $this->container['total_without_nrc'] = $total_without_nrc;
 
         return $this;
     }
 
     /**
-     * Gets legal_entity_id
+     * Gets has_to_estimate_products
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getLegalEntityId()
+    public function getHasToEstimateProducts()
     {
-        return $this->container['legal_entity_id'];
+        return $this->container['has_to_estimate_products'];
     }
 
     /**
-     * Sets legal_entity_id
+     * Sets has_to_estimate_products
      *
-     * @param string|null $legal_entity_id legal_entity_id
+     * @param bool|null $has_to_estimate_products has_to_estimate_products
      *
      * @return self
      */
-    public function setLegalEntityId($legal_entity_id)
+    public function setHasToEstimateProducts($has_to_estimate_products)
     {
-        if (is_null($legal_entity_id)) {
-            throw new \InvalidArgumentException('non-nullable legal_entity_id cannot be null');
+        if (is_null($has_to_estimate_products)) {
+            throw new \InvalidArgumentException('non-nullable has_to_estimate_products cannot be null');
         }
-        $this->container['legal_entity_id'] = $legal_entity_id;
+        $this->container['has_to_estimate_products'] = $has_to_estimate_products;
 
         return $this;
     }
 
     /**
-     * Gets client_legal_entity_id
+     * Gets items_ids
      *
-     * @return string|null
+     * @return int[]|null
      */
-    public function getClientLegalEntityId()
+    public function getItemsIds()
     {
-        return $this->container['client_legal_entity_id'];
+        return $this->container['items_ids'];
     }
 
     /**
-     * Sets client_legal_entity_id
+     * Sets items_ids
      *
-     * @param string|null $client_legal_entity_id client_legal_entity_id
+     * @param int[]|null $items_ids items_ids
      *
      * @return self
      */
-    public function setClientLegalEntityId($client_legal_entity_id)
+    public function setItemsIds($items_ids)
     {
-        if (is_null($client_legal_entity_id)) {
-            throw new \InvalidArgumentException('non-nullable client_legal_entity_id cannot be null');
+        if (is_null($items_ids)) {
+            throw new \InvalidArgumentException('non-nullable items_ids cannot be null');
         }
-        $this->container['client_legal_entity_id'] = $client_legal_entity_id;
+        $this->container['items_ids'] = $items_ids;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets attributes
      *
-     * @return string|null
+     * @return int[]|null
      */
-    public function getName()
+    public function getAttributes()
     {
-        return $this->container['name'];
+        return $this->container['attributes'];
     }
 
     /**
-     * Sets name
+     * Sets attributes
      *
-     * @param string|null $name name
+     * @param int[]|null $attributes attributes
      *
      * @return self
      */
-    public function setName($name)
+    public function setAttributes($attributes)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($attributes)) {
+            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
         }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets notes
-     *
-     * @return string|null
-     */
-    public function getNotes()
-    {
-        return $this->container['notes'];
-    }
-
-    /**
-     * Sets notes
-     *
-     * @param string|null $notes notes
-     *
-     * @return self
-     */
-    public function setNotes($notes)
-    {
-        if (is_null($notes)) {
-            array_push($this->openAPINullablesSetToNull, 'notes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('notes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['notes'] = $notes;
-
-        return $this;
-    }
-
-    /**
-     * Gets create_date
-     *
-     * @return \DateTime|null
-     */
-    public function getCreateDate()
-    {
-        return $this->container['create_date'];
-    }
-
-    /**
-     * Sets create_date
-     *
-     * @param \DateTime|null $create_date create_date
-     *
-     * @return self
-     */
-    public function setCreateDate($create_date)
-    {
-        if (is_null($create_date)) {
-            array_push($this->openAPINullablesSetToNull, 'create_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('create_date', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['create_date'] = $create_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets section_names
-     *
-     * @return string|null
-     */
-    public function getSectionNames()
-    {
-        return $this->container['section_names'];
-    }
-
-    /**
-     * Sets section_names
-     *
-     * @param string|null $section_names section_names
-     *
-     * @return self
-     */
-    public function setSectionNames($section_names)
-    {
-        if (is_null($section_names)) {
-            array_push($this->openAPINullablesSetToNull, 'section_names');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('section_names', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['section_names'] = $section_names;
-
-        return $this;
-    }
-
-    /**
-     * Gets addresses
-     *
-     * @return string[]|null
-     */
-    public function getAddresses()
-    {
-        return $this->container['addresses'];
-    }
-
-    /**
-     * Sets addresses
-     *
-     * @param string[]|null $addresses addresses
-     *
-     * @return self
-     */
-    public function setAddresses($addresses)
-    {
-        if (is_null($addresses)) {
-            throw new \InvalidArgumentException('non-nullable addresses cannot be null');
-        }
-        $this->container['addresses'] = $addresses;
+        $this->container['attributes'] = $attributes;
 
         return $this;
     }

@@ -9,7 +9,6 @@ docs/Model/ArchivedProcess.md
 docs/Model/Attachment.md
 docs/Model/ClientContract.md
 docs/Model/ClientLegalEntity.md
-docs/Model/ClientLegalEntityContact.md
 docs/Model/ClientLegalEntitySearch.md
 docs/Model/Comment.md
 docs/Model/CommentThread.md
@@ -53,6 +52,8 @@ docs/Model/InvoiceDetail.md
 docs/Model/InvoiceSearch.md
 docs/Model/LegalEntity.md
 docs/Model/Offer.md
+docs/Model/OfferContext.md
+docs/Model/OfferContextShortened.md
 docs/Model/OfferItem.md
 docs/Model/Operator.md
 docs/Model/OperatorTicket.md
@@ -87,6 +88,7 @@ docs/Model/TicketAttachment.md
 docs/Model/Transition.md
 docs/Model/TransitionFormFieldsInner.md
 docs/Model/TransitionFormFieldsInnerValuesInner.md
+docs/Model/TypedContact.md
 docs/Model/UpdateCommercialOfferSectionItems.md
 docs/Model/User.md
 docs/Model/UserApiToken.md
@@ -101,7 +103,6 @@ lib/Model/ArchivedProcess.php
 lib/Model/Attachment.php
 lib/Model/ClientContract.php
 lib/Model/ClientLegalEntity.php
-lib/Model/ClientLegalEntityContact.php
 lib/Model/ClientLegalEntitySearch.php
 lib/Model/Comment.php
 lib/Model/CommentThread.php
@@ -146,6 +147,8 @@ lib/Model/InvoiceSearch.php
 lib/Model/LegalEntity.php
 lib/Model/ModelInterface.php
 lib/Model/Offer.php
+lib/Model/OfferContext.php
+lib/Model/OfferContextShortened.php
 lib/Model/OfferItem.php
 lib/Model/Operator.php
 lib/Model/OperatorTicket.php
@@ -180,10 +183,13 @@ lib/Model/TicketAttachment.php
 lib/Model/Transition.php
 lib/Model/TransitionFormFieldsInner.php
 lib/Model/TransitionFormFieldsInnerValuesInner.php
+lib/Model/TypedContact.php
 lib/Model/UpdateCommercialOfferSectionItems.php
 lib/Model/User.php
 lib/Model/UserApiToken.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/AddServiceContractCommentTest.php
+test/Model/OfferContextShortenedTest.php
+test/Model/OfferContextTest.php
+test/Model/TypedContactTest.php

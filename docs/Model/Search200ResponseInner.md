@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **create_date** | **\DateTime** |  | [optional]
 **notes** | **string** |  | [optional]
 **section_names** | **string** |  | [optional]
+**addresses** | **string[]** |  | [optional]
 **status** | **string** |  | [optional]
 **ref_client** | **string** |  | [optional]
 **description** | **string** |  | [optional]

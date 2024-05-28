@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **int** |  | [optional]
+**code** | **string** |  | [optional]
 **lib** | **string** |  | [optional]
 **delivery_doors** | **mixed[]** |  | [optional]
 **hosting_items** | **mixed[]** |  | [optional]

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**available_workflows** | **string[]** | liste des processus disponible pour l&#39;objet | [optional]
 **id** | **int** |  | [optional]
 **name** | **string** |  | [optional]
 **create_date** | **\DateTime** |  | [optional]
@@ -23,9 +24,12 @@ Name | Type | Description | Notes
 **planned_activation_date** | **\DateTime** |  | [optional]
 **sold_activation_date** | **\DateTime** |  | [optional]
 **commitment_end_date** | **\DateTime** |  | [optional]
-**attributes** | **object** |  | [optional]
-**consolidated_attributes** | **object** |  | [optional]
-**consolidated_attributes_staging_or_new** | **object** |  | [optional]
+**attributes** | **array<string,mixed>** |  | [optional]
+**consolidated_attributes** | **array<string,mixed>** |  | [optional]
+**consolidated_attributes_staging_or_new** | **array<string,mixed>** |  | [optional]
 **commercial_offers** | [**\Infracorp\Extranet\Client\Model\ServiceContractCommercialOffersInner[]**](ServiceContractCommercialOffersInner.md) |  | [optional]
+**contacts** | [**\Infracorp\Extranet\Client\Model\Contact[]**](Contact.md) |  | [optional]
+**configured_contacts** | [**\Infracorp\Extranet\Client\Model\TypedContact[]**](TypedContact.md) |  | [optional]
+**replaces** | **int** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

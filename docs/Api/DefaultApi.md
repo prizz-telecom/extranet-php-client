@@ -12,7 +12,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**createWorkflow()**](DefaultApi.md#createWorkflow) | **POST** /external-api/v2/workflow | Workflows |
 | [**eligibilityHistory()**](DefaultApi.md#eligibilityHistory) | **GET** /external-api/v2/eligibility/history | Eligibility History |
 | [**getApiTokens()**](DefaultApi.md#getApiTokens) | **GET** /external-api/v2/users/api_tokens | User Api Tokens |
-| [**getAttachment()**](DefaultApi.md#getAttachment) | **GET** /external-api/v2/attachments/{id} | Attachement |
+| [**getAttachment()**](DefaultApi.md#getAttachment) | **GET** /external-api/v2/attachments/{id} | Attachment |
 | [**getClientLegalEntities()**](DefaultApi.md#getClientLegalEntities) | **GET** /external-api/v2/client_legal_entities | Client legal entities |
 | [**getClientLegalEntity()**](DefaultApi.md#getClientLegalEntity) | **GET** /external-api/v2/client_legal_entities/{id} | Client legal entity |
 | [**getCommentThread()**](DefaultApi.md#getCommentThread) | **GET** /external-api/v2/comments/threads/{id} | Comment thread |
@@ -32,6 +32,9 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**getInvoices()**](DefaultApi.md#getInvoices) | **GET** /external-api/v2/invoices | Invoices |
 | [**getLegalEntities()**](DefaultApi.md#getLegalEntities) | **GET** /external-api/v2/legal_entities | Legal entities |
 | [**getLegalEntity()**](DefaultApi.md#getLegalEntity) | **GET** /external-api/v2/legal_entities/{id} | Legal entity |
+| [**getOfferContext()**](DefaultApi.md#getOfferContext) | **GET** /external-api/v2/offers/{id}/context | Offers Context |
+| [**getOfferContexts()**](DefaultApi.md#getOfferContexts) | **GET** /external-api/v2/offers/{id}/contexts | Offers Contexts |
+| [**getOfferContextsShortened()**](DefaultApi.md#getOfferContextsShortened) | **GET** /external-api/v2/offers/{id}/contexts/shortened | Offers Contexts |
 | [**getOffers()**](DefaultApi.md#getOffers) | **GET** /external-api/v2/offers | Offers |
 | [**getOperatorTickets()**](DefaultApi.md#getOperatorTickets) | **GET** /external-api/v2/exploitation/operator/{id}/tickets | Exploitation Operator Tickets |
 | [**getPriceList()**](DefaultApi.md#getPriceList) | **GET** /external-api/v2/price_lists/{id} | Price List |
@@ -39,7 +42,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**getPriceListOffers()**](DefaultApi.md#getPriceListOffers) | **GET** /external-api/v2/price_lists/{id}/offers | Price List Offers |
 | [**getPriceLists()**](DefaultApi.md#getPriceLists) | **GET** /external-api/v2/price_lists | Price Lists |
 | [**getProcess()**](DefaultApi.md#getProcess) | **GET** /external-api/v2/exploitation/operator/{id}/process/{processId} | Exploitation Process |
-| [**getPublicAttachments()**](DefaultApi.md#getPublicAttachments) | **GET** /external-api/v2/attachments/public | Attachements Public |
+| [**getPublicAttachments()**](DefaultApi.md#getPublicAttachments) | **GET** /external-api/v2/attachments/public | Attachments Public |
 | [**getRunningWorkflows()**](DefaultApi.md#getRunningWorkflows) | **GET** /external-api/v2/workflows/running | Workflows running |
 | [**getService()**](DefaultApi.md#getService) | **GET** /external-api/v2/services/{id} | Service |
 | [**getServiceContract()**](DefaultApi.md#getServiceContract) | **GET** /external-api/v2/service_contracts/{id} | Service Contract |
@@ -602,7 +605,7 @@ try {
 getAttachment($id): \Infracorp\Extranet\Client\Model\Attachment
 ```
 
-Attachement
+Attachment
 
 Get attachment
 
@@ -1939,6 +1942,207 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getOfferContext()`
+
+```php
+getOfferContext($id, $items): \Infracorp\Extranet\Client\Model\OfferContext
+```
+
+Offers Context
+
+Get an offer context
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int
+$items = array(56); // int[] | price list items ids
+
+try {
+    $result = $apiInstance->getOfferContext($id, $items);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getOfferContext: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **items** | [**int[]**](../Model/int.md)| price list items ids | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\OfferContext**](../Model/OfferContext.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getOfferContexts()`
+
+```php
+getOfferContexts($id, $price_list): \Infracorp\Extranet\Client\Model\OfferContext[]
+```
+
+Offers Contexts
+
+Get all prices combinations for an offer and a price list
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int
+$price_list = 56; // int
+
+try {
+    $result = $apiInstance->getOfferContexts($id, $price_list);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getOfferContexts: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **price_list** | **int**|  | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\OfferContext[]**](../Model/OfferContext.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getOfferContextsShortened()`
+
+```php
+getOfferContextsShortened($id, $price_list): \Infracorp\Extranet\Client\Model\OfferContextShortened[]
+```
+
+Offers Contexts
+
+Get all prices combinations for an offer and a price list (shortened)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int
+$price_list = 56; // int
+
+try {
+    $result = $apiInstance->getOfferContextsShortened($id, $price_list);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getOfferContextsShortened: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **price_list** | **int**|  | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\OfferContextShortened[]**](../Model/OfferContextShortened.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getOffers()`
 
 ```php
@@ -2404,7 +2608,7 @@ try {
 getPublicAttachments(): \Infracorp\Extranet\Client\Model\GetPublicAttachments200Response
 ```
 
-Attachements Public
+Attachments Public
 
 Get public attachments
 
@@ -3347,7 +3551,7 @@ try {
 ## `runWorkflow()`
 
 ```php
-runWorkflow($id, $request_body): \Infracorp\Extranet\Client\Model\GetWorkflow
+runWorkflow($id, $files): \Infracorp\Extranet\Client\Model\GetWorkflow
 ```
 
 Workflow
@@ -3377,10 +3581,10 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     $config
 );
 $id = 56; // int | workflow id
-$request_body = NULL; // array<string,mixed>
+$files = array("/path/to/file.txt"); // \SplFileObject[]
 
 try {
-    $result = $apiInstance->runWorkflow($id, $request_body);
+    $result = $apiInstance->runWorkflow($id, $files);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->runWorkflow: ', $e->getMessage(), PHP_EOL;
@@ -3392,7 +3596,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| workflow id | |
-| **request_body** | [**array<string,mixed>**](../Model/mixed.md)|  | |
+| **files** | **\SplFileObject[]**|  | [optional] |
 
 ### Return type
 
@@ -3404,7 +3608,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
+- **Content-Type**: `multipart/form-data`, `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

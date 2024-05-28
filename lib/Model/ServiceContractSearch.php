@@ -66,7 +66,8 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'status' => 'string',
         'ref_client' => 'string',
         'description' => 'string',
-        'create_date' => '\DateTime'
+        'create_date' => '\DateTime',
+        'addresses' => 'string[]'
     ];
 
     /**
@@ -86,7 +87,8 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'status' => null,
         'ref_client' => null,
         'description' => null,
-        'create_date' => 'date-time'
+        'create_date' => 'date-time',
+        'addresses' => null
     ];
 
     /**
@@ -104,7 +106,8 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
 		'status' => true,
 		'ref_client' => true,
 		'description' => true,
-		'create_date' => true
+		'create_date' => true,
+		'addresses' => false
     ];
 
     /**
@@ -202,7 +205,8 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'status' => 'status',
         'ref_client' => 'refClient',
         'description' => 'description',
-        'create_date' => 'createDate'
+        'create_date' => 'createDate',
+        'addresses' => 'addresses'
     ];
 
     /**
@@ -220,7 +224,8 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'status' => 'setStatus',
         'ref_client' => 'setRefClient',
         'description' => 'setDescription',
-        'create_date' => 'setCreateDate'
+        'create_date' => 'setCreateDate',
+        'addresses' => 'setAddresses'
     ];
 
     /**
@@ -238,7 +243,8 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         'status' => 'getStatus',
         'ref_client' => 'getRefClient',
         'description' => 'getDescription',
-        'create_date' => 'getCreateDate'
+        'create_date' => 'getCreateDate',
+        'addresses' => 'getAddresses'
     ];
 
     /**
@@ -308,6 +314,7 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('ref_client', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
+        $this->setIfExists('addresses', $data ?? [], null);
     }
 
     /**
@@ -646,6 +653,33 @@ class ServiceContractSearch implements ModelInterface, ArrayAccess, \JsonSeriali
             }
         }
         $this->container['create_date'] = $create_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets addresses
+     *
+     * @return string[]|null
+     */
+    public function getAddresses()
+    {
+        return $this->container['addresses'];
+    }
+
+    /**
+     * Sets addresses
+     *
+     * @param string[]|null $addresses addresses
+     *
+     * @return self
+     */
+    public function setAddresses($addresses)
+    {
+        if (is_null($addresses)) {
+            throw new \InvalidArgumentException('non-nullable addresses cannot be null');
+        }
+        $this->container['addresses'] = $addresses;
 
         return $this;
     }

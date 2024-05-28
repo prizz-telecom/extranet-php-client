@@ -125,28 +125,28 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static array $openAPINullables = [
         'code' => false,
 		'tech' => false,
-		'delivery' => false,
-		'grt_min' => false,
-		'grt_max' => false,
+		'delivery' => true,
+		'grt_min' => true,
+		'grt_max' => true,
 		'grt_non_working_hours_option_available' => false,
 		'grt_non_working_hours_option_mandatory' => false,
-		'nrc_min' => false,
-		'nrc_max' => false,
-		'commitment_min' => false,
-		'commitment_max' => false,
-		'upload_min' => false,
-		'upload_max' => false,
-		'download_min' => false,
-		'download_max' => false,
-		'guaranteed_upload_min' => false,
-		'guaranteed_upload_max' => false,
-		'guaranteedd_download_min' => false,
-		'guaranteedd_download_max' => false,
-		'rc_min' => false,
-		'rc_max' => false,
+		'nrc_min' => true,
+		'nrc_max' => true,
+		'commitment_min' => true,
+		'commitment_max' => true,
+		'upload_min' => true,
+		'upload_max' => true,
+		'download_min' => true,
+		'download_max' => true,
+		'guaranteed_upload_min' => true,
+		'guaranteed_upload_max' => true,
+		'guaranteedd_download_min' => true,
+		'guaranteedd_download_max' => true,
+		'rc_min' => true,
+		'rc_max' => true,
 		'price_list_items_groups' => false,
-		'offer_id' => false,
-		'price_list_id' => false
+		'offer_id' => true,
+		'price_list_id' => true
     ];
 
     /**
@@ -524,7 +524,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setDelivery($delivery)
     {
         if (is_null($delivery)) {
-            throw new \InvalidArgumentException('non-nullable delivery cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'delivery');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('delivery', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['delivery'] = $delivery;
 
@@ -551,7 +558,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setGrtMin($grt_min)
     {
         if (is_null($grt_min)) {
-            throw new \InvalidArgumentException('non-nullable grt_min cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'grt_min');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('grt_min', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['grt_min'] = $grt_min;
 
@@ -578,7 +592,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setGrtMax($grt_max)
     {
         if (is_null($grt_max)) {
-            throw new \InvalidArgumentException('non-nullable grt_max cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'grt_max');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('grt_max', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['grt_max'] = $grt_max;
 
@@ -659,7 +680,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setNrcMin($nrc_min)
     {
         if (is_null($nrc_min)) {
-            throw new \InvalidArgumentException('non-nullable nrc_min cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'nrc_min');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nrc_min', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['nrc_min'] = $nrc_min;
 
@@ -686,7 +714,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setNrcMax($nrc_max)
     {
         if (is_null($nrc_max)) {
-            throw new \InvalidArgumentException('non-nullable nrc_max cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'nrc_max');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nrc_max', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['nrc_max'] = $nrc_max;
 
@@ -713,7 +748,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setCommitmentMin($commitment_min)
     {
         if (is_null($commitment_min)) {
-            throw new \InvalidArgumentException('non-nullable commitment_min cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'commitment_min');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('commitment_min', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['commitment_min'] = $commitment_min;
 
@@ -740,7 +782,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setCommitmentMax($commitment_max)
     {
         if (is_null($commitment_max)) {
-            throw new \InvalidArgumentException('non-nullable commitment_max cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'commitment_max');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('commitment_max', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['commitment_max'] = $commitment_max;
 
@@ -767,7 +816,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setUploadMin($upload_min)
     {
         if (is_null($upload_min)) {
-            throw new \InvalidArgumentException('non-nullable upload_min cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'upload_min');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('upload_min', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['upload_min'] = $upload_min;
 
@@ -794,7 +850,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setUploadMax($upload_max)
     {
         if (is_null($upload_max)) {
-            throw new \InvalidArgumentException('non-nullable upload_max cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'upload_max');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('upload_max', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['upload_max'] = $upload_max;
 
@@ -821,7 +884,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setDownloadMin($download_min)
     {
         if (is_null($download_min)) {
-            throw new \InvalidArgumentException('non-nullable download_min cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'download_min');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('download_min', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['download_min'] = $download_min;
 
@@ -848,7 +918,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setDownloadMax($download_max)
     {
         if (is_null($download_max)) {
-            throw new \InvalidArgumentException('non-nullable download_max cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'download_max');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('download_max', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['download_max'] = $download_max;
 
@@ -875,7 +952,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setGuaranteedUploadMin($guaranteed_upload_min)
     {
         if (is_null($guaranteed_upload_min)) {
-            throw new \InvalidArgumentException('non-nullable guaranteed_upload_min cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'guaranteed_upload_min');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('guaranteed_upload_min', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['guaranteed_upload_min'] = $guaranteed_upload_min;
 
@@ -902,7 +986,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setGuaranteedUploadMax($guaranteed_upload_max)
     {
         if (is_null($guaranteed_upload_max)) {
-            throw new \InvalidArgumentException('non-nullable guaranteed_upload_max cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'guaranteed_upload_max');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('guaranteed_upload_max', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['guaranteed_upload_max'] = $guaranteed_upload_max;
 
@@ -929,7 +1020,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setGuaranteeddDownloadMin($guaranteedd_download_min)
     {
         if (is_null($guaranteedd_download_min)) {
-            throw new \InvalidArgumentException('non-nullable guaranteedd_download_min cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'guaranteedd_download_min');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('guaranteedd_download_min', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['guaranteedd_download_min'] = $guaranteedd_download_min;
 
@@ -956,7 +1054,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setGuaranteeddDownloadMax($guaranteedd_download_max)
     {
         if (is_null($guaranteedd_download_max)) {
-            throw new \InvalidArgumentException('non-nullable guaranteedd_download_max cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'guaranteedd_download_max');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('guaranteedd_download_max', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['guaranteedd_download_max'] = $guaranteedd_download_max;
 
@@ -983,7 +1088,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setRcMin($rc_min)
     {
         if (is_null($rc_min)) {
-            throw new \InvalidArgumentException('non-nullable rc_min cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'rc_min');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('rc_min', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['rc_min'] = $rc_min;
 
@@ -1010,7 +1122,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setRcMax($rc_max)
     {
         if (is_null($rc_max)) {
-            throw new \InvalidArgumentException('non-nullable rc_max cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'rc_max');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('rc_max', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['rc_max'] = $rc_max;
 
@@ -1064,7 +1183,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setOfferId($offer_id)
     {
         if (is_null($offer_id)) {
-            throw new \InvalidArgumentException('non-nullable offer_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'offer_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('offer_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['offer_id'] = $offer_id;
 
@@ -1091,7 +1217,14 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setPriceListId($price_list_id)
     {
         if (is_null($price_list_id)) {
-            throw new \InvalidArgumentException('non-nullable price_list_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'price_list_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('price_list_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['price_list_id'] = $price_list_id;
 

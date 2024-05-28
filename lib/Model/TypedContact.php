@@ -1,6 +1,6 @@
 <?php
 /**
- * UserApiToken
+ * TypedContact
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * UserApiToken Class Doc Comment
+ * TypedContact Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
+class TypedContact implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UserApiToken';
+    protected static $openAPIModelName = 'TypedContact';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +58,13 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'available_workflows' => 'string[]',
+        'id' => 'int',
         'create_date' => '\DateTime',
         'last_modified_date' => '\DateTime',
-        'id' => 'int',
-        'name' => 'string',
-        'active' => 'bool',
-        'token' => 'string',
-        'last_usage' => '\DateTime'
+        'entity_id' => 'int',
+        'entity_class' => 'string',
+        'contact' => '\Infracorp\Extranet\Client\Model\Contact',
+        'type' => 'string'
     ];
 
     /**
@@ -76,13 +76,13 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'available_workflows' => null,
+        'id' => null,
         'create_date' => 'date-time',
         'last_modified_date' => 'date-time',
-        'id' => null,
-        'name' => null,
-        'active' => null,
-        'token' => null,
-        'last_usage' => 'date-time'
+        'entity_id' => null,
+        'entity_class' => null,
+        'contact' => null,
+        'type' => null
     ];
 
     /**
@@ -92,13 +92,13 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'available_workflows' => false,
+		'id' => false,
 		'create_date' => false,
 		'last_modified_date' => true,
-		'id' => false,
-		'name' => true,
-		'active' => false,
-		'token' => false,
-		'last_usage' => true
+		'entity_id' => false,
+		'entity_class' => false,
+		'contact' => false,
+		'type' => false
     ];
 
     /**
@@ -188,13 +188,13 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'available_workflows' => 'availableWorkflows',
+        'id' => 'id',
         'create_date' => 'createDate',
         'last_modified_date' => 'lastModifiedDate',
-        'id' => 'id',
-        'name' => 'name',
-        'active' => 'active',
-        'token' => 'token',
-        'last_usage' => 'lastUsage'
+        'entity_id' => 'entityId',
+        'entity_class' => 'entityClass',
+        'contact' => 'contact',
+        'type' => 'type'
     ];
 
     /**
@@ -204,13 +204,13 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'available_workflows' => 'setAvailableWorkflows',
+        'id' => 'setId',
         'create_date' => 'setCreateDate',
         'last_modified_date' => 'setLastModifiedDate',
-        'id' => 'setId',
-        'name' => 'setName',
-        'active' => 'setActive',
-        'token' => 'setToken',
-        'last_usage' => 'setLastUsage'
+        'entity_id' => 'setEntityId',
+        'entity_class' => 'setEntityClass',
+        'contact' => 'setContact',
+        'type' => 'setType'
     ];
 
     /**
@@ -220,13 +220,13 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'available_workflows' => 'getAvailableWorkflows',
+        'id' => 'getId',
         'create_date' => 'getCreateDate',
         'last_modified_date' => 'getLastModifiedDate',
-        'id' => 'getId',
-        'name' => 'getName',
-        'active' => 'getActive',
-        'token' => 'getToken',
-        'last_usage' => 'getLastUsage'
+        'entity_id' => 'getEntityId',
+        'entity_class' => 'getEntityClass',
+        'contact' => 'getContact',
+        'type' => 'getType'
     ];
 
     /**
@@ -305,6 +305,12 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\AssignContact\\Context';
     public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Contact\\SwitchActive\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
+    public const TYPE_DELIVERY = 'DELIVERY';
+    public const TYPE_SCHEDULED_MAINTENANCE = 'SCHEDULED_MAINTENANCE';
+    public const TYPE_INCIDENT = 'INCIDENT';
+    public const TYPE_ADMINISTRATIVE = 'ADMINISTRATIVE';
+    public const TYPE_ACCOUNTING = 'ACCOUNTING';
+    public const TYPE_CONSTRUCTION_SITE = 'CONSTRUCTION_SITE';
 
     /**
      * Gets allowable values of the enum
@@ -353,6 +359,23 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_DELIVERY,
+            self::TYPE_SCHEDULED_MAINTENANCE,
+            self::TYPE_INCIDENT,
+            self::TYPE_ADMINISTRATIVE,
+            self::TYPE_ACCOUNTING,
+            self::TYPE_CONSTRUCTION_SITE,
+        ];
+    }
+
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -368,13 +391,13 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('available_workflows', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
         $this->setIfExists('last_modified_date', $data ?? [], null);
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('active', $data ?? [], null);
-        $this->setIfExists('token', $data ?? [], null);
-        $this->setIfExists('last_usage', $data ?? [], null);
+        $this->setIfExists('entity_id', $data ?? [], null);
+        $this->setIfExists('entity_class', $data ?? [], null);
+        $this->setIfExists('contact', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -403,6 +426,15 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -451,6 +483,33 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['available_workflows'] = $available_workflows;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        }
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -517,150 +576,119 @@ class UserApiToken implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets id
+     * Gets entity_id
      *
      * @return int|null
      */
-    public function getId()
+    public function getEntityId()
     {
-        return $this->container['id'];
+        return $this->container['entity_id'];
     }
 
     /**
-     * Sets id
+     * Sets entity_id
      *
-     * @param int|null $id id
+     * @param int|null $entity_id entity_id
      *
      * @return self
      */
-    public function setId($id)
+    public function setEntityId($entity_id)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($entity_id)) {
+            throw new \InvalidArgumentException('non-nullable entity_id cannot be null');
         }
-        $this->container['id'] = $id;
+        $this->container['entity_id'] = $entity_id;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets entity_class
      *
      * @return string|null
      */
-    public function getName()
+    public function getEntityClass()
     {
-        return $this->container['name'];
+        return $this->container['entity_class'];
     }
 
     /**
-     * Sets name
+     * Sets entity_class
      *
-     * @param string|null $name name
+     * @param string|null $entity_class entity_class
      *
      * @return self
      */
-    public function setName($name)
+    public function setEntityClass($entity_class)
     {
-        if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($entity_class)) {
+            throw new \InvalidArgumentException('non-nullable entity_class cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['entity_class'] = $entity_class;
 
         return $this;
     }
 
     /**
-     * Gets active
+     * Gets contact
      *
-     * @return bool|null
+     * @return \Infracorp\Extranet\Client\Model\Contact|null
      */
-    public function getActive()
+    public function getContact()
     {
-        return $this->container['active'];
+        return $this->container['contact'];
     }
 
     /**
-     * Sets active
+     * Sets contact
      *
-     * @param bool|null $active active
+     * @param \Infracorp\Extranet\Client\Model\Contact|null $contact contact
      *
      * @return self
      */
-    public function setActive($active)
+    public function setContact($contact)
     {
-        if (is_null($active)) {
-            throw new \InvalidArgumentException('non-nullable active cannot be null');
+        if (is_null($contact)) {
+            throw new \InvalidArgumentException('non-nullable contact cannot be null');
         }
-        $this->container['active'] = $active;
+        $this->container['contact'] = $contact;
 
         return $this;
     }
 
     /**
-     * Gets token
+     * Gets type
      *
      * @return string|null
      */
-    public function getToken()
+    public function getType()
     {
-        return $this->container['token'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets token
+     * Sets type
      *
-     * @param string|null $token token
+     * @param string|null $type type
      *
      * @return self
      */
-    public function setToken($token)
+    public function setType($type)
     {
-        if (is_null($token)) {
-            throw new \InvalidArgumentException('non-nullable token cannot be null');
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
-        $this->container['token'] = $token;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_usage
-     *
-     * @return \DateTime|null
-     */
-    public function getLastUsage()
-    {
-        return $this->container['last_usage'];
-    }
-
-    /**
-     * Sets last_usage
-     *
-     * @param \DateTime|null $last_usage last_usage
-     *
-     * @return self
-     */
-    public function setLastUsage($last_usage)
-    {
-        if (is_null($last_usage)) {
-            array_push($this->openAPINullablesSetToNull, 'last_usage');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('last_usage', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
-        $this->container['last_usage'] = $last_usage;
+        $this->container['type'] = $type;
 
         return $this;
     }

@@ -73,6 +73,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'create_date' => '\DateTime',
         'notes' => 'string',
         'section_names' => 'string',
+        'addresses' => 'string[]',
         'status' => 'string',
         'ref_client' => 'string',
         'description' => 'string'
@@ -102,6 +103,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'create_date' => 'date-time',
         'notes' => null,
         'section_names' => null,
+        'addresses' => null,
         'status' => null,
         'ref_client' => null,
         'description' => null
@@ -129,6 +131,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
 		'create_date' => true,
 		'notes' => true,
 		'section_names' => true,
+		'addresses' => false,
 		'status' => true,
 		'ref_client' => true,
 		'description' => true
@@ -236,6 +239,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'create_date' => 'createDate',
         'notes' => 'notes',
         'section_names' => 'sectionNames',
+        'addresses' => 'addresses',
         'status' => 'status',
         'ref_client' => 'refClient',
         'description' => 'description'
@@ -263,6 +267,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'create_date' => 'setCreateDate',
         'notes' => 'setNotes',
         'section_names' => 'setSectionNames',
+        'addresses' => 'setAddresses',
         'status' => 'setStatus',
         'ref_client' => 'setRefClient',
         'description' => 'setDescription'
@@ -290,6 +295,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         'create_date' => 'getCreateDate',
         'notes' => 'getNotes',
         'section_names' => 'getSectionNames',
+        'addresses' => 'getAddresses',
         'status' => 'getStatus',
         'ref_client' => 'getRefClient',
         'description' => 'getDescription'
@@ -368,6 +374,7 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('create_date', $data ?? [], null);
         $this->setIfExists('notes', $data ?? [], null);
         $this->setIfExists('section_names', $data ?? [], null);
+        $this->setIfExists('addresses', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('ref_client', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -892,6 +899,33 @@ class Search200ResponseInner implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['section_names'] = $section_names;
+
+        return $this;
+    }
+
+    /**
+     * Gets addresses
+     *
+     * @return string[]|null
+     */
+    public function getAddresses()
+    {
+        return $this->container['addresses'];
+    }
+
+    /**
+     * Sets addresses
+     *
+     * @param string[]|null $addresses addresses
+     *
+     * @return self
+     */
+    public function setAddresses($addresses)
+    {
+        if (is_null($addresses)) {
+            throw new \InvalidArgumentException('non-nullable addresses cannot be null');
+        }
+        $this->container['addresses'] = $addresses;
 
         return $this;
     }

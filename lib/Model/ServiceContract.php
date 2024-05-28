@@ -57,6 +57,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'available_workflows' => 'string[]',
         'id' => 'int',
         'name' => 'string',
         'create_date' => '\DateTime',
@@ -76,10 +77,13 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'planned_activation_date' => '\DateTime',
         'sold_activation_date' => '\DateTime',
         'commitment_end_date' => '\DateTime',
-        'attributes' => 'object',
-        'consolidated_attributes' => 'object',
-        'consolidated_attributes_staging_or_new' => 'object',
-        'commercial_offers' => '\Infracorp\Extranet\Client\Model\ServiceContractCommercialOffersInner[]'
+        'attributes' => 'array<string,mixed>',
+        'consolidated_attributes' => 'array<string,mixed>',
+        'consolidated_attributes_staging_or_new' => 'array<string,mixed>',
+        'commercial_offers' => '\Infracorp\Extranet\Client\Model\ServiceContractCommercialOffersInner[]',
+        'contacts' => '\Infracorp\Extranet\Client\Model\Contact[]',
+        'configured_contacts' => '\Infracorp\Extranet\Client\Model\TypedContact[]',
+        'replaces' => 'int'
     ];
 
     /**
@@ -90,6 +94,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'available_workflows' => null,
         'id' => null,
         'name' => null,
         'create_date' => 'date-time',
@@ -112,7 +117,10 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'attributes' => null,
         'consolidated_attributes' => null,
         'consolidated_attributes_staging_or_new' => null,
-        'commercial_offers' => null
+        'commercial_offers' => null,
+        'contacts' => null,
+        'configured_contacts' => null,
+        'replaces' => null
     ];
 
     /**
@@ -121,7 +129,8 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
+        'available_workflows' => false,
+		'id' => false,
 		'name' => false,
 		'create_date' => false,
 		'last_modified_date' => true,
@@ -143,7 +152,10 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
 		'attributes' => false,
 		'consolidated_attributes' => false,
 		'consolidated_attributes_staging_or_new' => false,
-		'commercial_offers' => false
+		'commercial_offers' => false,
+		'contacts' => false,
+		'configured_contacts' => false,
+		'replaces' => true
     ];
 
     /**
@@ -232,6 +244,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'available_workflows' => 'availableWorkflows',
         'id' => 'id',
         'name' => 'name',
         'create_date' => 'createDate',
@@ -254,7 +267,10 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'attributes' => 'attributes',
         'consolidated_attributes' => 'consolidatedAttributes',
         'consolidated_attributes_staging_or_new' => 'consolidatedAttributesStagingOrNew',
-        'commercial_offers' => 'commercialOffers'
+        'commercial_offers' => 'commercialOffers',
+        'contacts' => 'contacts',
+        'configured_contacts' => 'configuredContacts',
+        'replaces' => 'replaces'
     ];
 
     /**
@@ -263,6 +279,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'available_workflows' => 'setAvailableWorkflows',
         'id' => 'setId',
         'name' => 'setName',
         'create_date' => 'setCreateDate',
@@ -285,7 +302,10 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'attributes' => 'setAttributes',
         'consolidated_attributes' => 'setConsolidatedAttributes',
         'consolidated_attributes_staging_or_new' => 'setConsolidatedAttributesStagingOrNew',
-        'commercial_offers' => 'setCommercialOffers'
+        'commercial_offers' => 'setCommercialOffers',
+        'contacts' => 'setContacts',
+        'configured_contacts' => 'setConfiguredContacts',
+        'replaces' => 'setReplaces'
     ];
 
     /**
@@ -294,6 +314,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'available_workflows' => 'getAvailableWorkflows',
         'id' => 'getId',
         'name' => 'getName',
         'create_date' => 'getCreateDate',
@@ -316,7 +337,10 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'attributes' => 'getAttributes',
         'consolidated_attributes' => 'getConsolidatedAttributes',
         'consolidated_attributes_staging_or_new' => 'getConsolidatedAttributesStagingOrNew',
-        'commercial_offers' => 'getCommercialOffers'
+        'commercial_offers' => 'getCommercialOffers',
+        'contacts' => 'getContacts',
+        'configured_contacts' => 'getConfiguredContacts',
+        'replaces' => 'getReplaces'
     ];
 
     /**
@@ -360,6 +384,87 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommercialOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Submit\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Sign\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Rename\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RenameSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateOfferItemInOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\SetOffer\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\AddComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\SubscribeThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateComment\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Comment\\UpdateThread\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\Invoice\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\CreateCommentThread\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\CreateToken\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\RevokeToken\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSubscribers\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AddItem\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\RemoveItem\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateSectionItems\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddContact\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntityContact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Contact\\Update\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_DESCRIPTION_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UpdateDescription\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_CLIENT_REF_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UpdateClientRef\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ACTIVATION_SETUP_L2_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Activation\\SetupL2\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_CLIENT_REF_SECTION_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\UpdateClientRefSection\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\AssignContact\\Context';
+    public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Contact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getAvailableWorkflowsAllowableValues()
+    {
+        return [
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMERCIAL_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SUBMIT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SIGN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_RENAME_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_OFFER_ITEM_IN_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_SET_OFFER_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_ADD_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_SUBSCRIBE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_COMMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMENT_UPDATE_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_INVOICE_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CREATE_COMMENT_THREAD_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_CREATE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_REVOKE_TOKEN_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SUBSCRIBERS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ADD_ITEM_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_REMOVE_ITEM_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_SECTION_ITEMS_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CONTACT_UPDATE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_DESCRIPTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_UPDATE_CLIENT_REF_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ACTIVATION_SETUP_L2_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_UPDATE_CLIENT_REF_SECTION_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -376,6 +481,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('available_workflows', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
@@ -399,6 +505,9 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('consolidated_attributes', $data ?? [], null);
         $this->setIfExists('consolidated_attributes_staging_or_new', $data ?? [], null);
         $this->setIfExists('commercial_offers', $data ?? [], null);
+        $this->setIfExists('contacts', $data ?? [], null);
+        $this->setIfExists('configured_contacts', $data ?? [], null);
+        $this->setIfExists('replaces', $data ?? [], null);
     }
 
     /**
@@ -442,6 +551,42 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets available_workflows
+     *
+     * @return string[]|null
+     */
+    public function getAvailableWorkflows()
+    {
+        return $this->container['available_workflows'];
+    }
+
+    /**
+     * Sets available_workflows
+     *
+     * @param string[]|null $available_workflows liste des processus disponible pour l'objet
+     *
+     * @return self
+     */
+    public function setAvailableWorkflows($available_workflows)
+    {
+        if (is_null($available_workflows)) {
+            throw new \InvalidArgumentException('non-nullable available_workflows cannot be null');
+        }
+        $allowedValues = $this->getAvailableWorkflowsAllowableValues();
+        if (array_diff($available_workflows, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'available_workflows', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['available_workflows'] = $available_workflows;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -1022,7 +1167,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attributes
      *
-     * @return object|null
+     * @return array<string,mixed>|null
      */
     public function getAttributes()
     {
@@ -1032,7 +1177,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attributes
      *
-     * @param object|null $attributes attributes
+     * @param array<string,mixed>|null $attributes attributes
      *
      * @return self
      */
@@ -1049,7 +1194,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets consolidated_attributes
      *
-     * @return object|null
+     * @return array<string,mixed>|null
      */
     public function getConsolidatedAttributes()
     {
@@ -1059,7 +1204,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets consolidated_attributes
      *
-     * @param object|null $consolidated_attributes consolidated_attributes
+     * @param array<string,mixed>|null $consolidated_attributes consolidated_attributes
      *
      * @return self
      */
@@ -1076,7 +1221,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets consolidated_attributes_staging_or_new
      *
-     * @return object|null
+     * @return array<string,mixed>|null
      */
     public function getConsolidatedAttributesStagingOrNew()
     {
@@ -1086,7 +1231,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets consolidated_attributes_staging_or_new
      *
-     * @param object|null $consolidated_attributes_staging_or_new consolidated_attributes_staging_or_new
+     * @param array<string,mixed>|null $consolidated_attributes_staging_or_new consolidated_attributes_staging_or_new
      *
      * @return self
      */
@@ -1123,6 +1268,94 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable commercial_offers cannot be null');
         }
         $this->container['commercial_offers'] = $commercial_offers;
+
+        return $this;
+    }
+
+    /**
+     * Gets contacts
+     *
+     * @return \Infracorp\Extranet\Client\Model\Contact[]|null
+     */
+    public function getContacts()
+    {
+        return $this->container['contacts'];
+    }
+
+    /**
+     * Sets contacts
+     *
+     * @param \Infracorp\Extranet\Client\Model\Contact[]|null $contacts contacts
+     *
+     * @return self
+     */
+    public function setContacts($contacts)
+    {
+        if (is_null($contacts)) {
+            throw new \InvalidArgumentException('non-nullable contacts cannot be null');
+        }
+        $this->container['contacts'] = $contacts;
+
+        return $this;
+    }
+
+    /**
+     * Gets configured_contacts
+     *
+     * @return \Infracorp\Extranet\Client\Model\TypedContact[]|null
+     */
+    public function getConfiguredContacts()
+    {
+        return $this->container['configured_contacts'];
+    }
+
+    /**
+     * Sets configured_contacts
+     *
+     * @param \Infracorp\Extranet\Client\Model\TypedContact[]|null $configured_contacts configured_contacts
+     *
+     * @return self
+     */
+    public function setConfiguredContacts($configured_contacts)
+    {
+        if (is_null($configured_contacts)) {
+            throw new \InvalidArgumentException('non-nullable configured_contacts cannot be null');
+        }
+        $this->container['configured_contacts'] = $configured_contacts;
+
+        return $this;
+    }
+
+    /**
+     * Gets replaces
+     *
+     * @return int|null
+     */
+    public function getReplaces()
+    {
+        return $this->container['replaces'];
+    }
+
+    /**
+     * Sets replaces
+     *
+     * @param int|null $replaces replaces
+     *
+     * @return self
+     */
+    public function setReplaces($replaces)
+    {
+        if (is_null($replaces)) {
+            array_push($this->openAPINullablesSetToNull, 'replaces');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('replaces', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['replaces'] = $replaces;
 
         return $this;
     }
