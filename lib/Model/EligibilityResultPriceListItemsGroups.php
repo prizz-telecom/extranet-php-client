@@ -57,6 +57,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
+        'main' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
         'bandwidth' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
         'commitment' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
         'grt' => '\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]',
@@ -76,6 +77,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'main' => null,
         'bandwidth' => null,
         'commitment' => null,
         'grt' => null,
@@ -93,7 +95,8 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'bandwidth' => false,
+        'main' => false,
+		'bandwidth' => false,
 		'commitment' => false,
 		'grt' => false,
 		'nrc' => false,
@@ -190,6 +193,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
+        'main' => 'main',
         'bandwidth' => 'bandwidth',
         'commitment' => 'commitment',
         'grt' => 'grt',
@@ -207,6 +211,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
+        'main' => 'setMain',
         'bandwidth' => 'setBandwidth',
         'commitment' => 'setCommitment',
         'grt' => 'setGrt',
@@ -224,6 +229,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
+        'main' => 'getMain',
         'bandwidth' => 'getBandwidth',
         'commitment' => 'getCommitment',
         'grt' => 'getGrt',
@@ -292,6 +298,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('main', $data ?? [], null);
         $this->setIfExists('bandwidth', $data ?? [], null);
         $this->setIfExists('commitment', $data ?? [], null);
         $this->setIfExists('grt', $data ?? [], null);
@@ -344,6 +351,33 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets main
+     *
+     * @return \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null
+     */
+    public function getMain()
+    {
+        return $this->container['main'];
+    }
+
+    /**
+     * Sets main
+     *
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $main main
+     *
+     * @return self
+     */
+    public function setMain($main)
+    {
+        if (is_null($main)) {
+            throw new \InvalidArgumentException('non-nullable main cannot be null');
+        }
+        $this->container['main'] = $main;
+
+        return $this;
+    }
 
     /**
      * Gets bandwidth

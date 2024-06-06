@@ -437,6 +437,12 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\AssignContact\\Context';
     public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Contact\\SwitchActive\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
+    public const STATUS__NEW = 'new';
+    public const STATUS_ESTIMATE_PENDING = 'estimate_pending';
+    public const STATUS_APPROVAL_PENDING = 'approval_pending';
+    public const STATUS_VALIDATED = 'validated';
+    public const STATUS_ABANDONED = 'abandoned';
+    public const STATUS_SIGNED = 'signed';
 
     /**
      * Gets allowable values of the enum
@@ -481,6 +487,23 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
             self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT,
             self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS__NEW,
+            self::STATUS_ESTIMATE_PENDING,
+            self::STATUS_APPROVAL_PENDING,
+            self::STATUS_VALIDATED,
+            self::STATUS_ABANDONED,
+            self::STATUS_SIGNED,
         ];
     }
 
@@ -557,6 +580,15 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'status', must be one of '%s'",
+                $this->container['status'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -1016,6 +1048,16 @@ class CommercialOffer implements ModelInterface, ArrayAccess, \JsonSerializable
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'status', must be one of '%s'",
+                    $status,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['status'] = $status;
 

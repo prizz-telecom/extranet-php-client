@@ -62,6 +62,8 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'create_date' => '\DateTime',
         'last_modified_date' => '\DateTime',
+        'canceled_reason' => 'string',
+        'canceled_date' => '\DateTime',
         'status' => 'string',
         'legal_entity_id' => 'int',
         'client_contract_id' => 'int',
@@ -99,6 +101,8 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'create_date' => 'date-time',
         'last_modified_date' => 'date-time',
+        'canceled_reason' => null,
+        'canceled_date' => 'date-time',
         'status' => null,
         'legal_entity_id' => null,
         'client_contract_id' => null,
@@ -134,6 +138,8 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
 		'name' => false,
 		'create_date' => false,
 		'last_modified_date' => true,
+		'canceled_reason' => true,
+		'canceled_date' => true,
 		'status' => true,
 		'legal_entity_id' => false,
 		'client_contract_id' => false,
@@ -249,6 +255,8 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'name',
         'create_date' => 'createDate',
         'last_modified_date' => 'lastModifiedDate',
+        'canceled_reason' => 'canceledReason',
+        'canceled_date' => 'canceledDate',
         'status' => 'status',
         'legal_entity_id' => 'legalEntityId',
         'client_contract_id' => 'clientContractId',
@@ -284,6 +292,8 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'setName',
         'create_date' => 'setCreateDate',
         'last_modified_date' => 'setLastModifiedDate',
+        'canceled_reason' => 'setCanceledReason',
+        'canceled_date' => 'setCanceledDate',
         'status' => 'setStatus',
         'legal_entity_id' => 'setLegalEntityId',
         'client_contract_id' => 'setClientContractId',
@@ -319,6 +329,8 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'getName',
         'create_date' => 'getCreateDate',
         'last_modified_date' => 'getLastModifiedDate',
+        'canceled_reason' => 'getCanceledReason',
+        'canceled_date' => 'getCanceledDate',
         'status' => 'getStatus',
         'legal_entity_id' => 'getLegalEntityId',
         'client_contract_id' => 'getClientContractId',
@@ -486,6 +498,8 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
         $this->setIfExists('last_modified_date', $data ?? [], null);
+        $this->setIfExists('canceled_reason', $data ?? [], null);
+        $this->setIfExists('canceled_date', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('legal_entity_id', $data ?? [], null);
         $this->setIfExists('client_contract_id', $data ?? [], null);
@@ -699,6 +713,74 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['last_modified_date'] = $last_modified_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets canceled_reason
+     *
+     * @return string|null
+     */
+    public function getCanceledReason()
+    {
+        return $this->container['canceled_reason'];
+    }
+
+    /**
+     * Sets canceled_reason
+     *
+     * @param string|null $canceled_reason canceled_reason
+     *
+     * @return self
+     */
+    public function setCanceledReason($canceled_reason)
+    {
+        if (is_null($canceled_reason)) {
+            array_push($this->openAPINullablesSetToNull, 'canceled_reason');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('canceled_reason', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['canceled_reason'] = $canceled_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets canceled_date
+     *
+     * @return \DateTime|null
+     */
+    public function getCanceledDate()
+    {
+        return $this->container['canceled_date'];
+    }
+
+    /**
+     * Sets canceled_date
+     *
+     * @param \DateTime|null $canceled_date canceled_date
+     *
+     * @return self
+     */
+    public function setCanceledDate($canceled_date)
+    {
+        if (is_null($canceled_date)) {
+            array_push($this->openAPINullablesSetToNull, 'canceled_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('canceled_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['canceled_date'] = $canceled_date;
 
         return $this;
     }

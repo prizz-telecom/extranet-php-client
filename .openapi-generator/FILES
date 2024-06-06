@@ -190,6 +190,3 @@ lib/Model/UserApiToken.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/OfferContextShortenedTest.php
-test/Model/OfferContextTest.php
-test/Model/TypedContactTest.php

@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional]
 **create_date** | **\DateTime** |  | [optional]
 **last_modified_date** | **\DateTime** |  | [optional]
+**canceled_reason** | **string** |  | [optional]
+**canceled_date** | **\DateTime** |  | [optional]
 **status** | **string** |  | [optional]
 **legal_entity_id** | **int** |  | [optional]
 **client_contract_id** | **int** |  | [optional]

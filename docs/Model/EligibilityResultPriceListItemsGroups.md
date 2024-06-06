@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**main** | [**\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]**](EligibilityPriceListItem.md) |  | [optional]
 **bandwidth** | [**\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]**](EligibilityPriceListItem.md) |  | [optional]
 **commitment** | [**\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]**](EligibilityPriceListItem.md) |  | [optional]
 **grt** | [**\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]**](EligibilityPriceListItem.md) |  | [optional]

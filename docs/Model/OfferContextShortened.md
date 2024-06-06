@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **total_without_nrc** | **int** |  | [optional]
 **has_to_estimate_products** | **bool** |  | [optional]
 **items_ids** | **int[]** |  | [optional]
-**attributes** | **int[]** |  | [optional]
+**attributes** | **array<string,mixed>** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

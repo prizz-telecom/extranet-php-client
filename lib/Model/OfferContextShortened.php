@@ -62,7 +62,7 @@ class OfferContextShortened implements ModelInterface, ArrayAccess, \JsonSeriali
         'total_without_nrc' => 'int',
         'has_to_estimate_products' => 'bool',
         'items_ids' => 'int[]',
-        'attributes' => 'int[]'
+        'attributes' => 'array<string,mixed>'
     ];
 
     /**
@@ -462,7 +462,7 @@ class OfferContextShortened implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets attributes
      *
-     * @return int[]|null
+     * @return array<string,mixed>|null
      */
     public function getAttributes()
     {
@@ -472,7 +472,7 @@ class OfferContextShortened implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets attributes
      *
-     * @param int[]|null $attributes attributes
+     * @param array<string,mixed>|null $attributes attributes
      *
      * @return self
      */
