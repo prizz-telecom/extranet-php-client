@@ -69,6 +69,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'client_contract_id' => 'int',
         'subscription_date' => '\DateTime',
         'activation_date' => '\DateTime',
+        'first_activation_date' => '\DateTime',
         'offer' => '\Infracorp\Extranet\Client\Model\Offer',
         'client' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity',
         'ref_client' => 'string',
@@ -108,6 +109,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'client_contract_id' => null,
         'subscription_date' => 'date-time',
         'activation_date' => 'date-time',
+        'first_activation_date' => 'date-time',
         'offer' => null,
         'client' => null,
         'ref_client' => null,
@@ -145,6 +147,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
 		'client_contract_id' => false,
 		'subscription_date' => false,
 		'activation_date' => true,
+		'first_activation_date' => true,
 		'offer' => false,
 		'client' => false,
 		'ref_client' => true,
@@ -262,6 +265,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'client_contract_id' => 'clientContractId',
         'subscription_date' => 'subscriptionDate',
         'activation_date' => 'activationDate',
+        'first_activation_date' => 'firstActivationDate',
         'offer' => 'offer',
         'client' => 'client',
         'ref_client' => 'refClient',
@@ -299,6 +303,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'client_contract_id' => 'setClientContractId',
         'subscription_date' => 'setSubscriptionDate',
         'activation_date' => 'setActivationDate',
+        'first_activation_date' => 'setFirstActivationDate',
         'offer' => 'setOffer',
         'client' => 'setClient',
         'ref_client' => 'setRefClient',
@@ -336,6 +341,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'client_contract_id' => 'getClientContractId',
         'subscription_date' => 'getSubscriptionDate',
         'activation_date' => 'getActivationDate',
+        'first_activation_date' => 'getFirstActivationDate',
         'offer' => 'getOffer',
         'client' => 'getClient',
         'ref_client' => 'getRefClient',
@@ -431,6 +437,13 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\AssignContact\\Context';
     public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Contact\\SwitchActive\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_SWITCH_ACTIVE_ROLE_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\SwitchActiveRole\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_USER_ROLE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddUserRole\\Context';
+    public const STATUS__NEW = 'new';
+    public const STATUS_STAGING = 'staging';
+    public const STATUS_ACTIVE = 'active';
+    public const STATUS_ENDING = 'ending';
+    public const STATUS_TERMINATED = 'terminated';
 
     /**
      * Gets allowable values of the enum
@@ -475,6 +488,24 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
             self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT,
             self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_SWITCH_ACTIVE_ROLE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_USER_ROLE_CONTEXT,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS__NEW,
+            self::STATUS_STAGING,
+            self::STATUS_ACTIVE,
+            self::STATUS_ENDING,
+            self::STATUS_TERMINATED,
         ];
     }
 
@@ -505,6 +536,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('client_contract_id', $data ?? [], null);
         $this->setIfExists('subscription_date', $data ?? [], null);
         $this->setIfExists('activation_date', $data ?? [], null);
+        $this->setIfExists('first_activation_date', $data ?? [], null);
         $this->setIfExists('offer', $data ?? [], null);
         $this->setIfExists('client', $data ?? [], null);
         $this->setIfExists('ref_client', $data ?? [], null);
@@ -550,6 +582,15 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'status', must be one of '%s'",
+                $this->container['status'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -814,6 +855,16 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'status', must be one of '%s'",
+                    $status,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['status'] = $status;
 
         return $this;
@@ -930,6 +981,40 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['activation_date'] = $activation_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_activation_date
+     *
+     * @return \DateTime|null
+     */
+    public function getFirstActivationDate()
+    {
+        return $this->container['first_activation_date'];
+    }
+
+    /**
+     * Sets first_activation_date
+     *
+     * @param \DateTime|null $first_activation_date first_activation_date
+     *
+     * @return self
+     */
+    public function setFirstActivationDate($first_activation_date)
+    {
+        if (is_null($first_activation_date)) {
+            array_push($this->openAPINullablesSetToNull, 'first_activation_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('first_activation_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['first_activation_date'] = $first_activation_date;
 
         return $this;
     }

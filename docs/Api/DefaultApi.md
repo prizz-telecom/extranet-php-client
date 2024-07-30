@@ -1945,7 +1945,7 @@ try {
 ## `getOfferContext()`
 
 ```php
-getOfferContext($id, $items): \Infracorp\Extranet\Client\Model\OfferContext
+getOfferContext($id, $items, $distance): \Infracorp\Extranet\Client\Model\OfferContext
 ```
 
 Offers Context
@@ -1976,9 +1976,10 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
 );
 $id = 56; // int
 $items = array(56); // int[] | price list items ids
+$distance = 56; // int | distance for L2 basic offer
 
 try {
-    $result = $apiInstance->getOfferContext($id, $items);
+    $result = $apiInstance->getOfferContext($id, $items, $distance);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getOfferContext: ', $e->getMessage(), PHP_EOL;
@@ -1991,6 +1992,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**|  | |
 | **items** | [**int[]**](../Model/int.md)| price list items ids | |
+| **distance** | **int**| distance for L2 basic offer | [optional] |
 
 ### Return type
 
@@ -2012,7 +2014,7 @@ try {
 ## `getOfferContexts()`
 
 ```php
-getOfferContexts($id, $price_list): \Infracorp\Extranet\Client\Model\OfferContext[]
+getOfferContexts($id, $price_list, $groups, $autofill_offer, $items, $distance): \Infracorp\Extranet\Client\Model\OfferContext[]
 ```
 
 Offers Contexts
@@ -2043,9 +2045,13 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
 );
 $id = 56; // int
 $price_list = 56; // int
+$groups = array('groups_example'); // string[] | group list (e.g. bandwith, commitment, ...)
+$autofill_offer = True; // bool | add default products for each missing required groups to get a valid offer
+$items = array(56); // int[] | determined items id to avoid combination with (e.g. FAS which are determined during eligibilty)
+$distance = 56; // int | distance for L2 basic offer
 
 try {
-    $result = $apiInstance->getOfferContexts($id, $price_list);
+    $result = $apiInstance->getOfferContexts($id, $price_list, $groups, $autofill_offer, $items, $distance);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getOfferContexts: ', $e->getMessage(), PHP_EOL;
@@ -2058,6 +2064,10 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**|  | |
 | **price_list** | **int**|  | |
+| **groups** | [**string[]**](../Model/string.md)| group list (e.g. bandwith, commitment, ...) | [optional] |
+| **autofill_offer** | **bool**| add default products for each missing required groups to get a valid offer | [optional] |
+| **items** | [**int[]**](../Model/int.md)| determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) | [optional] |
+| **distance** | **int**| distance for L2 basic offer | [optional] |
 
 ### Return type
 
@@ -2079,7 +2089,7 @@ try {
 ## `getOfferContextsShortened()`
 
 ```php
-getOfferContextsShortened($id, $price_list): \Infracorp\Extranet\Client\Model\OfferContextShortened[]
+getOfferContextsShortened($id, $price_list, $groups, $autofill_offer, $items, $distance): \Infracorp\Extranet\Client\Model\OfferContextShortened[]
 ```
 
 Offers Contexts
@@ -2110,9 +2120,13 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
 );
 $id = 56; // int
 $price_list = 56; // int
+$groups = array('groups_example'); // string[] | group list (e.g. bandwith, commitment, ...)
+$autofill_offer = True; // bool | add default products for each missing required groups to get a valid offer
+$items = array(56); // int[] | determined items id to avoid combination with (e.g. FAS which are determined during eligibilty)
+$distance = 56; // int | distance for L2 basic offer
 
 try {
-    $result = $apiInstance->getOfferContextsShortened($id, $price_list);
+    $result = $apiInstance->getOfferContextsShortened($id, $price_list, $groups, $autofill_offer, $items, $distance);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getOfferContextsShortened: ', $e->getMessage(), PHP_EOL;
@@ -2125,6 +2139,10 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**|  | |
 | **price_list** | **int**|  | |
+| **groups** | [**string[]**](../Model/string.md)| group list (e.g. bandwith, commitment, ...) | [optional] |
+| **autofill_offer** | **bool**| add default products for each missing required groups to get a valid offer | [optional] |
+| **items** | [**int[]**](../Model/int.md)| determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) | [optional] |
+| **distance** | **int**| distance for L2 basic offer | [optional] |
 
 ### Return type
 

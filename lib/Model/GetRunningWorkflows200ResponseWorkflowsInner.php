@@ -67,7 +67,8 @@ class GetRunningWorkflows200ResponseWorkflowsInner implements ModelInterface, Ar
         'entity_description' => 'int',
         'description' => 'string',
         'status_code' => 'int',
-        'last_log' => 'string'
+        'last_log' => 'string',
+        'html' => 'string'
     ];
 
     /**
@@ -88,7 +89,8 @@ class GetRunningWorkflows200ResponseWorkflowsInner implements ModelInterface, Ar
         'entity_description' => null,
         'description' => null,
         'status_code' => null,
-        'last_log' => null
+        'last_log' => null,
+        'html' => null
     ];
 
     /**
@@ -107,7 +109,8 @@ class GetRunningWorkflows200ResponseWorkflowsInner implements ModelInterface, Ar
 		'entity_description' => false,
 		'description' => false,
 		'status_code' => false,
-		'last_log' => false
+		'last_log' => false,
+		'html' => false
     ];
 
     /**
@@ -206,7 +209,8 @@ class GetRunningWorkflows200ResponseWorkflowsInner implements ModelInterface, Ar
         'entity_description' => 'entityDescription',
         'description' => 'description',
         'status_code' => 'statusCode',
-        'last_log' => 'lastLog'
+        'last_log' => 'lastLog',
+        'html' => 'html'
     ];
 
     /**
@@ -225,7 +229,8 @@ class GetRunningWorkflows200ResponseWorkflowsInner implements ModelInterface, Ar
         'entity_description' => 'setEntityDescription',
         'description' => 'setDescription',
         'status_code' => 'setStatusCode',
-        'last_log' => 'setLastLog'
+        'last_log' => 'setLastLog',
+        'html' => 'setHtml'
     ];
 
     /**
@@ -244,7 +249,8 @@ class GetRunningWorkflows200ResponseWorkflowsInner implements ModelInterface, Ar
         'entity_description' => 'getEntityDescription',
         'description' => 'getDescription',
         'status_code' => 'getStatusCode',
-        'last_log' => 'getLastLog'
+        'last_log' => 'getLastLog',
+        'html' => 'getHtml'
     ];
 
     /**
@@ -315,6 +321,7 @@ class GetRunningWorkflows200ResponseWorkflowsInner implements ModelInterface, Ar
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('status_code', $data ?? [], null);
         $this->setIfExists('last_log', $data ?? [], null);
+        $this->setIfExists('html', $data ?? [], null);
     }
 
     /**
@@ -659,6 +666,33 @@ class GetRunningWorkflows200ResponseWorkflowsInner implements ModelInterface, Ar
             throw new \InvalidArgumentException('non-nullable last_log cannot be null');
         }
         $this->container['last_log'] = $last_log;
+
+        return $this;
+    }
+
+    /**
+     * Gets html
+     *
+     * @return string|null
+     */
+    public function getHtml()
+    {
+        return $this->container['html'];
+    }
+
+    /**
+     * Sets html
+     *
+     * @param string|null $html html
+     *
+     * @return self
+     */
+    public function setHtml($html)
+    {
+        if (is_null($html)) {
+            throw new \InvalidArgumentException('non-nullable html cannot be null');
+        }
+        $this->container['html'] = $html;
 
         return $this;
     }

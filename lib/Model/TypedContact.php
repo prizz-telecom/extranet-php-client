@@ -305,6 +305,8 @@ class TypedContact implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\AssignContact\\Context';
     public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Contact\\SwitchActive\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_SWITCH_ACTIVE_ROLE_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\SwitchActiveRole\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_USER_ROLE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddUserRole\\Context';
     public const TYPE_DELIVERY = 'DELIVERY';
     public const TYPE_SCHEDULED_MAINTENANCE = 'SCHEDULED_MAINTENANCE';
     public const TYPE_INCIDENT = 'INCIDENT';
@@ -355,6 +357,8 @@ class TypedContact implements ModelInterface, ArrayAccess, \JsonSerializable
             self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT,
             self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_SWITCH_ACTIVE_ROLE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_USER_ROLE_CONTEXT,
         ];
     }
 

@@ -232,6 +232,7 @@ Class | Method | HTTP request | Description
 - [UpdateCommercialOfferSectionItems](docs/Model/UpdateCommercialOfferSectionItems.md)
 - [User](docs/Model/User.md)
 - [UserApiToken](docs/Model/UserApiToken.md)
+- [UserRole](docs/Model/UserRole.md)
 - [Workflow](docs/Model/Workflow.md)
 
 ## Authorization

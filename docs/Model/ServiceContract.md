@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **client_contract_id** | **int** |  | [optional]
 **subscription_date** | **\DateTime** |  | [optional]
 **activation_date** | **\DateTime** |  | [optional]
+**first_activation_date** | **\DateTime** |  | [optional]
 **offer** | [**\Infracorp\Extranet\Client\Model\Offer**](Offer.md) |  | [optional]
 **client** | [**\Infracorp\Extranet\Client\Model\ClientLegalEntity**](ClientLegalEntity.md) |  | [optional]
 **ref_client** | **string** | ref set by customer | [optional]

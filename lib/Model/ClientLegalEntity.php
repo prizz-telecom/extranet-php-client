@@ -81,7 +81,8 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'arcep_code' => 'string',
         'contacts' => '\Infracorp\Extranet\Client\Model\Contact[]',
         'configured_contacts' => '\Infracorp\Extranet\Client\Model\TypedContact[]',
-        'contracts' => '\Infracorp\Extranet\Client\Model\ClientContract[]'
+        'contracts' => '\Infracorp\Extranet\Client\Model\ClientContract[]',
+        'roles' => '\Infracorp\Extranet\Client\Model\UserRole[]'
     ];
 
     /**
@@ -116,7 +117,8 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'arcep_code' => null,
         'contacts' => null,
         'configured_contacts' => null,
-        'contracts' => null
+        'contracts' => null,
+        'roles' => null
     ];
 
     /**
@@ -149,7 +151,8 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
 		'arcep_code' => true,
 		'contacts' => false,
 		'configured_contacts' => false,
-		'contracts' => false
+		'contracts' => false,
+		'roles' => false
     ];
 
     /**
@@ -262,7 +265,8 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'arcep_code' => 'arcepCode',
         'contacts' => 'contacts',
         'configured_contacts' => 'configuredContacts',
-        'contracts' => 'contracts'
+        'contracts' => 'contracts',
+        'roles' => 'roles'
     ];
 
     /**
@@ -295,7 +299,8 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'arcep_code' => 'setArcepCode',
         'contacts' => 'setContacts',
         'configured_contacts' => 'setConfiguredContacts',
-        'contracts' => 'setContracts'
+        'contracts' => 'setContracts',
+        'roles' => 'setRoles'
     ];
 
     /**
@@ -328,7 +333,8 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'arcep_code' => 'getArcepCode',
         'contacts' => 'getContacts',
         'configured_contacts' => 'getConfiguredContacts',
-        'contracts' => 'getContracts'
+        'contracts' => 'getContracts',
+        'roles' => 'getRoles'
     ];
 
     /**
@@ -407,6 +413,8 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\AssignContact\\Context';
     public const AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Contact\\SwitchActive\\Context';
     public const AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
+    public const AVAILABLE_WORKFLOWS_USERS_SWITCH_ACTIVE_ROLE_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\SwitchActiveRole\\Context';
+    public const AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_USER_ROLE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddUserRole\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -451,6 +459,8 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
             self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT,
             self::AVAILABLE_WORKFLOWS_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT,
             self::AVAILABLE_WORKFLOWS_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_USERS_SWITCH_ACTIVE_ROLE_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_CLIENT_LEGAL_ENTITY_ADD_USER_ROLE_CONTEXT,
         ];
     }
 
@@ -494,6 +504,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('contacts', $data ?? [], null);
         $this->setIfExists('configured_contacts', $data ?? [], null);
         $this->setIfExists('contracts', $data ?? [], null);
+        $this->setIfExists('roles', $data ?? [], null);
     }
 
     /**
@@ -1351,6 +1362,33 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable contracts cannot be null');
         }
         $this->container['contracts'] = $contracts;
+
+        return $this;
+    }
+
+    /**
+     * Gets roles
+     *
+     * @return \Infracorp\Extranet\Client\Model\UserRole[]|null
+     */
+    public function getRoles()
+    {
+        return $this->container['roles'];
+    }
+
+    /**
+     * Sets roles
+     *
+     * @param \Infracorp\Extranet\Client\Model\UserRole[]|null $roles roles
+     *
+     * @return self
+     */
+    public function setRoles($roles)
+    {
+        if (is_null($roles)) {
+            throw new \InvalidArgumentException('non-nullable roles cannot be null');
+        }
+        $this->container['roles'] = $roles;
 
         return $this;
     }

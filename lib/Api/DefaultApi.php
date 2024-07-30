@@ -9572,15 +9572,16 @@ class DefaultApi
      *
      * @param  int $id id (required)
      * @param  int[] $items price list items ids (required)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContext'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Infracorp\Extranet\Client\Model\OfferContext
      */
-    public function getOfferContext($id, $items, string $contentType = self::contentTypes['getOfferContext'][0])
+    public function getOfferContext($id, $items, $distance = null, string $contentType = self::contentTypes['getOfferContext'][0])
     {
-        list($response) = $this->getOfferContextWithHttpInfo($id, $items, $contentType);
+        list($response) = $this->getOfferContextWithHttpInfo($id, $items, $distance, $contentType);
         return $response;
     }
 
@@ -9591,15 +9592,16 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int[] $items price list items ids (required)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContext'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Infracorp\Extranet\Client\Model\OfferContext, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOfferContextWithHttpInfo($id, $items, string $contentType = self::contentTypes['getOfferContext'][0])
+    public function getOfferContextWithHttpInfo($id, $items, $distance = null, string $contentType = self::contentTypes['getOfferContext'][0])
     {
-        $request = $this->getOfferContextRequest($id, $items, $contentType);
+        $request = $this->getOfferContextRequest($id, $items, $distance, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9716,14 +9718,15 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int[] $items price list items ids (required)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContext'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfferContextAsync($id, $items, string $contentType = self::contentTypes['getOfferContext'][0])
+    public function getOfferContextAsync($id, $items, $distance = null, string $contentType = self::contentTypes['getOfferContext'][0])
     {
-        return $this->getOfferContextAsyncWithHttpInfo($id, $items, $contentType)
+        return $this->getOfferContextAsyncWithHttpInfo($id, $items, $distance, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9738,15 +9741,16 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int[] $items price list items ids (required)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContext'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfferContextAsyncWithHttpInfo($id, $items, string $contentType = self::contentTypes['getOfferContext'][0])
+    public function getOfferContextAsyncWithHttpInfo($id, $items, $distance = null, string $contentType = self::contentTypes['getOfferContext'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\OfferContext';
-        $request = $this->getOfferContextRequest($id, $items, $contentType);
+        $request = $this->getOfferContextRequest($id, $items, $distance, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9789,12 +9793,13 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int[] $items price list items ids (required)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContext'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOfferContextRequest($id, $items, string $contentType = self::contentTypes['getOfferContext'][0])
+    public function getOfferContextRequest($id, $items, $distance = null, string $contentType = self::contentTypes['getOfferContext'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -9812,6 +9817,7 @@ class DefaultApi
         }
 
 
+
         $resourcePath = '/external-api/v2/offers/{id}/context';
         $formParams = [];
         $queryParams = [];
@@ -9822,11 +9828,20 @@ class DefaultApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $items,
-            'items', // param base name
+            'items[]', // param base name
             'array', // openApiType
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $distance,
+            'distance', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -9909,15 +9924,19 @@ class DefaultApi
      *
      * @param  int $id id (required)
      * @param  int $price_list price_list (required)
+     * @param  string[] $groups group list (e.g. bandwith, commitment, ...) (optional)
+     * @param  bool $autofill_offer add default products for each missing required groups to get a valid offer (optional)
+     * @param  int[] $items determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) (optional)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContexts'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Infracorp\Extranet\Client\Model\OfferContext[]
      */
-    public function getOfferContexts($id, $price_list, string $contentType = self::contentTypes['getOfferContexts'][0])
+    public function getOfferContexts($id, $price_list, $groups = null, $autofill_offer = null, $items = null, $distance = null, string $contentType = self::contentTypes['getOfferContexts'][0])
     {
-        list($response) = $this->getOfferContextsWithHttpInfo($id, $price_list, $contentType);
+        list($response) = $this->getOfferContextsWithHttpInfo($id, $price_list, $groups, $autofill_offer, $items, $distance, $contentType);
         return $response;
     }
 
@@ -9928,15 +9947,19 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int $price_list (required)
+     * @param  string[] $groups group list (e.g. bandwith, commitment, ...) (optional)
+     * @param  bool $autofill_offer add default products for each missing required groups to get a valid offer (optional)
+     * @param  int[] $items determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) (optional)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContexts'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Infracorp\Extranet\Client\Model\OfferContext[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOfferContextsWithHttpInfo($id, $price_list, string $contentType = self::contentTypes['getOfferContexts'][0])
+    public function getOfferContextsWithHttpInfo($id, $price_list, $groups = null, $autofill_offer = null, $items = null, $distance = null, string $contentType = self::contentTypes['getOfferContexts'][0])
     {
-        $request = $this->getOfferContextsRequest($id, $price_list, $contentType);
+        $request = $this->getOfferContextsRequest($id, $price_list, $groups, $autofill_offer, $items, $distance, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10053,14 +10076,18 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int $price_list (required)
+     * @param  string[] $groups group list (e.g. bandwith, commitment, ...) (optional)
+     * @param  bool $autofill_offer add default products for each missing required groups to get a valid offer (optional)
+     * @param  int[] $items determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) (optional)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContexts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfferContextsAsync($id, $price_list, string $contentType = self::contentTypes['getOfferContexts'][0])
+    public function getOfferContextsAsync($id, $price_list, $groups = null, $autofill_offer = null, $items = null, $distance = null, string $contentType = self::contentTypes['getOfferContexts'][0])
     {
-        return $this->getOfferContextsAsyncWithHttpInfo($id, $price_list, $contentType)
+        return $this->getOfferContextsAsyncWithHttpInfo($id, $price_list, $groups, $autofill_offer, $items, $distance, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10075,15 +10102,19 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int $price_list (required)
+     * @param  string[] $groups group list (e.g. bandwith, commitment, ...) (optional)
+     * @param  bool $autofill_offer add default products for each missing required groups to get a valid offer (optional)
+     * @param  int[] $items determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) (optional)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContexts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfferContextsAsyncWithHttpInfo($id, $price_list, string $contentType = self::contentTypes['getOfferContexts'][0])
+    public function getOfferContextsAsyncWithHttpInfo($id, $price_list, $groups = null, $autofill_offer = null, $items = null, $distance = null, string $contentType = self::contentTypes['getOfferContexts'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\OfferContext[]';
-        $request = $this->getOfferContextsRequest($id, $price_list, $contentType);
+        $request = $this->getOfferContextsRequest($id, $price_list, $groups, $autofill_offer, $items, $distance, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10126,12 +10157,16 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int $price_list (required)
+     * @param  string[] $groups group list (e.g. bandwith, commitment, ...) (optional)
+     * @param  bool $autofill_offer add default products for each missing required groups to get a valid offer (optional)
+     * @param  int[] $items determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) (optional)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContexts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOfferContextsRequest($id, $price_list, string $contentType = self::contentTypes['getOfferContexts'][0])
+    public function getOfferContextsRequest($id, $price_list, $groups = null, $autofill_offer = null, $items = null, $distance = null, string $contentType = self::contentTypes['getOfferContexts'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -10149,6 +10184,10 @@ class DefaultApi
         }
 
 
+
+
+
+
         $resourcePath = '/external-api/v2/offers/{id}/contexts';
         $formParams = [];
         $queryParams = [];
@@ -10164,6 +10203,42 @@ class DefaultApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $groups,
+            'groups[]', // param base name
+            'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $autofill_offer,
+            'autofillOffer', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $items,
+            'items[]', // param base name
+            'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $distance,
+            'distance', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -10246,15 +10321,19 @@ class DefaultApi
      *
      * @param  int $id id (required)
      * @param  int $price_list price_list (required)
+     * @param  string[] $groups group list (e.g. bandwith, commitment, ...) (optional)
+     * @param  bool $autofill_offer add default products for each missing required groups to get a valid offer (optional)
+     * @param  int[] $items determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) (optional)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContextsShortened'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Infracorp\Extranet\Client\Model\OfferContextShortened[]
      */
-    public function getOfferContextsShortened($id, $price_list, string $contentType = self::contentTypes['getOfferContextsShortened'][0])
+    public function getOfferContextsShortened($id, $price_list, $groups = null, $autofill_offer = null, $items = null, $distance = null, string $contentType = self::contentTypes['getOfferContextsShortened'][0])
     {
-        list($response) = $this->getOfferContextsShortenedWithHttpInfo($id, $price_list, $contentType);
+        list($response) = $this->getOfferContextsShortenedWithHttpInfo($id, $price_list, $groups, $autofill_offer, $items, $distance, $contentType);
         return $response;
     }
 
@@ -10265,15 +10344,19 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int $price_list (required)
+     * @param  string[] $groups group list (e.g. bandwith, commitment, ...) (optional)
+     * @param  bool $autofill_offer add default products for each missing required groups to get a valid offer (optional)
+     * @param  int[] $items determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) (optional)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContextsShortened'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Infracorp\Extranet\Client\Model\OfferContextShortened[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOfferContextsShortenedWithHttpInfo($id, $price_list, string $contentType = self::contentTypes['getOfferContextsShortened'][0])
+    public function getOfferContextsShortenedWithHttpInfo($id, $price_list, $groups = null, $autofill_offer = null, $items = null, $distance = null, string $contentType = self::contentTypes['getOfferContextsShortened'][0])
     {
-        $request = $this->getOfferContextsShortenedRequest($id, $price_list, $contentType);
+        $request = $this->getOfferContextsShortenedRequest($id, $price_list, $groups, $autofill_offer, $items, $distance, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10390,14 +10473,18 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int $price_list (required)
+     * @param  string[] $groups group list (e.g. bandwith, commitment, ...) (optional)
+     * @param  bool $autofill_offer add default products for each missing required groups to get a valid offer (optional)
+     * @param  int[] $items determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) (optional)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContextsShortened'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfferContextsShortenedAsync($id, $price_list, string $contentType = self::contentTypes['getOfferContextsShortened'][0])
+    public function getOfferContextsShortenedAsync($id, $price_list, $groups = null, $autofill_offer = null, $items = null, $distance = null, string $contentType = self::contentTypes['getOfferContextsShortened'][0])
     {
-        return $this->getOfferContextsShortenedAsyncWithHttpInfo($id, $price_list, $contentType)
+        return $this->getOfferContextsShortenedAsyncWithHttpInfo($id, $price_list, $groups, $autofill_offer, $items, $distance, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10412,15 +10499,19 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int $price_list (required)
+     * @param  string[] $groups group list (e.g. bandwith, commitment, ...) (optional)
+     * @param  bool $autofill_offer add default products for each missing required groups to get a valid offer (optional)
+     * @param  int[] $items determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) (optional)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContextsShortened'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfferContextsShortenedAsyncWithHttpInfo($id, $price_list, string $contentType = self::contentTypes['getOfferContextsShortened'][0])
+    public function getOfferContextsShortenedAsyncWithHttpInfo($id, $price_list, $groups = null, $autofill_offer = null, $items = null, $distance = null, string $contentType = self::contentTypes['getOfferContextsShortened'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\OfferContextShortened[]';
-        $request = $this->getOfferContextsShortenedRequest($id, $price_list, $contentType);
+        $request = $this->getOfferContextsShortenedRequest($id, $price_list, $groups, $autofill_offer, $items, $distance, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10463,12 +10554,16 @@ class DefaultApi
      *
      * @param  int $id (required)
      * @param  int $price_list (required)
+     * @param  string[] $groups group list (e.g. bandwith, commitment, ...) (optional)
+     * @param  bool $autofill_offer add default products for each missing required groups to get a valid offer (optional)
+     * @param  int[] $items determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) (optional)
+     * @param  int $distance distance for L2 basic offer (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferContextsShortened'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOfferContextsShortenedRequest($id, $price_list, string $contentType = self::contentTypes['getOfferContextsShortened'][0])
+    public function getOfferContextsShortenedRequest($id, $price_list, $groups = null, $autofill_offer = null, $items = null, $distance = null, string $contentType = self::contentTypes['getOfferContextsShortened'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -10486,6 +10581,10 @@ class DefaultApi
         }
 
 
+
+
+
+
         $resourcePath = '/external-api/v2/offers/{id}/contexts/shortened';
         $formParams = [];
         $queryParams = [];
@@ -10501,6 +10600,42 @@ class DefaultApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $groups,
+            'groups[]', // param base name
+            'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $autofill_offer,
+            'autofillOffer', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $items,
+            'items[]', // param base name
+            'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $distance,
+            'distance', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 

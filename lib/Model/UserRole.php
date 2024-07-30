@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact
+ * UserRole
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * Contact Class Doc Comment
+ * UserRole Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
+class UserRole implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Contact';
+    protected static $openAPIModelName = 'UserRole';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,15 +59,10 @@ class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'available_workflows' => 'string[]',
         'id' => 'int',
-        'firstname' => 'string',
-        'lastname' => 'string',
-        'company_name' => 'string',
-        'email' => 'string',
-        'phone1' => 'string',
-        'phone2' => 'string',
-        'gender' => 'string',
         'create_date' => '\DateTime',
-        'last_modified_date' => '\DateTime'
+        'last_modified_date' => '\DateTime',
+        'user' => '\Infracorp\Extranet\Client\Model\User',
+        'role' => 'string'
     ];
 
     /**
@@ -80,15 +75,10 @@ class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'available_workflows' => null,
         'id' => null,
-        'firstname' => null,
-        'lastname' => null,
-        'company_name' => null,
-        'email' => null,
-        'phone1' => null,
-        'phone2' => null,
-        'gender' => null,
         'create_date' => 'date-time',
-        'last_modified_date' => 'date-time'
+        'last_modified_date' => 'date-time',
+        'user' => null,
+        'role' => null
     ];
 
     /**
@@ -99,15 +89,10 @@ class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'available_workflows' => false,
 		'id' => false,
-		'firstname' => true,
-		'lastname' => false,
-		'company_name' => true,
-		'email' => true,
-		'phone1' => true,
-		'phone2' => true,
-		'gender' => true,
 		'create_date' => false,
-		'last_modified_date' => true
+		'last_modified_date' => true,
+		'user' => false,
+		'role' => true
     ];
 
     /**
@@ -198,15 +183,10 @@ class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'available_workflows' => 'availableWorkflows',
         'id' => 'id',
-        'firstname' => 'firstname',
-        'lastname' => 'lastname',
-        'company_name' => 'companyName',
-        'email' => 'email',
-        'phone1' => 'phone1',
-        'phone2' => 'phone2',
-        'gender' => 'gender',
         'create_date' => 'createDate',
-        'last_modified_date' => 'lastModifiedDate'
+        'last_modified_date' => 'lastModifiedDate',
+        'user' => 'user',
+        'role' => 'role'
     ];
 
     /**
@@ -217,15 +197,10 @@ class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'available_workflows' => 'setAvailableWorkflows',
         'id' => 'setId',
-        'firstname' => 'setFirstname',
-        'lastname' => 'setLastname',
-        'company_name' => 'setCompanyName',
-        'email' => 'setEmail',
-        'phone1' => 'setPhone1',
-        'phone2' => 'setPhone2',
-        'gender' => 'setGender',
         'create_date' => 'setCreateDate',
-        'last_modified_date' => 'setLastModifiedDate'
+        'last_modified_date' => 'setLastModifiedDate',
+        'user' => 'setUser',
+        'role' => 'setRole'
     ];
 
     /**
@@ -236,15 +211,10 @@ class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'available_workflows' => 'getAvailableWorkflows',
         'id' => 'getId',
-        'firstname' => 'getFirstname',
-        'lastname' => 'getLastname',
-        'company_name' => 'getCompanyName',
-        'email' => 'getEmail',
-        'phone1' => 'getPhone1',
-        'phone2' => 'getPhone2',
-        'gender' => 'getGender',
         'create_date' => 'getCreateDate',
-        'last_modified_date' => 'getLastModifiedDate'
+        'last_modified_date' => 'getLastModifiedDate',
+        'user' => 'getUser',
+        'role' => 'getRole'
     ];
 
     /**
@@ -391,15 +361,10 @@ class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('available_workflows', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('firstname', $data ?? [], null);
-        $this->setIfExists('lastname', $data ?? [], null);
-        $this->setIfExists('company_name', $data ?? [], null);
-        $this->setIfExists('email', $data ?? [], null);
-        $this->setIfExists('phone1', $data ?? [], null);
-        $this->setIfExists('phone2', $data ?? [], null);
-        $this->setIfExists('gender', $data ?? [], null);
         $this->setIfExists('create_date', $data ?? [], null);
         $this->setIfExists('last_modified_date', $data ?? [], null);
+        $this->setIfExists('user', $data ?? [], null);
+        $this->setIfExists('role', $data ?? [], null);
     }
 
     /**
@@ -508,237 +473,6 @@ class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets firstname
-     *
-     * @return string|null
-     */
-    public function getFirstname()
-    {
-        return $this->container['firstname'];
-    }
-
-    /**
-     * Sets firstname
-     *
-     * @param string|null $firstname firstname
-     *
-     * @return self
-     */
-    public function setFirstname($firstname)
-    {
-        if (is_null($firstname)) {
-            array_push($this->openAPINullablesSetToNull, 'firstname');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('firstname', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['firstname'] = $firstname;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastname
-     *
-     * @return string|null
-     */
-    public function getLastname()
-    {
-        return $this->container['lastname'];
-    }
-
-    /**
-     * Sets lastname
-     *
-     * @param string|null $lastname lastname
-     *
-     * @return self
-     */
-    public function setLastname($lastname)
-    {
-        if (is_null($lastname)) {
-            throw new \InvalidArgumentException('non-nullable lastname cannot be null');
-        }
-        $this->container['lastname'] = $lastname;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_name
-     *
-     * @return string|null
-     */
-    public function getCompanyName()
-    {
-        return $this->container['company_name'];
-    }
-
-    /**
-     * Sets company_name
-     *
-     * @param string|null $company_name company_name
-     *
-     * @return self
-     */
-    public function setCompanyName($company_name)
-    {
-        if (is_null($company_name)) {
-            array_push($this->openAPINullablesSetToNull, 'company_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('company_name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['company_name'] = $company_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email email
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        if (is_null($email)) {
-            array_push($this->openAPINullablesSetToNull, 'email');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('email', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone1
-     *
-     * @return string|null
-     */
-    public function getPhone1()
-    {
-        return $this->container['phone1'];
-    }
-
-    /**
-     * Sets phone1
-     *
-     * @param string|null $phone1 phone1
-     *
-     * @return self
-     */
-    public function setPhone1($phone1)
-    {
-        if (is_null($phone1)) {
-            array_push($this->openAPINullablesSetToNull, 'phone1');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('phone1', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['phone1'] = $phone1;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone2
-     *
-     * @return string|null
-     */
-    public function getPhone2()
-    {
-        return $this->container['phone2'];
-    }
-
-    /**
-     * Sets phone2
-     *
-     * @param string|null $phone2 phone2
-     *
-     * @return self
-     */
-    public function setPhone2($phone2)
-    {
-        if (is_null($phone2)) {
-            array_push($this->openAPINullablesSetToNull, 'phone2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('phone2', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['phone2'] = $phone2;
-
-        return $this;
-    }
-
-    /**
-     * Gets gender
-     *
-     * @return string|null
-     */
-    public function getGender()
-    {
-        return $this->container['gender'];
-    }
-
-    /**
-     * Sets gender
-     *
-     * @param string|null $gender gender
-     *
-     * @return self
-     */
-    public function setGender($gender)
-    {
-        if (is_null($gender)) {
-            array_push($this->openAPINullablesSetToNull, 'gender');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gender', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['gender'] = $gender;
-
-        return $this;
-    }
-
-    /**
      * Gets create_date
      *
      * @return \DateTime|null
@@ -795,6 +529,67 @@ class Contact implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['last_modified_date'] = $last_modified_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets user
+     *
+     * @return \Infracorp\Extranet\Client\Model\User|null
+     */
+    public function getUser()
+    {
+        return $this->container['user'];
+    }
+
+    /**
+     * Sets user
+     *
+     * @param \Infracorp\Extranet\Client\Model\User|null $user user
+     *
+     * @return self
+     */
+    public function setUser($user)
+    {
+        if (is_null($user)) {
+            throw new \InvalidArgumentException('non-nullable user cannot be null');
+        }
+        $this->container['user'] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Gets role
+     *
+     * @return string|null
+     */
+    public function getRole()
+    {
+        return $this->container['role'];
+    }
+
+    /**
+     * Sets role
+     *
+     * @param string|null $role role
+     *
+     * @return self
+     */
+    public function setRole($role)
+    {
+        if (is_null($role)) {
+            array_push($this->openAPINullablesSetToNull, 'role');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('role', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['role'] = $role;
 
         return $this;
     }

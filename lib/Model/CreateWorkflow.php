@@ -269,6 +269,8 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CONTEXT_NAME_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\AssignContact\\Context';
     public const CONTEXT_NAME_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\Contact\\SwitchActive\\Context';
     public const CONTEXT_NAME_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
+    public const CONTEXT_NAME_USERS_SWITCH_ACTIVE_ROLE_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\SwitchActiveRole\\Context';
+    public const CONTEXT_NAME_CLIENT_LEGAL_ENTITY_ADD_USER_ROLE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddUserRole\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -313,6 +315,8 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CONTEXT_NAME_SERVICE_CONTRACT_ASSIGN_CONTACT_CONTEXT,
             self::CONTEXT_NAME_SERVICE_CONTRACT_CONTACT_SWITCH_ACTIVE_CONTEXT,
             self::CONTEXT_NAME_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT,
+            self::CONTEXT_NAME_USERS_SWITCH_ACTIVE_ROLE_CONTEXT,
+            self::CONTEXT_NAME_CLIENT_LEGAL_ENTITY_ADD_USER_ROLE_CONTEXT,
         ];
     }
 

@@ -92,6 +92,7 @@ docs/Model/TypedContact.md
 docs/Model/UpdateCommercialOfferSectionItems.md
 docs/Model/User.md
 docs/Model/UserApiToken.md
+docs/Model/UserRole.md
 docs/Model/Workflow.md
 git_push.sh
 lib/Api/DefaultApi.php
@@ -187,6 +188,8 @@ lib/Model/TypedContact.php
 lib/Model/UpdateCommercialOfferSectionItems.php
 lib/Model/User.php
 lib/Model/UserApiToken.php
+lib/Model/UserRole.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/UserRoleTest.php
