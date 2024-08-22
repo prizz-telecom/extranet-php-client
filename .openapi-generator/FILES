@@ -32,6 +32,7 @@ docs/Model/EligibilityHistory.md
 docs/Model/EligibilityHistory200Response.md
 docs/Model/EligibilityPriceListItem.md
 docs/Model/EligibilityResult.md
+docs/Model/EligibilityResultCombination.md
 docs/Model/EligibilityResultPriceListItemsGroups.md
 docs/Model/GetApiTokens200Response.md
 docs/Model/GetClientLegalEntities200Response.md
@@ -127,6 +128,7 @@ lib/Model/EligibilityHistory.php
 lib/Model/EligibilityHistory200Response.php
 lib/Model/EligibilityPriceListItem.php
 lib/Model/EligibilityResult.php
+lib/Model/EligibilityResultCombination.php
 lib/Model/EligibilityResultPriceListItemsGroups.php
 lib/Model/GetApiTokens200Response.php
 lib/Model/GetClientLegalEntities200Response.php
@@ -192,4 +194,4 @@ lib/Model/UserRole.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/UserRoleTest.php
+test/Model/EligibilityResultCombinationTest.php

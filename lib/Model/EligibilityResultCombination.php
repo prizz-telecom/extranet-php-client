@@ -1,6 +1,6 @@
 <?php
 /**
- * RenameCommercialOfferSection
+ * EligibilityResultCombination
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * RenameCommercialOfferSection Class Doc Comment
+ * EligibilityResultCombination Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RenameCommercialOfferSection implements ModelInterface, ArrayAccess, \JsonSerializable
+class EligibilityResultCombination implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RenameCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RenameCommercialOfferSection';
+    protected static $openAPIModelName = 'EligibilityResultCombination';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,10 @@ class RenameCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string'
+        'combination_id' => 'string',
+        'total' => 'int',
+        'total_without_nrc' => 'int',
+        'nrc' => 'int'
     ];
 
     /**
@@ -68,7 +71,10 @@ class RenameCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null
+        'combination_id' => null,
+        'total' => null,
+        'total_without_nrc' => null,
+        'nrc' => null
     ];
 
     /**
@@ -77,7 +83,10 @@ class RenameCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'name' => false
+        'combination_id' => false,
+        'total' => false,
+        'total_without_nrc' => false,
+        'nrc' => false
     ];
 
     /**
@@ -166,7 +175,10 @@ class RenameCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name'
+        'combination_id' => 'combinationId',
+        'total' => 'total',
+        'total_without_nrc' => 'totalWithoutNrc',
+        'nrc' => 'nrc'
     ];
 
     /**
@@ -175,7 +187,10 @@ class RenameCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName'
+        'combination_id' => 'setCombinationId',
+        'total' => 'setTotal',
+        'total_without_nrc' => 'setTotalWithoutNrc',
+        'nrc' => 'setNrc'
     ];
 
     /**
@@ -184,7 +199,10 @@ class RenameCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName'
+        'combination_id' => 'getCombinationId',
+        'total' => 'getTotal',
+        'total_without_nrc' => 'getTotalWithoutNrc',
+        'nrc' => 'getNrc'
     ];
 
     /**
@@ -244,7 +262,10 @@ class RenameCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('combination_id', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('total_without_nrc', $data ?? [], null);
+        $this->setIfExists('nrc', $data ?? [], null);
     }
 
     /**
@@ -290,28 +311,109 @@ class RenameCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets name
+     * Gets combination_id
      *
      * @return string|null
      */
-    public function getName()
+    public function getCombinationId()
     {
-        return $this->container['name'];
+        return $this->container['combination_id'];
     }
 
     /**
-     * Sets name
+     * Sets combination_id
      *
-     * @param string|null $name name
+     * @param string|null $combination_id combination_id
      *
      * @return self
      */
-    public function setName($name)
+    public function setCombinationId($combination_id)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($combination_id)) {
+            throw new \InvalidArgumentException('non-nullable combination_id cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['combination_id'] = $combination_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return int|null
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param int|null $total total
+     *
+     * @return self
+     */
+    public function setTotal($total)
+    {
+        if (is_null($total)) {
+            throw new \InvalidArgumentException('non-nullable total cannot be null');
+        }
+        $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_without_nrc
+     *
+     * @return int|null
+     */
+    public function getTotalWithoutNrc()
+    {
+        return $this->container['total_without_nrc'];
+    }
+
+    /**
+     * Sets total_without_nrc
+     *
+     * @param int|null $total_without_nrc total_without_nrc
+     *
+     * @return self
+     */
+    public function setTotalWithoutNrc($total_without_nrc)
+    {
+        if (is_null($total_without_nrc)) {
+            throw new \InvalidArgumentException('non-nullable total_without_nrc cannot be null');
+        }
+        $this->container['total_without_nrc'] = $total_without_nrc;
+
+        return $this;
+    }
+
+    /**
+     * Gets nrc
+     *
+     * @return int|null
+     */
+    public function getNrc()
+    {
+        return $this->container['nrc'];
+    }
+
+    /**
+     * Sets nrc
+     *
+     * @param int|null $nrc nrc
+     *
+     * @return self
+     */
+    public function setNrc($nrc)
+    {
+        if (is_null($nrc)) {
+            throw new \InvalidArgumentException('non-nullable nrc cannot be null');
+        }
+        $this->container['nrc'] = $nrc;
 
         return $this;
     }

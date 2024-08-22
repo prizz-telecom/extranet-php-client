@@ -28,5 +28,6 @@ Name | Type | Description | Notes
 **price_list_items_groups** | [**\Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups**](EligibilityResultPriceListItemsGroups.md) |  | [optional]
 **offer_id** | **int** |  | [optional]
 **price_list_id** | **int** |  | [optional]
+**combinations** | [**\Infracorp\Extranet\Client\Model\EligibilityResultCombination[]**](EligibilityResultCombination.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

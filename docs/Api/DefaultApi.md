@@ -2047,8 +2047,8 @@ $id = 56; // int
 $price_list = 56; // int
 $groups = array('groups_example'); // string[] | group list (e.g. bandwith, commitment, ...)
 $autofill_offer = True; // bool | add default products for each missing required groups to get a valid offer
-$items = array(56); // int[] | determined items id to avoid combination with (e.g. FAS which are determined during eligibilty)
-$distance = 56; // int | distance for L2 basic offer
+$items = array(56); // int[] | determined items id to avoid combination with (e.g. FAS which are determined during eligibility)
+$distance = 56; // int | estimate of the extension of our network to be built
 
 try {
     $result = $apiInstance->getOfferContexts($id, $price_list, $groups, $autofill_offer, $items, $distance);
@@ -2066,8 +2066,8 @@ try {
 | **price_list** | **int**|  | |
 | **groups** | [**string[]**](../Model/string.md)| group list (e.g. bandwith, commitment, ...) | [optional] |
 | **autofill_offer** | **bool**| add default products for each missing required groups to get a valid offer | [optional] |
-| **items** | [**int[]**](../Model/int.md)| determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) | [optional] |
-| **distance** | **int**| distance for L2 basic offer | [optional] |
+| **items** | [**int[]**](../Model/int.md)| determined items id to avoid combination with (e.g. FAS which are determined during eligibility) | [optional] |
+| **distance** | **int**| estimate of the extension of our network to be built | [optional] |
 
 ### Return type
 
@@ -2122,8 +2122,8 @@ $id = 56; // int
 $price_list = 56; // int
 $groups = array('groups_example'); // string[] | group list (e.g. bandwith, commitment, ...)
 $autofill_offer = True; // bool | add default products for each missing required groups to get a valid offer
-$items = array(56); // int[] | determined items id to avoid combination with (e.g. FAS which are determined during eligibilty)
-$distance = 56; // int | distance for L2 basic offer
+$items = array(56); // int[] | determined items id to avoid combination with (e.g. FAS which are determined during eligibility)
+$distance = 56; // int | estimate of the extension of our network to be built
 
 try {
     $result = $apiInstance->getOfferContextsShortened($id, $price_list, $groups, $autofill_offer, $items, $distance);
@@ -2141,8 +2141,8 @@ try {
 | **price_list** | **int**|  | |
 | **groups** | [**string[]**](../Model/string.md)| group list (e.g. bandwith, commitment, ...) | [optional] |
 | **autofill_offer** | **bool**| add default products for each missing required groups to get a valid offer | [optional] |
-| **items** | [**int[]**](../Model/int.md)| determined items id to avoid combination with (e.g. FAS which are determined during eligibilty) | [optional] |
-| **distance** | **int**| distance for L2 basic offer | [optional] |
+| **items** | [**int[]**](../Model/int.md)| determined items id to avoid combination with (e.g. FAS which are determined during eligibility) | [optional] |
+| **distance** | **int**| estimate of the extension of our network to be built | [optional] |
 
 ### Return type
 
