@@ -60,7 +60,8 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
         'combination_id' => 'string',
         'total' => 'int',
         'total_without_nrc' => 'int',
-        'nrc' => 'int'
+        'nrc' => 'int',
+        'attributes' => 'array<string,mixed>'
     ];
 
     /**
@@ -74,7 +75,8 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
         'combination_id' => null,
         'total' => null,
         'total_without_nrc' => null,
-        'nrc' => null
+        'nrc' => null,
+        'attributes' => null
     ];
 
     /**
@@ -86,7 +88,8 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
         'combination_id' => false,
         'total' => false,
         'total_without_nrc' => false,
-        'nrc' => false
+        'nrc' => false,
+        'attributes' => false
     ];
 
     /**
@@ -178,7 +181,8 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
         'combination_id' => 'combinationId',
         'total' => 'total',
         'total_without_nrc' => 'totalWithoutNrc',
-        'nrc' => 'nrc'
+        'nrc' => 'nrc',
+        'attributes' => 'attributes'
     ];
 
     /**
@@ -190,7 +194,8 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
         'combination_id' => 'setCombinationId',
         'total' => 'setTotal',
         'total_without_nrc' => 'setTotalWithoutNrc',
-        'nrc' => 'setNrc'
+        'nrc' => 'setNrc',
+        'attributes' => 'setAttributes'
     ];
 
     /**
@@ -202,7 +207,8 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
         'combination_id' => 'getCombinationId',
         'total' => 'getTotal',
         'total_without_nrc' => 'getTotalWithoutNrc',
-        'nrc' => 'getNrc'
+        'nrc' => 'getNrc',
+        'attributes' => 'getAttributes'
     ];
 
     /**
@@ -266,6 +272,7 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('total', $data ?? [], null);
         $this->setIfExists('total_without_nrc', $data ?? [], null);
         $this->setIfExists('nrc', $data ?? [], null);
+        $this->setIfExists('attributes', $data ?? [], null);
     }
 
     /**
@@ -414,6 +421,33 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
             throw new \InvalidArgumentException('non-nullable nrc cannot be null');
         }
         $this->container['nrc'] = $nrc;
+
+        return $this;
+    }
+
+    /**
+     * Gets attributes
+     *
+     * @return array<string,mixed>|null
+     */
+    public function getAttributes()
+    {
+        return $this->container['attributes'];
+    }
+
+    /**
+     * Sets attributes
+     *
+     * @param array<string,mixed>|null $attributes attributes
+     *
+     * @return self
+     */
+    public function setAttributes($attributes)
+    {
+        if (is_null($attributes)) {
+            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
+        }
+        $this->container['attributes'] = $attributes;
 
         return $this;
     }
