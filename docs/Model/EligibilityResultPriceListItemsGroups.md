@@ -14,5 +14,7 @@ Name | Type | Description | Notes
 **extremity_site_a** | [**\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]**](EligibilityPriceListItem.md) |  | [optional]
 **extremity_site_b** | [**\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]**](EligibilityPriceListItem.md) |  | [optional]
 **maintenance** | [**\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]**](EligibilityPriceListItem.md) |  | [optional]
+**subnet** | [**\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]**](EligibilityPriceListItem.md) |  | [optional]
+**national** | [**\Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]**](EligibilityPriceListItem.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
