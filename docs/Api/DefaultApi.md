@@ -1297,8 +1297,8 @@ $legal_entity_id = 56; // int
 $client_legal_entity_id = 56; // int
 $sections_offer_id = 56; // int
 $status = 'status_example'; // string
-$create_date_from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$create_date_to = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$create_date_from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$create_date_to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
 
 try {
     $result = $apiInstance->getCommercialOffers($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to);
@@ -3529,7 +3529,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
 );
 $id = 56; // int | identifiant de l'opérateur
 $process_id = 56; // int | identifiant du process
-$files = array("/path/to/file.txt"); // \SplFileObject[]
+$files = array('/path/to/file.txt'); // \SplFileObject[]
 $transition_class = 'transition_class_example'; // string
 
 try {
@@ -3599,7 +3599,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     $config
 );
 $id = 56; // int | workflow id
-$files = array("/path/to/file.txt"); // \SplFileObject[]
+$files = array('/path/to/file.txt'); // \SplFileObject[]
 
 try {
     $result = $apiInstance->runWorkflow($id, $files);
