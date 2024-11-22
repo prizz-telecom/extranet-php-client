@@ -251,6 +251,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     public const OFFER_TYPE_FON = 'FON';
     public const OFFER_TYPE_TV_ANT = 'TV_ANT';
     public const OFFER_TYPE_MOBILE = 'MOBILE';
+    public const OFFER_TYPE_DESSERTE = 'DESSERTE';
 
     /**
      * Gets allowable values of the enum
@@ -265,6 +266,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
             self::OFFER_TYPE_FON,
             self::OFFER_TYPE_TV_ANT,
             self::OFFER_TYPE_MOBILE,
+            self::OFFER_TYPE_DESSERTE,
         ];
     }
 
