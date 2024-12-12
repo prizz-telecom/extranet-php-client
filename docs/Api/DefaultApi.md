@@ -47,6 +47,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**getService()**](DefaultApi.md#getService) | **GET** /external-api/v2/services/{id} | Service |
 | [**getServiceContract()**](DefaultApi.md#getServiceContract) | **GET** /external-api/v2/service_contracts/{id} | Service Contract |
 | [**getServiceContractByName()**](DefaultApi.md#getServiceContractByName) | **GET** /external-api/v2/service_contracts_by_name/{service_name} | Service Contract by name |
+| [**getServiceContractOperationalStatusByName()**](DefaultApi.md#getServiceContractOperationalStatusByName) | **GET** /external-api/v2/service_contracts_by_name/{service_name}/operational_status | Get service contract operational status |
 | [**getServiceContracts()**](DefaultApi.md#getServiceContracts) | **GET** /external-api/v2/service_contracts | Service Contracts |
 | [**getServices()**](DefaultApi.md#getServices) | **GET** /external-api/v2/services | Services |
 | [**getTicket()**](DefaultApi.md#getTicket) | **GET** /external-api/v2/exploitation/operator/{id}/tickets/{ref} | Exploitation Ticket |
@@ -97,7 +98,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | service pack identifier
+$id = 56; // int | service contract identifier
 $add_service_contract_comment = new \Infracorp\Extranet\Client\Model\AddServiceContractComment(); // \Infracorp\Extranet\Client\Model\AddServiceContractComment
 
 try {
@@ -112,7 +113,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| service pack identifier | |
+| **id** | **int**| service contract identifier | |
 | **add_service_contract_comment** | [**\Infracorp\Extranet\Client\Model\AddServiceContractComment**](../Model/AddServiceContractComment.md)|  | [optional] |
 
 ### Return type
@@ -2944,6 +2945,71 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getServiceContractOperationalStatusByName()`
+
+```php
+getServiceContractOperationalStatusByName($service_name): \Infracorp\Extranet\Client\Model\OperationalStatus
+```
+
+Get service contract operational status
+
+Le statut présenté est un état consolidé du résultat de plusieurs tests et de mesures en différents points du réseau effectué périodiquement. Les valeurs de status disponibles sont : - `ok` : votre service est produit normalement - `warning` : le service laisse penser qu'il nécessite une attention particulière (exemple: uptime faible) - `critical` : le service est interrompu - `unknown` : nous n'avons pas pu remonter l'état du service  L'attribut lastCheck vous indique quand le service a été testé pour la dernière fois
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$service_name = 'service_name_example'; // string | identifiant du contrat de services
+
+try {
+    $result = $apiInstance->getServiceContractOperationalStatusByName($service_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getServiceContractOperationalStatusByName: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **service_name** | **string**| identifiant du contrat de services | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\OperationalStatus**](../Model/OperationalStatus.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getServiceContracts()`
 
 ```php
@@ -3803,7 +3869,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | service pack identifier
+$id = 56; // int | service contract identifier
 $set_service_contract_vlan_request = new \Infracorp\Extranet\Client\Model\SetServiceContractVlanRequest(); // \Infracorp\Extranet\Client\Model\SetServiceContractVlanRequest
 
 try {
@@ -3818,7 +3884,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| service pack identifier | |
+| **id** | **int**| service contract identifier | |
 | **set_service_contract_vlan_request** | [**\Infracorp\Extranet\Client\Model\SetServiceContractVlanRequest**](../Model/SetServiceContractVlanRequest.md)|  | |
 
 ### Return type

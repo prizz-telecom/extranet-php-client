@@ -35,6 +35,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * EligibilityResultPriceListItemsGroups Class Doc Comment
  *
  * @category Class
+ * @description Price list items grouped by product group
  * @package  Infracorp\Extranet\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -379,7 +380,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets main
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $main main
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $main Main product group, contains on item with base price
      *
      * @return self
      */
@@ -406,7 +407,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets bandwidth
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $bandwidth bandwidth
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $bandwidth Bandwidth product group, list available bandwidths
      *
      * @return self
      */
@@ -433,7 +434,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets commitment
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $commitment commitment
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $commitment Commitment product group, list available commitments
      *
      * @return self
      */
@@ -460,7 +461,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets grt
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $grt grt
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $grt GRT product group, list available GRT options
      *
      * @return self
      */
@@ -487,7 +488,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets nrc
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $nrc nrc
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $nrc NRC product group, contain one item in most cases
      *
      * @return self
      */
@@ -514,7 +515,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets distance
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $distance distance
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $distance Used in FON offers
      *
      * @return self
      */
@@ -541,7 +542,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets fiber_count
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $fiber_count fiber_count
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $fiber_count Used in FON offers
      *
      * @return self
      */
@@ -568,7 +569,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets extremity_site_a
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $extremity_site_a extremity_site_a
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $extremity_site_a Used in FON offers, describes the extremity A
      *
      * @return self
      */
@@ -595,7 +596,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets extremity_site_b
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $extremity_site_b extremity_site_b
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $extremity_site_b Used in FON offers, describes the extremity B
      *
      * @return self
      */
@@ -622,7 +623,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets maintenance
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $maintenance maintenance
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $maintenance Used in FON offers
      *
      * @return self
      */
@@ -649,7 +650,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets subnet
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $subnet subnet
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $subnet Used in L3 offers, list available subnets sizes
      *
      * @return self
      */
@@ -676,7 +677,7 @@ class EligibilityResultPriceListItemsGroups implements ModelInterface, ArrayAcce
     /**
      * Sets national
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $national national
+     * @param \Infracorp\Extranet\Client\Model\EligibilityPriceListItem[]|null $national Used in L2 offers, list available national options
      *
      * @return self
      */

@@ -337,7 +337,7 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets combination_id
      *
-     * @param string|null $combination_id combination_id
+     * @param string|null $combination_id Combination id, a unique identifier for the combination
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets total
      *
-     * @param int|null $total total
+     * @param int|null $total Total cost in €x100
      *
      * @return self
      */
@@ -391,7 +391,7 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets total_without_nrc
      *
-     * @param int|null $total_without_nrc total_without_nrc
+     * @param int|null $total_without_nrc Total recuring cost in €x100
      *
      * @return self
      */
@@ -418,7 +418,7 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets nrc
      *
-     * @param int|null $nrc nrc
+     * @param int|null $nrc Total non recuring cost in €x100
      *
      * @return self
      */
@@ -445,7 +445,7 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets attributes
      *
-     * @param array<string,mixed>|null $attributes attributes
+     * @param array<string,mixed>|null $attributes Attributes of the combination
      *
      * @return self
      */
@@ -472,7 +472,7 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets nrc_to_estimate
      *
-     * @param bool|null $nrc_to_estimate nrc_to_estimate
+     * @param bool|null $nrc_to_estimate If offer contains a NRC to estimate
      *
      * @return self
      */

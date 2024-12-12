@@ -64,7 +64,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | service pack identifier
+$id = 56; // int | service contract identifier
 $add_service_contract_comment = new \Infracorp\Extranet\Client\Model\AddServiceContractComment(); // \Infracorp\Extranet\Client\Model\AddServiceContractComment
 
 try {
@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getService**](docs/Api/DefaultApi.md#getservice) | **GET** /external-api/v2/services/{id} | Service
 *DefaultApi* | [**getServiceContract**](docs/Api/DefaultApi.md#getservicecontract) | **GET** /external-api/v2/service_contracts/{id} | Service Contract
 *DefaultApi* | [**getServiceContractByName**](docs/Api/DefaultApi.md#getservicecontractbyname) | **GET** /external-api/v2/service_contracts_by_name/{service_name} | Service Contract by name
+*DefaultApi* | [**getServiceContractOperationalStatusByName**](docs/Api/DefaultApi.md#getservicecontractoperationalstatusbyname) | **GET** /external-api/v2/service_contracts_by_name/{service_name}/operational_status | Get service contract operational status
 *DefaultApi* | [**getServiceContracts**](docs/Api/DefaultApi.md#getservicecontracts) | **GET** /external-api/v2/service_contracts | Service Contracts
 *DefaultApi* | [**getServices**](docs/Api/DefaultApi.md#getservices) | **GET** /external-api/v2/services | Services
 *DefaultApi* | [**getTicket**](docs/Api/DefaultApi.md#getticket) | **GET** /external-api/v2/exploitation/operator/{id}/tickets/{ref} | Exploitation Ticket
@@ -196,6 +197,7 @@ Class | Method | HTTP request | Description
 - [OfferContext](docs/Model/OfferContext.md)
 - [OfferContextShortened](docs/Model/OfferContextShortened.md)
 - [OfferItem](docs/Model/OfferItem.md)
+- [OperationalStatus](docs/Model/OperationalStatus.md)
 - [Operator](docs/Model/Operator.md)
 - [OperatorTicket](docs/Model/OperatorTicket.md)
 - [PriceList](docs/Model/PriceList.md)

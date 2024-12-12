@@ -56,6 +56,7 @@ docs/Model/Offer.md
 docs/Model/OfferContext.md
 docs/Model/OfferContextShortened.md
 docs/Model/OfferItem.md
+docs/Model/OperationalStatus.md
 docs/Model/Operator.md
 docs/Model/OperatorTicket.md
 docs/Model/PriceList.md
@@ -153,6 +154,7 @@ lib/Model/Offer.php
 lib/Model/OfferContext.php
 lib/Model/OfferContextShortened.php
 lib/Model/OfferItem.php
+lib/Model/OperationalStatus.php
 lib/Model/Operator.php
 lib/Model/OperatorTicket.php
 lib/Model/PriceList.php
@@ -194,3 +196,4 @@ lib/Model/UserRole.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/OperationalStatusTest.php

@@ -78,6 +78,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'guaranteedd_download_max' => 'int',
         'rc_min' => 'int',
         'rc_max' => 'int',
+        'distance' => 'int',
         'price_list_items_groups' => '\Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups',
         'offer_id' => 'int',
         'price_list_id' => 'int',
@@ -113,6 +114,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'guaranteedd_download_max' => null,
         'rc_min' => null,
         'rc_max' => null,
+        'distance' => null,
         'price_list_items_groups' => null,
         'offer_id' => null,
         'price_list_id' => null,
@@ -146,6 +148,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'guaranteedd_download_max' => true,
         'rc_min' => true,
         'rc_max' => true,
+        'distance' => true,
         'price_list_items_groups' => false,
         'offer_id' => true,
         'price_list_id' => true,
@@ -259,6 +262,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'guaranteedd_download_max' => 'guaranteeddDownloadMax',
         'rc_min' => 'rcMin',
         'rc_max' => 'rcMax',
+        'distance' => 'distance',
         'price_list_items_groups' => 'priceListItemsGroups',
         'offer_id' => 'offerId',
         'price_list_id' => 'priceListId',
@@ -292,6 +296,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'guaranteedd_download_max' => 'setGuaranteeddDownloadMax',
         'rc_min' => 'setRcMin',
         'rc_max' => 'setRcMax',
+        'distance' => 'setDistance',
         'price_list_items_groups' => 'setPriceListItemsGroups',
         'offer_id' => 'setOfferId',
         'price_list_id' => 'setPriceListId',
@@ -325,6 +330,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'guaranteedd_download_max' => 'getGuaranteeddDownloadMax',
         'rc_min' => 'getRcMin',
         'rc_max' => 'getRcMax',
+        'distance' => 'getDistance',
         'price_list_items_groups' => 'getPriceListItemsGroups',
         'offer_id' => 'getOfferId',
         'price_list_id' => 'getPriceListId',
@@ -409,6 +415,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('guaranteedd_download_max', $data ?? [], null);
         $this->setIfExists('rc_min', $data ?? [], null);
         $this->setIfExists('rc_max', $data ?? [], null);
+        $this->setIfExists('distance', $data ?? [], null);
         $this->setIfExists('price_list_items_groups', $data ?? [], null);
         $this->setIfExists('offer_id', $data ?? [], null);
         $this->setIfExists('price_list_id', $data ?? [], null);
@@ -470,7 +477,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets code
      *
-     * @param string|null $code code
+     * @param string|null $code Offer name like 'L2 Premium'
      *
      * @return self
      */
@@ -497,7 +504,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets tech
      *
-     * @param int|null $tech tech
+     * @param int|null $tech Technology id
      *
      * @return self
      */
@@ -524,7 +531,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets delivery
      *
-     * @param int|null $delivery delivery
+     * @param int|null $delivery Delivery time in days
      *
      * @return self
      */
@@ -558,7 +565,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets grt_min
      *
-     * @param int|null $grt_min grt_min
+     * @param int|null $grt_min Minimum guaranteed resolution time in hours
      *
      * @return self
      */
@@ -592,7 +599,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets grt_max
      *
-     * @param int|null $grt_max grt_max
+     * @param int|null $grt_max Maximum guaranteed resolution time in hours
      *
      * @return self
      */
@@ -626,7 +633,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets grt_non_working_hours_option_available
      *
-     * @param bool|null $grt_non_working_hours_option_available grt_non_working_hours_option_available
+     * @param bool|null $grt_non_working_hours_option_available If the GRT option is available
      *
      * @return self
      */
@@ -653,7 +660,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets grt_non_working_hours_option_mandatory
      *
-     * @param bool|null $grt_non_working_hours_option_mandatory grt_non_working_hours_option_mandatory
+     * @param bool|null $grt_non_working_hours_option_mandatory If the GRT option is mandatory
      *
      * @return self
      */
@@ -680,7 +687,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets nrc_min
      *
-     * @param int|null $nrc_min nrc_min
+     * @param int|null $nrc_min Minimum non reccuring cost in €x100
      *
      * @return self
      */
@@ -714,7 +721,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets nrc_max
      *
-     * @param int|null $nrc_max nrc_max
+     * @param int|null $nrc_max Maximum non reccuring cost in €x100
      *
      * @return self
      */
@@ -748,7 +755,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets commitment_min
      *
-     * @param int|null $commitment_min commitment_min
+     * @param int|null $commitment_min Minimum commitment in months
      *
      * @return self
      */
@@ -782,7 +789,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets commitment_max
      *
-     * @param int|null $commitment_max commitment_max
+     * @param int|null $commitment_max Maximum commitment in months
      *
      * @return self
      */
@@ -816,7 +823,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets upload_min
      *
-     * @param int|null $upload_min upload_min
+     * @param int|null $upload_min Minimum upload speed in mbps
      *
      * @return self
      */
@@ -850,7 +857,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets upload_max
      *
-     * @param int|null $upload_max upload_max
+     * @param int|null $upload_max Maximum upload speed in mbps
      *
      * @return self
      */
@@ -884,7 +891,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets download_min
      *
-     * @param int|null $download_min download_min
+     * @param int|null $download_min Minimum download speed in mbps
      *
      * @return self
      */
@@ -918,7 +925,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets download_max
      *
-     * @param int|null $download_max download_max
+     * @param int|null $download_max Maximum download speed in mbps
      *
      * @return self
      */
@@ -952,7 +959,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets guaranteed_upload_min
      *
-     * @param int|null $guaranteed_upload_min guaranteed_upload_min
+     * @param int|null $guaranteed_upload_min Minimum guaranteed upload speed in mbps
      *
      * @return self
      */
@@ -986,7 +993,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets guaranteed_upload_max
      *
-     * @param int|null $guaranteed_upload_max guaranteed_upload_max
+     * @param int|null $guaranteed_upload_max Maximum guaranteed upload speed in mbps
      *
      * @return self
      */
@@ -1020,7 +1027,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets guaranteedd_download_min
      *
-     * @param int|null $guaranteedd_download_min guaranteedd_download_min
+     * @param int|null $guaranteedd_download_min Minimum guaranteed download speed in mbps
      *
      * @return self
      */
@@ -1054,7 +1061,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets guaranteedd_download_max
      *
-     * @param int|null $guaranteedd_download_max guaranteedd_download_max
+     * @param int|null $guaranteedd_download_max Maximum guaranteed download speed in mbps
      *
      * @return self
      */
@@ -1088,7 +1095,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets rc_min
      *
-     * @param int|null $rc_min rc_min
+     * @param int|null $rc_min Minimum recurring cost in mbps
      *
      * @return self
      */
@@ -1122,7 +1129,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets rc_max
      *
-     * @param int|null $rc_max rc_max
+     * @param int|null $rc_max Maximum recurring cost in mbps
      *
      * @return self
      */
@@ -1139,6 +1146,40 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
             }
         }
         $this->container['rc_max'] = $rc_max;
+
+        return $this;
+    }
+
+    /**
+     * Gets distance
+     *
+     * @return int|null
+     */
+    public function getDistance()
+    {
+        return $this->container['distance'];
+    }
+
+    /**
+     * Sets distance
+     *
+     * @param int|null $distance Estimation of the distance to the network to be built in meters
+     *
+     * @return self
+     */
+    public function setDistance($distance)
+    {
+        if (is_null($distance)) {
+            array_push($this->openAPINullablesSetToNull, 'distance');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('distance', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['distance'] = $distance;
 
         return $this;
     }
@@ -1183,7 +1224,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets offer_id
      *
-     * @param int|null $offer_id offer_id
+     * @param int|null $offer_id Offer id, a unique identifier for the offer
      *
      * @return self
      */
@@ -1217,7 +1258,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets price_list_id
      *
-     * @param int|null $price_list_id price_list_id
+     * @param int|null $price_list_id Price list id, a unique identifier for the price list, samed id you can find in client contract
      *
      * @return self
      */
@@ -1251,7 +1292,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets combinations
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityResultCombination[]|null $combinations combinations
+     * @param \Infracorp\Extranet\Client\Model\EligibilityResultCombination[]|null $combinations List of combinations, with prices and attributes
      *
      * @return self
      */

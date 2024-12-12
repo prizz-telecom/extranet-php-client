@@ -1,6 +1,6 @@
 <?php
 /**
- * GetEligibility
+ * OperationalStatus
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * GetEligibility Class Doc Comment
+ * OperationalStatus Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
+class OperationalStatus implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetEligibility';
+    protected static $openAPIModelName = 'OperationalStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,8 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'wf' => 'int',
-        'wfs' => 'string',
-        'attrs' => 'object',
-        'wftr' => 'object[]',
-        'client' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity',
-        'response' => '\Infracorp\Extranet\Client\Model\EligibilityResult[]'
+        'status' => 'string',
+        'last_check' => 'string'
     ];
 
     /**
@@ -73,12 +69,8 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'wf' => null,
-        'wfs' => null,
-        'attrs' => null,
-        'wftr' => null,
-        'client' => null,
-        'response' => null
+        'status' => null,
+        'last_check' => null
     ];
 
     /**
@@ -87,12 +79,8 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'wf' => false,
-        'wfs' => false,
-        'attrs' => false,
-        'wftr' => false,
-        'client' => false,
-        'response' => false
+        'status' => false,
+        'last_check' => false
     ];
 
     /**
@@ -181,12 +169,8 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'wf' => 'wf',
-        'wfs' => 'wfs',
-        'attrs' => 'attrs',
-        'wftr' => 'wftr',
-        'client' => 'client',
-        'response' => 'response'
+        'status' => 'status',
+        'last_check' => 'lastCheck'
     ];
 
     /**
@@ -195,12 +179,8 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'wf' => 'setWf',
-        'wfs' => 'setWfs',
-        'attrs' => 'setAttrs',
-        'wftr' => 'setWftr',
-        'client' => 'setClient',
-        'response' => 'setResponse'
+        'status' => 'setStatus',
+        'last_check' => 'setLastCheck'
     ];
 
     /**
@@ -209,12 +189,8 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'wf' => 'getWf',
-        'wfs' => 'getWfs',
-        'attrs' => 'getAttrs',
-        'wftr' => 'getWftr',
-        'client' => 'getClient',
-        'response' => 'getResponse'
+        'status' => 'getStatus',
+        'last_check' => 'getLastCheck'
     ];
 
     /**
@@ -274,12 +250,8 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('wf', $data ?? [], null);
-        $this->setIfExists('wfs', $data ?? [], null);
-        $this->setIfExists('attrs', $data ?? [], null);
-        $this->setIfExists('wftr', $data ?? [], null);
-        $this->setIfExists('client', $data ?? [], null);
-        $this->setIfExists('response', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('last_check', $data ?? [], null);
     }
 
     /**
@@ -325,163 +297,55 @@ class GetEligibility implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets wf
-     *
-     * @return int|null
-     */
-    public function getWf()
-    {
-        return $this->container['wf'];
-    }
-
-    /**
-     * Sets wf
-     *
-     * @param int|null $wf Workflow id
-     *
-     * @return self
-     */
-    public function setWf($wf)
-    {
-        if (is_null($wf)) {
-            throw new \InvalidArgumentException('non-nullable wf cannot be null');
-        }
-        $this->container['wf'] = $wf;
-
-        return $this;
-    }
-
-    /**
-     * Gets wfs
+     * Gets status
      *
      * @return string|null
      */
-    public function getWfs()
+    public function getStatus()
     {
-        return $this->container['wfs'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets wfs
+     * Sets status
      *
-     * @param string|null $wfs Workflow status
+     * @param string|null $status status
      *
      * @return self
      */
-    public function setWfs($wfs)
+    public function setStatus($status)
     {
-        if (is_null($wfs)) {
-            throw new \InvalidArgumentException('non-nullable wfs cannot be null');
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
-        $this->container['wfs'] = $wfs;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets attrs
+     * Gets last_check
      *
-     * @return object|null
+     * @return string|null
      */
-    public function getAttrs()
+    public function getLastCheck()
     {
-        return $this->container['attrs'];
+        return $this->container['last_check'];
     }
 
     /**
-     * Sets attrs
+     * Sets last_check
      *
-     * @param object|null $attrs Attributes of the workflow
+     * @param string|null $last_check last_check
      *
      * @return self
      */
-    public function setAttrs($attrs)
+    public function setLastCheck($last_check)
     {
-        if (is_null($attrs)) {
-            throw new \InvalidArgumentException('non-nullable attrs cannot be null');
+        if (is_null($last_check)) {
+            throw new \InvalidArgumentException('non-nullable last_check cannot be null');
         }
-        $this->container['attrs'] = $attrs;
-
-        return $this;
-    }
-
-    /**
-     * Gets wftr
-     *
-     * @return object[]|null
-     */
-    public function getWftr()
-    {
-        return $this->container['wftr'];
-    }
-
-    /**
-     * Sets wftr
-     *
-     * @param object[]|null $wftr Workflow transitions history
-     *
-     * @return self
-     */
-    public function setWftr($wftr)
-    {
-        if (is_null($wftr)) {
-            throw new \InvalidArgumentException('non-nullable wftr cannot be null');
-        }
-        $this->container['wftr'] = $wftr;
-
-        return $this;
-    }
-
-    /**
-     * Gets client
-     *
-     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntity|null
-     */
-    public function getClient()
-    {
-        return $this->container['client'];
-    }
-
-    /**
-     * Sets client
-     *
-     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntity|null $client client
-     *
-     * @return self
-     */
-    public function setClient($client)
-    {
-        if (is_null($client)) {
-            throw new \InvalidArgumentException('non-nullable client cannot be null');
-        }
-        $this->container['client'] = $client;
-
-        return $this;
-    }
-
-    /**
-     * Gets response
-     *
-     * @return \Infracorp\Extranet\Client\Model\EligibilityResult[]|null
-     */
-    public function getResponse()
-    {
-        return $this->container['response'];
-    }
-
-    /**
-     * Sets response
-     *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityResult[]|null $response Eligibility results
-     *
-     * @return self
-     */
-    public function setResponse($response)
-    {
-        if (is_null($response)) {
-            throw new \InvalidArgumentException('non-nullable response cannot be null');
-        }
-        $this->container['response'] = $response;
+        $this->container['last_check'] = $last_check;
 
         return $this;
     }
