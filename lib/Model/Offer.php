@@ -59,6 +59,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
+        'description' => 'string',
         'main_offer_item' => '\Infracorp\Extranet\Client\Model\OfferItem',
         'offer_type' => 'string'
     ];
@@ -73,6 +74,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
+        'description' => null,
         'main_offer_item' => null,
         'offer_type' => null
     ];
@@ -85,6 +87,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'name' => false,
+        'description' => true,
         'main_offer_item' => false,
         'offer_type' => true
     ];
@@ -177,6 +180,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
+        'description' => 'description',
         'main_offer_item' => 'mainOfferItem',
         'offer_type' => 'offerType'
     ];
@@ -189,6 +193,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
+        'description' => 'setDescription',
         'main_offer_item' => 'setMainOfferItem',
         'offer_type' => 'setOfferType'
     ];
@@ -201,6 +206,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
+        'description' => 'getDescription',
         'main_offer_item' => 'getMainOfferItem',
         'offer_type' => 'getOfferType'
     ];
@@ -287,6 +293,7 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('main_offer_item', $data ?? [], null);
         $this->setIfExists('offer_type', $data ?? [], null);
     }
@@ -392,6 +399,40 @@ class Offer implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if (is_null($description)) {
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['description'] = $description;
 
         return $this;
     }

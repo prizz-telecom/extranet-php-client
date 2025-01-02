@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional]
 **name** | **string** |  | [optional]
+**description** | **string** |  | [optional]
 **main_offer_item** | [**\Infracorp\Extranet\Client\Model\OfferItem**](OfferItem.md) |  | [optional]
 **offer_type** | **string** |  | [optional]
 

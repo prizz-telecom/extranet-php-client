@@ -90,7 +90,7 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
         'combination_id' => false,
         'total' => false,
         'total_without_nrc' => false,
-        'nrc' => false,
+        'nrc' => true,
         'attributes' => false,
         'nrc_to_estimate' => false
     ];
@@ -425,7 +425,14 @@ class EligibilityResultCombination implements ModelInterface, ArrayAccess, \Json
     public function setNrc($nrc)
     {
         if (is_null($nrc)) {
-            throw new \InvalidArgumentException('non-nullable nrc cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'nrc');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nrc', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['nrc'] = $nrc;
 
