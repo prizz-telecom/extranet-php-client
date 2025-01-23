@@ -11,6 +11,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**createTicketOperator()**](DefaultApi.md#createTicketOperator) | **POST** /external-api/v2/exploitation/operator/{id} | Exploitation Operator Tickets |
 | [**createWorkflow()**](DefaultApi.md#createWorkflow) | **POST** /external-api/v2/workflow | Workflows |
 | [**eligibilityHistory()**](DefaultApi.md#eligibilityHistory) | **GET** /external-api/v2/eligibility/history | Eligibility History |
+| [**fastOrder()**](DefaultApi.md#fastOrder) | **POST** /external-api/v2/commercial_offers/fast_order/{elig_ctx_id} | Fast order with eligiblity result |
 | [**getApiTokens()**](DefaultApi.md#getApiTokens) | **GET** /external-api/v2/users/api_tokens | User Api Tokens |
 | [**getAttachment()**](DefaultApi.md#getAttachment) | **GET** /external-api/v2/attachments/{id} | Attachment |
 | [**getClientLegalEntities()**](DefaultApi.md#getClientLegalEntities) | **GET** /external-api/v2/client_legal_entities | Client legal entities |
@@ -18,9 +19,9 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**getCommentThread()**](DefaultApi.md#getCommentThread) | **GET** /external-api/v2/comments/threads/{id} | Comment thread |
 | [**getCommentThreads()**](DefaultApi.md#getCommentThreads) | **GET** /external-api/v2/comments/threads | Comment threads |
 | [**getCommercialOffer()**](DefaultApi.md#getCommercialOffer) | **GET** /external-api/v2/commercial_offers/{id} | Commercial Offer |
-| [**getCommercialOfferByName()**](DefaultApi.md#getCommercialOfferByName) | **GET** /external-api/v2/commercial_offers_by_name/{offer_name} | Commercial Offer |
+| [**getCommercialOfferByName()**](DefaultApi.md#getCommercialOfferByName) | **GET** /external-api/v2/commercial_offers_by_name/{offer_name} | Commercial Offer by reference CPTXXXXXX, CPIXXXXXX |
 | [**getCommercialOfferItem()**](DefaultApi.md#getCommercialOfferItem) | **GET** /external-api/v2/commercial_offer_items/{id} | Commercial Offer Item |
-| [**getCommercialOfferPdf()**](DefaultApi.md#getCommercialOfferPdf) | **GET** /external-api/v2/commercial_offers/{id}/pdf | Commercial Offer Pdf |
+| [**getCommercialOfferPdf()**](DefaultApi.md#getCommercialOfferPdf) | **GET** /external-api/v2/commercial_offers/{id}/pdf | Commercial Offer PDF |
 | [**getCommercialOfferSection()**](DefaultApi.md#getCommercialOfferSection) | **GET** /external-api/v2/commercial_offer_sections/{id} | Commercial Offer Section |
 | [**getCommercialOffers()**](DefaultApi.md#getCommercialOffers) | **GET** /external-api/v2/commercial_offers | Commercial Offers |
 | [**getCurrentUser()**](DefaultApi.md#getCurrentUser) | **GET** /external-api/v2/user | User |
@@ -533,6 +534,73 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `fastOrder()`
+
+```php
+fastOrder($elig_ctx_id, $fast_order): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+```
+
+Fast order with eligiblity result
+
+Créer un devis à partir d'un résultat d'éligibilité
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$elig_ctx_id = 56; // int | identifiant du contexte d'éligibilité
+$fast_order = new \Infracorp\Extranet\Client\Model\FastOrder(); // \Infracorp\Extranet\Client\Model\FastOrder
+
+try {
+    $result = $apiInstance->fastOrder($elig_ctx_id, $fast_order);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->fastOrder: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **elig_ctx_id** | **int**| identifiant du contexte d&#39;éligibilité | |
+| **fast_order** | [**\Infracorp\Extranet\Client\Model\FastOrder**](../Model/FastOrder.md)|  | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getApiTokens()`
 
 ```php
@@ -1004,9 +1072,9 @@ try {
 getCommercialOfferByName($offer_name): \Infracorp\Extranet\Client\Model\CommercialOffer
 ```
 
-Commercial Offer
+Commercial Offer by reference CPTXXXXXX, CPIXXXXXX
 
-Get commercial offer by name
+Get commercial offer by reference
 
 ### Example
 
@@ -1134,9 +1202,9 @@ try {
 getCommercialOfferPdf($id): \SplFileObject
 ```
 
-Commercial Offer Pdf
+Commercial Offer PDF
 
-Récupérer le pdf d'un devis
+Récupérer le PDF d'un devis
 
 ### Example
 

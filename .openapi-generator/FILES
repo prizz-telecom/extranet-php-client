@@ -34,6 +34,7 @@ docs/Model/EligibilityPriceListItem.md
 docs/Model/EligibilityResult.md
 docs/Model/EligibilityResultCombination.md
 docs/Model/EligibilityResultPriceListItemsGroups.md
+docs/Model/FastOrder.md
 docs/Model/GetApiTokens200Response.md
 docs/Model/GetClientLegalEntities200Response.md
 docs/Model/GetClientLegalEntities200ResponsePagination.md
@@ -131,6 +132,7 @@ lib/Model/EligibilityPriceListItem.php
 lib/Model/EligibilityResult.php
 lib/Model/EligibilityResultCombination.php
 lib/Model/EligibilityResultPriceListItemsGroups.php
+lib/Model/FastOrder.php
 lib/Model/GetApiTokens200Response.php
 lib/Model/GetClientLegalEntities200Response.php
 lib/Model/GetClientLegalEntities200ResponsePagination.php
@@ -196,3 +198,4 @@ lib/Model/UserRole.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/FastOrderTest.php

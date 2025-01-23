@@ -1,6 +1,6 @@
 <?php
 /**
- * SetCommercialOfferSectionOffer
+ * FastOrder
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * SetCommercialOfferSectionOffer Class Doc Comment
+ * FastOrder Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \JsonSerializable
+class FastOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SetCommercialOfferSectionOffer';
+    protected static $openAPIModelName = 'FastOrder';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,9 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'offer_id' => 'int',
-        'eligibility' => '\Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOfferEligibility'
+        'name' => 'string',
+        'client_reference' => 'string',
+        'combination_id' => 'string'
     ];
 
     /**
@@ -69,8 +70,9 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'offer_id' => null,
-        'eligibility' => null
+        'name' => null,
+        'client_reference' => null,
+        'combination_id' => null
     ];
 
     /**
@@ -79,8 +81,9 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'offer_id' => false,
-        'eligibility' => false
+        'name' => false,
+        'client_reference' => true,
+        'combination_id' => false
     ];
 
     /**
@@ -169,8 +172,9 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'offer_id' => 'offerId',
-        'eligibility' => 'eligibility'
+        'name' => 'name',
+        'client_reference' => 'clientReference',
+        'combination_id' => 'combinationId'
     ];
 
     /**
@@ -179,8 +183,9 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'offer_id' => 'setOfferId',
-        'eligibility' => 'setEligibility'
+        'name' => 'setName',
+        'client_reference' => 'setClientReference',
+        'combination_id' => 'setCombinationId'
     ];
 
     /**
@@ -189,8 +194,9 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'offer_id' => 'getOfferId',
-        'eligibility' => 'getEligibility'
+        'name' => 'getName',
+        'client_reference' => 'getClientReference',
+        'combination_id' => 'getCombinationId'
     ];
 
     /**
@@ -250,8 +256,9 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('offer_id', $data ?? [], null);
-        $this->setIfExists('eligibility', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('client_reference', $data ?? [], null);
+        $this->setIfExists('combination_id', $data ?? [], null);
     }
 
     /**
@@ -297,55 +304,89 @@ class SetCommercialOfferSectionOffer implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets offer_id
+     * Gets name
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getOfferId()
+    public function getName()
     {
-        return $this->container['offer_id'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets offer_id
+     * Sets name
      *
-     * @param int|null $offer_id offer_id
+     * @param string|null $name name
      *
      * @return self
      */
-    public function setOfferId($offer_id)
+    public function setName($name)
     {
-        if (is_null($offer_id)) {
-            throw new \InvalidArgumentException('non-nullable offer_id cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['offer_id'] = $offer_id;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets eligibility
+     * Gets client_reference
      *
-     * @return \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOfferEligibility|null
+     * @return string|null
      */
-    public function getEligibility()
+    public function getClientReference()
     {
-        return $this->container['eligibility'];
+        return $this->container['client_reference'];
     }
 
     /**
-     * Sets eligibility
+     * Sets client_reference
      *
-     * @param \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOfferEligibility|null $eligibility eligibility
+     * @param string|null $client_reference client_reference
      *
      * @return self
      */
-    public function setEligibility($eligibility)
+    public function setClientReference($client_reference)
     {
-        if (is_null($eligibility)) {
-            throw new \InvalidArgumentException('non-nullable eligibility cannot be null');
+        if (is_null($client_reference)) {
+            array_push($this->openAPINullablesSetToNull, 'client_reference');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('client_reference', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['eligibility'] = $eligibility;
+        $this->container['client_reference'] = $client_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets combination_id
+     *
+     * @return string|null
+     */
+    public function getCombinationId()
+    {
+        return $this->container['combination_id'];
+    }
+
+    /**
+     * Sets combination_id
+     *
+     * @param string|null $combination_id combination_id
+     *
+     * @return self
+     */
+    public function setCombinationId($combination_id)
+    {
+        if (is_null($combination_id)) {
+            throw new \InvalidArgumentException('non-nullable combination_id cannot be null');
+        }
+        $this->container['combination_id'] = $combination_id;
 
         return $this;
     }
