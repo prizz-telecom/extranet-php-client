@@ -198,4 +198,3 @@ lib/Model/UserRole.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/FastOrderTest.php
