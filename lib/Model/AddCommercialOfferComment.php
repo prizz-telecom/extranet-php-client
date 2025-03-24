@@ -1,6 +1,6 @@
 <?php
 /**
- * GetWorkflow
+ * AddCommercialOfferComment
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * GetWorkflow Class Doc Comment
+ * AddCommercialOfferComment Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
+class AddCommercialOfferComment implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetWorkflow';
+    protected static $openAPIModelName = 'AddCommercialOfferComment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,11 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'state' => 'string',
-        'success' => 'bool',
-        'log' => 'string',
-        'redirect' => '\Infracorp\Extranet\Client\Model\GetWorkflowRedirect'
+        'title' => 'string',
+        'thread_id' => 'int',
+        'parent_id' => 'int',
+        'content_type' => 'string',
+        'content' => 'string'
     ];
 
     /**
@@ -72,11 +72,11 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'state' => null,
-        'success' => null,
-        'log' => null,
-        'redirect' => null
+        'title' => null,
+        'thread_id' => null,
+        'parent_id' => null,
+        'content_type' => null,
+        'content' => null
     ];
 
     /**
@@ -85,11 +85,11 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'state' => false,
-        'success' => false,
-        'log' => true,
-        'redirect' => false
+        'title' => true,
+        'thread_id' => true,
+        'parent_id' => true,
+        'content_type' => true,
+        'content' => false
     ];
 
     /**
@@ -178,11 +178,11 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'state' => 'state',
-        'success' => 'success',
-        'log' => 'log',
-        'redirect' => 'redirect'
+        'title' => 'title',
+        'thread_id' => 'threadId',
+        'parent_id' => 'parentId',
+        'content_type' => 'contentType',
+        'content' => 'content'
     ];
 
     /**
@@ -191,11 +191,11 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'state' => 'setState',
-        'success' => 'setSuccess',
-        'log' => 'setLog',
-        'redirect' => 'setRedirect'
+        'title' => 'setTitle',
+        'thread_id' => 'setThreadId',
+        'parent_id' => 'setParentId',
+        'content_type' => 'setContentType',
+        'content' => 'setContent'
     ];
 
     /**
@@ -204,11 +204,11 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'state' => 'getState',
-        'success' => 'getSuccess',
-        'log' => 'getLog',
-        'redirect' => 'getRedirect'
+        'title' => 'getTitle',
+        'thread_id' => 'getThreadId',
+        'parent_id' => 'getParentId',
+        'content_type' => 'getContentType',
+        'content' => 'getContent'
     ];
 
     /**
@@ -252,6 +252,21 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const CONTENT_TYPE_TEXT = 'text';
+    public const CONTENT_TYPE_MARKDOWN = 'markdown';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getContentTypeAllowableValues()
+    {
+        return [
+            self::CONTENT_TYPE_TEXT,
+            self::CONTENT_TYPE_MARKDOWN,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -268,11 +283,11 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('state', $data ?? [], null);
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('log', $data ?? [], null);
-        $this->setIfExists('redirect', $data ?? [], null);
+        $this->setIfExists('title', $data ?? [], null);
+        $this->setIfExists('thread_id', $data ?? [], null);
+        $this->setIfExists('parent_id', $data ?? [], null);
+        $this->setIfExists('content_type', $data ?? [], null);
+        $this->setIfExists('content', $data ?? [], null);
     }
 
     /**
@@ -302,6 +317,15 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getContentTypeAllowableValues();
+        if (!is_null($this->container['content_type']) && !in_array($this->container['content_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'content_type', must be one of '%s'",
+                $this->container['content_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -318,143 +342,174 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
+     * Gets title
      *
      * @return string|null
      */
-    public function getState()
+    public function getTitle()
     {
-        return $this->container['state'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets state
+     * Sets title
      *
-     * @param string|null $state state
+     * @param string|null $title title
      *
      * @return self
      */
-    public function setState($state)
+    public function setTitle($title)
     {
-        if (is_null($state)) {
-            throw new \InvalidArgumentException('non-nullable state cannot be null');
-        }
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool|null
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool|null $success success
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        if (is_null($success)) {
-            throw new \InvalidArgumentException('non-nullable success cannot be null');
-        }
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets log
-     *
-     * @return string|null
-     */
-    public function getLog()
-    {
-        return $this->container['log'];
-    }
-
-    /**
-     * Sets log
-     *
-     * @param string|null $log log
-     *
-     * @return self
-     */
-    public function setLog($log)
-    {
-        if (is_null($log)) {
-            array_push($this->openAPINullablesSetToNull, 'log');
+        if (is_null($title)) {
+            array_push($this->openAPINullablesSetToNull, 'title');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('log', $nullablesSetToNull);
+            $index = array_search('title', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['log'] = $log;
+        $this->container['title'] = $title;
 
         return $this;
     }
 
     /**
-     * Gets redirect
+     * Gets thread_id
      *
-     * @return \Infracorp\Extranet\Client\Model\GetWorkflowRedirect|null
+     * @return int|null
      */
-    public function getRedirect()
+    public function getThreadId()
     {
-        return $this->container['redirect'];
+        return $this->container['thread_id'];
     }
 
     /**
-     * Sets redirect
+     * Sets thread_id
      *
-     * @param \Infracorp\Extranet\Client\Model\GetWorkflowRedirect|null $redirect redirect
+     * @param int|null $thread_id thread_id
      *
      * @return self
      */
-    public function setRedirect($redirect)
+    public function setThreadId($thread_id)
     {
-        if (is_null($redirect)) {
-            throw new \InvalidArgumentException('non-nullable redirect cannot be null');
+        if (is_null($thread_id)) {
+            array_push($this->openAPINullablesSetToNull, 'thread_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('thread_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['redirect'] = $redirect;
+        $this->container['thread_id'] = $thread_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_id
+     *
+     * @return int|null
+     */
+    public function getParentId()
+    {
+        return $this->container['parent_id'];
+    }
+
+    /**
+     * Sets parent_id
+     *
+     * @param int|null $parent_id parent_id
+     *
+     * @return self
+     */
+    public function setParentId($parent_id)
+    {
+        if (is_null($parent_id)) {
+            array_push($this->openAPINullablesSetToNull, 'parent_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('parent_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['parent_id'] = $parent_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets content_type
+     *
+     * @return string|null
+     */
+    public function getContentType()
+    {
+        return $this->container['content_type'];
+    }
+
+    /**
+     * Sets content_type
+     *
+     * @param string|null $content_type content_type
+     *
+     * @return self
+     */
+    public function setContentType($content_type)
+    {
+        if (is_null($content_type)) {
+            array_push($this->openAPINullablesSetToNull, 'content_type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('content_type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getContentTypeAllowableValues();
+        if (!is_null($content_type) && !in_array($content_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'content_type', must be one of '%s'",
+                    $content_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['content_type'] = $content_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets content
+     *
+     * @return string|null
+     */
+    public function getContent()
+    {
+        return $this->container['content'];
+    }
+
+    /**
+     * Sets content
+     *
+     * @param string|null $content content
+     *
+     * @return self
+     */
+    public function setContent($content)
+    {
+        if (is_null($content)) {
+            throw new \InvalidArgumentException('non-nullable content cannot be null');
+        }
+        $this->container['content'] = $content;
 
         return $this;
     }

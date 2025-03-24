@@ -1,6 +1,6 @@
 <?php
 /**
- * InvoiceDetail
+ * Appointment
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * InvoiceDetail Class Doc Comment
+ * Appointment Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
+class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'InvoiceDetail';
+    protected static $openAPIModelName = 'Appointment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,35 +59,23 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'available_workflows' => 'string[]',
         'id' => 'int',
-        'unit_price' => 'int',
-        'unit_price_str' => 'string',
-        'unit' => 'string',
-        'vat' => 'string',
-        'recurrence' => 'string',
-        'quantity' => 'int',
-        'unit_price_discount' => 'int',
-        'unit_price_discount_str' => 'string',
         'name' => 'string',
+        'create_date' => '\DateTime',
+        'last_modified_date' => '\DateTime',
         'house_number' => 'int',
         'house_number_complement' => 'string',
         'street_name' => 'string',
         'postal_code' => 'string',
         'city_name' => 'string',
         'insee_code' => 'string',
-        'latitude' => 'float',
-        'longitude' => 'float',
-        'x' => 'float',
-        'y' => 'float',
-        'projection' => 'string',
-        'amount' => 'int',
-        'invoice_id' => 'int',
-        'amount_str' => 'string',
-        'va_trate' => 'float',
-        'service_id' => 'int',
-        'service_contract_id' => 'int',
-        'description' => 'string',
-        'from_date' => '\DateTime',
-        'to_date' => '\DateTime'
+        'service_contract' => '\Infracorp\Extranet\Client\Model\AppointmentServiceContract',
+        'contact' => '\Infracorp\Extranet\Client\Model\AppointmentContact',
+        'tech' => '\Infracorp\Extranet\Client\Model\AppointmentTech',
+        'date' => '\DateTime',
+        'accepted' => 'bool',
+        'status' => 'string',
+        'type' => 'string',
+        'confirmation_process_id' => 'int'
     ];
 
     /**
@@ -100,35 +88,23 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'available_workflows' => null,
         'id' => null,
-        'unit_price' => null,
-        'unit_price_str' => null,
-        'unit' => null,
-        'vat' => null,
-        'recurrence' => null,
-        'quantity' => null,
-        'unit_price_discount' => null,
-        'unit_price_discount_str' => null,
         'name' => null,
+        'create_date' => 'date-time',
+        'last_modified_date' => 'date-time',
         'house_number' => null,
         'house_number_complement' => null,
         'street_name' => null,
         'postal_code' => null,
         'city_name' => null,
         'insee_code' => null,
-        'latitude' => 'float',
-        'longitude' => 'float',
-        'x' => 'float',
-        'y' => 'float',
-        'projection' => null,
-        'amount' => null,
-        'invoice_id' => null,
-        'amount_str' => null,
-        'va_trate' => 'float',
-        'service_id' => null,
-        'service_contract_id' => null,
-        'description' => null,
-        'from_date' => 'date-time',
-        'to_date' => 'date-time'
+        'service_contract' => null,
+        'contact' => null,
+        'tech' => null,
+        'date' => 'date-time',
+        'accepted' => null,
+        'status' => null,
+        'type' => null,
+        'confirmation_process_id' => null
     ];
 
     /**
@@ -139,35 +115,23 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'available_workflows' => false,
         'id' => false,
-        'unit_price' => true,
-        'unit_price_str' => false,
-        'unit' => true,
-        'vat' => true,
-        'recurrence' => true,
-        'quantity' => false,
-        'unit_price_discount' => true,
-        'unit_price_discount_str' => false,
         'name' => false,
+        'create_date' => false,
+        'last_modified_date' => true,
         'house_number' => true,
         'house_number_complement' => true,
         'street_name' => true,
         'postal_code' => true,
         'city_name' => true,
         'insee_code' => true,
-        'latitude' => true,
-        'longitude' => true,
-        'x' => true,
-        'y' => true,
-        'projection' => true,
-        'amount' => true,
-        'invoice_id' => false,
-        'amount_str' => false,
-        'va_trate' => false,
-        'service_id' => true,
-        'service_contract_id' => true,
-        'description' => false,
-        'from_date' => true,
-        'to_date' => true
+        'service_contract' => true,
+        'contact' => true,
+        'tech' => true,
+        'date' => true,
+        'accepted' => false,
+        'status' => true,
+        'type' => true,
+        'confirmation_process_id' => true
     ];
 
     /**
@@ -258,35 +222,23 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'available_workflows' => 'availableWorkflows',
         'id' => 'id',
-        'unit_price' => 'unitPrice',
-        'unit_price_str' => 'unitPriceStr',
-        'unit' => 'unit',
-        'vat' => 'vat',
-        'recurrence' => 'recurrence',
-        'quantity' => 'quantity',
-        'unit_price_discount' => 'unitPriceDiscount',
-        'unit_price_discount_str' => 'unitPriceDiscountStr',
         'name' => 'name',
+        'create_date' => 'createDate',
+        'last_modified_date' => 'lastModifiedDate',
         'house_number' => 'houseNumber',
         'house_number_complement' => 'houseNumberComplement',
         'street_name' => 'streetName',
         'postal_code' => 'postalCode',
         'city_name' => 'cityName',
         'insee_code' => 'inseeCode',
-        'latitude' => 'latitude',
-        'longitude' => 'longitude',
-        'x' => 'x',
-        'y' => 'y',
-        'projection' => 'projection',
-        'amount' => 'amount',
-        'invoice_id' => 'invoiceId',
-        'amount_str' => 'amountStr',
-        'va_trate' => 'VATrate',
-        'service_id' => 'serviceId',
-        'service_contract_id' => 'serviceContractId',
-        'description' => 'description',
-        'from_date' => 'fromDate',
-        'to_date' => 'toDate'
+        'service_contract' => 'serviceContract',
+        'contact' => 'contact',
+        'tech' => 'tech',
+        'date' => 'date',
+        'accepted' => 'accepted',
+        'status' => 'status',
+        'type' => 'type',
+        'confirmation_process_id' => 'confirmationProcessId'
     ];
 
     /**
@@ -297,35 +249,23 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'available_workflows' => 'setAvailableWorkflows',
         'id' => 'setId',
-        'unit_price' => 'setUnitPrice',
-        'unit_price_str' => 'setUnitPriceStr',
-        'unit' => 'setUnit',
-        'vat' => 'setVat',
-        'recurrence' => 'setRecurrence',
-        'quantity' => 'setQuantity',
-        'unit_price_discount' => 'setUnitPriceDiscount',
-        'unit_price_discount_str' => 'setUnitPriceDiscountStr',
         'name' => 'setName',
+        'create_date' => 'setCreateDate',
+        'last_modified_date' => 'setLastModifiedDate',
         'house_number' => 'setHouseNumber',
         'house_number_complement' => 'setHouseNumberComplement',
         'street_name' => 'setStreetName',
         'postal_code' => 'setPostalCode',
         'city_name' => 'setCityName',
         'insee_code' => 'setInseeCode',
-        'latitude' => 'setLatitude',
-        'longitude' => 'setLongitude',
-        'x' => 'setX',
-        'y' => 'setY',
-        'projection' => 'setProjection',
-        'amount' => 'setAmount',
-        'invoice_id' => 'setInvoiceId',
-        'amount_str' => 'setAmountStr',
-        'va_trate' => 'setVaTrate',
-        'service_id' => 'setServiceId',
-        'service_contract_id' => 'setServiceContractId',
-        'description' => 'setDescription',
-        'from_date' => 'setFromDate',
-        'to_date' => 'setToDate'
+        'service_contract' => 'setServiceContract',
+        'contact' => 'setContact',
+        'tech' => 'setTech',
+        'date' => 'setDate',
+        'accepted' => 'setAccepted',
+        'status' => 'setStatus',
+        'type' => 'setType',
+        'confirmation_process_id' => 'setConfirmationProcessId'
     ];
 
     /**
@@ -336,35 +276,23 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'available_workflows' => 'getAvailableWorkflows',
         'id' => 'getId',
-        'unit_price' => 'getUnitPrice',
-        'unit_price_str' => 'getUnitPriceStr',
-        'unit' => 'getUnit',
-        'vat' => 'getVat',
-        'recurrence' => 'getRecurrence',
-        'quantity' => 'getQuantity',
-        'unit_price_discount' => 'getUnitPriceDiscount',
-        'unit_price_discount_str' => 'getUnitPriceDiscountStr',
         'name' => 'getName',
+        'create_date' => 'getCreateDate',
+        'last_modified_date' => 'getLastModifiedDate',
         'house_number' => 'getHouseNumber',
         'house_number_complement' => 'getHouseNumberComplement',
         'street_name' => 'getStreetName',
         'postal_code' => 'getPostalCode',
         'city_name' => 'getCityName',
         'insee_code' => 'getInseeCode',
-        'latitude' => 'getLatitude',
-        'longitude' => 'getLongitude',
-        'x' => 'getX',
-        'y' => 'getY',
-        'projection' => 'getProjection',
-        'amount' => 'getAmount',
-        'invoice_id' => 'getInvoiceId',
-        'amount_str' => 'getAmountStr',
-        'va_trate' => 'getVaTrate',
-        'service_id' => 'getServiceId',
-        'service_contract_id' => 'getServiceContractId',
-        'description' => 'getDescription',
-        'from_date' => 'getFromDate',
-        'to_date' => 'getToDate'
+        'service_contract' => 'getServiceContract',
+        'contact' => 'getContact',
+        'tech' => 'getTech',
+        'date' => 'getDate',
+        'accepted' => 'getAccepted',
+        'status' => 'getStatus',
+        'type' => 'getType',
+        'confirmation_process_id' => 'getConfirmationProcessId'
     ];
 
     /**
@@ -450,10 +378,17 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_APPOINTMENT_CUSTOMER_CHANGE_DATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Appointment\\CustomerChangeDate\\Context';
     public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_APPOINTMENT_CUSTOMER_CONFIRM_CONTEXT = 'Infracorp\\Services\\Workflow\\Appointment\\CustomerConfirm\\Context';
     public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_SERVICE_CONTRACT_MIGRATE_COAX_TO_L2_PREMIUM_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\MigrateCoaxToL2Premium\\Context';
-    public const RECURRENCE_MONTHLY = 'monthly';
-    public const RECURRENCE_YEARLY = 'yearly';
-    public const RECURRENCE_HALF_YEARLY = 'half-yearly';
-    public const RECURRENCE_QUATERLY = 'quaterly';
+    public const STATUS_TO_PLAN = 'to_plan';
+    public const STATUS_NEED_CONFIRM = 'need_confirm';
+    public const STATUS_PLANNED = 'planned';
+    public const STATUS_CANCELED = 'canceled';
+    public const STATUS_MISSING_CUSTROMER = 'missing_custromer';
+    public const STATUS_MISSING_TECHNICIAN = 'missing_technician';
+    public const STATUS_TERMINATED = 'terminated';
+    public const TYPE_TECHNICAL_TOUR = 'technical_tour';
+    public const TYPE_CONNECTION_WITH_ACTIVATION = 'connection_with_activation';
+    public const TYPE_CONNECTION_WITHOUT_ACTIVATION = 'connection_without_activation';
+    public const TYPE_OTHER = 'other';
 
     /**
      * Gets allowable values of the enum
@@ -513,13 +448,31 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getRecurrenceAllowableValues()
+    public function getStatusAllowableValues()
     {
         return [
-            self::RECURRENCE_MONTHLY,
-            self::RECURRENCE_YEARLY,
-            self::RECURRENCE_HALF_YEARLY,
-            self::RECURRENCE_QUATERLY,
+            self::STATUS_TO_PLAN,
+            self::STATUS_NEED_CONFIRM,
+            self::STATUS_PLANNED,
+            self::STATUS_CANCELED,
+            self::STATUS_MISSING_CUSTROMER,
+            self::STATUS_MISSING_TECHNICIAN,
+            self::STATUS_TERMINATED,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_TECHNICAL_TOUR,
+            self::TYPE_CONNECTION_WITH_ACTIVATION,
+            self::TYPE_CONNECTION_WITHOUT_ACTIVATION,
+            self::TYPE_OTHER,
         ];
     }
 
@@ -540,35 +493,23 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('available_workflows', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('unit_price', $data ?? [], null);
-        $this->setIfExists('unit_price_str', $data ?? [], null);
-        $this->setIfExists('unit', $data ?? [], null);
-        $this->setIfExists('vat', $data ?? [], null);
-        $this->setIfExists('recurrence', $data ?? [], null);
-        $this->setIfExists('quantity', $data ?? [], null);
-        $this->setIfExists('unit_price_discount', $data ?? [], null);
-        $this->setIfExists('unit_price_discount_str', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('create_date', $data ?? [], null);
+        $this->setIfExists('last_modified_date', $data ?? [], null);
         $this->setIfExists('house_number', $data ?? [], null);
         $this->setIfExists('house_number_complement', $data ?? [], null);
         $this->setIfExists('street_name', $data ?? [], null);
         $this->setIfExists('postal_code', $data ?? [], null);
         $this->setIfExists('city_name', $data ?? [], null);
         $this->setIfExists('insee_code', $data ?? [], null);
-        $this->setIfExists('latitude', $data ?? [], null);
-        $this->setIfExists('longitude', $data ?? [], null);
-        $this->setIfExists('x', $data ?? [], null);
-        $this->setIfExists('y', $data ?? [], null);
-        $this->setIfExists('projection', $data ?? [], null);
-        $this->setIfExists('amount', $data ?? [], null);
-        $this->setIfExists('invoice_id', $data ?? [], null);
-        $this->setIfExists('amount_str', $data ?? [], null);
-        $this->setIfExists('va_trate', $data ?? [], null);
-        $this->setIfExists('service_id', $data ?? [], null);
-        $this->setIfExists('service_contract_id', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
-        $this->setIfExists('from_date', $data ?? [], null);
-        $this->setIfExists('to_date', $data ?? [], null);
+        $this->setIfExists('service_contract', $data ?? [], null);
+        $this->setIfExists('contact', $data ?? [], null);
+        $this->setIfExists('tech', $data ?? [], null);
+        $this->setIfExists('date', $data ?? [], null);
+        $this->setIfExists('accepted', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('confirmation_process_id', $data ?? [], null);
     }
 
     /**
@@ -598,11 +539,20 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getRecurrenceAllowableValues();
-        if (!is_null($this->container['recurrence']) && !in_array($this->container['recurrence'], $allowedValues, true)) {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'recurrence', must be one of '%s'",
-                $this->container['recurrence'],
+                "invalid value '%s' for 'status', must be one of '%s'",
+                $this->container['status'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -686,267 +636,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets unit_price
-     *
-     * @return int|null
-     */
-    public function getUnitPrice()
-    {
-        return $this->container['unit_price'];
-    }
-
-    /**
-     * Sets unit_price
-     *
-     * @param int|null $unit_price unit_price
-     *
-     * @return self
-     */
-    public function setUnitPrice($unit_price)
-    {
-        if (is_null($unit_price)) {
-            array_push($this->openAPINullablesSetToNull, 'unit_price');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unit_price', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['unit_price'] = $unit_price;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit_price_str
-     *
-     * @return string|null
-     */
-    public function getUnitPriceStr()
-    {
-        return $this->container['unit_price_str'];
-    }
-
-    /**
-     * Sets unit_price_str
-     *
-     * @param string|null $unit_price_str unit_price_str
-     *
-     * @return self
-     */
-    public function setUnitPriceStr($unit_price_str)
-    {
-        if (is_null($unit_price_str)) {
-            throw new \InvalidArgumentException('non-nullable unit_price_str cannot be null');
-        }
-        $this->container['unit_price_str'] = $unit_price_str;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit
-     *
-     * @return string|null
-     */
-    public function getUnit()
-    {
-        return $this->container['unit'];
-    }
-
-    /**
-     * Sets unit
-     *
-     * @param string|null $unit unit
-     *
-     * @return self
-     */
-    public function setUnit($unit)
-    {
-        if (is_null($unit)) {
-            array_push($this->openAPINullablesSetToNull, 'unit');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unit', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['unit'] = $unit;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat
-     *
-     * @return string|null
-     */
-    public function getVat()
-    {
-        return $this->container['vat'];
-    }
-
-    /**
-     * Sets vat
-     *
-     * @param string|null $vat vat
-     *
-     * @return self
-     */
-    public function setVat($vat)
-    {
-        if (is_null($vat)) {
-            array_push($this->openAPINullablesSetToNull, 'vat');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vat', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['vat'] = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets recurrence
-     *
-     * @return string|null
-     */
-    public function getRecurrence()
-    {
-        return $this->container['recurrence'];
-    }
-
-    /**
-     * Sets recurrence
-     *
-     * @param string|null $recurrence recurrence
-     *
-     * @return self
-     */
-    public function setRecurrence($recurrence)
-    {
-        if (is_null($recurrence)) {
-            array_push($this->openAPINullablesSetToNull, 'recurrence');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('recurrence', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getRecurrenceAllowableValues();
-        if (!is_null($recurrence) && !in_array($recurrence, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'recurrence', must be one of '%s'",
-                    $recurrence,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['recurrence'] = $recurrence;
-
-        return $this;
-    }
-
-    /**
-     * Gets quantity
-     *
-     * @return int|null
-     */
-    public function getQuantity()
-    {
-        return $this->container['quantity'];
-    }
-
-    /**
-     * Sets quantity
-     *
-     * @param int|null $quantity quantity
-     *
-     * @return self
-     */
-    public function setQuantity($quantity)
-    {
-        if (is_null($quantity)) {
-            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
-        }
-        $this->container['quantity'] = $quantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit_price_discount
-     *
-     * @return int|null
-     */
-    public function getUnitPriceDiscount()
-    {
-        return $this->container['unit_price_discount'];
-    }
-
-    /**
-     * Sets unit_price_discount
-     *
-     * @param int|null $unit_price_discount unit_price_discount
-     *
-     * @return self
-     */
-    public function setUnitPriceDiscount($unit_price_discount)
-    {
-        if (is_null($unit_price_discount)) {
-            array_push($this->openAPINullablesSetToNull, 'unit_price_discount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unit_price_discount', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['unit_price_discount'] = $unit_price_discount;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit_price_discount_str
-     *
-     * @return string|null
-     */
-    public function getUnitPriceDiscountStr()
-    {
-        return $this->container['unit_price_discount_str'];
-    }
-
-    /**
-     * Sets unit_price_discount_str
-     *
-     * @param string|null $unit_price_discount_str unit_price_discount_str
-     *
-     * @return self
-     */
-    public function setUnitPriceDiscountStr($unit_price_discount_str)
-    {
-        if (is_null($unit_price_discount_str)) {
-            throw new \InvalidArgumentException('non-nullable unit_price_discount_str cannot be null');
-        }
-        $this->container['unit_price_discount_str'] = $unit_price_discount_str;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string|null
@@ -969,6 +658,67 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets create_date
+     *
+     * @return \DateTime|null
+     */
+    public function getCreateDate()
+    {
+        return $this->container['create_date'];
+    }
+
+    /**
+     * Sets create_date
+     *
+     * @param \DateTime|null $create_date create_date
+     *
+     * @return self
+     */
+    public function setCreateDate($create_date)
+    {
+        if (is_null($create_date)) {
+            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
+        }
+        $this->container['create_date'] = $create_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified_date
+     *
+     * @return \DateTime|null
+     */
+    public function getLastModifiedDate()
+    {
+        return $this->container['last_modified_date'];
+    }
+
+    /**
+     * Sets last_modified_date
+     *
+     * @param \DateTime|null $last_modified_date last_modified_date
+     *
+     * @return self
+     */
+    public function setLastModifiedDate($last_modified_date)
+    {
+        if (is_null($last_modified_date)) {
+            array_push($this->openAPINullablesSetToNull, 'last_modified_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_modified_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['last_modified_date'] = $last_modified_date;
 
         return $this;
     }
@@ -1178,449 +928,286 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets latitude
+     * Gets service_contract
      *
-     * @return float|null
+     * @return \Infracorp\Extranet\Client\Model\AppointmentServiceContract|null
      */
-    public function getLatitude()
+    public function getServiceContract()
     {
-        return $this->container['latitude'];
+        return $this->container['service_contract'];
     }
 
     /**
-     * Sets latitude
+     * Sets service_contract
      *
-     * @param float|null $latitude latitude
+     * @param \Infracorp\Extranet\Client\Model\AppointmentServiceContract|null $service_contract service_contract
      *
      * @return self
      */
-    public function setLatitude($latitude)
+    public function setServiceContract($service_contract)
     {
-        if (is_null($latitude)) {
-            array_push($this->openAPINullablesSetToNull, 'latitude');
+        if (is_null($service_contract)) {
+            array_push($this->openAPINullablesSetToNull, 'service_contract');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('latitude', $nullablesSetToNull);
+            $index = array_search('service_contract', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['latitude'] = $latitude;
+        $this->container['service_contract'] = $service_contract;
 
         return $this;
     }
 
     /**
-     * Gets longitude
+     * Gets contact
      *
-     * @return float|null
+     * @return \Infracorp\Extranet\Client\Model\AppointmentContact|null
      */
-    public function getLongitude()
+    public function getContact()
     {
-        return $this->container['longitude'];
+        return $this->container['contact'];
     }
 
     /**
-     * Sets longitude
+     * Sets contact
      *
-     * @param float|null $longitude longitude
+     * @param \Infracorp\Extranet\Client\Model\AppointmentContact|null $contact contact
      *
      * @return self
      */
-    public function setLongitude($longitude)
+    public function setContact($contact)
     {
-        if (is_null($longitude)) {
-            array_push($this->openAPINullablesSetToNull, 'longitude');
+        if (is_null($contact)) {
+            array_push($this->openAPINullablesSetToNull, 'contact');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('longitude', $nullablesSetToNull);
+            $index = array_search('contact', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['longitude'] = $longitude;
+        $this->container['contact'] = $contact;
 
         return $this;
     }
 
     /**
-     * Gets x
+     * Gets tech
      *
-     * @return float|null
+     * @return \Infracorp\Extranet\Client\Model\AppointmentTech|null
      */
-    public function getX()
+    public function getTech()
     {
-        return $this->container['x'];
+        return $this->container['tech'];
     }
 
     /**
-     * Sets x
+     * Sets tech
      *
-     * @param float|null $x x
+     * @param \Infracorp\Extranet\Client\Model\AppointmentTech|null $tech tech
      *
      * @return self
      */
-    public function setX($x)
+    public function setTech($tech)
     {
-        if (is_null($x)) {
-            array_push($this->openAPINullablesSetToNull, 'x');
+        if (is_null($tech)) {
+            array_push($this->openAPINullablesSetToNull, 'tech');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('x', $nullablesSetToNull);
+            $index = array_search('tech', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['x'] = $x;
+        $this->container['tech'] = $tech;
 
         return $this;
     }
 
     /**
-     * Gets y
-     *
-     * @return float|null
-     */
-    public function getY()
-    {
-        return $this->container['y'];
-    }
-
-    /**
-     * Sets y
-     *
-     * @param float|null $y y
-     *
-     * @return self
-     */
-    public function setY($y)
-    {
-        if (is_null($y)) {
-            array_push($this->openAPINullablesSetToNull, 'y');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('y', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['y'] = $y;
-
-        return $this;
-    }
-
-    /**
-     * Gets projection
-     *
-     * @return string|null
-     */
-    public function getProjection()
-    {
-        return $this->container['projection'];
-    }
-
-    /**
-     * Sets projection
-     *
-     * @param string|null $projection projection
-     *
-     * @return self
-     */
-    public function setProjection($projection)
-    {
-        if (is_null($projection)) {
-            array_push($this->openAPINullablesSetToNull, 'projection');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('projection', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['projection'] = $projection;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     *
-     * @return int|null
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param int|null $amount amount
-     *
-     * @return self
-     */
-    public function setAmount($amount)
-    {
-        if (is_null($amount)) {
-            array_push($this->openAPINullablesSetToNull, 'amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amount', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets invoice_id
-     *
-     * @return int|null
-     */
-    public function getInvoiceId()
-    {
-        return $this->container['invoice_id'];
-    }
-
-    /**
-     * Sets invoice_id
-     *
-     * @param int|null $invoice_id invoice_id
-     *
-     * @return self
-     */
-    public function setInvoiceId($invoice_id)
-    {
-        if (is_null($invoice_id)) {
-            throw new \InvalidArgumentException('non-nullable invoice_id cannot be null');
-        }
-        $this->container['invoice_id'] = $invoice_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount_str
-     *
-     * @return string|null
-     */
-    public function getAmountStr()
-    {
-        return $this->container['amount_str'];
-    }
-
-    /**
-     * Sets amount_str
-     *
-     * @param string|null $amount_str amount_str
-     *
-     * @return self
-     */
-    public function setAmountStr($amount_str)
-    {
-        if (is_null($amount_str)) {
-            throw new \InvalidArgumentException('non-nullable amount_str cannot be null');
-        }
-        $this->container['amount_str'] = $amount_str;
-
-        return $this;
-    }
-
-    /**
-     * Gets va_trate
-     *
-     * @return float|null
-     */
-    public function getVaTrate()
-    {
-        return $this->container['va_trate'];
-    }
-
-    /**
-     * Sets va_trate
-     *
-     * @param float|null $va_trate va_trate
-     *
-     * @return self
-     */
-    public function setVaTrate($va_trate)
-    {
-        if (is_null($va_trate)) {
-            throw new \InvalidArgumentException('non-nullable va_trate cannot be null');
-        }
-        $this->container['va_trate'] = $va_trate;
-
-        return $this;
-    }
-
-    /**
-     * Gets service_id
-     *
-     * @return int|null
-     */
-    public function getServiceId()
-    {
-        return $this->container['service_id'];
-    }
-
-    /**
-     * Sets service_id
-     *
-     * @param int|null $service_id service_id
-     *
-     * @return self
-     */
-    public function setServiceId($service_id)
-    {
-        if (is_null($service_id)) {
-            array_push($this->openAPINullablesSetToNull, 'service_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('service_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['service_id'] = $service_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets service_contract_id
-     *
-     * @return int|null
-     */
-    public function getServiceContractId()
-    {
-        return $this->container['service_contract_id'];
-    }
-
-    /**
-     * Sets service_contract_id
-     *
-     * @param int|null $service_contract_id service_contract_id
-     *
-     * @return self
-     */
-    public function setServiceContractId($service_contract_id)
-    {
-        if (is_null($service_contract_id)) {
-            array_push($this->openAPINullablesSetToNull, 'service_contract_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('service_contract_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['service_contract_id'] = $service_contract_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
-        }
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets from_date
+     * Gets date
      *
      * @return \DateTime|null
      */
-    public function getFromDate()
+    public function getDate()
     {
-        return $this->container['from_date'];
+        return $this->container['date'];
     }
 
     /**
-     * Sets from_date
+     * Sets date
      *
-     * @param \DateTime|null $from_date from_date
+     * @param \DateTime|null $date date
      *
      * @return self
      */
-    public function setFromDate($from_date)
+    public function setDate($date)
     {
-        if (is_null($from_date)) {
-            array_push($this->openAPINullablesSetToNull, 'from_date');
+        if (is_null($date)) {
+            array_push($this->openAPINullablesSetToNull, 'date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('from_date', $nullablesSetToNull);
+            $index = array_search('date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['from_date'] = $from_date;
+        $this->container['date'] = $date;
 
         return $this;
     }
 
     /**
-     * Gets to_date
+     * Gets accepted
      *
-     * @return \DateTime|null
+     * @return bool|null
      */
-    public function getToDate()
+    public function getAccepted()
     {
-        return $this->container['to_date'];
+        return $this->container['accepted'];
     }
 
     /**
-     * Sets to_date
+     * Sets accepted
      *
-     * @param \DateTime|null $to_date to_date
+     * @param bool|null $accepted accepted
      *
      * @return self
      */
-    public function setToDate($to_date)
+    public function setAccepted($accepted)
     {
-        if (is_null($to_date)) {
-            array_push($this->openAPINullablesSetToNull, 'to_date');
+        if (is_null($accepted)) {
+            throw new \InvalidArgumentException('non-nullable accepted cannot be null');
+        }
+        $this->container['accepted'] = $accepted;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        if (is_null($status)) {
+            array_push($this->openAPINullablesSetToNull, 'status');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('to_date', $nullablesSetToNull);
+            $index = array_search('status', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['to_date'] = $to_date;
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'status', must be one of '%s'",
+                    $status,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets confirmation_process_id
+     *
+     * @return int|null
+     */
+    public function getConfirmationProcessId()
+    {
+        return $this->container['confirmation_process_id'];
+    }
+
+    /**
+     * Sets confirmation_process_id
+     *
+     * @param int|null $confirmation_process_id confirmation_process_id
+     *
+     * @return self
+     */
+    public function setConfirmationProcessId($confirmation_process_id)
+    {
+        if (is_null($confirmation_process_id)) {
+            array_push($this->openAPINullablesSetToNull, 'confirmation_process_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('confirmation_process_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['confirmation_process_id'] = $confirmation_process_id;
 
         return $this;
     }

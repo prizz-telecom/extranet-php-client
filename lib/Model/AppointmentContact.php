@@ -1,6 +1,6 @@
 <?php
 /**
- * ClientLegalEntity
+ * AppointmentContact
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * ClientLegalEntity Class Doc Comment
+ * AppointmentContact Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializable
+class AppointmentContact implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ClientLegalEntity';
+    protected static $openAPIModelName = 'Appointment_contact';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,30 +59,15 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPITypes = [
         'available_workflows' => 'string[]',
         'id' => 'int',
-        'name' => 'string',
-        'house_number' => 'int',
-        'house_number_complement' => 'string',
-        'street_name' => 'string',
-        'postal_code' => 'string',
-        'city_name' => 'string',
-        'insee_code' => 'string',
-        'url' => 'string',
-        'num_vat_intracommunity' => 'string',
-        'siren' => 'string',
-        'code_ape' => 'string',
-        'rcs' => 'string',
-        'tel' => 'string',
+        'firstname' => 'string',
+        'lastname' => 'string',
+        'company_name' => 'string',
         'email' => 'string',
-        'latitude' => 'float',
-        'longitude' => 'float',
-        'x' => 'float',
-        'y' => 'float',
-        'projection' => 'string',
-        'arcep_code' => 'string',
-        'contacts' => '\Infracorp\Extranet\Client\Model\Contact[]',
-        'configured_contacts' => '\Infracorp\Extranet\Client\Model\TypedContact[]',
-        'contracts' => '\Infracorp\Extranet\Client\Model\ClientContract[]',
-        'roles' => '\Infracorp\Extranet\Client\Model\UserRole[]'
+        'phone1' => 'string',
+        'phone2' => 'string',
+        'gender' => 'string',
+        'create_date' => '\DateTime',
+        'last_modified_date' => '\DateTime'
     ];
 
     /**
@@ -95,30 +80,15 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPIFormats = [
         'available_workflows' => null,
         'id' => null,
-        'name' => null,
-        'house_number' => null,
-        'house_number_complement' => null,
-        'street_name' => null,
-        'postal_code' => null,
-        'city_name' => null,
-        'insee_code' => null,
-        'url' => null,
-        'num_vat_intracommunity' => null,
-        'siren' => null,
-        'code_ape' => null,
-        'rcs' => null,
-        'tel' => null,
+        'firstname' => null,
+        'lastname' => null,
+        'company_name' => null,
         'email' => null,
-        'latitude' => 'float',
-        'longitude' => 'float',
-        'x' => 'float',
-        'y' => 'float',
-        'projection' => null,
-        'arcep_code' => null,
-        'contacts' => null,
-        'configured_contacts' => null,
-        'contracts' => null,
-        'roles' => null
+        'phone1' => null,
+        'phone2' => null,
+        'gender' => null,
+        'create_date' => 'date-time',
+        'last_modified_date' => 'date-time'
     ];
 
     /**
@@ -129,30 +99,15 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static array $openAPINullables = [
         'available_workflows' => false,
         'id' => false,
-        'name' => false,
-        'house_number' => true,
-        'house_number_complement' => true,
-        'street_name' => true,
-        'postal_code' => true,
-        'city_name' => true,
-        'insee_code' => true,
-        'url' => true,
-        'num_vat_intracommunity' => true,
-        'siren' => true,
-        'code_ape' => true,
-        'rcs' => true,
-        'tel' => true,
+        'firstname' => true,
+        'lastname' => false,
+        'company_name' => true,
         'email' => true,
-        'latitude' => true,
-        'longitude' => true,
-        'x' => true,
-        'y' => true,
-        'projection' => true,
-        'arcep_code' => true,
-        'contacts' => false,
-        'configured_contacts' => false,
-        'contracts' => false,
-        'roles' => false
+        'phone1' => true,
+        'phone2' => true,
+        'gender' => true,
+        'create_date' => false,
+        'last_modified_date' => true
     ];
 
     /**
@@ -243,30 +198,15 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $attributeMap = [
         'available_workflows' => 'availableWorkflows',
         'id' => 'id',
-        'name' => 'name',
-        'house_number' => 'houseNumber',
-        'house_number_complement' => 'houseNumberComplement',
-        'street_name' => 'streetName',
-        'postal_code' => 'postalCode',
-        'city_name' => 'cityName',
-        'insee_code' => 'inseeCode',
-        'url' => 'url',
-        'num_vat_intracommunity' => 'numVatIntracommunity',
-        'siren' => 'siren',
-        'code_ape' => 'codeApe',
-        'rcs' => 'rcs',
-        'tel' => 'tel',
+        'firstname' => 'firstname',
+        'lastname' => 'lastname',
+        'company_name' => 'companyName',
         'email' => 'email',
-        'latitude' => 'latitude',
-        'longitude' => 'longitude',
-        'x' => 'x',
-        'y' => 'y',
-        'projection' => 'projection',
-        'arcep_code' => 'arcepCode',
-        'contacts' => 'contacts',
-        'configured_contacts' => 'configuredContacts',
-        'contracts' => 'contracts',
-        'roles' => 'roles'
+        'phone1' => 'phone1',
+        'phone2' => 'phone2',
+        'gender' => 'gender',
+        'create_date' => 'createDate',
+        'last_modified_date' => 'lastModifiedDate'
     ];
 
     /**
@@ -277,30 +217,15 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $setters = [
         'available_workflows' => 'setAvailableWorkflows',
         'id' => 'setId',
-        'name' => 'setName',
-        'house_number' => 'setHouseNumber',
-        'house_number_complement' => 'setHouseNumberComplement',
-        'street_name' => 'setStreetName',
-        'postal_code' => 'setPostalCode',
-        'city_name' => 'setCityName',
-        'insee_code' => 'setInseeCode',
-        'url' => 'setUrl',
-        'num_vat_intracommunity' => 'setNumVatIntracommunity',
-        'siren' => 'setSiren',
-        'code_ape' => 'setCodeApe',
-        'rcs' => 'setRcs',
-        'tel' => 'setTel',
+        'firstname' => 'setFirstname',
+        'lastname' => 'setLastname',
+        'company_name' => 'setCompanyName',
         'email' => 'setEmail',
-        'latitude' => 'setLatitude',
-        'longitude' => 'setLongitude',
-        'x' => 'setX',
-        'y' => 'setY',
-        'projection' => 'setProjection',
-        'arcep_code' => 'setArcepCode',
-        'contacts' => 'setContacts',
-        'configured_contacts' => 'setConfiguredContacts',
-        'contracts' => 'setContracts',
-        'roles' => 'setRoles'
+        'phone1' => 'setPhone1',
+        'phone2' => 'setPhone2',
+        'gender' => 'setGender',
+        'create_date' => 'setCreateDate',
+        'last_modified_date' => 'setLastModifiedDate'
     ];
 
     /**
@@ -311,30 +236,15 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'available_workflows' => 'getAvailableWorkflows',
         'id' => 'getId',
-        'name' => 'getName',
-        'house_number' => 'getHouseNumber',
-        'house_number_complement' => 'getHouseNumberComplement',
-        'street_name' => 'getStreetName',
-        'postal_code' => 'getPostalCode',
-        'city_name' => 'getCityName',
-        'insee_code' => 'getInseeCode',
-        'url' => 'getUrl',
-        'num_vat_intracommunity' => 'getNumVatIntracommunity',
-        'siren' => 'getSiren',
-        'code_ape' => 'getCodeApe',
-        'rcs' => 'getRcs',
-        'tel' => 'getTel',
+        'firstname' => 'getFirstname',
+        'lastname' => 'getLastname',
+        'company_name' => 'getCompanyName',
         'email' => 'getEmail',
-        'latitude' => 'getLatitude',
-        'longitude' => 'getLongitude',
-        'x' => 'getX',
-        'y' => 'getY',
-        'projection' => 'getProjection',
-        'arcep_code' => 'getArcepCode',
-        'contacts' => 'getContacts',
-        'configured_contacts' => 'getConfiguredContacts',
-        'contracts' => 'getContracts',
-        'roles' => 'getRoles'
+        'phone1' => 'getPhone1',
+        'phone2' => 'getPhone2',
+        'gender' => 'getGender',
+        'create_date' => 'getCreateDate',
+        'last_modified_date' => 'getLastModifiedDate'
     ];
 
     /**
@@ -491,30 +401,15 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $this->setIfExists('available_workflows', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('house_number', $data ?? [], null);
-        $this->setIfExists('house_number_complement', $data ?? [], null);
-        $this->setIfExists('street_name', $data ?? [], null);
-        $this->setIfExists('postal_code', $data ?? [], null);
-        $this->setIfExists('city_name', $data ?? [], null);
-        $this->setIfExists('insee_code', $data ?? [], null);
-        $this->setIfExists('url', $data ?? [], null);
-        $this->setIfExists('num_vat_intracommunity', $data ?? [], null);
-        $this->setIfExists('siren', $data ?? [], null);
-        $this->setIfExists('code_ape', $data ?? [], null);
-        $this->setIfExists('rcs', $data ?? [], null);
-        $this->setIfExists('tel', $data ?? [], null);
+        $this->setIfExists('firstname', $data ?? [], null);
+        $this->setIfExists('lastname', $data ?? [], null);
+        $this->setIfExists('company_name', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
-        $this->setIfExists('latitude', $data ?? [], null);
-        $this->setIfExists('longitude', $data ?? [], null);
-        $this->setIfExists('x', $data ?? [], null);
-        $this->setIfExists('y', $data ?? [], null);
-        $this->setIfExists('projection', $data ?? [], null);
-        $this->setIfExists('arcep_code', $data ?? [], null);
-        $this->setIfExists('contacts', $data ?? [], null);
-        $this->setIfExists('configured_contacts', $data ?? [], null);
-        $this->setIfExists('contracts', $data ?? [], null);
-        $this->setIfExists('roles', $data ?? [], null);
+        $this->setIfExists('phone1', $data ?? [], null);
+        $this->setIfExists('phone2', $data ?? [], null);
+        $this->setIfExists('gender', $data ?? [], null);
+        $this->setIfExists('create_date', $data ?? [], null);
+        $this->setIfExists('last_modified_date', $data ?? [], null);
     }
 
     /**
@@ -623,436 +518,96 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets name
+     * Gets firstname
      *
      * @return string|null
      */
-    public function getName()
+    public function getFirstname()
     {
-        return $this->container['name'];
+        return $this->container['firstname'];
     }
 
     /**
-     * Sets name
+     * Sets firstname
      *
-     * @param string|null $name name
+     * @param string|null $firstname firstname
      *
      * @return self
      */
-    public function setName($name)
+    public function setFirstname($firstname)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets house_number
-     *
-     * @return int|null
-     */
-    public function getHouseNumber()
-    {
-        return $this->container['house_number'];
-    }
-
-    /**
-     * Sets house_number
-     *
-     * @param int|null $house_number house_number
-     *
-     * @return self
-     */
-    public function setHouseNumber($house_number)
-    {
-        if (is_null($house_number)) {
-            array_push($this->openAPINullablesSetToNull, 'house_number');
+        if (is_null($firstname)) {
+            array_push($this->openAPINullablesSetToNull, 'firstname');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('house_number', $nullablesSetToNull);
+            $index = array_search('firstname', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['house_number'] = $house_number;
+        $this->container['firstname'] = $firstname;
 
         return $this;
     }
 
     /**
-     * Gets house_number_complement
+     * Gets lastname
      *
      * @return string|null
      */
-    public function getHouseNumberComplement()
+    public function getLastname()
     {
-        return $this->container['house_number_complement'];
+        return $this->container['lastname'];
     }
 
     /**
-     * Sets house_number_complement
+     * Sets lastname
      *
-     * @param string|null $house_number_complement house_number_complement
+     * @param string|null $lastname lastname
      *
      * @return self
      */
-    public function setHouseNumberComplement($house_number_complement)
+    public function setLastname($lastname)
     {
-        if (is_null($house_number_complement)) {
-            array_push($this->openAPINullablesSetToNull, 'house_number_complement');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('house_number_complement', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($lastname)) {
+            throw new \InvalidArgumentException('non-nullable lastname cannot be null');
         }
-        $this->container['house_number_complement'] = $house_number_complement;
+        $this->container['lastname'] = $lastname;
 
         return $this;
     }
 
     /**
-     * Gets street_name
+     * Gets company_name
      *
      * @return string|null
      */
-    public function getStreetName()
+    public function getCompanyName()
     {
-        return $this->container['street_name'];
+        return $this->container['company_name'];
     }
 
     /**
-     * Sets street_name
+     * Sets company_name
      *
-     * @param string|null $street_name street_name
+     * @param string|null $company_name company_name
      *
      * @return self
      */
-    public function setStreetName($street_name)
+    public function setCompanyName($company_name)
     {
-        if (is_null($street_name)) {
-            array_push($this->openAPINullablesSetToNull, 'street_name');
+        if (is_null($company_name)) {
+            array_push($this->openAPINullablesSetToNull, 'company_name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('street_name', $nullablesSetToNull);
+            $index = array_search('company_name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['street_name'] = $street_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets postal_code
-     *
-     * @return string|null
-     */
-    public function getPostalCode()
-    {
-        return $this->container['postal_code'];
-    }
-
-    /**
-     * Sets postal_code
-     *
-     * @param string|null $postal_code postal_code
-     *
-     * @return self
-     */
-    public function setPostalCode($postal_code)
-    {
-        if (is_null($postal_code)) {
-            array_push($this->openAPINullablesSetToNull, 'postal_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('postal_code', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['postal_code'] = $postal_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets city_name
-     *
-     * @return string|null
-     */
-    public function getCityName()
-    {
-        return $this->container['city_name'];
-    }
-
-    /**
-     * Sets city_name
-     *
-     * @param string|null $city_name city_name
-     *
-     * @return self
-     */
-    public function setCityName($city_name)
-    {
-        if (is_null($city_name)) {
-            array_push($this->openAPINullablesSetToNull, 'city_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('city_name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['city_name'] = $city_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets insee_code
-     *
-     * @return string|null
-     */
-    public function getInseeCode()
-    {
-        return $this->container['insee_code'];
-    }
-
-    /**
-     * Sets insee_code
-     *
-     * @param string|null $insee_code insee_code
-     *
-     * @return self
-     */
-    public function setInseeCode($insee_code)
-    {
-        if (is_null($insee_code)) {
-            array_push($this->openAPINullablesSetToNull, 'insee_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('insee_code', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['insee_code'] = $insee_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string|null $url url
-     *
-     * @return self
-     */
-    public function setUrl($url)
-    {
-        if (is_null($url)) {
-            array_push($this->openAPINullablesSetToNull, 'url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets num_vat_intracommunity
-     *
-     * @return string|null
-     */
-    public function getNumVatIntracommunity()
-    {
-        return $this->container['num_vat_intracommunity'];
-    }
-
-    /**
-     * Sets num_vat_intracommunity
-     *
-     * @param string|null $num_vat_intracommunity num_vat_intracommunity
-     *
-     * @return self
-     */
-    public function setNumVatIntracommunity($num_vat_intracommunity)
-    {
-        if (is_null($num_vat_intracommunity)) {
-            array_push($this->openAPINullablesSetToNull, 'num_vat_intracommunity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('num_vat_intracommunity', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['num_vat_intracommunity'] = $num_vat_intracommunity;
-
-        return $this;
-    }
-
-    /**
-     * Gets siren
-     *
-     * @return string|null
-     */
-    public function getSiren()
-    {
-        return $this->container['siren'];
-    }
-
-    /**
-     * Sets siren
-     *
-     * @param string|null $siren siren
-     *
-     * @return self
-     */
-    public function setSiren($siren)
-    {
-        if (is_null($siren)) {
-            array_push($this->openAPINullablesSetToNull, 'siren');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('siren', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['siren'] = $siren;
-
-        return $this;
-    }
-
-    /**
-     * Gets code_ape
-     *
-     * @return string|null
-     */
-    public function getCodeApe()
-    {
-        return $this->container['code_ape'];
-    }
-
-    /**
-     * Sets code_ape
-     *
-     * @param string|null $code_ape code_ape
-     *
-     * @return self
-     */
-    public function setCodeApe($code_ape)
-    {
-        if (is_null($code_ape)) {
-            array_push($this->openAPINullablesSetToNull, 'code_ape');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('code_ape', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['code_ape'] = $code_ape;
-
-        return $this;
-    }
-
-    /**
-     * Gets rcs
-     *
-     * @return string|null
-     */
-    public function getRcs()
-    {
-        return $this->container['rcs'];
-    }
-
-    /**
-     * Sets rcs
-     *
-     * @param string|null $rcs rcs
-     *
-     * @return self
-     */
-    public function setRcs($rcs)
-    {
-        if (is_null($rcs)) {
-            array_push($this->openAPINullablesSetToNull, 'rcs');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rcs', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['rcs'] = $rcs;
-
-        return $this;
-    }
-
-    /**
-     * Gets tel
-     *
-     * @return string|null
-     */
-    public function getTel()
-    {
-        return $this->container['tel'];
-    }
-
-    /**
-     * Sets tel
-     *
-     * @param string|null $tel tel
-     *
-     * @return self
-     */
-    public function setTel($tel)
-    {
-        if (is_null($tel)) {
-            array_push($this->openAPINullablesSetToNull, 'tel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tel', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['tel'] = $tel;
+        $this->container['company_name'] = $company_name;
 
         return $this;
     }
@@ -1092,313 +647,164 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets latitude
-     *
-     * @return float|null
-     */
-    public function getLatitude()
-    {
-        return $this->container['latitude'];
-    }
-
-    /**
-     * Sets latitude
-     *
-     * @param float|null $latitude latitude
-     *
-     * @return self
-     */
-    public function setLatitude($latitude)
-    {
-        if (is_null($latitude)) {
-            array_push($this->openAPINullablesSetToNull, 'latitude');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('latitude', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['latitude'] = $latitude;
-
-        return $this;
-    }
-
-    /**
-     * Gets longitude
-     *
-     * @return float|null
-     */
-    public function getLongitude()
-    {
-        return $this->container['longitude'];
-    }
-
-    /**
-     * Sets longitude
-     *
-     * @param float|null $longitude longitude
-     *
-     * @return self
-     */
-    public function setLongitude($longitude)
-    {
-        if (is_null($longitude)) {
-            array_push($this->openAPINullablesSetToNull, 'longitude');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('longitude', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['longitude'] = $longitude;
-
-        return $this;
-    }
-
-    /**
-     * Gets x
-     *
-     * @return float|null
-     */
-    public function getX()
-    {
-        return $this->container['x'];
-    }
-
-    /**
-     * Sets x
-     *
-     * @param float|null $x x
-     *
-     * @return self
-     */
-    public function setX($x)
-    {
-        if (is_null($x)) {
-            array_push($this->openAPINullablesSetToNull, 'x');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('x', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['x'] = $x;
-
-        return $this;
-    }
-
-    /**
-     * Gets y
-     *
-     * @return float|null
-     */
-    public function getY()
-    {
-        return $this->container['y'];
-    }
-
-    /**
-     * Sets y
-     *
-     * @param float|null $y y
-     *
-     * @return self
-     */
-    public function setY($y)
-    {
-        if (is_null($y)) {
-            array_push($this->openAPINullablesSetToNull, 'y');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('y', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['y'] = $y;
-
-        return $this;
-    }
-
-    /**
-     * Gets projection
+     * Gets phone1
      *
      * @return string|null
      */
-    public function getProjection()
+    public function getPhone1()
     {
-        return $this->container['projection'];
+        return $this->container['phone1'];
     }
 
     /**
-     * Sets projection
+     * Sets phone1
      *
-     * @param string|null $projection projection
+     * @param string|null $phone1 phone1
      *
      * @return self
      */
-    public function setProjection($projection)
+    public function setPhone1($phone1)
     {
-        if (is_null($projection)) {
-            array_push($this->openAPINullablesSetToNull, 'projection');
+        if (is_null($phone1)) {
+            array_push($this->openAPINullablesSetToNull, 'phone1');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('projection', $nullablesSetToNull);
+            $index = array_search('phone1', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['projection'] = $projection;
+        $this->container['phone1'] = $phone1;
 
         return $this;
     }
 
     /**
-     * Gets arcep_code
+     * Gets phone2
      *
      * @return string|null
      */
-    public function getArcepCode()
+    public function getPhone2()
     {
-        return $this->container['arcep_code'];
+        return $this->container['phone2'];
     }
 
     /**
-     * Sets arcep_code
+     * Sets phone2
      *
-     * @param string|null $arcep_code arcep_code
+     * @param string|null $phone2 phone2
      *
      * @return self
      */
-    public function setArcepCode($arcep_code)
+    public function setPhone2($phone2)
     {
-        if (is_null($arcep_code)) {
-            array_push($this->openAPINullablesSetToNull, 'arcep_code');
+        if (is_null($phone2)) {
+            array_push($this->openAPINullablesSetToNull, 'phone2');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('arcep_code', $nullablesSetToNull);
+            $index = array_search('phone2', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['arcep_code'] = $arcep_code;
+        $this->container['phone2'] = $phone2;
 
         return $this;
     }
 
     /**
-     * Gets contacts
+     * Gets gender
      *
-     * @return \Infracorp\Extranet\Client\Model\Contact[]|null
+     * @return string|null
      */
-    public function getContacts()
+    public function getGender()
     {
-        return $this->container['contacts'];
+        return $this->container['gender'];
     }
 
     /**
-     * Sets contacts
+     * Sets gender
      *
-     * @param \Infracorp\Extranet\Client\Model\Contact[]|null $contacts contacts
+     * @param string|null $gender gender
      *
      * @return self
      */
-    public function setContacts($contacts)
+    public function setGender($gender)
     {
-        if (is_null($contacts)) {
-            throw new \InvalidArgumentException('non-nullable contacts cannot be null');
+        if (is_null($gender)) {
+            array_push($this->openAPINullablesSetToNull, 'gender');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('gender', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['contacts'] = $contacts;
+        $this->container['gender'] = $gender;
 
         return $this;
     }
 
     /**
-     * Gets configured_contacts
+     * Gets create_date
      *
-     * @return \Infracorp\Extranet\Client\Model\TypedContact[]|null
+     * @return \DateTime|null
      */
-    public function getConfiguredContacts()
+    public function getCreateDate()
     {
-        return $this->container['configured_contacts'];
+        return $this->container['create_date'];
     }
 
     /**
-     * Sets configured_contacts
+     * Sets create_date
      *
-     * @param \Infracorp\Extranet\Client\Model\TypedContact[]|null $configured_contacts configured_contacts
+     * @param \DateTime|null $create_date create_date
      *
      * @return self
      */
-    public function setConfiguredContacts($configured_contacts)
+    public function setCreateDate($create_date)
     {
-        if (is_null($configured_contacts)) {
-            throw new \InvalidArgumentException('non-nullable configured_contacts cannot be null');
+        if (is_null($create_date)) {
+            throw new \InvalidArgumentException('non-nullable create_date cannot be null');
         }
-        $this->container['configured_contacts'] = $configured_contacts;
+        $this->container['create_date'] = $create_date;
 
         return $this;
     }
 
     /**
-     * Gets contracts
+     * Gets last_modified_date
      *
-     * @return \Infracorp\Extranet\Client\Model\ClientContract[]|null
+     * @return \DateTime|null
      */
-    public function getContracts()
+    public function getLastModifiedDate()
     {
-        return $this->container['contracts'];
+        return $this->container['last_modified_date'];
     }
 
     /**
-     * Sets contracts
+     * Sets last_modified_date
      *
-     * @param \Infracorp\Extranet\Client\Model\ClientContract[]|null $contracts contracts
+     * @param \DateTime|null $last_modified_date last_modified_date
      *
      * @return self
      */
-    public function setContracts($contracts)
+    public function setLastModifiedDate($last_modified_date)
     {
-        if (is_null($contracts)) {
-            throw new \InvalidArgumentException('non-nullable contracts cannot be null');
+        if (is_null($last_modified_date)) {
+            array_push($this->openAPINullablesSetToNull, 'last_modified_date');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_modified_date', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['contracts'] = $contracts;
-
-        return $this;
-    }
-
-    /**
-     * Gets roles
-     *
-     * @return \Infracorp\Extranet\Client\Model\UserRole[]|null
-     */
-    public function getRoles()
-    {
-        return $this->container['roles'];
-    }
-
-    /**
-     * Sets roles
-     *
-     * @param \Infracorp\Extranet\Client\Model\UserRole[]|null $roles roles
-     *
-     * @return self
-     */
-    public function setRoles($roles)
-    {
-        if (is_null($roles)) {
-            throw new \InvalidArgumentException('non-nullable roles cannot be null');
-        }
-        $this->container['roles'] = $roles;
+        $this->container['last_modified_date'] = $last_modified_date;
 
         return $this;
     }

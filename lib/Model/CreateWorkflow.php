@@ -271,6 +271,11 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT = 'Infracorp\\Services\\Workflow\\CommercialOffer\\Contact\\SwitchActive\\Context';
     public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_USERS_SWITCH_ACTIVE_ROLE_CONTEXT = 'Infracorp\\Services\\Workflow\\Users\\SwitchActiveRole\\Context';
     public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_CLIENT_LEGAL_ENTITY_ADD_USER_ROLE_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientLegalEntity\\AddUserRole\\Context';
+    public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_APPOINTMENT_CHANGE_CONTACT_CONTEXT = 'Infracorp\\Services\\Workflow\\Appointment\\ChangeContact\\Context';
+    public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_APPOINTMENT_CUSTOMER_CANCEL_CONTEXT = 'Infracorp\\Services\\Workflow\\Appointment\\CustomerCancel\\Context';
+    public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_APPOINTMENT_CUSTOMER_CHANGE_DATE_CONTEXT = 'Infracorp\\Services\\Workflow\\Appointment\\CustomerChangeDate\\Context';
+    public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_APPOINTMENT_CUSTOMER_CONFIRM_CONTEXT = 'Infracorp\\Services\\Workflow\\Appointment\\CustomerConfirm\\Context';
+    public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_SERVICE_CONTRACT_MIGRATE_COAX_TO_L2_PREMIUM_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\MigrateCoaxToL2Premium\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -317,6 +322,11 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_COMMERCIAL_OFFER_CONTACT_SWITCH_ACTIVE_CONTEXT,
             self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_USERS_SWITCH_ACTIVE_ROLE_CONTEXT,
             self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_CLIENT_LEGAL_ENTITY_ADD_USER_ROLE_CONTEXT,
+            self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_APPOINTMENT_CHANGE_CONTACT_CONTEXT,
+            self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_APPOINTMENT_CUSTOMER_CANCEL_CONTEXT,
+            self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_APPOINTMENT_CUSTOMER_CHANGE_DATE_CONTEXT,
+            self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_APPOINTMENT_CUSTOMER_CONFIRM_CONTEXT,
+            self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_SERVICE_CONTRACT_MIGRATE_COAX_TO_L2_PREMIUM_CONTEXT,
         ];
     }
 

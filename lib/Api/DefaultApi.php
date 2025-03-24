@@ -71,6 +71,9 @@ class DefaultApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
+        'addCommercialOfferComment' => [
+            'application/json',
+        ],
         'addServiceContractComment' => [
             'application/json',
         ],
@@ -96,6 +99,12 @@ class DefaultApi
             'application/json',
         ],
         'getApiTokens' => [
+            'application/json',
+        ],
+        'getAppointment' => [
+            'application/json',
+        ],
+        'getAppointments' => [
             'application/json',
         ],
         'getAttachment' => [
@@ -301,6 +310,336 @@ class DefaultApi
     public function getConfig()
     {
         return $this->config;
+    }
+
+    /**
+     * Operation addCommercialOfferComment
+     *
+     * Commercial offer add comment
+     *
+     * @param  int $id commercial offer identifier (required)
+     * @param  \Infracorp\Extranet\Client\Model\AddCommercialOfferComment|null $add_commercial_offer_comment add_commercial_offer_comment (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCommercialOfferComment'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+     */
+    public function addCommercialOfferComment($id, $add_commercial_offer_comment = null, string $contentType = self::contentTypes['addCommercialOfferComment'][0])
+    {
+        list($response) = $this->addCommercialOfferCommentWithHttpInfo($id, $add_commercial_offer_comment, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation addCommercialOfferCommentWithHttpInfo
+     *
+     * Commercial offer add comment
+     *
+     * @param  int $id commercial offer identifier (required)
+     * @param  \Infracorp\Extranet\Client\Model\AddCommercialOfferComment|null $add_commercial_offer_comment (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCommercialOfferComment'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function addCommercialOfferCommentWithHttpInfo($id, $add_commercial_offer_comment = null, string $contentType = self::contentTypes['addCommercialOfferComment'][0])
+    {
+        $request = $this->addCommercialOfferCommentRequest($id, $add_commercial_offer_comment, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation addCommercialOfferCommentAsync
+     *
+     * Commercial offer add comment
+     *
+     * @param  int $id commercial offer identifier (required)
+     * @param  \Infracorp\Extranet\Client\Model\AddCommercialOfferComment|null $add_commercial_offer_comment (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCommercialOfferComment'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addCommercialOfferCommentAsync($id, $add_commercial_offer_comment = null, string $contentType = self::contentTypes['addCommercialOfferComment'][0])
+    {
+        return $this->addCommercialOfferCommentAsyncWithHttpInfo($id, $add_commercial_offer_comment, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation addCommercialOfferCommentAsyncWithHttpInfo
+     *
+     * Commercial offer add comment
+     *
+     * @param  int $id commercial offer identifier (required)
+     * @param  \Infracorp\Extranet\Client\Model\AddCommercialOfferComment|null $add_commercial_offer_comment (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCommercialOfferComment'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addCommercialOfferCommentAsyncWithHttpInfo($id, $add_commercial_offer_comment = null, string $contentType = self::contentTypes['addCommercialOfferComment'][0])
+    {
+        $returnType = '\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response';
+        $request = $this->addCommercialOfferCommentRequest($id, $add_commercial_offer_comment, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'addCommercialOfferComment'
+     *
+     * @param  int $id commercial offer identifier (required)
+     * @param  \Infracorp\Extranet\Client\Model\AddCommercialOfferComment|null $add_commercial_offer_comment (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addCommercialOfferComment'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function addCommercialOfferCommentRequest($id, $add_commercial_offer_comment = null, string $contentType = self::contentTypes['addCommercialOfferComment'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling addCommercialOfferComment'
+            );
+        }
+
+
+
+        $resourcePath = '/external-api/v2/commercial_offers/{id}/comments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($add_commercial_offer_comment)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($add_commercial_offer_comment));
+            } else {
+                $httpBody = $add_commercial_offer_comment;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
     /**
@@ -3277,6 +3616,620 @@ class DefaultApi
     }
 
     /**
+     * Operation getAppointment
+     *
+     * Appointment
+     *
+     * @param  int $id id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppointment'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Infracorp\Extranet\Client\Model\Appointment
+     */
+    public function getAppointment($id, string $contentType = self::contentTypes['getAppointment'][0])
+    {
+        list($response) = $this->getAppointmentWithHttpInfo($id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAppointmentWithHttpInfo
+     *
+     * Appointment
+     *
+     * @param  int $id id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppointment'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Infracorp\Extranet\Client\Model\Appointment, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAppointmentWithHttpInfo($id, string $contentType = self::contentTypes['getAppointment'][0])
+    {
+        $request = $this->getAppointmentRequest($id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Infracorp\Extranet\Client\Model\Appointment' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Infracorp\Extranet\Client\Model\Appointment' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\Appointment', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Infracorp\Extranet\Client\Model\Appointment';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infracorp\Extranet\Client\Model\Appointment',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAppointmentAsync
+     *
+     * Appointment
+     *
+     * @param  int $id id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppointment'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmentAsync($id, string $contentType = self::contentTypes['getAppointment'][0])
+    {
+        return $this->getAppointmentAsyncWithHttpInfo($id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAppointmentAsyncWithHttpInfo
+     *
+     * Appointment
+     *
+     * @param  int $id id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppointment'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmentAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getAppointment'][0])
+    {
+        $returnType = '\Infracorp\Extranet\Client\Model\Appointment';
+        $request = $this->getAppointmentRequest($id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAppointment'
+     *
+     * @param  int $id id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppointment'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAppointmentRequest($id, string $contentType = self::contentTypes['getAppointment'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling getAppointment'
+            );
+        }
+
+
+        $resourcePath = '/external-api/v2/appointments/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAppointments
+     *
+     * Appointments
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppointments'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Infracorp\Extranet\Client\Model\GetAppointments200Response
+     */
+    public function getAppointments(string $contentType = self::contentTypes['getAppointments'][0])
+    {
+        list($response) = $this->getAppointmentsWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAppointmentsWithHttpInfo
+     *
+     * Appointments
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppointments'] to see the possible values for this operation
+     *
+     * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Infracorp\Extranet\Client\Model\GetAppointments200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAppointmentsWithHttpInfo(string $contentType = self::contentTypes['getAppointments'][0])
+    {
+        $request = $this->getAppointmentsRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Infracorp\Extranet\Client\Model\GetAppointments200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Infracorp\Extranet\Client\Model\GetAppointments200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Infracorp\Extranet\Client\Model\GetAppointments200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Infracorp\Extranet\Client\Model\GetAppointments200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Infracorp\Extranet\Client\Model\GetAppointments200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAppointmentsAsync
+     *
+     * Appointments
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppointments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmentsAsync(string $contentType = self::contentTypes['getAppointments'][0])
+    {
+        return $this->getAppointmentsAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAppointmentsAsyncWithHttpInfo
+     *
+     * Appointments
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppointments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmentsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAppointments'][0])
+    {
+        $returnType = '\Infracorp\Extranet\Client\Model\GetAppointments200Response';
+        $request = $this->getAppointmentsRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAppointments'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppointments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAppointmentsRequest(string $contentType = self::contentTypes['getAppointments'][0])
+    {
+
+
+        $resourcePath = '/external-api/v2/appointments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getAttachment
      *
      * Attachment
@@ -3602,15 +4555,16 @@ class DefaultApi
      * @param  int|null $items_per_page items_per_page (optional)
      * @param  string|null $sort_id sort_id (optional)
      * @param  int|null $legal_entity_id legal_entity_id (optional)
+     * @param  string|null $search search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientLegalEntities'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response
      */
-    public function getClientLegalEntities($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
+    public function getClientLegalEntities($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, $search = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
     {
-        list($response) = $this->getClientLegalEntitiesWithHttpInfo($page, $items_per_page, $sort_id, $legal_entity_id, $contentType);
+        list($response) = $this->getClientLegalEntitiesWithHttpInfo($page, $items_per_page, $sort_id, $legal_entity_id, $search, $contentType);
         return $response;
     }
 
@@ -3623,15 +4577,16 @@ class DefaultApi
      * @param  int|null $items_per_page (optional)
      * @param  string|null $sort_id (optional)
      * @param  int|null $legal_entity_id (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientLegalEntities'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getClientLegalEntitiesWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
+    public function getClientLegalEntitiesWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, $search = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
     {
-        $request = $this->getClientLegalEntitiesRequest($page, $items_per_page, $sort_id, $legal_entity_id, $contentType);
+        $request = $this->getClientLegalEntitiesRequest($page, $items_per_page, $sort_id, $legal_entity_id, $search, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3751,14 +4706,15 @@ class DefaultApi
      * @param  int|null $items_per_page (optional)
      * @param  string|null $sort_id (optional)
      * @param  int|null $legal_entity_id (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientLegalEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getClientLegalEntitiesAsync($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
+    public function getClientLegalEntitiesAsync($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, $search = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
     {
-        return $this->getClientLegalEntitiesAsyncWithHttpInfo($page, $items_per_page, $sort_id, $legal_entity_id, $contentType)
+        return $this->getClientLegalEntitiesAsyncWithHttpInfo($page, $items_per_page, $sort_id, $legal_entity_id, $search, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3775,15 +4731,16 @@ class DefaultApi
      * @param  int|null $items_per_page (optional)
      * @param  string|null $sort_id (optional)
      * @param  int|null $legal_entity_id (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientLegalEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getClientLegalEntitiesAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
+    public function getClientLegalEntitiesAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, $search = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response';
-        $request = $this->getClientLegalEntitiesRequest($page, $items_per_page, $sort_id, $legal_entity_id, $contentType);
+        $request = $this->getClientLegalEntitiesRequest($page, $items_per_page, $sort_id, $legal_entity_id, $search, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3828,13 +4785,15 @@ class DefaultApi
      * @param  int|null $items_per_page (optional)
      * @param  string|null $sort_id (optional)
      * @param  int|null $legal_entity_id (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientLegalEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getClientLegalEntitiesRequest($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
+    public function getClientLegalEntitiesRequest($page = null, $items_per_page = null, $sort_id = null, $legal_entity_id = null, $search = null, string $contentType = self::contentTypes['getClientLegalEntities'][0])
     {
+
 
 
 
@@ -3880,6 +4839,15 @@ class DefaultApi
             $legal_entity_id,
             'legalEntityId', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $search,
+            'search', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -6523,15 +7491,16 @@ class DefaultApi
      * @param  string|null $status status (optional)
      * @param  \DateTime|null $create_date_from create_date_from (optional)
      * @param  \DateTime|null $create_date_to create_date_to (optional)
+     * @param  string|null $search search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOffers'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Infracorp\Extranet\Client\Model\GetCommercialOffers200Response
      */
-    public function getCommercialOffers($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
+    public function getCommercialOffers($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, $search = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
     {
-        list($response) = $this->getCommercialOffersWithHttpInfo($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $contentType);
+        list($response) = $this->getCommercialOffersWithHttpInfo($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $search, $contentType);
         return $response;
     }
 
@@ -6550,15 +7519,16 @@ class DefaultApi
      * @param  string|null $status (optional)
      * @param  \DateTime|null $create_date_from (optional)
      * @param  \DateTime|null $create_date_to (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOffers'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Infracorp\Extranet\Client\Model\GetCommercialOffers200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCommercialOffersWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
+    public function getCommercialOffersWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, $search = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
     {
-        $request = $this->getCommercialOffersRequest($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $contentType);
+        $request = $this->getCommercialOffersRequest($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $search, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6684,14 +7654,15 @@ class DefaultApi
      * @param  string|null $status (optional)
      * @param  \DateTime|null $create_date_from (optional)
      * @param  \DateTime|null $create_date_to (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOffers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommercialOffersAsync($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
+    public function getCommercialOffersAsync($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, $search = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
     {
-        return $this->getCommercialOffersAsyncWithHttpInfo($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $contentType)
+        return $this->getCommercialOffersAsyncWithHttpInfo($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $search, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6714,15 +7685,16 @@ class DefaultApi
      * @param  string|null $status (optional)
      * @param  \DateTime|null $create_date_from (optional)
      * @param  \DateTime|null $create_date_to (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOffers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommercialOffersAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
+    public function getCommercialOffersAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, $search = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\GetCommercialOffers200Response';
-        $request = $this->getCommercialOffersRequest($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $contentType);
+        $request = $this->getCommercialOffersRequest($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $search, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6773,13 +7745,15 @@ class DefaultApi
      * @param  string|null $status (optional)
      * @param  \DateTime|null $create_date_from (optional)
      * @param  \DateTime|null $create_date_to (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommercialOffers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCommercialOffersRequest($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
+    public function getCommercialOffersRequest($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $legal_entity_id = null, $client_legal_entity_id = null, $sections_offer_id = null, $status = null, $create_date_from = null, $create_date_to = null, $search = null, string $contentType = self::contentTypes['getCommercialOffers'][0])
     {
+
 
 
 
@@ -6884,6 +7858,15 @@ class DefaultApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $create_date_to,
             'createDate[to]', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $search,
+            'search', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -8872,15 +9855,16 @@ class DefaultApi
      * @param  int|null $legal_entity_id legal_entity_id (optional)
      * @param  int|null $month month (optional)
      * @param  int|null $year year (optional)
+     * @param  string|null $search search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoices'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Infracorp\Extranet\Client\Model\GetInvoices200Response
      */
-    public function getInvoices($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, string $contentType = self::contentTypes['getInvoices'][0])
+    public function getInvoices($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, $search = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
-        list($response) = $this->getInvoicesWithHttpInfo($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $contentType);
+        list($response) = $this->getInvoicesWithHttpInfo($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $search, $contentType);
         return $response;
     }
 
@@ -8897,15 +9881,16 @@ class DefaultApi
      * @param  int|null $legal_entity_id (optional)
      * @param  int|null $month (optional)
      * @param  int|null $year (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoices'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Infracorp\Extranet\Client\Model\GetInvoices200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInvoicesWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, string $contentType = self::contentTypes['getInvoices'][0])
+    public function getInvoicesWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, $search = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
-        $request = $this->getInvoicesRequest($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $contentType);
+        $request = $this->getInvoicesRequest($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $search, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9029,14 +10014,15 @@ class DefaultApi
      * @param  int|null $legal_entity_id (optional)
      * @param  int|null $month (optional)
      * @param  int|null $year (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoices'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInvoicesAsync($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, string $contentType = self::contentTypes['getInvoices'][0])
+    public function getInvoicesAsync($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, $search = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
-        return $this->getInvoicesAsyncWithHttpInfo($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $contentType)
+        return $this->getInvoicesAsyncWithHttpInfo($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $search, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9057,15 +10043,16 @@ class DefaultApi
      * @param  int|null $legal_entity_id (optional)
      * @param  int|null $month (optional)
      * @param  int|null $year (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoices'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInvoicesAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, string $contentType = self::contentTypes['getInvoices'][0])
+    public function getInvoicesAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, $search = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\GetInvoices200Response';
-        $request = $this->getInvoicesRequest($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $contentType);
+        $request = $this->getInvoicesRequest($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $search, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9114,13 +10101,15 @@ class DefaultApi
      * @param  int|null $legal_entity_id (optional)
      * @param  int|null $month (optional)
      * @param  int|null $year (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInvoices'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getInvoicesRequest($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, string $contentType = self::contentTypes['getInvoices'][0])
+    public function getInvoicesRequest($page = null, $items_per_page = null, $sort_id = null, $sort_create_date = null, $client_legal_entity_id = null, $legal_entity_id = null, $month = null, $year = null, $search = null, string $contentType = self::contentTypes['getInvoices'][0])
     {
+
 
 
 
@@ -9206,6 +10195,15 @@ class DefaultApi
             $year,
             'year', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $search,
+            'search', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -15248,15 +16246,17 @@ class DefaultApi
      * @param  string|null $sort_status sort_status (optional)
      * @param  string|null $status status (optional)
      * @param  int|null $legal_entity_id legal_entity_id (optional)
+     * @param  int|null $offer_id offer_id (optional)
+     * @param  string|null $search search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Infracorp\Extranet\Client\Model\GetServiceContracts200Response
      */
-    public function getServiceContracts($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
+    public function getServiceContracts($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, $offer_id = null, $search = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
-        list($response) = $this->getServiceContractsWithHttpInfo($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $contentType);
+        list($response) = $this->getServiceContractsWithHttpInfo($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $offer_id, $search, $contentType);
         return $response;
     }
 
@@ -15271,15 +16271,17 @@ class DefaultApi
      * @param  string|null $sort_status (optional)
      * @param  string|null $status (optional)
      * @param  int|null $legal_entity_id (optional)
+     * @param  int|null $offer_id (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
      * @throws \Infracorp\Extranet\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Infracorp\Extranet\Client\Model\GetServiceContracts200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getServiceContractsWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
+    public function getServiceContractsWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, $offer_id = null, $search = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
-        $request = $this->getServiceContractsRequest($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $contentType);
+        $request = $this->getServiceContractsRequest($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $offer_id, $search, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -15401,14 +16403,16 @@ class DefaultApi
      * @param  string|null $sort_status (optional)
      * @param  string|null $status (optional)
      * @param  int|null $legal_entity_id (optional)
+     * @param  int|null $offer_id (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceContractsAsync($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
+    public function getServiceContractsAsync($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, $offer_id = null, $search = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
-        return $this->getServiceContractsAsyncWithHttpInfo($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $contentType)
+        return $this->getServiceContractsAsyncWithHttpInfo($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $offer_id, $search, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15427,15 +16431,17 @@ class DefaultApi
      * @param  string|null $sort_status (optional)
      * @param  string|null $status (optional)
      * @param  int|null $legal_entity_id (optional)
+     * @param  int|null $offer_id (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceContractsAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
+    public function getServiceContractsAsyncWithHttpInfo($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, $offer_id = null, $search = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
         $returnType = '\Infracorp\Extranet\Client\Model\GetServiceContracts200Response';
-        $request = $this->getServiceContractsRequest($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $contentType);
+        $request = $this->getServiceContractsRequest($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $offer_id, $search, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15482,13 +16488,17 @@ class DefaultApi
      * @param  string|null $sort_status (optional)
      * @param  string|null $status (optional)
      * @param  int|null $legal_entity_id (optional)
+     * @param  int|null $offer_id (optional)
+     * @param  string|null $search (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceContracts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getServiceContractsRequest($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, string $contentType = self::contentTypes['getServiceContracts'][0])
+    public function getServiceContractsRequest($page = null, $items_per_page = null, $sort_id = null, $sort_status = null, $status = null, $legal_entity_id = null, $offer_id = null, $search = null, string $contentType = self::contentTypes['getServiceContracts'][0])
     {
+
+
 
 
 
@@ -15554,6 +16564,24 @@ class DefaultApi
             $legal_entity_id,
             'legalEntityId', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offer_id,
+            'offerId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $search,
+            'search', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

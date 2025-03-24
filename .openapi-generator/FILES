@@ -4,7 +4,12 @@
 README.md
 composer.json
 docs/Api/DefaultApi.md
+docs/Model/AddCommercialOfferComment.md
 docs/Model/AddServiceContractComment.md
+docs/Model/Appointment.md
+docs/Model/AppointmentContact.md
+docs/Model/AppointmentServiceContract.md
+docs/Model/AppointmentTech.md
 docs/Model/ArchivedProcess.md
 docs/Model/Attachment.md
 docs/Model/ClientContract.md
@@ -36,6 +41,7 @@ docs/Model/EligibilityResultCombination.md
 docs/Model/EligibilityResultPriceListItemsGroups.md
 docs/Model/FastOrder.md
 docs/Model/GetApiTokens200Response.md
+docs/Model/GetAppointments200Response.md
 docs/Model/GetClientLegalEntities200Response.md
 docs/Model/GetClientLegalEntities200ResponsePagination.md
 docs/Model/GetCommercialOffers200Response.md
@@ -102,7 +108,12 @@ lib/Api/DefaultApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
+lib/Model/AddCommercialOfferComment.php
 lib/Model/AddServiceContractComment.php
+lib/Model/Appointment.php
+lib/Model/AppointmentContact.php
+lib/Model/AppointmentServiceContract.php
+lib/Model/AppointmentTech.php
 lib/Model/ArchivedProcess.php
 lib/Model/Attachment.php
 lib/Model/ClientContract.php
@@ -134,6 +145,7 @@ lib/Model/EligibilityResultCombination.php
 lib/Model/EligibilityResultPriceListItemsGroups.php
 lib/Model/FastOrder.php
 lib/Model/GetApiTokens200Response.php
+lib/Model/GetAppointments200Response.php
 lib/Model/GetClientLegalEntities200Response.php
 lib/Model/GetClientLegalEntities200ResponsePagination.php
 lib/Model/GetCommercialOffers200Response.php
@@ -198,3 +210,9 @@ lib/Model/UserRole.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/AddCommercialOfferCommentTest.php
+test/Model/AppointmentContactTest.php
+test/Model/AppointmentServiceContractTest.php
+test/Model/AppointmentTechTest.php
+test/Model/AppointmentTest.php
+test/Model/GetAppointments200ResponseTest.php

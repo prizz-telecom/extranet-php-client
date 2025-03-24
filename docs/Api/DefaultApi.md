@@ -4,6 +4,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**addCommercialOfferComment()**](DefaultApi.md#addCommercialOfferComment) | **POST** /external-api/v2/commercial_offers/{id}/comments | Commercial offer add comment |
 | [**addServiceContractComment()**](DefaultApi.md#addServiceContractComment) | **POST** /external-api/v2/service_contracts/{id}/comments | Service Contract add comment |
 | [**createCommercialOffer()**](DefaultApi.md#createCommercialOffer) | **POST** /external-api/v2/commercial_offers | Commercial Offers |
 | [**createCommercialOfferSection()**](DefaultApi.md#createCommercialOfferSection) | **POST** /external-api/v2/commercial_offers/{id}/sections | Commercial Offer Sections |
@@ -13,6 +14,8 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**eligibilityHistory()**](DefaultApi.md#eligibilityHistory) | **GET** /external-api/v2/eligibility/history | Eligibility History |
 | [**fastOrder()**](DefaultApi.md#fastOrder) | **POST** /external-api/v2/commercial_offers/fast_order/{elig_ctx_id} | Fast order with eligiblity result |
 | [**getApiTokens()**](DefaultApi.md#getApiTokens) | **GET** /external-api/v2/users/api_tokens | User Api Tokens |
+| [**getAppointment()**](DefaultApi.md#getAppointment) | **GET** /external-api/v2/appointments/{id} | Appointment |
+| [**getAppointments()**](DefaultApi.md#getAppointments) | **GET** /external-api/v2/appointments | Appointments |
 | [**getAttachment()**](DefaultApi.md#getAttachment) | **GET** /external-api/v2/attachments/{id} | Attachment |
 | [**getClientLegalEntities()**](DefaultApi.md#getClientLegalEntities) | **GET** /external-api/v2/client_legal_entities | Client legal entities |
 | [**getClientLegalEntity()**](DefaultApi.md#getClientLegalEntity) | **GET** /external-api/v2/client_legal_entities/{id} | Client legal entity |
@@ -66,6 +69,73 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**submitCommercialOffer()**](DefaultApi.md#submitCommercialOffer) | **POST** /external-api/v2/commercial_offers/{id}/submit | Submit Commercial Offer |
 | [**updateCommercialOfferSectionItems()**](DefaultApi.md#updateCommercialOfferSectionItems) | **POST** /external-api/v2/commercial_offers/{id}/sections/{sectionId}/update_items | Update Commercial Offer Section Items |
 
+
+## `addCommercialOfferComment()`
+
+```php
+addCommercialOfferComment($id, $add_commercial_offer_comment): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+```
+
+Commercial offer add comment
+
+Add commercial offer comment
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | commercial offer identifier
+$add_commercial_offer_comment = new \Infracorp\Extranet\Client\Model\AddCommercialOfferComment(); // \Infracorp\Extranet\Client\Model\AddCommercialOfferComment
+
+try {
+    $result = $apiInstance->addCommercialOfferComment($id, $add_commercial_offer_comment);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->addCommercialOfferComment: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| commercial offer identifier | |
+| **add_commercial_offer_comment** | [**\Infracorp\Extranet\Client\Model\AddCommercialOfferComment**](../Model/AddCommercialOfferComment.md)|  | [optional] |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `addServiceContractComment()`
 
@@ -668,6 +738,133 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getAppointment()`
+
+```php
+getAppointment($id): \Infracorp\Extranet\Client\Model\Appointment
+```
+
+Appointment
+
+get appointment
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | id
+
+try {
+    $result = $apiInstance->getAppointment($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getAppointment: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| id | |
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\Appointment**](../Model/Appointment.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getAppointments()`
+
+```php
+getAppointments(): \Infracorp\Extranet\Client\Model\GetAppointments200Response
+```
+
+Appointments
+
+get appointments
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getAppointments();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getAppointments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Infracorp\Extranet\Client\Model\GetAppointments200Response**](../Model/GetAppointments200Response.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getAttachment()`
 
 ```php
@@ -736,7 +933,7 @@ try {
 ## `getClientLegalEntities()`
 
 ```php
-getClientLegalEntities($page, $items_per_page, $sort_id, $legal_entity_id): \Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response
+getClientLegalEntities($page, $items_per_page, $sort_id, $legal_entity_id, $search): \Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response
 ```
 
 Client legal entities
@@ -769,9 +966,10 @@ $page = 56; // int
 $items_per_page = 56; // int
 $sort_id = 'sort_id_example'; // string
 $legal_entity_id = 56; // int
+$search = 'search_example'; // string
 
 try {
-    $result = $apiInstance->getClientLegalEntities($page, $items_per_page, $sort_id, $legal_entity_id);
+    $result = $apiInstance->getClientLegalEntities($page, $items_per_page, $sort_id, $legal_entity_id, $search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getClientLegalEntities: ', $e->getMessage(), PHP_EOL;
@@ -786,6 +984,7 @@ try {
 | **items_per_page** | **int**|  | [optional] |
 | **sort_id** | **string**|  | [optional] |
 | **legal_entity_id** | **int**|  | [optional] |
+| **search** | **string**|  | [optional] |
 
 ### Return type
 
@@ -1329,7 +1528,7 @@ try {
 ## `getCommercialOffers()`
 
 ```php
-getCommercialOffers($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to): \Infracorp\Extranet\Client\Model\GetCommercialOffers200Response
+getCommercialOffers($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $search): \Infracorp\Extranet\Client\Model\GetCommercialOffers200Response
 ```
 
 Commercial Offers
@@ -1368,9 +1567,10 @@ $sections_offer_id = 56; // int
 $status = 'status_example'; // string
 $create_date_from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
 $create_date_to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$search = 'search_example'; // string
 
 try {
-    $result = $apiInstance->getCommercialOffers($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to);
+    $result = $apiInstance->getCommercialOffers($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getCommercialOffers: ', $e->getMessage(), PHP_EOL;
@@ -1391,6 +1591,7 @@ try {
 | **status** | **string**|  | [optional] |
 | **create_date_from** | **\DateTime**|  | [optional] |
 | **create_date_to** | **\DateTime**|  | [optional] |
+| **search** | **string**|  | [optional] |
 
 ### Return type
 
@@ -1801,7 +2002,7 @@ try {
 ## `getInvoices()`
 
 ```php
-getInvoices($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year): \Infracorp\Extranet\Client\Model\GetInvoices200Response
+getInvoices($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $search): \Infracorp\Extranet\Client\Model\GetInvoices200Response
 ```
 
 Invoices
@@ -1838,9 +2039,10 @@ $client_legal_entity_id = 56; // int
 $legal_entity_id = 56; // int
 $month = 56; // int
 $year = 56; // int
+$search = 'search_example'; // string
 
 try {
-    $result = $apiInstance->getInvoices($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year);
+    $result = $apiInstance->getInvoices($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getInvoices: ', $e->getMessage(), PHP_EOL;
@@ -1859,6 +2061,7 @@ try {
 | **legal_entity_id** | **int**|  | [optional] |
 | **month** | **int**|  | [optional] |
 | **year** | **int**|  | [optional] |
+| **search** | **string**|  | [optional] |
 
 ### Return type
 
@@ -3081,7 +3284,7 @@ try {
 ## `getServiceContracts()`
 
 ```php
-getServiceContracts($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id): \Infracorp\Extranet\Client\Model\GetServiceContracts200Response
+getServiceContracts($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $offer_id, $search): \Infracorp\Extranet\Client\Model\GetServiceContracts200Response
 ```
 
 Service Contracts
@@ -3116,9 +3319,11 @@ $sort_id = 'sort_id_example'; // string
 $sort_status = 'sort_status_example'; // string
 $status = 'status_example'; // string
 $legal_entity_id = 56; // int
+$offer_id = 56; // int
+$search = 'search_example'; // string
 
 try {
-    $result = $apiInstance->getServiceContracts($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id);
+    $result = $apiInstance->getServiceContracts($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $offer_id, $search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getServiceContracts: ', $e->getMessage(), PHP_EOL;
@@ -3135,6 +3340,8 @@ try {
 | **sort_status** | **string**|  | [optional] |
 | **status** | **string**|  | [optional] |
 | **legal_entity_id** | **int**|  | [optional] |
+| **offer_id** | **int**|  | [optional] |
+| **search** | **string**|  | [optional] |
 
 ### Return type
 

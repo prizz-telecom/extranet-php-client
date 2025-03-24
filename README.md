@@ -64,14 +64,14 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | service contract identifier
-$add_service_contract_comment = new \Infracorp\Extranet\Client\Model\AddServiceContractComment(); // \Infracorp\Extranet\Client\Model\AddServiceContractComment
+$id = 56; // int | commercial offer identifier
+$add_commercial_offer_comment = new \Infracorp\Extranet\Client\Model\AddCommercialOfferComment(); // \Infracorp\Extranet\Client\Model\AddCommercialOfferComment
 
 try {
-    $result = $apiInstance->addServiceContractComment($id, $add_service_contract_comment);
+    $result = $apiInstance->addCommercialOfferComment($id, $add_commercial_offer_comment);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->addServiceContractComment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->addCommercialOfferComment: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -82,6 +82,7 @@ All URIs are relative to *https://my.tests.prizz-telecom.fr*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**addCommercialOfferComment**](docs/Api/DefaultApi.md#addcommercialoffercomment) | **POST** /external-api/v2/commercial_offers/{id}/comments | Commercial offer add comment
 *DefaultApi* | [**addServiceContractComment**](docs/Api/DefaultApi.md#addservicecontractcomment) | **POST** /external-api/v2/service_contracts/{id}/comments | Service Contract add comment
 *DefaultApi* | [**createCommercialOffer**](docs/Api/DefaultApi.md#createcommercialoffer) | **POST** /external-api/v2/commercial_offers | Commercial Offers
 *DefaultApi* | [**createCommercialOfferSection**](docs/Api/DefaultApi.md#createcommercialoffersection) | **POST** /external-api/v2/commercial_offers/{id}/sections | Commercial Offer Sections
@@ -91,6 +92,8 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**eligibilityHistory**](docs/Api/DefaultApi.md#eligibilityhistory) | **GET** /external-api/v2/eligibility/history | Eligibility History
 *DefaultApi* | [**fastOrder**](docs/Api/DefaultApi.md#fastorder) | **POST** /external-api/v2/commercial_offers/fast_order/{elig_ctx_id} | Fast order with eligiblity result
 *DefaultApi* | [**getApiTokens**](docs/Api/DefaultApi.md#getapitokens) | **GET** /external-api/v2/users/api_tokens | User Api Tokens
+*DefaultApi* | [**getAppointment**](docs/Api/DefaultApi.md#getappointment) | **GET** /external-api/v2/appointments/{id} | Appointment
+*DefaultApi* | [**getAppointments**](docs/Api/DefaultApi.md#getappointments) | **GET** /external-api/v2/appointments | Appointments
 *DefaultApi* | [**getAttachment**](docs/Api/DefaultApi.md#getattachment) | **GET** /external-api/v2/attachments/{id} | Attachment
 *DefaultApi* | [**getClientLegalEntities**](docs/Api/DefaultApi.md#getclientlegalentities) | **GET** /external-api/v2/client_legal_entities | Client legal entities
 *DefaultApi* | [**getClientLegalEntity**](docs/Api/DefaultApi.md#getclientlegalentity) | **GET** /external-api/v2/client_legal_entities/{id} | Client legal entity
@@ -146,7 +149,12 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [AddCommercialOfferComment](docs/Model/AddCommercialOfferComment.md)
 - [AddServiceContractComment](docs/Model/AddServiceContractComment.md)
+- [Appointment](docs/Model/Appointment.md)
+- [AppointmentContact](docs/Model/AppointmentContact.md)
+- [AppointmentServiceContract](docs/Model/AppointmentServiceContract.md)
+- [AppointmentTech](docs/Model/AppointmentTech.md)
 - [ArchivedProcess](docs/Model/ArchivedProcess.md)
 - [Attachment](docs/Model/Attachment.md)
 - [ClientContract](docs/Model/ClientContract.md)
@@ -178,6 +186,7 @@ Class | Method | HTTP request | Description
 - [EligibilityResultPriceListItemsGroups](docs/Model/EligibilityResultPriceListItemsGroups.md)
 - [FastOrder](docs/Model/FastOrder.md)
 - [GetApiTokens200Response](docs/Model/GetApiTokens200Response.md)
+- [GetAppointments200Response](docs/Model/GetAppointments200Response.md)
 - [GetClientLegalEntities200Response](docs/Model/GetClientLegalEntities200Response.md)
 - [GetClientLegalEntities200ResponsePagination](docs/Model/GetClientLegalEntities200ResponsePagination.md)
 - [GetCommercialOffers200Response](docs/Model/GetCommercialOffers200Response.md)

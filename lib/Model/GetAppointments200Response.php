@@ -1,6 +1,6 @@
 <?php
 /**
- * GetWorkflow
+ * GetAppointments200Response
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Infracorp\Extranet\Client\ObjectSerializer;
 
 /**
- * GetWorkflow Class Doc Comment
+ * GetAppointments200Response Class Doc Comment
  *
  * @category Class
  * @package  Infracorp\Extranet\Client
@@ -40,7 +40,7 @@ use \Infracorp\Extranet\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetAppointments200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetWorkflow';
+    protected static $openAPIModelName = 'getAppointments_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'state' => 'string',
-        'success' => 'bool',
-        'log' => 'string',
-        'redirect' => '\Infracorp\Extranet\Client\Model\GetWorkflowRedirect'
+        'items' => '\Infracorp\Extranet\Client\Model\Appointment[]'
     ];
 
     /**
@@ -72,11 +68,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'state' => null,
-        'success' => null,
-        'log' => null,
-        'redirect' => null
+        'items' => null
     ];
 
     /**
@@ -85,11 +77,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'state' => false,
-        'success' => false,
-        'log' => true,
-        'redirect' => false
+        'items' => false
     ];
 
     /**
@@ -178,11 +166,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'state' => 'state',
-        'success' => 'success',
-        'log' => 'log',
-        'redirect' => 'redirect'
+        'items' => 'items'
     ];
 
     /**
@@ -191,11 +175,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'state' => 'setState',
-        'success' => 'setSuccess',
-        'log' => 'setLog',
-        'redirect' => 'setRedirect'
+        'items' => 'setItems'
     ];
 
     /**
@@ -204,11 +184,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'state' => 'getState',
-        'success' => 'getSuccess',
-        'log' => 'getLog',
-        'redirect' => 'getRedirect'
+        'items' => 'getItems'
     ];
 
     /**
@@ -268,11 +244,7 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('state', $data ?? [], null);
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('log', $data ?? [], null);
-        $this->setIfExists('redirect', $data ?? [], null);
+        $this->setIfExists('items', $data ?? [], null);
     }
 
     /**
@@ -318,143 +290,28 @@ class GetWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets items
      *
-     * @return int|null
+     * @return \Infracorp\Extranet\Client\Model\Appointment[]|null
      */
-    public function getId()
+    public function getItems()
     {
-        return $this->container['id'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets id
+     * Sets items
      *
-     * @param int|null $id id
+     * @param \Infracorp\Extranet\Client\Model\Appointment[]|null $items items
      *
      * @return self
      */
-    public function setId($id)
+    public function setItems($items)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($items)) {
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     *
-     * @return string|null
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param string|null $state state
-     *
-     * @return self
-     */
-    public function setState($state)
-    {
-        if (is_null($state)) {
-            throw new \InvalidArgumentException('non-nullable state cannot be null');
-        }
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool|null
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool|null $success success
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        if (is_null($success)) {
-            throw new \InvalidArgumentException('non-nullable success cannot be null');
-        }
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets log
-     *
-     * @return string|null
-     */
-    public function getLog()
-    {
-        return $this->container['log'];
-    }
-
-    /**
-     * Sets log
-     *
-     * @param string|null $log log
-     *
-     * @return self
-     */
-    public function setLog($log)
-    {
-        if (is_null($log)) {
-            array_push($this->openAPINullablesSetToNull, 'log');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('log', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['log'] = $log;
-
-        return $this;
-    }
-
-    /**
-     * Gets redirect
-     *
-     * @return \Infracorp\Extranet\Client\Model\GetWorkflowRedirect|null
-     */
-    public function getRedirect()
-    {
-        return $this->container['redirect'];
-    }
-
-    /**
-     * Sets redirect
-     *
-     * @param \Infracorp\Extranet\Client\Model\GetWorkflowRedirect|null $redirect redirect
-     *
-     * @return self
-     */
-    public function setRedirect($redirect)
-    {
-        if (is_null($redirect)) {
-            throw new \InvalidArgumentException('non-nullable redirect cannot be null');
-        }
-        $this->container['redirect'] = $redirect;
+        $this->container['items'] = $items;
 
         return $this;
     }

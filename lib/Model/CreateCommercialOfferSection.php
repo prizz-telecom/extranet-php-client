@@ -82,7 +82,7 @@ class CreateCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
       */
     protected static array $openAPINullables = [
         'name' => false,
-        'client_reference' => false,
+        'client_reference' => true,
         'client_contract_id' => false
     ];
 
@@ -350,7 +350,14 @@ class CreateCommercialOfferSection implements ModelInterface, ArrayAccess, \Json
     public function setClientReference($client_reference)
     {
         if (is_null($client_reference)) {
-            throw new \InvalidArgumentException('non-nullable client_reference cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'client_reference');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('client_reference', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['client_reference'] = $client_reference;
 
