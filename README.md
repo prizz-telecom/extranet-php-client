@@ -7,8 +7,7 @@ Prizz-Telecom Extranet API https://dev.prizz-telecom.fr/
 
 ### Requirements
 
-PHP 7.4 and later.
-Should also work with PHP 8.0.
+PHP 8.1 and later.
 
 ### Composer
 
@@ -50,22 +49,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | commercial offer identifier
-$add_commercial_offer_comment = new \Infracorp\Extranet\Client\Model\AddCommercialOfferComment(); // \Infracorp\Extranet\Client\Model\AddCommercialOfferComment
+$add_commercial_offer_comment = new \InfracorpExtranetClient\Model\AddCommercialOfferComment(); // \InfracorpExtranetClient\Model\AddCommercialOfferComment
 
 try {
     $result = $apiInstance->addCommercialOfferComment($id, $add_commercial_offer_comment);
@@ -95,6 +94,8 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getAppointment**](docs/Api/DefaultApi.md#getappointment) | **GET** /external-api/v2/appointments/{id} | Appointment
 *DefaultApi* | [**getAppointments**](docs/Api/DefaultApi.md#getappointments) | **GET** /external-api/v2/appointments | Appointments
 *DefaultApi* | [**getAttachment**](docs/Api/DefaultApi.md#getattachment) | **GET** /external-api/v2/attachments/{id} | Attachment
+*DefaultApi* | [**getClientContract**](docs/Api/DefaultApi.md#getclientcontract) | **GET** /external-api/v2/client_contracts/{id} | Client Contract
+*DefaultApi* | [**getClientContracts**](docs/Api/DefaultApi.md#getclientcontracts) | **GET** /external-api/v2/client_contracts | Client Contracts
 *DefaultApi* | [**getClientLegalEntities**](docs/Api/DefaultApi.md#getclientlegalentities) | **GET** /external-api/v2/client_legal_entities | Client legal entities
 *DefaultApi* | [**getClientLegalEntity**](docs/Api/DefaultApi.md#getclientlegalentity) | **GET** /external-api/v2/client_legal_entities/{id} | Client legal entity
 *DefaultApi* | [**getCommentThread**](docs/Api/DefaultApi.md#getcommentthread) | **GET** /external-api/v2/comments/threads/{id} | Comment thread
@@ -107,6 +108,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**getCommercialOffers**](docs/Api/DefaultApi.md#getcommercialoffers) | **GET** /external-api/v2/commercial_offers | Commercial Offers
 *DefaultApi* | [**getCurrentUser**](docs/Api/DefaultApi.md#getcurrentuser) | **GET** /external-api/v2/user | User
 *DefaultApi* | [**getEligibility**](docs/Api/DefaultApi.md#geteligibility) | **GET** /external-api/v2/eligibility/{id} | Get Eligibility
+*DefaultApi* | [**getEligibilityBasedOfferContextsShortened**](docs/Api/DefaultApi.md#geteligibilitybasedoffercontextsshortened) | **GET** /external-api/v2/eligibility/{id}/contexts/shortened | Eligibility Based Offer Contexts
 *DefaultApi* | [**getEntityAttachments**](docs/Api/DefaultApi.md#getentityattachments) | **GET** /external-api/v2/attachments | Attachements entity
 *DefaultApi* | [**getInvoice**](docs/Api/DefaultApi.md#getinvoice) | **GET** /external-api/v2/invoices/{id} | Invoice
 *DefaultApi* | [**getInvoiceDetail**](docs/Api/DefaultApi.md#getinvoicedetail) | **GET** /external-api/v2/invoice_details/{id} | Invoice Detail
@@ -152,9 +154,6 @@ Class | Method | HTTP request | Description
 - [AddCommercialOfferComment](docs/Model/AddCommercialOfferComment.md)
 - [AddServiceContractComment](docs/Model/AddServiceContractComment.md)
 - [Appointment](docs/Model/Appointment.md)
-- [AppointmentContact](docs/Model/AppointmentContact.md)
-- [AppointmentServiceContract](docs/Model/AppointmentServiceContract.md)
-- [AppointmentTech](docs/Model/AppointmentTech.md)
 - [ArchivedProcess](docs/Model/ArchivedProcess.md)
 - [Attachment](docs/Model/Attachment.md)
 - [ClientContract](docs/Model/ClientContract.md)
@@ -178,6 +177,7 @@ Class | Method | HTTP request | Description
 - [CreateOperator](docs/Model/CreateOperator.md)
 - [CreateTicket](docs/Model/CreateTicket.md)
 - [CreateWorkflow](docs/Model/CreateWorkflow.md)
+- [EligibilityBasedOfferContextShortened](docs/Model/EligibilityBasedOfferContextShortened.md)
 - [EligibilityHistory](docs/Model/EligibilityHistory.md)
 - [EligibilityHistory200Response](docs/Model/EligibilityHistory200Response.md)
 - [EligibilityPriceListItem](docs/Model/EligibilityPriceListItem.md)
@@ -187,8 +187,9 @@ Class | Method | HTTP request | Description
 - [FastOrder](docs/Model/FastOrder.md)
 - [GetApiTokens200Response](docs/Model/GetApiTokens200Response.md)
 - [GetAppointments200Response](docs/Model/GetAppointments200Response.md)
+- [GetClientContracts200Response](docs/Model/GetClientContracts200Response.md)
+- [GetClientContracts200ResponsePagination](docs/Model/GetClientContracts200ResponsePagination.md)
 - [GetClientLegalEntities200Response](docs/Model/GetClientLegalEntities200Response.md)
-- [GetClientLegalEntities200ResponsePagination](docs/Model/GetClientLegalEntities200ResponsePagination.md)
 - [GetCommercialOffers200Response](docs/Model/GetCommercialOffers200Response.md)
 - [GetEligibility](docs/Model/GetEligibility.md)
 - [GetInvoices200Response](docs/Model/GetInvoices200Response.md)
@@ -213,6 +214,8 @@ Class | Method | HTTP request | Description
 - [OperatorTicket](docs/Model/OperatorTicket.md)
 - [PriceList](docs/Model/PriceList.md)
 - [PriceListItem](docs/Model/PriceListItem.md)
+- [PriceListItemExceptionsInner](docs/Model/PriceListItemExceptionsInner.md)
+- [PriceListItemExceptionsInnerConstraintsInner](docs/Model/PriceListItemExceptionsInnerConstraintsInner.md)
 - [PricesListOffers](docs/Model/PricesListOffers.md)
 - [Process](docs/Model/Process.md)
 - [ProcessAction](docs/Model/ProcessAction.md)
@@ -281,5 +284,5 @@ vendor/bin/phpunit
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `2.0`
-    - Generator version: `7.12.0-SNAPSHOT`
+    - Generator version: `7.14.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

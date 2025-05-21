@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **siren** | **string** |  | [optional]
 **tel** | **string** |  | [optional]
 **email** | **string** |  | [optional]
-**contacts** | [**\Infracorp\Extranet\Client\Model\ContactSearch[]**](ContactSearch.md) |  | [optional]
+**contacts** | [**\InfracorpExtranetClient\Model\ContactSearch[]**](ContactSearch.md) |  | [optional]
 **legal_entity_id** | **string** |  | [optional]
 **client_legal_entity_id** | **string** |  | [optional]
 **ref** | **string** |  | [optional]

@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **x** | **float** |  | [optional]
 **y** | **float** |  | [optional]
 **projection** | **string** |  | [optional]
-**product** | [**\Infracorp\Extranet\Client\Model\Product**](Product.md) |  | [optional]
+**product** | [**\InfracorpExtranetClient\Model\Product**](Product.md) |  | [optional]
 **status** | **string** |  | [optional]
 **subscription_date** | **\DateTime** |  | [optional]
 **activation_date** | **\DateTime** |  | [optional]

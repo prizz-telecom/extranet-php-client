@@ -1,4 +1,4 @@
-# Infracorp\Extranet\Client\DefaultApi
+# InfracorpExtranetClient\DefaultApi
 
 All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operation defines another base path.
 
@@ -17,6 +17,8 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**getAppointment()**](DefaultApi.md#getAppointment) | **GET** /external-api/v2/appointments/{id} | Appointment |
 | [**getAppointments()**](DefaultApi.md#getAppointments) | **GET** /external-api/v2/appointments | Appointments |
 | [**getAttachment()**](DefaultApi.md#getAttachment) | **GET** /external-api/v2/attachments/{id} | Attachment |
+| [**getClientContract()**](DefaultApi.md#getClientContract) | **GET** /external-api/v2/client_contracts/{id} | Client Contract |
+| [**getClientContracts()**](DefaultApi.md#getClientContracts) | **GET** /external-api/v2/client_contracts | Client Contracts |
 | [**getClientLegalEntities()**](DefaultApi.md#getClientLegalEntities) | **GET** /external-api/v2/client_legal_entities | Client legal entities |
 | [**getClientLegalEntity()**](DefaultApi.md#getClientLegalEntity) | **GET** /external-api/v2/client_legal_entities/{id} | Client legal entity |
 | [**getCommentThread()**](DefaultApi.md#getCommentThread) | **GET** /external-api/v2/comments/threads/{id} | Comment thread |
@@ -29,6 +31,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 | [**getCommercialOffers()**](DefaultApi.md#getCommercialOffers) | **GET** /external-api/v2/commercial_offers | Commercial Offers |
 | [**getCurrentUser()**](DefaultApi.md#getCurrentUser) | **GET** /external-api/v2/user | User |
 | [**getEligibility()**](DefaultApi.md#getEligibility) | **GET** /external-api/v2/eligibility/{id} | Get Eligibility |
+| [**getEligibilityBasedOfferContextsShortened()**](DefaultApi.md#getEligibilityBasedOfferContextsShortened) | **GET** /external-api/v2/eligibility/{id}/contexts/shortened | Eligibility Based Offer Contexts |
 | [**getEntityAttachments()**](DefaultApi.md#getEntityAttachments) | **GET** /external-api/v2/attachments | Attachements entity |
 | [**getInvoice()**](DefaultApi.md#getInvoice) | **GET** /external-api/v2/invoices/{id} | Invoice |
 | [**getInvoiceDetail()**](DefaultApi.md#getInvoiceDetail) | **GET** /external-api/v2/invoice_details/{id} | Invoice Detail |
@@ -73,7 +76,7 @@ All URIs are relative to https://my.tests.prizz-telecom.fr, except if the operat
 ## `addCommercialOfferComment()`
 
 ```php
-addCommercialOfferComment($id, $add_commercial_offer_comment): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+addCommercialOfferComment($id, $add_commercial_offer_comment): \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
 ```
 
 Commercial offer add comment
@@ -88,22 +91,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | commercial offer identifier
-$add_commercial_offer_comment = new \Infracorp\Extranet\Client\Model\AddCommercialOfferComment(); // \Infracorp\Extranet\Client\Model\AddCommercialOfferComment
+$add_commercial_offer_comment = new \InfracorpExtranetClient\Model\AddCommercialOfferComment(); // \InfracorpExtranetClient\Model\AddCommercialOfferComment
 
 try {
     $result = $apiInstance->addCommercialOfferComment($id, $add_commercial_offer_comment);
@@ -118,11 +121,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| commercial offer identifier | |
-| **add_commercial_offer_comment** | [**\Infracorp\Extranet\Client\Model\AddCommercialOfferComment**](../Model/AddCommercialOfferComment.md)|  | [optional] |
+| **add_commercial_offer_comment** | [**\InfracorpExtranetClient\Model\AddCommercialOfferComment**](../Model/AddCommercialOfferComment.md)|  | [optional] |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+[**\InfracorpExtranetClient\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
 
 ### Authorization
 
@@ -140,7 +143,7 @@ try {
 ## `addServiceContractComment()`
 
 ```php
-addServiceContractComment($id, $add_service_contract_comment): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+addServiceContractComment($id, $add_service_contract_comment): \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
 ```
 
 Service Contract add comment
@@ -155,22 +158,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | service contract identifier
-$add_service_contract_comment = new \Infracorp\Extranet\Client\Model\AddServiceContractComment(); // \Infracorp\Extranet\Client\Model\AddServiceContractComment
+$add_service_contract_comment = new \InfracorpExtranetClient\Model\AddServiceContractComment(); // \InfracorpExtranetClient\Model\AddServiceContractComment
 
 try {
     $result = $apiInstance->addServiceContractComment($id, $add_service_contract_comment);
@@ -185,11 +188,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| service contract identifier | |
-| **add_service_contract_comment** | [**\Infracorp\Extranet\Client\Model\AddServiceContractComment**](../Model/AddServiceContractComment.md)|  | [optional] |
+| **add_service_contract_comment** | [**\InfracorpExtranetClient\Model\AddServiceContractComment**](../Model/AddServiceContractComment.md)|  | [optional] |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+[**\InfracorpExtranetClient\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
 
 ### Authorization
 
@@ -207,7 +210,7 @@ try {
 ## `createCommercialOffer()`
 
 ```php
-createCommercialOffer($create_commercial_offer): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+createCommercialOffer($create_commercial_offer): \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
 ```
 
 Commercial Offers
@@ -222,21 +225,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$create_commercial_offer = new \Infracorp\Extranet\Client\Model\CreateCommercialOffer(); // \Infracorp\Extranet\Client\Model\CreateCommercialOffer
+$create_commercial_offer = new \InfracorpExtranetClient\Model\CreateCommercialOffer(); // \InfracorpExtranetClient\Model\CreateCommercialOffer
 
 try {
     $result = $apiInstance->createCommercialOffer($create_commercial_offer);
@@ -250,11 +253,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_commercial_offer** | [**\Infracorp\Extranet\Client\Model\CreateCommercialOffer**](../Model/CreateCommercialOffer.md)|  | |
+| **create_commercial_offer** | [**\InfracorpExtranetClient\Model\CreateCommercialOffer**](../Model/CreateCommercialOffer.md)|  | |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+[**\InfracorpExtranetClient\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
 
 ### Authorization
 
@@ -272,7 +275,7 @@ try {
 ## `createCommercialOfferSection()`
 
 ```php
-createCommercialOfferSection($id, $create_commercial_offer_section): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+createCommercialOfferSection($id, $create_commercial_offer_section): \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
 ```
 
 Commercial Offer Sections
@@ -287,22 +290,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | identifiant du devis
-$create_commercial_offer_section = new \Infracorp\Extranet\Client\Model\CreateCommercialOfferSection(); // \Infracorp\Extranet\Client\Model\CreateCommercialOfferSection
+$create_commercial_offer_section = new \InfracorpExtranetClient\Model\CreateCommercialOfferSection(); // \InfracorpExtranetClient\Model\CreateCommercialOfferSection
 
 try {
     $result = $apiInstance->createCommercialOfferSection($id, $create_commercial_offer_section);
@@ -317,11 +320,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| identifiant du devis | |
-| **create_commercial_offer_section** | [**\Infracorp\Extranet\Client\Model\CreateCommercialOfferSection**](../Model/CreateCommercialOfferSection.md)|  | |
+| **create_commercial_offer_section** | [**\InfracorpExtranetClient\Model\CreateCommercialOfferSection**](../Model/CreateCommercialOfferSection.md)|  | |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+[**\InfracorpExtranetClient\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
 
 ### Authorization
 
@@ -339,7 +342,7 @@ try {
 ## `createEligibility()`
 
 ```php
-createEligibility($client_id, $address, $lat, $lon): \Infracorp\Extranet\Client\Model\CreateEligibility
+createEligibility($client_id, $address, $lat, $lon): \InfracorpExtranetClient\Model\CreateEligibility
 ```
 
 Create Eligibility
@@ -354,15 +357,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -392,7 +395,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateEligibility**](../Model/CreateEligibility.md)
+[**\InfracorpExtranetClient\Model\CreateEligibility**](../Model/CreateEligibility.md)
 
 ### Authorization
 
@@ -410,7 +413,7 @@ try {
 ## `createTicketOperator()`
 
 ```php
-createTicketOperator($id): \Infracorp\Extranet\Client\Model\CreateOperator
+createTicketOperator($id): \InfracorpExtranetClient\Model\CreateOperator
 ```
 
 Exploitation Operator Tickets
@@ -425,15 +428,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -457,7 +460,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateOperator**](../Model/CreateOperator.md)
+[**\InfracorpExtranetClient\Model\CreateOperator**](../Model/CreateOperator.md)
 
 ### Authorization
 
@@ -475,7 +478,7 @@ try {
 ## `createWorkflow()`
 
 ```php
-createWorkflow($create_workflow): \Infracorp\Extranet\Client\Model\GetWorkflow
+createWorkflow($create_workflow): \InfracorpExtranetClient\Model\GetWorkflow
 ```
 
 Workflows
@@ -490,21 +493,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$create_workflow = new \Infracorp\Extranet\Client\Model\CreateWorkflow(); // \Infracorp\Extranet\Client\Model\CreateWorkflow
+$create_workflow = new \InfracorpExtranetClient\Model\CreateWorkflow(); // \InfracorpExtranetClient\Model\CreateWorkflow
 
 try {
     $result = $apiInstance->createWorkflow($create_workflow);
@@ -518,11 +521,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_workflow** | [**\Infracorp\Extranet\Client\Model\CreateWorkflow**](../Model/CreateWorkflow.md)|  | |
+| **create_workflow** | [**\InfracorpExtranetClient\Model\CreateWorkflow**](../Model/CreateWorkflow.md)|  | |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetWorkflow**](../Model/GetWorkflow.md)
+[**\InfracorpExtranetClient\Model\GetWorkflow**](../Model/GetWorkflow.md)
 
 ### Authorization
 
@@ -540,7 +543,7 @@ try {
 ## `eligibilityHistory()`
 
 ```php
-eligibilityHistory($page, $items_per_page): \Infracorp\Extranet\Client\Model\EligibilityHistory200Response
+eligibilityHistory($page, $items_per_page): \InfracorpExtranetClient\Model\EligibilityHistory200Response
 ```
 
 Eligibility History
@@ -555,15 +558,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -589,7 +592,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\EligibilityHistory200Response**](../Model/EligibilityHistory200Response.md)
+[**\InfracorpExtranetClient\Model\EligibilityHistory200Response**](../Model/EligibilityHistory200Response.md)
 
 ### Authorization
 
@@ -607,7 +610,7 @@ try {
 ## `fastOrder()`
 
 ```php
-fastOrder($elig_ctx_id, $fast_order): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+fastOrder($elig_ctx_id, $fast_order): \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
 ```
 
 Fast order with eligiblity result
@@ -622,22 +625,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $elig_ctx_id = 56; // int | identifiant du contexte d'éligibilité
-$fast_order = new \Infracorp\Extranet\Client\Model\FastOrder(); // \Infracorp\Extranet\Client\Model\FastOrder
+$fast_order = new \InfracorpExtranetClient\Model\FastOrder(); // \InfracorpExtranetClient\Model\FastOrder
 
 try {
     $result = $apiInstance->fastOrder($elig_ctx_id, $fast_order);
@@ -652,11 +655,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **elig_ctx_id** | **int**| identifiant du contexte d&#39;éligibilité | |
-| **fast_order** | [**\Infracorp\Extranet\Client\Model\FastOrder**](../Model/FastOrder.md)|  | |
+| **fast_order** | [**\InfracorpExtranetClient\Model\FastOrder**](../Model/FastOrder.md)|  | |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+[**\InfracorpExtranetClient\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
 
 ### Authorization
 
@@ -674,7 +677,7 @@ try {
 ## `getApiTokens()`
 
 ```php
-getApiTokens($page, $items_per_page): \Infracorp\Extranet\Client\Model\GetApiTokens200Response
+getApiTokens($page, $items_per_page): \InfracorpExtranetClient\Model\GetApiTokens200Response
 ```
 
 User Api Tokens
@@ -689,15 +692,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -723,7 +726,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetApiTokens200Response**](../Model/GetApiTokens200Response.md)
+[**\InfracorpExtranetClient\Model\GetApiTokens200Response**](../Model/GetApiTokens200Response.md)
 
 ### Authorization
 
@@ -741,7 +744,7 @@ try {
 ## `getAppointment()`
 
 ```php
-getAppointment($id): \Infracorp\Extranet\Client\Model\Appointment
+getAppointment($id): \InfracorpExtranetClient\Model\Appointment
 ```
 
 Appointment
@@ -756,15 +759,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -788,7 +791,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Appointment**](../Model/Appointment.md)
+[**\InfracorpExtranetClient\Model\Appointment**](../Model/Appointment.md)
 
 ### Authorization
 
@@ -806,7 +809,7 @@ try {
 ## `getAppointments()`
 
 ```php
-getAppointments(): \Infracorp\Extranet\Client\Model\GetAppointments200Response
+getAppointments($sort_date, $date_from, $date_to, $service_contract_id, $service_contract_name, $status, $include_archived): \InfracorpExtranetClient\Model\GetAppointments200Response
 ```
 
 Appointments
@@ -821,23 +824,30 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+$sort_date = 'sort_date_example'; // string
+$date_from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$date_to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$service_contract_id = 56; // int
+$service_contract_name = 'service_contract_name_example'; // string
+$status = 'status_example'; // string
+$include_archived = True; // bool | include archived appointments
 
 try {
-    $result = $apiInstance->getAppointments();
+    $result = $apiInstance->getAppointments($sort_date, $date_from, $date_to, $service_contract_id, $service_contract_name, $status, $include_archived);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAppointments: ', $e->getMessage(), PHP_EOL;
@@ -846,11 +856,19 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sort_date** | **string**|  | [optional] |
+| **date_from** | **\DateTime**|  | [optional] |
+| **date_to** | **\DateTime**|  | [optional] |
+| **service_contract_id** | **int**|  | [optional] |
+| **service_contract_name** | **string**|  | [optional] |
+| **status** | **string**|  | [optional] |
+| **include_archived** | **bool**| include archived appointments | [optional] |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetAppointments200Response**](../Model/GetAppointments200Response.md)
+[**\InfracorpExtranetClient\Model\GetAppointments200Response**](../Model/GetAppointments200Response.md)
 
 ### Authorization
 
@@ -868,7 +886,7 @@ This endpoint does not need any parameter.
 ## `getAttachment()`
 
 ```php
-getAttachment($id): \Infracorp\Extranet\Client\Model\Attachment
+getAttachment($id): \InfracorpExtranetClient\Model\Attachment
 ```
 
 Attachment
@@ -883,15 +901,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -915,7 +933,149 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Attachment**](../Model/Attachment.md)
+[**\InfracorpExtranetClient\Model\Attachment**](../Model/Attachment.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getClientContract()`
+
+```php
+getClientContract($id): \InfracorpExtranetClient\Model\ClientContract
+```
+
+Client Contract
+
+Récupérer le détail d'un contrat client
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | identifiant du contrat client
+
+try {
+    $result = $apiInstance->getClientContract($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getClientContract: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| identifiant du contrat client | |
+
+### Return type
+
+[**\InfracorpExtranetClient\Model\ClientContract**](../Model/ClientContract.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getClientContracts()`
+
+```php
+getClientContracts($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $search): \InfracorpExtranetClient\Model\GetClientContracts200Response
+```
+
+Client Contracts
+
+Récupérer une liste de contrats clients
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$page = 56; // int
+$items_per_page = 56; // int
+$sort_id = 'sort_id_example'; // string
+$sort_create_date = 'sort_create_date_example'; // string
+$client_legal_entity_id = 56; // int
+$legal_entity_id = 56; // int
+$search = 'search_example'; // string
+
+try {
+    $result = $apiInstance->getClientContracts($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $search);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getClientContracts: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **page** | **int**|  | [optional] |
+| **items_per_page** | **int**|  | [optional] |
+| **sort_id** | **string**|  | [optional] |
+| **sort_create_date** | **string**|  | [optional] |
+| **client_legal_entity_id** | **int**|  | [optional] |
+| **legal_entity_id** | **int**|  | [optional] |
+| **search** | **string**|  | [optional] |
+
+### Return type
+
+[**\InfracorpExtranetClient\Model\GetClientContracts200Response**](../Model/GetClientContracts200Response.md)
 
 ### Authorization
 
@@ -933,7 +1093,7 @@ try {
 ## `getClientLegalEntities()`
 
 ```php
-getClientLegalEntities($page, $items_per_page, $sort_id, $legal_entity_id, $search): \Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response
+getClientLegalEntities($page, $items_per_page, $sort_id, $legal_entity_id, $search): \InfracorpExtranetClient\Model\GetClientLegalEntities200Response
 ```
 
 Client legal entities
@@ -948,15 +1108,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -988,7 +1148,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetClientLegalEntities200Response**](../Model/GetClientLegalEntities200Response.md)
+[**\InfracorpExtranetClient\Model\GetClientLegalEntities200Response**](../Model/GetClientLegalEntities200Response.md)
 
 ### Authorization
 
@@ -1006,7 +1166,7 @@ try {
 ## `getClientLegalEntity()`
 
 ```php
-getClientLegalEntity($id): \Infracorp\Extranet\Client\Model\ClientLegalEntity
+getClientLegalEntity($id): \InfracorpExtranetClient\Model\ClientLegalEntity
 ```
 
 Client legal entity
@@ -1021,15 +1181,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1053,7 +1213,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\ClientLegalEntity**](../Model/ClientLegalEntity.md)
+[**\InfracorpExtranetClient\Model\ClientLegalEntity**](../Model/ClientLegalEntity.md)
 
 ### Authorization
 
@@ -1071,7 +1231,7 @@ try {
 ## `getCommentThread()`
 
 ```php
-getCommentThread($id): \Infracorp\Extranet\Client\Model\CommentThread
+getCommentThread($id): \InfracorpExtranetClient\Model\CommentThread
 ```
 
 Comment thread
@@ -1086,15 +1246,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1118,7 +1278,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CommentThread**](../Model/CommentThread.md)
+[**\InfracorpExtranetClient\Model\CommentThread**](../Model/CommentThread.md)
 
 ### Authorization
 
@@ -1136,7 +1296,7 @@ try {
 ## `getCommentThreads()`
 
 ```php
-getCommentThreads($entity_class, $entity_id): \Infracorp\Extranet\Client\Model\CommentThread[]
+getCommentThreads($entity_class, $entity_id): \InfracorpExtranetClient\Model\CommentThread[]
 ```
 
 Comment threads
@@ -1151,15 +1311,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1185,7 +1345,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CommentThread[]**](../Model/CommentThread.md)
+[**\InfracorpExtranetClient\Model\CommentThread[]**](../Model/CommentThread.md)
 
 ### Authorization
 
@@ -1203,7 +1363,7 @@ try {
 ## `getCommercialOffer()`
 
 ```php
-getCommercialOffer($id): \Infracorp\Extranet\Client\Model\CommercialOffer
+getCommercialOffer($id): \InfracorpExtranetClient\Model\CommercialOffer
 ```
 
 Commercial Offer
@@ -1218,15 +1378,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1250,7 +1410,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CommercialOffer**](../Model/CommercialOffer.md)
+[**\InfracorpExtranetClient\Model\CommercialOffer**](../Model/CommercialOffer.md)
 
 ### Authorization
 
@@ -1268,7 +1428,7 @@ try {
 ## `getCommercialOfferByName()`
 
 ```php
-getCommercialOfferByName($offer_name): \Infracorp\Extranet\Client\Model\CommercialOffer
+getCommercialOfferByName($offer_name): \InfracorpExtranetClient\Model\CommercialOffer
 ```
 
 Commercial Offer by reference CPTXXXXXX, CPIXXXXXX
@@ -1283,15 +1443,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1315,7 +1475,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CommercialOffer**](../Model/CommercialOffer.md)
+[**\InfracorpExtranetClient\Model\CommercialOffer**](../Model/CommercialOffer.md)
 
 ### Authorization
 
@@ -1333,7 +1493,7 @@ try {
 ## `getCommercialOfferItem()`
 
 ```php
-getCommercialOfferItem($id): \Infracorp\Extranet\Client\Model\CommercialOfferItem
+getCommercialOfferItem($id): \InfracorpExtranetClient\Model\CommercialOfferItem
 ```
 
 Commercial Offer Item
@@ -1348,15 +1508,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1380,7 +1540,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CommercialOfferItem**](../Model/CommercialOfferItem.md)
+[**\InfracorpExtranetClient\Model\CommercialOfferItem**](../Model/CommercialOfferItem.md)
 
 ### Authorization
 
@@ -1413,15 +1573,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1463,7 +1623,7 @@ try {
 ## `getCommercialOfferSection()`
 
 ```php
-getCommercialOfferSection($id): \Infracorp\Extranet\Client\Model\CommercialOfferSection
+getCommercialOfferSection($id): \InfracorpExtranetClient\Model\CommercialOfferSection
 ```
 
 Commercial Offer Section
@@ -1478,15 +1638,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1510,7 +1670,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CommercialOfferSection**](../Model/CommercialOfferSection.md)
+[**\InfracorpExtranetClient\Model\CommercialOfferSection**](../Model/CommercialOfferSection.md)
 
 ### Authorization
 
@@ -1528,7 +1688,7 @@ try {
 ## `getCommercialOffers()`
 
 ```php
-getCommercialOffers($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $search): \Infracorp\Extranet\Client\Model\GetCommercialOffers200Response
+getCommercialOffers($page, $items_per_page, $sort_id, $sort_create_date, $legal_entity_id, $client_legal_entity_id, $sections_offer_id, $status, $create_date_from, $create_date_to, $search): \InfracorpExtranetClient\Model\GetCommercialOffers200Response
 ```
 
 Commercial Offers
@@ -1543,15 +1703,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1595,7 +1755,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetCommercialOffers200Response**](../Model/GetCommercialOffers200Response.md)
+[**\InfracorpExtranetClient\Model\GetCommercialOffers200Response**](../Model/GetCommercialOffers200Response.md)
 
 ### Authorization
 
@@ -1613,7 +1773,7 @@ try {
 ## `getCurrentUser()`
 
 ```php
-getCurrentUser(): \Infracorp\Extranet\Client\Model\User
+getCurrentUser(): \InfracorpExtranetClient\Model\User
 ```
 
 User
@@ -1628,15 +1788,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1657,7 +1817,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\User**](../Model/User.md)
+[**\InfracorpExtranetClient\Model\User**](../Model/User.md)
 
 ### Authorization
 
@@ -1675,7 +1835,7 @@ This endpoint does not need any parameter.
 ## `getEligibility()`
 
 ```php
-getEligibility($id): \Infracorp\Extranet\Client\Model\GetEligibility
+getEligibility($id): \InfracorpExtranetClient\Model\GetEligibility
 ```
 
 Get Eligibility
@@ -1690,15 +1850,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1722,7 +1882,74 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetEligibility**](../Model/GetEligibility.md)
+[**\InfracorpExtranetClient\Model\GetEligibility**](../Model/GetEligibility.md)
+
+### Authorization
+
+[tokenAuth](../../README.md#tokenAuth), [bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getEligibilityBasedOfferContextsShortened()`
+
+```php
+getEligibilityBasedOfferContextsShortened($id, $legacy): \InfracorpExtranetClient\Model\EligibilityBasedOfferContextShortened[]
+```
+
+Eligibility Based Offer Contexts
+
+Get all prices combinations for an offer and a price list (shortened)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: tokenAuth
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer authorization: bearerAuth
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int
+$legacy = True; // bool
+
+try {
+    $result = $apiInstance->getEligibilityBasedOfferContextsShortened($id, $legacy);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getEligibilityBasedOfferContextsShortened: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **legacy** | **bool**|  | [optional] |
+
+### Return type
+
+[**\InfracorpExtranetClient\Model\EligibilityBasedOfferContextShortened[]**](../Model/EligibilityBasedOfferContextShortened.md)
 
 ### Authorization
 
@@ -1740,7 +1967,7 @@ try {
 ## `getEntityAttachments()`
 
 ```php
-getEntityAttachments($entity_id, $entity_type): \Infracorp\Extranet\Client\Model\GetPublicAttachments200Response
+getEntityAttachments($entity_id, $entity_type): \InfracorpExtranetClient\Model\GetPublicAttachments200Response
 ```
 
 Attachements entity
@@ -1755,15 +1982,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1789,7 +2016,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetPublicAttachments200Response**](../Model/GetPublicAttachments200Response.md)
+[**\InfracorpExtranetClient\Model\GetPublicAttachments200Response**](../Model/GetPublicAttachments200Response.md)
 
 ### Authorization
 
@@ -1807,7 +2034,7 @@ try {
 ## `getInvoice()`
 
 ```php
-getInvoice($id): \Infracorp\Extranet\Client\Model\Invoice
+getInvoice($id): \InfracorpExtranetClient\Model\Invoice
 ```
 
 Invoice
@@ -1822,15 +2049,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1854,7 +2081,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Invoice**](../Model/Invoice.md)
+[**\InfracorpExtranetClient\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -1872,7 +2099,7 @@ try {
 ## `getInvoiceDetail()`
 
 ```php
-getInvoiceDetail($id): \Infracorp\Extranet\Client\Model\InvoiceDetail
+getInvoiceDetail($id): \InfracorpExtranetClient\Model\InvoiceDetail
 ```
 
 Invoice Detail
@@ -1887,15 +2114,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1919,7 +2146,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\InvoiceDetail**](../Model/InvoiceDetail.md)
+[**\InfracorpExtranetClient\Model\InvoiceDetail**](../Model/InvoiceDetail.md)
 
 ### Authorization
 
@@ -1952,15 +2179,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2002,7 +2229,7 @@ try {
 ## `getInvoices()`
 
 ```php
-getInvoices($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $search): \Infracorp\Extranet\Client\Model\GetInvoices200Response
+getInvoices($page, $items_per_page, $sort_id, $sort_create_date, $client_legal_entity_id, $legal_entity_id, $month, $year, $search): \InfracorpExtranetClient\Model\GetInvoices200Response
 ```
 
 Invoices
@@ -2017,15 +2244,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2065,7 +2292,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetInvoices200Response**](../Model/GetInvoices200Response.md)
+[**\InfracorpExtranetClient\Model\GetInvoices200Response**](../Model/GetInvoices200Response.md)
 
 ### Authorization
 
@@ -2083,7 +2310,7 @@ try {
 ## `getLegalEntities()`
 
 ```php
-getLegalEntities($page, $items_per_page, $sort_id): \Infracorp\Extranet\Client\Model\GetLegalEntities200Response
+getLegalEntities($page, $items_per_page, $sort_id): \InfracorpExtranetClient\Model\GetLegalEntities200Response
 ```
 
 Legal entities
@@ -2098,15 +2325,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2134,7 +2361,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetLegalEntities200Response**](../Model/GetLegalEntities200Response.md)
+[**\InfracorpExtranetClient\Model\GetLegalEntities200Response**](../Model/GetLegalEntities200Response.md)
 
 ### Authorization
 
@@ -2152,7 +2379,7 @@ try {
 ## `getLegalEntity()`
 
 ```php
-getLegalEntity($id): \Infracorp\Extranet\Client\Model\LegalEntity
+getLegalEntity($id): \InfracorpExtranetClient\Model\LegalEntity
 ```
 
 Legal entity
@@ -2167,15 +2394,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2199,7 +2426,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\LegalEntity**](../Model/LegalEntity.md)
+[**\InfracorpExtranetClient\Model\LegalEntity**](../Model/LegalEntity.md)
 
 ### Authorization
 
@@ -2217,7 +2444,7 @@ try {
 ## `getOfferContext()`
 
 ```php
-getOfferContext($id, $items, $distance): \Infracorp\Extranet\Client\Model\OfferContext
+getOfferContext($id, $price_list, $groups, $autofill_offer, $items, $distance, $client_contract, $zip_code): \InfracorpExtranetClient\Model\OfferContext
 ```
 
 Offers Context
@@ -2232,26 +2459,31 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int
-$items = array(56); // int[] | price list items ids
+$price_list = 56; // int
+$groups = array('groups_example'); // string[] | group list (e.g. bandwith, commitment, ...)
+$autofill_offer = True; // bool | add default products for each missing required groups to get a valid offer
+$items = array(56); // int[] | determined items id to avoid combination with (e.g. FAS which are determined during eligibility)
 $distance = 56; // int | distance for L2 basic offer
+$client_contract = 56; // int | client contract id
+$zip_code = 'zip_code_example'; // string | zip code
 
 try {
-    $result = $apiInstance->getOfferContext($id, $items, $distance);
+    $result = $apiInstance->getOfferContext($id, $price_list, $groups, $autofill_offer, $items, $distance, $client_contract, $zip_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getOfferContext: ', $e->getMessage(), PHP_EOL;
@@ -2263,12 +2495,17 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**|  | |
-| **items** | [**int[]**](../Model/int.md)| price list items ids | |
+| **price_list** | **int**|  | |
+| **groups** | [**string[]**](../Model/string.md)| group list (e.g. bandwith, commitment, ...) | [optional] |
+| **autofill_offer** | **bool**| add default products for each missing required groups to get a valid offer | [optional] |
+| **items** | [**int[]**](../Model/int.md)| determined items id to avoid combination with (e.g. FAS which are determined during eligibility) | [optional] |
 | **distance** | **int**| distance for L2 basic offer | [optional] |
+| **client_contract** | **int**| client contract id | [optional] |
+| **zip_code** | **string**| zip code | [optional] |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\OfferContext**](../Model/OfferContext.md)
+[**\InfracorpExtranetClient\Model\OfferContext**](../Model/OfferContext.md)
 
 ### Authorization
 
@@ -2286,7 +2523,7 @@ try {
 ## `getOfferContexts()`
 
 ```php
-getOfferContexts($id, $price_list, $groups, $autofill_offer, $items, $distance): \Infracorp\Extranet\Client\Model\OfferContext[]
+getOfferContexts($id, $price_list, $groups, $autofill_offer, $items, $distance, $client_contract, $zip_code): \InfracorpExtranetClient\Model\OfferContext[]
 ```
 
 Offers Contexts
@@ -2301,15 +2538,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2321,9 +2558,11 @@ $groups = array('groups_example'); // string[] | group list (e.g. bandwith, comm
 $autofill_offer = True; // bool | add default products for each missing required groups to get a valid offer
 $items = array(56); // int[] | determined items id to avoid combination with (e.g. FAS which are determined during eligibility)
 $distance = 56; // int | estimate of the extension of our network to be built
+$client_contract = 56; // int | client contract id
+$zip_code = 'zip_code_example'; // string | zip code
 
 try {
-    $result = $apiInstance->getOfferContexts($id, $price_list, $groups, $autofill_offer, $items, $distance);
+    $result = $apiInstance->getOfferContexts($id, $price_list, $groups, $autofill_offer, $items, $distance, $client_contract, $zip_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getOfferContexts: ', $e->getMessage(), PHP_EOL;
@@ -2340,10 +2579,12 @@ try {
 | **autofill_offer** | **bool**| add default products for each missing required groups to get a valid offer | [optional] |
 | **items** | [**int[]**](../Model/int.md)| determined items id to avoid combination with (e.g. FAS which are determined during eligibility) | [optional] |
 | **distance** | **int**| estimate of the extension of our network to be built | [optional] |
+| **client_contract** | **int**| client contract id | [optional] |
+| **zip_code** | **string**| zip code | [optional] |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\OfferContext[]**](../Model/OfferContext.md)
+[**\InfracorpExtranetClient\Model\OfferContext[]**](../Model/OfferContext.md)
 
 ### Authorization
 
@@ -2361,7 +2602,7 @@ try {
 ## `getOfferContextsShortened()`
 
 ```php
-getOfferContextsShortened($id, $price_list, $groups, $autofill_offer, $items, $distance): \Infracorp\Extranet\Client\Model\OfferContextShortened[]
+getOfferContextsShortened($id, $price_list, $groups, $autofill_offer, $items, $distance, $client_contract, $zip_code): \InfracorpExtranetClient\Model\OfferContextShortened[]
 ```
 
 Offers Contexts
@@ -2376,15 +2617,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2396,9 +2637,11 @@ $groups = array('groups_example'); // string[] | group list (e.g. bandwith, comm
 $autofill_offer = True; // bool | add default products for each missing required groups to get a valid offer
 $items = array(56); // int[] | determined items id to avoid combination with (e.g. FAS which are determined during eligibility)
 $distance = 56; // int | estimate of the extension of our network to be built
+$client_contract = 56; // int | client contract id
+$zip_code = 'zip_code_example'; // string | zip code
 
 try {
-    $result = $apiInstance->getOfferContextsShortened($id, $price_list, $groups, $autofill_offer, $items, $distance);
+    $result = $apiInstance->getOfferContextsShortened($id, $price_list, $groups, $autofill_offer, $items, $distance, $client_contract, $zip_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getOfferContextsShortened: ', $e->getMessage(), PHP_EOL;
@@ -2415,10 +2658,12 @@ try {
 | **autofill_offer** | **bool**| add default products for each missing required groups to get a valid offer | [optional] |
 | **items** | [**int[]**](../Model/int.md)| determined items id to avoid combination with (e.g. FAS which are determined during eligibility) | [optional] |
 | **distance** | **int**| estimate of the extension of our network to be built | [optional] |
+| **client_contract** | **int**| client contract id | [optional] |
+| **zip_code** | **string**| zip code | [optional] |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\OfferContextShortened[]**](../Model/OfferContextShortened.md)
+[**\InfracorpExtranetClient\Model\OfferContextShortened[]**](../Model/OfferContextShortened.md)
 
 ### Authorization
 
@@ -2436,7 +2681,7 @@ try {
 ## `getOffers()`
 
 ```php
-getOffers($ids, $codes): \Infracorp\Extranet\Client\Model\Offer[]
+getOffers($ids, $codes): \InfracorpExtranetClient\Model\Offer[]
 ```
 
 Offers
@@ -2451,15 +2696,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2485,7 +2730,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Offer[]**](../Model/Offer.md)
+[**\InfracorpExtranetClient\Model\Offer[]**](../Model/Offer.md)
 
 ### Authorization
 
@@ -2503,7 +2748,7 @@ try {
 ## `getOperatorTickets()`
 
 ```php
-getOperatorTickets($id): \Infracorp\Extranet\Client\Model\Ticket[]
+getOperatorTickets($id): \InfracorpExtranetClient\Model\Ticket[]
 ```
 
 Exploitation Operator Tickets
@@ -2518,15 +2763,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2550,7 +2795,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Ticket[]**](../Model/Ticket.md)
+[**\InfracorpExtranetClient\Model\Ticket[]**](../Model/Ticket.md)
 
 ### Authorization
 
@@ -2568,7 +2813,7 @@ try {
 ## `getPriceList()`
 
 ```php
-getPriceList($id): \Infracorp\Extranet\Client\Model\PriceList
+getPriceList($id): \InfracorpExtranetClient\Model\PriceList
 ```
 
 Price List
@@ -2583,15 +2828,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2615,7 +2860,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\PriceList**](../Model/PriceList.md)
+[**\InfracorpExtranetClient\Model\PriceList**](../Model/PriceList.md)
 
 ### Authorization
 
@@ -2633,7 +2878,7 @@ try {
 ## `getPriceListItems()`
 
 ```php
-getPriceListItems($ids): \Infracorp\Extranet\Client\Model\PriceListItem[]
+getPriceListItems($ids): \InfracorpExtranetClient\Model\PriceListItem[]
 ```
 
 Price List Items
@@ -2648,15 +2893,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2680,7 +2925,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\PriceListItem[]**](../Model/PriceListItem.md)
+[**\InfracorpExtranetClient\Model\PriceListItem[]**](../Model/PriceListItem.md)
 
 ### Authorization
 
@@ -2698,7 +2943,7 @@ try {
 ## `getPriceListOffers()`
 
 ```php
-getPriceListOffers($id): \Infracorp\Extranet\Client\Model\PricesListOffers
+getPriceListOffers($id): \InfracorpExtranetClient\Model\PricesListOffers
 ```
 
 Price List Offers
@@ -2713,15 +2958,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2745,7 +2990,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\PricesListOffers**](../Model/PricesListOffers.md)
+[**\InfracorpExtranetClient\Model\PricesListOffers**](../Model/PricesListOffers.md)
 
 ### Authorization
 
@@ -2763,7 +3008,7 @@ try {
 ## `getPriceLists()`
 
 ```php
-getPriceLists($ids): \Infracorp\Extranet\Client\Model\PriceList[]
+getPriceLists($ids): \InfracorpExtranetClient\Model\PriceList[]
 ```
 
 Price Lists
@@ -2778,15 +3023,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2810,7 +3055,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\PriceList[]**](../Model/PriceList.md)
+[**\InfracorpExtranetClient\Model\PriceList[]**](../Model/PriceList.md)
 
 ### Authorization
 
@@ -2828,7 +3073,7 @@ try {
 ## `getProcess()`
 
 ```php
-getProcess($id, $process_id): \Infracorp\Extranet\Client\Model\Process
+getProcess($id, $process_id): \InfracorpExtranetClient\Model\Process
 ```
 
 Exploitation Process
@@ -2843,15 +3088,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2877,7 +3122,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Process**](../Model/Process.md)
+[**\InfracorpExtranetClient\Model\Process**](../Model/Process.md)
 
 ### Authorization
 
@@ -2895,7 +3140,7 @@ try {
 ## `getPublicAttachments()`
 
 ```php
-getPublicAttachments(): \Infracorp\Extranet\Client\Model\GetPublicAttachments200Response
+getPublicAttachments(): \InfracorpExtranetClient\Model\GetPublicAttachments200Response
 ```
 
 Attachments Public
@@ -2910,15 +3155,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -2939,7 +3184,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetPublicAttachments200Response**](../Model/GetPublicAttachments200Response.md)
+[**\InfracorpExtranetClient\Model\GetPublicAttachments200Response**](../Model/GetPublicAttachments200Response.md)
 
 ### Authorization
 
@@ -2957,7 +3202,7 @@ This endpoint does not need any parameter.
 ## `getRunningWorkflows()`
 
 ```php
-getRunningWorkflows($contexts, $states): \Infracorp\Extranet\Client\Model\GetRunningWorkflows200Response
+getRunningWorkflows($contexts, $states): \InfracorpExtranetClient\Model\GetRunningWorkflows200Response
 ```
 
 Workflows running
@@ -2972,15 +3217,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3006,7 +3251,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetRunningWorkflows200Response**](../Model/GetRunningWorkflows200Response.md)
+[**\InfracorpExtranetClient\Model\GetRunningWorkflows200Response**](../Model/GetRunningWorkflows200Response.md)
 
 ### Authorization
 
@@ -3024,7 +3269,7 @@ try {
 ## `getService()`
 
 ```php
-getService($id): \Infracorp\Extranet\Client\Model\Service
+getService($id): \InfracorpExtranetClient\Model\Service
 ```
 
 Service
@@ -3039,15 +3284,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3071,7 +3316,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Service**](../Model/Service.md)
+[**\InfracorpExtranetClient\Model\Service**](../Model/Service.md)
 
 ### Authorization
 
@@ -3089,7 +3334,7 @@ try {
 ## `getServiceContract()`
 
 ```php
-getServiceContract($id): \Infracorp\Extranet\Client\Model\ServiceContract
+getServiceContract($id): \InfracorpExtranetClient\Model\ServiceContract
 ```
 
 Service Contract
@@ -3104,15 +3349,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3136,7 +3381,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\ServiceContract**](../Model/ServiceContract.md)
+[**\InfracorpExtranetClient\Model\ServiceContract**](../Model/ServiceContract.md)
 
 ### Authorization
 
@@ -3154,7 +3399,7 @@ try {
 ## `getServiceContractByName()`
 
 ```php
-getServiceContractByName($service_name): \Infracorp\Extranet\Client\Model\ServiceContract
+getServiceContractByName($service_name): \InfracorpExtranetClient\Model\ServiceContract
 ```
 
 Service Contract by name
@@ -3169,15 +3414,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3201,7 +3446,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\ServiceContract**](../Model/ServiceContract.md)
+[**\InfracorpExtranetClient\Model\ServiceContract**](../Model/ServiceContract.md)
 
 ### Authorization
 
@@ -3219,7 +3464,7 @@ try {
 ## `getServiceContractOperationalStatusByName()`
 
 ```php
-getServiceContractOperationalStatusByName($service_name): \Infracorp\Extranet\Client\Model\OperationalStatus
+getServiceContractOperationalStatusByName($service_name): \InfracorpExtranetClient\Model\OperationalStatus
 ```
 
 Get service contract operational status
@@ -3234,15 +3479,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3266,7 +3511,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\OperationalStatus**](../Model/OperationalStatus.md)
+[**\InfracorpExtranetClient\Model\OperationalStatus**](../Model/OperationalStatus.md)
 
 ### Authorization
 
@@ -3284,7 +3529,7 @@ try {
 ## `getServiceContracts()`
 
 ```php
-getServiceContracts($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $offer_id, $search): \Infracorp\Extranet\Client\Model\GetServiceContracts200Response
+getServiceContracts($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $offer_id, $client_contract_id, $client_legal_entity_id, $search): \InfracorpExtranetClient\Model\GetServiceContracts200Response
 ```
 
 Service Contracts
@@ -3299,15 +3544,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3320,10 +3565,12 @@ $sort_status = 'sort_status_example'; // string
 $status = 'status_example'; // string
 $legal_entity_id = 56; // int
 $offer_id = 56; // int
+$client_contract_id = 56; // int
+$client_legal_entity_id = 56; // int
 $search = 'search_example'; // string
 
 try {
-    $result = $apiInstance->getServiceContracts($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $offer_id, $search);
+    $result = $apiInstance->getServiceContracts($page, $items_per_page, $sort_id, $sort_status, $status, $legal_entity_id, $offer_id, $client_contract_id, $client_legal_entity_id, $search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getServiceContracts: ', $e->getMessage(), PHP_EOL;
@@ -3341,11 +3588,13 @@ try {
 | **status** | **string**|  | [optional] |
 | **legal_entity_id** | **int**|  | [optional] |
 | **offer_id** | **int**|  | [optional] |
+| **client_contract_id** | **int**|  | [optional] |
+| **client_legal_entity_id** | **int**|  | [optional] |
 | **search** | **string**|  | [optional] |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetServiceContracts200Response**](../Model/GetServiceContracts200Response.md)
+[**\InfracorpExtranetClient\Model\GetServiceContracts200Response**](../Model/GetServiceContracts200Response.md)
 
 ### Authorization
 
@@ -3363,7 +3612,7 @@ try {
 ## `getServices()`
 
 ```php
-getServices($page, $items_per_page, $sort_id, $legal_entity_id): \Infracorp\Extranet\Client\Model\GetServices200Response
+getServices($page, $items_per_page, $sort_id, $legal_entity_id): \InfracorpExtranetClient\Model\GetServices200Response
 ```
 
 Services
@@ -3378,15 +3627,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3416,7 +3665,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetServices200Response**](../Model/GetServices200Response.md)
+[**\InfracorpExtranetClient\Model\GetServices200Response**](../Model/GetServices200Response.md)
 
 ### Authorization
 
@@ -3434,7 +3683,7 @@ try {
 ## `getTicket()`
 
 ```php
-getTicket($id, $ref): \Infracorp\Extranet\Client\Model\OperatorTicket
+getTicket($id, $ref): \InfracorpExtranetClient\Model\OperatorTicket
 ```
 
 Exploitation Ticket
@@ -3449,15 +3698,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3483,7 +3732,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\OperatorTicket**](../Model/OperatorTicket.md)
+[**\InfracorpExtranetClient\Model\OperatorTicket**](../Model/OperatorTicket.md)
 
 ### Authorization
 
@@ -3501,7 +3750,7 @@ try {
 ## `getTickets()`
 
 ```php
-getTickets($sort_date_creation, $etat, $operator, $show_archived): \Infracorp\Extranet\Client\Model\Ticket[]
+getTickets($sort_date_creation, $etat, $operator, $show_archived): \InfracorpExtranetClient\Model\Ticket[]
 ```
 
 Exploitation Tickets
@@ -3516,15 +3765,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3554,7 +3803,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Ticket[]**](../Model/Ticket.md)
+[**\InfracorpExtranetClient\Model\Ticket[]**](../Model/Ticket.md)
 
 ### Authorization
 
@@ -3572,7 +3821,7 @@ try {
 ## `getWorkflow()`
 
 ```php
-getWorkflow($id): \Infracorp\Extranet\Client\Model\Workflow
+getWorkflow($id): \InfracorpExtranetClient\Model\Workflow
 ```
 
 Workflow
@@ -3587,15 +3836,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3619,7 +3868,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Workflow**](../Model/Workflow.md)
+[**\InfracorpExtranetClient\Model\Workflow**](../Model/Workflow.md)
 
 ### Authorization
 
@@ -3637,7 +3886,7 @@ try {
 ## `openTicket()`
 
 ```php
-openTicket($id, $service_id): \Infracorp\Extranet\Client\Model\CreateTicket
+openTicket($id, $service_id): \InfracorpExtranetClient\Model\CreateTicket
 ```
 
 Exploitation Tickets
@@ -3652,15 +3901,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3686,7 +3935,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateTicket**](../Model/CreateTicket.md)
+[**\InfracorpExtranetClient\Model\CreateTicket**](../Model/CreateTicket.md)
 
 ### Authorization
 
@@ -3719,15 +3968,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3770,7 +4019,7 @@ void (empty response body)
 ## `renameCommercialOfferSection()`
 
 ```php
-renameCommercialOfferSection($id, $section_id, $rename_commercial_offer_section): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+renameCommercialOfferSection($id, $section_id, $rename_commercial_offer_section): \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
 ```
 
 Rename Commercial Offer Section
@@ -3785,15 +4034,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3801,7 +4050,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
 );
 $id = 56; // int | identifiant du devis
 $section_id = 56; // int | identifiant de la section
-$rename_commercial_offer_section = new \Infracorp\Extranet\Client\Model\RenameCommercialOfferSection(); // \Infracorp\Extranet\Client\Model\RenameCommercialOfferSection
+$rename_commercial_offer_section = new \InfracorpExtranetClient\Model\RenameCommercialOfferSection(); // \InfracorpExtranetClient\Model\RenameCommercialOfferSection
 
 try {
     $result = $apiInstance->renameCommercialOfferSection($id, $section_id, $rename_commercial_offer_section);
@@ -3817,11 +4066,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| identifiant du devis | |
 | **section_id** | **int**| identifiant de la section | |
-| **rename_commercial_offer_section** | [**\Infracorp\Extranet\Client\Model\RenameCommercialOfferSection**](../Model/RenameCommercialOfferSection.md)|  | |
+| **rename_commercial_offer_section** | [**\InfracorpExtranetClient\Model\RenameCommercialOfferSection**](../Model/RenameCommercialOfferSection.md)|  | |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+[**\InfracorpExtranetClient\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
 
 ### Authorization
 
@@ -3839,7 +4088,7 @@ try {
 ## `runProcess()`
 
 ```php
-runProcess($id, $process_id, $files, $transition_class): \Infracorp\Extranet\Client\Model\Process
+runProcess($id, $process_id, $files, $transition_class): \InfracorpExtranetClient\Model\Process
 ```
 
 Exploitation Process
@@ -3854,15 +4103,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3892,7 +4141,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Process**](../Model/Process.md)
+[**\InfracorpExtranetClient\Model\Process**](../Model/Process.md)
 
 ### Authorization
 
@@ -3910,7 +4159,7 @@ try {
 ## `runWorkflow()`
 
 ```php
-runWorkflow($id, $files): \Infracorp\Extranet\Client\Model\GetWorkflow
+runWorkflow($id, $files): \InfracorpExtranetClient\Model\GetWorkflow
 ```
 
 Workflow
@@ -3925,15 +4174,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -3959,7 +4208,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\GetWorkflow**](../Model/GetWorkflow.md)
+[**\InfracorpExtranetClient\Model\GetWorkflow**](../Model/GetWorkflow.md)
 
 ### Authorization
 
@@ -3977,7 +4226,7 @@ try {
 ## `search()`
 
 ```php
-search($q, $legal_entity_id, $client_legal_entity_id): \Infracorp\Extranet\Client\Model\Search200ResponseInner[]
+search($q, $legal_entity_id, $client_legal_entity_id): \InfracorpExtranetClient\Model\Search200ResponseInner[]
 ```
 
 Search
@@ -3992,15 +4241,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -4028,7 +4277,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\Search200ResponseInner[]**](../Model/Search200ResponseInner.md)
+[**\InfracorpExtranetClient\Model\Search200ResponseInner[]**](../Model/Search200ResponseInner.md)
 
 ### Authorization
 
@@ -4046,7 +4295,7 @@ try {
 ## `setCommercialOfferSectionOffer()`
 
 ```php
-setCommercialOfferSectionOffer($id, $section_id, $set_commercial_offer_section_offer): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+setCommercialOfferSectionOffer($id, $section_id, $set_commercial_offer_section_offer): \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
 ```
 
 Set Commercial Offer Section Offer
@@ -4061,15 +4310,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -4077,7 +4326,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
 );
 $id = 56; // int | identifiant du devis
 $section_id = 56; // int | identifiant de la section
-$set_commercial_offer_section_offer = new \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOffer(); // \Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOffer
+$set_commercial_offer_section_offer = new \InfracorpExtranetClient\Model\SetCommercialOfferSectionOffer(); // \InfracorpExtranetClient\Model\SetCommercialOfferSectionOffer
 
 try {
     $result = $apiInstance->setCommercialOfferSectionOffer($id, $section_id, $set_commercial_offer_section_offer);
@@ -4093,11 +4342,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| identifiant du devis | |
 | **section_id** | **int**| identifiant de la section | |
-| **set_commercial_offer_section_offer** | [**\Infracorp\Extranet\Client\Model\SetCommercialOfferSectionOffer**](../Model/SetCommercialOfferSectionOffer.md)|  | |
+| **set_commercial_offer_section_offer** | [**\InfracorpExtranetClient\Model\SetCommercialOfferSectionOffer**](../Model/SetCommercialOfferSectionOffer.md)|  | |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+[**\InfracorpExtranetClient\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
 
 ### Authorization
 
@@ -4115,7 +4364,7 @@ try {
 ## `setServiceContractVlan()`
 
 ```php
-setServiceContractVlan($id, $set_service_contract_vlan_request): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+setServiceContractVlan($id, $set_service_contract_vlan_request): \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
 ```
 
 Service Contract set vlan
@@ -4130,22 +4379,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | service contract identifier
-$set_service_contract_vlan_request = new \Infracorp\Extranet\Client\Model\SetServiceContractVlanRequest(); // \Infracorp\Extranet\Client\Model\SetServiceContractVlanRequest
+$set_service_contract_vlan_request = new \InfracorpExtranetClient\Model\SetServiceContractVlanRequest(); // \InfracorpExtranetClient\Model\SetServiceContractVlanRequest
 
 try {
     $result = $apiInstance->setServiceContractVlan($id, $set_service_contract_vlan_request);
@@ -4160,11 +4409,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| service contract identifier | |
-| **set_service_contract_vlan_request** | [**\Infracorp\Extranet\Client\Model\SetServiceContractVlanRequest**](../Model/SetServiceContractVlanRequest.md)|  | |
+| **set_service_contract_vlan_request** | [**\InfracorpExtranetClient\Model\SetServiceContractVlanRequest**](../Model/SetServiceContractVlanRequest.md)|  | |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+[**\InfracorpExtranetClient\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
 
 ### Authorization
 
@@ -4182,7 +4431,7 @@ try {
 ## `signCommercialOffer()`
 
 ```php
-signCommercialOffer($id, $sign_commercial_offer): \Infracorp\Extranet\Client\Model\SignCommercialOffer200Response
+signCommercialOffer($id, $sign_commercial_offer): \InfracorpExtranetClient\Model\SignCommercialOffer200Response
 ```
 
 Sign Commercial Offer
@@ -4197,22 +4446,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | identifiant du devis
-$sign_commercial_offer = new \Infracorp\Extranet\Client\Model\SignCommercialOffer(); // \Infracorp\Extranet\Client\Model\SignCommercialOffer
+$sign_commercial_offer = new \InfracorpExtranetClient\Model\SignCommercialOffer(); // \InfracorpExtranetClient\Model\SignCommercialOffer
 
 try {
     $result = $apiInstance->signCommercialOffer($id, $sign_commercial_offer);
@@ -4227,11 +4476,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| identifiant du devis | |
-| **sign_commercial_offer** | [**\Infracorp\Extranet\Client\Model\SignCommercialOffer**](../Model/SignCommercialOffer.md)|  | [optional] |
+| **sign_commercial_offer** | [**\InfracorpExtranetClient\Model\SignCommercialOffer**](../Model/SignCommercialOffer.md)|  | [optional] |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\SignCommercialOffer200Response**](../Model/SignCommercialOffer200Response.md)
+[**\InfracorpExtranetClient\Model\SignCommercialOffer200Response**](../Model/SignCommercialOffer200Response.md)
 
 ### Authorization
 
@@ -4249,7 +4498,7 @@ try {
 ## `submitCommercialOffer()`
 
 ```php
-submitCommercialOffer($id): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+submitCommercialOffer($id): \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
 ```
 
 Submit Commercial Offer
@@ -4264,15 +4513,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -4296,7 +4545,7 @@ try {
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+[**\InfracorpExtranetClient\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
 
 ### Authorization
 
@@ -4314,7 +4563,7 @@ try {
 ## `updateCommercialOfferSectionItems()`
 
 ```php
-updateCommercialOfferSectionItems($id, $section_id, $update_commercial_offer_section_items): \Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response
+updateCommercialOfferSectionItems($id, $section_id, $update_commercial_offer_section_items): \InfracorpExtranetClient\Model\CreateCommercialOffer201Response
 ```
 
 Update Commercial Offer Section Items
@@ -4329,15 +4578,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: tokenAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure Bearer authorization: bearerAuth
-$config = Infracorp\Extranet\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = InfracorpExtranetClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
+$apiInstance = new InfracorpExtranetClient\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -4345,7 +4594,7 @@ $apiInstance = new Infracorp\Extranet\Client\Api\DefaultApi(
 );
 $id = 56; // int | identifiant du devis
 $section_id = 56; // int | identifiant de la section
-$update_commercial_offer_section_items = new \Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems(); // \Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems
+$update_commercial_offer_section_items = new \InfracorpExtranetClient\Model\UpdateCommercialOfferSectionItems(); // \InfracorpExtranetClient\Model\UpdateCommercialOfferSectionItems
 
 try {
     $result = $apiInstance->updateCommercialOfferSectionItems($id, $section_id, $update_commercial_offer_section_items);
@@ -4361,11 +4610,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| identifiant du devis | |
 | **section_id** | **int**| identifiant de la section | |
-| **update_commercial_offer_section_items** | [**\Infracorp\Extranet\Client\Model\UpdateCommercialOfferSectionItems**](../Model/UpdateCommercialOfferSectionItems.md)|  | |
+| **update_commercial_offer_section_items** | [**\InfracorpExtranetClient\Model\UpdateCommercialOfferSectionItems**](../Model/UpdateCommercialOfferSectionItems.md)|  | |
 
 ### Return type
 
-[**\Infracorp\Extranet\Client\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
+[**\InfracorpExtranetClient\Model\CreateCommercialOffer201Response**](../Model/CreateCommercialOffer201Response.md)
 
 ### Authorization
 

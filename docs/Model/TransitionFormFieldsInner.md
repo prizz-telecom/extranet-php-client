@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional]
 **required** | **bool** |  | [optional]
 **value** | **string** |  | [optional]
-**values** | [**\Infracorp\Extranet\Client\Model\TransitionFormFieldsInnerValuesInner[]**](TransitionFormFieldsInnerValuesInner.md) |  | [optional]
+**values** | [**\InfracorpExtranetClient\Model\TransitionFormFieldsInnerValuesInner[]**](TransitionFormFieldsInnerValuesInner.md) |  | [optional]
 **type** | **string** |  | [optional]
 **help** | **string** |  | [optional]
 **multiple** | **bool** |  | [optional]

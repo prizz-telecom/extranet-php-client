@@ -22,6 +22,6 @@ Name | Type | Description | Notes
 **date_resolution** | **string** |  | [optional]
 **date_cloture** | **string** |  | [optional]
 **last_message** | **string** |  | [optional]
-**running_process** | [**\Infracorp\Extranet\Client\Model\RunningProcess[]**](RunningProcess.md) |  | [optional]
+**running_process** | [**\InfracorpExtranetClient\Model\RunningProcess[]**](RunningProcess.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
