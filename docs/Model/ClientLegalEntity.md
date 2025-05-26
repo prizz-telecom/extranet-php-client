@@ -26,9 +26,9 @@ Name | Type | Description | Notes
 **y** | **float** |  | [optional]
 **projection** | **string** |  | [optional]
 **arcep_code** | **string** |  | [optional]
-**contacts** | [**\InfracorpExtranetClient\Model\Contact[]**](Contact.md) |  | [optional]
-**configured_contacts** | [**\InfracorpExtranetClient\Model\TypedContact[]**](TypedContact.md) |  | [optional]
-**contracts** | [**\InfracorpExtranetClient\Model\ClientContract[]**](ClientContract.md) |  | [optional]
-**roles** | [**\InfracorpExtranetClient\Model\UserRole[]**](UserRole.md) |  | [optional]
+**contacts** | [**\Infracorp\Extranet\Client\Model\Contact[]**](Contact.md) |  | [optional]
+**configured_contacts** | [**\Infracorp\Extranet\Client\Model\TypedContact[]**](TypedContact.md) |  | [optional]
+**contracts** | [**\Infracorp\Extranet\Client\Model\ClientContract[]**](ClientContract.md) |  | [optional]
+**roles** | [**\Infracorp\Extranet\Client\Model\UserRole[]**](UserRole.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

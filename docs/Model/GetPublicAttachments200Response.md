@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attachments** | [**\InfracorpExtranetClient\Model\Attachment[]**](Attachment.md) |  | [optional]
+**attachments** | [**\Infracorp\Extranet\Client\Model\Attachment[]**](Attachment.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

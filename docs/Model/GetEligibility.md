@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **wfs** | **string** | Workflow status | [optional]
 **attrs** | **object** | Attributes of the workflow | [optional]
 **wftr** | **object[]** | Workflow transitions history | [optional]
-**client** | [**\InfracorpExtranetClient\Model\ClientLegalEntity**](ClientLegalEntity.md) |  | [optional]
-**response** | [**\InfracorpExtranetClient\Model\EligibilityResult[]**](EligibilityResult.md) | Eligibility results | [optional]
+**client** | [**\Infracorp\Extranet\Client\Model\ClientLegalEntity**](ClientLegalEntity.md) |  | [optional]
+**response** | [**\Infracorp\Extranet\Client\Model\EligibilityResult[]**](EligibilityResult.md) | Eligibility results | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
