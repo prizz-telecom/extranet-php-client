@@ -279,6 +279,7 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_DEFAULT_DELIVERY_DOOR_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientContract\\DefaultDeliveryDoor\\Context';
     public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_SFR_FON69_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientContract\\SfrFon69\\Context';
     public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_SERVICE_CONTRACT_UPLOAD_ATTACHMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UploadAttachment\\Context';
+    public const CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_EXPORT_COMBINATIONS_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientContract\\ExportCombinations\\Context';
 
     /**
      * Gets allowable values of the enum
@@ -333,6 +334,7 @@ class CreateWorkflow implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_DEFAULT_DELIVERY_DOOR_CONTEXT,
             self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_SFR_FON69_CONTEXT,
             self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_SERVICE_CONTRACT_UPLOAD_ATTACHMENT_CONTEXT,
+            self::CONTEXT_NAME_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_EXPORT_COMBINATIONS_CONTEXT,
         ];
     }
 

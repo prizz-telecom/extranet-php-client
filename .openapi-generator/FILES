@@ -220,7 +220,3 @@ lib/Model/UserRole.php
 lib/Model/Workflow.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/AppointmentClientLegalEntityTest.php
-test/Model/AppointmentContactTest.php
-test/Model/AppointmentServiceContractTest.php
-test/Model/AppointmentTechTest.php

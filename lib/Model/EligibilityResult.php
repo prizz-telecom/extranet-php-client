@@ -79,6 +79,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rc_min' => 'int',
         'rc_max' => 'int',
         'distance' => 'int',
+        'recurrent_discount_percentage' => 'int',
         'price_list_items_groups' => '\Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups',
         'offer_id' => 'int',
         'price_list_id' => 'int',
@@ -115,6 +116,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rc_min' => null,
         'rc_max' => null,
         'distance' => null,
+        'recurrent_discount_percentage' => null,
         'price_list_items_groups' => null,
         'offer_id' => null,
         'price_list_id' => null,
@@ -149,6 +151,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rc_min' => true,
         'rc_max' => true,
         'distance' => true,
+        'recurrent_discount_percentage' => true,
         'price_list_items_groups' => false,
         'offer_id' => true,
         'price_list_id' => true,
@@ -263,6 +266,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rc_min' => 'rcMin',
         'rc_max' => 'rcMax',
         'distance' => 'distance',
+        'recurrent_discount_percentage' => 'recurrentDiscountPercentage',
         'price_list_items_groups' => 'priceListItemsGroups',
         'offer_id' => 'offerId',
         'price_list_id' => 'priceListId',
@@ -297,6 +301,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rc_min' => 'setRcMin',
         'rc_max' => 'setRcMax',
         'distance' => 'setDistance',
+        'recurrent_discount_percentage' => 'setRecurrentDiscountPercentage',
         'price_list_items_groups' => 'setPriceListItemsGroups',
         'offer_id' => 'setOfferId',
         'price_list_id' => 'setPriceListId',
@@ -331,6 +336,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rc_min' => 'getRcMin',
         'rc_max' => 'getRcMax',
         'distance' => 'getDistance',
+        'recurrent_discount_percentage' => 'getRecurrentDiscountPercentage',
         'price_list_items_groups' => 'getPriceListItemsGroups',
         'offer_id' => 'getOfferId',
         'price_list_id' => 'getPriceListId',
@@ -416,6 +422,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('rc_min', $data ?? [], null);
         $this->setIfExists('rc_max', $data ?? [], null);
         $this->setIfExists('distance', $data ?? [], null);
+        $this->setIfExists('recurrent_discount_percentage', $data ?? [], null);
         $this->setIfExists('price_list_items_groups', $data ?? [], null);
         $this->setIfExists('offer_id', $data ?? [], null);
         $this->setIfExists('price_list_id', $data ?? [], null);
@@ -1180,6 +1187,40 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
             }
         }
         $this->container['distance'] = $distance;
+
+        return $this;
+    }
+
+    /**
+     * Gets recurrent_discount_percentage
+     *
+     * @return int|null
+     */
+    public function getRecurrentDiscountPercentage()
+    {
+        return $this->container['recurrent_discount_percentage'];
+    }
+
+    /**
+     * Sets recurrent_discount_percentage
+     *
+     * @param int|null $recurrent_discount_percentage Discount percentage
+     *
+     * @return self
+     */
+    public function setRecurrentDiscountPercentage($recurrent_discount_percentage)
+    {
+        if (is_null($recurrent_discount_percentage)) {
+            array_push($this->openAPINullablesSetToNull, 'recurrent_discount_percentage');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('recurrent_discount_percentage', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['recurrent_discount_percentage'] = $recurrent_discount_percentage;
 
         return $this;
     }

@@ -351,6 +351,7 @@ class ClientContract implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_DEFAULT_DELIVERY_DOOR_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientContract\\DefaultDeliveryDoor\\Context';
     public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_SFR_FON69_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientContract\\SfrFon69\\Context';
     public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_SERVICE_CONTRACT_UPLOAD_ATTACHMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UploadAttachment\\Context';
+    public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_EXPORT_COMBINATIONS_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientContract\\ExportCombinations\\Context';
     public const BILL_GROUP_MAIN = 'main';
     public const BILL_GROUP_CLIENT_CONTRACT = 'client_contract';
     public const BILL_GROUP_SERVICE_CONTRACT = 'service_contract';
@@ -408,6 +409,7 @@ class ClientContract implements ModelInterface, ArrayAccess, \JsonSerializable
             self::AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_DEFAULT_DELIVERY_DOOR_CONTEXT,
             self::AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_SFR_FON69_CONTEXT,
             self::AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_SERVICE_CONTRACT_UPLOAD_ATTACHMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_EXPORT_COMBINATIONS_CONTEXT,
         ];
     }
 

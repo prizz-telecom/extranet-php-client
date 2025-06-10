@@ -417,11 +417,12 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_DEFAULT_DELIVERY_DOOR_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientContract\\DefaultDeliveryDoor\\Context';
     public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_SFR_FON69_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientContract\\SfrFon69\\Context';
     public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_SERVICE_CONTRACT_UPLOAD_ATTACHMENT_CONTEXT = 'Infracorp\\Services\\Workflow\\ServiceContract\\UploadAttachment\\Context';
+    public const AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_EXPORT_COMBINATIONS_CONTEXT = 'Infracorp\\Services\\Workflow\\ClientContract\\ExportCombinations\\Context';
     public const STATUS_TO_PLAN = 'to_plan';
     public const STATUS_NEED_CONFIRM = 'need_confirm';
     public const STATUS_PLANNED = 'planned';
     public const STATUS_CANCELED = 'canceled';
-    public const STATUS_MISSING_CUSTROMER = 'missing_custromer';
+    public const STATUS_MISSING_CUSTOMER = 'missing_customer';
     public const STATUS_MISSING_TECHNICIAN = 'missing_technician';
     public const STATUS_TERMINATED = 'terminated';
     public const TYPE_TECHNICAL_TOUR = 'technical_tour';
@@ -482,6 +483,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
             self::AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_DEFAULT_DELIVERY_DOOR_CONTEXT,
             self::AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_SFR_FON69_CONTEXT,
             self::AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_SERVICE_CONTRACT_UPLOAD_ATTACHMENT_CONTEXT,
+            self::AVAILABLE_WORKFLOWS_INFRACORP_SERVICES_WORKFLOW_CLIENT_CONTRACT_EXPORT_COMBINATIONS_CONTEXT,
         ];
     }
 
@@ -497,7 +499,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
             self::STATUS_NEED_CONFIRM,
             self::STATUS_PLANNED,
             self::STATUS_CANCELED,
-            self::STATUS_MISSING_CUSTROMER,
+            self::STATUS_MISSING_CUSTOMER,
             self::STATUS_MISSING_TECHNICIAN,
             self::STATUS_TERMINATED,
         ];
