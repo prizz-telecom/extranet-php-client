@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **entity_id** | **int** |  | [optional]
 **public** | **string** |  | [optional]
 **subscribers** | **string[]** |  | [optional]
-**comments** | [**\Infracorp\Extranet\Client\Model\CommentTree[]**](CommentTree.md) |  | [optional]
+**comments** | [**\InfracorpExtranetClient\Model\CommentTree[]**](CommentTree.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

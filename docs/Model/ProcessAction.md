@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **classe** | **string** |  | [optional]
 **html** | **string** |  | [optional]
 **default** | **string** |  | [optional]
-**fields** | [**\Infracorp\Extranet\Client\Model\ProcessActionField[]**](ProcessActionField.md) |  | [optional]
+**fields** | [**\InfracorpExtranetClient\Model\ProcessActionField[]**](ProcessActionField.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

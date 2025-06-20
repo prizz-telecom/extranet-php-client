@@ -278,6 +278,15 @@ class EligibilityResultTest extends TestCase
     }
 
     /**
+     * Test attribute "recurrent_discount_percentage"
+     */
+    public function testPropertyRecurrentDiscountPercentage()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "price_list_items_groups"
      */
     public function testPropertyPriceListItemsGroups()

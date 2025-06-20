@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional]
 **create_date** | **\DateTime** |  | [optional]
 **last_modified_date** | **\DateTime** |  | [optional]
-**user** | [**\Infracorp\Extranet\Client\Model\User**](User.md) |  | [optional]
+**user** | [**\InfracorpExtranetClient\Model\User**](User.md) |  | [optional]
 **role** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
