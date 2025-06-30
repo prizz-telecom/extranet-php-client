@@ -14,12 +14,12 @@ Name | Type | Description | Notes
 **vat** | **string** |  | [optional]
 **recurrence** | **string** |  | [optional]
 **price_list_id** | **int** |  | [optional]
-**product** | [**\InfracorpExtranetClient\Model\Product**](Product.md) |  | [optional]
+**product** | [**\Infracorp\Extranet\Client\Model\Product**](Product.md) |  | [optional]
 **commercial_code** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **inside_offer_only** | **bool** |  | [optional]
 **to_estimate** | **bool** |  | [optional]
 **active** | **bool** |  | [optional]
-**exceptions** | [**\InfracorpExtranetClient\Model\PriceListItemExceptionsInner[]**](PriceListItemExceptionsInner.md) |  | [optional]
+**exceptions** | [**\Infracorp\Extranet\Client\Model\PriceListItemExceptionsInner[]**](PriceListItemExceptionsInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

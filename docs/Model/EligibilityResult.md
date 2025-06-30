@@ -27,9 +27,9 @@ Name | Type | Description | Notes
 **rc_max** | **int** | Maximum recurring cost in mbps | [optional]
 **distance** | **int** | Estimation of the distance to the network to be built in meters | [optional]
 **recurrent_discount_percentage** | **int** | Discount percentage | [optional]
-**price_list_items_groups** | [**\InfracorpExtranetClient\Model\EligibilityResultPriceListItemsGroups**](EligibilityResultPriceListItemsGroups.md) |  | [optional]
+**price_list_items_groups** | [**\Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups**](EligibilityResultPriceListItemsGroups.md) |  | [optional]
 **offer_id** | **int** | Offer id, a unique identifier for the offer | [optional]
 **price_list_id** | **int** | Price list id, a unique identifier for the price list, samed id you can find in client contract | [optional]
-**combinations** | [**\InfracorpExtranetClient\Model\EligibilityResultCombination[]**](EligibilityResultCombination.md) | List of combinations, with prices and attributes | [optional]
+**combinations** | [**\Infracorp\Extranet\Client\Model\EligibilityResultCombination[]**](EligibilityResultCombination.md) | List of combinations, with prices and attributes | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

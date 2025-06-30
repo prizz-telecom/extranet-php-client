@@ -34,6 +34,6 @@ Name | Type | Description | Notes
 **commercial_code** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **to_estimate** | **bool** |  | [optional]
-**price_list_item** | [**\InfracorpExtranetClient\Model\PriceListItem**](PriceListItem.md) |  | [optional]
+**price_list_item** | [**\Infracorp\Extranet\Client\Model\PriceListItem**](PriceListItem.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
