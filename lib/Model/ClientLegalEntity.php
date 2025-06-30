@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * ClientLegalEntity Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -79,10 +79,10 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
         'y' => 'float',
         'projection' => 'string',
         'arcep_code' => 'string',
-        'contacts' => '\Infracorp\Extranet\Client\Model\Contact[]',
-        'configured_contacts' => '\Infracorp\Extranet\Client\Model\TypedContact[]',
-        'contracts' => '\Infracorp\Extranet\Client\Model\ClientContract[]',
-        'roles' => '\Infracorp\Extranet\Client\Model\UserRole[]'
+        'contacts' => '\InfracorpExtranetClient\Model\Contact[]',
+        'configured_contacts' => '\InfracorpExtranetClient\Model\TypedContact[]',
+        'contracts' => '\InfracorpExtranetClient\Model\ClientContract[]',
+        'roles' => '\InfracorpExtranetClient\Model\UserRole[]'
     ];
 
     /**
@@ -1306,7 +1306,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets contacts
      *
-     * @return \Infracorp\Extranet\Client\Model\Contact[]|null
+     * @return \InfracorpExtranetClient\Model\Contact[]|null
      */
     public function getContacts()
     {
@@ -1316,7 +1316,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets contacts
      *
-     * @param \Infracorp\Extranet\Client\Model\Contact[]|null $contacts contacts
+     * @param \InfracorpExtranetClient\Model\Contact[]|null $contacts contacts
      *
      * @return self
      */
@@ -1333,7 +1333,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets configured_contacts
      *
-     * @return \Infracorp\Extranet\Client\Model\TypedContact[]|null
+     * @return \InfracorpExtranetClient\Model\TypedContact[]|null
      */
     public function getConfiguredContacts()
     {
@@ -1343,7 +1343,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets configured_contacts
      *
-     * @param \Infracorp\Extranet\Client\Model\TypedContact[]|null $configured_contacts configured_contacts
+     * @param \InfracorpExtranetClient\Model\TypedContact[]|null $configured_contacts configured_contacts
      *
      * @return self
      */
@@ -1360,7 +1360,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets contracts
      *
-     * @return \Infracorp\Extranet\Client\Model\ClientContract[]|null
+     * @return \InfracorpExtranetClient\Model\ClientContract[]|null
      */
     public function getContracts()
     {
@@ -1370,7 +1370,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets contracts
      *
-     * @param \Infracorp\Extranet\Client\Model\ClientContract[]|null $contracts contracts
+     * @param \InfracorpExtranetClient\Model\ClientContract[]|null $contracts contracts
      *
      * @return self
      */
@@ -1387,7 +1387,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets roles
      *
-     * @return \Infracorp\Extranet\Client\Model\UserRole[]|null
+     * @return \InfracorpExtranetClient\Model\UserRole[]|null
      */
     public function getRoles()
     {
@@ -1397,7 +1397,7 @@ class ClientLegalEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets roles
      *
-     * @param \Infracorp\Extranet\Client\Model\UserRole[]|null $roles roles
+     * @param \InfracorpExtranetClient\Model\UserRole[]|null $roles roles
      *
      * @return self
      */

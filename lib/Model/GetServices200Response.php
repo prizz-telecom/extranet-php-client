@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * GetServices200Response Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class GetServices200Response implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\Infracorp\Extranet\Client\Model\GetClientContracts200ResponsePagination',
-        'items' => '\Infracorp\Extranet\Client\Model\Service[]'
+        'pagination' => '\InfracorpExtranetClient\Model\GetClientContracts200ResponsePagination',
+        'items' => '\InfracorpExtranetClient\Model\Service[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class GetServices200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets pagination
      *
-     * @return \Infracorp\Extranet\Client\Model\GetClientContracts200ResponsePagination|null
+     * @return \InfracorpExtranetClient\Model\GetClientContracts200ResponsePagination|null
      */
     public function getPagination()
     {
@@ -309,7 +309,7 @@ class GetServices200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets pagination
      *
-     * @param \Infracorp\Extranet\Client\Model\GetClientContracts200ResponsePagination|null $pagination pagination
+     * @param \InfracorpExtranetClient\Model\GetClientContracts200ResponsePagination|null $pagination pagination
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class GetServices200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets items
      *
-     * @return \Infracorp\Extranet\Client\Model\Service[]|null
+     * @return \InfracorpExtranetClient\Model\Service[]|null
      */
     public function getItems()
     {
@@ -336,7 +336,7 @@ class GetServices200Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets items
      *
-     * @param \Infracorp\Extranet\Client\Model\Service[]|null $items items
+     * @param \InfracorpExtranetClient\Model\Service[]|null $items items
      *
      * @return self
      */

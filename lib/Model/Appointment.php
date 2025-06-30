@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * Appointment Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -73,10 +73,10 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
         'projection' => 'string',
         'latitude' => 'float',
         'longitude' => 'float',
-        'service_contract' => '\Infracorp\Extranet\Client\Model\ServiceContract',
-        'client_legal_entity' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity',
-        'contact' => '\Infracorp\Extranet\Client\Model\Contact',
-        'tech' => '\Infracorp\Extranet\Client\Model\User',
+        'service_contract' => '\InfracorpExtranetClient\Model\ServiceContract',
+        'client_legal_entity' => '\InfracorpExtranetClient\Model\ClientLegalEntity',
+        'contact' => '\InfracorpExtranetClient\Model\Contact',
+        'tech' => '\InfracorpExtranetClient\Model\User',
         'date' => '\DateTime',
         'accepted' => 'bool',
         'status' => 'string',
@@ -1150,7 +1150,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets service_contract
      *
-     * @return \Infracorp\Extranet\Client\Model\ServiceContract|null
+     * @return \InfracorpExtranetClient\Model\ServiceContract|null
      */
     public function getServiceContract()
     {
@@ -1160,7 +1160,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets service_contract
      *
-     * @param \Infracorp\Extranet\Client\Model\ServiceContract|null $service_contract service_contract
+     * @param \InfracorpExtranetClient\Model\ServiceContract|null $service_contract service_contract
      *
      * @return self
      */
@@ -1184,7 +1184,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets client_legal_entity
      *
-     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntity|null
+     * @return \InfracorpExtranetClient\Model\ClientLegalEntity|null
      */
     public function getClientLegalEntity()
     {
@@ -1194,7 +1194,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets client_legal_entity
      *
-     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntity|null $client_legal_entity client_legal_entity
+     * @param \InfracorpExtranetClient\Model\ClientLegalEntity|null $client_legal_entity client_legal_entity
      *
      * @return self
      */
@@ -1218,7 +1218,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets contact
      *
-     * @return \Infracorp\Extranet\Client\Model\Contact|null
+     * @return \InfracorpExtranetClient\Model\Contact|null
      */
     public function getContact()
     {
@@ -1228,7 +1228,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contact
      *
-     * @param \Infracorp\Extranet\Client\Model\Contact|null $contact contact
+     * @param \InfracorpExtranetClient\Model\Contact|null $contact contact
      *
      * @return self
      */
@@ -1252,7 +1252,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tech
      *
-     * @return \Infracorp\Extranet\Client\Model\User|null
+     * @return \InfracorpExtranetClient\Model\User|null
      */
     public function getTech()
     {
@@ -1262,7 +1262,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tech
      *
-     * @param \Infracorp\Extranet\Client\Model\User|null $tech tech
+     * @param \InfracorpExtranetClient\Model\User|null $tech tech
      *
      * @return self
      */

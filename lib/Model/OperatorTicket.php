@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * OperatorTicket Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -64,8 +64,8 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_resolution' => 'string',
         'date_gtr' => 'string',
         'etat' => 'string',
-        'running_workflows' => '\Infracorp\Extranet\Client\Model\RunningProcess[]',
-        'archived_workflows' => '\Infracorp\Extranet\Client\Model\RunningProcess[]'
+        'running_workflows' => '\InfracorpExtranetClient\Model\RunningProcess[]',
+        'archived_workflows' => '\InfracorpExtranetClient\Model\RunningProcess[]'
     ];
 
     /**
@@ -586,7 +586,7 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets running_workflows
      *
-     * @return \Infracorp\Extranet\Client\Model\RunningProcess[]|null
+     * @return \InfracorpExtranetClient\Model\RunningProcess[]|null
      */
     public function getRunningWorkflows()
     {
@@ -596,7 +596,7 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets running_workflows
      *
-     * @param \Infracorp\Extranet\Client\Model\RunningProcess[]|null $running_workflows running_workflows
+     * @param \InfracorpExtranetClient\Model\RunningProcess[]|null $running_workflows running_workflows
      *
      * @return self
      */
@@ -613,7 +613,7 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets archived_workflows
      *
-     * @return \Infracorp\Extranet\Client\Model\RunningProcess[]|null
+     * @return \InfracorpExtranetClient\Model\RunningProcess[]|null
      */
     public function getArchivedWorkflows()
     {
@@ -623,7 +623,7 @@ class OperatorTicket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets archived_workflows
      *
-     * @param \Infracorp\Extranet\Client\Model\RunningProcess[]|null $archived_workflows archived_workflows
+     * @param \InfracorpExtranetClient\Model\RunningProcess[]|null $archived_workflows archived_workflows
      *
      * @return self
      */

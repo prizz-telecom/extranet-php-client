@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * GetAppointments200Response Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class GetAppointments200Response implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'items' => '\Infracorp\Extranet\Client\Model\Appointment[]'
+        'items' => '\InfracorpExtranetClient\Model\Appointment[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class GetAppointments200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets items
      *
-     * @return \Infracorp\Extranet\Client\Model\Appointment[]|null
+     * @return \InfracorpExtranetClient\Model\Appointment[]|null
      */
     public function getItems()
     {
@@ -302,7 +302,7 @@ class GetAppointments200Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets items
      *
-     * @param \Infracorp\Extranet\Client\Model\Appointment[]|null $items items
+     * @param \InfracorpExtranetClient\Model\Appointment[]|null $items items
      *
      * @return self
      */

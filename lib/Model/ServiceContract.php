@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * ServiceContract Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -70,22 +70,22 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
         'subscription_date' => '\DateTime',
         'activation_date' => '\DateTime',
         'first_activation_date' => '\DateTime',
-        'offer' => '\Infracorp\Extranet\Client\Model\Offer',
-        'client' => '\Infracorp\Extranet\Client\Model\ClientLegalEntity',
+        'offer' => '\InfracorpExtranetClient\Model\Offer',
+        'client' => '\InfracorpExtranetClient\Model\ClientLegalEntity',
         'ref_client' => 'string',
         'ref_service' => 'string',
         'description' => 'string',
-        'services' => '\Infracorp\Extranet\Client\Model\Service[]',
-        'nrcs' => '\Infracorp\Extranet\Client\Model\ServiceContractNrc[]',
+        'services' => '\InfracorpExtranetClient\Model\Service[]',
+        'nrcs' => '\InfracorpExtranetClient\Model\ServiceContractNrc[]',
         'planned_activation_date' => '\DateTime',
         'sold_activation_date' => '\DateTime',
         'commitment_end_date' => '\DateTime',
         'attributes' => 'array<string,mixed>',
         'consolidated_attributes' => 'array<string,mixed>',
         'consolidated_attributes_staging_or_new' => 'array<string,mixed>',
-        'commercial_offers' => '\Infracorp\Extranet\Client\Model\ServiceContractCommercialOffersInner[]',
-        'contacts' => '\Infracorp\Extranet\Client\Model\Contact[]',
-        'configured_contacts' => '\Infracorp\Extranet\Client\Model\TypedContact[]',
+        'commercial_offers' => '\InfracorpExtranetClient\Model\ServiceContractCommercialOffersInner[]',
+        'contacts' => '\InfracorpExtranetClient\Model\Contact[]',
+        'configured_contacts' => '\InfracorpExtranetClient\Model\TypedContact[]',
         'replaces' => 'int'
     ];
 
@@ -1040,7 +1040,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offer
      *
-     * @return \Infracorp\Extranet\Client\Model\Offer|null
+     * @return \InfracorpExtranetClient\Model\Offer|null
      */
     public function getOffer()
     {
@@ -1050,7 +1050,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets offer
      *
-     * @param \Infracorp\Extranet\Client\Model\Offer|null $offer offer
+     * @param \InfracorpExtranetClient\Model\Offer|null $offer offer
      *
      * @return self
      */
@@ -1067,7 +1067,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets client
      *
-     * @return \Infracorp\Extranet\Client\Model\ClientLegalEntity|null
+     * @return \InfracorpExtranetClient\Model\ClientLegalEntity|null
      */
     public function getClient()
     {
@@ -1077,7 +1077,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets client
      *
-     * @param \Infracorp\Extranet\Client\Model\ClientLegalEntity|null $client client
+     * @param \InfracorpExtranetClient\Model\ClientLegalEntity|null $client client
      *
      * @return self
      */
@@ -1196,7 +1196,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets services
      *
-     * @return \Infracorp\Extranet\Client\Model\Service[]|null
+     * @return \InfracorpExtranetClient\Model\Service[]|null
      */
     public function getServices()
     {
@@ -1206,7 +1206,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets services
      *
-     * @param \Infracorp\Extranet\Client\Model\Service[]|null $services services
+     * @param \InfracorpExtranetClient\Model\Service[]|null $services services
      *
      * @return self
      */
@@ -1223,7 +1223,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets nrcs
      *
-     * @return \Infracorp\Extranet\Client\Model\ServiceContractNrc[]|null
+     * @return \InfracorpExtranetClient\Model\ServiceContractNrc[]|null
      */
     public function getNrcs()
     {
@@ -1233,7 +1233,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets nrcs
      *
-     * @param \Infracorp\Extranet\Client\Model\ServiceContractNrc[]|null $nrcs nrcs
+     * @param \InfracorpExtranetClient\Model\ServiceContractNrc[]|null $nrcs nrcs
      *
      * @return self
      */
@@ -1433,7 +1433,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets commercial_offers
      *
-     * @return \Infracorp\Extranet\Client\Model\ServiceContractCommercialOffersInner[]|null
+     * @return \InfracorpExtranetClient\Model\ServiceContractCommercialOffersInner[]|null
      */
     public function getCommercialOffers()
     {
@@ -1443,7 +1443,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets commercial_offers
      *
-     * @param \Infracorp\Extranet\Client\Model\ServiceContractCommercialOffersInner[]|null $commercial_offers commercial_offers
+     * @param \InfracorpExtranetClient\Model\ServiceContractCommercialOffersInner[]|null $commercial_offers commercial_offers
      *
      * @return self
      */
@@ -1460,7 +1460,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets contacts
      *
-     * @return \Infracorp\Extranet\Client\Model\Contact[]|null
+     * @return \InfracorpExtranetClient\Model\Contact[]|null
      */
     public function getContacts()
     {
@@ -1470,7 +1470,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contacts
      *
-     * @param \Infracorp\Extranet\Client\Model\Contact[]|null $contacts contacts
+     * @param \InfracorpExtranetClient\Model\Contact[]|null $contacts contacts
      *
      * @return self
      */
@@ -1487,7 +1487,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets configured_contacts
      *
-     * @return \Infracorp\Extranet\Client\Model\TypedContact[]|null
+     * @return \InfracorpExtranetClient\Model\TypedContact[]|null
      */
     public function getConfiguredContacts()
     {
@@ -1497,7 +1497,7 @@ class ServiceContract implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets configured_contacts
      *
-     * @param \Infracorp\Extranet\Client\Model\TypedContact[]|null $configured_contacts configured_contacts
+     * @param \InfracorpExtranetClient\Model\TypedContact[]|null $configured_contacts configured_contacts
      *
      * @return self
      */

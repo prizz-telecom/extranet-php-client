@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * EligibilityResult Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -80,10 +80,10 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'rc_max' => 'int',
         'distance' => 'int',
         'recurrent_discount_percentage' => 'int',
-        'price_list_items_groups' => '\Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups',
+        'price_list_items_groups' => '\InfracorpExtranetClient\Model\EligibilityResultPriceListItemsGroups',
         'offer_id' => 'int',
         'price_list_id' => 'int',
-        'combinations' => '\Infracorp\Extranet\Client\Model\EligibilityResultCombination[]'
+        'combinations' => '\InfracorpExtranetClient\Model\EligibilityResultCombination[]'
     ];
 
     /**
@@ -1228,7 +1228,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets price_list_items_groups
      *
-     * @return \Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups|null
+     * @return \InfracorpExtranetClient\Model\EligibilityResultPriceListItemsGroups|null
      */
     public function getPriceListItemsGroups()
     {
@@ -1238,7 +1238,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets price_list_items_groups
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityResultPriceListItemsGroups|null $price_list_items_groups price_list_items_groups
+     * @param \InfracorpExtranetClient\Model\EligibilityResultPriceListItemsGroups|null $price_list_items_groups price_list_items_groups
      *
      * @return self
      */
@@ -1323,7 +1323,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets combinations
      *
-     * @return \Infracorp\Extranet\Client\Model\EligibilityResultCombination[]|null
+     * @return \InfracorpExtranetClient\Model\EligibilityResultCombination[]|null
      */
     public function getCombinations()
     {
@@ -1333,7 +1333,7 @@ class EligibilityResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets combinations
      *
-     * @param \Infracorp\Extranet\Client\Model\EligibilityResultCombination[]|null $combinations List of combinations, with prices and attributes
+     * @param \InfracorpExtranetClient\Model\EligibilityResultCombination[]|null $combinations List of combinations, with prices and attributes
      *
      * @return self
      */

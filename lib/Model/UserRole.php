@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * UserRole Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class UserRole implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'create_date' => '\DateTime',
         'last_modified_date' => '\DateTime',
-        'user' => '\Infracorp\Extranet\Client\Model\User',
+        'user' => '\InfracorpExtranetClient\Model\User',
         'role' => 'string'
     ];
 
@@ -554,7 +554,7 @@ class UserRole implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets user
      *
-     * @return \Infracorp\Extranet\Client\Model\User|null
+     * @return \InfracorpExtranetClient\Model\User|null
      */
     public function getUser()
     {
@@ -564,7 +564,7 @@ class UserRole implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets user
      *
-     * @param \Infracorp\Extranet\Client\Model\User|null $user user
+     * @param \InfracorpExtranetClient\Model\User|null $user user
      *
      * @return self
      */

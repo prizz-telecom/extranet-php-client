@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * ProcessAttributesMessages Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,9 +57,9 @@ class ProcessAttributesMessages implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'operateur' => '\Infracorp\Extranet\Client\Model\ProcessMessage[]',
-        'noc' => '\Infracorp\Extranet\Client\Model\ProcessMessage[]',
-        'terrain' => '\Infracorp\Extranet\Client\Model\ProcessMessage[]'
+        'operateur' => '\InfracorpExtranetClient\Model\ProcessMessage[]',
+        'noc' => '\InfracorpExtranetClient\Model\ProcessMessage[]',
+        'terrain' => '\InfracorpExtranetClient\Model\ProcessMessage[]'
     ];
 
     /**
@@ -306,7 +306,7 @@ class ProcessAttributesMessages implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets operateur
      *
-     * @return \Infracorp\Extranet\Client\Model\ProcessMessage[]|null
+     * @return \InfracorpExtranetClient\Model\ProcessMessage[]|null
      */
     public function getOperateur()
     {
@@ -316,7 +316,7 @@ class ProcessAttributesMessages implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets operateur
      *
-     * @param \Infracorp\Extranet\Client\Model\ProcessMessage[]|null $operateur operateur
+     * @param \InfracorpExtranetClient\Model\ProcessMessage[]|null $operateur operateur
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class ProcessAttributesMessages implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets noc
      *
-     * @return \Infracorp\Extranet\Client\Model\ProcessMessage[]|null
+     * @return \InfracorpExtranetClient\Model\ProcessMessage[]|null
      */
     public function getNoc()
     {
@@ -343,7 +343,7 @@ class ProcessAttributesMessages implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets noc
      *
-     * @param \Infracorp\Extranet\Client\Model\ProcessMessage[]|null $noc noc
+     * @param \InfracorpExtranetClient\Model\ProcessMessage[]|null $noc noc
      *
      * @return self
      */
@@ -360,7 +360,7 @@ class ProcessAttributesMessages implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets terrain
      *
-     * @return \Infracorp\Extranet\Client\Model\ProcessMessage[]|null
+     * @return \InfracorpExtranetClient\Model\ProcessMessage[]|null
      */
     public function getTerrain()
     {
@@ -370,7 +370,7 @@ class ProcessAttributesMessages implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets terrain
      *
-     * @param \Infracorp\Extranet\Client\Model\ProcessMessage[]|null $terrain terrain
+     * @param \InfracorpExtranetClient\Model\ProcessMessage[]|null $terrain terrain
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * ClientLegalEntitySearch Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -66,7 +66,7 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
         'siren' => 'string',
         'tel' => 'string',
         'email' => 'string',
-        'contacts' => '\Infracorp\Extranet\Client\Model\ContactSearch[]'
+        'contacts' => '\InfracorpExtranetClient\Model\ContactSearch[]'
     ];
 
     /**
@@ -619,7 +619,7 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets contacts
      *
-     * @return \Infracorp\Extranet\Client\Model\ContactSearch[]|null
+     * @return \InfracorpExtranetClient\Model\ContactSearch[]|null
      */
     public function getContacts()
     {
@@ -629,7 +629,7 @@ class ClientLegalEntitySearch implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets contacts
      *
-     * @param \Infracorp\Extranet\Client\Model\ContactSearch[]|null $contacts contacts
+     * @param \InfracorpExtranetClient\Model\ContactSearch[]|null $contacts contacts
      *
      * @return self
      */

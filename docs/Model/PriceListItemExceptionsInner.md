@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**constraints** | [**\Infracorp\Extranet\Client\Model\PriceListItemExceptionsInnerConstraintsInner[]**](PriceListItemExceptionsInnerConstraintsInner.md) |  | [optional]
+**constraints** | [**\InfracorpExtranetClient\Model\PriceListItemExceptionsInnerConstraintsInner[]**](PriceListItemExceptionsInnerConstraintsInner.md) |  | [optional]
 **relative_price** | **int** |  | [optional]
 **new_price** | **int** |  | [optional]
 **rate** | **int** |  | [optional]

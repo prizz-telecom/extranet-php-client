@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * PricesListOffers Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class PricesListOffers implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'offers' => '\Infracorp\Extranet\Client\Model\Offer[]'
+        'offers' => '\InfracorpExtranetClient\Model\Offer[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class PricesListOffers implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offers
      *
-     * @return \Infracorp\Extranet\Client\Model\Offer[]|null
+     * @return \InfracorpExtranetClient\Model\Offer[]|null
      */
     public function getOffers()
     {
@@ -302,7 +302,7 @@ class PricesListOffers implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets offers
      *
-     * @param \Infracorp\Extranet\Client\Model\Offer[]|null $offers offers
+     * @param \InfracorpExtranetClient\Model\Offer[]|null $offers offers
      *
      * @return self
      */

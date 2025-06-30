@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * GetRunningWorkflows200Response Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class GetRunningWorkflows200Response implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'workflows' => '\Infracorp\Extranet\Client\Model\GetRunningWorkflows200ResponseWorkflowsInner[]'
+        'workflows' => '\InfracorpExtranetClient\Model\GetRunningWorkflows200ResponseWorkflowsInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class GetRunningWorkflows200Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets workflows
      *
-     * @return \Infracorp\Extranet\Client\Model\GetRunningWorkflows200ResponseWorkflowsInner[]|null
+     * @return \InfracorpExtranetClient\Model\GetRunningWorkflows200ResponseWorkflowsInner[]|null
      */
     public function getWorkflows()
     {
@@ -302,7 +302,7 @@ class GetRunningWorkflows200Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets workflows
      *
-     * @param \Infracorp\Extranet\Client\Model\GetRunningWorkflows200ResponseWorkflowsInner[]|null $workflows workflows
+     * @param \InfracorpExtranetClient\Model\GetRunningWorkflows200ResponseWorkflowsInner[]|null $workflows workflows
      *
      * @return self
      */

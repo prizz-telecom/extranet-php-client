@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * PriceListItem Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -67,13 +67,13 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'vat' => 'string',
         'recurrence' => 'string',
         'price_list_id' => 'int',
-        'product' => '\Infracorp\Extranet\Client\Model\Product',
+        'product' => '\InfracorpExtranetClient\Model\Product',
         'commercial_code' => 'string',
         'description' => 'string',
         'inside_offer_only' => 'bool',
         'to_estimate' => 'bool',
         'active' => 'bool',
-        'exceptions' => '\Infracorp\Extranet\Client\Model\PriceListItemExceptionsInner[]'
+        'exceptions' => '\InfracorpExtranetClient\Model\PriceListItemExceptionsInner[]'
     ];
 
     /**
@@ -747,7 +747,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product
      *
-     * @return \Infracorp\Extranet\Client\Model\Product|null
+     * @return \InfracorpExtranetClient\Model\Product|null
      */
     public function getProduct()
     {
@@ -757,7 +757,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product
      *
-     * @param \Infracorp\Extranet\Client\Model\Product|null $product product
+     * @param \InfracorpExtranetClient\Model\Product|null $product product
      *
      * @return self
      */
@@ -916,7 +916,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets exceptions
      *
-     * @return \Infracorp\Extranet\Client\Model\PriceListItemExceptionsInner[]|null
+     * @return \InfracorpExtranetClient\Model\PriceListItemExceptionsInner[]|null
      */
     public function getExceptions()
     {
@@ -926,7 +926,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets exceptions
      *
-     * @param \Infracorp\Extranet\Client\Model\PriceListItemExceptionsInner[]|null $exceptions exceptions
+     * @param \InfracorpExtranetClient\Model\PriceListItemExceptionsInner[]|null $exceptions exceptions
      *
      * @return self
      */

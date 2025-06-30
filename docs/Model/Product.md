@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional]
 **attributes** | **object** |  | [optional]
 **product_code** | **string** |  | [optional]
-**group** | [**\Infracorp\Extranet\Client\Model\ProductGroup**](ProductGroup.md) |  | [optional]
+**group** | [**\InfracorpExtranetClient\Model\ProductGroup**](ProductGroup.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * ProcessAction Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class ProcessAction implements ModelInterface, ArrayAccess, \JsonSerializable
         'classe' => 'string',
         'html' => 'string',
         'default' => 'string',
-        'fields' => '\Infracorp\Extranet\Client\Model\ProcessActionField[]'
+        'fields' => '\InfracorpExtranetClient\Model\ProcessActionField[]'
     ];
 
     /**
@@ -462,7 +462,7 @@ class ProcessAction implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fields
      *
-     * @return \Infracorp\Extranet\Client\Model\ProcessActionField[]|null
+     * @return \InfracorpExtranetClient\Model\ProcessActionField[]|null
      */
     public function getFields()
     {
@@ -472,7 +472,7 @@ class ProcessAction implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fields
      *
-     * @param \Infracorp\Extranet\Client\Model\ProcessActionField[]|null $fields fields
+     * @param \InfracorpExtranetClient\Model\ProcessActionField[]|null $fields fields
      *
      * @return self
      */

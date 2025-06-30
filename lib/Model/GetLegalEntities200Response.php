@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * GetLegalEntities200Response Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class GetLegalEntities200Response implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\Infracorp\Extranet\Client\Model\GetClientContracts200ResponsePagination',
-        'items' => '\Infracorp\Extranet\Client\Model\LegalEntity[]'
+        'pagination' => '\InfracorpExtranetClient\Model\GetClientContracts200ResponsePagination',
+        'items' => '\InfracorpExtranetClient\Model\LegalEntity[]'
     ];
 
     /**
@@ -299,7 +299,7 @@ class GetLegalEntities200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets pagination
      *
-     * @return \Infracorp\Extranet\Client\Model\GetClientContracts200ResponsePagination|null
+     * @return \InfracorpExtranetClient\Model\GetClientContracts200ResponsePagination|null
      */
     public function getPagination()
     {
@@ -309,7 +309,7 @@ class GetLegalEntities200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets pagination
      *
-     * @param \Infracorp\Extranet\Client\Model\GetClientContracts200ResponsePagination|null $pagination pagination
+     * @param \InfracorpExtranetClient\Model\GetClientContracts200ResponsePagination|null $pagination pagination
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class GetLegalEntities200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets items
      *
-     * @return \Infracorp\Extranet\Client\Model\LegalEntity[]|null
+     * @return \InfracorpExtranetClient\Model\LegalEntity[]|null
      */
     public function getItems()
     {
@@ -336,7 +336,7 @@ class GetLegalEntities200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets items
      *
-     * @param \Infracorp\Extranet\Client\Model\LegalEntity[]|null $items items
+     * @param \InfracorpExtranetClient\Model\LegalEntity[]|null $items items
      *
      * @return self
      */

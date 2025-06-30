@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * Product Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'attributes' => 'object',
         'product_code' => 'string',
-        'group' => '\Infracorp\Extranet\Client\Model\ProductGroup'
+        'group' => '\InfracorpExtranetClient\Model\ProductGroup'
     ];
 
     /**
@@ -435,7 +435,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group
      *
-     * @return \Infracorp\Extranet\Client\Model\ProductGroup|null
+     * @return \InfracorpExtranetClient\Model\ProductGroup|null
      */
     public function getGroup()
     {
@@ -445,7 +445,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group
      *
-     * @param \Infracorp\Extranet\Client\Model\ProductGroup|null $group group
+     * @param \InfracorpExtranetClient\Model\ProductGroup|null $group group
      *
      * @return self
      */

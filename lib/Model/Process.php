@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * Process Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,12 +65,12 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
         'state' => 'string',
         'state_lib' => 'string',
         'end_date' => 'string',
-        'attrs' => '\Infracorp\Extranet\Client\Model\ProcessAttributes',
+        'attrs' => '\InfracorpExtranetClient\Model\ProcessAttributes',
         'lib' => 'string',
         'title' => 'string',
         'states' => 'mixed[]',
-        'attachments' => '\Infracorp\Extranet\Client\Model\TicketAttachment[]',
-        'actions' => '\Infracorp\Extranet\Client\Model\ProcessAction[]'
+        'attachments' => '\InfracorpExtranetClient\Model\TicketAttachment[]',
+        'actions' => '\InfracorpExtranetClient\Model\ProcessAction[]'
     ];
 
     /**
@@ -655,7 +655,7 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attrs
      *
-     * @return \Infracorp\Extranet\Client\Model\ProcessAttributes|null
+     * @return \InfracorpExtranetClient\Model\ProcessAttributes|null
      */
     public function getAttrs()
     {
@@ -665,7 +665,7 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attrs
      *
-     * @param \Infracorp\Extranet\Client\Model\ProcessAttributes|null $attrs attrs
+     * @param \InfracorpExtranetClient\Model\ProcessAttributes|null $attrs attrs
      *
      * @return self
      */
@@ -777,7 +777,7 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attachments
      *
-     * @return \Infracorp\Extranet\Client\Model\TicketAttachment[]|null
+     * @return \InfracorpExtranetClient\Model\TicketAttachment[]|null
      */
     public function getAttachments()
     {
@@ -787,7 +787,7 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attachments
      *
-     * @param \Infracorp\Extranet\Client\Model\TicketAttachment[]|null $attachments attachments
+     * @param \InfracorpExtranetClient\Model\TicketAttachment[]|null $attachments attachments
      *
      * @return self
      */
@@ -804,7 +804,7 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets actions
      *
-     * @return \Infracorp\Extranet\Client\Model\ProcessAction[]|null
+     * @return \InfracorpExtranetClient\Model\ProcessAction[]|null
      */
     public function getActions()
     {
@@ -814,7 +814,7 @@ class Process implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets actions
      *
-     * @param \Infracorp\Extranet\Client\Model\ProcessAction[]|null $actions actions
+     * @param \InfracorpExtranetClient\Model\ProcessAction[]|null $actions actions
      *
      * @return self
      */

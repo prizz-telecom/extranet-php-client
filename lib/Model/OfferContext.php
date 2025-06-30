@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Infracorp\Extranet\Client\Model;
+namespace InfracorpExtranetClient\Model;
 
 use \ArrayAccess;
-use \Infracorp\Extranet\Client\ObjectSerializer;
+use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
  * OfferContext Class Doc Comment
  *
  * @category Class
- * @package  Infracorp\Extranet\Client
+ * @package  InfracorpExtranetClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class OfferContext implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_valid' => 'bool',
         'total' => 'int',
         'total_without_nrc' => 'int',
-        'items' => '\Infracorp\Extranet\Client\Model\PriceListItem[]',
+        'items' => '\InfracorpExtranetClient\Model\PriceListItem[]',
         'attributes' => 'array<string,mixed>',
         'has_to_estimate_products' => 'bool'
     ];
@@ -442,7 +442,7 @@ class OfferContext implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return \Infracorp\Extranet\Client\Model\PriceListItem[]|null
+     * @return \InfracorpExtranetClient\Model\PriceListItem[]|null
      */
     public function getItems()
     {
@@ -452,7 +452,7 @@ class OfferContext implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param \Infracorp\Extranet\Client\Model\PriceListItem[]|null $items items
+     * @param \InfracorpExtranetClient\Model\PriceListItem[]|null $items items
      *
      * @return self
      */
