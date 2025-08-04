@@ -1,6 +1,6 @@
 <?php
 /**
- * EligibilityHistory200Response
+ * GetEligibilityLastlog
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \InfracorpExtranetClient\ObjectSerializer;
 
 /**
- * EligibilityHistory200Response Class Doc Comment
+ * GetEligibilityLastlog Class Doc Comment
  *
  * @category Class
  * @package  InfracorpExtranetClient
@@ -40,7 +40,7 @@ use \InfracorpExtranetClient\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EligibilityHistory200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetEligibilityLastlog implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class EligibilityHistory200Response implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'eligibilityHistory_200_response';
+    protected static $openAPIModelName = 'GetEligibility_lastlog';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class EligibilityHistory200Response implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\InfracorpExtranetClient\Model\GetClientContracts200ResponsePagination',
-        'items' => '\InfracorpExtranetClient\Model\EligibilityHistory[]'
+        'success' => 'bool',
+        'message' => 'string'
     ];
 
     /**
@@ -69,8 +69,8 @@ class EligibilityHistory200Response implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pagination' => null,
-        'items' => null
+        'success' => null,
+        'message' => null
     ];
 
     /**
@@ -79,8 +79,8 @@ class EligibilityHistory200Response implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pagination' => false,
-        'items' => false
+        'success' => false,
+        'message' => false
     ];
 
     /**
@@ -169,8 +169,8 @@ class EligibilityHistory200Response implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'pagination' => 'pagination',
-        'items' => 'items'
+        'success' => 'success',
+        'message' => 'message'
     ];
 
     /**
@@ -179,8 +179,8 @@ class EligibilityHistory200Response implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'pagination' => 'setPagination',
-        'items' => 'setItems'
+        'success' => 'setSuccess',
+        'message' => 'setMessage'
     ];
 
     /**
@@ -189,8 +189,8 @@ class EligibilityHistory200Response implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'pagination' => 'getPagination',
-        'items' => 'getItems'
+        'success' => 'getSuccess',
+        'message' => 'getMessage'
     ];
 
     /**
@@ -250,8 +250,8 @@ class EligibilityHistory200Response implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('pagination', $data ?? [], null);
-        $this->setIfExists('items', $data ?? [], null);
+        $this->setIfExists('success', $data ?? [], null);
+        $this->setIfExists('message', $data ?? [], null);
     }
 
     /**
@@ -297,55 +297,55 @@ class EligibilityHistory200Response implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets pagination
+     * Gets success
      *
-     * @return \InfracorpExtranetClient\Model\GetClientContracts200ResponsePagination|null
+     * @return bool|null
      */
-    public function getPagination()
+    public function getSuccess()
     {
-        return $this->container['pagination'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets pagination
+     * Sets success
      *
-     * @param \InfracorpExtranetClient\Model\GetClientContracts200ResponsePagination|null $pagination pagination
+     * @param bool|null $success success
      *
      * @return self
      */
-    public function setPagination($pagination)
+    public function setSuccess($success)
     {
-        if (is_null($pagination)) {
-            throw new \InvalidArgumentException('non-nullable pagination cannot be null');
+        if (is_null($success)) {
+            throw new \InvalidArgumentException('non-nullable success cannot be null');
         }
-        $this->container['pagination'] = $pagination;
+        $this->container['success'] = $success;
 
         return $this;
     }
 
     /**
-     * Gets items
+     * Gets message
      *
-     * @return \InfracorpExtranetClient\Model\EligibilityHistory[]|null
+     * @return string|null
      */
-    public function getItems()
+    public function getMessage()
     {
-        return $this->container['items'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets items
+     * Sets message
      *
-     * @param \InfracorpExtranetClient\Model\EligibilityHistory[]|null $items items
+     * @param string|null $message message
      *
      * @return self
      */
-    public function setItems($items)
+    public function setMessage($message)
     {
-        if (is_null($items)) {
-            throw new \InvalidArgumentException('non-nullable items cannot be null');
+        if (is_null($message)) {
+            throw new \InvalidArgumentException('non-nullable message cannot be null');
         }
-        $this->container['items'] = $items;
+        $this->container['message'] = $message;
 
         return $this;
     }

@@ -34,5 +34,6 @@ Name | Type | Description | Notes
 **contacts** | [**\InfracorpExtranetClient\Model\Contact[]**](Contact.md) |  | [optional]
 **configured_contacts** | [**\InfracorpExtranetClient\Model\TypedContact[]**](TypedContact.md) |  | [optional]
 **replaces** | **int** |  | [optional]
+**technical_zone** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

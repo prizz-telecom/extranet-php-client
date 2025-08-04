@@ -46,6 +46,7 @@ docs/Model/GetClientContracts200ResponsePagination.md
 docs/Model/GetClientLegalEntities200Response.md
 docs/Model/GetCommercialOffers200Response.md
 docs/Model/GetEligibility.md
+docs/Model/GetEligibilityLastlog.md
 docs/Model/GetInvoices200Response.md
 docs/Model/GetLegalEntities200Response.md
 docs/Model/GetPublicAttachments200Response.md
@@ -152,6 +153,7 @@ lib/Model/GetClientContracts200ResponsePagination.php
 lib/Model/GetClientLegalEntities200Response.php
 lib/Model/GetCommercialOffers200Response.php
 lib/Model/GetEligibility.php
+lib/Model/GetEligibilityLastlog.php
 lib/Model/GetInvoices200Response.php
 lib/Model/GetLegalEntities200Response.php
 lib/Model/GetPublicAttachments200Response.php
@@ -255,6 +257,7 @@ test/Model/GetClientContracts200ResponsePaginationTest.php
 test/Model/GetClientContracts200ResponseTest.php
 test/Model/GetClientLegalEntities200ResponseTest.php
 test/Model/GetCommercialOffers200ResponseTest.php
+test/Model/GetEligibilityLastlogTest.php
 test/Model/GetEligibilityTest.php
 test/Model/GetInvoices200ResponseTest.php
 test/Model/GetLegalEntities200ResponseTest.php

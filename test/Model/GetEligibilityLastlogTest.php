@@ -1,6 +1,6 @@
 <?php
 /**
- * RunningProcessTest
+ * GetEligibilityLastlogTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace InfracorpExtranetClient\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * RunningProcessTest Class Doc Comment
+ * GetEligibilityLastlogTest Class Doc Comment
  *
  * @category    Class
- * @description RunningProcess
+ * @description GetEligibilityLastlog
  * @package     InfracorpExtranetClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class RunningProcessTest extends TestCase
+class GetEligibilityLastlogTest extends TestCase
 {
 
     /**
@@ -71,63 +71,27 @@ class RunningProcessTest extends TestCase
     }
 
     /**
-     * Test "RunningProcess"
+     * Test "GetEligibilityLastlog"
      */
-    public function testRunningProcess()
+    public function testGetEligibilityLastlog()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "success"
      */
-    public function testPropertyId()
+    public function testPropertySuccess()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "lib"
+     * Test attribute "message"
      */
-    public function testPropertyLib()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "state"
-     */
-    public function testPropertyState()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status_code"
-     */
-    public function testPropertyStatusCode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "create_date"
-     */
-    public function testPropertyCreateDate()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "process_class"
-     */
-    public function testPropertyProcessClass()
+    public function testPropertyMessage()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
