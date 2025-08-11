@@ -328,6 +328,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public const RECURRENCE_YEARLY = 'yearly';
     public const RECURRENCE_HALF_YEARLY = 'half-yearly';
     public const RECURRENCE_QUATERLY = 'quaterly';
+    public const RECURRENCE_BIENNIAL = 'biennial';
 
     /**
      * Gets allowable values of the enum
@@ -341,6 +342,7 @@ class PriceListItem implements ModelInterface, ArrayAccess, \JsonSerializable
             self::RECURRENCE_YEARLY,
             self::RECURRENCE_HALF_YEARLY,
             self::RECURRENCE_QUATERLY,
+            self::RECURRENCE_BIENNIAL,
         ];
     }
 

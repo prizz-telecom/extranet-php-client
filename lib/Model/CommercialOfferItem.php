@@ -458,6 +458,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public const RECURRENCE_YEARLY = 'yearly';
     public const RECURRENCE_HALF_YEARLY = 'half-yearly';
     public const RECURRENCE_QUATERLY = 'quaterly';
+    public const RECURRENCE_BIENNIAL = 'biennial';
 
     /**
      * Gets allowable values of the enum
@@ -528,6 +529,7 @@ class CommercialOfferItem implements ModelInterface, ArrayAccess, \JsonSerializa
             self::RECURRENCE_YEARLY,
             self::RECURRENCE_HALF_YEARLY,
             self::RECURRENCE_QUATERLY,
+            self::RECURRENCE_BIENNIAL,
         ];
     }
 
