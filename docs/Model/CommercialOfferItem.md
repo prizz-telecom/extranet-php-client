@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional]
 **name** | **string** |  | [optional]
 **unit_price** | **int** |  | [optional]
+**unit_price_precision** | **int** |  | [optional]
 **unit_price_str** | **string** |  | [optional]
 **unit** | **string** |  | [optional]
 **vat** | **string** |  | [optional]

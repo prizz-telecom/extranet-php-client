@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **available_workflows** | **string[]** | liste des processus disponible pour l&#39;objet | [optional]
 **id** | **int** |  | [optional]
 **unit_price** | **int** |  | [optional]
+**unit_price_precision** | **int** |  | [optional]
 **unit_price_str** | **string** |  | [optional]
 **unit** | **string** |  | [optional]
 **vat** | **string** |  | [optional]
